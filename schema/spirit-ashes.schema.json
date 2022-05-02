@@ -1,0 +1,145 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Spirit Ashes",
+    "type": "object",
+    "properties": {
+        "SpiritAshes": {
+            "title": "Spirit Ash Map",
+            "additionalProperties": false,
+            "propertyNames": {
+                "$ref": "#/definitions/SpiritAshNames"
+            },
+            "patternProperties": {
+                "^.+$": {
+                    "type": "object",
+                    "$ref": "#/definitions/SpiritAsh"
+                }
+            }
+        }
+    },
+    "required": ["SpiritAshes"],
+    "definitions": {
+        "SpiritAsh": {
+            "title": "Spirit Ash",
+            "description": "Schema for Spirit Ash items.",
+            "allOf": [{"$ref": "item.schema.json"}],
+            "properties": {
+                "name": {
+                    "#comment": "Override list of possible names to be Spirit Ash names only.",
+                    "$ref": "#/definitions/SpiritAshNames"
+                },
+                "fp_cost": {
+                    "description": "Cost of FP to summon, 0 if not applicable.",
+                    "type": "integer",
+                    "default": 0,
+                    "minimum": 0
+                },
+                "hp_cost": {
+                    "description": "Cost of HP to summon, 0 if not applicable.",
+                    "type": "integer",
+                    "default": 0,
+                    "minimum": 0
+                },
+                "is_elite": {
+                    "description": "Spirit Ash classification, either 'standard' which upgrade with Grave Glovewort or 'elite' which upgrade with Ghost Glovewort.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "summon_quantity": {
+                    "description": "The number of spririts this Spirit Ash summons.",
+                    "type": "integer",
+                    "default": 1
+                },
+                "abilities": {
+                    "description": "Strenghts of the Spirit Ash. Each briefly described with minimum amount of words.",
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "is_tradable": {
+                    "$comment": "Override the default value from the Item schema. Spirit Ashes are not tradable TODO: confirm.",
+                    "default": false
+                }
+            },
+            "required": [
+                "fp_cost",
+                "hp_cost",
+                "is_elite",
+                "summon_quantity",
+                "abilities"
+            ]
+        },
+        "SpiritAshNames": {
+            "type": "string",
+            "enum": [
+                "Black Knife Tiche",
+                "Banished Knight Oleg",
+                "Banished Knight Engvall",
+                "Fanged Imp Ashes",
+                "Latenna the Albinauric",
+                "Nomad Ashes",
+                "Nightmaiden & Swordstress Puppets",
+                "Mimic Tear Ashes",
+                "Crystalian Ashes",
+                "Ancestral Follower Ashes",
+                "Winged Misbegotten Ashes",
+                "Albinauric Ashes",
+                "Skeletal Militiaman Ashes",
+                "Skeletal Bandit Ashes",
+                "Oracle Envoy Ashes",
+                "Putrid Corpse Ashes",
+                "Depraved Perfumer Carmaan",
+                "Perfumer Tricia",
+                "Glintstone Sorcerer Ashes",
+                "Twinsage Sorcerer Ashes",
+                "Page Ashes",
+                "Battlemage Hugues",
+                "Clayman Ashes",
+                "Cleanrot Knight Finlay",
+                "Kindred of Rot Ashes",
+                "Marionette Soldier Ashes",
+                "Avionette Soldier Ashes",
+                "Fire Monk Ashes",
+                "Blackflame Monk Amon",
+                "Man-Serpent Ashes",
+                "Azula Beastman Ashes",
+                "Kaiden Sellsword Ashes",
+                "Lone Wolf Ashes",
+                "Giant Rat Ashes",
+                "Demi-Human Ashes",
+                "Rotten Stray Ashes",
+                "Spirit Jellyfish Ashes",
+                "Warhawk Ashes",
+                "Stormhawk Deenh",
+                "Bloodhound Knight Floh",
+                "Wandering Noble Ashes",
+                "Noble Sorcerer Ashes",
+                "Vulgar Militia Ashes",
+                "Mad Pumpkin Head Ashes",
+                "Land Squirt Ashes",
+                "Miranda Sprout Ashes",
+                "Soldjars of Fortune Ashes",
+                "Omenkiller Rollo",
+                "Greatshield Soldier Ashes",
+                "Archer Ashes",
+                "Godrick Soldier Ashes",
+                "Raya Lucaria Soldier Ashes",
+                "Leyndell Soldier Ashes",
+                "Radahn Soldier Ashes",
+                "Mausoleum Soldier Ashes",
+                "Haligtree Soldier Ashes",
+                "Ancient Dragon Knight Kristoff",
+                "Redmane Knight Ogha",
+                "Lhutel the Headless",
+                "Nepheli Loux Puppet",
+                "Dung Eater Puppet",
+                "Finger Maiden Therolina Puppet",
+                "Dolores the Sleeping Arrow Puppet",
+                "Jarwight Puppet"
+            ]
+        }
+    }
+}

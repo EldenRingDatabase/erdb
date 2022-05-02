@@ -1,0 +1,71 @@
+{
+    "$schema": "./schema/spirit-ashes.schema.json",
+    "SpiritAshes": {
+        "Black Knife Tiche": {
+            "full_hex_id": "40030D40",
+            "id": 200000,
+            "name": "Black Knife Tiche",
+            "summary": "Summons spirit of Black Knife Tiche",
+            "description": [
+                "Legendary ashen remains.",
+                "Use to summon the spirit of Black Knife Tiche.",
+                "",
+                "Tiche was one of the assassins who, on the night of the plot, imbued her black knife with the Rune of Death and slew Godwyn the Golden. She was the daughter of the Black Knife Ringleader, Alecto, and was killed protecting her mother during their flight from the royal capital."
+            ],
+            "is_tradable": false,
+            "price_bought": 0,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 600,
+            "locations": [
+                {
+                    "summary": "dropped by Alecto, Black Knife Ringleader",
+                    "location": "Ringleader's Evergaol",
+                    "region": "Liurnia of the Lakes",
+                    "requirements": ["Dark Moon Ring is required to reach Ringleader's Evergaol."]
+                }
+            ],
+            "remarks": [],
+            "fp_cost": 132,
+            "hp_cost": 0,
+            "is_elite": true,
+            "summon_quantity": 1,
+            "abilities": [
+                "Highly mobile",
+                "Casts Blade of Death",
+                "Jump and charged attacks can knock enemies down"
+            ]
+        },
+        "Fanged Imp Ashes": {
+            "full_hex_id": "40031F8",
+            "id": 203000,
+            "name": "Fanged Imp Ashes",
+            "summary": "Summons two fanged imp spirits",
+            "description": [
+                "Ashen remains in which spirits yet dwell.",
+                "Use to summon two fanged imp spirits.",
+                "",
+                "These spirits are well suited to causing a disturbance, moving nimbly like pests and hurling magic pots.",
+                "The two imps seem fond of each other's company."
+            ],
+            "fp_cost": 50,
+            "summon_quantity": 2
+        },
+        "Mimic Tear Ashes": {
+            "full_hex_id": "40032898",
+            "id": 207000,
+            "name": "Mimic Tear Ashes",
+            "summary": "Summons mimic tear spirit",
+            "description": [
+                "Legendary ashen remains.",
+                "Use to summon the spirit of a mimic tear.",
+                "Summoning consumes HP rather than FP.",
+                "",
+                "This spirit takes the form of the summoner to fight alongside them, but its mimicry does not extend to imitating the summoner's will.",
+                "Mimic tears are the result of an attempt by the Eternal City to forge a lord."
+            ],
+            "hp_cost": 660,
+            "is_elite": true
+        }
+    }
+}

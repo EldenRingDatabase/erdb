@@ -1,0 +1,198 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Generic Item",
+    "description": "The generic, all-encompassing set of fields used by every item in the game.",
+    "type": "object",
+    "properties": {
+        "full_hex_id": {
+            "description": "Full ID of the item in capital hexadecimal form. IDs differ per affinity or upgrade level.",
+            "type": "string",
+            "pattern": "^[0-9A-F]+$"
+        },
+        "id": {
+            "description": "ID of the item in its individual class. IDs differ per affinity or upgrade level.",
+            "type": "integer",
+            "minimum": 1
+        },
+        "name": {
+            "description": "Name of the item.",
+            "type": "string"
+        },
+        "summary": {
+            "description": "The short description of the item.",
+            "type": "string"
+        },
+        "description": {
+            "description": "Array of lines of the in-game description, each element is separated by a new line. A line may contain multiple sentences, or be empty if in between paragraphs.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minItems": 1
+            }
+        },
+        "is_tradable": {
+            "description": "Specifies whether the item is visible to other players if dropped.",
+            "type": "boolean",
+            "default": true
+        },
+        "price_sold": {
+            "description": "The amount of runes the item is sold for, 0 if not applicabe.",
+            "type": "integer",
+            "default": 0
+        },
+        "max_held": {
+            "description": "The maximum amount of the item that a player can have on them.",
+            "type": "integer",
+            "default": 1
+        },
+        "max_stored": {
+            "description": "The maximum amount of the item that can be stored in the sort chest.",
+            "type": "integer",
+            "default": 600
+        },
+        "locations": {
+            "description": "List of locations in which this item appears.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "$ref": "#/definitions/Location"
+            }
+        },
+        "remarks": {
+            "description": "List of remarks and trivia about this item.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 1
+            }
+        }
+    },
+    "required": [
+        "full_hex_id",
+        "id",
+        "name",
+        "summary",
+        "description",
+        "is_tradable",
+        "price_sold",
+        "max_held",
+        "max_stored",
+        "locations",
+        "remarks"
+    ],
+    "dependencies": {
+        "level_list": {"required": ["level"]},
+        "level": {"required": ["level_list"]}
+    },
+    "definitions": {
+        "Location": {
+            "title": "Location",
+            "description": "Specific information about the location of an item.",
+            "additionalProperties": false,
+            "properties": {
+                "summary": {
+                    "description": "Short, consice summary of the location. To help concatenating with other data, avoid capital letters or periods at the end.",
+                    "type": "string",
+                    "pattern": "^.+(?<!\\.)$",
+                    "minLength": 1
+                },
+                "quantity": {
+                    "description": "Positive integer specifying the amount or a string 'infinite' if the item respawns or can be purchased infinitely.",
+                    "default": 1,
+                    "oneOf": [
+                        {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        {
+                            "type": "string",
+                            "enum": ["infinite"]
+                        }
+                    ]
+                },
+                "location": {
+                    "description": "The specific location in which the item is found, eg. 'Mistwoods'.",
+                    "$ref": "#/definitions/LocationNames"
+                },
+                "region": {
+                    "description": "The generic region in which the item is found, eg. 'Limgrave'.",
+                    "$ref": "#/definitions/RegionNames"
+                },
+                "directions": {
+                    "description": "Exact description on where to find the item if summary cannot be straightfoward enough.",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "price_bought": {
+                    "description": "The amount of Runes the item is bought for at this location, 0 if not applicable.",
+                    "type": "integer",
+                    "default": 0,
+                    "minimum": 0
+                },
+                "currency": {
+                    "description": "The type of currency this item is bought for, if applicable.",
+                    "type": "string",
+                    "default": "Rune",
+                    "enum": ["Rune", "Dragon Heart"]
+                },
+                "requirements": {
+                    "description": "List of requirements which make the item available. Can be full sentences.",
+                    "type": "array",
+                    "default": [],
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                },
+                "blockers": {
+                    "description": "List of situations which cause the item to become unavailable. Can be full sentences.",
+                    "type": "array",
+                    "default": [],
+                    "minItems": 1,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1
+                    }
+                }
+            },
+            "required": [
+                "summary"
+            ]
+        },
+        "RegionNames": {
+            "type": "string",
+            "enum": [
+                "Roundtable Hold",
+                "Limgrave",
+                "Weeping Peninsula",
+                "Liurnia of the Lakes",
+                "Caelid",
+                "Altus Plateau",
+                "Mt. Gelmir",
+                "Dragonbarrow",
+                "Mountaintops of the Giants",
+                "Consecrated Snowfield",
+                "Crumbling Farum Azula",
+                "Siofra River",
+                "Ainsel River",
+                "Deeproot Depths",
+                "Lake of Rot",
+                "Mohgwyn Palace"
+            ]
+        },
+        "LocationNames": {
+            "type": "string",
+            "enum": [
+                "Waypoint Ruins",
+                "Church of Irith",
+                "Moonlight Altar",
+                "Ringleader's Evergaol",
+                "Cathedral of Manus Celes",
+                "Warmaster's Shack",
+                "Volcano Manor"
+            ]
+        }
+    }
+}

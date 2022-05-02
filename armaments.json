@@ -1,0 +1,37 @@
+{
+    "$schema": "./schema/armaments.schema.json",
+    "Armaments": {
+        "Claymore": {
+            "full_hex_id": "40000FA0",
+            "id": 4000,
+            "name": "Claymore",
+            "summary": "TODO",
+            "description": ["TODO"],
+            "is_tradable": false,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 600,
+            "locations": [
+                {
+                    "summary": "TODO"
+                }
+            ],
+            "remarks": [],
+            "class": "Greatsword",
+            "weight": 999,
+            "default_skill": "Ash of War: Lion's Claw",
+            "is_skill_unique": false,
+            "is_upgrade_unique": false,
+            "attack_types": ["Standard", "Pierce"],
+            "sp_consumption_rate": 1.0,
+            "offhand_l1_override": "moveset",
+            "requirements": { "strength": 16, "dexterity": 13 },
+            "passive_effects_innate": {},
+            "moveset": {
+                "1H_R1_1": ["vertical overhead swing"],
+                "1H_R2_1": ["thrust"],
+                "offhand_R1_1": ["todo"]
+            }
+        }
+    }
+}

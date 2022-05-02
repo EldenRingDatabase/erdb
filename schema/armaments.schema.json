@@ -1,0 +1,132 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Armaments",
+    "type": "object",
+    "properties": {
+        "Armaments": {
+            "title": "Armament Map",
+            "additionalProperties": false,
+            "propertyNames": {
+                "$ref": "./enums/armament-names.schema.json"
+            },
+            "patternProperties": {
+                "^.+$": {
+                    "type": "object",
+                    "$ref": "#/definitions/Armament"
+                }
+            }
+        }
+    },
+    "required": ["Armaments"],
+    "definitions": {
+        "Armament": {
+            "title": "Armament",
+            "description": "Schema for Armament items.",
+            "allOf": [{"$ref": "item.schema.json"}],
+            "properties": {
+                "name": {
+                    "#comment": "Override list of possible names to be Armament names only.",
+                    "$ref": "./enums/armament-names.schema.json"
+                },
+                "class": {
+                    "description": "Class of the armament.",
+                    "$ref": "./enums/armament-class-names.schema.json"
+                },
+                "weight": {
+                    "description": "Weight of the armament.",
+                    "type": "number",
+                    "minimum": 0.0
+                },
+                "default_skill": {
+                    "description": "The default Ash of War the weapon comes with.",
+                    "$ref": "./enums/ash-of-war-names.schema.json"
+                },
+                "is_skill_unique": {
+                    "description": "Specifies whether the armament has a set, non-replacable Ash of War.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "is_upgrade_unique": {
+                    "description": "Specifies whether the armament upgrades with somber smithing stones, instead of regular ones.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "attack_types": {
+                    "description": "Attack types the armament can perform, usually two (ex. Standard, Pierce).",
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "items": { "$ref": "#/definitions/AttackTypeNames" }
+                },
+                "sp_consumption_rate": {
+                    "description": "Multiplier used for calculating the effective stamina consumption from the Ash of War base stamina cost.",
+                    "type": "number",
+                    "default": 1.0,
+                    "minimum": 0
+                },
+                "offhand_l1_override": {
+                    "description": "Action override for the weapon when held in the offhand (ex. weapons do regular moveset, shields block, bows are two handed).",
+                    "type": "string",
+                    "enum": ["moveset", "block", "two-handing"],
+                    "default": "moveset"
+                },
+                "requirements": {
+                    "description": "An object of attribute requirements of the armament.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "strength": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
+                        "dexterity": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
+                        "intelligence": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
+                        "faith": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
+                        "arcane": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 }
+                    }
+                },
+                "passive_effects_innate": {
+                    "description": "An object of passive effects of the armament. NOTE: These values are from the standard affinity only, and may be overriden.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "propertyNames": { "$ref": "./enums/effect-names.schema.json" },
+                    "patternProperties": {
+                        "^.+$": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "default": 0
+                        }
+                    }
+                },
+                "moveset": {
+                    "description": "Explanation of moveset based on individual actions. '1H_R1_1', '1H_R2_1' and 'offhand_R1_1' are required.",
+                    "type": "object",
+                    "propertyNames": { "$ref": "./enums/action-names.schema.json" },
+                    "patternProperties": {
+                        "^.+$": {
+                            "description": "Short summary of what is performed in order; lowercase, no sentences.",
+                            "type": "array",
+                            "minItems": 1,
+                            "items": { "type": "string", "pattern": "^[0-9a-z '()]+$" }
+                        }
+                    },
+                    "required": ["1H_R1_1", "1H_R2_1", "offhand_R1_1"]
+                }
+            },
+            "required": [
+                "class",
+                "weight",
+                "default_skill",
+                "is_skill_unique",
+                "is_upgrade_unique",
+                "attack_types",
+                "sp_consumption_rate",
+                "offhand_l1_override",
+                "requirements",
+                "passive_effects_innate",
+                "moveset"
+            ]
+        },
+        "AttackTypeNames": {
+            "type": "string",
+            "enum": ["Standard", "Strike", "Slash", "Pierce"]
+        }
+    }
+}

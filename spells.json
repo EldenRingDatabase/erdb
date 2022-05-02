@@ -1,0 +1,140 @@
+{
+    "$schema": "./schema/spells.schema.json",
+    "Spells": {
+        "Glintstone Pebble": {
+            "full_hex_id": "40000FA0",
+            "id": 4000,
+            "name": "Glintstone Pebble",
+            "summary": "TODO",
+            "description": [
+                "The most basic glintstone sorcery of the Academy of Raya Lucaria.",
+                "",
+                "The glintstone serves as a conduit, launching magical projectiles at foes.",
+                "This sorcery can be cast repeatedly and while in motion. TODO: confirm newlines",
+                "",
+                "This is a universal first step on the journey to true knowledge of sorcery."
+            ],
+            "is_tradable": false,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 600,
+            "locations": [
+                {
+                    "summary": "starting spell for the Astrologer class"
+                },
+                {
+                    "summary": "purchased from Sorceress Sellen",
+                    "region": "Limgrave",
+                    "location": "Waypoint Ruins",
+                    "price_bought": 1000
+                },
+                {
+                    "summary": "purchased from Thops",
+                    "region": "Liurnia of the Lakes",
+                    "location": "Church of Irith",
+                    "price_bought": 1000
+                },
+                {
+                    "summary": "purchased from Twin Maiden Husks",
+                    "region": "Roundtable Hold",
+                    "price_bought": 1000,
+                    "requirements": ["Tophs's Bell Bearing must be given to Twin Maiden Husks."]
+                }
+            ],
+            "remarks": [],
+            "fp_cost": 7,
+            "sp_cost": 20,
+            "sp_cost_extra": 0,
+            "type": "Sorcery",
+            "follow_ups": "Repeated",
+            "is_chargable": false,
+            "is_run_castable": false,
+            "is_roll_castable": false,
+            "is_jump_castable": true,
+            "slots_used": 1,
+            "requirements": { "intelligence": 10 },
+            "attack_data": {
+                "standard": [
+                    {
+                        "attack_id": 40000,
+                        "summary": "projectile",
+                        "motion_values": { "magic": 152 }
+                    }
+                ]
+            }
+        },
+        "Comet": {
+            "full_hex_id": "AA",
+            "id": 9999,
+            "name": "Comet",
+            "summary": "TODO",
+            "description": ["TODO"],
+            "is_tradable": false,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 600,
+            "locations": [
+                {
+                    "summary": "TODO"
+                }
+            ],
+            "remarks": [
+                "AoE spawned from the charged attack is very small."
+            ],
+            "fp_cost": 7,
+            "sp_cost": 20,
+            "sp_cost_extra": 1,
+            "type": "Sorcery",
+            "follow_ups": "Repeated",
+            "is_chargable": true,
+            "is_run_castable": false,
+            "is_roll_castable": false,
+            "is_jump_castable": false,
+            "slots_used": 1,
+            "requirements": { "intelligence": 10 },
+            "attack_data": {
+                "standard": {
+                    "projectile": { "magic": 267 }
+                },
+                "charged": {
+                    "projectile": { "magic": 320 },
+                    "aoe": { "magic": 320 }
+                }
+            }
+        },
+        "Gavel of Haima": {
+            "full_hex_id": "AA",
+            "id": 9999,
+            "name": "Gavel of Haima",
+            "summary": "TODO",
+            "description": ["TODO"],
+            "is_tradable": false,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 600,
+            "locations": [
+                {
+                    "summary": "TODO"
+                }
+            ],
+            "remarks": [],
+            "fp_cost": 7,
+            "sp_cost": 20,
+            "sp_cost_extra": 0,
+            "type": "Sorcery",
+            "follow_ups": "Single",
+            "is_chargable": false,
+            "is_run_castable": false,
+            "is_roll_castable": false,
+            "is_jump_castable": false,
+            "slots_used": 1,
+            "requirements": { "intelligence": 10 },
+            "attack_data": {
+                "standard": {
+                    "hammer": { "magic": 282 },
+                    "aoe": { "magic": 242 }
+                }
+            }
+        }
+    }
+}

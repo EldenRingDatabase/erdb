@@ -1,0 +1,32 @@
+{
+    "$schema": "./schema/talismans.schema.json",
+    "Talismans": {
+        "Companion Jar": {
+            "full_hex_id": "AA",
+            "id": 999,
+            "name": "Companion Jar",
+            "summary": "TODO",
+            "description": ["TODO"],
+            "is_tradable": false,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 600,
+            "locations": [
+                {
+                    "summary": "TODO"
+                }
+            ],
+            "remarks": [],
+            "weight": 999,
+            "effects": [
+                {
+                    "modifier": "potency_pots",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "conflicts": []
+        }
+    }
+}

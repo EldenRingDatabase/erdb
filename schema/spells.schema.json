@@ -1,0 +1,195 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Spells",
+    "type": "object",
+    "properties": {
+        "Spells": {
+            "title": "Spell Map",
+            "additionalProperties": false,
+            "propertyNames": {
+                "$ref": "./enums/spell-names.schema.json"
+            },
+            "patternProperties": {
+                "^.+$": {
+                    "type": "object",
+                    "$ref": "#/definitions/Spell"
+                }
+            }
+        }
+    },
+    "required": ["Spells"],
+    "definitions": {
+        "Spell": {
+            "title": "Spell",
+            "description": "Schema for Spell items.",
+            "allOf": [{"$ref": "item.schema.json"}],
+            "properties": {
+                "name": {
+                    "#comment": "Override list of possible names to be Spell names only.",
+                    "$ref": "./enums/spell-names.schema.json"
+                },
+                "fp_cost": {
+                    "description": "Cost of FP to cast.",
+                    "type": "integer",
+                    "default": 0,
+                    "minimum": 0
+                },
+                "sp_cost": {
+                    "description": "Cost of stamina to cast.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "sp_cost_extra": {
+                    "description": "Additional cost of stamina for a charged attack. This is on top of the regular cost, not the full cost. Must be 0 for non-chargable spells.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "type": {
+                    "description": "Spell type, either Incantation or Sorcery.",
+                    "type": "string",
+                    "enum": ["Incantation", "Sorcery"]
+                },
+                "follow_ups": {
+                    "description": "Defines whether the spell has follow ups or can be cast repeatedly.",
+                    "type": "string",
+                    "enum": ["None", "Single", "Repeated"],
+                    "default": "None"
+                },
+                "is_chargable": {
+                    "description": "Specifies whether the spell can be charged.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "is_roll_castable": {
+                    "description": "Specifies whether the spell can be cast while rolling.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "is_run_castable": {
+                    "description": "Specifies whether the spell can be cast while running.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "is_jump_castable": {
+                    "description": "Specifies whether the spell can be cast while jumping.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "slots_used": {
+                    "description": "The amount of Memory Slots the spell occupies.",
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "requirements": {
+                    "description": "An object of attribute requirements of the spell.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "intelligence": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
+                        "faith": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
+                        "arcane": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 }
+                    }
+                },
+                "attack_data": {
+                    "description": "Specific properties of the moveset based on individual attack types.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "propertyNames": {
+                        "type": "string",
+                        "enum": ["standard", "charged", "mounted", "followup"]
+                    },
+                    "patternProperties": {
+                        "^.+$": {
+                            "description": "Array of all objects describing attacks possible from this specific type.",
+                            "type": "array",
+                            "additionalProperties": false,
+                            "items": { "$ref": "#/definitions/SpellAttackData" }
+                        }
+                    }
+                },
+                "is_tradable": {
+                    "$comment": "Override the default value from the Item schema. Spells are not tradable. TODO: confirm",
+                    "default": false
+                }
+            },
+            "required": [
+                "fp_cost",
+                "sp_cost",
+                "sp_cost_extra",
+                "type",
+                "follow_ups",
+                "is_chargable",
+                "is_roll_castable",
+                "is_run_castable",
+                "is_jump_castable",
+                "slots_used",
+                "requirements",
+                "attack_data"
+            ],
+            "if": {
+                "properties": {
+                    "is_chargable": { "enum": [false] }
+                }
+            },
+            "then": {
+                "properties": {
+                    "sp_cost_extra": { "maximum": 0 },
+                    "attack_data": {
+                        "required": ["standard"],
+                        "properties": { "charged": false }
+                    }
+                }
+            },
+            "else": {
+                "properties": {
+                    "attack_data": {
+                        "required": ["standard", "charged"]
+                    }
+                }
+            }
+        },
+        "SpellAttackData": {
+            "type": "object",
+            "properties": {
+                "attack_id": {
+                    "description": "INTERNAL USE ONLY. Internal attack ID of this action as it appears in the Spell Attack Data spreadsheet. Used for ease of identification when updating information. If, and only if, not present, 'attack_name' should be used instead.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "attack_name": {
+                    "description": "INTERNAL USE ONLY. Name of this action as it appears in the Spell Attack Data spreadsheet. Used for ease of identification when updating information. Names can duplicate, use if, and only if, AtkId is nonexistent.",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "summary": {
+                    "description": "Short description of what part of the spell this data covers, prefably one word (ex. 'projectile 4', 'aoe').",
+                    "type": "string",
+                    "pattern": "^[0-9a-z '()]+$"
+                },
+                "motion_values": {
+                    "description": "Motion values of the specific spell attack.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "physical": {"type": "integer", "minimum": 0, "default": 0 },
+                        "magic": {"type": "integer", "minimum": 0, "default": 0 },
+                        "fire": {"type": "integer", "minimum": 0, "default": 0 },
+                        "lightning": {"type": "integer", "minimum": 0, "default": 0 },
+                        "holy": {"type": "integer", "minimum": 0, "default": 0 }
+                    }
+                }
+            },
+            "oneOf": [
+                {
+                    "required": ["attack_id", "summary", "motion_values"],
+                    "not": { "required": ["attack_name"] }
+                },
+                {
+                    "required": ["attack_name", "summary", "motion_values"],
+                    "not": { "required": ["attack_id"] }
+                }
+            ],
+            "additionalProperties": false
+        }
+    }
+}

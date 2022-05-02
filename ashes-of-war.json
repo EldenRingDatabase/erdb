@@ -1,0 +1,146 @@
+{
+    "$schema": "./schema/ashes-of-war.schema.json",
+    "AshesOfWar": {
+        "Ash of War: Lion's Claw": {
+            "full_hex_id": "40000FA0",
+            "id": 4000,
+            "name": "Ash of War: Lion's Claw",
+            "effective_name": "Lion's Claw",
+            "summary": "TODO",
+            "description": ["TODO"],
+            "is_tradable": false,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 600,
+            "locations": [
+                {
+                    "summary": "todo"
+                }
+            ],
+            "remarks": [],
+            "fp_cost": {},
+            "is_chargable": false,
+            "classes": ["Greatsword"],
+            "base_affinity": "Heavy",
+            "affinities": [
+                "Standard",
+                "Heavy",
+                "Keen",
+                "Quality",
+                "Fire",
+                "Flame Art",
+                "Lightning",
+                "Sacred",
+                "Magic",
+                "Cold",
+                "Poison",
+                "Blood",
+                "Occult"
+            ],
+            "moveset": {},
+            "attack_data": {}
+        },
+        "Ash of War: Spinning Slash": {
+            "full_hex_id": "40000FA0",
+            "id": 4000,
+            "name": "Ash of War: Spinning Slash",
+            "effective_name": "Spinning Slash",
+            "summary": "TODO",
+            "description": ["TODO"],
+            "is_tradable": false,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 600,
+            "locations": [
+                {
+                    "summary": "purchased from Knight Bernahl",
+                    "location": "Warmaster's Shack",
+                    "region": "Limgrave",
+                    "price_bought": 1200,
+                    "blockers": ["Unavailable after joining the Volcano Manor family."]
+                },
+                {
+                    "summary": "purchased from Knight Bernahl",
+                    "location": "Volcano Manor",
+                    "region": "Mt. Gelmir",
+                    "price_bought": 1200,
+                    "requirements": ["Must join the Volcano Manor family."]
+                },
+                {
+                    "summary": "purchased from Twin Maiden Husks",
+                    "region": "Roundtable Hold",
+                    "price_bought": 1200,
+                    "requirements": ["Bernahl's Bell Bearing must be given to Twin Maiden Husks."]
+                }
+            ],
+            "remarks": [
+                "Spin and slash directions differ for heavy and light weapon classes."
+            ],
+            "is_chargable": false,
+            "fp_cost": { "skill_L2_1": 6, "skill_L2_2": 12 },
+            "classes": ["Greatsword"],
+            "base_affinity": "Keen",
+            "affinities": [
+                "Standard",
+                "Heavy",
+                "Keen",
+                "Quality",
+                "Fire",
+                "Flame Art",
+                "Lightning",
+                "Sacred",
+                "Magic",
+                "Cold",
+                "Poison",
+                "Blood",
+                "Occult"
+            ],
+            "moveset": {
+                "skill_L2_1": ["spin into horizontal slash"],
+                "skill_L2_2": ["spin into diagonal slash", "continue spin into horizontal slash"]
+            },
+            "attack_data": {
+                "skill_L2_1": [
+                    {
+                        "attack_id": 300000220,
+                        "class_overrides": [],
+                        "sp_cost_base": 15,
+                        "motion_values": { "physical": 110, "magic": 110, "fire": 110, "lightning": 110, "holy": 110 }
+                    },
+                    {
+                        "attack_id": 300000230,
+                        "class_overrides": [],
+                        "sp_cost_base": 20,
+                        "motion_values": { "physical": 105, "magic": 105, "fire": 105, "lightning": 105, "holy": 105 }
+                    }
+                ],
+                "skill_L2_2": [
+                    {
+                        "attack_id": 300000221,
+                        "class_overrides": [],
+                        "sp_cost_base": 10,
+                        "motion_values": { "physical": 65, "magic": 65, "fire": 65, "lightning": 65, "holy": 65 }
+                    },
+                    {
+                        "attack_id": 300000222,
+                        "class_overrides": [],
+                        "sp_cost_base": 15,
+                        "motion_values": { "physical": 115, "magic": 115, "fire": 115, "lightning": 115, "holy": 115 }
+                    },
+                    {
+                        "attack_id": 300000231,
+                        "class_overrides": [],
+                        "sp_cost_base": 10,
+                        "motion_values": { "physical": 60, "magic": 60, "fire": 60, "lightning": 60, "holy": 60 }
+                    },
+                    {
+                        "attack_id": 300000232,
+                        "class_overrides": [],
+                        "sp_cost_base": 25,
+                        "motion_values": { "physical": 110, "magic": 110, "fire": 110, "lightning": 110, "holy": 110 }
+                    }
+                ]
+            }
+        }
+    }
+}
