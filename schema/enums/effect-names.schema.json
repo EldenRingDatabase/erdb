@@ -2,11 +2,12 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "string",
     "enum": [
-        "hemorrhage",
-        "frostbite",
+        "bleed",
+        "frost",
         "poison",
-        "scarlet_rot",
+        "rot",
         "sleep",
-        "madness"
+        "madness",
+        "death"
     ]
 }
