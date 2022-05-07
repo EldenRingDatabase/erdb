@@ -1,3 +1,5 @@
 .mypy_cache/
 .vs/
 .vscode/
+venv/
+__pycache__/

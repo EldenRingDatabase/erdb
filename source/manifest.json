@@ -1,0 +1,51 @@
+{
+    "$comment": "This file is not used in code, it serves as documentation only but in valid JSON because whynaut.",
+    "spell_attack_data.csv": {
+        "source": "https://docs.google.com/spreadsheets/d/1j4bpTbsnp5Xsgw9TP2xv6d8R4qk0ErpE9r_5LGIDraU/edit#gid=681223203"
+    },
+    "ash_of_war_attack_data.csv": {
+        "source": "https://docs.google.com/spreadsheets/d/1j4bpTbsnp5Xsgw9TP2xv6d8R4qk0ErpE9r_5LGIDraU/edit#gid=362983777",
+        "$comment": "Motion values, base stamina cost"
+    },
+    "EquipWeaponParam.csv": {
+        "source": "Yapped",
+        "$comment": "Weight, requirements, base scalings, base absorption, base damages, reinforce type ID, crit multiplier (says multiplier but is additive), class, atk attribs, buffable, reinforcable, prevent affinity change, allow AoW change, base AoW, stamina consumption %, reinforce rate"
+    },
+    "ReinforceParamWeapon.csv": {
+        "source": "Yapped",
+        "$comment": "Damage %, scaling %, guard absorption %, max reinforcement level, reinforce price rate"
+    },
+    "SwordArtsParam.csv": {
+        "source": "Yapped",
+        "$comment": "FP consumption L2/R1/R2, coupled with EquipParamGem"
+    },
+    "EquipParamGem.csv": {
+        "source": "Yapped",
+        "start_row": 1000,
+        "$comment": "Ash of War default affinity, possible affinities, class compatbilities, coupled with SwordArtsParam."
+    },
+    "EquipParamAccessory.csv": {
+        "source": "Yapped",
+        "$comment": ""
+    },
+    "EquipParamProtector.csv": {
+        "source": "Yapped",
+        "$comment": ""
+    },
+    "EquipParamGoods.csv": {
+        "source": "Yapped",
+        "$comment": ""
+    },
+    "Magic.csv": {
+        "source": "Yapped",
+        "$comment": "Requirements, slot usage, type, is weapon/shield enchantment, usable on horseback, fp/sp consumption regular/charged, consumption loop (can be held), spell category (for item boosts)"
+    },
+    "SpEffectParam.csv": {
+        "source": "Yapped",
+        "$comment": ""
+    },
+    "EquipMtrlSetParam.csv": {
+        "source": "Yapped",
+        "$comment": "Reinforce and purchase recipies: stones, gloveworts, rememberences, crafting materials, etc"
+    }
+}
