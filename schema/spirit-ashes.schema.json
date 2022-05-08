@@ -7,12 +7,12 @@
             "title": "Spirit Ash Map",
             "additionalProperties": false,
             "propertyNames": {
-                "$ref": "#/definitions/SpiritAshNames"
+                "$ref": "spirit-ashes.schema.json#/definitions/SpiritAshNames"
             },
             "patternProperties": {
                 "^.+$": {
                     "type": "object",
-                    "$ref": "#/definitions/SpiritAsh"
+                    "$ref": "spirit-ashes.schema.json#/definitions/SpiritAsh"
                 }
             }
         }
@@ -26,7 +26,7 @@
             "properties": {
                 "name": {
                     "#comment": "Override list of possible names to be Spirit Ash names only.",
-                    "$ref": "#/definitions/SpiritAshNames"
+                    "$ref": "spirit-ashes.schema.json#/definitions/SpiritAshNames"
                 },
                 "fp_cost": {
                     "description": "Cost of FP to summon, 0 if not applicable.",
@@ -55,7 +55,8 @@
                     "description": "Strenghts of the Spirit Ash. Each briefly described with minimum amount of words.",
                     "type": "array",
                     "uniqueItems": true,
-                    "items": { "type": "string", "minLength": 1 }
+                    "items": { "type": "string", "minLength": 0 },
+                    "default": []
                 },
                 "upgrade_material": {
                     "description": "Glovewort the Spirit Ash upgrades with, either 'Grave Glovewort' or 'Ghost Glovewort'.",
@@ -68,7 +69,8 @@
                     "type": "array",
                     "minItems": 10,
                     "maxItems": 10,
-                    "items": { "type": "integer", "minimum": 0 }
+                    "items": { "type": "integer", "minimum": 0 },
+                    "default": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
                 },
                 "is_tradable": {
                     "$comment": "Override the default value from the Item schema. Spirit Ashes are not tradable TODO: confirm.",

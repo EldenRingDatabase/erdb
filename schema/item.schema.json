@@ -9,20 +9,24 @@
             "type": "string",
             "pattern": "^[0-9A-F]+$",
             "minLength": 8,
-            "maxLength": 8
+            "maxLength": 8,
+            "default": ""
         },
         "id": {
             "description": "ID of the item in its individual class. IDs differ per affinity or upgrade level.",
             "type": "integer",
-            "minimum": 1
+            "minimum": 0,
+            "default": 0
         },
         "name": {
             "description": "Name of the item.",
-            "type": "string"
+            "type": "string",
+            "default": ""
         },
         "summary": {
             "description": "The short description of the item.",
-            "type": "string"
+            "type": "string",
+            "default": ""
         },
         "description": {
             "description": "Array of lines of the in-game description, each element is separated by a new line. A line may contain multiple sentences, or be empty if in between paragraphs.",
@@ -30,7 +34,8 @@
             "items": {
                 "type": "string",
                 "minItems": 1
-            }
+            },
+            "default": [""]
         },
         "is_tradable": {
             "description": "Specifies whether the item is visible to other players if dropped.",
@@ -59,15 +64,17 @@
             "items": {
                 "type": "object",
                 "$ref": "#/definitions/Location"
-            }
+            },
+            "default": [{"summary": "not provided"}]
         },
         "remarks": {
             "description": "List of remarks and trivia about this item.",
             "type": "array",
             "items": {
                 "type": "string",
-                "minLength": 1
-            }
+                "minLength": 0
+            },
+            "default": []
         }
     },
     "required": [
@@ -159,9 +166,7 @@
                     }
                 }
             },
-            "required": [
-                "summary"
-            ]
+            "required": ["summary"]
         },
         "RegionNames": {
             "type": "string",

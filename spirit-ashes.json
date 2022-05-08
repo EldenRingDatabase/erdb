@@ -1,337 +1,29 @@
 {
     "$schema": "./schema/spirit-ashes.schema.json",
     "SpiritAshes": {
-        "Black Knife Tiche": {
-            "full_hex_id": "40030D40",
-            "id": 200000,
-            "name": "Black Knife Tiche",
-            "summary": "Summons spirit of Black Knife Tiche",
+        "Albinauric Ashes": {
+            "abilities": [],
             "description": [
-                "Legendary ashen remains.",
-                "Use to summon the spirit of Black Knife Tiche.",
-                "",
-                "Tiche was one of the assassins who, on the night of the plot, imbued her black knife with the Rune of Death and slew Godwyn the Golden. She was the daughter of the Black Knife Ringleader, Alecto, and was killed protecting her mother during their flight from the royal capital."
+                ""
             ],
+            "fp_cost": 53,
+            "full_hex_id": "40033838",
+            "hp_cost": 0,
+            "id": 211000,
             "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
             "locations": [
                 {
-                    "summary": "dropped by Alecto, Black Knife Ringleader",
-                    "location": "Ringleader's Evergaol",
-                    "region": "Liurnia of the Lakes",
-                    "requirements": [
-                        "Dark Moon Ring is required to reach Ringleader's Evergaol."
-                    ]
+                    "summary": "not provided"
                 }
             ],
-            "remarks": [],
-            "fp_cost": 132,
-            "hp_cost": 0,
-            "is_elite": true,
-            "summon_quantity": 1,
-            "abilities": [
-                "Highly mobile",
-                "Casts Blade of Death",
-                "Jump and charged attacks can knock enemies down"
-            ],
-            "rarity": "legendary",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                2000,
-                3200,
-                4400,
-                5600,
-                6800,
-                8000,
-                9200,
-                10400,
-                11600,
-                14000
-            ]
-        },
-        "Fanged Imp Ashes": {
-            "full_hex_id": "400318F8",
-            "id": 203000,
-            "name": "Fanged Imp Ashes",
-            "summary": "Summons two fanged imp spirits",
-            "description": [
-                "Ashen remains in which spirits yet dwell.",
-                "Use to summon two fanged imp spirits.",
-                "",
-                "These spirits are well suited to causing a disturbance, moving nimbly like pests and hurling magic pots.",
-                "The two imps seem fond of each other's company."
-            ],
-            "fp_cost": 50,
-            "summon_quantity": 2,
-            "is_tradable": true,
-            "price_sold": 0,
             "max_held": 1,
             "max_stored": 600,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                520,
-                728,
-                936,
-                1144,
-                1352,
-                1560,
-                1768,
-                1976,
-                2184,
-                2600
-            ]
-        },
-        "Mimic Tear Ashes": {
-            "full_hex_id": "40032898",
-            "id": 207000,
-            "name": "Mimic Tear Ashes",
-            "summary": "Summons mimic tear spirit",
-            "description": [
-                "Legendary ashen remains.",
-                "Use to summon the spirit of a mimic tear.",
-                "Summoning consumes HP rather than FP.",
-                "",
-                "This spirit takes the form of the summoner to fight alongside them, but its mimicry does not extend to imitating the summoner's will.",
-                "Mimic tears are the result of an attempt by the Eternal City to forge a lord."
-            ],
-            "hp_cost": 660,
-            "is_elite": true,
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 0,
-            "rarity": "legendary",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                2000,
-                3200,
-                4400,
-                5600,
-                6800,
-                8000,
-                9200,
-                10400,
-                11600,
-                14000
-            ]
-        },
-        "Banished Knight Oleg": {
-            "full_hex_id": "40031128",
-            "id": 201000,
-            "name": "Banished Knight Oleg",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 100,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1550,
-                2480,
-                3410,
-                4340,
-                5270,
-                6200,
-                7130,
-                8060,
-                8990,
-                10850
-            ]
-        },
-        "Banished Knight Engvall": {
-            "full_hex_id": "40031510",
-            "id": 202000,
-            "name": "Banished Knight Engvall",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 100,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1550,
-                2480,
-                3410,
-                4340,
-                5270,
-                6200,
-                7130,
-                8060,
-                8990,
-                10850
-            ]
-        },
-        "Latenna the Albinauric": {
-            "full_hex_id": "40031CE0",
-            "id": 204000,
-            "name": "Latenna the Albinauric",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 74,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1870,
-                2992,
-                4114,
-                5236,
-                6358,
-                7480,
-                8602,
-                9724,
-                10846,
-                13090
-            ]
-        },
-        "Nomad Ashes": {
-            "full_hex_id": "400320C8",
-            "id": 205000,
-            "name": "Nomad Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 61,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                650,
-                910,
-                1170,
-                1430,
-                1690,
-                1950,
-                2210,
-                2470,
-                2730,
-                3250
-            ]
-        },
-        "Nightmaiden & Swordstress Puppets": {
-            "full_hex_id": "400324B0",
-            "id": 206000,
-            "name": "Nightmaiden & Swordstress Puppets",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 97,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1520,
-                2432,
-                3344,
-                4256,
-                5168,
-                6080,
-                6992,
-                7904,
-                8816,
-                10640
-            ]
-        },
-        "Crystalian Ashes": {
-            "full_hex_id": "40032C80",
-            "id": 208000,
-            "name": "Crystalian Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 101,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                900,
-                1260,
-                1620,
-                1980,
-                2340,
-                2700,
-                3060,
-                3420,
-                3780,
-                4500
-            ]
-        },
-        "Ancestral Follower Ashes": {
-            "full_hex_id": "40033068",
-            "id": 209000,
-            "name": "Ancestral Follower Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 63,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                830,
-                1162,
-                1494,
-                1826,
-                2158,
-                2490,
-                2822,
-                3154,
-                3486,
-                4150
-            ]
-        },
-        "Winged Misbegotten Ashes": {
-            "full_hex_id": "40033450",
-            "id": 210000,
-            "name": "Winged Misbegotten Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 37,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                410,
-                574,
-                738,
-                902,
-                1066,
-                1230,
-                1394,
-                1558,
-                1722,
-                2050
-            ]
-        },
-        "Albinauric Ashes": {
-            "full_hex_id": "40033838",
-            "id": 211000,
             "name": "Albinauric Ashes",
-            "is_tradable": true,
             "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 53,
-            "hp_cost": 0,
             "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
             "upgrade_costs": [
                 930,
                 1302,
@@ -343,1120 +35,69 @@
                 3534,
                 3906,
                 4650
-            ]
+            ],
+            "upgrade_material": "Grave Glovewort"
         },
-        "Skeletal Militiaman Ashes": {
-            "full_hex_id": "40033C20",
-            "id": 212000,
-            "name": "Skeletal Militiaman Ashes",
+        "Ancestral Follower Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 63,
+            "full_hex_id": "40033068",
+            "hp_cost": 0,
+            "id": 209000,
             "is_tradable": true,
-            "price_sold": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 44,
-            "hp_cost": 0,
+            "name": "Ancestral Follower Ashes",
+            "price_sold": 0,
             "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
             "upgrade_costs": [
-                160,
-                224,
-                288,
-                352,
-                416,
-                480,
-                544,
-                608,
-                672,
-                800
-            ]
-        },
-        "Skeletal Bandit Ashes": {
-            "full_hex_id": "40034008",
-            "id": 213000,
-            "name": "Skeletal Bandit Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 22,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                80,
-                112,
-                144,
-                176,
-                208,
-                240,
-                272,
-                304,
-                336,
-                400
-            ]
-        },
-        "Oracle Envoy Ashes": {
-            "full_hex_id": "400343F0",
-            "id": 214000,
-            "name": "Oracle Envoy Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 72,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                760,
-                1064,
-                1368,
-                1672,
-                1976,
-                2280,
-                2584,
-                2888,
-                3192,
-                3800
-            ]
-        },
-        "Putrid Corpse Ashes": {
-            "full_hex_id": "400347D8",
-            "id": 215000,
-            "name": "Putrid Corpse Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 40,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                280,
-                392,
-                504,
-                616,
-                728,
-                840,
-                952,
-                1064,
-                1176,
-                1400
-            ]
-        },
-        "Depraved Perfumer Carmaan": {
-            "full_hex_id": "40034BC0",
-            "id": 216000,
-            "name": "Depraved Perfumer Carmaan",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 124,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1880,
-                3008,
-                4136,
-                5264,
-                6392,
-                7520,
-                8648,
-                9776,
-                10904,
-                13160
-            ]
-        },
-        "Perfumer Tricia": {
-            "full_hex_id": "40034FA8",
-            "id": 217000,
-            "name": "Perfumer Tricia",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 78,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1250,
-                2000,
-                2750,
-                3500,
-                4250,
-                5000,
-                5750,
-                6500,
-                7250,
-                8750
-            ]
-        },
-        "Glintstone Sorcerer Ashes": {
-            "full_hex_id": "40035390",
-            "id": 218000,
-            "name": "Glintstone Sorcerer Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 49,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                510,
-                714,
-                918,
-                1122,
-                1326,
-                1530,
-                1734,
-                1938,
-                2142,
-                2550
-            ]
-        },
-        "Twinsage Sorcerer Ashes": {
-            "full_hex_id": "40035778",
-            "id": 219000,
-            "name": "Twinsage Sorcerer Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 89,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                870,
-                1218,
-                1566,
-                1914,
-                2262,
-                2610,
-                2958,
-                3306,
-                3654,
-                4350
-            ]
-        },
-        "Page Ashes": {
-            "full_hex_id": "40035B60",
-            "id": 220000,
-            "name": "Page Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 81,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                800,
-                1120,
-                1440,
-                1760,
-                2080,
-                2400,
-                2720,
-                3040,
-                3360,
-                4000
-            ]
-        },
-        "Battlemage Hugues": {
-            "full_hex_id": "40035F48",
-            "id": 221000,
-            "name": "Battlemage Hugues",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 122,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1860,
-                2976,
-                4092,
-                5208,
-                6324,
-                7440,
-                8556,
-                9672,
-                10788,
-                13020
-            ]
-        },
-        "Clayman Ashes": {
-            "full_hex_id": "40036330",
-            "id": 222000,
-            "name": "Clayman Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 77,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                790,
-                1106,
-                1422,
-                1738,
-                2054,
-                2370,
-                2686,
-                3002,
-                3318,
-                3950
-            ]
-        },
-        "Cleanrot Knight Finlay": {
-            "full_hex_id": "40036718",
-            "id": 223000,
-            "name": "Cleanrot Knight Finlay",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 127,
-            "hp_cost": 0,
-            "rarity": "legendary",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1960,
-                3136,
-                4312,
-                5488,
-                6664,
-                7840,
-                9016,
-                10192,
-                11368,
-                13720
-            ]
-        },
-        "Kindred of Rot Ashes": {
-            "full_hex_id": "40036B00",
-            "id": 224000,
-            "name": "Kindred of Rot Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 73,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                770,
-                1078,
-                1386,
-                1694,
-                2002,
-                2310,
-                2618,
-                2926,
-                3234,
-                3850
-            ]
-        },
-        "Marionette Soldier Ashes": {
-            "full_hex_id": "40036EE8",
-            "id": 225000,
-            "name": "Marionette Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 67,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                710,
-                994,
-                1278,
-                1562,
-                1846,
-                2130,
-                2414,
-                2698,
-                2982,
-                3550
-            ]
-        },
-        "Avionette Soldier Ashes": {
-            "full_hex_id": "400372D0",
-            "id": 226000,
-            "name": "Avionette Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 67,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                710,
-                994,
-                1278,
-                1562,
-                1846,
-                2130,
-                2414,
-                2698,
-                2982,
-                3550
-            ]
-        },
-        "Fire Monk Ashes": {
-            "full_hex_id": "400376B8",
-            "id": 227000,
-            "name": "Fire Monk Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 85,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                820,
-                1148,
-                1476,
-                1804,
-                2132,
-                2460,
-                2788,
-                3116,
-                3444,
-                4100
-            ]
-        },
-        "Blackflame Monk Amon": {
-            "full_hex_id": "40037AA0",
-            "id": 228000,
-            "name": "Blackflame Monk Amon",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 115,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1830,
-                2928,
-                4026,
-                5124,
-                6222,
-                7320,
-                8418,
-                9516,
-                10614,
-                12810
-            ]
-        },
-        "Man-Serpent Ashes": {
-            "full_hex_id": "40037E88",
-            "id": 229000,
-            "name": "Man-Serpent Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 62,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                660,
-                924,
-                1188,
-                1452,
-                1716,
-                1980,
-                2244,
-                2508,
-                2772,
-                3300
-            ]
-        },
-        "Azula Beastman Ashes": {
-            "full_hex_id": "40038270",
-            "id": 230000,
-            "name": "Azula Beastman Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 102,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                910,
-                1274,
-                1638,
-                2002,
-                2366,
-                2730,
-                3094,
-                3458,
-                3822,
-                4550
-            ]
-        },
-        "Kaiden Sellsword Ashes": {
-            "full_hex_id": "40038658",
-            "id": 231000,
-            "name": "Kaiden Sellsword Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 88,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                850,
-                1190,
-                1530,
-                1870,
-                2210,
-                2550,
-                2890,
-                3230,
-                3570,
-                4250
-            ]
-        },
-        "Lone Wolf Ashes": {
-            "full_hex_id": "40038A40",
-            "id": 232000,
-            "name": "Lone Wolf Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 55,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                615,
-                861,
-                1107,
-                1353,
-                1599,
-                1845,
-                2091,
-                2337,
-                2583,
-                3075
-            ]
-        },
-        "Giant Rat Ashes": {
-            "full_hex_id": "40038E28",
-            "id": 233000,
-            "name": "Giant Rat Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 0,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
-            ]
-        },
-        "Demi-Human Ashes": {
-            "full_hex_id": "40039210",
-            "id": 234000,
-            "name": "Demi-Human Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 69,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                725,
-                1015,
-                1305,
-                1595,
-                1885,
-                2175,
-                2465,
-                2755,
-                3045,
-                3625
-            ]
-        },
-        "Rotten Stray Ashes": {
-            "full_hex_id": "400395F8",
-            "id": 235000,
-            "name": "Rotten Stray Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 35,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                120,
-                168,
-                216,
-                264,
-                312,
-                360,
-                408,
-                456,
-                504,
-                600
-            ]
-        },
-        "Spirit Jellyfish Ashes": {
-            "full_hex_id": "400399E0",
-            "id": 236000,
-            "name": "Spirit Jellyfish Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 31,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                360,
-                504,
-                648,
-                792,
-                936,
-                1080,
-                1224,
-                1368,
-                1512,
-                1800
-            ]
-        },
-        "Warhawk Ashes": {
-            "full_hex_id": "40039DC8",
-            "id": 237000,
-            "name": "Warhawk Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 52,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                580,
-                812,
-                1044,
-                1276,
-                1508,
-                1740,
-                1972,
-                2204,
-                2436,
-                2900
-            ]
-        },
-        "Stormhawk Deenh": {
-            "full_hex_id": "4003A1B0",
-            "id": 238000,
-            "name": "Stormhawk Deenh",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 47,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1000,
-                1600,
-                2200,
-                2800,
-                3400,
-                4000,
-                4600,
-                5200,
-                5800,
-                7000
-            ]
-        },
-        "Bloodhound Knight Floh": {
-            "full_hex_id": "4003A598",
-            "id": 239000,
-            "name": "Bloodhound Knight Floh",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 95,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1480,
-                2368,
-                3256,
-                4144,
-                5032,
-                5920,
-                6808,
-                7696,
-                8584,
-                10360
-            ]
-        },
-        "Wandering Noble Ashes": {
-            "full_hex_id": "4003A980",
-            "id": 240000,
-            "name": "Wandering Noble Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 28,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                135,
-                189,
-                243,
-                297,
-                351,
-                405,
-                459,
-                513,
-                567,
-                675
-            ]
-        },
-        "Noble Sorcerer Ashes": {
-            "full_hex_id": "4003AD68",
-            "id": 241000,
-            "name": "Noble Sorcerer Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 11,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                40,
-                56,
-                72,
-                88,
-                104,
-                120,
-                136,
-                152,
-                168,
-                200
-            ]
-        },
-        "Vulgar Militia Ashes": {
-            "full_hex_id": "4003B150",
-            "id": 242000,
-            "name": "Vulgar Militia Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 70,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                735,
-                1029,
-                1323,
-                1617,
-                1911,
-                2205,
-                2499,
-                2793,
-                3087,
-                3675
-            ]
-        },
-        "Mad Pumpkin Head Ashes": {
-            "full_hex_id": "4003B538",
-            "id": 243000,
-            "name": "Mad Pumpkin Head Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 110,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                950,
-                1330,
-                1710,
-                2090,
-                2470,
-                2850,
-                3230,
-                3610,
-                3990,
-                4750
-            ]
-        },
-        "Land Squirt Ashes": {
-            "full_hex_id": "4003B920",
-            "id": 244000,
-            "name": "Land Squirt Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 0,
-            "hp_cost": 240,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                385,
-                539,
-                693,
-                847,
-                1001,
-                1155,
-                1309,
-                1463,
-                1617,
-                1925
-            ]
-        },
-        "Miranda Sprout Ashes": {
-            "full_hex_id": "4003BD08",
-            "id": 245000,
-            "name": "Miranda Sprout Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 0,
-            "hp_cost": 185,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                435,
-                609,
-                783,
-                957,
-                1131,
-                1305,
-                1479,
-                1653,
-                1827,
-                2175
-            ]
-        },
-        "Soldjars of Fortune Ashes": {
-            "full_hex_id": "4003C0F0",
-            "id": 246000,
-            "name": "Soldjars of Fortune Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 0,
-            "hp_cost": 135,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                415,
-                581,
-                747,
-                913,
-                1079,
-                1245,
-                1411,
-                1577,
-                1743,
-                2075
-            ]
-        },
-        "Omenkiller Rollo": {
-            "full_hex_id": "4003C4D8",
-            "id": 247000,
-            "name": "Omenkiller Rollo",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 113,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1810,
-                2896,
-                3982,
-                5068,
-                6154,
-                7240,
-                8326,
-                9412,
-                10498,
-                12670
-            ]
-        },
-        "Greatshield Soldier Ashes": {
-            "full_hex_id": "4003C8C0",
-            "id": 248000,
-            "name": "Greatshield Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 74,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                255,
-                357,
-                459,
-                561,
-                663,
-                765,
-                867,
-                969,
-                1071,
-                1275
-            ]
-        },
-        "Archer Ashes": {
-            "full_hex_id": "4003CCA8",
-            "id": 249000,
-            "name": "Archer Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 57,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                235,
-                329,
-                423,
-                517,
-                611,
-                705,
-                799,
-                893,
-                987,
-                1175
-            ]
-        },
-        "Godrick Soldier Ashes": {
-            "full_hex_id": "4003D090",
-            "id": 250000,
-            "name": "Godrick Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 54,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                600,
-                840,
-                1080,
-                1320,
-                1560,
-                1800,
-                2040,
-                2280,
-                2520,
-                3000
-            ]
-        },
-        "Raya Lucaria Soldier Ashes": {
-            "full_hex_id": "4003D478",
-            "id": 251000,
-            "name": "Raya Lucaria Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 59,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                635,
-                889,
-                1143,
-                1397,
-                1651,
-                1905,
-                2159,
-                2413,
-                2667,
-                3175
-            ]
-        },
-        "Leyndell Soldier Ashes": {
-            "full_hex_id": "4003D860",
-            "id": 252000,
-            "name": "Leyndell Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 64,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                670,
-                938,
-                1206,
-                1474,
-                1742,
-                2010,
-                2278,
-                2546,
-                2814,
-                3350
-            ]
-        },
-        "Radahn Soldier Ashes": {
-            "full_hex_id": "4003DC48",
-            "id": 253000,
-            "name": "Radahn Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 71,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                740,
-                1036,
-                1332,
-                1628,
-                1924,
-                2220,
-                2516,
-                2812,
-                3108,
-                3700
-            ]
-        },
-        "Mausoleum Soldier Ashes": {
-            "full_hex_id": "4003E030",
-            "id": 254000,
-            "name": "Mausoleum Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 75,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                785,
-                1099,
-                1413,
-                1727,
-                2041,
-                2355,
-                2669,
-                2983,
-                3297,
-                3925
-            ]
-        },
-        "Haligtree Soldier Ashes": {
-            "full_hex_id": "4003E418",
-            "id": 255000,
-            "name": "Haligtree Soldier Ashes",
-            "is_tradable": true,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "fp_cost": 66,
-            "hp_cost": 0,
-            "rarity": "common",
-            "upgrade_material": "Grave Glovewort",
-            "upgrade_costs": [
-                700,
-                980,
-                1260,
-                1540,
-                1820,
-                2100,
-                2380,
-                2660,
-                2940,
-                3500
-            ]
+                830,
+                1162,
+                1494,
+                1826,
+                2158,
+                2490,
+                2822,
+                3154,
+                3486,
+                4150
+            ],
+            "upgrade_material": "Grave Glovewort"
         },
         "Ancient Dragon Knight Kristoff": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 108,
             "full_hex_id": "4003E800",
+            "hp_cost": 0,
             "id": 256000,
-            "name": "Ancient Dragon Knight Kristoff",
             "is_tradable": true,
-            "price_sold": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 108,
-            "hp_cost": 0,
+            "name": "Ancient Dragon Knight Kristoff",
+            "price_sold": 0,
             "rarity": "legendary",
-            "upgrade_material": "Ghost Glovewort",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
             "upgrade_costs": [
                 1770,
                 2832,
@@ -1468,145 +109,562 @@
                 9204,
                 10266,
                 12390
-            ]
+            ],
+            "upgrade_material": "Ghost Glovewort"
         },
-        "Redmane Knight Ogha": {
-            "full_hex_id": "4003EBE8",
-            "id": 257000,
-            "name": "Redmane Knight Ogha",
+        "Archer Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 57,
+            "full_hex_id": "4003CCA8",
+            "hp_cost": 0,
+            "id": 249000,
             "is_tradable": true,
-            "price_sold": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 106,
+            "name": "Archer Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                235,
+                329,
+                423,
+                517,
+                611,
+                705,
+                799,
+                893,
+                987,
+                1175
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Avionette Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 67,
+            "full_hex_id": "400372D0",
             "hp_cost": 0,
+            "id": 226000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Avionette Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                710,
+                994,
+                1278,
+                1562,
+                1846,
+                2130,
+                2414,
+                2698,
+                2982,
+                3550
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Azula Beastman Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 102,
+            "full_hex_id": "40038270",
+            "hp_cost": 0,
+            "id": 230000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Azula Beastman Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                910,
+                1274,
+                1638,
+                2002,
+                2366,
+                2730,
+                3094,
+                3458,
+                3822,
+                4550
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Banished Knight Engvall": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 100,
+            "full_hex_id": "40031510",
+            "hp_cost": 0,
+            "id": 202000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Banished Knight Engvall",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1550,
+                2480,
+                3410,
+                4340,
+                5270,
+                6200,
+                7130,
+                8060,
+                8990,
+                10850
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Banished Knight Oleg": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 100,
+            "full_hex_id": "40031128",
+            "hp_cost": 0,
+            "id": 201000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Banished Knight Oleg",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1550,
+                2480,
+                3410,
+                4340,
+                5270,
+                6200,
+                7130,
+                8060,
+                8990,
+                10850
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Battlemage Hugues": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 122,
+            "full_hex_id": "40035F48",
+            "hp_cost": 0,
+            "id": 221000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Battlemage Hugues",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1860,
+                2976,
+                4092,
+                5208,
+                6324,
+                7440,
+                8556,
+                9672,
+                10788,
+                13020
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Black Knife Tiche": {
+            "abilities": [
+                "Highly mobile",
+                "Casts Blade of Death",
+                "Jump and charged attacks can knock enemies down"
+            ],
+            "description": [
+                "Legendary ashen remains.",
+                "Use to summon the spirit of Black Knife Tiche.",
+                "",
+                "Tiche was one of the assassins who, on the night of the plot, imbued her black knife with the Rune of Death and slew Godwyn the Golden. She was the daughter of the Black Knife Ringleader, Alecto, and was killed protecting her mother during their flight from the royal capital."
+            ],
+            "fp_cost": 132,
+            "full_hex_id": "40030D40",
+            "hp_cost": 0,
+            "id": 200000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "location": "Ringleader's Evergaol",
+                    "region": "Liurnia of the Lakes",
+                    "requirements": [
+                        "Dark Moon Ring is required to reach Ringleader's Evergaol."
+                    ],
+                    "summary": "dropped by Alecto, Black Knife Ringleader"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Black Knife Tiche",
+            "price_sold": 0,
             "rarity": "legendary",
-            "upgrade_material": "Ghost Glovewort",
+            "remarks": [],
+            "summary": "Summons spirit of Black Knife Tiche",
+            "summon_quantity": 1,
             "upgrade_costs": [
-                1750,
-                2800,
-                3850,
-                4900,
-                5950,
-                7000,
-                8050,
-                9100,
-                10150,
-                12250
-            ]
+                2000,
+                3200,
+                4400,
+                5600,
+                6800,
+                8000,
+                9200,
+                10400,
+                11600,
+                14000
+            ],
+            "upgrade_material": "Ghost Glovewort"
         },
-        "Lhutel the Headless": {
-            "full_hex_id": "4003EFD0",
-            "id": 258000,
-            "name": "Lhutel the Headless",
+        "Blackflame Monk Amon": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 115,
+            "full_hex_id": "40037AA0",
+            "hp_cost": 0,
+            "id": 228000,
             "is_tradable": true,
-            "price_sold": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 104,
+            "name": "Blackflame Monk Amon",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1830,
+                2928,
+                4026,
+                5124,
+                6222,
+                7320,
+                8418,
+                9516,
+                10614,
+                12810
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Bloodhound Knight Floh": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 95,
+            "full_hex_id": "4003A598",
             "hp_cost": 0,
+            "id": 239000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Bloodhound Knight Floh",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1480,
+                2368,
+                3256,
+                4144,
+                5032,
+                5920,
+                6808,
+                7696,
+                8584,
+                10360
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Clayman Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 77,
+            "full_hex_id": "40036330",
+            "hp_cost": 0,
+            "id": 222000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Clayman Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                790,
+                1106,
+                1422,
+                1738,
+                2054,
+                2370,
+                2686,
+                3002,
+                3318,
+                3950
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Cleanrot Knight Finlay": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 127,
+            "full_hex_id": "40036718",
+            "hp_cost": 0,
+            "id": 223000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Cleanrot Knight Finlay",
+            "price_sold": 0,
             "rarity": "legendary",
-            "upgrade_material": "Ghost Glovewort",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
             "upgrade_costs": [
-                1720,
-                2752,
-                3784,
-                4816,
-                5848,
-                6880,
-                7912,
-                8944,
-                9976,
-                12040
-            ]
+                1960,
+                3136,
+                4312,
+                5488,
+                6664,
+                7840,
+                9016,
+                10192,
+                11368,
+                13720
+            ],
+            "upgrade_material": "Ghost Glovewort"
         },
-        "Nepheli Loux Puppet": {
-            "full_hex_id": "4003F3B8",
-            "id": 259000,
-            "name": "Nepheli Loux Puppet",
+        "Crystalian Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 101,
+            "full_hex_id": "40032C80",
+            "hp_cost": 0,
+            "id": 208000,
             "is_tradable": true,
-            "price_sold": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 90,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1450,
-                2320,
-                3190,
-                4060,
-                4930,
-                5800,
-                6670,
-                7540,
-                8410,
-                10150
-            ]
-        },
-        "Dung Eater Puppet": {
-            "full_hex_id": "4003F7A0",
-            "id": 260000,
-            "name": "Dung Eater Puppet",
-            "is_tradable": true,
+            "name": "Crystalian Ashes",
             "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                900,
+                1260,
+                1620,
+                1980,
+                2340,
+                2700,
+                3060,
+                3420,
+                3780,
+                4500
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Demi-Human Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 69,
+            "full_hex_id": "40039210",
+            "hp_cost": 0,
+            "id": 234000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 118,
-            "hp_cost": 0,
-            "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
-            "upgrade_costs": [
-                1850,
-                2960,
-                4070,
-                5180,
-                6290,
-                7400,
-                8510,
-                9620,
-                10730,
-                12950
-            ]
-        },
-        "Finger Maiden Therolina Puppet": {
-            "full_hex_id": "4003FB88",
-            "id": 261000,
-            "name": "Finger Maiden Therolina Puppet",
-            "is_tradable": true,
+            "name": "Demi-Human Ashes",
             "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                725,
+                1015,
+                1305,
+                1595,
+                1885,
+                2175,
+                2465,
+                2755,
+                3045,
+                3625
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Depraved Perfumer Carmaan": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 124,
+            "full_hex_id": "40034BC0",
+            "hp_cost": 0,
+            "id": 216000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 82,
-            "hp_cost": 0,
+            "name": "Depraved Perfumer Carmaan",
+            "price_sold": 0,
             "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
             "upgrade_costs": [
-                1280,
-                2048,
-                2816,
-                3584,
-                4352,
-                5120,
-                5888,
-                6656,
-                7424,
-                8960
-            ]
+                1880,
+                3008,
+                4136,
+                5264,
+                6392,
+                7520,
+                8648,
+                9776,
+                10904,
+                13160
+            ],
+            "upgrade_material": "Ghost Glovewort"
         },
         "Dolores the Sleeping Arrow Puppet": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 87,
             "full_hex_id": "4003FF70",
+            "hp_cost": 0,
             "id": 262000,
-            "name": "Dolores the Sleeping Arrow Puppet",
             "is_tradable": true,
-            "price_sold": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 87,
-            "hp_cost": 0,
+            "name": "Dolores the Sleeping Arrow Puppet",
+            "price_sold": 0,
             "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
             "upgrade_costs": [
                 1430,
                 2288,
@@ -1618,20 +676,369 @@
                 7436,
                 8294,
                 10010
-            ]
+            ],
+            "upgrade_material": "Ghost Glovewort"
         },
-        "Jarwight Puppet": {
-            "full_hex_id": "40040358",
-            "id": 263000,
-            "name": "Jarwight Puppet",
+        "Dung Eater Puppet": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 118,
+            "full_hex_id": "4003F7A0",
+            "hp_cost": 0,
+            "id": 260000,
             "is_tradable": true,
-            "price_sold": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
             "max_held": 1,
             "max_stored": 600,
-            "fp_cost": 60,
-            "hp_cost": 0,
+            "name": "Dung Eater Puppet",
+            "price_sold": 0,
             "rarity": "rare",
-            "upgrade_material": "Ghost Glovewort",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1850,
+                2960,
+                4070,
+                5180,
+                6290,
+                7400,
+                8510,
+                9620,
+                10730,
+                12950
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Fanged Imp Ashes": {
+            "abilities": [],
+            "description": [
+                "Ashen remains in which spirits yet dwell.",
+                "Use to summon two fanged imp spirits.",
+                "",
+                "These spirits are well suited to causing a disturbance, moving nimbly like pests and hurling magic pots.",
+                "The two imps seem fond of each other's company."
+            ],
+            "fp_cost": 50,
+            "full_hex_id": "400318F8",
+            "hp_cost": 0,
+            "id": 203000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Fanged Imp Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "Summons two fanged imp spirits",
+            "summon_quantity": 2,
+            "upgrade_costs": [
+                520,
+                728,
+                936,
+                1144,
+                1352,
+                1560,
+                1768,
+                1976,
+                2184,
+                2600
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Finger Maiden Therolina Puppet": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 82,
+            "full_hex_id": "4003FB88",
+            "hp_cost": 0,
+            "id": 261000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Finger Maiden Therolina Puppet",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1280,
+                2048,
+                2816,
+                3584,
+                4352,
+                5120,
+                5888,
+                6656,
+                7424,
+                8960
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Fire Monk Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 85,
+            "full_hex_id": "400376B8",
+            "hp_cost": 0,
+            "id": 227000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Fire Monk Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                820,
+                1148,
+                1476,
+                1804,
+                2132,
+                2460,
+                2788,
+                3116,
+                3444,
+                4100
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Giant Rat Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 0,
+            "full_hex_id": "40038E28",
+            "hp_cost": 0,
+            "id": 233000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Giant Rat Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Glintstone Sorcerer Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 49,
+            "full_hex_id": "40035390",
+            "hp_cost": 0,
+            "id": 218000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Glintstone Sorcerer Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                510,
+                714,
+                918,
+                1122,
+                1326,
+                1530,
+                1734,
+                1938,
+                2142,
+                2550
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Godrick Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 54,
+            "full_hex_id": "4003D090",
+            "hp_cost": 0,
+            "id": 250000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Godrick Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                600,
+                840,
+                1080,
+                1320,
+                1560,
+                1800,
+                2040,
+                2280,
+                2520,
+                3000
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Greatshield Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 74,
+            "full_hex_id": "4003C8C0",
+            "hp_cost": 0,
+            "id": 248000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Greatshield Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                255,
+                357,
+                459,
+                561,
+                663,
+                765,
+                867,
+                969,
+                1071,
+                1275
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Haligtree Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 66,
+            "full_hex_id": "4003E418",
+            "hp_cost": 0,
+            "id": 255000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Haligtree Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                700,
+                980,
+                1260,
+                1540,
+                1820,
+                2100,
+                2380,
+                2660,
+                2940,
+                3500
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Jarwight Puppet": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 60,
+            "full_hex_id": "40040358",
+            "hp_cost": 0,
+            "id": 263000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Jarwight Puppet",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
             "upgrade_costs": [
                 1040,
                 1664,
@@ -1643,7 +1050,1345 @@
                 5408,
                 6032,
                 7280
-            ]
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Kaiden Sellsword Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 88,
+            "full_hex_id": "40038658",
+            "hp_cost": 0,
+            "id": 231000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Kaiden Sellsword Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                850,
+                1190,
+                1530,
+                1870,
+                2210,
+                2550,
+                2890,
+                3230,
+                3570,
+                4250
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Kindred of Rot Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 73,
+            "full_hex_id": "40036B00",
+            "hp_cost": 0,
+            "id": 224000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Kindred of Rot Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                770,
+                1078,
+                1386,
+                1694,
+                2002,
+                2310,
+                2618,
+                2926,
+                3234,
+                3850
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Land Squirt Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 0,
+            "full_hex_id": "4003B920",
+            "hp_cost": 240,
+            "id": 244000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Land Squirt Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                385,
+                539,
+                693,
+                847,
+                1001,
+                1155,
+                1309,
+                1463,
+                1617,
+                1925
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Latenna the Albinauric": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 74,
+            "full_hex_id": "40031CE0",
+            "hp_cost": 0,
+            "id": 204000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Latenna the Albinauric",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1870,
+                2992,
+                4114,
+                5236,
+                6358,
+                7480,
+                8602,
+                9724,
+                10846,
+                13090
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Leyndell Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 64,
+            "full_hex_id": "4003D860",
+            "hp_cost": 0,
+            "id": 252000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Leyndell Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                670,
+                938,
+                1206,
+                1474,
+                1742,
+                2010,
+                2278,
+                2546,
+                2814,
+                3350
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Lhutel the Headless": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 104,
+            "full_hex_id": "4003EFD0",
+            "hp_cost": 0,
+            "id": 258000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Lhutel the Headless",
+            "price_sold": 0,
+            "rarity": "legendary",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1720,
+                2752,
+                3784,
+                4816,
+                5848,
+                6880,
+                7912,
+                8944,
+                9976,
+                12040
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Lone Wolf Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 55,
+            "full_hex_id": "40038A40",
+            "hp_cost": 0,
+            "id": 232000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Lone Wolf Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                615,
+                861,
+                1107,
+                1353,
+                1599,
+                1845,
+                2091,
+                2337,
+                2583,
+                3075
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Mad Pumpkin Head Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 110,
+            "full_hex_id": "4003B538",
+            "hp_cost": 0,
+            "id": 243000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Mad Pumpkin Head Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                950,
+                1330,
+                1710,
+                2090,
+                2470,
+                2850,
+                3230,
+                3610,
+                3990,
+                4750
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Man-Serpent Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 62,
+            "full_hex_id": "40037E88",
+            "hp_cost": 0,
+            "id": 229000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Man-Serpent Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                660,
+                924,
+                1188,
+                1452,
+                1716,
+                1980,
+                2244,
+                2508,
+                2772,
+                3300
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Marionette Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 67,
+            "full_hex_id": "40036EE8",
+            "hp_cost": 0,
+            "id": 225000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Marionette Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                710,
+                994,
+                1278,
+                1562,
+                1846,
+                2130,
+                2414,
+                2698,
+                2982,
+                3550
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Mausoleum Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 75,
+            "full_hex_id": "4003E030",
+            "hp_cost": 0,
+            "id": 254000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Mausoleum Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                785,
+                1099,
+                1413,
+                1727,
+                2041,
+                2355,
+                2669,
+                2983,
+                3297,
+                3925
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Mimic Tear Ashes": {
+            "abilities": [],
+            "description": [
+                "Legendary ashen remains.",
+                "Use to summon the spirit of a mimic tear.",
+                "Summoning consumes HP rather than FP.",
+                "",
+                "This spirit takes the form of the summoner to fight alongside them, but its mimicry does not extend to imitating the summoner's will.",
+                "Mimic tears are the result of an attempt by the Eternal City to forge a lord."
+            ],
+            "fp_cost": 0,
+            "full_hex_id": "40032898",
+            "hp_cost": 660,
+            "id": 207000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Mimic Tear Ashes",
+            "price_sold": 0,
+            "rarity": "legendary",
+            "remarks": [],
+            "summary": "Summons mimic tear spirit",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                2000,
+                3200,
+                4400,
+                5600,
+                6800,
+                8000,
+                9200,
+                10400,
+                11600,
+                14000
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Miranda Sprout Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 0,
+            "full_hex_id": "4003BD08",
+            "hp_cost": 185,
+            "id": 245000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Miranda Sprout Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                435,
+                609,
+                783,
+                957,
+                1131,
+                1305,
+                1479,
+                1653,
+                1827,
+                2175
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Nepheli Loux Puppet": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 90,
+            "full_hex_id": "4003F3B8",
+            "hp_cost": 0,
+            "id": 259000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Nepheli Loux Puppet",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1450,
+                2320,
+                3190,
+                4060,
+                4930,
+                5800,
+                6670,
+                7540,
+                8410,
+                10150
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Nightmaiden & Swordstress Puppets": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 97,
+            "full_hex_id": "400324B0",
+            "hp_cost": 0,
+            "id": 206000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Nightmaiden & Swordstress Puppets",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1520,
+                2432,
+                3344,
+                4256,
+                5168,
+                6080,
+                6992,
+                7904,
+                8816,
+                10640
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Noble Sorcerer Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 11,
+            "full_hex_id": "4003AD68",
+            "hp_cost": 0,
+            "id": 241000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Noble Sorcerer Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                40,
+                56,
+                72,
+                88,
+                104,
+                120,
+                136,
+                152,
+                168,
+                200
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Nomad Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 61,
+            "full_hex_id": "400320C8",
+            "hp_cost": 0,
+            "id": 205000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Nomad Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                650,
+                910,
+                1170,
+                1430,
+                1690,
+                1950,
+                2210,
+                2470,
+                2730,
+                3250
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Omenkiller Rollo": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 113,
+            "full_hex_id": "4003C4D8",
+            "hp_cost": 0,
+            "id": 247000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Omenkiller Rollo",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1810,
+                2896,
+                3982,
+                5068,
+                6154,
+                7240,
+                8326,
+                9412,
+                10498,
+                12670
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Oracle Envoy Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 72,
+            "full_hex_id": "400343F0",
+            "hp_cost": 0,
+            "id": 214000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Oracle Envoy Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                760,
+                1064,
+                1368,
+                1672,
+                1976,
+                2280,
+                2584,
+                2888,
+                3192,
+                3800
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Page Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 81,
+            "full_hex_id": "40035B60",
+            "hp_cost": 0,
+            "id": 220000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Page Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                800,
+                1120,
+                1440,
+                1760,
+                2080,
+                2400,
+                2720,
+                3040,
+                3360,
+                4000
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Perfumer Tricia": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 78,
+            "full_hex_id": "40034FA8",
+            "hp_cost": 0,
+            "id": 217000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Perfumer Tricia",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1250,
+                2000,
+                2750,
+                3500,
+                4250,
+                5000,
+                5750,
+                6500,
+                7250,
+                8750
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Putrid Corpse Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 40,
+            "full_hex_id": "400347D8",
+            "hp_cost": 0,
+            "id": 215000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Putrid Corpse Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                280,
+                392,
+                504,
+                616,
+                728,
+                840,
+                952,
+                1064,
+                1176,
+                1400
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Radahn Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 71,
+            "full_hex_id": "4003DC48",
+            "hp_cost": 0,
+            "id": 253000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Radahn Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                740,
+                1036,
+                1332,
+                1628,
+                1924,
+                2220,
+                2516,
+                2812,
+                3108,
+                3700
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Raya Lucaria Soldier Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 59,
+            "full_hex_id": "4003D478",
+            "hp_cost": 0,
+            "id": 251000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Raya Lucaria Soldier Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                635,
+                889,
+                1143,
+                1397,
+                1651,
+                1905,
+                2159,
+                2413,
+                2667,
+                3175
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Redmane Knight Ogha": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 106,
+            "full_hex_id": "4003EBE8",
+            "hp_cost": 0,
+            "id": 257000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Redmane Knight Ogha",
+            "price_sold": 0,
+            "rarity": "legendary",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1750,
+                2800,
+                3850,
+                4900,
+                5950,
+                7000,
+                8050,
+                9100,
+                10150,
+                12250
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Rotten Stray Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 35,
+            "full_hex_id": "400395F8",
+            "hp_cost": 0,
+            "id": 235000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Rotten Stray Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                120,
+                168,
+                216,
+                264,
+                312,
+                360,
+                408,
+                456,
+                504,
+                600
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Skeletal Bandit Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 22,
+            "full_hex_id": "40034008",
+            "hp_cost": 0,
+            "id": 213000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Skeletal Bandit Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                80,
+                112,
+                144,
+                176,
+                208,
+                240,
+                272,
+                304,
+                336,
+                400
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Skeletal Militiaman Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 44,
+            "full_hex_id": "40033C20",
+            "hp_cost": 0,
+            "id": 212000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Skeletal Militiaman Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                160,
+                224,
+                288,
+                352,
+                416,
+                480,
+                544,
+                608,
+                672,
+                800
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Soldjars of Fortune Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 0,
+            "full_hex_id": "4003C0F0",
+            "hp_cost": 135,
+            "id": 246000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Soldjars of Fortune Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                415,
+                581,
+                747,
+                913,
+                1079,
+                1245,
+                1411,
+                1577,
+                1743,
+                2075
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Spirit Jellyfish Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 31,
+            "full_hex_id": "400399E0",
+            "hp_cost": 0,
+            "id": 236000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Spirit Jellyfish Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                360,
+                504,
+                648,
+                792,
+                936,
+                1080,
+                1224,
+                1368,
+                1512,
+                1800
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Stormhawk Deenh": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 47,
+            "full_hex_id": "4003A1B0",
+            "hp_cost": 0,
+            "id": 238000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Stormhawk Deenh",
+            "price_sold": 0,
+            "rarity": "rare",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                1000,
+                1600,
+                2200,
+                2800,
+                3400,
+                4000,
+                4600,
+                5200,
+                5800,
+                7000
+            ],
+            "upgrade_material": "Ghost Glovewort"
+        },
+        "Twinsage Sorcerer Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 89,
+            "full_hex_id": "40035778",
+            "hp_cost": 0,
+            "id": 219000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Twinsage Sorcerer Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                870,
+                1218,
+                1566,
+                1914,
+                2262,
+                2610,
+                2958,
+                3306,
+                3654,
+                4350
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Vulgar Militia Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 70,
+            "full_hex_id": "4003B150",
+            "hp_cost": 0,
+            "id": 242000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Vulgar Militia Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                735,
+                1029,
+                1323,
+                1617,
+                1911,
+                2205,
+                2499,
+                2793,
+                3087,
+                3675
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Wandering Noble Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 28,
+            "full_hex_id": "4003A980",
+            "hp_cost": 0,
+            "id": 240000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Wandering Noble Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                135,
+                189,
+                243,
+                297,
+                351,
+                405,
+                459,
+                513,
+                567,
+                675
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Warhawk Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 52,
+            "full_hex_id": "40039DC8",
+            "hp_cost": 0,
+            "id": 237000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Warhawk Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                580,
+                812,
+                1044,
+                1276,
+                1508,
+                1740,
+                1972,
+                2204,
+                2436,
+                2900
+            ],
+            "upgrade_material": "Grave Glovewort"
+        },
+        "Winged Misbegotten Ashes": {
+            "abilities": [],
+            "description": [
+                ""
+            ],
+            "fp_cost": 37,
+            "full_hex_id": "40033450",
+            "hp_cost": 0,
+            "id": 210000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 1,
+            "max_stored": 600,
+            "name": "Winged Misbegotten Ashes",
+            "price_sold": 0,
+            "rarity": "common",
+            "remarks": [],
+            "summary": "",
+            "summon_quantity": 1,
+            "upgrade_costs": [
+                410,
+                574,
+                738,
+                902,
+                1066,
+                1230,
+                1394,
+                1558,
+                1722,
+                2050
+            ],
+            "upgrade_material": "Grave Glovewort"
         }
     }
 }
