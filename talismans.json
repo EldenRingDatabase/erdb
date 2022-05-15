@@ -46,7 +46,6 @@
             "effects": [
                 {
                     "attribute": "Bow Distance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 65.0
@@ -78,35 +77,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
@@ -140,7 +134,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Equip Load",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -174,7 +167,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Equip Load",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.17
@@ -286,35 +278,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
@@ -346,7 +333,6 @@
             "effects": [
                 {
                     "attribute": "Health Points",
-                    "conditions": [],
                     "model": "additive",
                     "tick_interval": 1.0,
                     "type": "positive",
@@ -526,7 +512,6 @@
             "effects": [
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -561,7 +546,6 @@
             "effects": [
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.17,
@@ -596,7 +580,6 @@
             "effects": [
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2,
@@ -629,7 +612,6 @@
             "effects": [
                 {
                     "attribute": "Poise",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.33
@@ -661,7 +643,6 @@
             "effects": [
                 {
                     "attribute": "Skill Focus Consumption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 0.75
@@ -695,7 +676,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Focus",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.07
@@ -729,7 +709,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Focus",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.09
@@ -763,7 +742,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Focus",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.11
@@ -795,7 +773,6 @@
             "effects": [
                 {
                     "attribute": "Flask Focus Restoration",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -828,14 +805,12 @@
             "effects": [
                 {
                     "attribute": "Sleep Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
                 },
                 {
                     "attribute": "Madness Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -868,14 +843,12 @@
             "effects": [
                 {
                     "attribute": "Sleep Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
                 },
                 {
                     "attribute": "Madness Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -907,35 +880,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -967,35 +935,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -1051,7 +1014,6 @@
             "effects": [
                 {
                     "attribute": "Enemy Hearing",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 0.0
@@ -1085,7 +1047,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Health",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.06
@@ -1119,7 +1080,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Health",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.07
@@ -1153,7 +1113,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Health",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
@@ -1185,7 +1144,6 @@
             "effects": [
                 {
                     "attribute": "Flask Health Restoration",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -1217,7 +1175,6 @@
             "effects": [
                 {
                     "attribute": "Standard Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -1225,7 +1182,6 @@
                 },
                 {
                     "attribute": "Strike Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -1233,7 +1189,6 @@
                 },
                 {
                     "attribute": "Slash Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -1241,7 +1196,6 @@
                 },
                 {
                     "attribute": "Pierce Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -1249,7 +1203,6 @@
                 },
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -1257,7 +1210,6 @@
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -1265,7 +1217,6 @@
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -1273,7 +1224,6 @@
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -1427,35 +1377,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -1487,56 +1432,48 @@
             "effects": [
                 {
                     "attribute": "Standard Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.0
                 },
                 {
                     "attribute": "Strike Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.0
                 },
                 {
                     "attribute": "Slash Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.0
                 },
                 {
                     "attribute": "Pierce Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.0
                 },
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.0
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.0
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.0
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.0
@@ -1641,7 +1578,6 @@
             "effects": [
                 {
                     "attribute": "Physical Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2,
@@ -1677,7 +1613,6 @@
             "effects": [
                 {
                     "attribute": "Physical Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1,
@@ -1713,7 +1648,6 @@
             "effects": [
                 {
                     "attribute": "Physical Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -1749,7 +1683,6 @@
             "effects": [
                 {
                     "attribute": "Physical Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.17,
@@ -1809,7 +1742,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Health",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "positive",
@@ -1817,7 +1749,6 @@
                 },
                 {
                     "attribute": "Maximum Stamina",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "positive",
@@ -1825,7 +1756,6 @@
                 },
                 {
                     "attribute": "Maximum Equip Load",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "positive",
@@ -1860,21 +1790,18 @@
             "effects": [
                 {
                     "attribute": "Maximum Health",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.035
                 },
                 {
                     "attribute": "Maximum Stamina",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.085
                 },
                 {
                     "attribute": "Maximum Equip Load",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.065
@@ -1908,21 +1835,18 @@
             "effects": [
                 {
                     "attribute": "Maximum Health",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Maximum Stamina",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Maximum Equip Load",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
@@ -1954,35 +1878,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
@@ -2014,7 +1933,6 @@
             "effects": [
                 {
                     "attribute": "Physical Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9,
@@ -2022,7 +1940,6 @@
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -2057,7 +1974,6 @@
             "effects": [
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -2092,7 +2008,6 @@
             "effects": [
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.17,
@@ -2127,7 +2042,6 @@
             "effects": [
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2,
@@ -2160,35 +2074,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
@@ -2245,35 +2154,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -2329,7 +2233,6 @@
             "effects": [
                 {
                     "attribute": "Rune Acquisition",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -2361,35 +2264,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
@@ -2421,35 +2319,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
@@ -2483,7 +2376,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Equip Load",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.19
@@ -2546,7 +2438,6 @@
             "effects": [
                 {
                     "attribute": "Stamina Recovery Speed",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 8.0
@@ -2580,7 +2471,6 @@
             "effects": [
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -2615,7 +2505,6 @@
             "effects": [
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.17,
@@ -2650,7 +2539,6 @@
             "effects": [
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2,
@@ -2683,7 +2571,6 @@
             "effects": [
                 {
                     "attribute": "Stamina Attack Rate",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -2741,14 +2628,12 @@
             "effects": [
                 {
                     "attribute": "Poison Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
                 },
                 {
                     "attribute": "Scarlet Rot Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -2781,14 +2666,12 @@
             "effects": [
                 {
                     "attribute": "Poison Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
                 },
                 {
                     "attribute": "Scarlet Rot Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -2895,35 +2778,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -2955,7 +2833,6 @@
             "effects": [
                 {
                     "attribute": "Physical Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9,
@@ -2963,7 +2840,6 @@
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -2996,7 +2872,6 @@
             "effects": [
                 {
                     "attribute": "Fall Damage",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 0.0
@@ -3103,7 +2978,6 @@
             "effects": [
                 {
                     "attribute": "Physical Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9,
@@ -3111,7 +2985,6 @@
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -3145,84 +3018,72 @@
             "effects": [
                 {
                     "attribute": "Mind",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
                     "attribute": "Intelligence",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
                     "attribute": "Faith",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
                     "attribute": "Arcane",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
                     "attribute": "Standard Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Strike Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Slash Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Pierce Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
@@ -3255,84 +3116,72 @@
             "effects": [
                 {
                     "attribute": "Mind",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
                     "attribute": "Intelligence",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
                     "attribute": "Faith",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
                     "attribute": "Arcane",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
                     "attribute": "Standard Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Strike Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Slash Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Pierce Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
@@ -3364,7 +3213,6 @@
             "effects": [
                 {
                     "attribute": "Dexterity",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -3396,7 +3244,6 @@
             "effects": [
                 {
                     "attribute": "Memory Slots",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 2.0
@@ -3429,42 +3276,36 @@
             "effects": [
                 {
                     "attribute": "Poison Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
                     "attribute": "Scarlet Rot Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
                     "attribute": "Bleed Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
                     "attribute": "Frostbite Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
                     "attribute": "Sleep Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
                     "attribute": "Madness Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
@@ -3497,42 +3338,36 @@
             "effects": [
                 {
                     "attribute": "Poison Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
                     "attribute": "Scarlet Rot Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
                     "attribute": "Bleed Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
                     "attribute": "Frostbite Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
                     "attribute": "Sleep Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
                     "attribute": "Madness Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
@@ -3564,7 +3399,6 @@
             "effects": [
                 {
                     "attribute": "Spell Duration",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.3
@@ -3598,7 +3432,6 @@
             "effects": [
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.05,
@@ -3606,7 +3439,6 @@
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.05,
@@ -3614,7 +3446,6 @@
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.05,
@@ -3622,7 +3453,6 @@
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.05,
@@ -3657,7 +3487,6 @@
             "effects": [
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.07,
@@ -3665,7 +3494,6 @@
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.07,
@@ -3673,7 +3501,6 @@
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.07,
@@ -3681,7 +3508,6 @@
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.07,
@@ -3716,7 +3542,6 @@
             "effects": [
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.09,
@@ -3724,7 +3549,6 @@
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.09,
@@ -3732,7 +3556,6 @@
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.09,
@@ -3740,7 +3563,6 @@
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.09,
@@ -3773,35 +3595,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -3833,7 +3650,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Health",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "negative",
@@ -3841,7 +3657,6 @@
                 },
                 {
                     "attribute": "Sorcery Focus Consumption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "positive",
@@ -3849,7 +3664,6 @@
                 },
                 {
                     "attribute": "Incantation Focus Consumption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "positive",
@@ -3857,7 +3671,6 @@
                 },
                 {
                     "attribute": "Pyromancy Focus Consumption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "positive",
@@ -3891,7 +3704,6 @@
             "effects": [
                 {
                     "attribute": "Death Blight Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -3924,7 +3736,6 @@
             "effects": [
                 {
                     "attribute": "Death Blight Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -3956,7 +3767,6 @@
             "effects": [
                 {
                     "attribute": "Dexterity",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -3988,7 +3798,6 @@
             "effects": [
                 {
                     "attribute": "Casting Speed",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 30.0
@@ -4021,84 +3830,72 @@
             "effects": [
                 {
                     "attribute": "Vigor",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
                     "attribute": "Endurance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
                     "attribute": "Strength",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
                     "attribute": "Dexterity",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
                     "attribute": "Standard Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Strike Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Slash Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Pierce Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9
@@ -4131,84 +3928,72 @@
             "effects": [
                 {
                     "attribute": "Vigor",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
                     "attribute": "Endurance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
                     "attribute": "Strength",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
                     "attribute": "Dexterity",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
                     "attribute": "Standard Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Strike Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Slash Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Pierce Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Fire Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Lightning Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
                 },
                 {
                     "attribute": "Holy Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.85
@@ -4465,35 +4250,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -4550,7 +4330,6 @@
             "effects": [
                 {
                     "attribute": "Physical Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "negative",
                     "value": 0.9,
@@ -4558,7 +4337,6 @@
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -4640,35 +4418,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -4700,7 +4473,6 @@
             "effects": [
                 {
                     "attribute": "Item Discovery",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 75.0
@@ -4768,7 +4540,6 @@
             "effects": [
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.12,
@@ -4803,7 +4574,6 @@
             "effects": [
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.17,
@@ -4838,7 +4608,6 @@
             "effects": [
                 {
                     "attribute": "Magic Absorption",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2,
@@ -4872,14 +4641,12 @@
             "effects": [
                 {
                     "attribute": "Bleed Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
                 },
                 {
                     "attribute": "Frostbite Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -4912,14 +4679,12 @@
             "effects": [
                 {
                     "attribute": "Bleed Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
                 },
                 {
                     "attribute": "Frostbite Resistance",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -4951,7 +4716,6 @@
             "effects": [
                 {
                     "attribute": "Intelligence",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -4983,7 +4747,6 @@
             "effects": [
                 {
                     "attribute": "Strength",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -5060,35 +4823,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -5120,7 +4878,6 @@
             "effects": [
                 {
                     "attribute": "Faith",
-                    "conditions": [],
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -5154,7 +4911,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Stamina",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.11
@@ -5188,7 +4944,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Stamina",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.13
@@ -5222,7 +4977,6 @@
             "effects": [
                 {
                     "attribute": "Maximum Stamina",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -5255,35 +5009,30 @@
             "effects": [
                 {
                     "attribute": "Physical Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Magic Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Fire Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Lightning Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
                 },
                 {
                     "attribute": "Holy Attack Power",
-                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
