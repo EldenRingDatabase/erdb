@@ -1,32 +1,5334 @@
 {
     "$schema": "./schema/talismans.schema.json",
     "Talismans": {
-        "Companion Jar": {
-            "full_hex_id": "AA",
-            "id": 999,
-            "name": "Companion Jar",
-            "summary": "TODO",
-            "description": ["TODO"],
-            "is_tradable": false,
-            "price_sold": 0,
-            "max_held": 1,
-            "max_stored": 600,
-            "locations": [
-                {
-                    "summary": "TODO"
-                }
+        "Ancestral Spirit's Horn": {
+            "conflicts": [
+                "Ancestral Spirit's Horn"
             ],
-            "remarks": [],
-            "weight": 999,
+            "description": [
+                ""
+            ],
             "effects": [
                 {
-                    "modifier": "potency_pots",
+                    "attribute": "Focus Points",
+                    "conditions": [
+                        "Apply Kill Effect"
+                    ],
+                    "model": "additive",
+                    "tick_interval": 1.0,
+                    "type": "positive",
+                    "value": 3.0
+                }
+            ],
+            "full_hex_id": "200017DE",
+            "id": 6110,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Ancestral Spirit's Horn",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.2
+        },
+        "Arrow's Reach Talisman": {
+            "conflicts": [
+                "Arrow's Reach Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Bow Distance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 65.0
+                }
+            ],
+            "full_hex_id": "20000834",
+            "id": 2100,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Arrow's Reach Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Arrow's Sting Talisman": {
+            "conflicts": [
+                "Arrow's Sting Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                }
+            ],
+            "full_hex_id": "20000866",
+            "id": 2150,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Arrow's Sting Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Arsenal Charm": {
+            "conflicts": [
+                "Arsenal Charm",
+                "Arsenal Charm +1",
+                "Great-Jar's Arsenal"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "20000406",
+            "id": 1030,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Arsenal Charm",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.5
+        },
+        "Arsenal Charm +1": {
+            "conflicts": [
+                "Arsenal Charm",
+                "Arsenal Charm +1",
+                "Great-Jar's Arsenal"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17
+                }
+            ],
+            "full_hex_id": "20000407",
+            "id": 1031,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Arsenal Charm +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.5
+        },
+        "Assassin's Cerulean Dagger": {
+            "conflicts": [
+                "Assassin's Cerulean Dagger"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Focus Points",
+                    "conditions": [
+                        "Trigger on Critical Hit (FP)"
+                    ],
+                    "model": "additive",
+                    "tick_interval": 4.0,
+                    "type": "positive",
+                    "value": 15.0
+                }
+            ],
+            "full_hex_id": "200013C4",
+            "id": 5060,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Assassin's Cerulean Dagger",
+            "price_sold": 1500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Assassin's Crimson Dagger": {
+            "conflicts": [
+                "Assassin's Crimson Dagger"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "conditions": [
+                        "Trigger on Critical Hit (HP)"
+                    ],
+                    "model": "additive",
+                    "tick_interval": 4.0,
+                    "type": "positive",
+                    "value": 85.0
+                },
+                {
+                    "attribute": "Health Points",
+                    "conditions": [
+                        "Trigger on Critical Hit (HP)"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 4.0,
+                    "type": "positive",
+                    "value": 1.1
+                }
+            ],
+            "full_hex_id": "200013BA",
+            "id": 5050,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Assassin's Crimson Dagger",
+            "price_sold": 1500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Axe Talisman": {
+            "conflicts": [
+                "Axe Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                }
+            ],
+            "full_hex_id": "20000852",
+            "id": 2130,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Axe Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Blessed Dew Talisman": {
+            "conflicts": [
+                "Blessed Dew Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "conditions": [],
+                    "model": "additive",
+                    "tick_interval": 1.0,
+                    "type": "positive",
+                    "value": 2.0
+                }
+            ],
+            "full_hex_id": "2000139C",
+            "id": 5020,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Blessed Dew Talisman",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Blue Dancer Charm": {
+            "conflicts": [
+                "Blue Dancer Charm"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Standard Attack Power",
+                    "conditions": [
+                        "Scale Attack Power with Equip Load"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Strike Attack Power",
+                    "conditions": [
+                        "Scale Attack Power with Equip Load"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Slash Attack Power",
+                    "conditions": [
+                        "Scale Attack Power with Equip Load"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Pierce Attack Power",
+                    "conditions": [
+                        "Scale Attack Power with Equip Load"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [
+                        "Scale Attack Power with Equip Load"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "2000083E",
+            "id": 2110,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Blue Dancer Charm",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Blue-Feathered Branchsword": {
+            "conflicts": [
+                "Blue-Feathered Branchsword"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.5,
+                    "value_pvp": 1.5
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.5,
+                    "value_pvp": 1.5
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.5,
+                    "value_pvp": 1.5
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.5,
+                    "value_pvp": 1.5
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.5,
+                    "value_pvp": 1.5
+                }
+            ],
+            "full_hex_id": "20000FF0",
+            "id": 4080,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Blue-Feathered Branchsword",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.1
+        },
+        "Boltdrake Talisman": {
+            "conflicts": [
+                "Boltdrake Talisman",
+                "Boltdrake Talisman +1",
+                "Boltdrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.04
+                }
+            ],
+            "full_hex_id": "20000FBE",
+            "id": 4030,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Boltdrake Talisman",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Boltdrake Talisman +1": {
+            "conflicts": [
+                "Boltdrake Talisman",
+                "Boltdrake Talisman +1",
+                "Boltdrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.05
+                }
+            ],
+            "full_hex_id": "20000FBF",
+            "id": 4031,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Boltdrake Talisman +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Boltdrake Talisman +2": {
+            "conflicts": [
+                "Boltdrake Talisman",
+                "Boltdrake Talisman +1",
+                "Boltdrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.06
+                }
+            ],
+            "full_hex_id": "20000FC0",
+            "id": 4032,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Boltdrake Talisman +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Bull-Goat's Talisman": {
+            "conflicts": [
+                "Bull-Goat's Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Poise",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.33
+                }
+            ],
+            "full_hex_id": "200004BA",
+            "id": 1210,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Bull-Goat's Talisman",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.5
+        },
+        "Carian Filigreed Crest": {
+            "conflicts": [
+                "Carian Filigreed Crest"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Skill Focus Consumption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.75
+                }
+            ],
+            "full_hex_id": "20001784",
+            "id": 6020,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Carian Filigreed Crest",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Cerulean Amber Medallion": {
+            "conflicts": [
+                "Cerulean Amber Medallion",
+                "Cerulean Amber Medallion +1",
+                "Cerulean Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Focus",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07
+                }
+            ],
+            "full_hex_id": "200003F2",
+            "id": 1010,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Cerulean Amber Medallion",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Cerulean Amber Medallion +1": {
+            "conflicts": [
+                "Cerulean Amber Medallion",
+                "Cerulean Amber Medallion +1",
+                "Cerulean Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Focus",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.09
+                }
+            ],
+            "full_hex_id": "200003F3",
+            "id": 1011,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Cerulean Amber Medallion +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Cerulean Amber Medallion +2": {
+            "conflicts": [
+                "Cerulean Amber Medallion",
+                "Cerulean Amber Medallion +1",
+                "Cerulean Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Focus",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.11
+                }
+            ],
+            "full_hex_id": "200003F4",
+            "id": 1012,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Cerulean Amber Medallion +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Cerulean Seed Talisman": {
+            "conflicts": [
+                "Cerulean Seed Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Flask Focus Restoration",
+                    "conditions": [],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
                 }
             ],
-            "conflicts": []
+            "full_hex_id": "20001392",
+            "id": 5010,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Cerulean Seed Talisman",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Clarifying Horn Charm": {
+            "conflicts": [
+                "Clarifying Horn Charm",
+                "Clarifying Horn Charm +1"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Sleep Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                },
+                {
+                    "attribute": "Madness Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                }
+            ],
+            "full_hex_id": "2000049C",
+            "id": 1180,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Clarifying Horn Charm",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Clarifying Horn Charm +1": {
+            "conflicts": [
+                "Clarifying Horn Charm",
+                "Clarifying Horn Charm +1"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Sleep Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                },
+                {
+                    "attribute": "Madness Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                }
+            ],
+            "full_hex_id": "2000049D",
+            "id": 1181,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Clarifying Horn Charm +1",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Claw Talisman": {
+            "conflicts": [
+                "Claw Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "20000884",
+            "id": 2180,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Claw Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Companion Jar": {
+            "conflicts": [
+                "Companion Jar"
+            ],
+            "description": [
+                "TODO"
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "full_hex_id": "200008A2",
+            "id": 2210,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "TODO"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Companion Jar",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "TODO",
+            "weight": 0.6
+        },
+        "Concealing Veil": {
+            "conflicts": [
+                "Concealing Veil"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "2000177A",
+            "id": 6010,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Concealing Veil",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Crepus's Vial": {
+            "conflicts": [
+                "Crepus's Vial"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Enemy Hearing",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.0
+                }
+            ],
+            "full_hex_id": "20001770",
+            "id": 6000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Crepus's Vial",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Crimson Amber Medallion": {
+            "conflicts": [
+                "Crimson Amber Medallion",
+                "Crimson Amber Medallion +1",
+                "Crimson Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.06
+                }
+            ],
+            "full_hex_id": "200003E8",
+            "id": 1000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Crimson Amber Medallion",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Crimson Amber Medallion +1": {
+            "conflicts": [
+                "Crimson Amber Medallion",
+                "Crimson Amber Medallion +1",
+                "Crimson Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07
+                }
+            ],
+            "full_hex_id": "200003E9",
+            "id": 1001,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Crimson Amber Medallion +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Crimson Amber Medallion +2": {
+            "conflicts": [
+                "Crimson Amber Medallion",
+                "Crimson Amber Medallion +1",
+                "Crimson Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                }
+            ],
+            "full_hex_id": "200003EA",
+            "id": 1002,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Crimson Amber Medallion +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Crimson Seed Talisman": {
+            "conflicts": [
+                "Crimson Seed Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Flask Health Restoration",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "full_hex_id": "20001388",
+            "id": 5000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Crimson Seed Talisman",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Crucible Feather Talisman": {
+            "conflicts": [
+                "Crucible Feather Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Standard Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.7
+                },
+                {
+                    "attribute": "Strike Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.7
+                },
+                {
+                    "attribute": "Slash Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.7
+                },
+                {
+                    "attribute": "Pierce Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.7
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.7
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.7
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.7
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.7
+                }
+            ],
+            "full_hex_id": "20000FE6",
+            "id": 4070,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Crucible Feather Talisman",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Crucible Knot Talisman": {
+            "conflicts": [
+                "Crucible Knot Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "2000100E",
+            "id": 4110,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Crucible Knot Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.5
+        },
+        "Crucible Scale Talisman": {
+            "conflicts": [
+                "Crucible Scale Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Standard Absorption",
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                },
+                {
+                    "attribute": "Strike Absorption",
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                },
+                {
+                    "attribute": "Slash Absorption",
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                },
+                {
+                    "attribute": "Pierce Absorption",
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                }
+            ],
+            "full_hex_id": "20000FDC",
+            "id": 4060,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Crucible Scale Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.1
+        },
+        "Curved Sword Talisman": {
+            "conflicts": [
+                "Curved Sword Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "full_hex_id": "20000898",
+            "id": 2200,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Curved Sword Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Daedicar's Woe": {
+            "conflicts": [
+                "Daedicar's Woe"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Standard Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                },
+                {
+                    "attribute": "Strike Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                },
+                {
+                    "attribute": "Slash Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                },
+                {
+                    "attribute": "Pierce Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                }
+            ],
+            "full_hex_id": "200017AC",
+            "id": 6060,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Daedicar's Woe",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Dagger Talisman": {
+            "conflicts": [
+                "Dagger Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [
+                        "Enhance Critical Attacks"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [
+                        "Enhance Critical Attacks"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [
+                        "Enhance Critical Attacks"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [
+                        "Enhance Critical Attacks"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [
+                        "Enhance Critical Attacks"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17
+                }
+            ],
+            "full_hex_id": "2000082A",
+            "id": 2090,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Dagger Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.1
+        },
+        "Dragoncrest Greatshield Talisman": {
+            "conflicts": [
+                "Dragoncrest Shield Talisman",
+                "Dragoncrest Shield Talisman +1",
+                "Dragoncrest Shield Talisman +2",
+                "Dragoncrest Greatshield Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.05
+                }
+            ],
+            "full_hex_id": "20000FA3",
+            "id": 4003,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Dragoncrest Greatshield Talisman",
+            "price_sold": 2000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Dragoncrest Shield Talisman": {
+            "conflicts": [
+                "Dragoncrest Shield Talisman",
+                "Dragoncrest Shield Talisman +1",
+                "Dragoncrest Shield Talisman +2",
+                "Dragoncrest Greatshield Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "value_pvp": 1.02
+                }
+            ],
+            "full_hex_id": "20000FA0",
+            "id": 4000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Dragoncrest Shield Talisman",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Dragoncrest Shield Talisman +1": {
+            "conflicts": [
+                "Dragoncrest Shield Talisman",
+                "Dragoncrest Shield Talisman +1",
+                "Dragoncrest Shield Talisman +2",
+                "Dragoncrest Greatshield Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.03
+                }
+            ],
+            "full_hex_id": "20000FA1",
+            "id": 4001,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Dragoncrest Shield Talisman +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Dragoncrest Shield Talisman +2": {
+            "conflicts": [
+                "Dragoncrest Shield Talisman",
+                "Dragoncrest Shield Talisman +1",
+                "Dragoncrest Shield Talisman +2",
+                "Dragoncrest Greatshield Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.04
+                }
+            ],
+            "full_hex_id": "20000FA2",
+            "id": 4002,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Dragoncrest Shield Talisman +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Entwining Umbilical Cord": {
+            "conflicts": [
+                "Entwining Umbilical Cord",
+                ""
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "200017D4",
+            "id": 6100,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Entwining Umbilical Cord",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.5
+        },
+        "Erdtree's Favor": {
+            "conflicts": [
+                "Erdtree's Favor",
+                "Erdtree's Favor +1",
+                "Erdtree's Favor +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "positive",
+                    "value": 1.03
+                },
+                {
+                    "attribute": "Maximum Stamina",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "positive",
+                    "value": 1.07
+                },
+                {
+                    "attribute": "Maximum Equip Load",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "positive",
+                    "value": 1.05
+                }
+            ],
+            "full_hex_id": "20000410",
+            "id": 1040,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Erdtree's Favor",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.5
+        },
+        "Erdtree's Favor +1": {
+            "conflicts": [
+                "Erdtree's Favor",
+                "Erdtree's Favor +1",
+                "Erdtree's Favor +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.035
+                },
+                {
+                    "attribute": "Maximum Stamina",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.085
+                },
+                {
+                    "attribute": "Maximum Equip Load",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.065
+                }
+            ],
+            "full_hex_id": "20000411",
+            "id": 1041,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Erdtree's Favor +1",
+            "price_sold": 1500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.5
+        },
+        "Erdtree's Favor +2": {
+            "conflicts": [
+                "Erdtree's Favor",
+                "Erdtree's Favor +1",
+                "Erdtree's Favor +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Maximum Stamina",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Maximum Equip Load",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                }
+            ],
+            "full_hex_id": "20000412",
+            "id": 1042,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Erdtree's Favor +2",
+            "price_sold": 3000,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.5
+        },
+        "Faithful's Canvas Talisman": {
+            "conflicts": [
+                "Faithful's Canvas Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                }
+            ],
+            "full_hex_id": "20000BE0",
+            "id": 3040,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Faithful's Canvas Talisman",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Fire Scorpion Charm": {
+            "conflicts": [
+                "Fire Scorpion Charm"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9,
+                    "value_pvp": 0.85
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.08
+                }
+            ],
+            "full_hex_id": "200007E4",
+            "id": 2020,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Fire Scorpion Charm",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Flamedrake Talisman": {
+            "conflicts": [
+                "Flamedrake Talisman",
+                "Flamedrake Talisman +1",
+                "Flamedrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.04
+                }
+            ],
+            "full_hex_id": "20000FB4",
+            "id": 4020,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Flamedrake Talisman",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Flamedrake Talisman +1": {
+            "conflicts": [
+                "Flamedrake Talisman",
+                "Flamedrake Talisman +1",
+                "Flamedrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.05
+                }
+            ],
+            "full_hex_id": "20000FB5",
+            "id": 4021,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Flamedrake Talisman +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Flamedrake Talisman +2": {
+            "conflicts": [
+                "Flamedrake Talisman",
+                "Flamedrake Talisman +1",
+                "Flamedrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.06
+                }
+            ],
+            "full_hex_id": "20000FB6",
+            "id": 4022,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Flamedrake Talisman +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Flock's Canvas Talisman": {
+            "conflicts": [
+                "Flock's Canvas Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                }
+            ],
+            "full_hex_id": "20000BEA",
+            "id": 3050,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Flock's Canvas Talisman",
+            "price_sold": 2000,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.0
+        },
+        "Furled Finger's Trick-Mirror": {
+            "conflicts": [
+                "Furled Finger's Trick-Mirror",
+                "Host's Trick-Mirror"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "200017C0",
+            "id": 6080,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Furled Finger's Trick-Mirror",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Godfrey Icon": {
+            "conflicts": [
+                "Godfrey Icon"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "20000C12",
+            "id": 3090,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Godfrey Icon",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Godskin Swaddling Cloth": {
+            "conflicts": [
+                "Godskin Swaddling Cloth"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "200013B0",
+            "id": 5040,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Godskin Swaddling Cloth",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Gold Scarab": {
+            "conflicts": [
+                "Gold Scarab"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Rune Acquisition",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "full_hex_id": "20000456",
+            "id": 1110,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Gold Scarab",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.2
+        },
+        "Graven-Mass Talisman": {
+            "conflicts": [
+                "Graven-Mass Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                }
+            ],
+            "full_hex_id": "20000BB9",
+            "id": 3001,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Graven-Mass Talisman",
+            "price_sold": 2000,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.0
+        },
+        "Graven-School Talisman": {
+            "conflicts": [
+                "Graven-School Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                }
+            ],
+            "full_hex_id": "20000BB8",
+            "id": 3000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Graven-School Talisman",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Great-Jar's Arsenal": {
+            "conflicts": [
+                "Arsenal Charm",
+                "Arsenal Charm +1",
+                "Great-Jar's Arsenal"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.19
+                }
+            ],
+            "full_hex_id": "20000408",
+            "id": 1032,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Great-Jar's Arsenal",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.5
+        },
+        "Greatshield Talisman": {
+            "conflicts": [
+                "Greatshield Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Stability",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                }
+            ],
+            "full_hex_id": "20001004",
+            "id": 4100,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Greatshield Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Green Turtle Talisman": {
+            "conflicts": [
+                "Green Turtle Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Stamina Recovery Speed",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 8.0
+                }
+            ],
+            "full_hex_id": "2000047E",
+            "id": 1150,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Green Turtle Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Haligdrake Talisman": {
+            "conflicts": [
+                "Haligdrake Talisman",
+                "Haligdrake Talisman +1",
+                "Haligdrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.04
+                }
+            ],
+            "full_hex_id": "20000FC8",
+            "id": 4040,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Haligdrake Talisman",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Haligdrake Talisman +1": {
+            "conflicts": [
+                "Haligdrake Talisman",
+                "Haligdrake Talisman +1",
+                "Haligdrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.05
+                }
+            ],
+            "full_hex_id": "20000FC9",
+            "id": 4041,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Haligdrake Talisman +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Haligdrake Talisman +2": {
+            "conflicts": [
+                "Haligdrake Talisman",
+                "Haligdrake Talisman +1",
+                "Haligdrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.06
+                }
+            ],
+            "full_hex_id": "20000FCA",
+            "id": 4042,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Haligdrake Talisman +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Hammer Talisman": {
+            "conflicts": [
+                "Hammer Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Stamina Attack Rate",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "full_hex_id": "20000816",
+            "id": 2070,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Hammer Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Host's Trick-Mirror": {
+            "conflicts": [
+                "Furled Finger's Trick-Mirror",
+                "Host's Trick-Mirror"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "200017CA",
+            "id": 6090,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Host's Trick-Mirror",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Immunizing Horn Charm": {
+            "conflicts": [
+                "Immunizing Horn Charm",
+                "Immunizing Horn Charm +1"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Poison Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                },
+                {
+                    "attribute": "Scarlet Rot Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                }
+            ],
+            "full_hex_id": "20000492",
+            "id": 1170,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Immunizing Horn Charm",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Immunizing Horn Charm +1": {
+            "conflicts": [
+                "Immunizing Horn Charm",
+                "Immunizing Horn Charm +1"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Poison Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                },
+                {
+                    "attribute": "Scarlet Rot Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                }
+            ],
+            "full_hex_id": "20000493",
+            "id": 1171,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Immunizing Horn Charm +1",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Kindred of Rot's Exultation": {
+            "conflicts": [
+                "Kindred of Rot's Exultation"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Rot"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Rot"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Rot"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Rot"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Rot"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                }
+            ],
+            "full_hex_id": "2000087A",
+            "id": 2170,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Kindred of Rot's Exultation",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Lance Talisman": {
+            "conflicts": [
+                "Lance Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "2000085C",
+            "id": 2140,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Lance Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Lightning Scorpion Charm": {
+            "conflicts": [
+                "Lightning Scorpion Charm"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9,
+                    "value_pvp": 0.85
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.08
+                }
+            ],
+            "full_hex_id": "200007DA",
+            "id": 2010,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Lightning Scorpion Charm",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Longtail Cat Talisman": {
+            "conflicts": [
+                "Longtail Cat Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Fall Damage",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.0
+                }
+            ],
+            "full_hex_id": "20001798",
+            "id": 6040,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Longtail Cat Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Lord of Blood's Exultation": {
+            "conflicts": [
+                "Lord of Blood's Exultation"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Blood Loss"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Blood Loss"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Blood Loss"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Blood Loss"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [
+                        "Trigger in Presence of Blood Loss"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                }
+            ],
+            "full_hex_id": "20000870",
+            "id": 2160,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Lord of Blood's Exultation",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Magic Scorpion Charm": {
+            "conflicts": [
+                "Magic Scorpion Charm"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9,
+                    "value_pvp": 0.85
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.08
+                }
+            ],
+            "full_hex_id": "200007D0",
+            "id": 2000,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Magic Scorpion Charm",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Marika's Scarseal": {
+            "conflicts": [
+                "Marika's Scarseal",
+                "Marika's Soreseal"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Mind",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Intelligence",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Faith",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Arcane",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Standard Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Strike Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Slash Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Pierce Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                }
+            ],
+            "full_hex_id": "200004C4",
+            "id": 1220,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Marika's Scarseal",
+            "price_sold": 3000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Marika's Soreseal": {
+            "conflicts": [
+                "Marika's Scarseal",
+                "Marika's Soreseal"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Mind",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Intelligence",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Faith",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Arcane",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Standard Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Strike Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Slash Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Pierce Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                }
+            ],
+            "full_hex_id": "200004C5",
+            "id": 1221,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Marika's Soreseal",
+            "price_sold": 3000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Millicent's Prosthesis": {
+            "conflicts": [
+                "Millicent's Prosthesis"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Dexterity",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "full_hex_id": "200004E2",
+            "id": 1250,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Millicent's Prosthesis",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.6
+        },
+        "Moon of Nokstella": {
+            "conflicts": [
+                "Moon of Nokstella"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Memory Slots",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 2.0
+                }
+            ],
+            "full_hex_id": "20000474",
+            "id": 1140,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Moon of Nokstella",
+            "price_sold": 2000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Mottled Necklace": {
+            "conflicts": [
+                "Mottled Necklace",
+                "Mottled Necklace +1"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Poison Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                },
+                {
+                    "attribute": "Scarlet Rot Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                },
+                {
+                    "attribute": "Bleed Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                },
+                {
+                    "attribute": "Frostbite Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                },
+                {
+                    "attribute": "Sleep Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                },
+                {
+                    "attribute": "Madness Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                }
+            ],
+            "full_hex_id": "200004B0",
+            "id": 1200,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Mottled Necklace",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Mottled Necklace +1": {
+            "conflicts": [
+                "Mottled Necklace",
+                "Mottled Necklace +1"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Poison Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                },
+                {
+                    "attribute": "Scarlet Rot Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                },
+                {
+                    "attribute": "Bleed Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                },
+                {
+                    "attribute": "Frostbite Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                },
+                {
+                    "attribute": "Sleep Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                },
+                {
+                    "attribute": "Madness Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                }
+            ],
+            "full_hex_id": "200004B1",
+            "id": 1201,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Mottled Necklace +1",
+            "price_sold": 2000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Old Lord's Talisman": {
+            "conflicts": [
+                "Old Lord's Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Spell Duration",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                }
+            ],
+            "full_hex_id": "20000BF4",
+            "id": 3060,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Old Lord's Talisman",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.5
+        },
+        "Pearldrake Talisman": {
+            "conflicts": [
+                "Pearldrake Talisman",
+                "Pearldrake Talisman +1",
+                "Pearldrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.05,
+                    "value_pvp": 1.02
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.05,
+                    "value_pvp": 1.02
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.05,
+                    "value_pvp": 1.02
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.05,
+                    "value_pvp": 1.02
+                }
+            ],
+            "full_hex_id": "20000FD2",
+            "id": 4050,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Pearldrake Talisman",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Pearldrake Talisman +1": {
+            "conflicts": [
+                "Pearldrake Talisman",
+                "Pearldrake Talisman +1",
+                "Pearldrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07,
+                    "value_pvp": 1.03
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07,
+                    "value_pvp": 1.03
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07,
+                    "value_pvp": 1.03
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07,
+                    "value_pvp": 1.03
+                }
+            ],
+            "full_hex_id": "20000FD3",
+            "id": 4051,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Pearldrake Talisman +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Pearldrake Talisman +2": {
+            "conflicts": [
+                "Pearldrake Talisman",
+                "Pearldrake Talisman +1",
+                "Pearldrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.09,
+                    "value_pvp": 1.04
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.09,
+                    "value_pvp": 1.04
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.09,
+                    "value_pvp": 1.04
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.09,
+                    "value_pvp": 1.04
+                }
+            ],
+            "full_hex_id": "20000FD4",
+            "id": 4052,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Pearldrake Talisman +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Perfumer's Talisman": {
+            "conflicts": [
+                "Perfumer's Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "full_hex_id": "200008AC",
+            "id": 2220,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Perfumer's Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Primal Glintstone Blade": {
+            "conflicts": [
+                "Primal Glintstone Blade"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Sorcery Focus Consumption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "positive",
+                    "value": 0.75
+                },
+                {
+                    "attribute": "Incantation Focus Consumption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "positive",
+                    "value": 0.75
+                },
+                {
+                    "attribute": "Pyromancy Focus Consumption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "tick_interval": 0.06,
+                    "type": "positive",
+                    "value": 0.75
+                }
+            ],
+            "full_hex_id": "20000C08",
+            "id": 3080,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Primal Glintstone Blade",
+            "price_sold": 2000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Prince of Death's Cyst": {
+            "conflicts": [
+                "Prince of Death's Pustule",
+                "Prince of Death's Cyst"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Death Blight Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                }
+            ],
+            "full_hex_id": "200004A7",
+            "id": 1191,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Prince of Death's Cyst",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Prince of Death's Pustule": {
+            "conflicts": [
+                "Prince of Death's Pustule",
+                "Prince of Death's Cyst"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Death Blight Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                }
+            ],
+            "full_hex_id": "200004A6",
+            "id": 1190,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Prince of Death's Pustule",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Prosthesis-Wearer Heirloom": {
+            "conflicts": [
+                "Prosthesis-Wearer Heirloom"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Dexterity",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "full_hex_id": "2000042E",
+            "id": 1070,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Prosthesis-Wearer Heirloom",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Radagon Icon": {
+            "conflicts": [
+                "Radagon Icon"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Casting Speed",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 30.0
+                }
+            ],
+            "full_hex_id": "20000BFE",
+            "id": 3070,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Radagon Icon",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Radagon's Scarseal": {
+            "conflicts": [
+                "Radagon's Scarseal",
+                "Radagon's Soreseal"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Vigor",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Endurance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Strength",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Dexterity",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Standard Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Strike Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Slash Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Pierce Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                }
+            ],
+            "full_hex_id": "2000041A",
+            "id": 1050,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Radagon's Scarseal",
+            "price_sold": 3000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Radagon's Soreseal": {
+            "conflicts": [
+                "Radagon's Scarseal",
+                "Radagon's Soreseal"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Vigor",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Endurance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Strength",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Dexterity",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Standard Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Strike Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Slash Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Pierce Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                }
+            ],
+            "full_hex_id": "2000041B",
+            "id": 1051,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Radagon's Soreseal",
+            "price_sold": 3000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Red-Feathered Branchsword": {
+            "conflicts": [
+                "Red-Feathered Branchsword"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.2
+                }
+            ],
+            "full_hex_id": "200007F8",
+            "id": 2040,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Red-Feathered Branchsword",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.4
+        },
+        "Ritual Shield Talisman": {
+            "conflicts": [
+                "Ritual Shield Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3,
+                    "value_pvp": 1.3
+                },
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3,
+                    "value_pvp": 1.3
+                },
+                {
+                    "attribute": "Fire Absorption",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3,
+                    "value_pvp": 1.3
+                },
+                {
+                    "attribute": "Lightning Absorption",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3,
+                    "value_pvp": 1.3
+                },
+                {
+                    "attribute": "Holy Absorption",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3,
+                    "value_pvp": 1.3
+                }
+            ],
+            "full_hex_id": "20000FFA",
+            "id": 4090,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Ritual Shield Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Ritual Sword Talisman": {
+            "conflicts": [
+                "Ritual Sword Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "value_pvp": 1.1
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "value_pvp": 1.1
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "value_pvp": 1.1
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "value_pvp": 1.1
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "value_pvp": 1.1
+                }
+            ],
+            "full_hex_id": "20000802",
+            "id": 2050,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Ritual Sword Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Roar Medallion": {
+            "conflicts": [
+                "Roar Medallion"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "2000088E",
+            "id": 2190,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Roar Medallion",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Rotten Winged Sword Insignia": {
+            "conflicts": [
+                "Winged Sword Insignia",
+                "Rotten Winged Sword Insignia"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "20000821",
+            "id": 2081,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Rotten Winged Sword Insignia",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.4
+        },
+        "Sacred Scorpion Charm": {
+            "conflicts": [
+                "Sacred Scorpion Charm"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9,
+                    "value_pvp": 0.85
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.08
+                }
+            ],
+            "full_hex_id": "200007EE",
+            "id": 2030,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Sacred Scorpion Charm",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Sacrificial Twig": {
+            "conflicts": [
+                "Sacrificial Twig"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "200017B6",
+            "id": 6070,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Sacrificial Twig",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.0
+        },
+        "Shabriri's Woe": {
+            "conflicts": [
+                "Shabriri's Woe"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "200017A2",
+            "id": 6050,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Shabriri's Woe",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Shard of Alexander": {
+            "conflicts": [
+                "Warrior Jar Shard",
+                "Shard of Alexander"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "200004CF",
+            "id": 1231,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Shard of Alexander",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Silver Scarab": {
+            "conflicts": [
+                "Silver Scarab"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Item Discovery",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 75.0
+                }
+            ],
+            "full_hex_id": "2000044C",
+            "id": 1100,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Silver Scarab",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.2
+        },
+        "Spear Talisman": {
+            "conflicts": [
+                "Spear Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [
+                        "Enhance Thrusting Counter Attacks"
+                    ],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "2000080C",
+            "id": 2060,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Spear Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.5
+        },
+        "Spelldrake Talisman": {
+            "conflicts": [
+                "Spelldrake Talisman",
+                "Spelldrake Talisman +1",
+                "Spelldrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.04
+                }
+            ],
+            "full_hex_id": "20000FAA",
+            "id": 4010,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Spelldrake Talisman",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Spelldrake Talisman +1": {
+            "conflicts": [
+                "Spelldrake Talisman",
+                "Spelldrake Talisman +1",
+                "Spelldrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.05
+                }
+            ],
+            "full_hex_id": "20000FAB",
+            "id": 4011,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Spelldrake Talisman +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Spelldrake Talisman +2": {
+            "conflicts": [
+                "Spelldrake Talisman",
+                "Spelldrake Talisman +1",
+                "Spelldrake Talisman +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.06
+                }
+            ],
+            "full_hex_id": "20000FAC",
+            "id": 4012,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Spelldrake Talisman +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Stalwart Horn Charm": {
+            "conflicts": [
+                "Stalwart Horn Charm",
+                "Stalwart Horn Charm +1"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Bleed Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                },
+                {
+                    "attribute": "Frostbite Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                }
+            ],
+            "full_hex_id": "20000488",
+            "id": 1160,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Stalwart Horn Charm",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Stalwart Horn Charm +1": {
+            "conflicts": [
+                "Stalwart Horn Charm",
+                "Stalwart Horn Charm +1"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Bleed Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                },
+                {
+                    "attribute": "Frostbite Resistance",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                }
+            ],
+            "full_hex_id": "20000489",
+            "id": 1161,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Stalwart Horn Charm +1",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Stargazer Heirloom": {
+            "conflicts": [
+                "Stargazer Heirloom"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Intelligence",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "full_hex_id": "20000438",
+            "id": 1080,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Stargazer Heirloom",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Starscourge Heirloom": {
+            "conflicts": [
+                "Starscourge Heirloom"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Strength",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "full_hex_id": "20000424",
+            "id": 1060,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Starscourge Heirloom",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.8
+        },
+        "Taker's Cameo": {
+            "conflicts": [
+                "Taker's Cameo"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "conditions": [
+                        "Apply Kill Effect"
+                    ],
+                    "model": "additive",
+                    "tick_interval": 1.0,
+                    "type": "positive",
+                    "value": 30.0
+                },
+                {
+                    "attribute": "Health Points",
+                    "conditions": [
+                        "Apply Kill Effect"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 1.0,
+                    "type": "positive",
+                    "value": 1.03
+                }
+            ],
+            "full_hex_id": "200013A6",
+            "id": 5030,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Taker's Cameo",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.0
+        },
+        "Twinblade Talisman": {
+            "conflicts": [
+                "Twinblade Talisman"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "full_hex_id": "20000848",
+            "id": 2120,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Twinblade Talisman",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.7
+        },
+        "Two Fingers Heirloom": {
+            "conflicts": [
+                "Two Fingers Heirloom"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Faith",
+                    "conditions": [],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "full_hex_id": "20000442",
+            "id": 1090,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Two Fingers Heirloom",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.6
+        },
+        "Viridian Amber Medallion": {
+            "conflicts": [
+                "Viridian Amber Medallion",
+                "Viridian Amber Medallion +1",
+                "Viridian Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Stamina",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.11
+                }
+            ],
+            "full_hex_id": "200003FC",
+            "id": 1020,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Viridian Amber Medallion",
+            "price_sold": 100,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Viridian Amber Medallion +1": {
+            "conflicts": [
+                "Viridian Amber Medallion",
+                "Viridian Amber Medallion +1",
+                "Viridian Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Stamina",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.13
+                }
+            ],
+            "full_hex_id": "200003FD",
+            "id": 1021,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Viridian Amber Medallion +1",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Viridian Amber Medallion +2": {
+            "conflicts": [
+                "Viridian Amber Medallion",
+                "Viridian Amber Medallion +1",
+                "Viridian Amber Medallion +2"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Maximum Stamina",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "full_hex_id": "200003FE",
+            "id": 1022,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Viridian Amber Medallion +2",
+            "price_sold": 1000,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.3
+        },
+        "Warrior Jar Shard": {
+            "conflicts": [
+                "Warrior Jar Shard",
+                "Shard of Alexander"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Magic Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Fire Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Lightning Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                },
+                {
+                    "attribute": "Holy Attack Power",
+                    "conditions": [],
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                }
+            ],
+            "full_hex_id": "200004CE",
+            "id": 1230,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Warrior Jar Shard",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 0.9
+        },
+        "Winged Sword Insignia": {
+            "conflicts": [
+                "Winged Sword Insignia",
+                "Rotten Winged Sword Insignia"
+            ],
+            "description": [
+                ""
+            ],
+            "effects": [],
+            "full_hex_id": "20000820",
+            "id": 2080,
+            "is_tradable": true,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "max_held": 999,
+            "max_stored": 999,
+            "name": "Winged Sword Insignia",
+            "price_sold": 500,
+            "remarks": [],
+            "summary": "",
+            "weight": 1.4
         }
     }
 }

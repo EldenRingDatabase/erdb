@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$comment": "Numbered successive hits refer to attack boost, while generic one is for HP regen.",
+    "type": "string",
+    "enum": [
+        "None",
+        "Successive hits",
+        "Successive 3 hits",
+        "Successive 6 hits",
+        "Successive 9 hits",
+        "On kill"
+    ]
+}

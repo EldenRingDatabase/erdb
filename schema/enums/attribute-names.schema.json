@@ -1,0 +1,71 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "string",
+    "enum": [
+        "Maximum Health",
+        "Health Points",
+        "Flask Health Restoration",
+        "Maximum Focus",
+        "Focus Points",
+        "Flask Focus Restoration",
+        "Maximum Stamina",
+        "Stamina Recovery Speed",
+        "Maximum Equip Load",
+
+        "Poise",
+        "Vigor",
+        "Mind",
+        "Endurance",
+        "Strength",
+        "Dexterity",
+        "Intelligence",
+        "Faith",
+        "Arcane",
+
+        "Standard Absorption",
+        "Strike Absorption",
+        "Slash Absorption",
+        "Pierce Absorption",
+        "Physical Absorption",
+        "Magic Absorption",
+        "Fire Absorption",
+        "Lightning Absorption",
+        "Holy Absorption",
+
+        "Standard Attack Power",
+        "Strike Attack Power",
+        "Slash Attack Power",
+        "Pierce Attack Power",
+        "Physical Attack Power",
+        "Magic Attack Power",
+        "Fire Attack Power",
+        "Lightning Attack Power",
+        "Holy Attack Power",
+
+        "Stamina Attack Rate",
+
+        "Stability",
+        "Poison Resistance",
+        "Scarlet Rot Resistance",
+        "Bleed Resistance",
+        "Frostbite Resistance",
+        "Sleep Resistance",
+        "Madness Resistance",
+        "Death Blight Resistance",
+
+        "Memory Slots",
+        "Casting Speed",
+        "Spell Duration",
+
+        "Sorcery Focus Consumption",
+        "Incantation Focus Consumption",
+        "Pyromancy Focus Consumption",
+        "Skill Focus Consumption",
+
+        "Bow Distance",
+        "Enemy Hearing",
+        "Fall Damage",
+        "Item Discovery",
+        "Rune Acquisition"
+    ]
+}

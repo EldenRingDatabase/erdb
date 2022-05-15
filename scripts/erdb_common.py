@@ -3,10 +3,20 @@ import collections
 from typing import Tuple, Dict
 from jsonschema import validate, RefResolver, ValidationError
 
-def load_schema(filename: str) -> Tuple[str, Dict]:
-    filename = f"{filename}.schema.json"
+def load_schema(filename: str, subdirectory: str="") -> Tuple[str, Dict]:
+    subdirectory = f"{subdirectory}/" if len(subdirectory) > 0 else subdirectory
+    filename = f"{subdirectory}{filename}.schema.json"
     with open(f"./schema/{filename}", mode="r") as f:
         return filename, json.load(f)
+
+def get_schema_enums(*enum_names: str) -> Dict[str, Dict]:
+    enums = {}
+
+    for enum_name in enum_names:
+        filename, schema = load_schema(enum_name, subdirectory="enums")
+        enums[filename] = schema
+
+    return enums
 
 def get_schema_properties(*references: str) -> Tuple[Dict, Dict[str, Dict]]:
     """

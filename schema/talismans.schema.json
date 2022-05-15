@@ -12,7 +12,7 @@
             "patternProperties": {
                 "^.+$": {
                     "type": "object",
-                    "$ref": "#/definitions/Talisman"
+                    "$ref": "talismans.schema.json#/definitions/Talisman"
                 }
             }
         }
@@ -37,7 +37,7 @@
                     "description": "Effects of the talisman.",
                     "type": "array",
                     "minItems": 1,
-                    "items": { "$ref": "#/definitions/Effect" }
+                    "items": { "$ref": "talismans.schema.json#/definitions/Effect" }
                 },
                 "conflicts": {
                     "description": "Array of other talismans this one conflicts with.",
@@ -54,9 +54,26 @@
         "Effect": {
             "type": "object",
             "properties": {
-                "modifier": {
-                    "description": "Specific stat this effect alters.",
-                    "$ref": "./enums/modifier-names.schema.json"
+                "attribute": {
+                    "description": "Specific attribute this effect alters.",
+                    "$ref": "./enums/attribute-names.schema.json"
+                },
+                "conditions": {
+                    "description": "List of conditions which trigger the effect, none for passive effects.",
+                    "type": "array",
+                    "minLength": 1,
+                    "items": {
+                        "oneOf": [
+                            { "$ref": "./enums/attack-types.schema.json" },
+                            { "$ref": "./enums/effect-types.schema.json" },
+                            { "$ref": "./enums/health-conditions.schema.json" },
+                            { "$ref": "./enums/attack-conditions.schema.json" }
+                        ]
+                    }
+                },
+                "tick_interval": {
+                    "description": "Interval in seconds on how often the effect ticks.",
+                    "type": "number"
                 },
                 "model": {
                     "description": "Specifies whether the value is multiplicative (ex. rune acquisition) or additive (ex. +5 strength).",
@@ -71,23 +88,15 @@
                     "enum": ["positive", "neutral", "negative"]
                 },
                 "value": {
-                    "description": "Value of the modifier, this can be a boolean, number or an array of numbers representing different tiers (ex. damage increased with successive attacks).",
-                    "oneOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "boolean"
-                        },
-                        {
-                            "type": "array",
-                            "minItems": 2,
-                            "items": { "type": "number" }
-                        }
-                    ]
+                    "description": "Value modifying the attribute.",
+                    "type": "number"
+                },
+                "value_pvp": {
+                    "description": "Optional modifying value when used in PvP scenario.",
+                    "type": "number"
                 }
             },
-            "required": ["modifier", "model", "type", "value"],
+            "required": ["attribute", "model", "type", "value"],
             "additionalProperties": false
         }
     }

@@ -37,6 +37,9 @@ class ParamRow(object):
     def get_int(self, field: str) -> int:
         return int(self.get(field))
 
+    def get_float(self, field: str) -> float:
+        return float(self.get(field))
+
     def get_int_corrected(self, field: str) -> int:
         """
         Elden Ring uses -1 for "null" int values, correct this to 0.
@@ -52,9 +55,17 @@ class ParamRow(object):
 
 ParamDict = Dict[str, ParamRow]
 
+def _in_range(row_id: str, id_min: int, id_max: int):
+    index = int(row_id)
+    return id_min <= index and index <= id_max
+
 def read(param: str, version: str) -> DictReader:
     with open(f"./source/{version}/{param}.csv", mode="r") as f:
         yield from DictReader(f, delimiter=";")
 
 def load(param: str, version: str, item_id_flag: ItemIDFlag) -> ParamDict:
     return {row["Row ID"]: ParamRow(row, item_id_flag) for row in read(param, version)}
+
+# optimal variant for params with a lot of IDs like spEffects
+def load_ids(param: str, version: str, item_id_flag: ItemIDFlag, id_min: int, id_max: int=999999999) -> ParamDict:
+    return {row["Row ID"]: ParamRow(row, item_id_flag) for row in read(param, version) if _in_range(row["Row ID"], id_min, id_max)}
