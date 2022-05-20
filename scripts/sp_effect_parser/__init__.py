@@ -1,28 +1,15 @@
 import sp_effect_parser.attribute_fields as attrib_fields
 import sp_effect_parser.effect_parsers as parse
+import sp_effect_parser.hardcoded_effects as hardcoded_effects
 from typing import List, Dict, Optional
 from er_params import ParamRow, ParamDict
 from er_params.enums import SpEffectType
-from sp_effect_parser.effect_typing import EffectModel, EffectType, AttributeName, SchemaEffect
+from sp_effect_parser.effect_typing import SchemaEffect
 
 _REFERENCE_EFFECT_PARAMS = ["cycleOccurrenceSpEffectId", "applyIdOnGetSoul"]
 
-def get_hardcoded_schema_effects(sp_effect: ParamRow) -> List[SchemaEffect]:
-    return {
-        # >> Greatshield Talisman
-        # This effect does not seem to utilize `guardStaminaCutRate`, unlike other shield buffs.
-        341000: [
-            SchemaEffect(
-                attribute=AttributeName.STABILITY,
-                effect_model=EffectModel.MULTIPLICATIVE,
-                effect_type=EffectType.POSITIVE,
-                value=1.1
-            )
-        ]
-    }.get(sp_effect.index, [])
-
 def get_effects(sp_effect: ParamRow, triggeree: Optional[ParamRow]=None) -> List[SchemaEffect]:
-    effects = get_hardcoded_schema_effects(sp_effect)
+    effects = hardcoded_effects.get(sp_effect.index)
 
     for field, attrib_field in attrib_fields.get().items():
         if sp_effect.get(field) == str(attrib_field.default_value):
