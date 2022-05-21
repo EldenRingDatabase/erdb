@@ -78,9 +78,9 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Ranged Skill Attack",
                         "Ammunition OnHit Attack",
-                        "Ammunition Attack"
+                        "Ammunition Attack",
+                        "Ranged Skill Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",
@@ -688,13 +688,7 @@
             ],
             "effects": [
                 {
-                    "attribute": "Sleep Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 90.0
-                },
-                {
-                    "attribute": "Madness Resistance",
+                    "attribute": "Focus",
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -726,13 +720,7 @@
             ],
             "effects": [
                 {
-                    "attribute": "Sleep Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 140.0
-                },
-                {
-                    "attribute": "Madness Resistance",
+                    "attribute": "Focus",
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -1774,8 +1762,8 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Charged Attack",
-                        "Charged Skill Attack"
+                        "Charged Skill Attack",
+                        "Charged Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",
@@ -2212,13 +2200,7 @@
             ],
             "effects": [
                 {
-                    "attribute": "Poison Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 90.0
-                },
-                {
-                    "attribute": "Scarlet Rot Resistance",
+                    "attribute": "Immunity",
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -2250,13 +2232,7 @@
             ],
             "effects": [
                 {
-                    "attribute": "Poison Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 140.0
-                },
-                {
-                    "attribute": "Scarlet Rot Resistance",
+                    "attribute": "Immunity",
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -2501,7 +2477,13 @@
             ],
             "effects": [
                 {
-                    "attribute": "Faith",
+                    "attribute": "Intelligence",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Arcane",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
@@ -2513,13 +2495,7 @@
                     "value": 3.0
                 },
                 {
-                    "attribute": "Intelligence",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 3.0
-                },
-                {
-                    "attribute": "Arcane",
+                    "attribute": "Faith",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
@@ -2557,7 +2533,13 @@
             ],
             "effects": [
                 {
-                    "attribute": "Faith",
+                    "attribute": "Intelligence",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Arcane",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -2569,13 +2551,7 @@
                     "value": 5.0
                 },
                 {
-                    "attribute": "Intelligence",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 5.0
-                },
-                {
-                    "attribute": "Arcane",
+                    "attribute": "Faith",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -2708,37 +2684,19 @@
             ],
             "effects": [
                 {
-                    "attribute": "Bleed Resistance",
+                    "attribute": "Focus",
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
-                    "attribute": "Frostbite Resistance",
+                    "attribute": "Robustness",
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
-                    "attribute": "Madness Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 40.0
-                },
-                {
-                    "attribute": "Poison Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 40.0
-                },
-                {
-                    "attribute": "Sleep Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 40.0
-                },
-                {
-                    "attribute": "Scarlet Rot Resistance",
+                    "attribute": "Immunity",
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
@@ -2770,37 +2728,19 @@
             ],
             "effects": [
                 {
-                    "attribute": "Bleed Resistance",
+                    "attribute": "Focus",
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
-                    "attribute": "Frostbite Resistance",
+                    "attribute": "Robustness",
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
-                    "attribute": "Madness Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 60.0
-                },
-                {
-                    "attribute": "Poison Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 60.0
-                },
-                {
-                    "attribute": "Sleep Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 60.0
-                },
-                {
-                    "attribute": "Scarlet Rot Resistance",
+                    "attribute": "Immunity",
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
@@ -3005,21 +2945,7 @@
                     "value": 0.85
                 },
                 {
-                    "attribute": "Incantation Focus Consumption",
-                    "model": "multiplicative",
-                    "tick_interval": 0.06,
-                    "type": "positive",
-                    "value": 0.75
-                },
-                {
-                    "attribute": "Sorcery Focus Consumption",
-                    "model": "multiplicative",
-                    "tick_interval": 0.06,
-                    "type": "positive",
-                    "value": 0.75
-                },
-                {
-                    "attribute": "Pyromancy Focus Consumption",
+                    "attribute": "Spell Focus Consumption",
                     "model": "multiplicative",
                     "tick_interval": 0.06,
                     "type": "positive",
@@ -3052,7 +2978,7 @@
             ],
             "effects": [
                 {
-                    "attribute": "Death Blight Resistance",
+                    "attribute": "Vitality",
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -3084,7 +3010,7 @@
             ],
             "effects": [
                 {
-                    "attribute": "Death Blight Resistance",
+                    "attribute": "Vitality",
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -3178,18 +3104,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Dexterity",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 3.0
-                },
-                {
-                    "attribute": "Endurance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 3.0
-                },
-                {
                     "attribute": "Vigor",
                     "model": "additive",
                     "type": "positive",
@@ -3197,6 +3111,18 @@
                 },
                 {
                     "attribute": "Strength",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Endurance",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
@@ -3234,18 +3160,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Dexterity",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 5.0
-                },
-                {
-                    "attribute": "Endurance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 5.0
-                },
-                {
                     "attribute": "Vigor",
                     "model": "additive",
                     "type": "positive",
@@ -3253,6 +3167,18 @@
                 },
                 {
                     "attribute": "Strength",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Endurance",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -3396,8 +3322,8 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Unknown Attack",
-                        "Roar Attack"
+                        "Roar Attack",
+                        "Unknown Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",
@@ -3598,8 +3524,8 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Skill Attack",
-                        "Charged Skill Attack"
+                        "Charged Skill Attack",
+                        "Skill Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",
@@ -3799,13 +3725,7 @@
             ],
             "effects": [
                 {
-                    "attribute": "Bleed Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 90.0
-                },
-                {
-                    "attribute": "Frostbite Resistance",
+                    "attribute": "Robustness",
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -3837,13 +3757,7 @@
             ],
             "effects": [
                 {
-                    "attribute": "Bleed Resistance",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 140.0
-                },
-                {
-                    "attribute": "Frostbite Resistance",
+                    "attribute": "Robustness",
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -4148,8 +4062,8 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Skill Attack",
-                        "Charged Skill Attack"
+                        "Charged Skill Attack",
+                        "Skill Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",

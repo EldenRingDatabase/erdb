@@ -49,6 +49,10 @@
         "Stamina Attack Rate",
 
         "Stability",
+        "Immunity",
+        "Robustness",
+        "Focus",
+        "Vitality",
         "Poison Resistance",
         "Scarlet Rot Resistance",
         "Bleed Resistance",
@@ -64,6 +68,7 @@
         "Sorcery Focus Consumption",
         "Incantation Focus Consumption",
         "Pyromancy Focus Consumption",
+        "Spell Focus Consumption",
         "Skill Focus Consumption",
 
         "Bow Distance",

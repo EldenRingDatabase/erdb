@@ -46,6 +46,30 @@ _AGGREGATOR_HINTS: List[AttributeAggregatorHint] = [
         base={_A.PHYSICAL_ATTACK_POWER, _A.ELEMENTAL_ATTACK_POWER},
         effective=_A.ATTACK_POWER
     ),
+    AttributeAggregatorHint(
+        base={_A.POISON_RESISTANCE, _A.SCARLET_ROT_RESISTANCE},
+        effective=_A.IMMUNITY
+    ),
+    AttributeAggregatorHint(
+        base={_A.BLEED_RESISTANCE, _A.FROSTBITE_RESISTANCE},
+        effective=_A.ROBUSTNESS
+    ),
+    AttributeAggregatorHint(
+        base={_A.SLEEP_RESISTANCE, _A.MADNESS_RESISTANCE},
+        effective=_A.FOCUS
+    ),
+    AttributeAggregatorHint(
+        base={_A.DEATH_BLIGHT_RESISTANCE},
+        effective=_A.VITALITY
+    ),
+    AttributeAggregatorHint(
+        base={_A.SORCERY_FOCUS_CONSUMPTION, _A.INCANTATION_FOCUS_CONSUMPTION, _A.PYROMANCY_FOCUS_CONSUMPTION},
+        effective=_A.SPELL_FOCUS_CONSUMPTION
+    ),
+    AttributeAggregatorHint(
+        base={_A.SORCERY_FOCUS_CONSUMPTION, _A.INCANTATION_FOCUS_CONSUMPTION}, # since pyromancies are unused
+        effective=_A.SPELL_FOCUS_CONSUMPTION
+    ),
 ]
 
 def _get_aggregated_effects(effects: List[SchemaEffect]) -> Dict[int, AggregatedSchemaEffect]:

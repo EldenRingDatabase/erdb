@@ -60,6 +60,10 @@ class AttributeName(str, Enum):
     ATTACK_POWER = "Attack Power",
     STAMINA_ATTACK_RATE = "Stamina Attack Rate"
     STABILITY = "Stability"
+    IMMUNITY = "Immunity",
+    ROBUSTNESS = "Robustness"
+    VITALITY = "Vitality",
+    FOCUS = "Focus",
     POISON_RESISTANCE = "Poison Resistance",
     SCARLET_ROT_RESISTANCE = "Scarlet Rot Resistance",
     BLEED_RESISTANCE = "Bleed Resistance",
@@ -73,6 +77,7 @@ class AttributeName(str, Enum):
     SORCERY_FOCUS_CONSUMPTION = "Sorcery Focus Consumption",
     INCANTATION_FOCUS_CONSUMPTION = "Incantation Focus Consumption",
     PYROMANCY_FOCUS_CONSUMPTION = "Pyromancy Focus Consumption",
+    SPELL_FOCUS_CONSUMPTION = "Spell Focus Consumption",
     SKILL_FOCUS_CONSUMPTION = "Skill Focus Consumption",
     BOW_DISTANCE = "Bow Distance",
     ENEMY_HEARING = "Enemy Hearing",
