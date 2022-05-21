@@ -1,4 +1,3 @@
-from scripts.sp_effect_parser import attribute_fields
 from sp_effect_parser.effect_typing import EffectModel, EffectType, AttributeName, SchemaEffect
 from typing import Dict, List
 

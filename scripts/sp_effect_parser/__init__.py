@@ -1,6 +1,7 @@
 import sp_effect_parser.attribute_fields as attrib_fields
 import sp_effect_parser.effect_parsers as parse
 import sp_effect_parser.hardcoded_effects as hardcoded_effects
+from sp_effect_parser.effect_aggregator import aggregate_effects
 from typing import List, Dict, Optional
 from er_params import ParamRow, ParamDict
 from er_params.enums import SpEffectType
@@ -45,4 +46,4 @@ def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fiel
         if effect_id in sp_effects:
             effects += get_effects_nested(sp_effects[effect_id], sp_effects)
 
-    return [e.to_dict() for e in effects]
+    return [e.to_dict() for e in aggregate_effects(effects)]

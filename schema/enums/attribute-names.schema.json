@@ -31,6 +31,8 @@
         "Fire Absorption",
         "Lightning Absorption",
         "Holy Absorption",
+        "Elemental Absorption",
+        "Absorption",
 
         "Standard Attack Power",
         "Strike Attack Power",
@@ -41,6 +43,8 @@
         "Fire Attack Power",
         "Lightning Attack Power",
         "Holy Attack Power",
+        "Elemental Attack Power",
+        "Attack Power",
 
         "Stamina Attack Rate",
 

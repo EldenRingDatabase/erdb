@@ -1,3 +1,4 @@
+from copy import deepcopy
 from enum import Enum
 from types import SimpleNamespace
 from typing import Any, Callable, Dict, NamedTuple, Optional, List
@@ -42,6 +43,8 @@ class AttributeName(str, Enum):
     FIRE_ABSORPTION = "Fire Absorption",
     LIGHTNING_ABSORPTION = "Lightning Absorption",
     HOLY_ABSORPTION = "Holy Absorption",
+    ELEMENTAL_ABSORPTION = "Elemental Absorption",
+    ABSORPTION = "Absorption",
     STANDARD_ATTACK_POWER = "Standard Attack Power",
     STRIKE_ATTACK_POWER = "Strike Attack Power",
     SLASH_ATTACK_POWER = "Slash Attack Power",
@@ -51,6 +54,8 @@ class AttributeName(str, Enum):
     FIRE_ATTACK_POWER = "Fire Attack Power",
     LIGHTNING_ATTACK_POWER = "Lightning Attack Power",
     HOLY_ATTACK_POWER = "Holy Attack Power",
+    ELEMENTAL_ATTACK_POWER = "Elemental Attack Power",
+    ATTACK_POWER = "Attack Power",
     STAMINA_ATTACK_RATE = "Stamina Attack Rate"
     STABILITY = "Stability"
     POISON_RESISTANCE = "Poison Resistance",
@@ -121,6 +126,15 @@ class SchemaEffect(SimpleNamespace):
                 d[prop] = getattr(self, prop)
 
         return d
+
+    def get_values_hash(self) -> int:
+        conds = None if self.conditions is None else tuple(self.conditions)
+        return hash((conds, self.tick_interval, self.effect_model, self.effect_type, self.value, self.value_pvp))
+
+    def clone(self, new_attribute: AttributeName) -> "SchemaEffect":
+        new_effect = deepcopy(self)
+        new_effect.attribute = new_attribute
+        return new_effect
 
     @classmethod
     def from_attribute_field(cls, value: float, attrib_field: AttributeField) -> "SchemaEffect":
