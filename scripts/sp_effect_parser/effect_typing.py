@@ -12,9 +12,11 @@ class EffectModel(str, Enum):
     MULTIPLICATIVE = "multiplicative"
     ADDITIVE = "additive"
 
-# Helper class of attributes used for effects,
-# these are self-made and don't correspond to anything in the game.
-# Schema counterpart in ./enums/attributes-names.schema.json
+"""
+Helper class of attributes used for effects, these are self-made
+and don't correspond to anything in the game.
+Schema counterpart in ./enums/attributes-names.schema.json
+"""
 class AttributeName(str, Enum):
     MAXIMUM_HEALTH = "Maximum Health",
     HEALTH_POINTS = "Health Points",
@@ -76,7 +78,15 @@ class AttributeName(str, Enum):
     ENEMY_HEARING = "Enemy Hearing",
     FALL_DAMAGE = "Fall Damage",
     ITEM_DISCOVERY = "Item Discovery",
-    RUNE_ACQUISITION = "Rune Acquisition"
+    RUNE_ACQUISITION = "Rune Acquisition",
+    INVISIBLE_AT_DISTANCE = "Invisible at Distance"
+    REDUCE_HEADSHOT_IMPACT = "Reduce Headshot Impact"
+    SWITCH_ANIMATION_GENDER = "Switch Animation Gender"
+    APPEAR_AS_COOPERATOR = "Appear as Cooperator"
+    APPEAR_AS_HOST = "Appear as Host"
+    PRESERVE_RUNES_ON_DEATH = "Preserve Runes on Death"
+    DESTROY_ITEM_ON_DEATH = "Destroy Item on Death"
+    ATTRACT_ENEMY_AGGRESSION = "Attract Enemy Aggression"
 
 class AttributeField(NamedTuple):
     attribute: AttributeName

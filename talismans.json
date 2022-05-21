@@ -77,6 +77,11 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Ranged Skill Attack",
+                        "Ammunition OnHit Attack",
+                        "Ammunition Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
@@ -254,6 +259,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Charge Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
@@ -756,6 +764,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Jump Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -787,6 +798,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Pot Item Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -815,7 +829,17 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Invisible at Distance",
+                    "conditions": [
+                        "Trigger on Crouch"
+                    ],
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 1
+                }
+            ],
             "full_hex_id": "2000177A",
             "id": 6010,
             "is_tradable": true,
@@ -1032,7 +1056,14 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Reduce Headshot Impact",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 1
+                }
+            ],
             "full_hex_id": "2000100E",
             "id": 4110,
             "is_tradable": true,
@@ -1093,6 +1124,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Guard Counter Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -1321,13 +1355,19 @@
         },
         "Entwining Umbilical Cord": {
             "conflicts": [
-                "Entwining Umbilical Cord",
-                ""
+                "Entwining Umbilical Cord"
             ],
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Switch Animation Gender",
+                    "model": "additive",
+                    "type": "neutral",
+                    "value": 1
+                }
+            ],
             "full_hex_id": "200017D4",
             "id": 6100,
             "is_tradable": true,
@@ -1492,6 +1532,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Spell Power Boost"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
@@ -1664,6 +1707,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Spell Power Boost"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
@@ -1693,7 +1739,14 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Appear as Host",
+                    "model": "additive",
+                    "type": "neutral",
+                    "value": 1
+                }
+            ],
             "full_hex_id": "200017C0",
             "id": 6080,
             "is_tradable": true,
@@ -1720,6 +1773,10 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Charged Attack",
+                        "Charged Skill Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -1748,7 +1805,28 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "conditions": [
+                        "Successive Hits"
+                    ],
+                    "model": "additive",
+                    "tick_interval": 4.0,
+                    "type": "positive",
+                    "value": 30.0
+                },
+                {
+                    "attribute": "Health Points",
+                    "conditions": [
+                        "Successive Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 4.0,
+                    "type": "positive",
+                    "value": 1.03
+                }
+            ],
             "full_hex_id": "200013B0",
             "id": 5040,
             "is_tradable": true,
@@ -1806,6 +1884,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Spell Power Boost"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.08
@@ -1837,6 +1918,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Spell Power Boost"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.04
@@ -2094,7 +2178,14 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Appear as Cooperator",
+                    "model": "additive",
+                    "type": "neutral",
+                    "value": 1
+                }
+            ],
             "full_hex_id": "200017CA",
             "id": 6090,
             "is_tradable": true,
@@ -2232,6 +2323,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Horseback Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -2407,12 +2501,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Arcane",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 3.0
-                },
-                {
                     "attribute": "Faith",
                     "model": "additive",
                     "type": "positive",
@@ -2426,6 +2514,12 @@
                 },
                 {
                     "attribute": "Intelligence",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Arcane",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
@@ -2463,12 +2557,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Arcane",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 5.0
-                },
-                {
                     "attribute": "Faith",
                     "model": "additive",
                     "type": "positive",
@@ -2482,6 +2570,12 @@
                 },
                 {
                     "attribute": "Intelligence",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Arcane",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -2522,6 +2616,39 @@
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
+                },
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 3 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 1.0,
+                    "type": "positive",
+                    "value": 1.04,
+                    "value_pvp": 1.04
+                },
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 6 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 0.7,
+                    "type": "positive",
+                    "value": 1.06,
+                    "value_pvp": 1.06
+                },
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 9 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 0.4,
+                    "type": "positive",
+                    "value": 1.11,
+                    "value_pvp": 1.11
                 }
             ],
             "full_hex_id": "200004E2",
@@ -2581,13 +2708,13 @@
             ],
             "effects": [
                 {
-                    "attribute": "Frostbite Resistance",
+                    "attribute": "Bleed Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
-                    "attribute": "Bleed Resistance",
+                    "attribute": "Frostbite Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
@@ -2605,13 +2732,13 @@
                     "value": 40.0
                 },
                 {
-                    "attribute": "Scarlet Rot Resistance",
+                    "attribute": "Sleep Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
                 },
                 {
-                    "attribute": "Sleep Resistance",
+                    "attribute": "Scarlet Rot Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
@@ -2643,13 +2770,13 @@
             ],
             "effects": [
                 {
-                    "attribute": "Frostbite Resistance",
+                    "attribute": "Bleed Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
-                    "attribute": "Bleed Resistance",
+                    "attribute": "Frostbite Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
@@ -2667,13 +2794,13 @@
                     "value": 60.0
                 },
                 {
-                    "attribute": "Scarlet Rot Resistance",
+                    "attribute": "Sleep Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
                 },
                 {
-                    "attribute": "Sleep Resistance",
+                    "attribute": "Scarlet Rot Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
@@ -2838,6 +2965,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Perfume Item Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -3048,18 +3178,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Vigor",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 3.0
-                },
-                {
-                    "attribute": "Strength",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 3.0
-                },
-                {
                     "attribute": "Dexterity",
                     "model": "additive",
                     "type": "positive",
@@ -3067,6 +3185,18 @@
                 },
                 {
                     "attribute": "Endurance",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Vigor",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Strength",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
@@ -3104,18 +3234,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Vigor",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 5.0
-                },
-                {
-                    "attribute": "Strength",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 5.0
-                },
-                {
                     "attribute": "Dexterity",
                     "model": "additive",
                     "type": "positive",
@@ -3123,6 +3241,18 @@
                 },
                 {
                     "attribute": "Endurance",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Vigor",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Strength",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -3265,6 +3395,10 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Unknown Attack",
+                        "Roar Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -3294,7 +3428,41 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 3 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 1.0,
+                    "type": "positive",
+                    "value": 1.06,
+                    "value_pvp": 1.06
+                },
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 6 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 0.7,
+                    "type": "positive",
+                    "value": 1.08,
+                    "value_pvp": 1.08
+                },
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 9 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 0.4,
+                    "type": "positive",
+                    "value": 1.13,
+                    "value_pvp": 1.13
+                }
+            ],
             "full_hex_id": "20000821",
             "id": 2081,
             "is_tradable": true,
@@ -3357,7 +3525,20 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Preserve Runes on Death",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 1
+                },
+                {
+                    "attribute": "Destroy Item on Death",
+                    "model": "additive",
+                    "type": "negative",
+                    "value": 1
+                }
+            ],
             "full_hex_id": "200017B6",
             "id": 6070,
             "is_tradable": true,
@@ -3381,7 +3562,14 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Attract Enemy Aggression",
+                    "model": "additive",
+                    "type": "neutral",
+                    "value": 1
+                }
+            ],
             "full_hex_id": "200017A2",
             "id": 6050,
             "is_tradable": true,
@@ -3409,6 +3597,10 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Skill Attack",
+                        "Charged Skill Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.15
@@ -3607,13 +3799,13 @@
             ],
             "effects": [
                 {
-                    "attribute": "Frostbite Resistance",
+                    "attribute": "Bleed Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
                 },
                 {
-                    "attribute": "Bleed Resistance",
+                    "attribute": "Frostbite Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 90.0
@@ -3645,13 +3837,13 @@
             ],
             "effects": [
                 {
-                    "attribute": "Frostbite Resistance",
+                    "attribute": "Bleed Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
                 },
                 {
-                    "attribute": "Bleed Resistance",
+                    "attribute": "Frostbite Resistance",
                     "model": "additive",
                     "type": "positive",
                     "value": 140.0
@@ -3790,6 +3982,9 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Final Chain Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.2
@@ -3952,6 +4147,10 @@
             "effects": [
                 {
                     "attribute": "Attack Power",
+                    "conditions": [
+                        "Skill Attack",
+                        "Charged Skill Attack"
+                    ],
                     "model": "multiplicative",
                     "type": "positive",
                     "value": 1.1
@@ -3981,7 +4180,41 @@
             "description": [
                 ""
             ],
-            "effects": [],
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 3 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 1.0,
+                    "type": "positive",
+                    "value": 1.03,
+                    "value_pvp": 1.03
+                },
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 6 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 0.7,
+                    "type": "positive",
+                    "value": 1.05,
+                    "value_pvp": 1.05
+                },
+                {
+                    "attribute": "Attack Power",
+                    "conditions": [
+                        "Successive 9 Hits"
+                    ],
+                    "model": "multiplicative",
+                    "tick_interval": 0.4,
+                    "type": "positive",
+                    "value": 1.1,
+                    "value_pvp": 1.1
+                }
+            ],
             "full_hex_id": "20000820",
             "id": 2080,
             "is_tradable": true,

@@ -1,12 +1,16 @@
 import math
 from typing import Optional, List, Dict
 from er_params import ParamRow
-from er_params.enums import SpEffectType
+from er_params.enums import SpEffectType, AttackType
 from sp_effect_parser.effect_typing import AttributeField, EffectModel
 
 _TRIGGER_FIELDS = [
     "stateInfo", "invocationConditionsStateChange1",
     "invocationConditionsStateChange2", "invocationConditionsStateChange3"
+]
+
+_CONDITION_FIELDS = [
+    "magicSubCategoryChange1", "magicSubCategoryChange2", "magicSubCategoryChange3"
 ]
 
 _PVE_TO_PVP = {
@@ -35,14 +39,22 @@ def conditions(sp_effect: ParamRow, triggeree: Optional[ParamRow]=None) -> Optio
             if not (cond := SpEffectType(effect_type_str)).is_passive():
                 conds.add(str(cond))
 
+    def _append_conditions(source: ParamRow):
+        for cond in _CONDITION_FIELDS:
+            attack_type_str = source.get(cond)
+            if (cond := AttackType(attack_type_str)) != AttackType.NONE:
+                conds.add(str(cond))
+
     for field, direction in [("conditionHp", "below"), ("conditionHpRate", "above")]:
         if (cond := sp_effect.get_int(field)) != -1:
             conds.add(f"HP {direction} {cond}%")
 
     _append_triggers(sp_effect)
+    _append_conditions(sp_effect)
 
     if triggeree:
         _append_triggers(triggeree)
+        _append_conditions(triggeree)
 
     return None if len(conds) == 0 else list(conds)
 

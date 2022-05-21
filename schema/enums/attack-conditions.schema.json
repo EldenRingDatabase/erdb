@@ -4,10 +4,9 @@
     "type": "string",
     "enum": [
         "None",
-        "Successive hits",
-        "Successive 3 hits",
-        "Successive 6 hits",
-        "Successive 9 hits",
-        "On kill"
+        "Successive Hits",
+        "Successive 3 Hits",
+        "Successive 6 Hits",
+        "Successive 9 Hits"
     ]
 }

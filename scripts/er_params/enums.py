@@ -1,5 +1,5 @@
 from enum import Enum, IntEnum
-from typing import Optional
+from typing import Dict
 
 class ItemIDFlag(IntEnum):
     NON_EQUIPABBLE = 0 # params used only for references, ex. param sets
@@ -40,16 +40,34 @@ class ReferenceCategory(str, Enum):
     BULLET = "1"
     SP_EFFECT = "2"
 
-class AttackCategory(str, Enum):
+class AttackCondition(str, Enum):
+    NONE = "0"
+    SUCCESSIVE_HITS = "1"
+    SUCCESSIVE_3_HITS = "2"
+    SUCCESSIVE_6_HITS = "3"
+    SUCCESSIVE_9_HITS = "4"
+
+    def __str__(self) -> str:
+        return _ATTACK_CONDITION_STR[self]
+
+_ATTACK_CONDITION_STR: Dict[AttackCondition, str] = {
+    AttackCondition.NONE: "0",
+    AttackCondition.SUCCESSIVE_HITS: "Successive Hits",
+    AttackCondition.SUCCESSIVE_3_HITS: "Successive 3 Hits",
+    AttackCondition.SUCCESSIVE_6_HITS: "Successive 6 Hits",
+    AttackCondition.SUCCESSIVE_9_HITS: "Successive 9 Hits",
+}
+
+class AttackType(str, Enum):
     NONE = "0"
     FULL_MOON_SPELL = "1"
     CARIAN_SWORD_SPELL = "2"
     GLINTBLADE_SPELL = "3"
     STONEDIGGER_SPELL = "4"
     CRYSTALIAN_SPELL = "5"
-    GLINTSTONE_SPELL = "6"
+    KAROLOS_SPELL = "6"
     OLIVINUS_SPELL = "7"
-    MAGMA_SPELL = "8"
+    LAVA_SPELL = "8"
     THORN_SPELL = "9"
     DEATH_SPELL = "10"
     GRAVITY_SPELL = "11"
@@ -84,6 +102,55 @@ class AttackCategory(str, Enum):
     UNKNOWN_ATTACK = "116"
     WRAITH_ATTACK = "117"
     AMMUNITION_ONHIT_ATTACK = "118"
+
+    def __str__(self) -> str:
+        return _ATTACK_TYPE_STR[self]
+
+_ATTACK_TYPE_STR: Dict[AttackType, str] = {
+    AttackType.NONE: "None",
+    AttackType.FULL_MOON_SPELL: "Full Moon Spell",
+    AttackType.CARIAN_SWORD_SPELL: "Carian Sword Spell",
+    AttackType.GLINTBLADE_SPELL: "Glintblade Spell",
+    AttackType.STONEDIGGER_SPELL: "Stonedigger Spell",
+    AttackType.CRYSTALIAN_SPELL: "Crystalian Spell",
+    AttackType.KAROLOS_SPELL: "Karolos Spell",
+    AttackType.OLIVINUS_SPELL: "Olivinus Spell",
+    AttackType.LAVA_SPELL: "Lava Spell",
+    AttackType.THORN_SPELL: "Thorn Spell",
+    AttackType.DEATH_SPELL: "Death Spell",
+    AttackType.GRAVITY_SPELL: "Gravity Spell",
+    AttackType.NIGHT_SPELL: "Night Spell",
+    AttackType.RANNI_SPELL: "Ranni Spell",
+    AttackType.AZUR_SPELL: "Azur Spell",
+    AttackType.LUSAT_SPELL: "Lusat Spell",
+    AttackType.BLACK_FLAME_SPELL: "Black Flame Spell",
+    AttackType.FLAME_SPELL: "Flame Spell",
+    AttackType.DRAGON_CULT_SPELL: "Dragon Cult Spell",
+    AttackType.BESTIAL_SPELL: "Bestial Spell",
+    AttackType.GOLDEN_ORDER_SPELL: "Golden Order Spell",
+    AttackType.DRAGON_COMMUNION_SPELL: "Dragon Communion Spell",
+    AttackType.FRENZIED_FLAME_SPELL: "Frenzied Flame Spell",
+    AttackType.GODSLAYER_SPELL: "Godslayer Spell",
+    AttackType.PRIMORDIAL_CRUCIBLE_SPELL: "Primordial Crucible Spell",
+    AttackType.CHARGE_ATTACK: "Charge Attack",
+    AttackType.HORSEBACK_ATTACK: "Horseback Attack",
+    AttackType.JUMP_ATTACK: "Jump Attack",
+    AttackType.GUARD_COUNTER_ATTACK: "Guard Counter Attack",
+    AttackType.FINAL_CHAIN_ATTACK: "Final Chain Attack",
+    AttackType.AMMUNITION_ATTACK: "Ammunition Attack",
+    AttackType.ROAR_ATTACK: "Roar Attack",
+    AttackType.BREATH_ATTACK: "Breath Attack",
+    AttackType.POT_ITEM_ATTACK: "Pot Item Attack",
+    AttackType.PERFUME_ITEM_ATTACK: "Perfume Item Attack",
+    AttackType.CHARGED_ATTACK: "Charged Attack",
+    AttackType.CHARGED_SKILL_ATTACK: "Charged Skill Attack",
+    AttackType.SKILL_ATTACK: "Skill Attack",
+    AttackType.RANGED_SKILL_ATTACK: "Ranged Skill Attack",
+    AttackType.VAPOR_ATTACK: "Vapor Attack",
+    AttackType.UNKNOWN_ATTACK: "Unknown Attack",
+    AttackType.WRAITH_ATTACK: "Wraith Attack",
+    AttackType.AMMUNITION_ONHIT_ATTACK: "Ammunition OnHit Attack"
+}
 
 class SpEffectType(str, Enum):
     NONE = "0"
@@ -494,26 +561,21 @@ class SpEffectType(str, Enum):
         return _SP_EFFECT_TYPE_STR[self]
 
     def is_passive(self) -> str:
-        # This list is likely incomplete
+        """
+        Some stateInfo effect types act as trigger condtions for effects, others specify whether the effect
+        is passive. This list can be used to check whether this type is used as a condtion.
+        NOTE: This list is likely incomplete.
+        """
         return self in [
             self.NONE, self.BOW_DISTANCE_CHANGE, self.INCREASE_DEFENSE, self.INCREASE_DAMAGE,
-            self.MODIFY_ENEMY_LISTEN_REDUCTION, self.EXTEND_ROLL_INVINCIBILITY, self.SPELL_POWER_BOOST,
-            self.MODIFY_RUNE_GAIN, self.MODIFY_ITEM_DISCOVERY, self.GREEN_BLOSSOM_VFX, self.MODIFY_EFFECT_DURATION
+            self.MODIFY_ENEMY_LISTEN_REDUCTION, self.EXTEND_ROLL_INVINCIBILITY, self.MODIFY_RUNE_GAIN,
+            self.MODIFY_ITEM_DISCOVERY, self.GREEN_BLOSSOM_VFX, self.MODIFY_EFFECT_DURATION,
+            self.CONDITIONAL_1, self.CONDITIONAL_2, self.CONDITIONAL_3, self.CONDITIONAL_4,
+            self.CONDITIONAL_5, self.CONDITIONAL_6, self.CONDITIONAL_7, self.CONDITIONAL_8,
+            self.CONDITIONAL_9,
         ]
 
-    def get_reference_offset(self) -> Optional[int]:
-        """
-        Some stateInfo effect types are unique triggers which reference other SpEffects by themselves only,
-        without any parameter in the trigeree SpEffect. This returns the offset ID of that effect.
-        Example: Assassin's Crimson Dagger's `stateInfo` is `Trigger on Critical Hit (HP)`, yet there is no
-                 field in the original SpEffect which tells that an effect should active on a crit.
-        """
-        return {
-            self.TRIGGER_ON_CRITICAL_HIT_HP: 2,
-            self.TRIGGER_ON_CRITICAL_HIT_FP: 2
-        }.get(self)
-
-_SP_EFFECT_TYPE_STR = {
+_SP_EFFECT_TYPE_STR: Dict[SpEffectType, str] = {
     SpEffectType.NONE: "None",
     SpEffectType.POISON: "Poison",
     SpEffectType.UNKNOWN: "Unknown",

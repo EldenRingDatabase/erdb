@@ -35,8 +35,9 @@ def main():
     # magicConsumptionRate   -- FP consumption rate for sorceries
     # stateInfo              -- a lot of unique effects seem to use this and this only
     # guardStaminaCutRate    -- Greatshield Talisman doesn't seem to use this
+    # magicSubCategoryChange1/2/3 -- seem to specify conditions exclusively
 
-    values = get_values(effects, "guardStaminaCutRate", limit=30)
+    values = get_values(effects, "magicSubCategoryChange3", limit=30)
 
     for value in sorted(values.keys(), key=float):
         cases = values[value]

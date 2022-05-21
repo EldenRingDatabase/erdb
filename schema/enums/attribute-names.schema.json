@@ -70,6 +70,15 @@
         "Enemy Hearing",
         "Fall Damage",
         "Item Discovery",
-        "Rune Acquisition"
+        "Rune Acquisition",
+
+        "Invisible at Distance",
+        "Reduce Headshot Impact",
+        "Switch Animation Gender",
+        "Appear as Cooperator",
+        "Appear as Host",
+        "Preserve Runes on Death",
+        "Destroy Item on Death",
+        "Attract Enemy Aggression"
     ]
 }

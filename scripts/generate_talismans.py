@@ -30,7 +30,7 @@ def find_min_max_effect_ids(accessories: ParamDict, *effect_fields: str) -> Tupl
     return min_id, (max_id + 1000) # account for potential variants mentioned inside spEffectParam itself
 
 def find_conflicts(group: int, accessories: ParamDict) -> List[str]:
-    return [t.name for t in accessories.values() if t.get_int("accessoryGroup") == group]
+    return [t.name for t in accessories.values() if t.get_int("accessoryGroup") == group and len(t.name) > 0]
 
 def make_talisman_object(row: ParamRow, accessories: ParamDict, effects: ParamDict) -> Dict:
     return {
@@ -41,8 +41,8 @@ def make_talisman_object(row: ParamRow, accessories: ParamDict, effects: ParamDi
         # description -- cannot autogenerate, make sure not to overwrite
         "is_tradable": row.get("disableMultiDropShare") == "0",
         "price_sold": row.get_int_corrected("sellValue"),
-        "max_held": 999, # TODO: get correct
-        "max_stored": 999, # TODO: get correct
+        "max_held": 999,
+        "max_stored": 999,
         # locations -- cannot autogenerate, make sure not to overwrite
         # remarks -- cannot autogenerate, make sure not to overwrite
         "weight": float(row.get("weight")),
