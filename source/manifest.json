@@ -47,5 +47,25 @@
     "EquipMtrlSetParam.csv": {
         "source": "Yapped",
         "$comment": "Reinforce and purchase recipies: stones, gloveworts, rememberences, crafting materials, etc"
-    }
+    },
+	"AccessoryCaption.fmg.xml": {
+		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
+		"$comment": "Talisman descriptions"
+	},
+	"AccessoryInfo.fmg.xml": {
+		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
+		"$comment": "Talisman summaries"
+	},
+	"GoodsCaption.fmg.xml": {
+		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
+		"$comment": "General item descriptions"
+	},
+	"GoodsInfo.fmg.xml": {
+		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
+		"$comment": "General item summaries"
+	},
+	"GoodsInfo2.fmg.xml": {
+		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
+		"$comment": "General item extra short info, like the name of the spirit summon or crafing material locations"
+	}
 }

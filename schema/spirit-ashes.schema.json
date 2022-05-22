@@ -28,6 +28,11 @@
                     "#comment": "Override list of possible names to be Spirit Ash names only.",
                     "$ref": "spirit-ashes.schema.json#/definitions/SpiritAshNames"
                 },
+                "summon_name": {
+                    "description": "Specific name of the summoned spirit(s).",
+                    "type": "string",
+                    "minLength": 1
+                },
                 "fp_cost": {
                     "description": "Cost of FP to summon, 0 if not applicable.",
                     "type": "integer",
@@ -78,6 +83,7 @@
                 }
             },
             "required": [
+                "summon_name",
                 "fp_cost",
                 "hp_cost",
                 "rarity",

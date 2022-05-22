@@ -2,7 +2,7 @@ import json
 import er_params
 from typing import Dict, List
 from er_params.enums import GoodsType, GoodsRarity, ItemIDFlag
-from erdb_common import update_nested, get_schema_properties, patch_keys, validate_and_write
+from erdb_common import update_nested, get_schema_properties, get_item_msg, parse_description, patch_keys, validate_and_write
 
 ParamRow = er_params.ParamRow
 ParamDict = er_params.ParamDict
@@ -13,7 +13,7 @@ def is_base_spirit_ash(row: ParamRow) -> bool:
 def find_upgrade_costs(goods: ParamDict, base_item_id: int) -> List[int]:
     return [goods[str(item_id)].get_int("reinforcePrice") for item_id in range(base_item_id, base_item_id + 10)]
 
-def make_spirit_ash_object(row: ParamRow, goods: ParamDict, upgrade_mats: ParamDict) -> Dict:
+def make_spirit_ash_object(row: ParamRow, goods: ParamDict, upgrade_mats: ParamDict, summaries: Dict[int, str], descriptions: Dict[int, str], summon_names: Dict[int, str]) -> Dict:
     # HACK: reinforceMaterialId links to EquipMtrlSetParam which THEN links to the actual EquipParamGoods
     # this simply checks if the name of EquipMtrlSetParam somewhat matches without following everything
     upgrade_material = upgrade_mats[row.get("reinforceMaterialId")].name.startswith("Grave")
@@ -23,8 +23,9 @@ def make_spirit_ash_object(row: ParamRow, goods: ParamDict, upgrade_mats: ParamD
         "full_hex_id": row.index_hex,
         "id": row.index,
         "name": row.name,
-        # summary -- cannot autogenerate, make sure not to overwrite
-        # description -- cannot autogenerate, make sure not to overwrite
+        "summary": summaries[row.index],
+        "description": parse_description(descriptions[row.index]),
+        "summon_name": summon_names[row.index].strip(), # sometimes trailing spaces
         "is_tradable": row.get("disableMultiDropShare") == "0",
         "price_sold": row.get_int_corrected("sellValue"),
         "max_held": row.get_int("maxNum"),
@@ -49,9 +50,13 @@ def main():
     upgrade_mats = er_params.load("EquipMtrlSetParam", "1.04.1", ItemIDFlag.NON_EQUIPABBLE)
     properties, store = get_schema_properties("item", "spirit-ashes/definitions/SpiritAsh")
 
+    summaries = get_item_msg("GoodsInfo", "1.04.1")
+    summon_names = get_item_msg("GoodsInfo2", "1.04.1")
+    descriptions = get_item_msg("GoodsCaption", "1.04.1")
+
     for row in goods.values():
         if is_base_spirit_ash(row):
-            obj = make_spirit_ash_object(row, goods, upgrade_mats)
+            obj = make_spirit_ash_object(row, goods, upgrade_mats, summaries, descriptions, summon_names)
             ash = spirit_ashes.get(row.name, {})
 
             update_nested(ash, obj)

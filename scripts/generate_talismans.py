@@ -4,8 +4,8 @@ from typing import Dict, List, Tuple
 from er_params.enums import ItemIDFlag
 from sp_effect_parser import parse_effects
 from erdb_common import (
-    get_schema_properties, get_schema_enums,
-    update_nested, patch_keys, validate_and_write)
+    get_schema_properties, get_schema_enums, get_item_msg,
+    parse_description, update_nested, patch_keys, validate_and_write)
 
 ParamRow = er_params.ParamRow
 ParamDict = er_params.ParamDict
@@ -32,13 +32,13 @@ def find_min_max_effect_ids(accessories: ParamDict, *effect_fields: str) -> Tupl
 def find_conflicts(group: int, accessories: ParamDict) -> List[str]:
     return [t.name for t in accessories.values() if t.get_int("accessoryGroup") == group and len(t.name) > 0]
 
-def make_talisman_object(row: ParamRow, accessories: ParamDict, effects: ParamDict) -> Dict:
+def make_talisman_object(row: ParamRow, accessories: ParamDict, effects: ParamDict, summaries: Dict[int, str], descriptions: Dict[int, str]) -> Dict:
     return {
         "full_hex_id": row.index_hex,
         "id": row.index,
         "name": row.name,
-        # summary -- cannot autogenerate, make sure not to overwrite
-        # description -- cannot autogenerate, make sure not to overwrite
+        "summary": summaries[row.index],
+        "description": parse_description(descriptions[row.index]),
         "is_tradable": row.get("disableMultiDropShare") == "0",
         "price_sold": row.get_int_corrected("sellValue"),
         "max_held": 999,
@@ -63,8 +63,11 @@ def main():
     properties, store = get_schema_properties("item", "talismans/definitions/Talisman")
     store.update(get_schema_enums("talisman-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
 
+    summaries = get_item_msg("AccessoryInfo", "1.04.1")
+    descriptions = get_item_msg("AccessoryCaption", "1.04.1")
+
     for row in iterate_talismans(accessories):
-        new_obj = make_talisman_object(row, accessories, effects)
+        new_obj = make_talisman_object(row, accessories, effects, summaries, descriptions)
         obj = talismans.get(row.name, {})
 
         update_nested(obj, new_obj)

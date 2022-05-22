@@ -1,6 +1,7 @@
 import json
+import xml.etree.ElementTree as xmltree
 import collections
-from typing import Tuple, Dict
+from typing import Tuple, Dict, List
 from jsonschema import validate, RefResolver, ValidationError
 
 def load_schema(filename: str, subdirectory: str="") -> Tuple[str, Dict]:
@@ -43,6 +44,14 @@ def get_schema_properties(*references: str) -> Tuple[Dict, Dict[str, Dict]]:
         store[filename] = schema
 
     return properties_full, store
+
+def get_item_msg(filename: str, version: str) -> Dict[int, str]:
+    tree = xmltree.parse(f"./source/{version}/{filename}.fmg.xml")
+    entries = tree.getroot().findall(".//text")
+    return {int(e.get("id")): e.text for e in entries if e.text != "%null%"}
+
+def parse_description(desc: str) -> List[str]:
+    return desc.replace("—", " - ").split("\n")
 
 def patch_keys(obj: Dict, schema: Dict) -> Dict:
     # delete excessive keys
