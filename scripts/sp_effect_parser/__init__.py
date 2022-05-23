@@ -35,7 +35,8 @@ def get_effects_nested(sp_effect: ParamRow, sp_effects: ParamDict) -> List[Schem
 
     for ref_id in (sp_effect.get(ref_field) for ref_field in _REFERENCE_EFFECT_PARAMS):
         if ref_sp_effect := sp_effects.get(ref_id):
-            effects += get_effects(ref_sp_effect, sp_effect_type, sp_effect)
+            if ref_sp_effect.index > 0:
+                effects += get_effects(ref_sp_effect, sp_effect_type, sp_effect)
 
     for condition_offset in hardcoded_effects.get_conditions(sp_effect.index):
         ref_sp_effect = sp_effects.get(str(sp_effect.index + condition_offset.offset))
@@ -45,7 +46,7 @@ def get_effects_nested(sp_effect: ParamRow, sp_effects: ParamDict) -> List[Schem
     return effects
 
 def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fields: str) -> List[Dict]:
-    effects = []
+    effects: List[SchemaEffect] = []
 
     for effect_id in (row.get(ref_field) for ref_field in effect_referencing_fields):
         if effect_id in sp_effects:
