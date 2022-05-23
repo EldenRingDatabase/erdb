@@ -142,7 +142,7 @@
                     "description": "The type of currency this item is bought for, if applicable.",
                     "type": "string",
                     "default": "Rune",
-                    "enum": ["Rune", "Dragon Heart"]
+                    "enum": ["Rune", "Dragon Heart", "Starlight Shard", "Lost Ashes of War"]
                 },
                 "requirements": {
                     "description": "List of requirements which make the item available. Can be full sentences.",
