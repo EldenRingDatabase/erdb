@@ -99,6 +99,7 @@ class AttackType(str, Enum):
     SKILL_ATTACK = "112"
     RANGED_SKILL_ATTACK = "113"
     VAPOR_ATTACK = "114"
+    BUBBLE_SKILL_ATTACK = "115"
     UNKNOWN_ATTACK = "116"
     WRAITH_ATTACK = "117"
     AMMUNITION_ONHIT_ATTACK = "118"
@@ -147,6 +148,7 @@ _ATTACK_TYPE_STR: Dict[AttackType, str] = {
     AttackType.SKILL_ATTACK: "Skill Attack",
     AttackType.RANGED_SKILL_ATTACK: "Ranged Skill Attack",
     AttackType.VAPOR_ATTACK: "Vapor Attack",
+    AttackType.BUBBLE_SKILL_ATTACK: "Bubble Skill Attack",
     AttackType.UNKNOWN_ATTACK: "Unknown Attack",
     AttackType.WRAITH_ATTACK: "Wraith Attack",
     AttackType.AMMUNITION_ONHIT_ATTACK: "Ammunition OnHit Attack"
