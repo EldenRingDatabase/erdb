@@ -88,9 +88,9 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
+                        "Ranged Skill Attack",
                         "Ammunition OnHit Attack",
-                        "Ammunition Attack",
-                        "Ranged Skill Attack"
+                        "Ammunition Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",
@@ -1961,8 +1961,8 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Charged Skill Attack",
-                        "Charged Attack"
+                        "Charged Attack",
+                        "Charged Skill Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",
@@ -2755,25 +2755,25 @@
             ],
             "effects": [
                 {
-                    "attribute": "Mind",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 3.0
-                },
-                {
                     "attribute": "Faith",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
-                    "attribute": "Arcane",
+                    "attribute": "Intelligence",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
                 },
                 {
-                    "attribute": "Intelligence",
+                    "attribute": "Mind",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Arcane",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
@@ -2815,25 +2815,25 @@
             ],
             "effects": [
                 {
-                    "attribute": "Mind",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 5.0
-                },
-                {
                     "attribute": "Faith",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
-                    "attribute": "Arcane",
+                    "attribute": "Intelligence",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
                 },
                 {
-                    "attribute": "Intelligence",
+                    "attribute": "Mind",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Arcane",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -2980,12 +2980,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Immunity",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 40.0
-                },
-                {
                     "attribute": "Focus",
                     "model": "additive",
                     "type": "positive",
@@ -2993,6 +2987,12 @@
                 },
                 {
                     "attribute": "Robustness",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                },
+                {
+                    "attribute": "Immunity",
                     "model": "additive",
                     "type": "positive",
                     "value": 40.0
@@ -3028,12 +3028,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Immunity",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 60.0
-                },
-                {
                     "attribute": "Focus",
                     "model": "additive",
                     "type": "positive",
@@ -3041,6 +3035,12 @@
                 },
                 {
                     "attribute": "Robustness",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                },
+                {
+                    "attribute": "Immunity",
                     "model": "additive",
                     "type": "positive",
                     "value": 60.0
@@ -3446,12 +3446,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Strength",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 3.0
-                },
-                {
                     "attribute": "Vigor",
                     "model": "additive",
                     "type": "positive",
@@ -3459,6 +3453,12 @@
                 },
                 {
                     "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Strength",
                     "model": "additive",
                     "type": "positive",
                     "value": 3.0
@@ -3506,12 +3506,6 @@
             ],
             "effects": [
                 {
-                    "attribute": "Strength",
-                    "model": "additive",
-                    "type": "positive",
-                    "value": 5.0
-                },
-                {
                     "attribute": "Vigor",
                     "model": "additive",
                     "type": "positive",
@@ -3519,6 +3513,12 @@
                 },
                 {
                     "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Strength",
                     "model": "additive",
                     "type": "positive",
                     "value": 5.0
@@ -3682,8 +3682,8 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Unknown Attack",
-                        "Roar Attack"
+                        "Roar Attack",
+                        "Unknown Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",
@@ -3905,8 +3905,8 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Skill Attack",
-                        "Charged Skill Attack"
+                        "Charged Skill Attack",
+                        "Skill Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",
@@ -4505,8 +4505,8 @@
                 {
                     "attribute": "Attack Power",
                     "conditions": [
-                        "Skill Attack",
-                        "Charged Skill Attack"
+                        "Charged Skill Attack",
+                        "Skill Attack"
                     ],
                     "model": "multiplicative",
                     "type": "positive",

@@ -45,7 +45,7 @@ def make_talisman_object(row: ParamRow, accessories: ParamDict, effects: ParamDi
         "max_stored": 999,
         # locations -- cannot autogenerate, make sure not to overwrite
         # remarks -- cannot autogenerate, make sure not to overwrite
-        "weight": float(row.get("weight")),
+        "weight": row.get_float("weight"),
         "effects": parse_effects(row, effects, *_EFFECT_FIELDS),
         "conflicts": find_conflicts(row.get_int("accessoryGroup"), accessories),
     }
@@ -61,6 +61,7 @@ def main():
     effects = er_params.load_ids("SpEffectParam", "1.04.1", ItemIDFlag.NON_EQUIPABBLE, effect_id_min, effect_id_max)
 
     properties, store = get_schema_properties("item", "talismans/definitions/Talisman")
+    store.update(get_schema_properties("effect")[1])
     store.update(get_schema_enums("talisman-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
 
     summaries = get_item_msg("AccessoryInfo", "1.04.1")
