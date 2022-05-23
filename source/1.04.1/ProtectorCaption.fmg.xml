@@ -1,0 +1,2328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<fmg>
+<compression>None</compression>
+<version>DarkSouls3</version>
+<bigendian>False</bigendian>
+<entries>
+<text id="200">%null%</text>
+<text id="1000">%null%</text>
+<text id="1100">%null%</text>
+<text id="1200">%null%</text>
+<text id="1300">%null%</text>
+<text id="1400">%null%</text>
+<text id="1500">%null%</text>
+<text id="1600">%null%</text>
+<text id="1700">%null%</text>
+<text id="1800">%null%</text>
+<text id="1900">%null%</text>
+<text id="2000">%null%</text>
+<text id="2100">%null%</text>
+<text id="2200">%null%</text>
+<text id="2300">%null%</text>
+<text id="2400">%null%</text>
+<text id="2500">%null%</text>
+<text id="2600">%null%</text>
+<text id="2700">%null%</text>
+<text id="2800">%null%</text>
+<text id="2900">%null%</text>
+<text id="3000">%null%</text>
+<text id="3100">%null%</text>
+<text id="3200">%null%</text>
+<text id="3300">%null%</text>
+<text id="3400">%null%</text>
+<text id="3500">%null%</text>
+<text id="3600">%null%</text>
+<text id="3700">%null%</text>
+<text id="3800">%null%</text>
+<text id="3900">%null%</text>
+<text id="4000">%null%</text>
+<text id="4100">%null%</text>
+<text id="4200">%null%</text>
+<text id="4300">%null%</text>
+<text id="4400">%null%</text>
+<text id="4500">%null%</text>
+<text id="4600">%null%</text>
+<text id="4700">%null%</text>
+<text id="4800">%null%</text>
+<text id="4900">%null%</text>
+<text id="5000">%null%</text>
+<text id="10000">Bare head with no armor equipped.</text>
+<text id="10100">Bare torso with no armor equipped.</text>
+<text id="10200">Bare arms with no armor equipped.</text>
+<text id="10300">Bare legs with no armor equipped.</text>
+<text id="40000">An iron helmet showing rust on its edges.
+
+Cloth covering the mouth and neck provides some resistance to poison and other irritants.</text>
+<text id="40100">Armor reinforced with small metal scales.
+
+The cape covering the shoulders is made with treated rock lizard skin, and provides ample protection against fire.</text>
+<text id="40200">Ordinary iron gauntlets.</text>
+<text id="40300">Well-made leather trousers.
+
+The lower legs are each bound in cord for ease of movement.</text>
+<text id="50000">Helm worn by Kaiden sellswords.
+
+These hulking, fearless mercenaries, said to hail from the mountaintops of the wintry north, are adept at fighting on horseback.
+Kaiden is the name of their home settlement.</text>
+<text id="50100">Armor worn by Kaiden sellswords.
+Made with the pelt of a snow-wolf, which protects against the cold.
+
+These hulking, fearless mercenaries, said to hail from the mountaintops of the wintry north, are adept at fighting on horseback.
+Kaiden is the name of their home settlement.</text>
+<text id="50200">Gauntlets worn by Kaiden sellswords.
+
+These hulking, fearless mercenaries, said to hail from the mountaintops of the wintry north, are adept at fighting on horseback.
+Kaiden is the name of their home settlement.</text>
+<text id="50300">Trousers worn by Kaiden sellswords.
+
+These hulking, fearless mercenaries, said to hail from the mountaintops of the wintry north, are adept at fighting on horseback.
+Kaiden is the name of their home settlement.</text>
+<text id="60000">Black iron helm worn by drake knights.
+Features the spoils of a dragon catch as an emblem of pride as both dragon hunter and partaker of communion.
+
+From birth, drake knights speak not a word. They spend their lives pursuing the strength of dragons, for its sublime beauty and inspiration of awe.</text>
+<text id="60100">Black iron armor worn by drake knights.
+Features the spoils of a dragon catch as an emblem of pride as both dragon hunter and partaker of communion.
+
+The cape is crafted with dragon wing membrane.</text>
+<text id="60200">Black iron gauntlets worn by drake knights.
+Features the spoils of a dragon catch as an emblem of pride as both dragon hunter and partaker of communion.
+
+From birth, drake knights speak not a word. They spend their lives pursuing the strength of dragons, for its sublime beauty and inspiration of awe.</text>
+<text id="60300">Black iron greaves by drake knights.
+Features the spoils of a dragon catch as an emblem of pride as both dragon hunter and partaker of communion.
+
+From birth, drake knights speak not a word. They spend their lives pursuing the strength of dragons, for its sublime beauty and inspiration of awe.</text>
+<text id="61000">Black iron helm worn by drake knights.
+Features the spoils of a dragon catch as an emblem of pride as both dragon hunter and partaker of communion.
+
+From birth, drake knights speak not a word. They spend their lives pursuing the strength of dragons, for its sublime beauty and inspiration of awe.</text>
+<text id="61100">Black iron armor worn by drake knights.
+Features the spoils of a dragon catch as an emblem of pride as both dragon hunter and partaker of communion.
+
+From birth, drake knights speak not a word. They spend their lives pursuing the strength of dragons, for its sublime beauty and inspiration of awe.</text>
+<text id="80000">Helm worn by Old Knight Istvan.
+The corroded metal is reinforced with rock-hard scales, making it highly effective against non-physical attacks.
+
+Istvan is one of a few wizened Tarnished who survive to this day.</text>
+<text id="80100">Armor worn by Old Knight Istvan.
+The corroded metal is reinforced with rock-hard scales, making it highly effective against non-physical attacks.
+
+Istvan is one of a few wizened Tarnished who survive to this day.</text>
+<text id="80200">Gauntlets worn by Old Knight Istvan.
+The corroded metal is reinforced with rock-hard scales, making it highly effective against non-physical attacks.
+
+Istvan is one of a few wizened Tarnished who survive to this day.</text>
+<text id="80300">Greaves worn by Old Knight Istvan.
+The corroded metal is reinforced with rock-hard scales, making it highly effective against non-physical attacks.
+
+Istvan is one of a few wizened Tarnished who survive to this day.</text>
+<text id="81100">Armor worn by Old Knight Istvan.
+The corroded metal is reinforced with rock-hard scales, making it highly effective against non-physical attacks.
+
+Istvan is one of a few wizened Tarnished who survive to this day.</text>
+<text id="90000">Hood of an Erdtree Capital perfumer.
+
+In times past, the role of perfumer was much respected; a blessed apothecary in the eyes of the many. But after entering the battlefields of the Shattering they performed no such role, trading their aromatics for poisons and explosives.</text>
+<text id="90100">Robe of an Erdtree Capital perfumer.
+
+The thick front apron embroidered with a depiction of the Erdtree is proof of mastery of the apothecarial arts, and its weight symbolizes the onus of both pride and responsibility.</text>
+<text id="90200">Gloves of an Erdtree Capital perfumer.
+
+In times past, the role of perfumer was much respected; a blessed apothecary in the eyes of the many. But after entering the battlefields of the Shattering they performed no such role, trading their aromatics for poisons and explosives.</text>
+<text id="90300">Sarong of an Erdtree Capital perfumer.
+
+In times past, the role of perfumer was much respected; a blessed apothecary in the eyes of the many. But after entering the battlefields of the Shattering they performed no such role, trading their aromatics for poisons and explosives.</text>
+<text id="91100">Robe of an Erdtree Capital perfumer.
+
+The thick front apron embroidered with a depiction of the Erdtree is proof of mastery of the apothecarial arts, and its weight symbolizes the onus of both pride and responsibility.</text>
+<text id="100000">Hat of a traveling perfumer of no renown.
+
+An associate of a healer, he is said to be in search of new aromatics and flower gardens, in hopes of treating Misbegotten, Omen, and all those seen as impure.</text>
+<text id="100100">Garb of a traveling perfumer of no renown.
+
+The thick front apron, the badge of a perfumer, has been replaced with a more simple one made from soft leather.</text>
+<text id="100200">Gloves of a traveling perfumer of no renown.
+
+An associate of a healer, he is said to be in search of new aromatics and flower gardens, in hopes of treating Misbegotten, Omen, and all those seen as impure.</text>
+<text id="100300">Slops of a traveling perfumer of no renown.
+
+An associate of a healer, he is said to be in search of new aromatics and flower gardens, in hopes of treating Misbegotten, Omen, and all those seen as impure.</text>
+<text id="101100">Garb of a traveling perfumer of no renown.
+
+The thick front apron, the badge of a perfumer, has been replaced with a more simple one made from soft leather.</text>
+<text id="120000">Mad Tongue Alberich's pointed hat, a sign of a heretical practitioner.
+
+Set with red glintstones, said to be formed by the blood of sacrifices. Strengthens thorn sorcery.
+
+Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.</text>
+<text id="120100">Mad Tongue Alberich's robe.
+
+Set with red glintstones, said to be formed by the blood of sacrifices. Strengthens thorn sorcery.
+
+Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.</text>
+<text id="120200">Mad Tongue Alberich's bracers.
+
+Set with red glintstones, said to be formed by the blood of sacrifices. Strengthen thorn sorcery.
+
+Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.</text>
+<text id="120300">Mad Tongue Alberich's trousers.
+
+Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.</text>
+<text id="121000">Mad Tongue Alberich's pointed hat, a sign of a heretical practitioner.
+
+Set with red glintstones, said to be formed by the blood of sacrifices. Strengthens thorn sorcery.
+
+Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.</text>
+<text id="121100">Mad Tongue Alberich's robe.
+
+Alberich was an aloof yet disturbed heretical sorcerer said to have been driven mad by jeering tongues during his service to the Roundtable Hold long ago.</text>
+<text id="130000">Glintstone sorcerer Rogier's pointed hat, a sign of a heretical practitioner. Strengthens glintstone sorcery skills.
+
+Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.</text>
+<text id="130100">Glintstone sorcerer Rogier's traveling attire, graced with an intricate, aristocratic decoration. Strengthens glintstone sorcery skills.
+
+Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.</text>
+<text id="130200">Glintstone sorcerer Rogier's gloves, graced with an intricate, aristocratic decoration. Strengthen glintstone sorcery skills.
+
+Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.</text>
+<text id="130300">Glintstone sorcerer Rogier's trousers, graced with an intricate, aristocratic decoration. Strengthen glintstone sorcery skills.
+
+Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.</text>
+<text id="131100">Glintstone sorcerer Rogier's traveling attire, graced with an intricate, aristocratic decoration. Strengthens glintstone sorcery skills.
+
+Rogier spent his entire life behaving with utter detachment. No one noticed the anger, grief, regret, or fear that existed along with it.</text>
+<text id="140000">Great Horned Tragoth's helm, adorned with a gold bull-goat motif. Provides high poise.
+
+Tragoth is a famed knight of assistance. Countless Tarnished, facing adversity in the Lands Between, have survived thanks only to the Great Horned One's aid.</text>
+<text id="140100">Great Horned Tragoth's armor. Covers its wearer with a pair of giant horns, providing staunch poise.
+
+Tragoth is a famed knight of assistance. Countless Tarnished, facing adversity in the Lands Between, have survived thanks only to the Great Horned One's aid.</text>
+<text id="140200">Great Horned Tragoth's gauntlets, adorned with a gold bull-goat motif. Provide high poise.
+
+Tragoth is a famed knight of assistance. Countless Tarnished, facing adversity in the Lands Between, have survived thanks only to the Great Horned One's aid.</text>
+<text id="140300">Great Horned Tragoth's greaves, adorned with a gold bull-goat motif. Provide high poise.
+
+Tragoth is a famed knight of assistance. Countless Tarnished, facing adversity in the Lands Between, have survived thanks only to the Great Horned One's aid.</text>
+<text id="150000">Iron kasa of the man who calls himself Shabriri.
+Crafted to imitate the woven straw hats worn in the Land of Reeds.
+
+The man, once known as Yura, kept a woman in the deepest reaches of his heart.</text>
+<text id="150100">Armor of the man who calls himself Shabriri.
+Highly functional and heavily worn.
+
+The man, once known as Yura, kept a woman in the deepest reaches of his heart.</text>
+<text id="150200">Gauntlets of the man who calls himself Shabriri.
+Highly functional and heavily worn.
+
+The man, once known as Yura, kept a woman in the deepest reaches of his heart.</text>
+<text id="150300">Greaves of the man who calls himself Shabriri.
+Highly functional and heavily worn.
+
+The man, once known as Yura, kept a woman in the deepest reaches of his heart.</text>
+<text id="151100">Armor of the man who calls himself Shabriri.
+Highly functional and heavily worn.
+
+The man, once known as Yura, kept a woman in the deepest reaches of his heart.</text>
+<text id="160000">Coarse hooded cloak of olive brown.
+
+The garb of those accused of lesser crimes, indicated by the collar of sharpened branches.</text>
+<text id="160100">Clothing made of coarse material, commonly worn in the Lands Between.</text>
+<text id="160200">Arm wraps made of coarse material.
+Garb of spurned Tarnished who were
+forced into slavery in the Lands Between.</text>
+<text id="160300">Trousers made of coarse material, commonly worn in the Lands Between.</text>
+<text id="170000">A mask fashioned after the head of a black wolf.
+
+Relic of an assassin who assumed the guise of Ranni the Witch's loyal shadow. The likeness is striking.</text>
+<text id="170100">Well-worn black armor of the man-wolf Blaidd.
+
+The pelt serves as a cape, protecting from cold.
+Blaidd was the blade of Ranni, but the cold bothered him anyway.</text>
+<text id="170200">Well-worn black gauntlets of the man-wolf Blaidd.
+
+Blaidd, who served as Ranni's shadow, was a loyal ally who would defy destiny itself if it would have him turn upon his Lady.</text>
+<text id="170300">Well-worn black greaves of the man-wolf Blaidd.
+
+Blaidd, who served as Ranni's shadow, was a loyal ally who would defy destiny itself if it would have him turn upon his Lady.</text>
+<text id="171100">Well-worn black armor of the man-wolf Blaidd.
+
+Blaidd, who served as Ranni's shadow, was a loyal ally who would defy destiny itself if it would have him turn upon his Lady.</text>
+<text id="180000">Hood used by the Black Knife Assassins.
+
+The assassins that carried out the deeds of the Night of the Black Knives were all women, and rumored to be Numen who had close ties with Marika herself.</text>
+<text id="180100">Scale armor used by the Black Knife Assassins, forged to make no sound.
+
+Traces of power yet remain in its concealing veil, which muffles the sound of footsteps.
+
+The assassins that carried out the deeds of the Night of the Black Knives were all women, and rumored to be Numen who had close ties with Marika herself.</text>
+<text id="180200">Gauntlets used by the Black Knife Assassins.
+Crafted with scale armor that makes no sound.
+
+The assassins that carried out the deeds of the Night of the Black Knives were all women, and rumored to be Numen who had close ties with Marika herself.</text>
+<text id="180300">Greaves used by the Black Knife Assassins.
+Crafted with scale armor that makes no sound.
+
+The assassins that carried out the deeds of the Night of the Black Knives were all women, and rumored to be Numen who had close ties with Marika herself.</text>
+<text id="181100">Armor used by the Black Knife Assassins.
+Crafted with scale armor that makes no sound.
+
+The assassins that carried out the deeds of the Night of the Black Knives were all women, and rumored to be Numen who had close ties with Marika herself.</text>
+<text id="190000">Deep red hood that covers the whole head.
+
+Worn by soldiers sent to the penal colonies, who were required to keep their faces hidden.</text>
+<text id="190100">Damaged armor draped with a large deep-red cloth.
+Worn by soldiers sent to the penal colonies.</text>
+<text id="190200">Damaged iron gauntlets.
+Worn by soldiers sent to the penal colonies.</text>
+<text id="190300">Damaged iron greaves.
+Worn by soldiers sent to the penal colonies.</text>
+<text id="200000">Thick, full set of armor covering the entire body.
+This helm was worn by knights who, whether by misfortune or misdeed, were forced to abandon their homes.
+
+Perhaps the deep-red scarf was used to block the winds, for on the outskirts, the winds bite with a stinging fierceness.</text>
+<text id="200100">Thick, full set of armor covering the entire body.
+This armor was worn by knights who, whether by misfortune or misdeed, were forced to abandon their homes.
+
+These fierce warriors were each and all accomplished. Perhaps that is why, despite their territorial losses, they were still named knights.</text>
+<text id="200200">Thick, full set of armor covering the entire body.
+These gauntlets were worn by knights who, whether by misfortune or misdeed, were forced to abandon their homes.
+
+These fierce warriors were each and all accomplished. Perhaps that is why, despite their territorial losses, they were still named knights.</text>
+<text id="200300">Thick, full set of armor covering the entire body.
+These greaves were worn by knights who, whether by misfortune or misdeed, were forced to abandon their homes.
+
+These fierce warriors were each and all accomplished. Perhaps that is why, despite their territorial losses, they were still named knights.</text>
+<text id="201000">Thick, full set of armor covering the entire body.
+This helm was worn by knights who, whether by misfortune or misdeed, were forced to abandon their homes.
+
+These fierce warriors were each and all accomplished. Perhaps that is why, despite their territorial losses, they were still named knights.</text>
+<text id="201100">Thick, full set of armor covering the entire body.
+This armor was worn by knights who, whether by misfortune or misdeed, were forced to abandon their homes.
+
+These fierce warriors were each and all accomplished. Perhaps that is why, despite their territorial losses, they were still named knights.</text>
+<text id="210000">Battered iron helm from a foreign land.
+Worn by Elemer of the Briar.
+
+The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. They also cause this armor to deal damage when performing dodge rolls.
+
+Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.</text>
+<text id="210100">Battered iron armor from a foreign land.
+Worn by Elemer of the Briar.
+
+The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. They also cause this armor to deal damage when performing dodge rolls.
+
+Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.</text>
+<text id="210200">Battered gauntlets from a foreign land.
+Worn by Elemer of the Briar.
+
+The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. They also cause this armor to deal damage when performing dodge rolls.
+
+Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.</text>
+<text id="210300">Battered greaves from a foreign land.
+Worn by Elemer of the Briar.
+
+The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. They also cause this armor to deal damage when performing dodge rolls.
+
+Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.</text>
+<text id="211100">Battered iron armor from a foreign land.
+Worn by Elemer of the Briar.
+
+The winding, rusted iron briars are a mark of the guilty, and typically indicate a sentence of death. They also cause this armor to deal damage when performing dodge rolls.
+
+Elemer murdered numerous instructors and merchants, and was known as the Bell Bearing Hunter.</text>
+<text id="220000">Hood worn by pages who serve the nobility and are mindful to keep them out of harm's way.
+
+The unassuming sack-like appearance befits their unseen and unknown stature.</text>
+<text id="220100">Garb worn by pages who serve the nobility and are mindful to keep them out of harm's way.
+
+Traveling wear tailored with exquisite precision, to avoid any undue shame for the page's master.</text>
+<text id="220300">Trousers worn by pages who serve the nobility and are mindful to keep them out of harm's way.
+
+Traveling wear tailored with exquisite precision, to avoid any undue shame for the page's master.</text>
+<text id="221100">Garb worn by pages who serve the nobility and are mindful to keep them out of harm's way.
+
+Traveling wear tailored with exquisite precision, to avoid any undue shame for the page's master.</text>
+<text id="230000">Pitch-black helm with flowing black hair.
+Worn by the Night's Cavalry who ride funeral steeds.
+
+The Night's Cavalry, who now wander the dim roads of night, were once led by the Fell Omen and were deliverers of death for great warriors, knights, and champions.</text>
+<text id="230100">Pitch-black armor thinly painted with dried blood.
+Worn by the Night's Cavalry who ride funeral steeds.
+
+The Night's Cavalry, who now wander the dim roads of night, were once led by the Fell Omen and were deliverers of death for great warriors, knights, and champions.</text>
+<text id="230200">Pitch-black gauntlets thinly painted with dried blood.
+Worn by the Night's Cavalry who ride funeral steeds.
+
+The Night's Cavalry, who now wander the dim roads of night, were once led by the Fell Omen and were deliverers of death for great warriors, knights, and champions.</text>
+<text id="230300">Pitch-black greaves thinly painted with dried blood.
+Worn by the Night's Cavalry who ride funeral steeds.
+
+The Night's Cavalry, who now wander the dim roads of night, were once led by the Fell Omen and were deliverers of death for great warriors, knights, and champions.</text>
+<text id="231000">Pitch-black helm thinly painted with dried blood.
+Worn by the Night's Cavalry who ride funeral steeds.
+
+The Night's Cavalry, who now wander the dim roads of night, were once led by the Fell Omen and were deliverers of death for great warriors, knights, and champions.</text>
+<text id="231100">Pitch-black armor thinly painted with dried blood.
+Worn by the Night's Cavalry who ride funeral steeds.
+
+The Night's Cavalry, who now wander the dim roads of night, were once led by the Fell Omen and were deliverers of death for great warriors, knights, and champions.</text>
+<text id="240000">Chainmail hood crafted with blue silver.
+Worn by the wolf-riding Albinauric archers.
+
+Blue silver is a metal born from the same mother as the archers themselves, and provides protection from magic and frost.</text>
+<text id="240100">Chainmail armor crafted with blue silver.
+Worn by the wolf-riding Albinauric archers.
+
+Blue silver is a metal born from the same mother as the archers themselves, and provides protection from magic and frost.</text>
+<text id="240200">Bracelets crafted with blue silver.
+Worn by the wolf-riding Albinauric archers.
+
+Blue silver is a metal born from the same mother as the archers themselves, and provides protection from magic and frost.</text>
+<text id="240300">Chainmail skirt crafted with blue silver.
+Worn by the wolf-riding Albinauric archers.
+
+Blue silver is a metal born from the same mother as the archers themselves, and provides protection from magic and frost.</text>
+<text id="241100">Chainmail armor crafted with blue silver.
+Worn by the wolf-riding Albinauric archers.
+
+Blue silver is a metal born from the same mother as the archers themselves, and provides protection from magic and frost.</text>
+<text id="250000">Chapeau of the nomadic merchants.
+Decorated with tiny gems in a wide spectrum of colors.
+
+These merchants once thrived as the Great Caravan, but after being accused of heretical beliefs, their entire clan was rounded up and buried alive far underground.
+
+Then, they chanted a curse of despair, and summoned the flame of frenzy.</text>
+<text id="250100">Finery of the nomadic merchants.
+Decorated with tiny gems in a wide spectrum of colors.
+
+These merchants once thrived as the Great Caravan, but after being accused of heretical beliefs, their entire clan was rounded up and buried alive far underground.
+
+Then, they chanted a curse of despair, and summoned the flame of frenzy.</text>
+<text id="250300">Trousers of the nomadic merchants.
+
+These merchants once thrived as the Great Caravan, but after being accused of heretical beliefs, their entire clan was rounded up and buried alive far underground.
+
+Then, they chanted a curse of despair, and summoned the flame of frenzy.</text>
+<text id="251100">Finery of the nomadic merchants.
+Decorated with tiny gems in a wide spectrum of colors.
+
+These merchants once thrived as the Great Caravan, but after being accused of heretical beliefs, their entire clan was rounded up and buried alive far underground.
+
+Then, they chanted a curse of despair, and summoned the flame of frenzy.</text>
+<text id="260000">A malformed golden helm.
+Adorned with various dragon imagery and worn by the misshapen Tree Sentinels.
+
+After the great ancient dragon Gransax attacked, the sentinels had an epiphany. The only way to truly protect the Erdtree was to become dragons themselves.</text>
+<text id="260100">Malformed golden armor.
+Adorned with various dragon imagery and worn by the misshapen Tree Sentinels.
+
+After the great ancient dragon Gransax attacked, the sentinels had an epiphany. The only way to truly protect the Erdtree was to become dragons themselves.</text>
+<text id="260200">Malformed golden gauntlets.
+Adorned with various dragon imagery and worn by the misshapen Tree Sentinels.
+
+After the great ancient dragon Gransax attacked, the sentinels had an epiphany. The only way to truly protect the Erdtree was to become dragons themselves.</text>
+<text id="260300">Malformed golden greaves.
+Adorned with various dragon imagery and worn by the misshapen Tree Sentinels.
+
+After the great ancient dragon Gransax attacked, the sentinels had an epiphany. The only way to truly protect the Erdtree was to become dragons themselves.</text>
+<text id="270000">Golden helm of the heavy cavalry Tree Sentinels who serve the Erdtree.
+
+Very few are permitted to wear a golden wood crest of such size as seen on this helm.</text>
+<text id="270100">Golden armor of the heavy cavalry Tree Sentinels who serve the Erdtree.
+
+Adorned with a cape featuring the mark of the sacred tree.
+
+Imposingly sturdy and nigh unbreakable, the grace of old yet lingers.</text>
+<text id="270200">Golden gauntlets of the heavy cavalry Tree Sentinels who serve the Erdtree.
+
+Imposingly sturdy and nigh unbreakable, the grace of old yet lingers.</text>
+<text id="270300">Golden greaves of the heavy cavalry Tree Sentinels who serve the Erdtree.
+
+Imposingly sturdy and nigh unbreakable, the grace of old yet lingers.</text>
+<text id="271100">Golden armor of the heavy cavalry Tree Sentinels who serve the Erdtree.
+
+Imposingly sturdy and nigh unbreakable, the grace of old yet lingers.</text>
+<text id="280000">Silver helm of Loretta, a knight who served Miquella's Haligtree.
+
+Loretta, once a royal Carian knight, went on a journey in search of a haven for Albinaurics, and determined that the Haligtree was their best chance for eventual salvation.</text>
+<text id="280100">Silver armor of Loretta, a knight who served Miquella's Haligtree.
+
+Loretta was once a royal Carian knight, and her lapis-lazuli blue cape is the emblem of the knightly pride that continues to guide her.</text>
+<text id="280200">Silver gauntlets of Loretta, a knight who served Miquella's Haligtree.
+
+Loretta, once a royal Carian knight, went on a journey in search of a haven for Albinaurics, and determined that the Haligtree was their best chance for eventual salvation.</text>
+<text id="280300">Silver greaves of Loretta, a knight who served Miquella's Haligtree.
+
+Loretta, once a royal Carian knight, went on a journey in search of a haven for Albinaurics, and determined that the Haligtree was their best chance for eventual salvation.</text>
+<text id="281100">Silver armor of Loretta, a knight who served Miquella's Haligtree.
+
+Loretta, once a royal Carian knight, went on a journey in search of a haven for Albinaurics, and determined that the Haligtree was their best chance for eventual salvation.</text>
+<text id="290000">Silk hood worn by the monks of the Eternal City.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="290100">Armor worn by the monks of the Eternal City, with a silk cape attached.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="290200">Monastic bracelets of the Eternal City.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="290300">Monastic greaves of the Eternal City.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="291000">Hood worn by the monks of the Eternal City.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="291100">Armor worn by the monks of the Eternal City.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="292000">Crown worn by swordstresses of the Eternal City.
+These women are the personal guards of the nightmaidens, and the silk hides their eyes.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="292100">Armor worn by swordstresses of the Eternal City.
+These women are the personal guards of the nightmaidens, and wear silk capes.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="293000">Twin crowns worn by the nightmaidens of the Eternal City.
+Indicates the highest clerical rank, and hides the eyes with silk.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="293100">Armor worn by the nightmaidens of the Eternal City.
+Indicates the highest clerical rank, and includes a silk cape.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="294000">Crown worn by swordstresses of the Eternal City.
+The silk eye covering is removed, flaunting convention.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="294100">Armor worn by swordstresses of the Eternal City.
+These women are the personal guards of the nightmaidens.
+
+Long ago, the Nox invoked the ire of the Greater Will, and were banished deep underground. Now they live under a false night sky, in eternal anticipation of their liege. Of the coming age of the stars. And their Lord of Night.</text>
+<text id="300000">Headband decorated by a pair of great horns.
+Worn by ancestral follower warriors.
+
+The ancestral followers keep their distance from the Erdtree, awaiting new buds. They are certain to sprout from their very flesh, and indeed, their souls.</text>
+<text id="300100">Raiment fashioned from a bristly pelt.
+Worn by ancestral follower warriors.
+
+The ancestral followers keep their distance from the Erdtree, awaiting new buds. They are certain to sprout from their very flesh, and indeed, their souls.</text>
+<text id="300300">Leggings fashioned from bristly pelts.
+Worn by ancestral follower warriors.
+
+The ancestral followers keep their distance from the Erdtree, awaiting new buds. They are certain to sprout from their very flesh, and indeed, their souls.</text>
+<text id="301000">Headband decorated by a pair of shining horns.
+Worn by ancestral follower shamans.
+
+Horns with buds that also shine are ideal ceremonial items for ancestral worship. Strengthens Ancestral Infant's Head.</text>
+<text id="301100">Raiment fashioned from a bristly pelt.
+Worn by ancestral follower shamans.
+
+The ancestral followers live a distance from the Erdtree, awaiting new buds. They are certain to sprout from their very flesh, and indeed, their souls.</text>
+<text id="301300">Leggings fashioned from bristly pelts.
+Worn by ancestral follower shamans.
+
+The ancestral followers live a distance from the Erdtree, awaiting new buds. They are certain to sprout from their very flesh, and indeed, their souls.</text>
+<text id="310000">Bronze helm decorated with innumerable snakes.
+Worn by gladiators who were driven from the colosseum. The wearer becomes a slightly easier target for foes.
+
+The snake is viewed as a traitor to the Erdtree, and the audience delighted in seeing these bronze effigies beaten and battered.</text>
+<text id="310100">Thick, bristly cloak that is the symbol of an underground gravekeeper.
+
+Those who once fought for a living were driven from the colosseum, and becoming guardians of Erdtree Burial.</text>
+<text id="310300">Greaves encircled by bronze snakes.
+Worn by gladiators who were driven from the colosseum. The wearer becomes a slightly easier target for foes.
+
+The snake is viewed as a traitor to the Erdtree, and the audience delighted in seeing these bronze effigies beaten and battered.</text>
+<text id="311100">Defensive wear encircled by bronze snakes.
+Worn by gladiators who were driven from the colosseum. The wearer becomes a slightly easier target for foes.
+
+The snake is viewed as a traitor to the Erdtree, and the audience delighted in seeing these bronze effigies beaten and battered.</text>
+<text id="320000">Hood of dyed black cloth featuring gold embroidery.
+Worn by the nobles who serve the Lord of Blood.
+
+Known to strike from pools of blood, these assassins are missionaries come to share the gospel of accursed blood.</text>
+<text id="320100">Robe of dyed black cloth featuring gold embroidery.
+Worn by the nobles who serve the Lord of Blood.
+
+The grand metallic pattern on the shoulder is a signifier of the noble rank they intend to claim upon the advent of the new dynasty they are working to install.</text>
+<text id="320300">Waistcloth sewn from black cloth.
+Worn by the nobles who serve the Lord of Blood.
+
+Known to strike from pools of blood, these assassins are missionaries come to share the gospel of accursed blood.</text>
+<text id="330000">Engraved golden mask.
+Worn by the guardians of the Minor Erdtrees.
+
+In accordance with an ancient pact with the Erdtree, it is said that their deaths led not to destruction, but instead to renewed, eternal life as guardians.</text>
+<text id="330100">Engraved golden garb.
+Worn by the guardians of the Minor Erdtrees.
+
+Raises the HP recovery effects of the Flask of Crimson Tears, but greatly lowers fire damage negation.
+
+It is said that the blood-red flowers blooming on their backs mark the senescence of their ancient pact. Perhaps the guardians are part tree already.</text>
+<text id="330200">Engraved golden bracers.
+Worn by the guardians of the Minor Erdtrees.
+
+In accordance with an ancient pact with the Erdtree, it is said that their deaths led not to destruction, but instead to renewed, eternal life as guardians.</text>
+<text id="330300">Engraved golden greaves.
+Worn by the guardians of the Minor Erdtrees.
+
+In accordance with an ancient pact with the Erdtree, it is said that their deaths led not to destruction, but instead to renewed, eternal life as guardians.</text>
+<text id="331100">Engraved golden garb.
+Worn by the guardians of the Minor Erdtrees.
+
+In accordance with an ancient pact with the Erdtree, it is said that their deaths led not to destruction, but instead to renewed, eternal life as guardians.</text>
+<text id="340000">Winged helm of the Cleanrot Knights, celebrated for their undefeated campaign in the Shattering.
+
+The Cleanrot Knights vowed to fight alongside Malenia, despite the inevitable, if gradual, putrefaction of their flesh. Their acceptance of their fate made these battles the fiercest of all.</text>
+<text id="340100">Armor of the Cleanrot Knights, celebrated for their undefeated campaign in the Shattering.
+
+The Cleanrot Knights vowed to fight alongside Malenia, despite the inevitable, if gradual, putrefaction of their flesh. Their acceptance of their fate made these battles the fiercest of all.</text>
+<text id="340200">Gauntlets of the Cleanrot Knights, celebrated for their undefeated campaign in the Shattering.
+
+The Cleanrot Knights vowed to fight alongside Malenia, despite the inevitable, if gradual, putrefaction of their flesh. Their acceptance of their fate made these battles the fiercest of all.</text>
+<text id="340300">Greaves of the Cleanrot Knights, celebrated for their undefeated campaign in the Shattering.
+
+The Cleanrot Knights vowed to fight alongside Malenia, despite the inevitable, if gradual, putrefaction of their flesh. Their acceptance of their fate made these battles the fiercest of all.</text>
+<text id="341000">Winged helm of the Cleanrot Knights, celebrated for their undefeated campaign in the Shattering.
+
+The Cleanrot Knights vowed to fight alongside Malenia, despite the inevitable, if gradual, putrefaction of their flesh. Their acceptance of their fate made these battles the fiercest of all.</text>
+<text id="341100">Armor of the Cleanrot Knights, celebrated for their undefeated campaign in the Shattering.
+
+The Cleanrot Knights vowed to fight alongside Malenia, despite the inevitable, if gradual, putrefaction of their flesh. Their acceptance of their fate made these battles the fiercest of all.</text>
+<text id="350000">Mail hood of iron links covering a headband
+engraved with flames. Attire of the Fire Monks.
+
+The Fire Monks are guardians of the flame of ruin, forbidden by the Erdtree and said to be kept high in the Mountaintops of the Giants.</text>
+<text id="350100">Black iron armor adorned with a red cloth.
+Attire of the Fire Monks.
+
+The grotesque face sculpted on the chest is said to depict the corrupt ancient god of the flame.
+Taboos transform into lasting obsessions by virtue of the fear that they inspire.</text>
+<text id="350200">Black iron gauntlets featuring a flame motif.
+Attire of the Fire Monks.
+
+The Fire Monks are guardians of the flame of ruin, forbidden by the Erdtree and said to be kept high in the Mountaintops of the Giants.</text>
+<text id="350300">Black iron greaves featuring a flame motif.
+Attire of the Fire Monks.
+
+The Fire Monks are guardians of the flame of ruin, forbidden by the Erdtree and said to be kept high in the Mountaintops of the Giants.</text>
+<text id="351000">Mail hood of iron links covering a headband
+engraved with flames. Attire of the Blackflame Monks.
+
+The Blackflame Monks, enthralled by the god-slaying black flame, became traitors, abandoning their posts as guardians. The seduction of a taboo is never easily spurned.</text>
+<text id="351100">Black iron armor adorned with ashen cloth.
+Attire of the Blackflame Monks.
+
+The Blackflame Monks, enthralled by the god-slaying black flame, became traitors, abandoning their posts as guardians. The seduction of a taboo is never easily spurned.</text>
+<text id="351200">Black iron gauntlets featuring a flame motif.
+Attire of the Blackflame Monks.
+
+The Blackflame Monks, enthralled by the god-slaying black flame, became traitors, abandoning their posts as guardians. The seduction of a taboo is never easily spurned.</text>
+<text id="351300">Black iron greaves featuring a flame motif.
+Attire of the Blackflame Monks.
+
+The Blackflame Monks, enthralled by the god-slaying black flame, became traitors, abandoning their posts as guardians. The seduction of a taboo is never easily spurned.</text>
+<text id="360000">Helm engraved with a sacred countenance and housing a cauldron.
+Attire of the Fire Prelates, commanders of the Fire Monks.
+
+It is said the cauldron perched atop the head was originally furnished with embers, and would surge into flames when the wearer's faith reached its zenith. The fire of this cauldron has since died out, however.</text>
+<text id="360100">Black iron armor adorned with a red cloth.
+Attire of the Fire Prelates, commanders of the Fire Monks.
+
+The weighty frames of the Prelates symbolized the onus of their grave vows as guardians of the flame. "Etch this sight upon thine breast. Of my thunderous gravity."</text>
+<text id="360200">Black iron gauntlets with the appearance of flames.
+Attire of the Fire Prelates, commanders of the Fire Monks.
+
+The weighty frames of the Prelates symbolized the onus of their grave vows as guardians of the flame. "Etch this sight upon thine breast. Of my thunderous gravity."</text>
+<text id="360300">Black iron greaves with the appearance of flames.
+Attire of the Fire Prelates, commanders of the Fire Monks.
+
+The weighty frames of the Prelates symbolized the onus of their grave vows as guardians of the flame. "Etch this sight upon thine breast. Of my thunderous gravity."</text>
+<text id="361100">Black iron armor.
+Attire of the Fire Prelates, commanders of the Fire Monks.
+
+The weighty frames of the Prelates symbolized the onus of their grave vows as guardians of the flame. "Etch this sight upon thine breast. Of my thunderous gravity."</text>
+<text id="370000">Valuable headband featuring fine goldwork.
+Travel attire worn by nobles in the capital.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="370100">High quality garb adorned with fine golden embroidery.
+Travel attire worn by nobles in the capital. Terribly faded and tattered.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="370300">Boots made from tanned leather.
+Travel attire worn by nobles in the capital.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="371100">High quality garb adorned with fine golden embroidery.
+Travel attire worn by nobles in the capital. Terribly faded and tattered.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="380000">Leather hat decorated with a withered feather.
+Travel attire worn by nobles in the capital, and the belonging of a family which claims a knight as an ancestor.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="380100">Tanned leather coat adorned with fine gold embroidery.
+Travel attire worn by nobles in the capital, and the belonging of a family which claims a knight as an ancestor.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="390000">Cowl made of soft cloth.
+Travel attire worn by nobles in the capital. Garb favored by the aged.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="390100">Gown of soft cloth adorned with fine gold embroidery.
+Travel attire worn by nobles in the capital. Garb favored by the aged.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="390300">Hard-wearing shoes made of leather.
+Travel attire worn by nobles in the capital. Garb favored by the aged.
+
+Abandoning their birthplace after the Shattering, these undead wanderers are the pitiful product of unending life.</text>
+<text id="420000">Helm worn by lean, mean, and filthy militiamen.
+
+The upward extension serves to create an appearance of larger size, however slightly.</text>
+<text id="420100">Armor worn by lean, mean, and filthy militiamen.
+
+Freshly-singed battlegrounds effusing with the stench of the dead. Forbidden lands that will be excised from the memory of history. This is where the vulgar militia serve, as untiring, unsung watchkeepers.</text>
+<text id="420200">Gauntlets worn by lean, mean, and filthy militiamen.
+
+Freshly-singed battlegrounds effusing with the stench of the dead. Forbidden lands that will be excised from the memory of history. This is where the vulgar militia serve, as untiring, unsung watchkeepers.</text>
+<text id="420300">Greaves worn by lean, mean, and filthy militiamen.
+
+Freshly-singed battlegrounds effusing with the stench of the dead. Forbidden lands that will be excised from the memory of history. This is where the vulgar militia serve, as untiring, unsung watchkeepers.</text>
+<text id="430000">A burgundy pointed hood.
+Attire of the wise sages who were deemed heretical.
+
+Evidence that the wearer was driven from town.</text>
+<text id="430100">Thick burgundy robe.
+Attire of the wise sages who were deemed heretical.
+
+Evidence that the wearer was driven from town.</text>
+<text id="430300">Thick burgundy trousers.
+Attire of the wise sages who were deemed heretical.
+
+Evidence that the wearer was driven from town.</text>
+<text id="440000">An oval helm large enough to cover any head.
+Very heavy and very hard.
+
+Reduces damage from headshots and impacts.
+
+The inside of the helm is pitch black, keeping the crazed warrior within from panicking.
+Perhaps its rather roomy interior also helps alleviate feelings of pressure and claustrophobia.</text>
+<text id="460000">Crown of Godfrey, the first Elden Lord.
+
+The age of the Erdtree began amongst conflict, when Godfrey was lord of the battlefield.
+
+He led the War against the Giants. Faced the Storm Lord, alone. And then, there came a moment. When his last worthy enemy fell. And it was then, as the story is told, that the hue of Lord Godfrey's eyes faded.</text>
+<text id="460100">Armor of Godfrey, the first Elden Lord.
+
+The age of the Erdtree began amongst conflict, when Godfrey was lord of the battlefield.
+
+He led the War against the Giants. Faced the Storm Lord, alone. And then, there came a moment. When his last worthy enemy fell. And it was then, as the story is told, that the hue of Lord Godfrey's eyes faded.</text>
+<text id="460200">Bracers of Godfrey, the first Elden Lord.
+
+The age of the Erdtree began amongst conflict, when Godfrey was lord of the battlefield.
+
+He led the War against the Giants. Faced the Storm Lord, alone. And then, there came a moment. When his last worthy enemy fell. And it was then, as the story is told, that the hue of Lord Godfrey's eyes faded.</text>
+<text id="460300">Greaves of Godfrey, the first Elden Lord.
+
+The age of the Erdtree began amongst conflict, when Godfrey was lord of the battlefield.
+
+He led the War against the Giants. Faced the Storm Lord, alone. And then, there came a moment. When his last worthy enemy fell. And it was then, as the story is told, that the hue of Lord Godfrey's eyes faded.</text>
+<text id="461100">Armor of Godfrey, the first Elden Lord.
+
+The age of the Erdtree began amongst conflict, when Godfrey was lord of the battlefield.
+
+He led the War against the Giants. Faced the Storm Lord, alone. And then, there came a moment. When his last worthy enemy fell. And it was then, as the story is told, that the hue of Lord Godfrey's eyes faded.</text>
+<text id="470000">Helm of the golden lion, with flowing red hair.
+Worn by General Radahn.
+
+Radahn inherited the furious, flaming red hair of his father Radagon, and is fond of its heroic implications.
+
+"I was born a champion's cub. Now I am the Lord of the Battlefield's lion."</text>
+<text id="470100">Armor depicting the golden lion.
+Worn by General Radahn.
+
+The golden lion is said to symbolize Godfrey, the first Elden Lord, and his beast regent, Serosh. From his youngest years, Radahn was naturally captivated by the Lord of the Battlefield.</text>
+<text id="470200">Gauntlets depicting the golden lion.
+Worn by General Radahn.
+
+The golden lion is said to symbolize Godfrey, the first Elden Lord, and his beast regent, Serosh. From his youngest years, Radahn was naturally captivated by the Lord of the Battlefield.</text>
+<text id="470300">Greaves depicting the golden lion.
+Worn by General Radahn.
+
+The golden lion is said to symbolize Godfrey, the first Elden Lord, and his beast regent, Serosh. From his youngest years, Radahn was naturally captivated by the Lord of the Battlefield.</text>
+<text id="471100">Armor depicting the golden lion.
+Worn by General Radahn.
+
+The golden lion is said to symbolize Godfrey, the first Elden Lord, and his beast regent, Serosh. From his youngest years, Radahn was naturally captivated by the Lord of the Battlefield.</text>
+<text id="480100">Attire of Mohg, Lord of Blood, embroidered with an extravagant gold emblem on black cloth.
+
+The dress of a Luminary, the reigning lord and hierarch of the coming dynasty of Mohgwyn. Or perhaps, of a raving lunatic.</text>
+<text id="481100">Attire of Mohg, Lord of Blood, embroidered with an extravagant gold emblem on black cloth.
+
+The dress of a Luminary, the reigning lord and hierarch of the coming dynasty of Mohgwyn. Or perhaps, of a raving lunatic.</text>
+<text id="510000">A tall crown depicting the moon.
+Worn by Rennala, Queen of the Full Moon. Increases intelligence.
+
+When Rennala, head of both the Academy of Raya Lucaria and the Carian royal family, lost her husband Radagon, her heart went along with him.
+
+And then, those at the academy realized. That Rennala was no champion, after all.</text>
+<text id="510100">Robe indicating the highest order of sorcerer.
+Worn by Rennala, Queen of the Full Moon.
+
+When Rennala, head of both the Academy of Raya Lucaria and the Carian royal family, lost her husband Radagon, her heart went along with him.
+
+And then, those at the academy realized. That Rennala was no champion, after all.</text>
+<text id="510200">Bracelets indicating the highest order of sorcerer.
+Worn by Rennala, Queen of the Full Moon.
+
+When Rennala, head of both the Academy of Raya Lucaria and the Carian royal family, lost her husband Radagon, her heart went along with him.
+
+And then, those at the academy realized. That Rennala was no champion, after all.</text>
+<text id="510300">Leggings indicating the highest order of sorcerer.
+Worn by Rennala, Queen of the Full Moon.
+
+When Rennala, head of both the Academy of Raya Lucaria and the Carian royal family, lost her husband Radagon, her heart went along with him.
+
+And then, those at the academy realized. That Rennala was no champion, after all.</text>
+<text id="520000">Hood made by sewing together patches of smooth skin.
+Worn by the Godskin Apostles.
+
+The apostles, once said to serve Destined Death, are wielders of the god-slaying black flame. But after their defeat by Maliketh, the Black Blade, the source of their power was sealed away.</text>
+<text id="520100">Robe made by sewing together patches of smooth skin.
+Worn by the Godskin Apostles.
+
+The apostles, once said to serve Destined Death, are wielders of the god-slaying black flame. But after their defeat by Maliketh, the Black Blade, the source of their power was sealed away.</text>
+<text id="520200">Black bracelets of the Godskin Apostles.
+
+The apostles, once said to serve Destined Death, are wielders of the god-slaying black flame. But after their defeat by Maliketh, the Black Blade, the source of their power was sealed away.</text>
+<text id="520300">Trousers made by sewing together patches of smooth skin.
+Worn by the Godskin Apostles.
+
+The apostles, once said to serve Destined Death, are wielders of the god-slaying black flame. But after their defeat by Maliketh, the Black Blade, the source of their power was sealed away.</text>
+<text id="530000">Hood made by sewing together patches of smooth skin.
+Subcutaneous fat makes it plump and soft.
+Worn by Godskin Nobles.
+
+Nobles are the most ancient apostles who are said to have assimilated inhuman physiology. Not unlike the crucible, the Erdtree in its primordial form.</text>
+<text id="530100">Robe made by sewing together patches of smooth skin.
+Subcutaneous fat makes it plump and soft. Worn by Godskin Nobles, known for their seven-face aprons.
+
+Strengthens the Noble Presence incantation.
+
+Nobles are the most ancient apostles who are said to have assimilated inhuman physiology. Not unlike the crucible, the Erdtree in its primordial form.</text>
+<text id="530200">Black bracelets of the Godskin Nobles.
+
+Nobles are the most ancient apostles who are said to have assimilated inhuman physiology. Not unlike the crucible, the Erdtree in its primordial form.</text>
+<text id="530300">Trousers made by sewing together patches of smooth skin.
+Subcutaneous fat makes them plump and soft.
+Worn by Godskin Nobles.
+
+Nobles are the most ancient apostles who are said to have assimilated inhuman physiology. Not unlike the crucible, the Erdtree in its primordial form.</text>
+<text id="540000">Headscarf worn by depraved perfumers.
+
+These heresy-inclined perfumers imbibe their own spices to alter body and mind. Their slow descent into self-destruction is what earned them their name.</text>
+<text id="540100">Robe worn by depraved perfumers.
+The embroidery on the apron is itself a curse upon the Erdtree.
+
+These heresy-inclined perfumers imbibe their own spices to alter body and mind. Their slow descent into self-destruction is what earned them their name.</text>
+<text id="540200">Gloves worn by depraved perfumers.
+
+These heresy-inclined perfumers imbibe their own spices to alter body and mind. Their slow descent into self-destruction is what earned them their name.</text>
+<text id="540300">Trousers worn by depraved perfumers.
+
+These heresy-inclined perfumers imbibe their own spices to alter body and mind. Their slow descent into self-destruction is what earned them their name.</text>
+<text id="541100">Robe worn by depraved perfumers.
+The embroidery on the apron is itself a curse upon the Erdtree.
+
+These heresy-inclined perfumers imbibe their own spices to alter body and mind. Their slow descent into self-destruction is what earned them their name.</text>
+<text id="570000">Helm of the Crucible Knights who served Godfrey, the first Elden Lord.
+
+The axe ornamentation is the knight Ordovis's mark, displayed also by his men.
+
+Holds the power of the crucible of life, the primordial form of the Erdtree. Strengthens Aspects of the Crucible incantations.</text>
+<text id="570100">Armor of the Crucible Knights who served Godfrey, the first Elden Lord.
+
+Worn by the knight Ordovis and his men.
+
+Holds the power of the crucible of life, the primordial form of the Erdtree. Strengthens Aspects of the Crucible incantations.</text>
+<text id="570200">Gauntlets of the Crucible Knights who served Godfrey, the first Elden Lord.
+
+Hold the power of the crucible of life, the primordial form of the Erdtree. Strengthen Aspects of the Crucible incantations.
+
+In time, the strength shown by these knights, and even their appearance, was seen as chaotic and deserving of scorn.</text>
+<text id="570300">Greaves of the Crucible Knights who served Godfrey, the first Elden Lord.
+
+Hold the power of the crucible of life, the primordial form of the Erdtree. Strengthen Aspects of the Crucible incantations.
+
+In time, the strength shown by these knights, and even their appearance, was seen as chaotic and deserving of scorn.</text>
+<text id="571000">Helm of the Crucible Knights who served Godfrey, the first Elden Lord.
+
+The great tree ornamentation is the knight Siluria's mark, displayed also by her men.
+
+Holds the power of the crucible of life, the primordial form of the Erdtree. Strengthens Aspects of the Crucible incantations.</text>
+<text id="571100">Armor of the Crucible Knights who served Godfrey, the first Elden Lord.
+
+Worn by the knight Siluria and her men.
+
+Holds the power of the crucible of life, the primordial form of the Erdtree. Strengthens Aspects of the Crucible incantations.</text>
+<text id="572100">Armor of the Crucible Knights who served Godfrey, the first Elden Lord.
+
+Worn by the knight Ordovis and his men.
+
+Holds the power of the crucible of life, the primordial form of the Erdtree. Strengthens Aspects of the Crucible incantations.</text>
+<text id="573100">Armor of the Crucible Knights who served Godfrey, the first Elden Lord.
+
+Worn by the knight Siluria and her men.
+
+Holds the power of the crucible of life, the primordial form of the Erdtree. Strengthens Aspects of the Crucible incantations.</text>
+<text id="580000">The giant blue glintstone crown worn by Lusat, primeval current sorcerer.
+
+This crown replaced Lusat's brain and skull altogether, and now, removed from his body, it is all but dead. What power remains within raises the potency of Lusat's primeval current sorceries at the cost of additional FP consumption.</text>
+<text id="580100">A robe reserved for grand masters at the Academy of Raya Lucaria.
+Corroded by blue glintstones.
+
+Since the grand masters Azur and Lusat were driven from the academy, no one has achieved their formerly-held rank.</text>
+<text id="580200">Manchettes corroded by blue glintstones.
+Worn by Lusat, primeval current sorcerer.
+
+Lusat had reached a near-inorganic state.</text>
+<text id="580300">Ragged waistcloth that extends to the thighs.
+Common amongst old-fashioned sorcerers.</text>
+<text id="581000">Crown of Azur, primeval current sorcerer, set with a prominent blue-green glintstone.
+
+This crown replaced Azur's brain and skull altogether, and now, removed from his body, it is all but dead. What power remains within raises the potency of Azur's primeval current sorceries at the cost of additional FP consumption.</text>
+<text id="581100">A robe reserved for grand masters at the Academy of Raya Lucaria.
+Corroded by blue-green glintstones.
+
+Since the grand masters Azur and Lusat were driven from the academy, no one has achieved their formerly-held rank.</text>
+<text id="581200">Manchettes corroded by blue-green glintstones.
+Worn by Azur, primeval current sorcerer.
+
+Azur had reached a near-inorganic state.</text>
+<text id="590000">Helm set with countless eyes and ears.
+Worn by Gideon Ofnir, the All-Knowing.
+
+Knowledge begins with the recognition of one's ignorance. The realization that the search for knowledge is unending. But when Gideon glimpsed into the will of Queen Marika, he shuddered in fear.
+
+At the end that should not be.</text>
+<text id="590100">Armor set with countless eyes and ears.
+Worn by Gideon Ofnir, the All-Knowing.
+
+Knowledge begins with the recognition of one's ignorance. The realization that the search for knowledge is unending. But when Gideon glimpsed into the will of Queen Marika, he shuddered in fear.
+
+At the end that should not be.</text>
+<text id="590200">Gauntlets set with countless eyes and ears.
+Worn by Gideon Ofnir, the All-Knowing.
+
+Knowledge begins with the recognition of one's ignorance. The realization that the search for knowledge is unending. But when Gideon glimpsed into the will of Queen Marika, he shuddered in fear.
+
+At the end that should not be.</text>
+<text id="590300">Greaves set with countless eyes and ears.
+Worn by Gideon Ofnir, the All-Knowing.
+
+Knowledge begins with the recognition of one's ignorance. The realization that the search for knowledge is unending. But when Gideon glimpsed into the will of Queen Marika, he shuddered in fear.
+
+At the end that should not be.</text>
+<text id="591100">Armor set with countless eyes and ears.
+Worn by Gideon Ofnir, the All-Knowing.
+
+Knowledge begins with the recognition of one's ignorance. The realization that the search for knowledge is unending. But when Gideon glimpsed into the will of Queen Marika, he shuddered in fear.
+
+At the end that should not be.</text>
+<text id="600000">Helm depicting entwined twins of gold and silver.
+
+The two known as D are inseparable twins.
+They are of two bodies and two minds, but one single soul. Not once do they stand together; not one word do they speak to one another.
+
+Perhaps this armor longs to find its way to the other D.</text>
+<text id="600100">Armor depicting entwined twins of gold and silver.
+
+The two known as D are inseparable twins.
+They are of two bodies and two minds, but one single soul. Not once do they stand together; not one word do they speak to one another.
+
+Perhaps this armor longs to find its way to the other D.</text>
+<text id="600200">Gauntlets depicting entwined twins of gold and silver.
+
+The two known as D are inseparable twins.
+They are of two bodies and two minds, but one single soul. Not once do they stand together; not one word do they speak to one another.
+
+Perhaps this armor longs to find its way to the other D.</text>
+<text id="600300">Greaves depicting entwined twins of gold and silver.
+
+The two known as D are inseparable twins.
+They are of two bodies and two minds, but one single soul. Not once do they stand together; not one word do they speak to one another.
+
+Perhaps this armor longs to find its way to the other D.</text>
+<text id="601100">Armor depicting entwined twins of gold and silver.
+
+The two known as D are inseparable twins.
+They are of two bodies and two minds, but one single soul. Not once do they stand together; not one word do they speak to one another.
+
+Perhaps this armor longs to find its way to the other D.</text>
+<text id="601300">Greaves depicting entwined twins of gold and silver.
+
+The two known as D are inseparable twins.
+They are of two bodies and two minds, but one single soul. Not once do they stand together; not one word do they speak to one another.
+
+Perhaps this armor longs to find its way to the other D.</text>
+<text id="610000">Helm pieced together from scavenged metal.</text>
+<text id="610100">Armor pieced together from scavenged metal.</text>
+<text id="610200">Gauntlets pieced together from scavenged metal.</text>
+<text id="610300">Greaves pieced together from scavenged metal.</text>
+<text id="611000">Helm pieced together from scavenged metal.</text>
+<text id="611100">Armor pieced together from scavenged metal.</text>
+<text id="620000">Blindfold of exiled prophets who foretold misfortune—and were persecuted and driven from their homes as a result.
+
+Why hesitate, if the path leading to the future is clear? Just close your eyes, and walk.</text>
+<text id="620100">Robe of Corhyn the cleric.
+
+Even after exile, Corhyn refused to recant his prophecies. And for this, he was blessed with the guidance of grace. 
+
+Since then, the cart wheel draped on his neck has served as a reminder. That true guidance awaits those with iron wills. Those with unwavering faith.</text>
+<text id="620300">Trousers of exiled prophets who foretold misfortune—and were persecuted and driven from their homes as a result.
+
+Made from rough fabric that scrapes against the skin like a sharpening file.</text>
+<text id="621100">Robe of exiled prophets who foretold misfortune—and were persecuted and driven from their homes as a result.
+
+Made from rough fabric that scrapes against the skin like a sharpening file.</text>
+<text id="622100">Robe of exiled prophets who foretold misfortune—and were persecuted and driven from their homes as a result.
+
+The shackles around the neck warn passersby not to lend an ear to their sermons.</text>
+<text id="630000">Hood fashioned from supple cloth.
+Worn by those who look to the cosmos above.
+
+They read fate in the stars, and are said to be heirs of the glintstone sorcerers.
+
+But alas, the night sky no longer cradles fate.</text>
+<text id="630100">Robe fashioned from supple cloth.
+Worn by those who look to the cosmos above.
+
+They read fate in the stars, and are said to be heirs of the glintstone sorcerers.
+
+But alas, the night sky no longer cradles fate.</text>
+<text id="630200">Gloves fashioned from fine, supple cloth.
+Worn by those who look to the cosmos above.
+
+They read fate in the stars, and are said to be heirs of the glintstone sorcerers.
+
+But alas, the night sky no longer cradles fate.</text>
+<text id="630300">Trousers worn inside a robe.
+Worn by those who look to the cosmos above.
+
+They read fate in the stars, and are said to be heirs of the glintstone sorcerers.
+
+But alas, the night sky no longer cradles fate.</text>
+<text id="631100">Robe fashioned from supple cloth.
+Worn by those who look to the cosmos above.
+
+They read fate in the stars, and are said to be heirs of the glintstone sorcerers.
+
+But alas, the night sky no longer cradles fate.</text>
+<text id="640000">Round iron helm with a distinctive large brim.
+Worn by Lionel the Lionhearted.
+
+When this chivalrous, dauntless knight met Fia, who had been driven from her home, he declared himself to be her father.</text>
+<text id="640100">Round iron armor with a banner extending from its back.
+Worn by Lionel the Lionhearted.
+
+When this chivalrous, dauntless knight met Fia, who had been driven from her home, he declared himself to be her father.</text>
+<text id="640200">Rounded iron gauntlets.
+Worn by Lionel the Lionhearted.
+
+When this chivalrous, dauntless knight met Fia, who had been driven from her home, he declared himself to be her father.</text>
+<text id="640300">Rounded iron greaves.
+Worn by Lionel the Lionhearted.
+
+When this chivalrous, dauntless knight met Fia, who had been driven from her home, he declared himself her father.</text>
+<text id="641100">Round iron armor.
+Worn by Lionel the Lionhearted.
+
+When this chivalrous, dauntless knight met Fia, who had been driven from her home, he declared himself to be her father.</text>
+<text id="650000">A twin-tailed silver helm decorated with flowery adornments. Symbol of the head of the revered House of Hoslow.
+
+Juno Hoslow had a younger brother who was all talk and no trousers.
+
+His inability to commit to action was such that Juno inherited the Hoslow legacy without resistance, granting him the freedom to shower his little brother with adoration. </text>
+<text id="650100">Garish silver armor decorated with red embellishments.
+Passed down through the Hoslow family.
+
+When Juno Hoslow received an invitation to the Volcano Manor, he discreetly refused.
+
+"I have already walked many a road drenched in blood, yet never would I consider myself a champion."</text>
+<text id="650200">Garish silver gauntlets decorated with red embellishments.
+Passed down through the Hoslow family.
+
+When Juno Hoslow received an invitation to the Volcano Manor, he discreetly refused.
+
+"I have already walked many a road drenched in blood, yet never would I consider myself a champion."</text>
+<text id="650300">Garish silver greaves decorated with red embellishments.
+Passed down through the Hoslow family.
+
+When Juno Hoslow received an invitation to the Volcano Manor, he discreetly refused.
+
+"I have already walked many a road drenched in blood, yet never would I consider myself a champion."</text>
+<text id="651000">Replica of a twin-tailed silver helm with flowery adornments. Only, without the twin tails.
+
+Diallos Hoslow had an older brother who was a stern, self-possessed man of few words. His achievements made him seem out of reach.
+
+And so the younger aspired to be like the older. Yearning for the day that he would tell the tale of House Hoslow, in blood. Knowing full well that it would break his brother's heart.</text>
+<text id="652100">Garish silver armor decorated with red embellishments.
+Passed down through the Hoslow family.
+
+When Juno Hoslow received an invitation to the Volcano Manor, he discreetly refused.
+
+"I have already walked many a road drenched in blood, yet never would I consider myself a champion."</text>
+<text id="660000">Helm of a knight banished from their motherland.
+Dirty and battered after enduring a lengthy vagabond journey.
+
+The visor is broken and can no longer be lowered.
+
+Metal armor is heavy, but also sturdy, offering significant damage negation.</text>
+<text id="660100">Chest piece of a knight banished from their motherland.
+Dirty and battered after enduring a lengthy vagabond journey.
+
+The crest emblazoned on the front is worn and dingy, no longer able to evoke sentiment.
+
+Metal armor is heavy, but also sturdy, offering significant damage negation.</text>
+<text id="660200">Gauntlets of a knight banished from their motherland.
+Dirty and battered after enduring a lengthy vagabond journey.
+
+Metal armor is heavy, but also sturdy, offering significant damage negation.</text>
+<text id="660300">Greaves of a knight banished from their motherland.
+Dirty and battered after enduring a lengthy vagabond journey.
+
+Metal armor is heavy, but also sturdy, offering significant damage negation.</text>
+<text id="661100">Chest piece of a knight banished from their motherland.
+Dirty and battered after enduring a lengthy vagabond journey.
+
+The crest emblazoned on the front is worn and dingy, no longer able to evoke sentiment.
+
+Metal armor is heavy, but also sturdy, offering significant damage negation.</text>
+<text id="670000">Cowl of a nomadic warrior.
+The blue color of its fabric symbolizes brisk waters, as fluid and flowing as the sword in the hand of its wearer.
+
+Just as still waters turn foul, stagnation leads to decay.
+Warriors must remain ever drifting.</text>
+<text id="670100">Vest of a nomadic warrior.
+The blue color of its fabric symbolizes brisk waters, as fluid and flowing as the sword in the hand of its wearer.
+
+Just as still waters turn foul, stagnation leads to decay.
+Warriors must remain ever drifting.</text>
+<text id="670200">Gauntlets of a nomadic warrior.
+Crafted from sturdy leather.</text>
+<text id="670300">Greaves of a nomadic warrior.
+Crafted from sturdy leather.</text>
+<text id="680000">Bloodstained, faintly grinning white mask.
+Worn by war surgeons who were effectively mercy killers.
+
+The Lord of Blood's curse enlivens the wearer when bloodletting occurs. Slightly raises attack power when there is blood loss nearby.</text>
+<text id="680100">Bloodstained white gown of the war surgeons who were effectively mercy killers.
+
+Of the surgeons that were abducted by the Lord of Blood, none were able to tame the accursed blood.
+None but Varré, that is; though he was an exception.</text>
+<text id="680200">Bloodstained white gloves of the war surgeons who were effectively mercy killers.
+
+Of the surgeons that were abducted by the Lord of Blood, none were able to tame the accursed blood.
+None but Varré, that is; though he was an exception.</text>
+<text id="680300">Bloodstained trousers of the war surgeons who were effectively mercy killers.
+
+Of the surgeons that were abducted by the Lord of Blood, none were able to tame the accursed blood.
+None but Varré, that is; though he was an exception.</text>
+<text id="681100">Bloodstained white gown of the war surgeons who were effectively mercy killers.
+
+Of the surgeons that were abducted by the Lord of Blood, none were able to tame the accursed blood.
+None but Varré, that is; though he was an exception.</text>
+<text id="690000">Helm graced with gold human bones.
+Worn by the unspeaking adherent of Sir Gideon the All-Knowing.
+
+Slowly replenishes HP when HP is reduced.
+
+It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha.</text>
+<text id="690100">Armor graced with gold human bones.
+Worn by the unspeaking adherent of Sir Gideon the All-Knowing.
+
+Slowly replenishes HP when HP is reduced.
+
+It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha.</text>
+<text id="690200">Gauntlets graced with gold human bones.
+Worn by the unspeaking adherent of Sir Gideon the All-Knowing.
+
+Slowly replenishes HP when HP is reduced.
+
+It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha.</text>
+<text id="690300">Greaves graced with gold human bones.
+Worn by the unspeaking adherent of Sir Gideon the All-Knowing.
+
+Slowly replenishes HP when HP is reduced.
+
+It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha.</text>
+<text id="700000">Warrior's headband of woven leather.
+Garb worn by warriors of the frigid uplands.
+
+The small flags, white cloths and sheaves of wheat
+often found hung from these headbands are
+prayers of farewell from the people of their home.
+In bidding farewell to warriors departing on
+a journey from which they aren't like to return,
+this small act offers only meager relief.</text>
+<text id="700100">Battlewear fashioned from leather armor
+adorned with a large sheet of cloth.
+Garb worn by warriors of the frigid uplands.
+
+The red cloth signifies participation in the
+Long March long, long ago and this ceremonial
+garb beseeches the favor of the Warrior King
+who led them.</text>
+<text id="700200">Gauntlets wrapped in thick leather.
+Garb worn by warriors of the frigid uplands.
+
+Has a fur lining which excels at keeping
+the cold at bay.</text>
+<text id="700300">Greaves wrapped in thick leather.
+Garb worn by warriors of the frigid uplands.
+
+Has a fur lining which excels at keeping
+the cold at bay.</text>
+<text id="701000">Battlewear wrapped in thick leather.
+Garb worn by warriors of the frigid uplands.</text>
+<text id="702000">Helm wrapped in thick leather.
+Garb worn by warriors of the frigid uplands.</text>
+<text id="720000">Silver helm engraved with tiny beasts.
+Worn by Bernahl the Recusant.
+
+The beasts, their eyes and ears covered, represent an oath: "See nothing, hear nothing, doubt nothing, and carry on, along the path set in stone."</text>
+<text id="720100">Silver armor engraved with tiny beasts.
+Worn by Bernahl the Recusant.
+
+Beasts are drawn to champions, and to lords. And this armor befits a champion worthy of becoming a lord. And that is what Bernahl was.
+
+Until his maiden threw herself into the fire.</text>
+<text id="720200">Silver gauntlets engraved with tiny beasts.
+Worn by Bernahl the Recusant.
+
+Beasts are drawn to champions, and to lords. And this armor befits a champion worthy of becoming a lord. And that is what Bernahl was.
+
+Until his maiden threw herself into the fire.</text>
+<text id="720300">Silver greaves engraved with tiny beasts.
+Worn by Bernahl the Recusant.
+
+Beasts are drawn to champions, and to lords. And this armor befits a champion worthy of becoming a lord. And that is what Bernahl was.
+
+Until his maiden threw herself into the fire.</text>
+<text id="721100">Silver armor engraved with tiny beasts.
+Worn by Bernahl the Recusant.
+
+Beasts are drawn to champions, and to lords. And this armor befits a champion worthy of becoming a lord. And that is what Bernahl was.
+
+Until his maiden threw herself into the fire.</text>
+<text id="730000">Headband reserved for the badlands' bravest.
+Proof that the wearer has slaughtered countless foes.
+
+Following the example of their chieftain Hoarah Loux, the brave warriors of the badlands shun excess adornment.</text>
+<text id="730100">Pauldron reserved for the badlands' bravest.
+Proof that the wearer has slaughtered countless foes.
+
+Following the example of their chieftain Hoarah Loux, the brave warriors of the badlands shun excess adornment.</text>
+<text id="730200">Bracers reserved for the badlands' bravest.
+Proof that the wearer has slaughtered countless foes.
+
+Following the example of their chieftain Hoarah Loux, the brave warriors of the badlands shun excess adornment.</text>
+<text id="730300">Gaiters formed only with leather straps.
+Common wear in the badlands.</text>
+<text id="740000">A hooded cloak of vivid crimson.
+Worn by expatriated royalty.
+Increases vigor.
+
+Such cloaks were gifted to those who departed on journeys without specific orders, to faraway lands from which they would never return. In other words, the gift of a cloak made it easier for undesirables to be on their way. 
+
+Roderika never once saw the guidance of grace.</text>
+<text id="740100">Traveling attire fashioned from metallic white silk thread. Worn by expatriated royalty.
+
+A gift of such rare beauty, a royal wouldn't disgrace their illustrious heritage even if found dead, in a ditch, in the middle of nowhere, while wearing such splendid raiment.</text>
+<text id="740200">Gloves of plush leather.
+Worn by expatriated royalty.
+
+A gift of such rare beauty, a royal wouldn't disgrace their illustrious heritage even if found dead, in a ditch, in the middle of nowhere, while wearing such splendid raiment.</text>
+<text id="740300">White trousers of superior craftsmanship.
+Worn by expatriated royalty.
+
+A gift of such rare beauty, a royal wouldn't disgrace their illustrious heritage even if found dead, in a ditch, in the middle of nowhere, while wearing such splendid raiment.</text>
+<text id="741000">A hooded cloak of deep navy.
+Worn by expatriated royalty.
+Increases mind.
+
+Such cloaks were gifted to those who departed on missions to faraway lands, from which they would never return. But what choice did they have, having seen the guidance of grace?</text>
+<text id="760000">Beast's helm made of black iron and decorated with gold.
+Worn by Maliketh the Black Blade.
+
+Maliketh, Queen Marika's loyal half-brother, bore a blade imbued with Destined Death, and there was not one demigod who did not fear him.
+
+Champions knew what was at stake.
+Indeed, that is what made them champions.</text>
+<text id="760100">Beast's armor made of black iron and decorated with gold.
+Worn by Maliketh the Black Blade.
+
+Maliketh, Queen Marika's loyal half-brother, bore a blade imbued with Destined Death, and there was not one demigod who did not fear him.
+
+Champions knew what was at stake.
+Indeed, that is what made them champions.</text>
+<text id="760200">Beast's gauntlets made of black iron and decorated with gold.
+Worn by Maliketh the Black Blade.
+
+Maliketh, Queen Marika's loyal half-brother, bore a blade imbued with Destined Death, and there was not one demigod who did not fear him.
+
+Champions knew what was at stake.
+Indeed, that is what made them champions.</text>
+<text id="760300">Beast's greaves made of black iron and decorated with gold.
+Worn by Maliketh the Black Blade.
+
+Maliketh, Queen Marika's loyal half-brother, bore a blade imbued with Destined Death, and there was not one demigod who did not fear him.
+
+Champions knew what was at stake.
+Indeed, that is what made them champions.</text>
+<text id="761100">Beast's armor made of black iron and decorated with gold.
+Worn by Maliketh the Black Blade.
+
+Maliketh, Queen Marika's loyal half-brother, bore a blade imbued with Destined Death, and there was not one demigod who did not fear him.
+
+Champions knew what was at stake.
+Indeed, that is what made them champions.</text>
+<text id="770000">Winged helm made of unalloyed gold.
+Worn by Malenia, Blade of Miquella.
+
+Malenia awaited Miquella at the foot of the husk.
+
+"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all."</text>
+<text id="770100">Armor made of unalloyed gold.
+Worn by Malenia, Blade of Miquella.
+
+Malenia awaited Miquella at the foot of the husk.
+
+"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all."</text>
+<text id="770200">Gauntlet made of unalloyed gold.
+Worn by Malenia, Blade of Miquella.
+
+Malenia awaited Miquella at the foot of the husk.
+
+"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all."</text>
+<text id="770300">Greaves made of unalloyed gold.
+Worn by Malenia, Blade of Miquella.
+
+Malenia awaited Miquella at the foot of the husk.
+
+"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all."</text>
+<text id="771100">Armor made of unalloyed gold.
+Worn by Malenia, Blade of Miquella.
+
+Malenia awaited Miquella at the foot of the husk.
+
+"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all."</text>
+<text id="780000">An old helm that has seen many battles.
+Worn by Niall, the veteran general of Sol.
+
+Niall was a lone survivor who commanded spirits to defend his long-passed master.
+
+This aging general could not die, nor did he have anywhere to fade away.</text>
+<text id="780100">Old armor that has seen many battles.
+Worn by Niall, the veteran general of Sol.
+
+Niall was a lone survivor who commanded spirits to defend his long-passed master.
+
+This aging general could not die, nor did he have anywhere to fade away.</text>
+<text id="780200">Old gauntlets that have seen many battles.
+Worn by Niall, the veteran general of Sol.
+
+Niall was a lone survivor who commanded spirits to defend his long-passed master.
+
+This aging general could not die, nor did he have anywhere to fade away.</text>
+<text id="780300">Old greaves that have seen many battles.
+Worn by Niall, the veteran general of Sol.
+
+Niall was a lone survivor who commanded spirits to defend his long-passed master.
+
+This aging general could not die, nor did he have anywhere to fade away.</text>
+<text id="781100">Old armor that has seen many battles.
+Worn by Niall, the veteran general of Sol.
+
+Niall was a lone survivor who commanded spirits to defend his long-passed master.
+
+This aging general could not die, nor did he have anywhere to fade away.</text>
+<text id="790000">Metal helm with a pointed beak.
+Worn by the Bloodhound Knights.
+
+The Bloodhound Knights are trained as hunters and known to be unshakable trackers.
+
+Without the use of language, each knight chooses his own master.
+Once the decision has been made, the knight stays loyal for life.</text>
+<text id="790100">Metal armor with a jutting breastplate.
+Worn by the Bloodhound Knights.
+
+The Bloodhound Knights are trained as hunters and known to be unshakable trackers.
+
+Without the use of language, each knight chooses his own master.
+Once the decision has been made, the knight stays loyal for life.</text>
+<text id="790200">Metal gauntlets of the Bloodhound Knights.
+
+The Bloodhound Knights are trained as hunters and known to be unshakable trackers.
+
+Without the use of language, each knight chooses his own master.
+Once the decision has been made, the knight stays loyal for life.</text>
+<text id="790300">Metal greaves of the Bloodhound Knights.
+
+The Bloodhound Knights are trained as hunters and known to be unshakable trackers.
+
+Without the use of language, each knight chooses his own master.
+Once the decision has been made, the knight stays loyal for life.</text>
+<text id="791100">Metal armor with a jutting breastplate.
+Worn by the Bloodhound Knights.
+
+The Bloodhound Knights are trained as hunters and known to be unshakable trackers.
+
+Without the use of language, each knight chooses his own master.
+Once the decision has been made, the knight stays loyal for life.</text>
+<text id="800000">Hood worn by dancers at the festivities in Dominula, the village of windmills.
+
+Decorated with many-colored flowers.</text>
+<text id="800100">Ceremonial garb worn by dancers at the festivities in Dominula, the village of windmills.
+
+Faintly bloodstained.</text>
+<text id="801000">Hood worn by dancers at the festivities in Dominula, the village of windmills.
+
+Decorated with a stunning array of flowers.</text>
+<text id="801100">Ceremonial garb worn by dancers at the festivities in Dominula, the village of windmills.
+
+Faintly bloodstained.</text>
+<text id="802000">Hood worn by dancers at the festivities in Dominula, the village of windmills.
+
+Use of this hood, dyed in a stunning blue, is only permitted for the young maids who play the central role in the festival.</text>
+<text id="802100">Ceremonial garb worn by dancers at the festivities in Dominula, the village of windmills.
+
+Use of this garb, dyed in a stunning blue, is only permitted for the young maids who play the central role in the festival.</text>
+<text id="810000">A headband that holds cloth in place.
+Standard wear for commoners of the Lands Between.
+
+Only, there are no commoners remaining with their wits about them.</text>
+<text id="810100">Garb with a thick embroidered cape attached.
+Standard wear for commoners of the Lands Between.
+
+The board hung from the neck depicts a sprawling tree, its roots and branches forming two holes. This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree that increases faith.</text>
+<text id="810300">Modest shoes made of cloth.
+Standard wear for commoners of the Lands Between.
+
+Only, there are no commoners remaining with their wits about them.</text>
+<text id="811000">A headband with the cloth removed.
+Standard wear for commoners of the Lands Between.
+
+Only, there are no commoners remaining with their wits about them.</text>
+<text id="811100">Garb decorated with intricate embroidery.
+Standard wear for commoners of the Lands Between.
+
+The board hung from the neck depicts a sprawling tree, its roots and branches forming two holes. This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree that increases faith.</text>
+<text id="812000">Garb with a modest cloth cape attached.
+Standard wear for commoners of the Lands Between.
+
+The board hung from the neck depicts a sprawling tree, its roots and branches forming two holes. This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree that increases faith.</text>
+<text id="812100">Modest garb made of cloth.
+Standard wear for commoners of the Lands Between.
+
+The board hung from the neck depicts a sprawling tree, its roots and branches forming two holes. This is a self-imposed shackle, a voluntary display of allegiance to the Erdtree that increases faith.</text>
+<text id="820000">The soft bundle worn on the head by Oracle Envoys.
+Densely wrapped in several layers of cloth.
+
+Raises the potency of bubble-based skills.
+
+No one knows what the cloth hides, but some claim to have heard a faint whimpering from inside. It must have been their imagination.</text>
+<text id="830000">One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy.
+
+Greatly increases intelligence to the detriment of HP and stamina.
+
+Scholars of the Twinsage Conspectus were the elites of the academy, permitted to study and excel in sorceries of all kinds.</text>
+<text id="830100">Robe worn by Raya Lucaria's scholars of sorcery.
+
+Those who dedicate themselves to the study of glintstones formed from starry amber receive this modest yet elegant deep navy garb after making their vows of virtue and austerity.
+
+But with extended life, one is apt to forget old vows.</text>
+<text id="830200">Manchettes worn by Raya Lucaria's scholars of sorcery.
+Made by wrapping a simple cloth around the forearms.</text>
+<text id="830300">Leggings worn by Raya Lucaria's scholars of sorcery.
+Made by wrapping a simple cloth around the legs.</text>
+<text id="831000">One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy.
+
+Increases intelligence to the detriment of HP.
+
+The lineage of the Olivinus Conspectus began with the sorcerer Lusat, and its adherents continue his study of meteors.</text>
+<text id="832000">One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy.
+
+Increases intelligence and dexterity to the detriment of HP.
+
+Scholars of the Lazuli Conspectus study Carian sorceries—a heterodox pursuit that views the moon as equal to the stars.</text>
+<text id="833000">One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy.
+
+Increases intelligence to the detriment of stamina.
+
+The Karolos Conspectus is the oldest of the academy's lineages of study, begat by the sorcerer Azur. Scholars who follow in his footsteps pursue the mysteries of comets.</text>
+<text id="834000">One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy.
+
+Increases intelligence and arcane to the detriment of stamina.
+
+This gentle-looking crown was granted to a scholar who excelled in her studies, which also merited the title of "witch."</text>
+<text id="834100">Stone mask of a Green Glintstone Sage.
+This mask is broken, its glintstone fractured.</text>
+<text id="840000">Cylindrical helm of plate metal reinforced with a lattice.
+Worn by marionette soldiers, crafted to serve the sorcerers.
+
+The construction of this helm is remarkably crude.
+
+For a doll, the only thing that matters is that it does not break.</text>
+<text id="840100">Armor of metal bands arranged in a lattice.
+Worn by marionette soldiers, crafted to serve the sorcerers.
+
+The construction of this armor is remarkably crude, now rusted over and severely dented.
+
+For a doll, the only thing that matters is that it does not break.</text>
+<text id="850000">Metal helm formed in the likeness of the face of a bird.
+Worn by avionette soldiers, crafted to serve the sorcerers.
+
+The construction of this helm is remarkably crude.
+
+For a doll, the only thing that matters is that it does not break.</text>
+<text id="860000">Helm worn by Vargram the Raging Wolf, one of the first Tarnished to visit the Roundtable Hold.
+
+Vargram's nickname comes from the white wolf's mane that decorates this helm.</text>
+<text id="860100">Armor worn by Vargram the Raging Wolf, one of the first Tarnished to visit the Roundtable Hold.
+
+According to the old legends, wolves are the shadows of the Empyrean, and this is what Vargram aspired to be.</text>
+<text id="860200">Gauntlets worn by Vargram the Raging Wolf, one of the first Tarnished to visit the Roundtable Hold.
+
+According to the old legends, wolves are the shadows of the Empyrean, and this is what Vargram aspired to be.</text>
+<text id="860300">Greaves worn by Vargram the Raging Wolf, one of the first Tarnished to visit the Roundtable Hold.
+
+According to the old legends, wolves are the shadows of the Empyrean, and this is what Vargram aspired to be.</text>
+<text id="861100">Armor worn by Vargram the Raging Wolf, one of the first Tarnished to visit the Roundtable Hold.
+
+According to the old legends, wolves are the shadows of the Empyrean, and this is what Vargram aspired to be.</text>
+<text id="870000">Helm made from strips of iron fastened together.
+Worn by warriors of the Land of Reeds.
+
+The Land of Reeds has long been locked in a miserable civil war, during which time it has remained alienated from the cultures of its neighbors. Little wonder that the entire nation has succumbed to blood-soaked madness, or so it is said.</text>
+<text id="870100">Armor made from strips of iron fastened together.
+Worn by warriors of the Land of Reeds.
+
+The grimy outer mantle is made from withered reeds from the warrior's birthplace.
+Perhaps its comforts extend to nostalgic thoughts of home.</text>
+<text id="870200">Gauntlets wrapped in tough leather.
+Worn by warriors of the Land of Reeds.</text>
+<text id="870300">Greaves wrapped in tough leather.
+Worn by warriors of the Land of Reeds.</text>
+<text id="871100">Armor made from strips of iron fastened together.
+Worn by warriors of the Land of Reeds.
+
+The Land of Reeds has long been locked in a miserable civil war, during which time it has remained alienated from the cultures of its neighbors. Little wonder that the entire nation has succumbed to blood-soaked madness, or so it is said.</text>
+<text id="872000">A wooden mask that depicts an old man bearing his teeth. The source of the sobriquet of the great swordsman of the Land of Reeds.
+Raises dexterity as it lowers focus.
+
+The more he sharpened his mind, the more the absurdities of the world came into stark relief. And so Okina renounced it all, and rose to a higher plane. There was only himself. His katana. And its mastery.
+
+Before long, Okina became a demon of a swordsman.</text>
+<text id="872100">Armor of the White Reeds, fashioned from banded iron plates.
+Worn by the Inaba, head disciples of the great swordsman Okina.
+
+The Inaba traveled in pursuit of not only the master who abandoned them, but also proper deaths, won honorably through hard-fought combat.
+To be a White Reed is to seek death; fitting for the Inaba, who desired nothing more than to die by the sword.</text>
+<text id="872200">Gauntlets of the White Reeds, fashioned from banded iron plates.
+Worn by the Inaba, head disciples of the great swordsman Okina.
+
+The Inaba traveled in pursuit of not only the master who abandoned them, but also proper deaths, won honorably through hard-fought combat.
+To be a White Reed is to seek death; fitting for the Inaba, who desired nothing more than to die by the sword.</text>
+<text id="872300">Greaves of the White Reeds, fashioned from banded iron plates.
+Worn by the Inaba, head disciples of the great swordsman Okina.
+
+The Inaba traveled in pursuit of not only the master who abandoned them, but also proper deaths, won honorably through hard-fought combat.
+To be a White Reed is to seek death; fitting for the Inaba, who desired nothing more than to die by the sword.</text>
+<text id="880000">Black hood for blending in with the darkness.
+Worn by church confessors.
+
+The churches outside the Lands Between, dedicated to the teachings of the Two Fingers, send confessors out to follow the guidance of grace.
+
+The confessors are loyal servants to the Two Fingers, ready to hunt down and quietly dispose of their enemies.</text>
+<text id="880100">Black leather armor for blending in with the darkness.
+Worn by church confessors.
+
+The churches outside the Lands Between, dedicated to the teachings of the Two Fingers, send confessors out to follow the guidance of grace.
+
+The confessors are loyal servants to the Two Fingers, ready to hunt down and quietly dispose of their enemies.</text>
+<text id="880200">Black leather gloves of the church confessors.
+
+The churches outside the Lands Between, dedicated to the teachings of the Two Fingers, send confessors out to follow the guidance of grace.
+
+The confessors are loyal servants to the Two Fingers, ready to hunt down and quietly dispose of their enemies.</text>
+<text id="880300">Leather boots of the church confessors.
+
+The churches outside the Lands Between, dedicated to the teachings of the Two Fingers, send confessors out to follow the guidance of grace.
+
+The confessors are loyal servants to the Two Fingers, ready to hunt down and quietly dispose of their enemies.</text>
+<text id="881000">Cloth headwrap worn under a church confessor's black hood.
+Such hoods are made for blending in with the darkness.</text>
+<text id="881100">Black leather armor for blending in with the darkness.
+Worn by church confessors.
+
+The churches outside the Lands Between, dedicated to the teachings of the Two Fingers, send confessors out to follow the guidance of grace.
+
+The confessors are loyal servants to the Two Fingers, ready to hunt down and quietly dispose of their enemies.</text>
+<text id="890000">Iron mask forced on a prisoner convicted of an appalling crime.
+Thick, heavy, and utterly stifling.
+
+A foul creation designed to torment the wearer, either slowly fermenting hatred within their heart, or a spiritual fervor that is near indistinguishable from it.</text>
+<text id="890100">Tattered clothing.
+Worn by a prisoner convicted of an appalling crime.
+
+Never once washed, every fiber is filthy.</text>
+<text id="890300">Tattered trousers.
+Worn by a prisoner convicted of an appalling crime.
+
+Never once washed, every fiber is filthy.
+The smell is beyond belief.</text>
+<text id="891000">Iron mask forced on convicted prisoners.
+Worn by the blackguard Big Boggart.
+
+To Boggart, the mask made him all the more threatening, and helped him get what he wanted. But it was also a mirror of his emptiness.</text>
+<text id="900000">Hood worn by traveling maidens.
+
+Maidens traversed the Lands Between for different reasons. Some to seek audience with the Fingers. Others, to find the Tarnished who they were destined to guide.</text>
+<text id="900100">Robe worn by traveling maidens.
+
+Maidens traversed the Lands Between for different reasons. Some to seek audience with the Fingers. Others, to find the Tarnished who they were destined to guide.</text>
+<text id="900200">Gloves worn by traveling maidens.
+
+Maidens traversed the Lands Between for different reasons. Some to seek audience with the Fingers. Others, to find the Tarnished who they were destined to guide.</text>
+<text id="900300">Boots worn by traveling maidens.
+
+Maidens traversed the Lands Between for different reasons. Some to seek audience with the Fingers. Others, to find the Tarnished who they were destined to guide.</text>
+<text id="901100">Modest garb of traveling maidens, typically worn under their robes.</text>
+<text id="902000">Fillet worn by maidens who serve the Two Fingers.
+
+The maidens live to serve a chosen Tarnished, sharing their guidance and the wisdom of the Two Fingers.
+
+The guidance of grace would ensure that the pair be brought together. Or at least, such was the promise long ago.</text>
+<text id="902100">Robe worn by maidens who serve the Two Fingers.
+
+The maidens live to serve a chosen Tarnished, sharing their guidance and the wisdom of the Two Fingers.
+
+The guidance of grace would ensure that the pair be brought together. Or at least, such was the promise long ago.</text>
+<text id="902300">Shoes worn by maidens who serve the Two Fingers.
+
+The maidens live to serve a chosen Tarnished, sharing their guidance and the wisdom of the Two Fingers.
+
+The guidance of grace would ensure that the pair be brought together. Or at least, such was the promise long ago.</text>
+<text id="903100">Robe worn by maidens who serve the Two Fingers.
+
+The maidens live to serve a chosen Tarnished, sharing their guidance and the wisdom of the Two Fingers.
+
+The guidance of grace would ensure that the pair be brought together. Or at least, such was the promise long ago.</text>
+<text id="910000">Large hat with the movements of the stars drawn on the inside of the brim.
+Worn by the magic preceptors who served the Carian royals.
+
+Increases mind to the detriment of stamina.
+
+Glintstone sorcerers are the descendants of astrologers, a fact that the Carians remain aware of. Even if their fate has been long severed from the stars.</text>
+<text id="910100">A long, bright blue gown with the movements of the stars drawn upon it.
+Worn by the magic preceptors who served the Carian royals.
+
+Glintstone sorcerers are the descendants of astrologers, a fact that the Carians remain aware of. Even if their fate has been long severed from the stars.</text>
+<text id="910200">Gloves of the magic preceptors who serve the Carian royals.
+Black and perfectly discreet.</text>
+<text id="910300">Trousers of the magic preceptors who serve the Carian royals.
+Black and perfectly discreet.</text>
+<text id="911000">Mask with the mouth sewn shut with gold thread.
+Increases arcane.
+
+When Radagon married Rennala, he ordered the Carian magic preceptors to don these masks. To make it clear that all of their matters were to be kept strictly private.</text>
+<text id="911100">Modest garb, previously worn under a long, bright blue gown with the movements of the stars drawn upon it.</text>
+<text id="920000">A headdress made from wildflowers.
+Wearing this might make you less easy to spot.</text>
+<text id="930000">Skeletal mask that tightly grips the face.
+Worn by the assassins of Ravenmount.
+
+This ritual implement relentlessly digs into the wearer's face, preserving one's human instincts while dressed in imitation of the Deathbirds.</text>
+<text id="930100">Robe crafted with the black feathers of a bird of prey.
+Worn by the assassins of Ravenmount.
+
+A ritual implement for transforming into a Deathbird, if only by imitation.
+Strengthens jump attacks.
+
+"We are birds of prey, bringers of death."</text>
+<text id="930200">Manchettes made by simply wrapping dirty cloth around the arms.
+Worn by bandits.</text>
+<text id="930300">Leather boots worn by bandits.
+
+Light for ease of movement, and supple for masking sound. In trade, they offer little damage negation.</text>
+<text id="931100">Leather garb worn by bandits.
+
+Light for ease of movement, and supple for masking sound. In trade, they offer little damage negation.</text>
+<text id="940000">A pointy, ragged hood.
+Worn by the knight Jerren.
+
+The hood hides an aged, bearded mask.
+
+Jerren served General Radahn as a guest commander, and they are said to have sworn an oath of honorable death to one another. </text>
+<text id="940100">Unusually colorful armor.
+Worn by the knight Jerren.
+
+Jerren preferred a nomadic existence, but after spending time as a guest of the Carian royals, he became a guest commander for General Radahn.
+
+And for the first time, the restless tumbleweed would be bound by honorable oath.</text>
+<text id="940200">The knight Jerren's manchettes.
+
+Jerren preferred a nomadic existence, but after spending time as a guest of the Carian royals, he became the guest commander for General Radahn.
+
+And for the first time, the restless tumbleweed would be bound by honorable oath.</text>
+<text id="940300">The knight Jerren's breeches.
+
+Jerren preferred a nomadic existence, but after spending time as a guest of the Carian royals, he became the guest commander for General Radahn.
+
+And for the first time, the restless tumbleweed would be bound by honorable oath.</text>
+<text id="941000">A pointy, ragged hood.
+Worn by the knight Jerren.
+
+The hood hides an aged, bearded mask.
+
+Jerren served General Radahn as a guest commander, and they are said to have sworn an oath of honorable death to one another. </text>
+<text id="950000">Iron helm singed and blistered by fingers.
+Worn by Vyke, knight of the Roundtable Hold.
+
+No other Tarnished was closer to the throne of the Elden Lord than Vyke. But without announcement, Vyke traveled far below the capital, and was scorched by the flame of frenzy.
+
+Did he make his choice for his maiden, or did some other force lure him with suggestion?</text>
+<text id="950100">Iron armor singed and blistered by fingers.
+Worn by Vyke, knight of the Roundtable Hold.
+
+No other Tarnished was closer to the throne of the Elden Lord than Vyke. But without announcement, Vyke traveled far below the capital, and was scorched by the flame of frenzy.
+
+Did he make his choice for his maiden, or did some other force lure him with suggestion?</text>
+<text id="950200">Iron gauntlets singed and blistered by fingers.
+Worn by Vyke, knight of the Roundtable Hold.
+
+No other Tarnished was closer to the throne of the Elden Lord than Vyke. But without announcement, Vyke traveled far below the capital, and was scorched by the flame of frenzy.
+
+Did he make his choice for his maiden, or did some other force lure him with suggestion?</text>
+<text id="950300">Iron greaves singed and blistered by fingers.
+Worn by Vyke, knight of the Roundtable Hold.
+
+No other Tarnished was closer to the throne of the Elden Lord than Vyke. But without announcement, Vyke traveled far below the capital, and was scorched by the flame of frenzy.
+
+Did he make his choice for his maiden, or did some other force lure him with suggestion?</text>
+<text id="951100">Iron armor singed and blistered by fingers.
+Worn by Vyke, knight of the Roundtable Hold.
+
+No other Tarnished was closer to the throne of the Elden Lord than Vyke. But without announcement, Vyke traveled far below the capital, and was scorched by the flame of frenzy.
+
+Did he make his choice for his maiden, or did some other force lure him with suggestion?</text>
+<text id="960000">Mask worn by Tanith, Lady of the Volcano Manor, in the image of a foreign queen.
+Increases dexterity.
+
+Long ago, when Rykard first set eyes on Tanith, she was working as a dancer in a foreign land. Soon, he made her his consort.
+She was the only human to remain by his side when he became the serpent of blasphemy.
+
+In that moment, Tanith was truly charmed by him.</text>
+<text id="960100">Fine robe of white silk worn by Tanith, Lady of the Volcano Manor.
+
+Long ago, when Rykard first set eyes on Tanith, she was working as a dancer in a foreign land. Soon, he made her his consort.
+She was the only human to remain by his side when he became the serpent of blasphemy.
+
+In that moment, Tanith was truly charmed by him.</text>
+<text id="960300">Fine white trousers, perfectly suited for wearing beneath a silk robe.</text>
+<text id="961000">Mask in the image of a wizened sage.
+Customary dress among lords in a smaller nation.
+Increases faith.
+
+Such a mask illustrates the qualities of an ideal lord: chiefly, wise and possessing a certain defanged geniality.
+One at the center of society often finds these qualities most expedient.</text>
+<text id="961100">Luxurious robe worn by lords in a smaller nation.
+Its fine blue mantle serves to prove its wearer's status.</text>
+<text id="962100">Embroidered, bright green robe worn by noble children.
+Donning such a robe is traditionally the child's first show of burgeoning independence.</text>
+<text id="963000">Mask in the image of a white-haired young noble.
+Customarily worn by the head of House Marais.
+Increases arcane.
+
+The Marais family has a dual history spanning generations, serving as both executioners and castellans of the Shaded Castle. This mask bears the likeness of the first of their line.</text>
+<text id="963100">Robe with a black mantle across the shoulders.
+Customarily worn by the head of House Marais.
+
+The sons of House Marais are all sickly born.
+Little wonder that Maleigh Marais would be so beguiled by the beautiful and fierce goddess who was born into rot.</text>
+<text id="963200">Manchettes formed from tightly-wound bandages soaked through with blood.
+
+Any protection is welcome for the festering arms beneath.</text>
+<text id="964000">Mask formed from tightly-wound bandages soaked through with blood.
+
+Even the most ghastly cover is more inviting than the festering face beneath.</text>
+<text id="964100">Grubby blue robe worn by magisterial officials to carry out their grim tasks.
+
+Surveillance, executions, gruesome rituals… The darkest duties drive the wheels of mankind.</text>
+<text id="970000">Malformed helm resembling an Omen with its horns cut off.
+
+Worn by the Dung Eater, its form is a vision of the landscape of his mind, and of his appearance as he wished to see it.
+
+The heart of an Omen without the body to match; could there be any crueler existence?
+What does it matter, then, if the curse claims it all?</text>
+<text id="970100">Malformed armor resembling an Omen with its horns cut off.
+
+Worn by the Dung Eater.
+The heavy, sun-shaped medallion represents both the guidance he once saw, and the ring to which it will one day lead.</text>
+<text id="970200">Malformed gauntlets resembling an Omen with its horns cut off.
+
+Worn by the Dung Eater, their form is a vision of the landscape of his mind, and of his appearance as he wished to see it.
+
+The heart of an Omen without the body to match; could there be any crueler existence?
+What does it matter, then, if the curse claims it all?</text>
+<text id="970300">Malformed greaves resembling an Omen with its horns cut off.
+
+Worn by the Dung Eater, their form is a vision of the landscape of his mind, and of his appearance as he wished to see it.
+
+The heart of an Omen without the body to match; could there be any crueler existence?
+What does it matter, then, if the curse claims it all?</text>
+<text id="980000">Helm of the enchanted knights that once served the Carian royal family.
+
+The enchanted knights, anointed by the Lunar Queen, were all heroes of the highest honors, but fell into disarray with the decline of the royal family.</text>
+<text id="980100">Armor of the enchanted knights that once served the Carian royal family.
+
+The enchanted knights, anointed by the Lunar Queen, were all heroes of the highest honors, but fell into disarray with the decline of the royal family.</text>
+<text id="980200">Gauntlets of the enchanted knights that once served the Carian royal family.
+
+The enchanted knights, anointed by the Lunar Queen, were all heroes of the highest honors, but fell into disarray with the decline of the royal family.</text>
+<text id="980300">Greaves of the enchanted knights that once served the Carian royal family.
+
+The enchanted knights, anointed by the Lunar Queen, were all heroes of the highest honors, but fell into disarray with the decline of the royal family.</text>
+<text id="981100">Armor of the enchanted knights that once served the Carian royal family.
+
+The enchanted knights, anointed by the Lunar Queen, were all heroes of the highest honors, but fell into disarray with the decline of the royal family.</text>
+<text id="990000">One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy.
+
+Increases intelligence and endurance to the detriment of FP.
+
+The crown of Hierodas was granted to scholars who engaged in nomadic study away from the academy.</text>
+<text id="990100">Commonplace robe made of thick cloth.
+Worn by the Errant Sorcerer Wilhelm, one of the first Tarnished to visit Roundtable Hold.
+
+A silent seeker of sorcery, who had gone so far as to make contact with the primeval current, Wilhelm was led by guidance into confrontation with his friend Vargram, and it is said that he was then taken prisoner in Roundtable Hold.</text>
+<text id="990200">Commonplace leather manchettes.
+Their hands are inlaid with dulled glintstone.</text>
+<text id="990300">Commonplace leather boots, sturdy enough to withstand a long journey.</text>
+<text id="991100">Commonplace robe made of thick cloth.
+Worn by the Errant Sorcerer Wilhelm, one of the first Tarnished to visit Roundtable Hold.
+
+A silent seeker of sorcery, who had gone so far as to make contact with the primeval current, Wilhelm was led by guidance into confrontation with his friend Vargram, and it is said that he was then taken prisoner in Roundtable Hold.</text>
+<text id="1000000">One of the glintstone crowns bestowed upon Raya Lucaria scholars whose pursuits were deemed worthy.
+
+Increases intelligence and strength to the detriment of FP.
+
+Scholars of the Haima Conspectus sought the power to quell conflict, and to this end studied the sorceries of cannon fire and the gavel.</text>
+<text id="1000100">Robe worn by scholars of the Raya Lucaria Academy scholar, tattered from being worn on the battlefield.
+
+Whenever war broke out and the academy sealed its gates, only Haima's scholars dared venture outside.
+Seclusion is no way to foster discovery; it is only a convenient form of escape.</text>
+<text id="1000200">Manchettes worn by scholars of the Raya Lucaria Academy, tattered from being worn on the battlefield.</text>
+<text id="1000300">Legwraps worn by scholars of the Raya Lucaria Academy, tattered from being worn on the battlefield.</text>
+<text id="1010000">Witch's pointed hat, frigid and frozen through.
+Of a style associated with practitioners of heretical sorcery.
+Strengthens cold sorcery.
+
+Once worn by the snowy crone who the young Ranni encountered deep in the woods. She was a witch, and well versed in cold sorceries.
+It is said that the doll that houses Ranni's soul was modeled after her.
+
+That old witch was Ranni's secret mentor.</text>
+<text id="1010100">Witch's robe in the color of snow.
+
+Once worn by the snowy crone who the young Ranni encountered deep in the woods. She was a witch, and well versed in cold sorceries.
+It is said that the doll that houses Ranni's soul was modeled after her.
+
+That old witch was Ranni's secret mentor.</text>
+<text id="1010300">Witch's skirt in the color of snow.
+
+Once worn by the snowy crone who the young Ranni encountered deep in the woods. She was a witch, and well versed in cold sorceries.
+It is said that the doll that houses Ranni's soul was modeled after her.
+
+That old witch was Ranni's secret mentor.</text>
+<text id="1011100">Witch's robe in the color of snow.
+
+Once worn by the snowy crone who the young Ranni encountered deep in the woods. She was a witch, and well versed in cold sorceries.
+It is said that the doll that houses Ranni's soul was modeled after her.
+
+That old witch was Ranni's secret mentor.</text>
+<text id="1020100">Light yet sturdy clothes.
+
+Worn by young women who set off into the world to confront their fate.</text>
+<text id="1020200">Light yet sturdy leather manchettes.
+
+Worn by young women who set off into the world to confront their fate.</text>
+<text id="1020300">Light yet sturdy leather boots.
+
+Worn by young women who set off into the world to confront their fate.</text>
+<text id="1030000">Cap worn by young academy scholars, the juveniles birthed anew by the amber egg of Queen Rennala, the head of Raya Lucaria Academy.
+
+Yet their rebirth is not without imperfections, and thus do they repeat the process, eventually becoming utterly dependent upon it.
+
+Rebirth is as sleep to them, and with each awakening, memory fades into oblivion.</text>
+<text id="1030100">Robe worn by young academy scholars, the juveniles birthed anew by the amber egg of Queen Rennala, the head of Raya Lucaria Academy.
+
+Yet their rebirth is not without imperfections, and thus do they repeat the process, eventually becoming utterly dependent upon it.
+
+Rebirth is as sleep to them, and with each awakening, memory fades into oblivion.</text>
+<text id="1040000">A mask designed to resemble a blazing golden halo.
+Created and left behind by Lord Goldmask, a staunch pursuer of Golden Order fundamentalism.
+
+Strengthens Golden Order incantations.
+
+Its striking design represents both the brilliant inspiration that once shone upon him, and the vision of a ring that he will surely find at the end of his pursuit.
+
+"To you who seek to shine as I do, wear it well!"</text>
+<text id="1040100">Worn rags that just barely cover the body.
+
+Lord Goldmask felt no draw to the vain excesses of clothing; what use is finery to one who seeks greater brilliance?</text>
+<text id="1040200">Bracelets made in the image of Erdtree branches.
+Minimal adornments made by Lord Goldmask's disciples.
+
+Those disciples have long since left him.</text>
+<text id="1040300">Waistwrap made in the image of Erdtree branches.
+A minimal adornment made by Lord Goldmask's disciples.
+
+Those disciples have long since left him.</text>
+<text id="1050100">A cloak of ragged fur worn about the exposed body of Margit, the Fell Omen.
+
+Having slaughtered countless champions during the Shattering, the Fell Omen has become a horror to those who harbor ambitions for the Erdtree, or for Lordship.</text>
+<text id="1060000">Mask made from the largely unaltered hide of a young Albinauric.
+
+Raises arcane, but reduces the HP recovery effects of the Flask of Crimson Tears.
+
+A far cry from godskin, this Albinauric hide mask is the product of malicious mockery.</text>
+<text id="1060100">Chainmail worn by young Albinaurics.
+The appearance of a protruding belly provides no benefits worthy of note.</text>
+<text id="1070000">Mask worn by knights of Zamor, hailed as heroes in the War against the Giants.
+
+These long-lived warriors, clad in biting, freezing winds, are said to have been the mortal enemies of the Fire Giants since time immemorial.</text>
+<text id="1070100">Armor worn by knights of Zamor, hailed as heroes in the War against the Giants.
+
+These long-lived warriors, clad in biting, freezing winds, are said to have been the mortal enemies of the Fire Giants since time immemorial.</text>
+<text id="1070200">Bracelets worn by knights of Zamor, hailed as heroes in the War against the Giants.
+
+These long-lived warriors, clad in biting, freezing winds, are said to have been the mortal enemies of the Fire Giants since time immemorial.</text>
+<text id="1070300">Legwraps worn by knights of Zamor, hailed as heroes in the War against the Giants.
+
+These long-lived warriors, clad in biting, freezing winds, are said to have been the mortal enemies of the Fire Giants since time immemorial.</text>
+<text id="1080000">Head covering made from the largely unaltered head of an impish golem.
+
+Resembling a cat, it holds trace amounts of feline intelligence.</text>
+<text id="1081000">Head covering made from the largely unaltered head of an impish golem.
+
+Resembling a fanged demon, it holds trace amounts of bestial strength.</text>
+<text id="1082000">Head covering made from the largely unaltered head of an impish golem.
+
+Resembling a long-tongued demon, it holds trace amounts of vexatious dexterity.</text>
+<text id="1083000">Head covering made from the largely unaltered head of an impish golem.
+
+Resembling the visage of a corpse, it holds trace amounts of lingering faith.</text>
+<text id="1084000">Head covering made from the largely unaltered head of an impish golem.
+
+Resembling a wolf, it holds trace amounts of lupine endurance.</text>
+<text id="1085000">Head covering made from the largely unaltered head of an impish golem.
+
+Resembling an elder, it holds trace amounts of arcane knowledge.</text>
+<text id="1090000">Mask fashioned from the corpse of a formless Silver Tear, supported by its hardened, shed husk.
+
+Greatly increases arcane to the detriment of physical attack power.
+
+To imitate the imitator is a cunning play indeed.</text>
+<text id="1100000">Coif made of woven chain.
+Standard issue for ordinary soldiers.
+
+Though plain in appearance, it offers dependable protection.</text>
+<text id="1100100">Armor made of woven chain.
+Standard issue for ordinary soldiers.
+
+Though plain in appearance, it offers dependable protection.</text>
+<text id="1100200">Gauntlets worn by ordinary soldiers.
+
+Though plain in appearance, they offer dependable protection.</text>
+<text id="1100300">Leggings made of woven chain.
+Standard issue for ordinary soldiers.
+
+Though plain in appearance, they offer dependable protection.</text>
+<text id="1101000">Sturdy greathelm made from iron.
+
+Though it is uncomfortably heavy and obstructs the vision of the wearer, it provides considerable damage negation.</text>
+<text id="1101100">Brown surcoat draped over chainmail.
+
+The insignia emblazoned on the front marks out the wearer as the eyes and ears of Sir Gideon the All-Knowing.</text>
+<text id="1102100">Blue surcoat draped over chainmail.
+
+The tree insignia emblazoned on the front depicts the Erdtree, and is a design beloved throughout the Lands Between.</text>
+<text id="1110000">A land octopus whelp worn directly on the head.
+Has a lingering warmth reminiscent of human skin.
+
+Those who can withstand the smell will find its organic elasticity excellent for negating strikes.</text>
+<text id="1120000">Jar that fits cleanly over the head when upturned.
+Made with pride by Iron Fist Alexander.
+
+In a uniquely jarlike gesture of friendship, it boosts the power of throwing pot items.</text>
+<text id="1130000">Mushrooms found growing all over the body.
+These overgrown mushrooms have colonized the head.
+
+To those enraptured by the scarlet rot, they are holy vestments that root one to the earth.</text>
+<text id="1130100">Mushrooms found growing all over the body.
+These overgrown mushrooms have colonized the torso.
+
+To those enraptured by the scarlet rot, they are holy vestments that root one to the earth.</text>
+<text id="1130200">Mushrooms found growing all over the body.
+These overgrown mushrooms have colonized the arms.
+
+To those enraptured by the scarlet rot, they are holy vestments that root one to the earth.</text>
+<text id="1130300">Mushrooms found growing all over the body.
+These overgrown mushrooms have colonized the legs.
+
+To those enraptured by the scarlet rot, they are holy vestments that root one to the earth.</text>
+<text id="1300000">Helm fashioned from a crystal looking-glass.
+One among the Eternal City's ritual implements.
+Easily broken and weak against striking attacks.
+
+Worn by those committed to high treason, it wards off the intervention of the Greater Will and its vassal Fingers.</text>
+<text id="1301000">Helm fashioned from a crystal looking-glass, said to have never left War Counselor Iji's head.
+Easily broken and weak against striking attacks.
+
+Worn by those committed to high treason, it wards off the intervention of the Greater Will and its vassal Fingers.
+
+Iji was afraid. Terrified of his own treachery.</text>
+<text id="1400000">Hood of lusterless black fabric that conceals its wearer's identity.
+
+In this world, there is very little that must necessarily be known.</text>
+<text id="1400100">Lightweight and battle-proven leather armor worn by a savvy soldier.
+
+Many admire the wearer of this armor for his chivalrous and forthright spirit.</text>
+<text id="1400200">Lightweight and battle-proven leather gloves worn by a savvy soldier.
+
+Many admire the wearer of this armor for his chivalrous and forthright spirit.</text>
+<text id="1400300">Lightweight and battle-proven leather boots worn by a savvy soldier.
+
+Many admire the wearer of this armor for his chivalrous and forthright spirit.</text>
+<text id="1401000">Mask of black cloth that covers the mouth.
+
+Favored by bandits for hiding their faces, it also provides some protection against poison.</text>
+<text id="1500000">Iron helm of an unknown knight.
+It is made of thin iron plate.
+
+Such metal armor is heavy, but provides considerable damage negation.</text>
+<text id="1500100">Iron armor of an unknown knight.
+It is made of thin iron plate.
+
+Such metal armor is heavy, but provides considerable damage negation.</text>
+<text id="1500200">Iron gauntlets of an unknown knight.
+It is made of thin iron plate.
+
+Such metal armor is heavy, but provides considerable damage negation.</text>
+<text id="1500300">Iron greaves of an unknown knight.
+It is made of thin iron plate.
+
+Such metal armor is heavy, but provides considerable damage negation.</text>
+<text id="1600000">Hood far larger than the head it is meant to cover.
+A burial shroud of sorts for those who discover, at long last, the truth they sought.
+
+Increases intelligence and faith to the detriment of HP.
+
+"Yes, surely this is the moon that young Rennala gazed upon."</text>
+<text id="1700000">Helm worn by soldiers loyal to Godrick the Grafted.
+Made from durable iron, layered with a chainmail coif beneath.</text>
+<text id="1700100">Armor worn by soldiers loyal to Godrick the Grafted.
+
+The surcoat depicts the distant Erdtree and the beast regent, an emblem of the golden lineage.
+Both are symbols of glory now past.</text>
+<text id="1700200">Gauntlets worn by soldiers loyal to Godrick the Grafted.
+Rust-worn and stained through unending conflict.</text>
+<text id="1700300">Greaves worn by soldiers loyal to Godrick the Grafted.
+Rust-worn and stained through unending conflict.</text>
+<text id="1710000">Helm worn by Raya Lucaria Academy soldiers.
+Its brow is adorned with a single cuckoo's feather.</text>
+<text id="1710100">Armor worn by Raya Lucaria Academy soldiers.
+
+The surcoat depicts twinned cuckoos peering into a flourishing mass of glintstone.
+To a glintstone sorcerer, the body is a transient thing. The Cuckoo alone knows its insignificance, yet watches over it all the same.</text>
+<text id="1710200">Gauntlets worn by Raya Lucaria Academy soldiers.
+Rust-worn and stained through unending conflict.</text>
+<text id="1710300">Greaves worn by Raya Lucaria Academy soldiers.
+Rust-worn and stained through unending conflict.</text>
+<text id="1720000">Helm worn by soldiers sworn to defend the royal capital of Leyndell.
+Made from durable iron, layered with a chainmail coif beneath.</text>
+<text id="1720100">Armor worn by soldiers sworn to defend the royal capital of Leyndell.
+
+The surcoat bears a majestic likeness of the Erdtree. Its golden backing is an honor bestowed on no other soldiers.</text>
+<text id="1720200">Gauntlets worn by soldiers sworn to defend the royal capital of Leyndell.
+Rust-worn and stained through unending conflict.</text>
+<text id="1720300">Greaves worn by soldiers sworn to defend the royal capital of Leyndell.
+Rust-worn and stained through unending conflict.</text>
+<text id="1730000">Helm worn by soldiers who fought by General Radahn's side.
+Its visor is fashioned after a lion's fangs.</text>
+<text id="1730100">Armor worn by soldiers who fought by General Radahn's side.
+
+The surcoat depicts a red-maned lion raising a sword in the image of Radahn. Thus, they were Redmanes, and all proved they were worthy of the name.</text>
+<text id="1730200">Gauntlets worn by soldiers who fought by General Radahn's side.
+Rust-worn and stained through unending conflict.</text>
+<text id="1730300">Greaves worn by soldiers who fought by General Radahn's side.
+Rust-worn and stained through unending conflict.</text>
+<text id="1740100">Armor worn by headless soldiers who endlessly guard the Wandering Mausoleum.
+
+The surcoat depicts the mausoleum bell, which rings in constant mourning for the soulless demigods.</text>
+<text id="1740200">Gauntlets worn by headless soldiers who endlessly guard the Wandering Mausoleum.
+Rust-worn and stained through unending conflict.</text>
+<text id="1740300">Greaves worn by headless soldiers who endlessly guard the Wandering Mausoleum.
+Rust-worn and stained through unending conflict.</text>
+<text id="1750000">Helm worn by soldiers sworn to the Haligtree.
+An iron helm graced by a crown of unalloyed gold.
+
+Increases faith.</text>
+<text id="1750100">Armor worn by soldiers sworn to the Haligtree.
+
+The surcoat bears the crest of the Haligtree.
+Though watered with Miquella's own blood since it was a sapling, the Haligtree ultimately failed to grow into an Erdtree.</text>
+<text id="1750200">Gauntlets worn by soldiers sworn to the Haligtree.
+Rust-worn and stained through unending conflict.</text>
+<text id="1750300">Greaves worn by soldiers sworn to the Haligtree.
+Rust-worn and stained through unending conflict.</text>
+<text id="1760000">Helm worn by knights once loyal to Praetor Rykard.
+Its crest of red feathers symbolizes Rykard's pedigree as Lord Radagon's son.</text>
+<text id="1760100">Armor worn by knights once loyal to Praetor Rykard.
+
+It bears an emblem that none wear any longer, standing as it does for a lord that fell from lofty ambition into gluttonous depravity.
+As the lord lost his dignity, so too did these knights lose their master.</text>
+<text id="1760200">Gauntlets worn by knights once loyal to Praetor Rykard.
+Time has yet to dull their luster.</text>
+<text id="1760300">Greaves worn by knights once loyal to Praetor Rykard.
+Time has yet to dull their luster.</text>
+<text id="1761100">Armor worn by knights once loyal to Praetor Rykard.
+
+It bears an emblem that none wear any longer, standing as it does for a lord that fell from lofty ambition into gluttonous depravity.
+As the lord lost his dignity, so too did these knights lose their master.</text>
+<text id="1770000">Helm worn by knights loyal to Godrick the Grafted.
+Adorned with a plume of withered, ashen hair.</text>
+<text id="1770100">Armor worn by knights loyal to Godrick the Grafted.
+
+Its left breast is emblazoned with a two-headed war axe, an emblem of the golden lineage.
+The knights surely boasted of their strength in days long gone.</text>
+<text id="1770200">Gauntlets worn by knights loyal to Godrick the Grafted.
+Time has yet to dull their luster.</text>
+<text id="1770300">Greaves worn by knights loyal to Godrick the Grafted.
+Time has yet to dull their luster.</text>
+<text id="1771100">Armor worn by knights loyal to Godrick the Grafted.
+
+Its left breast is emblazoned with a two-headed war axe, an emblem of the golden lineage.
+The knights surely boasted of their strength in days long gone.</text>
+<text id="1780000">Helm worn by Raya Lucaria Academy knights.
+Its brow is adorned with a single cuckoo's feather.</text>
+<text id="1780100">Armor worn by Raya Lucaria Academy knights.
+
+Its left breast is emblazoned with a peering cuckoo, whence came their name.
+Perhaps the bird's shrewd gaze is an expression of their refusal to be mere servants of the academy.</text>
+<text id="1780200">Gauntlets worn by Raya Lucaria Academy knights.
+Time has yet to dull their luster.</text>
+<text id="1780300">Greaves worn by Raya Lucaria Academy knights.
+Time has yet to dull their luster.</text>
+<text id="1781100">Armor worn by Raya Lucaria Academy knights.
+
+Its left breast is emblazoned with a peering cuckoo, whence came their name.
+Perhaps the bird's shrewd gaze is an expression of their refusal to be mere servants of the academy.</text>
+<text id="1790000">Helm worn by knights sworn to defend the royal capital of Leyndell.
+
+The golden canopy represents the honor of standing among the tree's defenders.</text>
+<text id="1790100">Armor worn by knights sworn to defend the royal capital of Leyndell.
+
+Its left breast is emblazoned with a symbol of Erdtree Worship, said to have once been imbued with an incantation of protection.</text>
+<text id="1790200">Gauntlets worn by knights sworn to defend the royal capital of Leyndell.
+Time has yet to dull their luster.</text>
+<text id="1790300">Greaves worn by knights sworn to defend the royal capital of Leyndell.
+Time has yet to dull their luster.</text>
+<text id="1791100">Armor worn by knights sworn to defend the royal capital of Leyndell.
+
+Its left breast is emblazoned with a symbol of Erdtree Worship, said to have once been imbued with an incantation of protection.</text>
+<text id="1800000">Helm worn by knights who fought by General Radahn's side.
+
+The red plume is a symbol of Radahn's pedigree as Lord Radagon's son—the mane of the proud Red Lion.</text>
+<text id="1800100">Armor worn by knights who fought by General Radahn's side.
+
+When they were driven to defeat by Malenia's scarlet rot, the Redmane Knights burned the crest on the left breast of their armor to indicate their resolve.
+
+"Alas, dear home, I shan't see you again! For our duty is to remain here, a bulwark against the blight."</text>
+<text id="1800200">Black iron gauntlets worn by knights who fought by General Radahn's side. Time has yet to dull their luster.</text>
+<text id="1800300">Black iron greaves worn by knights who fought by General Radahn's side. Time has yet to dull their luster.</text>
+<text id="1801100">Armor worn by knights who fought by General Radahn's side.
+
+When they were driven to defeat by Malenia's scarlet rot, the Redmane Knights burned the crest on the left breast of their armor to indicate their resolve.
+
+"Alas, dear home, I shan't see you again! For our duty is to remain here, a bulwark against the blight."</text>
+<text id="1810100">Armor worn by headless knights who endlessly guard the Wandering Mausoleum.
+
+The wing-shaped ornaments on its back evoke the Deathbird. A self-inflicted curse that ties the spirits of these loyal knights to the land, having willingly beheaded themselves so that they may serve their masters in death.</text>
+<text id="1810200">Gauntlets worn by headless knights who endlessly guard the Wandering Mausoleum.
+Time has yet to dull their luster.</text>
+<text id="1810300">Greaves worn by headless knights who endlessly guard the Wandering Mausoleum.
+Time has yet to dull their luster.</text>
+<text id="1811100">Armor worn by headless knights who endlessly guard the Wandering Mausoleum.
+
+The wing-shaped ornaments on its back evoke the Deathbird. A self-inflicted curse that ties the spirits of these loyal knights to the land, having willingly beheaded themselves so that they may serve their masters in death.</text>
+<text id="1820000">Helm worn by knights sworn to the Haligtree.
+Graced by a crown of unalloyed gold.
+
+Increases faith.</text>
+<text id="1820100">Armor worn by knights sworn to the Haligtree.
+
+Its left breast is emblazoned with the crest of the Haligtree.
+Though watered with Miquella's own blood since it was a sapling, the Haligtree ultimately failed to grow into an Erdtree.</text>
+<text id="1820200">Gauntlets worn by knights sworn to the Haligtree.
+Time has yet to dull their luster.</text>
+<text id="1820300">Greaves worn by knights sworn to the Haligtree.
+Time has yet to dull their luster.</text>
+<text id="1821100">Armor worn by knights sworn to the Haligtree.
+
+Its left breast is emblazoned with the crest of the Haligtree.
+Though watered with Miquella's own blood since it was a sapling, the Haligtree ultimately failed to grow into an Erdtree.</text>
+<text id="1830000">Flanged iron cap widely issued to foot soldiers in a lord's army.</text>
+<text id="1830100">Padded cloth armor with a chainmail shawl draped over the shoulders.
+
+Widely issued to foot soldiers in a lord's army.</text>
+<text id="1830200">Metal gauntlets covered in nicks and dents.
+Widely issued to foot soldiers in a lord's army.</text>
+<text id="1830300">Metal greaves that have already been mended countless times.
+Widely issued to foot soldiers in a lord's army.</text>
+<text id="1840000">Helmet with a protective metal plate.
+Widely issued to foot soldiers in a lord's army.</text>
+<text id="1840100">Padded cloth armor with more than a few stains.
+Widely issued to foot soldiers in a lord's army.</text>
+<text id="1850000">Flanged cap made from gilded iron.
+Issued to foot soldiers protecting the royal capital of Leyndell.</text>
+<text id="1850100">Padded cloth armor with a leather shawl draped over the shoulders.
+
+Widely issued to foot soldiers in a lord's army.</text>
+<text id="1860000">Wholly unembellished iron helm.
+Widely issued to foot soldiers in a lord's army.</text>
+<text id="1860100">Padded cloth armor with the telltale stains of the scarlet rot.
+
+Worn by foot soldiers in General Radahn's army.</text>
+<text id="1870100">Padded cloth armor with indelible bloodstains around the neck.
+
+Worn by headless foot soldiers who endlessly guard the Wandering Mausoleum.</text>
+<text id="1880000">Flanged iron cap adorned with a crown of unalloyed gold.
+Increases faith.
+
+Worn by foot soldiers sworn to the Haligtree.
+
+Who is it that Miquella shall bless, if not the low and the meek?</text>
+<text id="1880100">Padded cloth armor with a shawl in the color of ivory draped over the shoulders.
+
+Worn by foot soldiers sworn to the Haligtree.</text>
+<text id="1890000">Mask with long, hideously twisted horns worn by the Omenkillers.
+Increases strength.
+
+Bears the smirking face of an elder, twisted in wicked delight.
+
+This visage is carved in the image of the evil spirits that haunt the Omen in their nightmares.</text>
+<text id="1890100">Robe worn by the Omenkillers, butchers of twisted conscience.
+
+Its thick apron is worn in remembrance of Rollo, the progenitor of the Omenkillers and a perfumer of antiquity.</text>
+<text id="1890200">Long, stiff leather gloves worn by the Omenkillers.</text>
+<text id="1890300">Stiff leather boots worn by the Omenkillers.</text>
+<text id="1900000">Gray scarab worn directly on the head.
+These scarabs roll clumps of Ashes of War during their labors.
+
+Slightly reduces the FP cost of skills, but increases damage taken.</text>
+<text id="1901000">Golden scarab worn directly on the head.
+These scarabs roll clumps of incantations during their labors.
+
+Slightly reduces the FP costs of incantations, but increases damage taken.
+
+As a scarab approaches death, it abandons its rolled treasure and stretches its wings wide for the long journey to its home nest.</text>
+<text id="1902000">Blue-green scarab worn directly on the head.
+These scarabs roll clumps of sorcery during their labors.
+
+Slightly reduces the FP costs of sorceries, but increases damage taken.</text>
+<text id="1910000">Red scarab worn directly on the head.
+The red scarabs roll clumps of crimson tears during their labors.
+
+Slightly increases the recovery effects of the Flask of Crimson Tears, but increases damage taken.</text>
+<text id="1920000">Blue scarab worn directly on the head.
+These scarabs roll clumps of cerulean tears during their labors.
+
+Slightly increases the recovery effects of the Flask of Cerulean Tears, but increases damage taken.</text>
+<text id="1930100">Extremely thin and sheer white dress worn by the Deathbed Companion as she embraces the dead.
+
+Slowly replenishes the HP of nearby allies, but not that of the wearer.
+
+The touch of the fabric is exceedingly soft, so as not to harm even the most withered corpse, while still sharing her warmth.</text>
+<text id="1930300">Skirt worn by Phia, the Deathbed Companion.</text>
+<text id="1940000">Hood of black cloth that covers the whole head.
+Worn by Fia, the Deathbed Companion, on her journey after being exiled from her home.
+
+The fabric itself is soft as silk.</text>
+<text id="1940100">Robe of black cloth that covers the entire body.
+Worn by Fia, the Deathbed Companion, on her journey after being exiled from her home.
+
+The fabric itself is soft as silk and thin enough that those embraced can feel every pulse; every bit of her warmth.</text>
+<text id="1941100">Robe of black cloth that covers the entire body.
+Worn by Fia, the Deathbed Companion, on her journey after being exiled from her home.
+
+The fabric itself is soft as silk and thin enough that those embraced can feel every pulse; every bit of her warmth.</text>
+<text id="1950000">%null%</text>
+<text id="1950100">Robe worn by Millicent the Rotting</text>
+<text id="1950200">Gloves worn by Millicent the Rotting</text>
+<text id="1950300">Boots worn by Millicent the Rotting</text>
+<text id="1960000">%null%</text>
+<text id="1970100">Tunic worn by Millicent the Rotting</text>
+<text id="1970200">Golden prosthetic forged using ancient techniques</text>
+<text id="1980000">Hideously stained and ragged hood.
+Worn by former foot soldiers who have turned to banditry.</text>
+<text id="1980100">Hideously stained and ragged cloth armor.
+Worn by former foot soldiers who have turned to banditry.</text>
+<text id="1980200">Hideously stained and dented gauntlets.
+Worn by former foot soldiers who have turned to banditry.</text>
+<text id="1990000">Hood of a page selected for special privileges by the noble they serve.
+
+The unassuming sack-like appearance befits their unseen and unknown stature.</text>
+<text id="1990100">Clothes of a page selected for special privileges by the noble they serve.
+
+Traveling wear tailored with exquisite precision, to avoid any undue shame for the page's master.</text>
+<text id="1991100">Clothes of a page selected for special privileges by the noble they serve.
+
+Traveling wear tailored with exquisite precision, to avoid any undue shame for the page's master.</text>
+<text id="2000000">Bronze helm decorated with innumerable snakes, eaten through by scarlet rot.
+
+Worn by gladiators who were driven from the colosseum.
+The wearer becomes a slightly easier target for foes.</text>
+<text id="2000100">Thick, bristly cloak eaten through by scarlet rot.
+
+The symbol of an underground gravekeeper's station.</text>
+<text id="2000300">Greaves wrapped with bronze snakes, eaten through by scarlet rot.
+
+Worn by gladiators who were driven from the colosseum.
+The wearer becomes a slightly easier target for foes.</text>
+<text id="2001100">Cloak wrapped with bronze snakes, eaten through by scarlet rot.
+
+Worn by gladiators who were driven from the colosseum.
+The wearer becomes a slightly easier target for foes.</text>
+<text id="2010000">Mushrooms found growing all over the body.
+These overgrown mushrooms form a towering headpiece.
+
+Raises attack power when something nearby suffers from poison or rot.
+
+Long ago, great lords served the scarlet rot. Perhaps such fungal bodies served as their crowns.</text>
+<text id="2020000">Mask forced on a victim's head to lend torture an extra degree of cruelty.
+It magnifies one's fears and makes them acutely aware of all forms of pain.
+
+Raises attack power when the wearer suffers from madness.
+
+When the Black Dumpling goes on, the torturer no longer seeks answers; only to inflict suffering without hope of relief.</text>
+<text id="2030000">Robe worn by scholars of the Lazuli Conspectus, singular among the greater Raya Lucaria Academy.
+
+These scholars, who sought to master Carian sorcery, instead learned to see the moon as equal to the stars.
+This robe, in the hue of the full moon, signifies their heresy.</text>
+</entries>
+</fmg>
