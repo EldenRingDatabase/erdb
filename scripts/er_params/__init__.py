@@ -1,6 +1,6 @@
 from csv import DictReader
 from typing import List, Dict
-from er_params.enums import ItemIDFlag
+from scripts.er_params.enums import ItemIDFlag
 
 class ParamRow(object):
     def __init__(self, row: Dict[str, str], item_id_flag: ItemIDFlag) -> None:

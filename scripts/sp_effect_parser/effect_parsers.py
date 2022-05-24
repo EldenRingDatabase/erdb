@@ -1,8 +1,8 @@
 import math
 from typing import Optional, List, Dict
-from er_params import ParamRow
-from er_params.enums import SpEffectType, AttackType
-from sp_effect_parser.effect_typing import AttributeField, EffectModel
+from scripts.er_params import ParamRow
+from scripts.er_params.enums import SpEffectType, AttackType
+from scripts.sp_effect_parser.effect_typing import AttributeField, EffectModel
 
 _TRIGGER_FIELDS = [
     "stateInfo", "invocationConditionsStateChange1",

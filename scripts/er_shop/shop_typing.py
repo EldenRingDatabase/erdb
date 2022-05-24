@@ -1,6 +1,6 @@
 from enum import IntEnum
 from typing import Dict, List, NamedTuple
-from er_params import ParamRow
+from scripts.er_params import ParamRow
 
 class Material(NamedTuple):
     class Category(IntEnum):

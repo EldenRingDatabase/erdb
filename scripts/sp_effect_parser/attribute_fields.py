@@ -1,6 +1,6 @@
-import sp_effect_parser.effect_parsers as parse
+import scripts.sp_effect_parser.effect_parsers as parse
 from typing import Dict
-from sp_effect_parser.effect_typing import EffectModel, EffectType, AttributeName, AttributeField
+from scripts.sp_effect_parser.effect_typing import EffectModel, EffectType, AttributeName, AttributeField
 
 _ATTRIBUTE_FIELDS = {
     "maxHpRate": AttributeField.create(

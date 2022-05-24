@@ -1,22 +1,32 @@
-import json
-import er_params
-from typing import Dict, List
-from er_params.enums import GoodsType, GoodsRarity, ItemIDFlag
-from erdb_common import update_nested, get_schema_properties, get_item_msg, parse_description, patch_keys, validate_and_write
+from scripts import er_params
+from typing import Dict, Iterator, List, Tuple
+from scripts.er_params.enums import GoodsType, GoodsRarity, ItemIDFlag
+from scripts.erdb_common import GeneratorDataBase, get_schema_properties, parse_description
 
 ParamRow = er_params.ParamRow
 ParamDict = er_params.ParamDict
 
-def is_base_spirit_ash(row: ParamRow) -> bool:
+def _is_base_spirit_ash(row: ParamRow) -> bool:
     return row.is_base_item() and row.get("goodsType") in [GoodsType.LESSER, GoodsType.GREATER]
 
-def find_upgrade_costs(goods: ParamDict, base_item_id: int) -> List[int]:
+def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> List[int]:
     return [goods[str(item_id)].get_int("reinforcePrice") for item_id in range(base_item_id, base_item_id + 10)]
 
-def make_spirit_ash_object(row: ParamRow, goods: ParamDict, upgrade_mats: ParamDict, summaries: Dict[int, str], descriptions: Dict[int, str], summon_names: Dict[int, str]) -> Dict:
+def iterate_spirit_ashes(self: GeneratorDataBase, spirit_ashes: ParamDict) -> Iterator[ParamRow]:
+    for row in spirit_ashes.values():
+        if _is_base_spirit_ash(row):
+            yield row
+
+def make_spirit_ash_object(self: GeneratorDataBase, row: ParamRow) -> Dict:
+    goods = self.main_param
+    upgrade_materials = self.params["upgrade_materials"]
+    summaries = self.msgs["summaries"]
+    summon_names = self.msgs["summon_names"]
+    descriptions = self.msgs["descriptions"]
+
     # HACK: reinforceMaterialId links to EquipMtrlSetParam which THEN links to the actual EquipParamGoods
     # this simply checks if the name of EquipMtrlSetParam somewhat matches without following everything
-    upgrade_material = upgrade_mats[row.get("reinforceMaterialId")].name.startswith("Grave")
+    upgrade_material = upgrade_materials[row.get("reinforceMaterialId")].name.startswith("Grave")
     upgrade_material = "Grave Glovewort" if upgrade_material else "Ghost Glovewort"
 
     return {
@@ -38,35 +48,33 @@ def make_spirit_ash_object(row: ParamRow, goods: ParamDict, upgrade_mats: ParamD
         # summon_quantity -- cannot autogenerate, make sure not to overwrite
         # abilities -- cannot autogenerate, make sure not to overwrite
         "upgrade_material": upgrade_material,
-        "upgrade_costs": find_upgrade_costs(goods, row.index)
+        "upgrade_costs": _find_upgrade_costs(goods, row.index)
     }
 
-def main():
-    with open("./spirit-ashes.json", mode="r") as f:
-        spirit_ashes_full = json.load(f)
+def get_spirit_ash_schema() -> Tuple[Dict, Dict[str, Dict]]:
+    return get_schema_properties("item", "spirit-ashes/definitions/SpiritAsh")
 
-    spirit_ashes = spirit_ashes_full["SpiritAshes"]
-    goods = er_params.load("EquipParamGoods", "1.04.1", ItemIDFlag.GOODS)
-    upgrade_mats = er_params.load("EquipMtrlSetParam", "1.04.1", ItemIDFlag.NON_EQUIPABBLE)
-    properties, store = get_schema_properties("item", "spirit-ashes/definitions/SpiritAsh")
+class SpiritAshGeneratorData(GeneratorDataBase):
+    Base = GeneratorDataBase
 
-    summaries = get_item_msg("GoodsInfo", "1.04.1")
-    summon_names = get_item_msg("GoodsInfo2", "1.04.1")
-    descriptions = get_item_msg("GoodsCaption", "1.04.1")
+    output_file: str = "spirit-ashes.json"
+    schema_file: str = "spirit-ashes.schema.json"
+    element_name: str = "SpiritAshes"
 
-    for row in goods.values():
-        if is_base_spirit_ash(row):
-            obj = make_spirit_ash_object(row, goods, upgrade_mats, summaries, descriptions, summon_names)
-            ash = spirit_ashes.get(row.name, {})
+    main_param_retriever = Base.ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
-            update_nested(ash, obj)
-            spirit_ashes[row.name] = patch_keys(ash, properties)
+    param_retrievers = {
+        "upgrade_materials": Base.ParamDictRetriever("EquipMtrlSetParam", ItemIDFlag.NON_EQUIPABBLE)
+    }
 
-    spirit_ashes_full["SpiritAshes"] = spirit_ashes
-    ok = validate_and_write("./spirit-ashes.json", "spirit-ashes.schema.json", spirit_ashes_full, store)
+    msgs_retrievers = {
+        "summaries": Base.MsgsRetriever("GoodsInfo"),
+        "summon_names": Base.MsgsRetriever("GoodsInfo2"),
+        "descriptions": Base.MsgsRetriever("GoodsCaption")
+    }
 
-    if not ok:
-        raise RuntimeError("Validation failed")
+    lookup_retrievers = {}
 
-if __name__ == "__main__":
-    main()
+    schema_retriever = get_spirit_ash_schema
+    main_param_iterator = iterate_spirit_ashes
+    construct_object = make_spirit_ash_object

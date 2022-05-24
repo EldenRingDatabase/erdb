@@ -1,5 +1,5 @@
-from sp_effect_parser.effect_typing import EffectModel, EffectType, AttributeName, SchemaEffect
-from er_params.enums import SpEffectType, AttackType, AttackCondition
+from scripts.sp_effect_parser.effect_typing import EffectModel, EffectType, AttributeName, SchemaEffect
+from scripts.er_params.enums import SpEffectType, AttackType, AttackCondition
 from typing import Dict, List, NamedTuple, Union
 
 class SpEffectConditionOffset(NamedTuple):

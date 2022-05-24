@@ -1,6 +1,6 @@
 from typing import List
-from er_params import ParamDict
-from er_shop.shop_typing import Material, Lineup
+from scripts.er_params import ParamDict
+from scripts.er_shop.shop_typing import Material, Lineup
 
 """
 Helper class for looking up any sort of item exchanges (purchases, alterations, crafting...)

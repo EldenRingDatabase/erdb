@@ -1,11 +1,11 @@
-import sp_effect_parser.attribute_fields as attrib_fields
-import sp_effect_parser.effect_parsers as parse
-import sp_effect_parser.hardcoded_effects as hardcoded_effects
-from sp_effect_parser.effect_aggregator import aggregate_effects
+import scripts.sp_effect_parser.attribute_fields as attrib_fields
+import scripts.sp_effect_parser.effect_parsers as parse
+import scripts.sp_effect_parser.hardcoded_effects as hardcoded_effects
+from scripts.sp_effect_parser.effect_aggregator import aggregate_effects
+from scripts.er_params import ParamRow, ParamDict
+from scripts.er_params.enums import SpEffectType
+from scripts.sp_effect_parser.effect_typing import SchemaEffect
 from typing import List, Dict, Optional
-from er_params import ParamRow, ParamDict
-from er_params.enums import SpEffectType
-from sp_effect_parser.effect_typing import SchemaEffect
 
 _REFERENCE_EFFECT_PARAMS = ["cycleOccurrenceSpEffectId", "applyIdOnGetSoul"]
 

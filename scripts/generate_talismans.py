@@ -1,38 +1,26 @@
-import json
-import er_params
+from scripts import er_params
 from typing import Dict, List, Tuple
-from er_params.enums import ItemIDFlag
-from sp_effect_parser import parse_effects
-from erdb_common import (
-    get_schema_properties, get_schema_enums, get_item_msg,
-    parse_description, update_nested, patch_keys, validate_and_write)
+from scripts.er_params.enums import ItemIDFlag
+from scripts.sp_effect_parser import parse_effects
+from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums, parse_description
 
 ParamRow = er_params.ParamRow
 ParamDict = er_params.ParamDict
 
-_EFFECT_FIELDS = ["refId"]
+def _find_conflicts(group: int, accessories: ParamDict) -> List[str]:
+    return [t.name for t in accessories.values() if t.get_int("accessoryGroup") == group and len(t.name) > 0]
 
-def iterate_talismans(accessories: ParamDict):
-    for row in accessories.values():
+def iterate_talismans(self: GeneratorDataBase, talismans: ParamDict):
+    for row in talismans.values():
         if row.index >= 1000 and row.index < 999999:
             yield row
 
-def find_min_max_effect_ids(accessories: ParamDict, *effect_fields: str) -> Tuple[int, int]:
-    min_id: int = 999999999
-    max_id: int = 0
+def make_talisman_object(self: GeneratorDataBase, row: ParamRow) -> Dict:
+    talismans = self.main_param
+    effects = self.params["effects"]
+    summaries = self.msgs["summaries"]
+    descriptions = self.msgs["descriptions"]
 
-    for row in iterate_talismans(accessories):
-        for field in effect_fields:
-            this_id = row.get_int_corrected(field)
-            min_id = min(min_id, this_id)
-            max_id = max(max_id, this_id)
-
-    return min_id, (max_id + 1000) # account for potential variants mentioned inside spEffectParam itself
-
-def find_conflicts(group: int, accessories: ParamDict) -> List[str]:
-    return [t.name for t in accessories.values() if t.get_int("accessoryGroup") == group and len(t.name) > 0]
-
-def make_talisman_object(row: ParamRow, accessories: ParamDict, effects: ParamDict, summaries: Dict[int, str], descriptions: Dict[int, str]) -> Dict:
     return {
         "full_hex_id": row.index_hex,
         "id": row.index,
@@ -46,39 +34,36 @@ def make_talisman_object(row: ParamRow, accessories: ParamDict, effects: ParamDi
         # locations -- cannot autogenerate, make sure not to overwrite
         # remarks -- cannot autogenerate, make sure not to overwrite
         "weight": row.get_float("weight"),
-        "effects": parse_effects(row, effects, *_EFFECT_FIELDS),
-        "conflicts": find_conflicts(row.get_int("accessoryGroup"), accessories),
+        "effects": parse_effects(row, effects, "refId"),
+        "conflicts": _find_conflicts(row.get_int("accessoryGroup"), talismans),
     }
 
-def main():
-    with open("./talismans.json", mode="r") as f:
-        talismans_full = json.load(f)
-
-    talismans = talismans_full["Talismans"]
-    accessories = er_params.load("EquipParamAccessory", "1.04.1", ItemIDFlag.ACCESSORIES)
-
-    effect_id_min, effect_id_max = find_min_max_effect_ids(accessories, *_EFFECT_FIELDS)
-    effects = er_params.load_ids("SpEffectParam", "1.04.1", ItemIDFlag.NON_EQUIPABBLE, effect_id_min, effect_id_max)
-
+def get_talisman_schema() -> Tuple[Dict, Dict[str, Dict]]:
     properties, store = get_schema_properties("item", "talismans/definitions/Talisman")
     store.update(get_schema_properties("effect")[1])
     store.update(get_schema_enums("talisman-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
+    return properties, store
 
-    summaries = get_item_msg("AccessoryInfo", "1.04.1")
-    descriptions = get_item_msg("AccessoryCaption", "1.04.1")
+class TalismanGeneratorData(GeneratorDataBase):
+    Base = GeneratorDataBase
 
-    for row in iterate_talismans(accessories):
-        new_obj = make_talisman_object(row, accessories, effects, summaries, descriptions)
-        obj = talismans.get(row.name, {})
+    output_file: str = "talismans.json"
+    schema_file: str = "talismans.schema.json"
+    element_name: str = "Talismans"
 
-        update_nested(obj, new_obj)
-        talismans[row.name] = patch_keys(obj, properties)
+    main_param_retriever = Base.ParamDictRetriever("EquipParamAccessory", ItemIDFlag.ACCESSORIES)
 
-    talismans_full["Talismans"] = talismans
-    ok = validate_and_write("./talismans.json", "talismans.schema.json", talismans_full, store)
+    param_retrievers = {
+        "effects": Base.ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE, id_min=310000, id_max=400000)
+    }
 
-    if not ok:
-        raise RuntimeError("Validation failed")
+    msgs_retrievers = {
+        "summaries": Base.MsgsRetriever("AccessoryInfo"),
+        "descriptions": Base.MsgsRetriever("AccessoryCaption")
+    }
 
-if __name__ == "__main__":
-    main()
+    lookup_retrievers = {}
+
+    schema_retriever = get_talisman_schema
+    main_param_iterator = iterate_talismans
+    construct_object = make_talisman_object

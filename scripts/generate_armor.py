@@ -1,32 +1,20 @@
-import json
-import math
-import er_params
-import er_shop
-from typing import Dict
-from er_params.enums import ItemIDFlag
-from sp_effect_parser import parse_effects
-from erdb_common import (
-    get_schema_properties, get_schema_enums, get_item_msg,
-    parse_description, update_nested, patch_keys, validate_and_write)
+from typing import Dict, Tuple, Iterator
+from scripts import er_params, er_shop
+from scripts.er_params.enums import ItemIDFlag
+from scripts.sp_effect_parser import parse_effects
+from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums, parse_description
 
 ParamRow = er_params.ParamRow
 ParamDict = er_params.ParamDict
 
-_EFFECT_FIELDS = ["residentSpEffectId", "residentSpEffectId2", "residentSpEffectId3"]
-
-def iterate_armor(protectors: ParamDict):
-    for row in protectors.values():
-        if row.index >= 40000 and len(row.name) > 0:
-            yield row
-
-def get_category(category: int) -> str:
+def _get_category(category: int) -> str:
     """
     There is an unused category 4 (hair). It's not part of the schema,
     so let's have this throw an error in case it's ever used.
     """
     return {0: "head", 1: "body", 2: "arms", 3: "legs"}[category]
 
-def get_absorptions(row: ParamRow) -> Dict[str, float]:
+def _get_absorptions(row: ParamRow) -> Dict[str, float]:
     def _parse(val: float):
         return round((1 - val) * 100, 1)
 
@@ -41,12 +29,12 @@ def get_absorptions(row: ParamRow) -> Dict[str, float]:
         "holy": _parse(row.get_float("darkDamageCutRate")),
     }
 
-def get_resistances(row: ParamRow) -> Dict[str, int]:
+def _get_resistances(row: ParamRow) -> Dict[str, int]:
     def _check_equal(*values: int):
         ret = values[0]
         for val in values:
             if ret != val:
-                print(f"WARNING: Values mismatch for {row.name} resistances ({ret} != {val}), displaying the latter.")
+                print(f"WARNING: Values mismatch for {row.name} resistances ({ret} != {val}), displaying the latter.", flush=True)
             ret = val
         return ret
 
@@ -58,11 +46,22 @@ def get_resistances(row: ParamRow) -> Dict[str, int]:
         "poise": round(row.get_float("toughnessCorrectRate") * 1000)
     }
 
-def make_armor_object(row: ParamRow, protectors: ParamDict, effects: ParamDict, armor_lookup: er_shop.Lookup, summaries: Dict[int, str], descriptions: Dict[int, str]) -> Dict:
+def iterate_armor(self: GeneratorDataBase, armor: ParamDict) -> Iterator[ParamRow]:
+    for row in armor.values():
+        if row.index >= 40000 and len(row.name) > 0:
+            yield row
+
+def make_armor_object(self: GeneratorDataBase, row: ParamRow) -> Dict:
+    armor = self.main_param
+    effects = self.params["effects"]
+    summaries = self.msgs["summaries"]
+    descriptions = self.msgs["descriptions"]
+    armor_lookup = self.lookups["armor_lookup"]
+
     material = er_shop.Material(row.index, er_shop.Material.Category.PROTECTOR)
     lineups = armor_lookup.get_lineups_from_material(material)
     assert len(lineups) in [0, 2], "Each armor should have either none or self-/boc-made alterations"
-    altered = "" if len(lineups) == 0 else protectors[str(lineups[0].product.index)].name
+    altered = "" if len(lineups) == 0 else armor[str(lineups[0].product.index)].name
 
     return {
         "full_hex_id": row.index_hex,
@@ -76,46 +75,45 @@ def make_armor_object(row: ParamRow, protectors: ParamDict, effects: ParamDict, 
         "max_stored": 999,
         # locations -- cannot autogenerate, make sure not to overwrite
         # remarks -- cannot autogenerate, make sure not to overwrite
-        "category": get_category(row.get_int("protectorCategory")),
+        "category": _get_category(row.get_int("protectorCategory")),
         "altered": altered,
         "weight": row.get_float("weight"),
-        "absorptions": get_absorptions(row),
-        "resistances": get_resistances(row),
-        "effects": parse_effects(row, effects, *_EFFECT_FIELDS),
+        "absorptions": _get_absorptions(row),
+        "resistances": _get_resistances(row),
+        "effects": parse_effects(row, effects, "residentSpEffectId", "residentSpEffectId2", "residentSpEffectId3"),
     }
 
-def main():
-    with open("./armor.json", mode="r") as f:
-        armor_full = json.load(f)
-
-    armor = armor_full["ArmorPieces"]
-    protectors = er_params.load("EquipParamProtector", "1.04.1", ItemIDFlag.PROTECTORS)
-
-    effects = er_params.load("SpEffectParam", "1.04.1", ItemIDFlag.NON_EQUIPABBLE)
-
+def get_armor_schema() -> Tuple[Dict, Dict[str, Dict]]:
     properties, store = get_schema_properties("item", "armor/definitions/ArmorPiece")
     store.update(get_schema_properties("effect")[1])
     store.update(get_schema_enums("armor-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
+    return properties, store
 
-    summaries = get_item_msg("ProtectorInfo", "1.04.1")
-    descriptions = get_item_msg("ProtectorCaption", "1.04.1")
+class ArmorGeneratorData(GeneratorDataBase):
+    Base = GeneratorDataBase
 
-    shop_lineup = er_params.load_ids("ShopLineupParam", "1.04.1", ItemIDFlag.NON_EQUIPABBLE, id_min=110000, id_max=112000)
-    material_sets = er_params.load_ids("EquipMtrlSetParam", "1.04.1", ItemIDFlag.NON_EQUIPABBLE, id_min=900100, id_max=901000)
-    armor_lookup = er_shop.Lookup(shop_lineup, material_sets)
+    output_file: str = "armor.json"
+    schema_file: str = "armor.schema.json"
+    element_name: str = "ArmorPieces"
 
-    for row in iterate_armor(protectors):
-        new_obj = make_armor_object(row, protectors, effects, armor_lookup, summaries, descriptions)
-        obj = armor.get(row.name, {})
+    main_param_retriever = Base.ParamDictRetriever("EquipParamProtector", ItemIDFlag.PROTECTORS)
 
-        update_nested(obj, new_obj)
-        armor[row.name] = patch_keys(obj, properties)
+    param_retrievers = {
+        "effects": Base.ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE)
+    }
 
-    armor_full["ArmorPieces"] = armor
-    ok = validate_and_write("./armor.json", "armor.schema.json", armor_full, store)
+    msgs_retrievers = {
+        "summaries": Base.MsgsRetriever("ProtectorInfo"),
+        "descriptions": Base.MsgsRetriever("ProtectorCaption")
+    }
 
-    if not ok:
-        raise RuntimeError("Validation failed")
+    lookup_retrievers = {
+        "armor_lookup": Base.LookupRetriever(
+            shop_lineup_id_min=110000, shop_lineup_id_max=112000,
+            material_set_id_min=900100, material_set_id_max=901000,
+        )
+    }
 
-if __name__ == "__main__":
-    main()
+    schema_retriever = get_armor_schema
+    main_param_iterator = iterate_armor
+    construct_object = make_armor_object

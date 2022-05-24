@@ -1,6 +1,6 @@
 from types import SimpleNamespace
 from typing import List, Dict, Set, NamedTuple
-from sp_effect_parser.effect_typing import AttributeName, SchemaEffect
+from scripts.sp_effect_parser.effect_typing import AttributeName, SchemaEffect
 
 _A = AttributeName
 
