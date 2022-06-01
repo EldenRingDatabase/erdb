@@ -6,6 +6,7 @@ from enum import Enum
 from typing import Dict, List, NamedTuple
 from jsonschema import validate, RefResolver, ValidationError
 from scripts.erdb_common import GeneratorDataBase, patch_keys, update_nested
+from scripts.find_valid_values import find_valid_values
 from scripts.generate_armor import ArmorGeneratorData
 from scripts.generate_spirit_ashes import SpiritAshGeneratorData
 from scripts.generate_talismans import TalismanGeneratorData
@@ -64,8 +65,10 @@ _GENERATORS: Dict[Generator, GeneratorDataBase] = {
 
 def get_args():
     parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
-    parser.add_argument("--generate", "-g", type=Generator, required=True, choices=list(Generator), nargs="+", help="The type of items to generate.")
-    parser.add_argument("--version", "-v", type=Version.from_string, default=_VERSION_DIRS[0], choices=_VERSION_DIRS, help="Game version to source the data from.")
+    parser.add_argument("--generate", "-g", type=Generator, default=[], choices=list(Generator), nargs="+", help="The type of items to generate.")
+    parser.add_argument("--find-values", "-f", type=str, help="Find all possible values of a field per param name, format: ParamName:FieldName.")
+    parser.add_argument("--find-values-limit", type=int, default=-1, help="Limit find-values examples to X per value.")
+    parser.add_argument("--source-version", "-s", type=Version.from_string, default=_VERSION_DIRS[0], choices=_VERSION_DIRS, help="Game version to source the data from.")
     return parser.parse_args()
 
 def get_generators(args) -> List[Generator]:
@@ -130,12 +133,17 @@ def main():
     with open("latest_version.txt", mode="w") as f:
         f.write(str(_VERSION_DIRS[0]))
 
-    (_ROOT / str(args.version)).mkdir(exist_ok=True)
+    (_ROOT / str(args.source_version)).mkdir(exist_ok=True)
 
     for gen in get_generators(args):
-        print(f"\n>>> Generating \"{gen}\" from version {args.version}", flush=True)
-        gendata = _GENERATORS[gen].construct(str(args.version))
-        generate(gendata, args.version)
+        print(f"\n>>> Generating \"{gen}\" from version {args.source_version}", flush=True)
+        gendata = _GENERATORS[gen].construct(str(args.source_version))
+        generate(gendata, args.source_version)
+
+    if args.find_values:
+        parts = args.find_values.split(":")
+        assert len(parts) == 2, "Incorrect find-values format"
+        find_valid_values(parts[0], args.source_version, parts[1], args.find_values_limit)
 
 if __name__ == "__main__":
     main()
