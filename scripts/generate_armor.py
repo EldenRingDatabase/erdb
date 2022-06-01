@@ -1,11 +1,9 @@
 from typing import Dict, Tuple, Iterator
-from scripts import er_params, er_shop
+from scripts import er_shop
+from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
 from scripts.sp_effect_parser import parse_effects
 from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums, parse_description
-
-ParamRow = er_params.ParamRow
-ParamDict = er_params.ParamDict
 
 def _get_category(category: int) -> str:
     """
@@ -46,49 +44,6 @@ def _get_resistances(row: ParamRow) -> Dict[str, int]:
         "poise": round(row.get_float("toughnessCorrectRate") * 1000)
     }
 
-def iterate_armor(self: GeneratorDataBase, armor: ParamDict) -> Iterator[ParamRow]:
-    for row in armor.values():
-        if row.index >= 40000 and len(row.name) > 0:
-            yield row
-
-def make_armor_object(self: GeneratorDataBase, row: ParamRow) -> Dict:
-    armor = self.main_param
-    effects = self.params["effects"]
-    summaries = self.msgs["summaries"]
-    descriptions = self.msgs["descriptions"]
-    armor_lookup = self.lookups["armor_lookup"]
-
-    material = er_shop.Material(row.index, er_shop.Material.Category.PROTECTOR)
-    lineups = armor_lookup.get_lineups_from_material(material)
-    assert len(lineups) in [0, 2], "Each armor should have either none or self-/boc-made alterations"
-    altered = "" if len(lineups) == 0 else armor[str(lineups[0].product.index)].name
-
-    return {
-        "full_hex_id": row.index_hex,
-        "id": row.index,
-        "name": row.name,
-        "summary": summaries.get(row.index, "no summary"),
-        "description": parse_description(descriptions[row.index]),
-        "is_tradable": row.get("disableMultiDropShare") == "0",
-        "price_sold": row.get_int_corrected("sellValue"),
-        "max_held": 999,
-        "max_stored": 999,
-        # locations -- cannot autogenerate, make sure not to overwrite
-        # remarks -- cannot autogenerate, make sure not to overwrite
-        "category": _get_category(row.get_int("protectorCategory")),
-        "altered": altered,
-        "weight": row.get_float("weight"),
-        "absorptions": _get_absorptions(row),
-        "resistances": _get_resistances(row),
-        "effects": parse_effects(row, effects, "residentSpEffectId", "residentSpEffectId2", "residentSpEffectId3"),
-    }
-
-def get_armor_schema() -> Tuple[Dict, Dict[str, Dict]]:
-    properties, store = get_schema_properties("item", "armor/definitions/ArmorPiece")
-    store.update(get_schema_properties("effect")[1])
-    store.update(get_schema_enums("armor-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
-    return properties, store
-
 class ArmorGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
 
@@ -114,6 +69,46 @@ class ArmorGeneratorData(GeneratorDataBase):
         )
     }
 
-    schema_retriever = get_armor_schema
-    main_param_iterator = iterate_armor
-    construct_object = make_armor_object
+    @staticmethod
+    def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
+        properties, store = get_schema_properties("item", "armor/definitions/ArmorPiece")
+        store.update(get_schema_properties("effect")[1])
+        store.update(get_schema_enums("armor-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
+        return properties, store
+
+    def main_param_iterator(self, armor: ParamDict) -> Iterator[ParamRow]:
+        for row in armor.values():
+            if row.index >= 40000 and len(row.name) > 0:
+                yield row
+
+    def construct_object(self, row: ParamRow) -> Dict:
+        armor = self.main_param
+        effects = self.params["effects"]
+        summaries = self.msgs["summaries"]
+        descriptions = self.msgs["descriptions"]
+        armor_lookup = self.lookups["armor_lookup"]
+
+        material = er_shop.Material(row.index, er_shop.Material.Category.PROTECTOR)
+        lineups = armor_lookup.get_lineups_from_material(material)
+        assert len(lineups) in [0, 2], "Each armor should have either none or self-/boc-made alterations"
+        altered = "" if len(lineups) == 0 else armor[str(lineups[0].product.index)].name
+
+        return {
+            "full_hex_id": row.index_hex,
+            "id": row.index,
+            "name": row.name,
+            "summary": summaries.get(row.index, "no summary"),
+            "description": parse_description(descriptions[row.index]),
+            "is_tradable": row.get("disableMultiDropShare") == "0",
+            "price_sold": row.get_int_corrected("sellValue"),
+            "max_held": 999,
+            "max_stored": 999,
+            # locations -- cannot autogenerate, make sure not to overwrite
+            # remarks -- cannot autogenerate, make sure not to overwrite
+            "category": _get_category(row.get_int("protectorCategory")),
+            "altered": altered,
+            "weight": row.get_float("weight"),
+            "absorptions": _get_absorptions(row),
+            "resistances": _get_resistances(row),
+            "effects": parse_effects(row, effects, "residentSpEffectId", "residentSpEffectId2", "residentSpEffectId3"),
+        }

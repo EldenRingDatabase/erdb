@@ -61,6 +61,7 @@ class GeneratorDataBase(NamedTuple):
     lookup_retrievers: Dict[str, LookupRetriever] = None
 
     schema_retriever: Callable[[], Tuple[Dict, Dict[str, Dict]]] = None
+
     main_param_iterator: Callable[["GeneratorDataBase", ParamDict], Iterator[ParamRow]] = None
     construct_object: Callable[["GeneratorDataBase", ParamRow], Dict] = None
 
