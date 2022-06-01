@@ -40,6 +40,118 @@ class ReferenceCategory(str, Enum):
     BULLET = "1"
     SP_EFFECT = "2"
 
+class Affinity(str, Enum):
+    STANDARD = "0"
+    HEAVY = "1"
+    KEEN = "2"
+    QUALITY = "3"
+    FIRE = "4"
+    FLAME_ART = "5"
+    LIGHTNING = "6"
+    SACRED = "7"
+    MAGIC = "8"
+    COLD = "9"
+    POISON = "10"
+    BLOOD = "11"
+    OCCULT = "12"
+
+    def __str__(self) -> str:
+        return _AFFINITY_STR[self]
+
+_AFFINITY_STR: Dict[Affinity, str] = {
+    Affinity.STANDARD: "Standard",
+    Affinity.HEAVY: "Heavy",
+    Affinity.KEEN: "Keen",
+    Affinity.QUALITY: "Quality",
+    Affinity.FIRE: "Fire",
+    Affinity.FLAME_ART: "Flame Art",
+    Affinity.LIGHTNING: "Lightning",
+    Affinity.SACRED: "Sacred",
+    Affinity.MAGIC: "Magic",
+    Affinity.COLD: "Cold",
+    Affinity.POISON: "Poison",
+    Affinity.BLOOD: "Blood",
+    Affinity.OCCULT: "Occult",
+}
+
+class WeaponClass(str, Enum):
+    DAGGER = "Dagger"
+    STRAIGHT_SWORD = "SwordNormal"
+    GREATSWORD = "SwordLarge"
+    COLOSSAL_SWORD = "SwordGigantic"
+    CURVED_SWORD = "SaberNormal"
+    CURVED_GREATSWORD = "SaberLarge"
+    KATANA = "katana" # yes, lowercase
+    TWINBLADE = "SwordDoubleEdge"
+    THRUSTING_SWORD = "SwordPierce"
+    HEAVY_THRUSTING_SWORD = "RapierHeavy"
+    AXE = "AxeNormal"
+    GREATAXE = "AxeLarge"
+    HAMMER = "HammerNormal"
+    GREAT_HAMMER = "HammerLarge"
+    FLAIL = "Flail"
+    SPEAR = "SpearNormal"
+    # unused spear = "SpearLarge"
+    GREAT_SPEAR = "SpearHeavy"
+    HALBERD = "SpearAxe"
+    REAPER = "Sickle"
+    FIST = "Knuckle"
+    CLAW = "Claw"
+    WHIP = "Whip"
+    COLOSSAL_WEAPON = "AxhammerLarge"
+    LIGHT_BOW = "BowSmall"
+    BOW = "BowNormal"
+    GREATBOW = "BowLarge"
+    CROSSBOW = "ClossBow" # clossbow...
+    BALLISTA = "Ballista"
+    GLINTSTONE_STAFF = "Staff"
+    # unused catalyst = "Sorcery"
+    SACRED_SEAL = "Talisman"
+    SMALL_SHIELD = "ShieldSmall"
+    MEDIUM_SHIELD = "ShieldNormal"
+    GREATSHIELD = "ShieldLarge"
+    TORCH = "Torch"
+
+    def __str__(self) -> str:
+        return _WEAPON_CLASS_STR[self]
+
+_WEAPON_CLASS_STR: Dict[WeaponClass, str] = {
+    WeaponClass.DAGGER: "Dagger",
+    WeaponClass.STRAIGHT_SWORD: "Straight Sword",
+    WeaponClass.GREATSWORD: "Greatsword",
+    WeaponClass.COLOSSAL_SWORD: "Colossal Sword",
+    WeaponClass.CURVED_SWORD: "Curved Sword",
+    WeaponClass.CURVED_GREATSWORD: "Curved Greatsword",
+    WeaponClass.KATANA: "Katana",
+    WeaponClass.TWINBLADE: "Twinblade",
+    WeaponClass.THRUSTING_SWORD: "Thrusting Sword",
+    WeaponClass.HEAVY_THRUSTING_SWORD: "Heavy Thrusting Sword",
+    WeaponClass.AXE: "Axe",
+    WeaponClass.GREATAXE: "Greataxe",
+    WeaponClass.HAMMER: "Hammer",
+    WeaponClass.GREAT_HAMMER: "Great Hammer",
+    WeaponClass.FLAIL: "Flail",
+    WeaponClass.SPEAR: "Spear",
+    WeaponClass.GREAT_SPEAR: "Great Spear",
+    WeaponClass.HALBERD: "Halberd",
+    WeaponClass.REAPER: "Reaper",
+    WeaponClass.FIST: "Fist",
+    WeaponClass.CLAW: "Claw",
+    WeaponClass.WHIP: "Whip",
+    WeaponClass.COLOSSAL_WEAPON: "Colossal Weapon",
+    WeaponClass.LIGHT_BOW: "Light Bow",
+    WeaponClass.BOW: "Bow",
+    WeaponClass.GREATBOW: "Greatbow",
+    WeaponClass.CROSSBOW: "Crossbow",
+    WeaponClass.BALLISTA: "Ballista",
+    WeaponClass.GLINTSTONE_STAFF: "Glintstone Staff",
+    WeaponClass.SACRED_SEAL: "Sacred Seal",
+    WeaponClass.SMALL_SHIELD: "Small Shield",
+    WeaponClass.MEDIUM_SHIELD: "Medium Shield",
+    WeaponClass.GREATSHIELD: "Greatshield",
+    WeaponClass.TORCH: "Torch",
+}
+
 class AttackCondition(str, Enum):
     NONE = "0"
     SUCCESSIVE_HITS = "1"

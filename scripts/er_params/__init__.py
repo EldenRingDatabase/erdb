@@ -40,6 +40,9 @@ class ParamRow(object):
     def get_float(self, field: str) -> float:
         return float(self.get(field))
 
+    def get_bool(self, field: str) -> bool:
+        return int(self.get(field)) != 0
+
     def get_int_corrected(self, field: str) -> int:
         """
         Elden Ring uses -1 for "null" int values, correct this to 0.

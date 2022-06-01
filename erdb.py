@@ -9,6 +9,7 @@ from scripts.erdb_common import GeneratorDataBase, patch_keys, update_nested
 from scripts.generate_armor import ArmorGeneratorData
 from scripts.generate_spirit_ashes import SpiritAshGeneratorData
 from scripts.generate_talismans import TalismanGeneratorData
+from scripts.generate_ashes_of_war import AshOfWarGeneratorData
 
 class Version(NamedTuple):
     major: str
@@ -46,6 +47,7 @@ class Generator(Enum):
     ARMOR = "armor"
     SPIRIT_ASHES = "spirit-ashes"
     TALISMANS = "talismans"
+    ASHES_OF_WAR = "ashes-of-war"
 
     def __str__(self):
         return self.value
@@ -56,7 +58,8 @@ _VERSION_DIRS: List[Version] = sorted([Version.from_string(p.name) for p in (_RO
 _GENERATORS: Dict[Generator, GeneratorDataBase] = {
     Generator.ARMOR: ArmorGeneratorData,
     Generator.SPIRIT_ASHES: SpiritAshGeneratorData,
-    Generator.TALISMANS: TalismanGeneratorData
+    Generator.TALISMANS: TalismanGeneratorData,
+    Generator.ASHES_OF_WAR: AshOfWarGeneratorData,
 }
 
 def get_args():

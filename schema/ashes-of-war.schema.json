@@ -12,7 +12,7 @@
             "patternProperties": {
                 "^.+$": {
                     "type": "object",
-                    "$ref": "#/definitions/AshOfWar"
+                    "$ref": "ashes-of-war.schema.json#/definitions/AshOfWar"
                 }
             }
         }
@@ -28,40 +28,14 @@
                     "#comment": "Override list of possible names to be Ash of War names only.",
                     "$ref": "./enums/ash-of-war-names.schema.json"
                 },
-                "effective_name": {
-                    "description": "Name of this item without the 'Ash of War: ' prefix.",
-                    "type": "string",
-                    "pattern": "^[0-9a-zA-Z '()]+$"
-                },
-                "fp_cost": {
-                    "description": "Cost of FP to perform for each attack. Stays the same across all weapons.",
-                    "type": "object",
-                    "propertyNames": {
-                        "$ref": "./enums/action-names.schema.json"
-                    },
-                    "patternProperties": {
-                        "^.+$": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        }
-                    },
-                    "additionalProperties": false,
-                    "required": ["skill_L2_1"]
-                },
-                "is_chargable": {
-                    "description": "Specifies whether the skill can be charged",
-                    "type": "boolean",
-                    "default": false
-                },
                 "classes": {
                     "description": "Applicable weapons classes this skill can be applied to.",
                     "type": "array",
                     "minItems": 1,
                     "items": { "$ref": "./enums/armament-class-names.schema.json" }
                 },
-                "base_affinity": {
-                    "description": "Base affinity the Ash of War comes with.",
+                "default_affinity": {
+                    "description": "Default affinity the Ash of War comes with.",
                     "$ref": "./enums/affinity-names.schema.json"
                 },
                 "affinities": {
@@ -73,43 +47,18 @@
                     },
                     "default": ["Standard", "Heavy", "Keen", "Quality", "Fire", "Flame Art", "Lightning", "Sacred", "Magic", "Cold", "Poison", "Blood", "Occult"]
                 },
-                "moveset": {
-                    "description": "Explanation of moveset based on individual actions.",
-                    "type": "object",
-                    "propertyNames": { "$ref": "./enums/action-names.schema.json" },
-                    "patternProperties": {
-                        "^.+$": {
-                            "description": "Short summary of what is performed in order; lowercase, no sentences.",
-                            "type": "array",
-                            "minItems": 1,
-                            "items": { "type": "string", "pattern": "^[0-9a-z '()]+$" }
-                        }
-                    },
-                    "required": ["skill_L2_1"]
-                },
-                "attack_data": {
-                    "description": "Specific properties of the moveset based on individual actions. These values can differ per weapon, so each move may contain special override fields for class names and weapon names to exactly specify when it's utilized. If no overrides are present, all weapon instances can be assumed. For the sake of data structure shallowness, all attacks are grouped together with distinctive overrides. From a specific weapon perspective, each array should be searched for elements containing matching overrides or none at all.",
-                    "type": "object",
-                    "propertyNames": { "$ref": "./enums/action-names.schema.json" },
-                    "patternProperties": {
-                        "^.+$": {
-                            "description": "Array of all objects describing attacks possible from this action.",
-                            "type": "array",
-                            "minItems": 1,
-                            "items": { "$ref": "#/definitions/AshOfWarAttackData" }
-                        }
-                    },
-                    "required": ["skill_L2_1"]
+                "skill_id": {
+                    "description": "Index from the Skills table to look up information about a skill, like name, FP consumption or attack data.",
+                    "type": "integer",
+                    "minimum": 10,
+                    "default": 0
                 }
             },
             "required": [
-                "effective_name",
-                "is_chargable",
                 "classes",
-                "base_affinity",
+                "default_affinity",
                 "affinities",
-                "moveset",
-                "attack_data"
+                "skill_id"
             ]
         },
         "AshOfWarAttackData": {
