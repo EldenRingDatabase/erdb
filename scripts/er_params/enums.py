@@ -1094,3 +1094,65 @@ _SP_EFFECT_TYPE_STR: Dict[SpEffectType, str] = {
     SpEffectType.CUSTOM_TRIGGER_31: "Custom Trigger",
     SpEffectType.CUSTOM_TRIGGER_32: "Custom Trigger",
 }
+
+class ReinforcementType(str, Enum):
+    NO_REINFORCEMENT = "3000"
+    STANDARD = "0"
+    HEAVY = "100"
+    KEEN = "200"
+    QUALITY = "300"
+    FIRE = "400"
+    FLAME_ART = "500"
+    LIGHTNING = "600"
+    SACRED = "700"
+    MAGIC = "800"
+    COLD = "900"
+    POISON = "1000"
+    BLOOD = "1100"
+    OCCULT = "1200"
+    CATALYST = "1900"
+    UNIQUE = "2200"
+    UNIQUE_CATALYST = "2400"
+    CROSSBOW_BALLISTA = "3100"
+    UNIQUE_CROSSBOW_BALLISTA = "3200"
+    PULLEY_CROSSBOW = "3300"
+    SPECIAL_KEEN = "5000"
+    SPECIAL_HEAVY = "6000"
+    SMALL_SHIELD = "8000"
+    MEDIUM_SHIELD = "8100"
+    GREATSHIELD = "8200"
+    UNIQUE_GREATSHIELD = "8300"
+    COIL_SHIELD = "8500"
+
+    def __str__(self) -> str:
+        return _REINFORCEMENT_TYPE[self]
+
+_REINFORCEMENT_TYPE: Dict[ReinforcementType, str] = {
+    ReinforcementType.NO_REINFORCEMENT: "No Reinforcement",
+    ReinforcementType.STANDARD: "Standard",
+    ReinforcementType.HEAVY: "Heavy",
+    ReinforcementType.KEEN: "Keen",
+    ReinforcementType.QUALITY: "Quality",
+    ReinforcementType.FIRE: "Fire",
+    ReinforcementType.FLAME_ART: "Flame Art",
+    ReinforcementType.LIGHTNING: "Lightning",
+    ReinforcementType.SACRED: "Sacred",
+    ReinforcementType.MAGIC: "Magic",
+    ReinforcementType.COLD: "Cold",
+    ReinforcementType.POISON: "Poison",
+    ReinforcementType.BLOOD: "Blood",
+    ReinforcementType.OCCULT: "Occult",
+    ReinforcementType.CATALYST: "Catalyst",
+    ReinforcementType.UNIQUE: "Unique",
+    ReinforcementType.UNIQUE_CATALYST: "Unique Catalyst",
+    ReinforcementType.CROSSBOW_BALLISTA: "Crossbow Ballista",
+    ReinforcementType.UNIQUE_CROSSBOW_BALLISTA: "Unique Crossbow Ballista",
+    ReinforcementType.PULLEY_CROSSBOW: "Pulley Crossbow",
+    ReinforcementType.SPECIAL_KEEN: "Special Keen",
+    ReinforcementType.SPECIAL_HEAVY: "Special heavy",
+    ReinforcementType.SMALL_SHIELD: "Small Shield",
+    ReinforcementType.MEDIUM_SHIELD: "Medium Shield",
+    ReinforcementType.GREATSHIELD: "Greatshield",
+    ReinforcementType.UNIQUE_GREATSHIELD: "Unique Greatshield",
+    ReinforcementType.COIL_SHIELD: "Coil Shield"
+}

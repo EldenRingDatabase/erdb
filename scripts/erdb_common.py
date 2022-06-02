@@ -55,6 +55,14 @@ class GeneratorDataBase(NamedTuple):
     schema_file: str = None
     element_name: str = None
 
+    @staticmethod
+    def get_key_name(row: ParamRow) -> str:
+        return row.name
+
+    @staticmethod
+    def require_patching() -> bool:
+        return True
+
     main_param_retriever: ParamDictRetriever = None
     param_retrievers: Dict[str, ParamDictRetriever] = None
     msgs_retrievers: Dict[str, MsgsRetriever] = None

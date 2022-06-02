@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "string",
+    "enum": [
+        "No Reinforcement",
+        "Standard",
+        "Heavy",
+        "Keen",
+        "Quality",
+        "Fire",
+        "Flame Art",
+        "Lightning",
+        "Sacred",
+        "Magic",
+        "Cold",
+        "Poison",
+        "Blood",
+        "Occult",
+        "Catalyst",
+        "Unique",
+        "Unique Catalyst",
+        "Crossbow Ballista",
+        "Unique Crossbow Ballista",
+        "Pulley Crossbow",
+        "Special Keen",
+        "Special heavy",
+        "Small Shield",
+        "Medium Shield",
+        "Greatshield",
+        "Unique Greatshield",
+        "Coil Shield"
+    ]
+}

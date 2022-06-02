@@ -4,7 +4,7 @@
     "type": "object",
     "properties": {
         "AshesOfWar": {
-            "title": "Spell Map",
+            "title": "Ash of War Map",
             "additionalProperties": false,
             "propertyNames": {
                 "$ref": "./enums/ash-of-war-names.schema.json"

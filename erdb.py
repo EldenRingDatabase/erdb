@@ -8,9 +8,10 @@ from jsonschema import validate, RefResolver, ValidationError
 from scripts.erdb_common import GeneratorDataBase, patch_keys, update_nested
 from scripts.find_valid_values import find_valid_values
 from scripts.generate_armor import ArmorGeneratorData
+from scripts.generate_ashes_of_war import AshOfWarGeneratorData
+from scripts.generate_reinforcements import ReinforcementGeneratorData
 from scripts.generate_spirit_ashes import SpiritAshGeneratorData
 from scripts.generate_talismans import TalismanGeneratorData
-from scripts.generate_ashes_of_war import AshOfWarGeneratorData
 
 class Version(NamedTuple):
     major: str
@@ -46,9 +47,10 @@ class Version(NamedTuple):
 class Generator(Enum):
     ALL = "all"
     ARMOR = "armor"
+    ASHES_OF_WAR = "ashes-of-war"
+    REINFORCEMENTS = "reinforcements"
     SPIRIT_ASHES = "spirit-ashes"
     TALISMANS = "talismans"
-    ASHES_OF_WAR = "ashes-of-war"
 
     def __str__(self):
         return self.value
@@ -58,9 +60,10 @@ _VERSION_DIRS: List[Version] = sorted([Version.from_string(p.name) for p in (_RO
 
 _GENERATORS: Dict[Generator, GeneratorDataBase] = {
     Generator.ARMOR: ArmorGeneratorData,
+    Generator.ASHES_OF_WAR: AshOfWarGeneratorData,
+    Generator.REINFORCEMENTS: ReinforcementGeneratorData,
     Generator.SPIRIT_ASHES: SpiritAshGeneratorData,
     Generator.TALISMANS: TalismanGeneratorData,
-    Generator.ASHES_OF_WAR: AshOfWarGeneratorData,
 }
 
 def get_args():
@@ -97,11 +100,15 @@ def generate(gendata: GeneratorDataBase, version: Version) -> None:
     print(f"Collected existing data with {len(item_data)} elements", flush=True)
 
     for row in gendata.main_param_iterator(gendata.main_param):
+        key_name = gendata.get_key_name(row)
+
         new_obj = gendata.construct_object(row)
-        cur_obj = item_data.get(row.name, {})
+        cur_obj = item_data.get(key_name, {})
 
         update_nested(cur_obj, new_obj)
-        item_data[row.name] = patch_keys(cur_obj, gendata.schema_properties)
+        cur_obj = patch_keys(cur_obj, gendata.schema_properties) if gendata.require_patching() else cur_obj
+
+        item_data[key_name] = cur_obj
 
     print(f"Generated {len(item_data)} elements", flush=True)
 
