@@ -79,7 +79,7 @@ class ReinforcementGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = get_schema_properties("reinforcements/definitions/ReinforcementLevel")
+        properties, store = get_schema_properties("reinforcements")
         store.update(get_schema_enums("reinforcement-names"))
         return properties, store
 

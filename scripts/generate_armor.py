@@ -71,7 +71,7 @@ class ArmorGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = get_schema_properties("item", "armor/definitions/ArmorPiece")
+        properties, store = get_schema_properties("item/properties", "armor/definitions/ArmorPiece/properties")
         store.update(get_schema_properties("effect")[1])
         store.update(get_schema_enums("armor-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
         return properties, store

@@ -33,7 +33,7 @@ class SpiritAshGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        return get_schema_properties("item", "spirit-ashes/definitions/SpiritAsh")
+        return get_schema_properties("item/properties", "spirit-ashes/definitions/SpiritAsh/properties")
 
     def main_param_iterator(self, spirit_ashes: ParamDict) -> Iterator[ParamRow]:
         for row in spirit_ashes.values():

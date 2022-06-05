@@ -32,7 +32,7 @@ class AshOfWarGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = get_schema_properties("item", "ashes-of-war/definitions/AshOfWar")
+        properties, store = get_schema_properties("item/properties", "ashes-of-war/definitions/AshOfWar/properties")
         store.update(get_schema_enums("ash-of-war-names", "affinity-names", "armament-class-names", "skill-names"))
         return properties, store
 

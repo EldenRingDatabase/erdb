@@ -124,7 +124,7 @@ def get_schema_properties(*references: str) -> Tuple[Dict, Dict[str, Dict]]:
         for part in path:
             obj = obj[part]
 
-        update_nested(properties_full, obj["properties"])
+        update_nested(properties_full, obj)
         store[filename] = schema
 
     return properties_full, store

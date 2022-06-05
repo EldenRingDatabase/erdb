@@ -29,7 +29,7 @@ class TalismanGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = get_schema_properties("item", "talismans/definitions/Talisman")
+        properties, store = get_schema_properties("item/properties", "talismans/definitions/Talisman/properties")
         store.update(get_schema_properties("effect")[1])
         store.update(get_schema_enums("talisman-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
         return properties, store
