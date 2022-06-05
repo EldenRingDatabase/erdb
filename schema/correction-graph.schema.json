@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Correction Graph",
+    "type": "object",
+    "properties": {
+        "CorrectionGraph": {
+            "title": "Corrections Map",
+            "minProperties": 17,
+            "maxProperties": 17,
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([0-9]|1[0-6])$": {
+                    "$ref": "correction-graph.schema.json#/definitions/CorrectionRow"
+                }
+            }
+        }
+    },
+    "required": ["CorrectionGraph"],
+    "definitions": {
+        "CorrectionRow": {
+            "type": "object",
+            "minProperties": 150,
+            "maxProperties": 150,
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([1-9]|[1-9][0-9]|1[0-4][0-9]|150)$": {
+                    "$comment": "Pattern describes decimals in range <1,150>",
+                    "type": "number"
+                }
+            }
+        }
+    }
+}

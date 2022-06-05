@@ -10,6 +10,7 @@ from scripts.find_valid_values import find_valid_values
 from scripts.generate_armaments import ArmamentGeneratorData
 from scripts.generate_armor import ArmorGeneratorData
 from scripts.generate_ashes_of_war import AshOfWarGeneratorData
+from scripts.generate_correction_graph import CorrectionGraphGeneratorData
 from scripts.generate_reinforcements import ReinforcementGeneratorData
 from scripts.generate_spirit_ashes import SpiritAshGeneratorData
 from scripts.generate_talismans import TalismanGeneratorData
@@ -50,6 +51,7 @@ class Generator(Enum):
     ARMAMENTS = "armaments"
     ARMOR = "armor"
     ASHES_OF_WAR = "ashes-of-war"
+    CORRECTION_GRAPH = "correction-graph"
     REINFORCEMENTS = "reinforcements"
     SPIRIT_ASHES = "spirit-ashes"
     TALISMANS = "talismans"
@@ -64,6 +66,7 @@ _GENERATORS: Dict[Generator, GeneratorDataBase] = {
     Generator.ARMAMENTS: ArmamentGeneratorData,
     Generator.ARMOR: ArmorGeneratorData,
     Generator.ASHES_OF_WAR: AshOfWarGeneratorData,
+    Generator.CORRECTION_GRAPH: CorrectionGraphGeneratorData,
     Generator.REINFORCEMENTS: ReinforcementGeneratorData,
     Generator.SPIRIT_ASHES: SpiritAshGeneratorData,
     Generator.TALISMANS: TalismanGeneratorData,
