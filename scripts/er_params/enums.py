@@ -74,6 +74,25 @@ _AFFINITY_STR: Dict[Affinity, str] = {
     Affinity.OCCULT: "Occult",
 }
 
+class AttackAttribute(str, Enum):
+    STANDARD = "3"
+    STRIKE = "1"
+    SLASH = "0"
+    PIERCE = "2"
+
+    def __str__(self) -> str:
+        return {
+            AttackAttribute.STANDARD: "Standard",
+            AttackAttribute.STRIKE: "Strike",
+            AttackAttribute.SLASH: "Slash",
+            AttackAttribute.PIERCE: "Pierce",
+        }.get(self)
+
+class AshOfWarMountType(str, Enum):
+    PREVENT_CHANG = "0"
+    UNUSED_VALUE = "1"
+    ALLOW_CHANGE = "2"
+
 class WeaponClass(str, Enum):
     DAGGER = "Dagger"
     STRAIGHT_SWORD = "SwordNormal"
@@ -112,8 +131,49 @@ class WeaponClass(str, Enum):
     GREATSHIELD = "ShieldLarge"
     TORCH = "Torch"
 
+    @staticmethod
+    def from_id(index: str) -> "WeaponClass":
+        return _WEAPON_CLASS_ID[index]
+
     def __str__(self) -> str:
         return _WEAPON_CLASS_STR[self]
+
+_WEAPON_CLASS_ID: Dict[str, WeaponClass] = {
+    "1": WeaponClass.DAGGER,
+    "3": WeaponClass.STRAIGHT_SWORD,
+    "5": WeaponClass.GREATSWORD,
+    "7": WeaponClass.COLOSSAL_SWORD,
+    "9": WeaponClass.CURVED_SWORD,
+    "11": WeaponClass.CURVED_GREATSWORD,
+    "13": WeaponClass.KATANA,
+    "14": WeaponClass.TWINBLADE,
+    "15": WeaponClass.THRUSTING_SWORD,
+    "16": WeaponClass.HEAVY_THRUSTING_SWORD,
+    "17": WeaponClass.AXE,
+    "19": WeaponClass.GREATAXE,
+    "21": WeaponClass.HAMMER,
+    "23": WeaponClass.GREAT_HAMMER,
+    "24": WeaponClass.FLAIL,
+    "25": WeaponClass.SPEAR,
+    "28": WeaponClass.GREAT_SPEAR,
+    "29": WeaponClass.HALBERD,
+    "31": WeaponClass.REAPER,
+    "35": WeaponClass.FIST,
+    "37": WeaponClass.CLAW,
+    "39": WeaponClass.WHIP,
+    "41": WeaponClass.COLOSSAL_WEAPON,
+    "50": WeaponClass.LIGHT_BOW,
+    "51": WeaponClass.BOW,
+    "53": WeaponClass.GREATBOW,
+    "55": WeaponClass.CROSSBOW,
+    "56": WeaponClass.BALLISTA,
+    "57": WeaponClass.GLINTSTONE_STAFF,
+    "61": WeaponClass.SACRED_SEAL,
+    "65": WeaponClass.SMALL_SHIELD,
+    "67": WeaponClass.MEDIUM_SHIELD,
+    "69": WeaponClass.GREATSHIELD,
+    "87": WeaponClass.TORCH,
+}
 
 _WEAPON_CLASS_STR: Dict[WeaponClass, str] = {
     WeaponClass.DAGGER: "Dagger",
@@ -154,16 +214,18 @@ _WEAPON_CLASS_STR: Dict[WeaponClass, str] = {
 
 class AttackCondition(str, Enum):
     NONE = "0"
-    SUCCESSIVE_HITS = "1"
-    SUCCESSIVE_3_HITS = "2"
-    SUCCESSIVE_6_HITS = "3"
-    SUCCESSIVE_9_HITS = "4"
+    ON_HIT = "1"
+    SUCCESSIVE_HITS = "2"
+    SUCCESSIVE_3_HITS = "3"
+    SUCCESSIVE_6_HITS = "4"
+    SUCCESSIVE_9_HITS = "5"
 
     def __str__(self) -> str:
         return _ATTACK_CONDITION_STR[self]
 
 _ATTACK_CONDITION_STR: Dict[AttackCondition, str] = {
     AttackCondition.NONE: "0",
+    AttackCondition.ON_HIT: "On Hit",
     AttackCondition.SUCCESSIVE_HITS: "Successive Hits",
     AttackCondition.SUCCESSIVE_3_HITS: "Successive 3 Hits",
     AttackCondition.SUCCESSIVE_6_HITS: "Successive 6 Hits",

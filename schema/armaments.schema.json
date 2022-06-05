@@ -12,7 +12,7 @@
             "patternProperties": {
                 "^.+$": {
                     "type": "object",
-                    "$ref": "#/definitions/Armament"
+                    "$ref": "armaments.schema.json#/definitions/Armament"
                 }
             }
         }
@@ -28,103 +28,233 @@
                     "#comment": "Override list of possible names to be Armament names only.",
                     "$ref": "./enums/armament-names.schema.json"
                 },
+                "behavior_variation_id": {
+                    "description": "Behavior variation ID used to identify attack params.",
+                    "type": "integer",
+                    "default": 0
+                },
                 "class": {
                     "description": "Class of the armament.",
-                    "$ref": "./enums/armament-class-names.schema.json"
+                    "$ref": "./enums/armament-class-names.schema.json",
+                    "default": "Dagger"
                 },
                 "weight": {
                     "description": "Weight of the armament.",
                     "type": "number",
-                    "minimum": 0.0
+                    "minimum": 0.0,
+                    "default": 0.0
                 },
-                "default_skill": {
-                    "description": "The default Ash of War the weapon comes with.",
-                    "$ref": "./enums/ash-of-war-names.schema.json"
+                "default_skill_id": {
+                    "description": "Index of the default skill this armament comes with. Corresponds to the Skills table keys.",
+                    "type": "integer",
+                    "minimum": 10,
+                    "default": 0
                 },
-                "is_skill_unique": {
-                    "description": "Specifies whether the armament has a set, non-replacable Ash of War.",
+                "allow_ash_of_war":
+                {
+                    "description": "Specifies whether other Ashes of War can be put on the armament and its affinity potentially changed.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "is_buffable": {
+                    "description": "Specifies whether the armament is buffable.",
                     "type": "boolean",
                     "default": false
                 },
-                "is_upgrade_unique": {
-                    "description": "Specifies whether the armament upgrades with somber smithing stones, instead of regular ones.",
+                "is_l1_guard": {
+                    "description": "Specifies whether the armament is used for guarding when equipped in left hand.",
                     "type": "boolean",
                     "default": false
                 },
-                "attack_types": {
-                    "description": "Attack types the armament can perform, usually two (ex. Standard, Pierce).",
+                "upgrade_material": {
+                    "description": "Stones the armament upgrades with, either 'None', 'Smithing Stone' or 'Somber Smithing Stone'.",
+                    "type": "string",
+                    "enum": ["None", "Smithing Stone", "Somber Smithing Stone"],
+                    "default": "None"
+                },
+                "upgrade_costs": {
+                    "description": "Array of Rune costs to upgrade to each level, +1 starting at position 0.",
+                    "type": "array",
+                    "oneOf": [
+                        {
+                            "maxItems": 0
+                        },
+                        {
+                            "minItems": 10,
+                            "maxItems": 10
+                        },
+                        {
+                            "minItems": 25,
+                            "maxItems": 25
+                        }
+                    ],
+                    "items": { "type": "integer", "minimum": 0 },
+                    "default": []
+                },
+                "attack_attributes": {
+                    "description": "List of attack attributes the armament can perform, usually 2, ex. [Standard, Pierce].",
                     "type": "array",
                     "minItems": 1,
                     "maxItems": 2,
-                    "items": { "$ref": "#/definitions/AttackTypeNames" }
+                    "items": { "$ref": "armaments.schema.json#/definitions/AttackAttributeNames" }
                 },
                 "sp_consumption_rate": {
-                    "description": "Multiplier used for calculating the effective stamina consumption from the Ash of War base stamina cost.",
+                    "description": "Multiplier used for calculating the effective stamina consumption from the Skill base stamina cost.",
                     "type": "number",
                     "default": 1.0,
                     "minimum": 0
                 },
-                "offhand_l1_override": {
-                    "description": "Action override for the weapon when held in the offhand (ex. weapons do regular moveset, shields block, bows are two handed).",
-                    "type": "string",
-                    "enum": ["moveset", "block", "two-handing"],
-                    "default": "moveset"
-                },
                 "requirements": {
                     "description": "An object of attribute requirements of the armament.",
                     "type": "object",
-                    "additionalProperties": false,
                     "properties": {
                         "strength": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
                         "dexterity": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
                         "intelligence": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
                         "faith": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 },
                         "arcane": { "type": "integer", "minimum": 0, "maximum": 99, "default": 0 }
-                    }
-                },
-                "passive_effects_innate": {
-                    "description": "An object of passive effects of the armament. NOTE: These values are from the standard affinity only, and may be overriden.",
-                    "type": "object",
-                    "additionalProperties": false,
-                    "propertyNames": { "$ref": "./enums/effect-names.schema.json" },
-                    "patternProperties": {
-                        "^.+$": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        }
-                    }
-                },
-                "moveset": {
-                    "description": "Explanation of moveset based on individual actions. '1H_R1_1', '1H_R2_1' and 'offhand_R1_1' are required.",
-                    "type": "object",
-                    "propertyNames": { "$ref": "./enums/action-names.schema.json" },
-                    "patternProperties": {
-                        "^.+$": {
-                            "description": "Short summary of what is performed in order; lowercase, no sentences.",
-                            "type": "array",
-                            "minItems": 1,
-                            "items": { "type": "string", "pattern": "^[0-9a-z '()]+$" }
-                        }
                     },
-                    "required": ["1H_R1_1", "1H_R2_1", "offhand_R1_1"]
+                    "additionalProperties": false
+                },
+                "effects": {
+                    "description": "Effects of the armament, always present.",
+                    "type": "array",
+                    "items": { "$ref": "effect.schema.json" },
+                    "default": []
+                },
+                "affinities": {
+                    "description": "Map of possible affinities to their individual properties. \"Standard\" is always present.",
+                    "type": "object",
+                    "propertyNames": { "$ref": "./enums/affinity-names.schema.json" },
+                    "patternProperties": {
+                        "^.+$": { "$ref": "armaments.schema.json#/definitions/AffinityProperties" }
+                    },
+                    "oneOf": [
+                        {
+                            "minProperties": 1,
+                            "maxProperties": 1
+                        },
+                        {
+                            "minProperties": 13,
+                            "maxProperties": 13
+                        }
+                    ],
+                    "required": ["Standard"],
+                    "additionalProperties": false
                 }
             },
             "required": [
-                "class",
-                "weight",
-                "default_skill",
-                "is_skill_unique",
-                "is_upgrade_unique",
-                "attack_types",
-                "sp_consumption_rate",
-                "offhand_l1_override",
-                "requirements",
-                "passive_effects_innate",
-                "moveset"
+                "behavior_variation_id", "class", "weight", "default_skill_id",
+                "allow_ash_of_war", "is_buffable", "is_l1_guard", "upgrade_material",
+                "upgrade_costs", "attack_attributes", "sp_consumption_rate",
+                "requirements", "effects", "affinities"
             ]
         },
-        "AttackTypeNames": {
+        "AffinityProperties": {
+            "properties": {
+                "full_hex_id": {
+                    "description": "Full hex ID override for the armament with affinity applied.",
+                    "type": "string",
+                    "pattern": "^[0-9A-F]+$",
+                    "minLength": 8,
+                    "maxLength": 8,
+                    "default": ""
+                },
+                "id": {
+                    "description": "ID override for the armament with affinity applied.",
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 0
+                },
+                "damage": {
+                    "description": "Base attack power values.",
+                    "type": "object",
+                    "properties": {
+                        "physical": { "type": "integer" },
+                        "magic": { "type": "integer" },
+                        "fire": { "type": "integer" },
+                        "lightning": { "type": "integer" },
+                        "holy": { "type": "integer" },
+                        "stamina": { "type": "integer" }
+                    },
+                    "additionalProperties": false
+                },
+                "scaling": {
+                    "description": "Base attribute scaling values.",
+                    "type": "object",
+                    "properties": {
+                        "strength": { "type": "number" },
+                        "dexterity": { "type": "number" },
+                        "intelligence": { "type": "number" },
+                        "faith": { "type": "number" },
+                        "arcane": { "type": "number" }
+                    },
+                    "additionalProperties": false
+                },
+                "guard": {
+                    "description": "Base guarded damage negation values.",
+                    "type": "object",
+                    "properties": {
+                        "physical": { "type": "number" },
+                        "magic": { "type": "number" },
+                        "fire": { "type": "number" },
+                        "lightning": { "type": "number" },
+                        "holy": { "type": "number" },
+                        "guard_boost": { "type": "number" }
+                    },
+                    "additionalProperties": false
+                },
+                "resistance": {
+                    "description": "Base guarded resistances values.",
+                    "type": "object",
+                    "properties": {
+                        "poison": { "type": "integer" },
+                        "scarlet_rot": { "type": "integer" },
+                        "frostbite": { "type": "integer" },
+                        "bleed": { "type": "integer" },
+                        "sleep": { "type": "integer" },
+                        "madness": { "type": "integer" },
+                        "death_blight": { "type": "integer" }
+                    },
+                    "additionalProperties": false
+                },
+                "reinforcement_type": {
+                    "description": "Type of the reinforcement, refer to the Reinforcement table to look up value changes per level.",
+                    "$ref": "./enums/reinforcement-names.schema.json"
+                },
+                "status_effects": {
+                    "description": "Status effects of the armament, dealt on hit.",
+                    "type": "object",
+                    "maxProperties": 3,
+                    "propertyNames": { "$ref": "./enums/status-effect-names.schema.json" },
+                    "patternProperties": {
+                        "^.+$": { "type": "integer" }
+                    }
+                },
+                "status_effect_overlay": {
+                    "description": "Array of values per armament level of a singular status effect which gets upgraded alongside. Added to the base armament's \"status_effects\" property.",
+                    "type": "object",
+                    "maxProperties": 1,
+                    "propertyNames": { "$ref": "./enums/status-effect-names.schema.json" },
+                    "patternProperties": {
+                        "^.+$": {
+                            "type": "array",
+                            "minItems": 26,
+                            "maxItems": 26,
+                            "items": { "type": "integer" }
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "full_hex_id", "id", "damage", "scaling", "guard",
+                "resistance", "reinforcement_type", "status_effects",
+                "status_effect_overlay"
+            ]
+        },
+        "AttackAttributeNames": {
             "type": "string",
             "enum": ["Standard", "Strike", "Slash", "Pierce"]
         }

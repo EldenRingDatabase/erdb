@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "string",
+    "enum": [
+        "Bleed",
+        "Frostbite",
+        "Poison",
+        "Scarlet Rot",
+        "Sleep",
+        "Madness",
+        "Death Blight"
+    ]
+}

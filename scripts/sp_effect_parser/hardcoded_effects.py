@@ -6,6 +6,13 @@ class SpEffectConditionOffset(NamedTuple):
     condition: Union[None, SpEffectType, AttackType, AttackCondition]
     offset: int
 
+class SpEffectRange(NamedTuple):
+    begin: int
+    end: int
+
+    def includes(self, value: int) -> bool:
+        return self.begin <= value <= self.end
+
 """
 Some SpEffects don't seem to have anything that identify what they do (Greatshield Talisman)
 and/or are simply too difficult to parse (Winged Sword Insignia). They are listed here for visibility.
@@ -151,3 +158,6 @@ def get(index: int, sp_effect_type) -> List[SchemaEffect]:
 
 def get_conditions(index: int) -> List[SpEffectConditionOffset]:
     return _FROM_OFFSET.get(index, [])
+
+def get_status_effect_ranges() -> List[SpEffectRange]:
+    return [SpEffectRange(6400, 6810), SpEffectRange(105000, 109000)]

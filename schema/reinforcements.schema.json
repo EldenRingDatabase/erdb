@@ -49,10 +49,6 @@
                     "minimum": 0,
                     "maximum": 25
                 },
-                "cost_rate": {
-                    "description": "Multiplier for upgrade cost.",
-                    "type": "number"
-                },
                 "damage": {
                     "description": "Attack power multipliers.",
                     "type": "object",
@@ -95,8 +91,8 @@
                     "required": ["physical", "magic", "fire", "lightning", "holy", "guard_boost"],
                     "additionalProperties": false
                 },
-                "defense": {
-                    "description": "Guarded defenses multipliers.",
+                "resistance": {
+                    "description": "Guarded resistances multipliers.",
                     "type": "object",
                     "properties": {
                         "poison": { "type": "number" },
@@ -111,7 +107,7 @@
                     "additionalProperties": false
                 }
             },
-            "required": ["level", "damage", "scaling", "guard", "defense"],
+            "required": ["level", "damage", "scaling", "guard", "resistance"],
             "additionalProperties": false
         }
     }

@@ -1,9 +1,7 @@
-from operator import add
-from itertools import repeat
 from typing import Dict, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag, ReinforcementType
-from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums
+from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums, find_offset_indices
 
 def _is_base_index(index: int) -> bool:
     return index == 0 or index % 100 == 0
@@ -38,7 +36,7 @@ def _get_guards(row: ParamRow) -> Dict[str, float]:
         "guard_boost": row.get_float("staminaGuardDefRate")
     }
 
-def _get_defenses(row: ParamRow) -> Dict[str, float]:
+def _get_resistances(row: ParamRow) -> Dict[str, float]:
     return {
         "poison": row.get_float("poisonGuardResistRate"),
         "scarlet_rot": row.get_float("diseaseGuardResistRate"),
@@ -52,11 +50,10 @@ def _get_defenses(row: ParamRow) -> Dict[str, float]:
 def _get_reinforcement(level: int, row: ParamRow) -> Dict:
     return {
         "level": level,
-        "cost_rate": row.get_float("reinforcePriceRate"),
         "damage": _get_damages(row),
         "scaling": _get_scalings(row),
         "guard": _get_guards(row),
-        "defense": _get_defenses(row)
+        "resistance": _get_resistances(row)
     }
 
 class ReinforcementGeneratorData(GeneratorDataBase):
@@ -96,8 +93,5 @@ class ReinforcementGeneratorData(GeneratorDataBase):
         if reinforcementType == ReinforcementType.NO_REINFORCEMENT:
             return {"0": _get_reinforcement(0, row)}
 
-        max_level = 25 if str(row.index + 25) in self.main_param.keys() else 10
-        levels = range(0, max_level + 1)
-        indices = map(add, repeat(row.index), levels)
-
-        return {str(l): _get_reinforcement(l, self.main_param[str(i)]) for l, i in zip(levels, indices)}
+        indices, offsets = find_offset_indices(row.index, self.main_param, possible_maxima=[10, 25])
+        return {str(l): _get_reinforcement(l, self.main_param[str(i)]) for l, i in zip(offsets, indices)}

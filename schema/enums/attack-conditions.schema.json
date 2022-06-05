@@ -4,6 +4,7 @@
     "type": "string",
     "enum": [
         "None",
+        "On Hit",
         "Successive Hits",
         "Successive 3 Hits",
         "Successive 6 Hits",

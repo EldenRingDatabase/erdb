@@ -7,6 +7,7 @@ def _is_base_spirit_ash(row: ParamRow) -> bool:
     return row.is_base_item() and row.get("goodsType") in [GoodsType.LESSER, GoodsType.GREATER]
 
 def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> List[int]:
+    # TODO: use find_offset_indices
     return [goods[str(item_id)].get_int("reinforcePrice") for item_id in range(base_item_id, base_item_id + 10)]
 
 class SpiritAshGeneratorData(GeneratorDataBase):

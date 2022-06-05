@@ -7,6 +7,7 @@ from typing import Dict, List, NamedTuple
 from jsonschema import validate, RefResolver, ValidationError
 from scripts.erdb_common import GeneratorDataBase, patch_keys, update_nested
 from scripts.find_valid_values import find_valid_values
+from scripts.generate_armaments import ArmamentGeneratorData
 from scripts.generate_armor import ArmorGeneratorData
 from scripts.generate_ashes_of_war import AshOfWarGeneratorData
 from scripts.generate_reinforcements import ReinforcementGeneratorData
@@ -46,6 +47,7 @@ class Version(NamedTuple):
 
 class Generator(Enum):
     ALL = "all"
+    ARMAMENTS = "armaments"
     ARMOR = "armor"
     ASHES_OF_WAR = "ashes-of-war"
     REINFORCEMENTS = "reinforcements"
@@ -59,6 +61,7 @@ _ROOT: pathlib.Path = pathlib.Path(__file__).parent.resolve()
 _VERSION_DIRS: List[Version] = sorted([Version.from_string(p.name) for p in (_ROOT / "source").glob("*") if Version.match_path(p)], reverse=True)
 
 _GENERATORS: Dict[Generator, GeneratorDataBase] = {
+    Generator.ARMAMENTS: ArmamentGeneratorData,
     Generator.ARMOR: ArmorGeneratorData,
     Generator.ASHES_OF_WAR: AshOfWarGeneratorData,
     Generator.REINFORCEMENTS: ReinforcementGeneratorData,
