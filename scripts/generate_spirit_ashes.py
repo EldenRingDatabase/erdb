@@ -1,14 +1,14 @@
 from typing import Dict, Iterator, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import GoodsType, GoodsRarity, ItemIDFlag
-from scripts.erdb_common import GeneratorDataBase, get_schema_properties, parse_description
+from scripts.erdb_common import GeneratorDataBase, find_offset_indices, get_schema_properties, parse_description
 
 def _is_base_spirit_ash(row: ParamRow) -> bool:
     return row.is_base_item() and row.get("goodsType") in [GoodsType.LESSER, GoodsType.GREATER]
 
 def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> List[int]:
-    # TODO: use find_offset_indices
-    return [goods[str(item_id)].get_int("reinforcePrice") for item_id in range(base_item_id, base_item_id + 10)]
+    indices, _ = find_offset_indices(base_item_id, goods, possible_maxima=[9]) # not 10, ignore last one
+    return [goods[str(i)].get_int("reinforcePrice") for i in indices]
 
 class SpiritAshGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
@@ -47,10 +47,9 @@ class SpiritAshGeneratorData(GeneratorDataBase):
         summon_names = self.msgs["summon_names"]
         descriptions = self.msgs["descriptions"]
 
-        # HACK: reinforceMaterialId links to EquipMtrlSetParam which THEN links to the actual EquipParamGoods
-        # this simply checks if the name of EquipMtrlSetParam somewhat matches without following everything
-        upgrade_material = upgrade_materials[row.get("reinforceMaterialId")].name.startswith("Grave")
-        upgrade_material = "Grave Glovewort" if upgrade_material else "Ghost Glovewort"
+        upgrade_material = upgrade_materials[row.get("reinforceMaterialId")]
+        upgrade_material = goods[upgrade_material.get("materialId01")].name.replace(" [1]", "")
+        assert upgrade_material in ["Grave Glovewort", "Ghost Glovewort"]
 
         return {
             "full_hex_id": row.index_hex,
