@@ -1,17 +1,34 @@
 from scripts.sp_effect_parser.effect_typing import EffectModel, EffectType, AttributeName, SchemaEffect
 from scripts.er_params.enums import SpEffectType, AttackType, AttackCondition
-from typing import Dict, List, NamedTuple, Union
+from typing import Dict, List, NamedTuple, Tuple, Union
 
 class SpEffectConditionOffset(NamedTuple):
     condition: Union[None, SpEffectType, AttackType, AttackCondition]
     offset: int
 
-class SpEffectRange(NamedTuple):
-    begin: int
-    end: int
+class SpEffectRanges(NamedTuple):
+    class IntRange(NamedTuple):
+        begin: int
+        end: int
 
-    def includes(self, value: int) -> bool:
-        return self.begin <= value <= self.end
+        def __contains__(self, __x: object) -> bool:
+            assert isinstance(__x, int)
+            return self.begin <= __x <= self.end
+
+    ranges: List[IntRange]
+
+    def __contains__(self, __x: object) -> bool:
+        if isinstance(__x, str):
+            return int(__x) in self
+
+        if not isinstance(__x, int):
+            return False
+
+        return any(__x in r for r in self.ranges)
+
+    @classmethod
+    def construct(cls, *ranges: Tuple[int, int]) -> "SpEffectRanges":
+        return cls([cls.IntRange(r[0], r[1]) for r in ranges])
 
 """
 Some SpEffects don't seem to have anything that identify what they do (Greatshield Talisman)
@@ -159,5 +176,5 @@ def get(index: int, sp_effect_type) -> List[SchemaEffect]:
 def get_conditions(index: int) -> List[SpEffectConditionOffset]:
     return _FROM_OFFSET.get(index, [])
 
-def get_status_effect_ranges() -> List[SpEffectRange]:
-    return [SpEffectRange(6400, 6810), SpEffectRange(105000, 109000)]
+def get_status_effect_ranges() -> SpEffectRanges:
+    return SpEffectRanges.construct((6400, 6810), (105000, 109000))

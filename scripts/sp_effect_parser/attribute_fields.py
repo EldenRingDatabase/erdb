@@ -1,6 +1,7 @@
 import scripts.sp_effect_parser.effect_parsers as parse
 from typing import Dict
 from scripts.sp_effect_parser.effect_typing import EffectModel, EffectType, AttributeName, AttributeField
+from scripts.er_params.enums import AttackCondition
 
 _ATTRIBUTE_FIELDS = {
     "maxHpRate": AttributeField.create(
@@ -419,8 +420,38 @@ _ATTRIBUTE_FIELDS = {
         effect_type=EffectType.POSITIVE,
         parser=parse.generic
     ),
-
 }
 
-def get() -> Dict[str, AttributeField]:
-    return _ATTRIBUTE_FIELDS
+_WEAPON_ATTRIBUTE_FIELDS = {
+    "weakA_DamageRate": AttributeField.create(
+        attribute=AttributeName.ATTACK_POWER,
+        effect_model=EffectModel.MULTIPLICATIVE,
+        effect_type=EffectType.POSITIVE,
+        parser=parse.generic,
+        conditions=[str(AttackCondition.VS_GRAVITY_ENEMIES)]
+    ),
+    "weakB_DamageRate": AttributeField.create(
+        attribute=AttributeName.ATTACK_POWER,
+        effect_model=EffectModel.MULTIPLICATIVE,
+        effect_type=EffectType.POSITIVE,
+        parser=parse.generic,
+        conditions=[str(AttackCondition.VS_UNDEAD_ENEMIES)]
+    ),
+    "weakC_DamageRate": AttributeField.create(
+        attribute=AttributeName.ATTACK_POWER,
+        effect_model=EffectModel.MULTIPLICATIVE,
+        effect_type=EffectType.POSITIVE,
+        parser=parse.generic,
+        conditions=[str(AttackCondition.VS_DRAGON_ENEMIES)]
+    ),
+    "weakD_DamageRate": AttributeField.create(
+        attribute=AttributeName.ATTACK_POWER,
+        effect_model=EffectModel.MULTIPLICATIVE,
+        effect_type=EffectType.POSITIVE,
+        parser=parse.generic,
+        conditions=[str(AttackCondition.VS_ANCIENT_DRAGON_ENEMIES)]
+    ),
+}
+
+def get(weapon: bool=False) -> Dict[str, AttributeField]:
+    return _WEAPON_ATTRIBUTE_FIELDS if weapon else _ATTRIBUTE_FIELDS

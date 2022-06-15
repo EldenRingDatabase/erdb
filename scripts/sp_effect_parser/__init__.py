@@ -69,7 +69,7 @@ def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fiel
     effects: List[SchemaEffect] = []
 
     for effect_id in (row.get(ref_field) for ref_field in effect_referencing_fields):
-        if any(r.includes(int(effect_id)) for r in hardcoded_effects.get_status_effect_ranges()):
+        if effect_id in hardcoded_effects.get_status_effect_ranges():
             continue
 
         if effect_id in sp_effects:
@@ -80,5 +80,14 @@ def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fiel
 def parse_status_effects(effect_ids: List[str], sp_effects: ParamDict) -> Dict[str, int]:
     # Getting 0th effect if value no found, bug with Antspur Rapier -- get anything to return a 0 status effect
     effects = [sp_effects.get(i, sp_effects["0"]) for i in effect_ids if i != "-1"]
-    ranges = hardcoded_effects.get_status_effect_ranges()
-    return dict([get_status_effect(e) for e in effects if any(r.includes(e.index) for r in ranges)])
+    status_effects = hardcoded_effects.get_status_effect_ranges()
+    return dict([get_status_effect(e) for e in effects if e.index in status_effects])
+
+def parse_weapon_effects(weapon: ParamRow) -> List[Dict]:
+    effects: List[SchemaEffect] = []
+
+    for field, attrib_field in attrib_fields.get(weapon=True).items():
+        if weapon.get(field) != str(attrib_field.default_value):
+            effects.append(SchemaEffect.from_attribute_field(weapon.get_float(field), attrib_field))
+
+    return [e.to_dict() for e in effects]

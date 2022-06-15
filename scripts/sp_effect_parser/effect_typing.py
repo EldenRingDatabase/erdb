@@ -98,6 +98,7 @@ class AttributeField(NamedTuple):
     effect_model: EffectModel
     effect_type: EffectType
     parser: Callable
+    conditions: Optional[List[str]]
     default_value: Any
 
     def get_effective_type(self, value: Any):
@@ -111,13 +112,13 @@ class AttributeField(NamedTuple):
 
     @classmethod
     def create(cls, attribute: AttributeName, effect_model: EffectModel, effect_type: EffectType,
-               parser: Callable, default_value: Optional[Any]=None) -> "AttributeField":
+               parser: Callable, conditions: Optional[List[str]]=None, default_value: Optional[Any]=None) -> "AttributeField":
 
         def _default_value_from_model():
             return 1 if effect_model == EffectModel.MULTIPLICATIVE else 0
 
         default_value = _default_value_from_model() if default_value is None else default_value
-        return cls(attribute, effect_model, effect_type, parser, default_value)
+        return cls(attribute, effect_model, effect_type, parser, conditions, default_value)
 
 class SchemaEffect(SimpleNamespace):
     attribute: AttributeName
@@ -157,6 +158,7 @@ class SchemaEffect(SimpleNamespace):
 
         return cls(
             attribute=attrib_field.attribute,
+            conditions=attrib_field.conditions,
             effect_model=attrib_field.effect_model,
             effect_type=attrib_field.get_effective_type(value),
             value=value)

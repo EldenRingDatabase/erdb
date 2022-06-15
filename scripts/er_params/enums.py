@@ -219,6 +219,10 @@ class AttackCondition(str, Enum):
     SUCCESSIVE_3_HITS = "3"
     SUCCESSIVE_6_HITS = "4"
     SUCCESSIVE_9_HITS = "5"
+    VS_GRAVITY_ENEMIES = "6",
+    VS_UNDEAD_ENEMIES = "7",
+    VS_ANCIENT_DRAGON_ENEMIES = "8",
+    VS_DRAGON_ENEMIES = "9",
 
     def __str__(self) -> str:
         return _ATTACK_CONDITION_STR[self]
@@ -230,6 +234,10 @@ _ATTACK_CONDITION_STR: Dict[AttackCondition, str] = {
     AttackCondition.SUCCESSIVE_3_HITS: "Successive 3 Hits",
     AttackCondition.SUCCESSIVE_6_HITS: "Successive 6 Hits",
     AttackCondition.SUCCESSIVE_9_HITS: "Successive 9 Hits",
+    AttackCondition.VS_GRAVITY_ENEMIES: "vs Gravity Enemies",
+    AttackCondition.VS_UNDEAD_ENEMIES: "vs Undead Enemies",
+    AttackCondition.VS_ANCIENT_DRAGON_ENEMIES: "vs Ancient Dragon Enemies",
+    AttackCondition.VS_DRAGON_ENEMIES: "vs Dragon Enemies",
 }
 
 class AttackType(str, Enum):

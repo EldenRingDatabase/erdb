@@ -2,7 +2,7 @@ from typing import Dict, List, Set, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import Affinity, AttackCondition, ItemIDFlag, WeaponClass, AshOfWarMountType, AttackAttribute, ReinforcementType
 from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums, parse_description, find_offset_indices, update_optional
-from scripts.sp_effect_parser import parse_effects, parse_status_effects
+from scripts.sp_effect_parser import parse_effects, parse_status_effects, parse_weapon_effects
 
 #def _get_ingame_name(name: str) -> str:
 #        return {
@@ -176,6 +176,10 @@ class ArmamentGeneratorData(GeneratorDataBase):
             25: "Smithing Stone",
         }[len(upgrade_costs)]
 
+        weapon_effects = parse_weapon_effects(row) \
+            + parse_effects(row, effects, *_RESIDENT_EFFECTS_FIELDS) \
+            + parse_effects(row, effects, *_BEHAVIOR_EFFECTS_FIELDS, add_condition=AttackCondition.ON_HIT)
+
         return {
             "full_hex_id": row.index_hex,
             "id": row.index,
@@ -200,6 +204,6 @@ class ArmamentGeneratorData(GeneratorDataBase):
             "attack_attributes": [*map(str, _get_attack_attributes(row))],
             "sp_consumption_rate": row.get_float("staminaConsumptionRate"),
             "requirements": _get_requirements(row),
-            "effects": parse_effects(row, effects, *_RESIDENT_EFFECTS_FIELDS) + parse_effects(row, effects, *_BEHAVIOR_EFFECTS_FIELDS, add_condition=AttackCondition.ON_HIT),
+            "effects": weapon_effects,
             "affinities": _get_affinities(row, self.main_param, effects, reinforces)
         }

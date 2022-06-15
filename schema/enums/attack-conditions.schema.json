@@ -8,6 +8,10 @@
         "Successive Hits",
         "Successive 3 Hits",
         "Successive 6 Hits",
-        "Successive 9 Hits"
+        "Successive 9 Hits",
+        "vs Gravity Enemies",
+        "vs Undead Enemies",
+        "vs Ancient Dragon Enemies",
+        "vs Dragon Enemies"
     ]
 }
