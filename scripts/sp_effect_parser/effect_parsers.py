@@ -56,7 +56,7 @@ def conditions(sp_effect: ParamRow, triggeree: Optional[ParamRow]=None) -> Optio
         _append_triggers(triggeree)
         _append_conditions(triggeree)
 
-    return None if len(conds) == 0 else list(conds)
+    return None if len(conds) == 0 else sorted(list(conds))
 
 def interval(sp_effect: ParamRow) -> Optional[float]:
     interv = sp_effect.get("motionInterval")

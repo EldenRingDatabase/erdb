@@ -1,3 +1,4 @@
+import operator as op
 from types import SimpleNamespace
 from typing import List, Dict, Set, NamedTuple
 from scripts.sp_effect_parser.effect_typing import AttributeName, SchemaEffect
@@ -106,4 +107,4 @@ def aggregate_effects(base_effects: List[SchemaEffect]) -> List[SchemaEffect]:
     for key, aggregated_effect in aggregated_effects.items():
         aggregated_effects[key].attribute_names = _aggregate_attributes(aggregated_effect.attribute_names, _AGGREGATOR_HINTS)
 
-    return _aggregated_effects_to_effects(aggregated_effects)
+    return sorted(_aggregated_effects_to_effects(aggregated_effects), key=op.attrgetter("attribute"))

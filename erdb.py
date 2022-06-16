@@ -136,7 +136,7 @@ def validate_and_write(file_path: str, schema_name: str, data: Dict, store: Dict
 
     finally:
         with open(file_path, mode="w") as f:
-            json.dump(data, f, indent=4, sort_keys=True)
+            json.dump(data, f, indent=4)
 
     return True
 
