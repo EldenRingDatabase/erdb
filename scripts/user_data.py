@@ -1,6 +1,6 @@
 import json
-import pathlib
 import scripts.config as cfg
+from pathlib import Path
 from scripts.game_version import GameVersion, GameVersionRange
 from typing import Dict
 
@@ -16,7 +16,7 @@ def _overlay_properties(ret: Dict, source: Dict):
         else:
             ret[key] = value
 
-def _parse_user_file(path: pathlib.Path, version: GameVersion) -> Dict:
+def _parse_user_file(path: Path, version: GameVersion) -> Dict:
     assert path.is_file
     assert path.suffix == ".json"
 

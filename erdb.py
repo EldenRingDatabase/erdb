@@ -1,7 +1,7 @@
 import argparse
-import pathlib
 import json
 import scripts.config as cfg
+from pathlib import Path
 from enum import Enum
 from typing import Dict, List
 from jsonschema import validate, RefResolver, ValidationError
@@ -29,7 +29,7 @@ class Generator(Enum):
     def __str__(self):
         return self.value
 
-cfg.ROOT = pathlib.Path(__file__).parent.resolve()
+cfg.ROOT = Path(__file__).parent.resolve()
 cfg.VERSIONS = sorted([GameVersion.from_string(p.name) for p in (cfg.ROOT / "gamedata" / "_Extracted").glob("*") if GameVersion.match_path(p)], reverse=True)
 
 _GENERATORS: Dict[Generator, GeneratorDataBase] = {
@@ -94,7 +94,7 @@ def generate(gendata: GeneratorDataBase, version: GameVersion) -> None:
 
     print(f"Validated {len(item_data)} elements", flush=True)
 
-def validate_and_write(file_path: str, schema_name: str, data: Dict, store: Dict[str, Dict]) -> bool:
+def validate_and_write(file_path: Path, schema_name: str, data: Dict, store: Dict[str, Dict]) -> bool:
     try:
         resolver = RefResolver(base_uri="unused", referrer="unused", store=store)
         validate(data, store[schema_name], resolver=resolver)
@@ -113,7 +113,7 @@ def validate_and_write(file_path: str, schema_name: str, data: Dict, store: Dict
 def main():
     args = get_args()
 
-    with open("latest_version.txt", mode="w") as f:
+    with open(cfg.ROOT / "latest_version.txt", mode="w") as f:
         f.write(str(cfg.VERSIONS[0]))
 
     (cfg.ROOT / str(args.gamedata_version)).mkdir(exist_ok=True)

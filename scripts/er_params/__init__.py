@@ -65,7 +65,7 @@ def _in_range(row_id: str, id_min: int, id_max: int):
     return id_min <= index and index <= id_max
 
 def read(param: str, version: GameVersion) -> DictReader:
-    with open(f"{cfg.ROOT}/gamedata/_Extracted/{version}/{param}.csv", mode="r") as f:
+    with open(cfg.ROOT / "gamedata" / "_Extracted" / str(version) / f"{param}.csv", mode="r") as f:
         yield from DictReader(f, delimiter=";")
 
 def load(param: str, version: GameVersion, item_id_flag: ItemIDFlag) -> ParamDict:
