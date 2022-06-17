@@ -1,0 +1,19 @@
+{
+    "$schema": "../../schema/userdata/spirit-ash.schema.json",
+	"any version": {
+		"summon_quantity": 1,
+		"abilities": [
+			"Highly mobile",
+			"Casts Blade of Death",
+			"Jump and charged attacks can knock enemies down"
+		],
+		"locations": [
+			{
+				"summary": "dropped by Alecto, Black Knife Ringleader",
+				"location": "Ringleader's Evergaol",
+				"region": "Liurnia of the Lakes",
+				"requirements": ["Dark Moon Ring is required to reach Ringleader's Evergaol."]
+			}
+		]
+	}
+}

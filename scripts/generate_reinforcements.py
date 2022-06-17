@@ -59,9 +59,17 @@ def _get_reinforcement(level: int, row: ParamRow) -> Dict:
 class ReinforcementGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
 
-    output_file: str = "reinforcements.json"
-    schema_file: str = "reinforcements.schema.json"
-    element_name: str = "Reinforcements"
+    @staticmethod # override
+    def output_file() -> str:
+        return "reinforcements.json"
+
+    @staticmethod # override
+    def schema_file() -> str:
+        return "reinforcements.schema.json"
+
+    @staticmethod # override
+    def element_name() -> str:
+        return "Reinforcements"
 
     @staticmethod # override
     def get_key_name(row: ParamRow) -> str:

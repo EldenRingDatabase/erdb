@@ -48,9 +48,17 @@ class CorrectionRange(NamedTuple):
 class CorrectionGraphGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
 
-    output_file: str = "correction-graph.json"
-    schema_file: str = "correction-graph.schema.json"
-    element_name: str = "CorrectionGraph"
+    @staticmethod # override
+    def output_file() -> str:
+        return "correction-graph.json"
+
+    @staticmethod # override
+    def schema_file() -> str:
+        return "correction-graph.schema.json"
+
+    @staticmethod # override
+    def element_name() -> str:
+        return "CorrectionGraph"
 
     @staticmethod # override
     def get_key_name(row: ParamRow) -> str:

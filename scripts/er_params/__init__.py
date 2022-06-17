@@ -1,5 +1,7 @@
+import scripts.config as cfg
 from csv import DictReader
 from typing import List, Dict
+from scripts.game_version import GameVersion
 from scripts.er_params.enums import ItemIDFlag
 
 class ParamRow(object):
@@ -62,13 +64,13 @@ def _in_range(row_id: str, id_min: int, id_max: int):
     index = int(row_id)
     return id_min <= index and index <= id_max
 
-def read(param: str, version: str) -> DictReader:
-    with open(f"./source/{version}/{param}.csv", mode="r") as f:
+def read(param: str, version: GameVersion) -> DictReader:
+    with open(f"{cfg.ROOT}/gamedata/_Extracted/{version}/{param}.csv", mode="r") as f:
         yield from DictReader(f, delimiter=";")
 
-def load(param: str, version: str, item_id_flag: ItemIDFlag) -> ParamDict:
+def load(param: str, version: GameVersion, item_id_flag: ItemIDFlag) -> ParamDict:
     return {row["Row ID"]: ParamRow(row, item_id_flag) for row in read(param, version)}
 
 # optimal variant for params with a lot of IDs like spEffects
-def load_ids(param: str, version: str, item_id_flag: ItemIDFlag, id_min: int, id_max: int=999999999) -> ParamDict:
+def load_ids(param: str, version: GameVersion, item_id_flag: ItemIDFlag, id_min: int, id_max: int=999999999) -> ParamDict:
     return {row["Row ID"]: ParamRow(row, item_id_flag) for row in read(param, version) if _in_range(row["Row ID"], id_min, id_max)}

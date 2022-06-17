@@ -15,9 +15,17 @@ def _get_affinities(row: ParamRow) -> List[Affinity]:
 class AshOfWarGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
 
-    output_file: str = "ashes-of-war.json"
-    schema_file: str = "ashes-of-war.schema.json"
-    element_name: str = "AshesOfWar"
+    @staticmethod # override
+    def output_file() -> str:
+        return "ashes-of-war.json"
+
+    @staticmethod # override
+    def schema_file() -> str:
+        return "ashes-of-war.schema.json"
+
+    @staticmethod # override
+    def element_name() -> str:
+        return "AshesOfWar"
 
     main_param_retriever = Base.ParamDictRetriever("EquipParamGem", ItemIDFlag.ACCESSORIES, id_min=10000)
 
@@ -32,7 +40,10 @@ class AshOfWarGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = get_schema_properties("item/properties", "ashes-of-war/definitions/AshOfWar/properties")
+        properties, store = get_schema_properties(
+            "item/properties",
+            "item/definitions/ItemUserData/properties",
+            "ashes-of-war/definitions/AshOfWar/properties")
         store.update(get_schema_enums("ash-of-war-names", "affinity-names", "armament-class-names", "skill-names"))
         return properties, store
 
@@ -54,8 +65,8 @@ class AshOfWarGeneratorData(GeneratorDataBase):
             "price_sold": row.get_int_corrected("sellValue"),
             "max_held": 999,
             "max_stored": 999,
-            # locations -- cannot autogenerate, make sure not to overwrite
-            # remarks -- cannot autogenerate, make sure not to overwrite
+            "locations": self.get_user_data(row.name, "locations"),
+            "remarks": self.get_user_data(row.name, "remarks"),
             "classes": [*map(str, _get_classes(row))],
             "default_affinity": str(Affinity(row.get("defaultWepAttr"))),
             "affinities": [*map(str, _get_affinities(row))],

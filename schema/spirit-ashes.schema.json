@@ -22,7 +22,10 @@
         "SpiritAsh": {
             "title": "Spirit Ash",
             "description": "Schema for Spirit Ash items.",
-            "allOf": [{"$ref": "item.schema.json"}],
+            "allOf": [
+                {"$ref": "item.schema.json"},
+                {"$ref": "spirit-ashes.schema.json#/definitions/SpiritAshUserData"}
+            ],
             "properties": {
                 "name": {
                     "#comment": "Override list of possible names to be Spirit Ash names only.",
@@ -51,18 +54,6 @@
                     "enum": ["common", "rare", "legendary"],
                     "default": "common"
                 },
-                "summon_quantity": {
-                    "description": "The number of spririts this Spirit Ash summons.",
-                    "type": "integer",
-                    "default": 1
-                },
-                "abilities": {
-                    "description": "Strenghts of the Spirit Ash. Each briefly described with minimum amount of words.",
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": { "type": "string", "minLength": 0 },
-                    "default": []
-                },
                 "upgrade_material": {
                     "description": "Glovewort the Spirit Ash upgrades with, either 'Grave Glovewort' or 'Ghost Glovewort'.",
                     "type": "string",
@@ -87,11 +78,27 @@
                 "fp_cost",
                 "hp_cost",
                 "rarity",
-                "summon_quantity",
-                "abilities",
                 "upgrade_material",
-                "upgrade_costs"
+                "upgrade_costs",
+                "summon_quantity",
+                "abilities"
             ]
+        },
+        "SpiritAshUserData": {
+            "properties": {
+                "summon_quantity": {
+                    "description": "The number of spririts this Spirit Ash summons.",
+                    "type": "integer",
+                    "default": 1
+                },
+                "abilities": {
+                    "description": "Strenghts of the Spirit Ash. Each briefly described with minimum amount of words.",
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": { "type": "string", "minLength": 0 },
+                    "default": []
+                }
+            }
         },
         "SpiritAshNames": {
             "type": "string",

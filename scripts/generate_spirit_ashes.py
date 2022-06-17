@@ -13,9 +13,17 @@ def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> List[int]:
 class SpiritAshGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
 
-    output_file: str = "spirit-ashes.json"
-    schema_file: str = "spirit-ashes.schema.json"
-    element_name: str = "SpiritAshes"
+    @staticmethod # override
+    def output_file() -> str:
+        return "spirit-ashes.json"
+
+    @staticmethod # override
+    def schema_file() -> str:
+        return "spirit-ashes.schema.json"
+
+    @staticmethod # override
+    def element_name() -> str:
+        return "SpiritAshes"
 
     main_param_retriever = Base.ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
@@ -33,7 +41,11 @@ class SpiritAshGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        return get_schema_properties("item/properties", "spirit-ashes/definitions/SpiritAsh/properties")
+        return get_schema_properties(
+            "item/properties",
+            "item/definitions/ItemUserData/properties",
+            "spirit-ashes/definitions/SpiritAsh/properties",
+            "spirit-ashes/definitions/SpiritAshUserData/properties")
 
     def main_param_iterator(self, spirit_ashes: ParamDict) -> Iterator[ParamRow]:
         for row in spirit_ashes.values():
@@ -62,13 +74,13 @@ class SpiritAshGeneratorData(GeneratorDataBase):
             "price_sold": row.get_int_corrected("sellValue"),
             "max_held": row.get_int("maxNum"),
             "max_stored": row.get_int("maxRepositoryNum"),
-            # locations -- cannot autogenerate, make sure not to overwrite
-            # remarks -- cannot autogenerate, make sure not to overwrite
+            "locations": self.get_user_data(row.name, "locations"),
+            "remarks": self.get_user_data(row.name, "remarks"),
             "fp_cost": row.get_int_corrected("consumeMP"),
             "hp_cost": row.get_int_corrected("consumeHP"),
             "rarity": GoodsRarity(row.get_int("rarity")).name.lower(),
-            # summon_quantity -- cannot autogenerate, make sure not to overwrite
-            # abilities -- cannot autogenerate, make sure not to overwrite
+            "summon_quantity": self.get_user_data(row.name, "summon_quantity"),
+            "abilities": self.get_user_data(row.name, "abilities"),
             "upgrade_material": upgrade_material,
             "upgrade_costs": _find_upgrade_costs(goods, row.index)
         }

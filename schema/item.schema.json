@@ -3,6 +3,9 @@
     "title": "Generic Item",
     "description": "The generic, all-encompassing set of fields used by every item in the game.",
     "type": "object",
+    "allOf": [
+        {"$ref": "item.schema.json#/definitions/ItemUserData"}
+    ],
     "properties": {
         "full_hex_id": {
             "description": "Full ID of the item in capital hexadecimal form. IDs differ per affinity or upgrade level.",
@@ -55,25 +58,6 @@
             "description": "The maximum amount of the item that can be stored in the sort chest.",
             "type": "integer",
             "default": 600
-        },
-        "locations": {
-            "description": "List of locations in which this item appears.",
-            "type": "array",
-            "minItems": 1,
-            "items": {
-                "type": "object",
-                "$ref": "#/definitions/Location"
-            },
-            "default": [{"summary": "not provided"}]
-        },
-        "remarks": {
-            "description": "List of remarks and trivia about this item.",
-            "type": "array",
-            "items": {
-                "type": "string",
-                "minLength": 0
-            },
-            "default": []
         }
     },
     "required": [
@@ -94,6 +78,29 @@
         "level": {"required": ["level_list"]}
     },
     "definitions": {
+        "ItemUserData": {
+            "properties": {
+                "locations": {
+                    "description": "List of locations in which this item appears.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "$ref": "item.schema.json#/definitions/Location"
+                    },
+                    "default": [{"summary": "not provided"}]
+                },
+                "remarks": {
+                    "description": "List of remarks and trivia about this item.",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 0
+                    },
+                    "default": []
+                }
+            }
+        },
         "Location": {
             "title": "Location",
             "description": "Specific information about the location of an item.",
@@ -121,11 +128,11 @@
                 },
                 "location": {
                     "description": "The specific location in which the item is found, eg. 'Mistwoods'.",
-                    "$ref": "#/definitions/LocationNames"
+                    "$ref": "item.schema.json#/definitions/LocationNames"
                 },
                 "region": {
                     "description": "The generic region in which the item is found, eg. 'Limgrave'.",
-                    "$ref": "#/definitions/RegionNames"
+                    "$ref": "item.schema.json#/definitions/RegionNames"
                 },
                 "directions": {
                     "description": "Exact description on where to find the item if summary cannot be straightfoward enough.",

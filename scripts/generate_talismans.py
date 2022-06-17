@@ -10,9 +10,17 @@ def _find_conflicts(group: int, accessories: ParamDict) -> List[str]:
 class TalismanGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
 
-    output_file: str = "talismans.json"
-    schema_file: str = "talismans.schema.json"
-    element_name: str = "Talismans"
+    @staticmethod
+    def output_file() -> str:
+        return "talismans.json"
+
+    @staticmethod
+    def schema_file() -> str:
+        return "talismans.schema.json"
+
+    @staticmethod
+    def element_name() -> str:
+        return "Talismans"
 
     main_param_retriever = Base.ParamDictRetriever("EquipParamAccessory", ItemIDFlag.ACCESSORIES)
 
@@ -29,7 +37,10 @@ class TalismanGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = get_schema_properties("item/properties", "talismans/definitions/Talisman/properties")
+        properties, store = get_schema_properties(
+            "item/properties",
+            "item/definitions/ItemUserData/properties",
+            "talismans/definitions/Talisman/properties")
         store.update(get_schema_properties("effect")[1])
         store.update(get_schema_enums("talisman-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
         return properties, store
@@ -55,8 +66,8 @@ class TalismanGeneratorData(GeneratorDataBase):
             "price_sold": row.get_int_corrected("sellValue"),
             "max_held": 999,
             "max_stored": 999,
-            # locations -- cannot autogenerate, make sure not to overwrite
-            # remarks -- cannot autogenerate, make sure not to overwrite
+            "locations": self.get_user_data(row.name, "locations"),
+            "remarks": self.get_user_data(row.name, "remarks"),
             "weight": row.get_float("weight"),
             "effects": parse_effects(row, effects, "refId"),
             "conflicts": _find_conflicts(row.get_int("accessoryGroup"), talismans),

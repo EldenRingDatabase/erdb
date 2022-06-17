@@ -14,8 +14,9 @@ from scripts.sp_effect_parser import parse_effects, parse_status_effects, parse_
 _BEHAVIOR_EFFECTS_FIELDS: List[str] = ["spEffectBehaviorId0", "spEffectBehaviorId1", "spEffectBehaviorId2"]
 _RESIDENT_EFFECTS_FIELDS: List[str] = ["residentSpEffectId", "residentSpEffectId1", "residentSpEffectId2"]
 
-def _get_attack_attributes(row: ParamRow) -> Set[AttackAttribute]:
-    return {AttackAttribute(row.get(field)) for field in ["atkAttribute", "atkAttribute2"]}
+def _get_attack_attributes(row: ParamRow) -> List[AttackAttribute]:
+    attributes = {AttackAttribute(row.get(field)) for field in ["atkAttribute", "atkAttribute2"]}
+    return sorted(list(attributes))
 
 def _get_upgrade_costs(row: ParamRow, reinforces: ParamDict) -> List[int]:
     reinforcement_type = ReinforcementType(row.get("reinforceTypeId"))
@@ -126,9 +127,17 @@ def _get_affinities(row: ParamRow, armaments: ParamDict, effects: ParamDict, rei
 class ArmamentGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
 
-    output_file: str = "armaments.json"
-    schema_file: str = "armaments.schema.json"
-    element_name: str = "Armaments"
+    @staticmethod # override
+    def output_file() -> str:
+        return "armaments.json"
+
+    @staticmethod # override
+    def schema_file() -> str:
+        return "armaments.schema.json"
+
+    @staticmethod # override
+    def element_name() -> str:
+        return "Armaments"
 
     @staticmethod # override
     def get_key_name(row: ParamRow) -> str:
@@ -153,7 +162,10 @@ class ArmamentGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = get_schema_properties("item/properties", "armaments/definitions/Armament/properties")
+        properties, store = get_schema_properties(
+            "item/properties",
+            "item/definitions/ItemUserData/properties",
+            "armaments/definitions/Armament/properties")
         store.update(get_schema_properties("effect")[1])
         store.update(get_schema_enums("armament-names", "armament-class-names", "status-effect-names", "affinity-names", "reinforcement-names"))
         store.update(get_schema_enums("attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
@@ -190,8 +202,8 @@ class ArmamentGeneratorData(GeneratorDataBase):
             "price_sold": row.get_int_corrected("sellValue"),
             "max_held": 999,
             "max_stored": 999,
-            # locations -- cannot autogenerate, make sure not to overwrite
-            # remarks -- cannot autogenerate, make sure not to overwrite
+            "locations": self.get_user_data(row.name, "locations"),
+            "remarks": self.get_user_data(row.name, "remarks"),
             "behavior_variation_id": row.get_int("behaviorVariationId"),
             "class": str(WeaponClass.from_id(row.get("wepType"))),
             "weight": row.get_float("weight"),

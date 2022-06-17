@@ -47,9 +47,17 @@ def _get_resistances(row: ParamRow) -> Dict[str, int]:
 class ArmorGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
 
-    output_file: str = "armor.json"
-    schema_file: str = "armor.schema.json"
-    element_name: str = "ArmorPieces"
+    @staticmethod # override
+    def output_file() -> str:
+        return "armor.json"
+
+    @staticmethod # override
+    def schema_file() -> str:
+        return "armor.schema.json"
+
+    @staticmethod # override
+    def element_name() -> str:
+        return "ArmorPieces"
 
     main_param_retriever = Base.ParamDictRetriever("EquipParamProtector", ItemIDFlag.PROTECTORS)
 
@@ -71,7 +79,10 @@ class ArmorGeneratorData(GeneratorDataBase):
 
     @staticmethod
     def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = get_schema_properties("item/properties", "armor/definitions/ArmorPiece/properties")
+        properties, store = get_schema_properties(
+            "item/properties",
+            "item/definitions/ItemUserData/properties",
+            "armor/definitions/ArmorPiece/properties")
         store.update(get_schema_properties("effect")[1])
         store.update(get_schema_enums("armor-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
         return properties, store
@@ -103,8 +114,8 @@ class ArmorGeneratorData(GeneratorDataBase):
             "price_sold": row.get_int_corrected("sellValue"),
             "max_held": 999,
             "max_stored": 999,
-            # locations -- cannot autogenerate, make sure not to overwrite
-            # remarks -- cannot autogenerate, make sure not to overwrite
+            "locations": self.get_user_data(row.name, "locations"),
+            "remarks": self.get_user_data(row.name, "remarks"),
             "category": _get_category(row.get_int("protectorCategory")),
             "altered": altered,
             "weight": row.get_float("weight"),

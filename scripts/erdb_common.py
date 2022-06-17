@@ -2,15 +2,18 @@ import json
 import xml.etree.ElementTree as xmltree
 import collections
 import scripts.er_params as er_params
+import scripts.user_data as user_data
+import scripts.config as cfg
 from operator import add
 from itertools import repeat
 from typing import Any, Callable, Iterator, NamedTuple, Optional, Tuple, Dict, List
+from scripts.game_version import GameVersion
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
 from scripts.er_shop import Lookup
 
-def _get_item_msg(filename: str, version: str) -> Dict[int, str]:
-    tree = xmltree.parse(f"./source/{version}/{filename}.fmg.xml")
+def _get_item_msg(filename: str, version: GameVersion) -> Dict[int, str]:
+    tree = xmltree.parse(f"{cfg.ROOT}/gamedata/_Extracted/{version}/{filename}.fmg.xml")
     entries = tree.getroot().findall(".//text")
     return {int(e.get("id")): e.text for e in entries if e.text != "%null%"}
 
@@ -22,7 +25,7 @@ class GeneratorDataBase(NamedTuple):
         id_min: Optional[int]=None
         id_max: Optional[int]=None
 
-        def get(self, version: str) -> ParamDict:
+        def get(self, version: GameVersion) -> ParamDict:
             args = [self.file_name, version, self.item_id_flag]
             args += [arg for arg in [self.id_min, self.id_max] if arg is not None]
             return (er_params.load if len(args) <= 3 else er_params.load_ids)(*args)
@@ -30,7 +33,7 @@ class GeneratorDataBase(NamedTuple):
     class MsgsRetriever(NamedTuple):
         file_name: str
 
-        def get(self, version: str) -> Dict[str, str]:
+        def get(self, version: GameVersion) -> Dict[str, str]:
             return _get_item_msg(self.file_name, version)
 
     class LookupRetriever(NamedTuple):
@@ -39,23 +42,36 @@ class GeneratorDataBase(NamedTuple):
         material_set_id_min: Optional[int]
         material_set_id_max: Optional[int]
 
-        def get(self, version: str) -> Lookup:
+        def get(self, version: GameVersion) -> Lookup:
             Retr = GeneratorDataBase.ParamDictRetriever
             shop = Retr("ShopLineupParam", ItemIDFlag.NON_EQUIPABBLE, self.shop_lineup_id_min, self.shop_lineup_id_max)
             mats = Retr("EquipMtrlSetParam", ItemIDFlag.NON_EQUIPABBLE, self.material_set_id_min, self.material_set_id_max)
             return Lookup(shop.get(version), mats.get(version))
 
+    class UserDataRetriever(NamedTuple):
+        def get(self, element_name: str, version: GameVersion) -> Dict[str, Dict]:
+            return user_data.read(element_name, version)
+
     main_param: ParamDict
     params: Dict[str, ParamDict]
     msgs: Dict[str, Dict[str, str]]
     lookups: Dict[str, Lookup]
+    user_data: Dict[str, Dict]
 
     schema_properties: Dict
     schema_store: Dict[str, Dict]
 
-    output_file: str = None
-    schema_file: str = None
-    element_name: str = None
+    @staticmethod
+    def output_file() -> str:
+        assert False, "output_file must be overridden"
+
+    @staticmethod
+    def schema_file() -> str:
+        assert False, "schema_file must be overridden"
+
+    @staticmethod
+    def element_name() -> str:
+        assert False, "element_name must be overridden"
 
     @staticmethod
     def get_key_name(row: ParamRow) -> str:
@@ -76,7 +92,7 @@ class GeneratorDataBase(NamedTuple):
     construct_object: Callable[["GeneratorDataBase", ParamRow], Dict] = None
 
     @classmethod
-    def construct(cls, version: str) -> "GeneratorDataBase":
+    def construct(cls, version: GameVersion) -> "GeneratorDataBase":
         def _retrieve_dict(retrievers):
             return {field_name: retrievers[field_name].get(version) for field_name in retrievers.keys()}
 
@@ -84,14 +100,19 @@ class GeneratorDataBase(NamedTuple):
         params=_retrieve_dict(cls.param_retrievers)
         msgs=_retrieve_dict(cls.msgs_retrievers)
         lookups=_retrieve_dict(cls.lookup_retrievers)
+        user_data=cls.UserDataRetriever().get(cls.element_name(), version)
         properties, store = cls.schema_retriever()
 
-        return cls(main_param, params, msgs, lookups, properties, store)
+        return cls(main_param, params, msgs, lookups, user_data, properties, store)
+
+    def get_user_data(self, row: str, field: str):
+        assert field in self.schema_properties
+        return self.user_data.get(row.replace(":", ""), {}).get(field, self.schema_properties[field].get("default", {}))
 
 def load_schema(filename: str, subdirectory: str="") -> Tuple[str, Dict]:
     subdirectory = f"{subdirectory}/" if len(subdirectory) > 0 else subdirectory
     filename = f"{subdirectory}{filename}.schema.json"
-    with open(f"./schema/{filename}", mode="r") as f:
+    with open(f"{cfg.ROOT}/schema/{filename}", mode="r") as f:
         return filename, json.load(f)
 
 def get_schema_enums(*enum_names: str) -> Dict[str, Dict]:

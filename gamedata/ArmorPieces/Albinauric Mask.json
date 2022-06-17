@@ -1,0 +1,13 @@
+{
+    "$schema": "../../schema/userdata/armor-piece.schema.json",
+	"any version": {
+		"locations": [
+			{
+				"summary": "hidden room with a lone Omenkiller",
+				"directions": "Head to the rooftop of the building with Guest Hall site of grace, drop from the western side onto a balcony to find a hidden room.",
+				"location": "Volcano Manor",
+				"region": "Mt. Gelmir"
+			}
+		]
+	}
+}
