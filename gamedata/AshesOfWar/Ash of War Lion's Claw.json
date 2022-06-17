@@ -1,12 +1,12 @@
 {
     "$schema": "../../schema/userdata/ash-of-war.schema.json",
-	"any version": {
-		"locations": [
-			{
-				"summary": "dropped by Lion Guardian",
-				"location": "Fort Gael",
-				"region": "Caelid"
-			}
-		]
-	}
+    "any version": {
+        "locations": [
+            {
+                "summary": "dropped by Lion Guardian",
+                "location": "Fort Gael",
+                "region": "Caelid"
+            }
+        ]
+    }
 }

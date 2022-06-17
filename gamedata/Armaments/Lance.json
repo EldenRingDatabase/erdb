@@ -1,12 +1,12 @@
 {
     "$schema": "../../schema/userdata/armament.schema.json",
-	"any version": {
-		"locations": [
-			{
-				"summary": "on top of a ruin by a camp West of Deathtouched Catacombs",
-				"directions": "Head down the road East from Warmaster's Shack to find a camp between two large cubical ruins. Lance is on top of the northwestern one.",
-				"region": "Limgrave"
-			}
-		]
-	}
+    "any version": {
+        "locations": [
+            {
+                "summary": "on top of a ruin by a camp West of Deathtouched Catacombs",
+                "directions": "Head down the road East from Warmaster's Shack to find a camp between two large cubical ruins. Lance is on top of the northwestern one.",
+                "region": "Limgrave"
+            }
+        ]
+    }
 }

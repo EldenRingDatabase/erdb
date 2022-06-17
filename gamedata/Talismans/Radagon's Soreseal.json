@@ -1,13 +1,13 @@
 {
     "$schema": "../../schema/userdata/talisman.schema.json",
-	"any version": {
-		"locations": [
-			{
-				"summary": "hidden on ground floor behind wooden walls",
-				"directions": "From the rooftop area, drop down onto wooden mid-floor, jump over to another one diagonally, drop down again behind the giant rat.",
-				"location": "Fort Faroth",
-				"region": "Dragonbarrow"
-			}
-		]
-	}
+    "any version": {
+        "locations": [
+            {
+                "summary": "hidden on ground floor behind wooden walls",
+                "directions": "From the rooftop area, drop down onto wooden mid-floor, jump over to another one diagonally, drop down again behind the giant rat.",
+                "location": "Fort Faroth",
+                "region": "Dragonbarrow"
+            }
+        ]
+    }
 }
