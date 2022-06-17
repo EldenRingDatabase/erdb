@@ -75,10 +75,6 @@ class ReinforcementGeneratorData(GeneratorDataBase):
     def get_key_name(row: ParamRow) -> str:
         return str(ReinforcementType(str(row.index)))
 
-    @staticmethod # override
-    def require_patching() -> bool:
-        return False
-
     main_param_retriever = Base.ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE)
 
     param_retrievers = {}

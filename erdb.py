@@ -5,9 +5,9 @@ from pathlib import Path
 from enum import Enum
 from typing import Dict, List
 from jsonschema import validate, RefResolver, ValidationError
-from scripts.erdb_common import GeneratorDataBase, patch_keys, update_nested
 from scripts.find_valid_values import find_valid_values
 from scripts.game_version import GameVersion
+from scripts.erdb_common import GeneratorDataBase
 from scripts.generate_armaments import ArmamentGeneratorData
 from scripts.generate_armor import ArmorGeneratorData
 from scripts.generate_ashes_of_war import AshOfWarGeneratorData
@@ -45,9 +45,10 @@ _GENERATORS: Dict[Generator, GeneratorDataBase] = {
 def get_args():
     parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
     parser.add_argument("--generate", "-g", type=Generator, default=[], choices=list(Generator), nargs="+", help="The type of items to generate.")
+    parser.add_argument("--minimize-json", action="store_true", help="Ouput minimized JSON when generating data.")
     parser.add_argument("--find-values", "-f", type=str, help="Find all possible values of a field per param name, format: ParamName:FieldName.")
     parser.add_argument("--find-values-limit", type=int, default=-1, help="Limit find-values examples to X per value.")
-    parser.add_argument("--gamedata-version", "-s", type=GameVersion.from_string, default=cfg.VERSIONS[0], choices=cfg.VERSIONS, help="Game version to source the data from.")
+    parser.add_argument("--gamedata", type=GameVersion.from_string, default=cfg.VERSIONS[0], choices=cfg.VERSIONS, help="Game version to source the data from.")
     return parser.parse_args()
 
 def get_generators(args) -> List[Generator]:
@@ -59,42 +60,29 @@ def get_generators(args) -> List[Generator]:
 
     return list(generators)
 
-def generate(gendata: GeneratorDataBase, version: GameVersion) -> None:
+def generate(gendata: GeneratorDataBase, version: GameVersion, minimize: bool=False) -> None:
     output_file = cfg.ROOT / str(version) / gendata.output_file()
     print(f"Output file: {output_file}", flush=True)
 
     if output_file.exists():
-        with open(output_file, mode="r") as f:
-            item_data_full = json.load(f)
-        print(f"Loaded output file", flush=True)
-    else:
-        item_data_full = {gendata.element_name(): {}}
-        print(f"Output file does not exist and will be created", flush=True)
-    
-    item_data_full["$schema"] = f"../schema/{gendata.schema_file()}"
-    item_data = item_data_full[gendata.element_name()]
-    print(f"Collected existing data with {len(item_data)} elements", flush=True)
+        print(f"Output file exists and will be overridden", flush=True)
 
-    for row in gendata.main_param_iterator(gendata.main_param):
-        key_name = gendata.get_key_name(row)
-
-        new_obj = gendata.construct_object(row)
-        cur_obj = item_data.get(key_name, {})
-
-        update_nested(cur_obj, new_obj)
-        cur_obj = patch_keys(cur_obj, gendata.schema_properties) if gendata.require_patching() else cur_obj
-
-        item_data[key_name] = cur_obj
+    main_iter = gendata.main_param_iterator(gendata.main_param)
+    item_data = {gendata.get_key_name(row): gendata.construct_object(row) for row in main_iter}
 
     print(f"Generated {len(item_data)} elements", flush=True)
 
-    item_data_full[gendata.element_name()] = item_data
-    ok = validate_and_write(output_file, gendata.schema_file(), item_data_full, gendata.schema_store)
+    item_data_full = {
+        gendata.element_name(): item_data,
+        "$schema": f"../schema/{gendata.schema_file()}"
+    }
+
+    ok = validate_and_write(output_file, gendata.schema_file(), item_data_full, gendata.schema_store, minimize)
     assert ok, "Generated schema failed to validate"
 
     print(f"Validated {len(item_data)} elements", flush=True)
 
-def validate_and_write(file_path: Path, schema_name: str, data: Dict, store: Dict[str, Dict]) -> bool:
+def validate_and_write(file_path: Path, schema_name: str, data: Dict, store: Dict[str, Dict], minimize: bool) -> bool:
     try:
         resolver = RefResolver(base_uri="unused", referrer="unused", store=store)
         validate(data, store[schema_name], resolver=resolver)
@@ -106,7 +94,8 @@ def validate_and_write(file_path: Path, schema_name: str, data: Dict, store: Dic
 
     finally:
         with open(file_path, mode="w") as f:
-            json.dump(data, f, indent=4)
+            kwargs = {"separators": (",", ":")} if minimize else {"indent": 4}
+            json.dump(data, f, **kwargs)
 
     return True
 
@@ -116,17 +105,17 @@ def main():
     with open(cfg.ROOT / "latest_version.txt", mode="w") as f:
         f.write(str(cfg.VERSIONS[0]))
 
-    (cfg.ROOT / str(args.gamedata_version)).mkdir(exist_ok=True)
+    (cfg.ROOT / str(args.gamedata)).mkdir(exist_ok=True)
 
     for gen in get_generators(args):
-        print(f"\n>>> Generating \"{gen}\" from version {args.gamedata_version}", flush=True)
-        gendata = _GENERATORS[gen].construct(args.gamedata_version)
-        generate(gendata, args.gamedata_version)
+        print(f"\n>>> Generating \"{gen}\" from version {args.gamedata}", flush=True)
+        gendata = _GENERATORS[gen].construct(args.gamedata)
+        generate(gendata, args.gamedata, args.minimize_json)
 
     if args.find_values:
         parts = args.find_values.split(":")
         assert len(parts) == 2, "Incorrect find-values format"
-        find_valid_values(parts[0], args.gamedata_version, parts[1], args.find_values_limit)
+        find_valid_values(parts[0], args.gamedata, parts[1], args.find_values_limit)
 
 if __name__ == "__main__":
     main()

@@ -64,10 +64,6 @@ class CorrectionGraphGeneratorData(GeneratorDataBase):
     def get_key_name(row: ParamRow) -> str:
         return str(row.index)
 
-    @staticmethod # override
-    def require_patching() -> bool:
-        return False
-
     main_param_retriever = Base.ParamDictRetriever("CalcCorrectGraph", ItemIDFlag.NON_EQUIPABBLE)
 
     param_retrievers = {}

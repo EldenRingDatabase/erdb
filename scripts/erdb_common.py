@@ -77,10 +77,6 @@ class GeneratorDataBase(NamedTuple):
     def get_key_name(row: ParamRow) -> str:
         return row.name
 
-    @staticmethod
-    def require_patching() -> bool:
-        return True
-
     main_param_retriever: ParamDictRetriever = None
     param_retrievers: Dict[str, ParamDictRetriever] = None
     msgs_retrievers: Dict[str, MsgsRetriever] = None
@@ -152,17 +148,6 @@ def get_schema_properties(*references: str) -> Tuple[Dict, Dict[str, Dict]]:
 
 def parse_description(desc: str) -> List[str]:
     return desc.replace("—", " - ").split("\n")
-
-def patch_keys(obj: Dict, schema: Dict) -> Dict:
-    # delete excessive keys
-    for key in (set(obj.keys()) - set(schema.keys())):
-        del obj[key]
-
-    # add missing base keys
-    for key in (set(schema.keys()) - set(obj.keys())):
-        obj[key] = schema[key].get("default", {})
-    
-    return obj
 
 def update_nested(d, u):
     """
