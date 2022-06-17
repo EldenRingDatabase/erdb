@@ -17,6 +17,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -30,12 +36,6 @@
                 "Crimson Amber Medallion",
                 "Crimson Amber Medallion +1",
                 "Crimson Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Crimson Amber Medallion +1": {
@@ -55,6 +55,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -68,12 +74,6 @@
                 "Crimson Amber Medallion",
                 "Crimson Amber Medallion +1",
                 "Crimson Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Crimson Amber Medallion +2": {
@@ -93,6 +93,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -106,12 +112,6 @@
                 "Crimson Amber Medallion",
                 "Crimson Amber Medallion +1",
                 "Crimson Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Cerulean Amber Medallion": {
@@ -131,6 +131,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -144,12 +150,6 @@
                 "Cerulean Amber Medallion",
                 "Cerulean Amber Medallion +1",
                 "Cerulean Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Cerulean Amber Medallion +1": {
@@ -169,6 +169,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -182,12 +188,6 @@
                 "Cerulean Amber Medallion",
                 "Cerulean Amber Medallion +1",
                 "Cerulean Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Cerulean Amber Medallion +2": {
@@ -207,6 +207,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -220,12 +226,6 @@
                 "Cerulean Amber Medallion",
                 "Cerulean Amber Medallion +1",
                 "Cerulean Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Viridian Amber Medallion": {
@@ -245,6 +245,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -258,12 +264,6 @@
                 "Viridian Amber Medallion",
                 "Viridian Amber Medallion +1",
                 "Viridian Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Viridian Amber Medallion +1": {
@@ -283,6 +283,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -296,12 +302,6 @@
                 "Viridian Amber Medallion",
                 "Viridian Amber Medallion +1",
                 "Viridian Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Viridian Amber Medallion +2": {
@@ -321,6 +321,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -334,12 +340,6 @@
                 "Viridian Amber Medallion",
                 "Viridian Amber Medallion +1",
                 "Viridian Amber Medallion +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Arsenal Charm": {
@@ -357,6 +357,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -370,12 +376,6 @@
                 "Arsenal Charm",
                 "Arsenal Charm +1",
                 "Great-Jar's Arsenal"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Arsenal Charm +1": {
@@ -393,6 +393,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -406,12 +412,6 @@
                 "Arsenal Charm",
                 "Arsenal Charm +1",
                 "Great-Jar's Arsenal"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Great-Jar's Arsenal": {
@@ -430,6 +430,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -443,12 +449,6 @@
                 "Arsenal Charm",
                 "Arsenal Charm +1",
                 "Great-Jar's Arsenal"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Erdtree's Favor": {
@@ -466,6 +466,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -494,12 +500,6 @@
                 "Erdtree's Favor",
                 "Erdtree's Favor +1",
                 "Erdtree's Favor +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Erdtree's Favor +1": {
@@ -517,6 +517,12 @@
             "price_sold": 1500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -542,12 +548,6 @@
                 "Erdtree's Favor",
                 "Erdtree's Favor +1",
                 "Erdtree's Favor +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Erdtree's Favor +2": {
@@ -566,6 +566,12 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -591,12 +597,6 @@
                 "Erdtree's Favor",
                 "Erdtree's Favor +1",
                 "Erdtree's Favor +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Radagon's Scarseal": {
@@ -616,6 +616,12 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -652,12 +658,6 @@
             "conflicts": [
                 "Radagon's Scarseal",
                 "Radagon's Soreseal"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Radagon's Soreseal": {
@@ -676,6 +676,15 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "hidden on ground floor behind wooden walls",
+                    "directions": "From the rooftop area, drop down onto wooden mid-floor, jump over to another one diagonally, drop down again behind the giant rat.",
+                    "location": "Fort Faroth",
+                    "region": "Dragonbarrow"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -712,12 +721,6 @@
             "conflicts": [
                 "Radagon's Scarseal",
                 "Radagon's Soreseal"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Starscourge Heirloom": {
@@ -735,6 +738,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -746,12 +755,6 @@
             ],
             "conflicts": [
                 "Starscourge Heirloom"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Prosthesis-Wearer Heirloom": {
@@ -769,6 +772,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -780,12 +789,6 @@
             ],
             "conflicts": [
                 "Prosthesis-Wearer Heirloom"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Stargazer Heirloom": {
@@ -803,6 +806,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -814,12 +823,6 @@
             ],
             "conflicts": [
                 "Stargazer Heirloom"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Two Fingers Heirloom": {
@@ -839,6 +842,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -850,12 +859,6 @@
             ],
             "conflicts": [
                 "Two Fingers Heirloom"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Silver Scarab": {
@@ -872,6 +875,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.2,
             "effects": [
                 {
@@ -883,12 +892,6 @@
             ],
             "conflicts": [
                 "Silver Scarab"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Gold Scarab": {
@@ -905,6 +908,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.2,
             "effects": [
                 {
@@ -916,12 +925,6 @@
             ],
             "conflicts": [
                 "Gold Scarab"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Moon of Nokstella": {
@@ -941,6 +944,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -952,12 +961,6 @@
             ],
             "conflicts": [
                 "Moon of Nokstella"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Green Turtle Talisman": {
@@ -977,6 +980,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -988,12 +997,6 @@
             ],
             "conflicts": [
                 "Green Turtle Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Stalwart Horn Charm": {
@@ -1012,6 +1015,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1024,12 +1033,6 @@
             "conflicts": [
                 "Stalwart Horn Charm",
                 "Stalwart Horn Charm +1"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Stalwart Horn Charm +1": {
@@ -1048,6 +1051,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1060,12 +1069,6 @@
             "conflicts": [
                 "Stalwart Horn Charm",
                 "Stalwart Horn Charm +1"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Immunizing Horn Charm": {
@@ -1084,6 +1087,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1096,12 +1105,6 @@
             "conflicts": [
                 "Immunizing Horn Charm",
                 "Immunizing Horn Charm +1"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Immunizing Horn Charm +1": {
@@ -1120,6 +1123,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1132,12 +1141,6 @@
             "conflicts": [
                 "Immunizing Horn Charm",
                 "Immunizing Horn Charm +1"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Clarifying Horn Charm": {
@@ -1156,6 +1159,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1168,12 +1177,6 @@
             "conflicts": [
                 "Clarifying Horn Charm",
                 "Clarifying Horn Charm +1"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Clarifying Horn Charm +1": {
@@ -1192,6 +1195,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1204,12 +1213,6 @@
             "conflicts": [
                 "Clarifying Horn Charm",
                 "Clarifying Horn Charm +1"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Prince of Death's Pustule": {
@@ -1228,6 +1231,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1240,12 +1249,6 @@
             "conflicts": [
                 "Prince of Death's Pustule",
                 "Prince of Death's Cyst"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Prince of Death's Cyst": {
@@ -1264,6 +1267,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1276,12 +1285,6 @@
             "conflicts": [
                 "Prince of Death's Pustule",
                 "Prince of Death's Cyst"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Mottled Necklace": {
@@ -1300,6 +1303,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1324,12 +1333,6 @@
             "conflicts": [
                 "Mottled Necklace",
                 "Mottled Necklace +1"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Mottled Necklace +1": {
@@ -1348,6 +1351,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1372,12 +1381,6 @@
             "conflicts": [
                 "Mottled Necklace",
                 "Mottled Necklace +1"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Bull-Goat's Talisman": {
@@ -1395,6 +1398,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -1406,12 +1415,6 @@
             ],
             "conflicts": [
                 "Bull-Goat's Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Marika's Scarseal": {
@@ -1431,6 +1434,12 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1467,12 +1476,6 @@
             "conflicts": [
                 "Marika's Scarseal",
                 "Marika's Soreseal"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Marika's Soreseal": {
@@ -1491,6 +1494,12 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1527,12 +1536,6 @@
             "conflicts": [
                 "Marika's Scarseal",
                 "Marika's Soreseal"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Warrior Jar Shard": {
@@ -1551,6 +1554,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1567,12 +1576,6 @@
             "conflicts": [
                 "Warrior Jar Shard",
                 "Shard of Alexander"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Shard of Alexander": {
@@ -1591,6 +1594,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1607,12 +1616,6 @@
             "conflicts": [
                 "Warrior Jar Shard",
                 "Shard of Alexander"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Millicent's Prosthesis": {
@@ -1632,6 +1635,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.6,
             "effects": [
                 {
@@ -1676,12 +1685,6 @@
             ],
             "conflicts": [
                 "Millicent's Prosthesis"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Magic Scorpion Charm": {
@@ -1699,6 +1702,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1718,12 +1727,6 @@
             ],
             "conflicts": [
                 "Magic Scorpion Charm"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Lightning Scorpion Charm": {
@@ -1741,6 +1744,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1760,12 +1769,6 @@
             ],
             "conflicts": [
                 "Lightning Scorpion Charm"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Fire Scorpion Charm": {
@@ -1783,6 +1786,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1802,12 +1811,6 @@
             ],
             "conflicts": [
                 "Fire Scorpion Charm"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Sacred Scorpion Charm": {
@@ -1825,6 +1828,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1844,12 +1853,6 @@
             ],
             "conflicts": [
                 "Sacred Scorpion Charm"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Red-Feathered Branchsword": {
@@ -1867,6 +1870,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.4,
             "effects": [
                 {
@@ -1882,12 +1891,6 @@
             ],
             "conflicts": [
                 "Red-Feathered Branchsword"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Ritual Sword Talisman": {
@@ -1906,6 +1909,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1921,12 +1930,6 @@
             ],
             "conflicts": [
                 "Ritual Sword Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Spear Talisman": {
@@ -1944,6 +1947,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -1958,12 +1967,6 @@
             ],
             "conflicts": [
                 "Spear Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Hammer Talisman": {
@@ -1981,6 +1984,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1992,12 +2001,6 @@
             ],
             "conflicts": [
                 "Hammer Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Winged Sword Insignia": {
@@ -2017,6 +2020,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.4,
             "effects": [
                 {
@@ -2056,12 +2065,6 @@
             "conflicts": [
                 "Winged Sword Insignia",
                 "Rotten Winged Sword Insignia"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Rotten Winged Sword Insignia": {
@@ -2081,6 +2084,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.4,
             "effects": [
                 {
@@ -2120,12 +2129,6 @@
             "conflicts": [
                 "Winged Sword Insignia",
                 "Rotten Winged Sword Insignia"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Dagger Talisman": {
@@ -2143,6 +2146,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.1,
             "effects": [
                 {
@@ -2157,12 +2166,6 @@
             ],
             "conflicts": [
                 "Dagger Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Arrow's Reach Talisman": {
@@ -2180,6 +2183,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2191,12 +2200,6 @@
             ],
             "conflicts": [
                 "Arrow's Reach Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Blue Dancer Charm": {
@@ -2216,6 +2219,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -2230,12 +2239,6 @@
             ],
             "conflicts": [
                 "Blue Dancer Charm"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Twinblade Talisman": {
@@ -2253,6 +2256,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2267,12 +2276,6 @@
             ],
             "conflicts": [
                 "Twinblade Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Axe Talisman": {
@@ -2290,6 +2293,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -2304,12 +2313,6 @@
             ],
             "conflicts": [
                 "Axe Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Lance Talisman": {
@@ -2327,6 +2330,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2341,12 +2350,6 @@
             ],
             "conflicts": [
                 "Lance Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Arrow's Sting Talisman": {
@@ -2364,6 +2367,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2380,12 +2389,6 @@
             ],
             "conflicts": [
                 "Arrow's Sting Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Lord of Blood's Exultation": {
@@ -2404,6 +2407,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -2419,12 +2428,6 @@
             ],
             "conflicts": [
                 "Lord of Blood's Exultation"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Kindred of Rot's Exultation": {
@@ -2443,6 +2446,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -2458,12 +2467,6 @@
             ],
             "conflicts": [
                 "Kindred of Rot's Exultation"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Claw Talisman": {
@@ -2481,6 +2484,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2495,12 +2504,6 @@
             ],
             "conflicts": [
                 "Claw Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Roar Medallion": {
@@ -2518,6 +2521,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2533,12 +2542,6 @@
             ],
             "conflicts": [
                 "Roar Medallion"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Curved Sword Talisman": {
@@ -2556,6 +2559,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2570,12 +2579,6 @@
             ],
             "conflicts": [
                 "Curved Sword Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Companion Jar": {
@@ -2593,6 +2596,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -2607,12 +2616,6 @@
             ],
             "conflicts": [
                 "Companion Jar"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Perfumer's Talisman": {
@@ -2630,6 +2633,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -2644,12 +2653,6 @@
             ],
             "conflicts": [
                 "Perfumer's Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Graven-School Talisman": {
@@ -2668,6 +2671,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2682,12 +2691,6 @@
             ],
             "conflicts": [
                 "Graven-School Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Graven-Mass Talisman": {
@@ -2706,6 +2709,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.0,
             "effects": [
                 {
@@ -2720,12 +2729,6 @@
             ],
             "conflicts": [
                 "Graven-Mass Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Faithful's Canvas Talisman": {
@@ -2745,6 +2748,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2759,12 +2768,6 @@
             ],
             "conflicts": [
                 "Faithful's Canvas Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Flock's Canvas Talisman": {
@@ -2784,6 +2787,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.0,
             "effects": [
                 {
@@ -2798,12 +2807,6 @@
             ],
             "conflicts": [
                 "Flock's Canvas Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Old Lord's Talisman": {
@@ -2822,6 +2825,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -2833,12 +2842,6 @@
             ],
             "conflicts": [
                 "Old Lord's Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Radagon Icon": {
@@ -2856,6 +2859,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2867,12 +2876,6 @@
             ],
             "conflicts": [
                 "Radagon Icon"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Primal Glintstone Blade": {
@@ -2891,6 +2894,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -2910,12 +2919,6 @@
             ],
             "conflicts": [
                 "Primal Glintstone Blade"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Godfrey Icon": {
@@ -2933,6 +2936,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -2948,12 +2957,6 @@
             ],
             "conflicts": [
                 "Godfrey Icon"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Dragoncrest Shield Talisman": {
@@ -2972,6 +2975,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -2987,12 +2996,6 @@
                 "Dragoncrest Shield Talisman +1",
                 "Dragoncrest Shield Talisman +2",
                 "Dragoncrest Greatshield Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Dragoncrest Shield Talisman +1": {
@@ -3011,6 +3014,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3026,12 +3035,6 @@
                 "Dragoncrest Shield Talisman +1",
                 "Dragoncrest Shield Talisman +2",
                 "Dragoncrest Greatshield Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Dragoncrest Shield Talisman +2": {
@@ -3050,6 +3053,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3065,12 +3074,6 @@
                 "Dragoncrest Shield Talisman +1",
                 "Dragoncrest Shield Talisman +2",
                 "Dragoncrest Greatshield Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Dragoncrest Greatshield Talisman": {
@@ -3089,6 +3092,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3104,12 +3113,6 @@
                 "Dragoncrest Shield Talisman +1",
                 "Dragoncrest Shield Talisman +2",
                 "Dragoncrest Greatshield Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Spelldrake Talisman": {
@@ -3128,6 +3131,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3142,12 +3151,6 @@
                 "Spelldrake Talisman",
                 "Spelldrake Talisman +1",
                 "Spelldrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Spelldrake Talisman +1": {
@@ -3166,6 +3169,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3180,12 +3189,6 @@
                 "Spelldrake Talisman",
                 "Spelldrake Talisman +1",
                 "Spelldrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Spelldrake Talisman +2": {
@@ -3204,6 +3207,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3218,12 +3227,6 @@
                 "Spelldrake Talisman",
                 "Spelldrake Talisman +1",
                 "Spelldrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Flamedrake Talisman": {
@@ -3242,6 +3245,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3256,12 +3265,6 @@
                 "Flamedrake Talisman",
                 "Flamedrake Talisman +1",
                 "Flamedrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Flamedrake Talisman +1": {
@@ -3280,6 +3283,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3294,12 +3303,6 @@
                 "Flamedrake Talisman",
                 "Flamedrake Talisman +1",
                 "Flamedrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Flamedrake Talisman +2": {
@@ -3318,6 +3321,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3332,12 +3341,6 @@
                 "Flamedrake Talisman",
                 "Flamedrake Talisman +1",
                 "Flamedrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Boltdrake Talisman": {
@@ -3356,6 +3359,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3370,12 +3379,6 @@
                 "Boltdrake Talisman",
                 "Boltdrake Talisman +1",
                 "Boltdrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Boltdrake Talisman +1": {
@@ -3394,6 +3397,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3408,12 +3417,6 @@
                 "Boltdrake Talisman",
                 "Boltdrake Talisman +1",
                 "Boltdrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Boltdrake Talisman +2": {
@@ -3432,6 +3435,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3446,12 +3455,6 @@
                 "Boltdrake Talisman",
                 "Boltdrake Talisman +1",
                 "Boltdrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Haligdrake Talisman": {
@@ -3470,6 +3473,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3484,12 +3493,6 @@
                 "Haligdrake Talisman",
                 "Haligdrake Talisman +1",
                 "Haligdrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Haligdrake Talisman +1": {
@@ -3508,6 +3511,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3522,12 +3531,6 @@
                 "Haligdrake Talisman",
                 "Haligdrake Talisman +1",
                 "Haligdrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Haligdrake Talisman +2": {
@@ -3546,6 +3549,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3560,12 +3569,6 @@
                 "Haligdrake Talisman",
                 "Haligdrake Talisman +1",
                 "Haligdrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Pearldrake Talisman": {
@@ -3584,6 +3587,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3598,12 +3607,6 @@
                 "Pearldrake Talisman",
                 "Pearldrake Talisman +1",
                 "Pearldrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Pearldrake Talisman +1": {
@@ -3622,6 +3625,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3636,12 +3645,6 @@
                 "Pearldrake Talisman",
                 "Pearldrake Talisman +1",
                 "Pearldrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Pearldrake Talisman +2": {
@@ -3660,6 +3663,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3674,12 +3683,6 @@
                 "Pearldrake Talisman",
                 "Pearldrake Talisman +1",
                 "Pearldrake Talisman +2"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Crucible Scale Talisman": {
@@ -3699,6 +3702,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.1,
             "effects": [
                 {
@@ -3713,12 +3722,6 @@
             ],
             "conflicts": [
                 "Crucible Scale Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Crucible Feather Talisman": {
@@ -3738,6 +3741,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3750,12 +3759,6 @@
             ],
             "conflicts": [
                 "Crucible Feather Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Blue-Feathered Branchsword": {
@@ -3773,6 +3776,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.1,
             "effects": [
                 {
@@ -3788,12 +3797,6 @@
             ],
             "conflicts": [
                 "Blue-Feathered Branchsword"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Ritual Shield Talisman": {
@@ -3812,6 +3815,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3827,12 +3836,6 @@
             ],
             "conflicts": [
                 "Ritual Shield Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Greatshield Talisman": {
@@ -3850,6 +3853,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3861,12 +3870,6 @@
             ],
             "conflicts": [
                 "Greatshield Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Crucible Knot Talisman": {
@@ -3886,6 +3889,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -3897,12 +3906,6 @@
             ],
             "conflicts": [
                 "Crucible Knot Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Crimson Seed Talisman": {
@@ -3920,6 +3923,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3931,12 +3940,6 @@
             ],
             "conflicts": [
                 "Crimson Seed Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Cerulean Seed Talisman": {
@@ -3954,6 +3957,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3965,12 +3974,6 @@
             ],
             "conflicts": [
                 "Cerulean Seed Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Blessed Dew Talisman": {
@@ -3989,6 +3992,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -4001,12 +4010,6 @@
             ],
             "conflicts": [
                 "Blessed Dew Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Taker's Cameo": {
@@ -4025,6 +4028,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.0,
             "effects": [
                 {
@@ -4050,12 +4059,6 @@
             ],
             "conflicts": [
                 "Taker's Cameo"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Godskin Swaddling Cloth": {
@@ -4074,6 +4077,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -4099,12 +4108,6 @@
             ],
             "conflicts": [
                 "Godskin Swaddling Cloth"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Assassin's Crimson Dagger": {
@@ -4122,6 +4125,12 @@
             "price_sold": 1500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -4147,12 +4156,6 @@
             ],
             "conflicts": [
                 "Assassin's Crimson Dagger"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Assassin's Cerulean Dagger": {
@@ -4170,6 +4173,12 @@
             "price_sold": 1500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -4185,12 +4194,6 @@
             ],
             "conflicts": [
                 "Assassin's Cerulean Dagger"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Crepus's Vial": {
@@ -4209,6 +4212,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -4220,12 +4229,6 @@
             ],
             "conflicts": [
                 "Crepus's Vial"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Concealing Veil": {
@@ -4244,6 +4247,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -4258,12 +4267,6 @@
             ],
             "conflicts": [
                 "Concealing Veil"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Carian Filigreed Crest": {
@@ -4282,6 +4285,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -4293,12 +4302,6 @@
             ],
             "conflicts": [
                 "Carian Filigreed Crest"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Longtail Cat Talisman": {
@@ -4317,6 +4320,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -4328,12 +4337,6 @@
             ],
             "conflicts": [
                 "Longtail Cat Talisman"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Shabriri's Woe": {
@@ -4353,6 +4356,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -4364,12 +4373,6 @@
             ],
             "conflicts": [
                 "Shabriri's Woe"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Daedicar's Woe": {
@@ -4389,6 +4392,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -4400,12 +4409,6 @@
             ],
             "conflicts": [
                 "Daedicar's Woe"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Sacrificial Twig": {
@@ -4424,6 +4427,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.0,
             "effects": [
                 {
@@ -4441,12 +4450,6 @@
             ],
             "conflicts": [
                 "Sacrificial Twig"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Furled Finger's Trick-Mirror": {
@@ -4465,6 +4468,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -4477,12 +4486,6 @@
             "conflicts": [
                 "Furled Finger's Trick-Mirror",
                 "Host's Trick-Mirror"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Host's Trick-Mirror": {
@@ -4501,6 +4504,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -4513,12 +4522,6 @@
             "conflicts": [
                 "Furled Finger's Trick-Mirror",
                 "Host's Trick-Mirror"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Entwining Umbilical Cord": {
@@ -4534,6 +4537,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -4545,12 +4554,6 @@
             ],
             "conflicts": [
                 "Entwining Umbilical Cord"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         },
         "Ancestral Spirit's Horn": {
@@ -4569,6 +4572,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.2,
             "effects": [
                 {
@@ -4584,12 +4593,6 @@
             ],
             "conflicts": [
                 "Ancestral Spirit's Horn"
-            ],
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
             ]
         }
     },

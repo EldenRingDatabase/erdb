@@ -17,6 +17,14 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "dropped by Lion Guardian",
+                    "location": "Fort Gael",
+                    "region": "Caelid"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword",
                 "Greatsword",
@@ -48,13 +56,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 100,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 100
         },
         "Ash of War: Impaling Thrust": {
             "full_hex_id": "20002774",
@@ -73,6 +75,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -102,13 +110,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 101,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 101
         },
         "Ash of War: Piercing Fang": {
             "full_hex_id": "200027D8",
@@ -126,6 +128,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword",
                 "Greatsword",
@@ -153,13 +161,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 102,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 102
         },
         "Ash of War: Spinning Slash": {
             "full_hex_id": "2000283C",
@@ -177,6 +179,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -208,13 +216,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 103,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 103
         },
         "Ash of War: Charge Forth": {
             "full_hex_id": "20002904",
@@ -232,6 +234,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Twinblade",
                 "Heavy Thrusting Sword",
@@ -255,13 +263,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 105,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 105
         },
         "Ash of War: Stamp (Upward Cut)": {
             "full_hex_id": "20002968",
@@ -279,6 +281,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Greatsword",
                 "Colossal Sword",
@@ -307,13 +315,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 106,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 106
         },
         "Ash of War: Stamp (Sweep)": {
             "full_hex_id": "200029CC",
@@ -331,6 +333,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Greatsword",
                 "Colossal Sword",
@@ -359,13 +367,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 107,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 107
         },
         "Ash of War: Blood Tax": {
             "full_hex_id": "20002A30",
@@ -384,6 +386,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -406,13 +414,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 108,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 108
         },
         "Ash of War: Repeating Thrust": {
             "full_hex_id": "20002A94",
@@ -431,6 +433,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -459,13 +467,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 109,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 109
         },
         "Ash of War: Wild Strikes": {
             "full_hex_id": "20002AF8",
@@ -483,6 +485,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Greatsword",
                 "Curved Sword",
@@ -509,13 +517,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 110,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 110
         },
         "Ash of War: Spinning Strikes": {
             "full_hex_id": "20002B5C",
@@ -533,6 +535,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Spear",
                 "Halberd",
@@ -554,13 +562,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 111,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 111
         },
         "Ash of War: Double Slash": {
             "full_hex_id": "20002BC0",
@@ -578,6 +580,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -605,13 +613,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 112,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 112
         },
         "Ash of War: Prelate's Charge": {
             "full_hex_id": "20002C24",
@@ -629,6 +631,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Greataxe",
                 "Great Hammer",
@@ -643,13 +651,7 @@
                 "Fire",
                 "Flame Art"
             ],
-            "skill_id": 113,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 113
         },
         "Ash of War: Unsheathe": {
             "full_hex_id": "20002C88",
@@ -667,6 +669,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Katana"
             ],
@@ -686,13 +694,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 114,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 114
         },
         "Ash of War: Square Off": {
             "full_hex_id": "20002CEC",
@@ -710,6 +712,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword"
             ],
@@ -729,13 +737,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 115,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 115
         },
         "Ash of War: Giant Hunt": {
             "full_hex_id": "20002D50",
@@ -753,6 +755,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Greatsword",
                 "Colossal Sword",
@@ -778,13 +786,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 116,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 116
         },
         "Ash of War: Loretta's Slash": {
             "full_hex_id": "20002E18",
@@ -802,6 +804,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Twinblade",
                 "Spear",
@@ -818,13 +826,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 118,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 118
         },
         "Ash of War: Poison Moth Flight": {
             "full_hex_id": "20002E7C",
@@ -842,6 +844,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -859,13 +867,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 119,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 119
         },
         "Ash of War: Spinning Weapon": {
             "full_hex_id": "20002EE0",
@@ -883,6 +885,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -907,13 +915,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 120,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 120
         },
         "Ash of War: Storm Assault": {
             "full_hex_id": "20002FA8",
@@ -931,6 +933,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Twinblade",
                 "Heavy Thrusting Sword",
@@ -954,13 +962,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 122,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 122
         },
         "Ash of War: Stormcaller": {
             "full_hex_id": "2000300C",
@@ -978,6 +980,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword",
                 "Greatsword",
@@ -1011,13 +1019,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 123,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 123
         },
         "Ash of War: Sword Dance": {
             "full_hex_id": "20003070",
@@ -1035,6 +1037,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1065,13 +1073,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 124,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 124
         },
         "Ash of War: Glintblade Phalanx": {
             "full_hex_id": "20004E20",
@@ -1089,6 +1091,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1112,13 +1120,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 200,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 200
         },
         "Ash of War: Sacred Blade": {
             "full_hex_id": "20004E84",
@@ -1136,6 +1138,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1167,13 +1175,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 201,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 201
         },
         "Ash of War: Ice Spear": {
             "full_hex_id": "20004EE8",
@@ -1191,6 +1193,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Twinblade",
                 "Spear",
@@ -1206,13 +1214,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 202,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 202
         },
         "Ash of War: Glintstone Pebble": {
             "full_hex_id": "20004F4C",
@@ -1230,6 +1232,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1253,13 +1261,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 203,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 203
         },
         "Ash of War: Bloody Slash": {
             "full_hex_id": "20004FB0",
@@ -1277,6 +1279,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1298,13 +1306,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 204,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 204
         },
         "Ash of War: Lifesteal Fist": {
             "full_hex_id": "20005014",
@@ -1323,6 +1325,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Fist",
                 "Claw"
@@ -1337,13 +1345,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 205,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 205
         },
         "Ash of War: Eruption": {
             "full_hex_id": "200050DC",
@@ -1361,6 +1363,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Greatsword",
                 "Colossal Sword",
@@ -1379,13 +1387,7 @@
                 "Fire",
                 "Flame Art"
             ],
-            "skill_id": 207,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 207
         },
         "Ash of War: Prayerful Strike": {
             "full_hex_id": "20005140",
@@ -1403,6 +1405,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Axe",
                 "Greataxe",
@@ -1420,13 +1428,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 208,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 208
         },
         "Ash of War: Gravitas": {
             "full_hex_id": "200051A4",
@@ -1444,6 +1446,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword",
                 "Greatsword",
@@ -1474,13 +1482,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 209,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 209
         },
         "Ash of War: Storm Blade": {
             "full_hex_id": "20005208",
@@ -1498,6 +1500,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1524,13 +1532,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 210,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 210
         },
         "Ash of War: Earthshaker": {
             "full_hex_id": "200052D0",
@@ -1548,6 +1550,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Colossal Sword",
                 "Greataxe",
@@ -1571,13 +1579,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 212,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 212
         },
         "Ash of War: Golden Land": {
             "full_hex_id": "20005334",
@@ -1595,6 +1597,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Colossal Sword",
                 "Greataxe",
@@ -1611,13 +1619,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 213,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 213
         },
         "Ash of War: Flaming Strike": {
             "full_hex_id": "20005398",
@@ -1635,6 +1637,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1666,13 +1674,7 @@
                 "Fire",
                 "Flame Art"
             ],
-            "skill_id": 214,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 214
         },
         "Ash of War: Thunderbolt": {
             "full_hex_id": "20005460",
@@ -1690,6 +1692,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1724,13 +1732,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 216,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 216
         },
         "Ash of War: Lightning Slash": {
             "full_hex_id": "200054C4",
@@ -1748,6 +1750,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1775,13 +1783,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 217,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 217
         },
         "Ash of War: Carian Grandeur": {
             "full_hex_id": "20005528",
@@ -1799,6 +1801,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1819,13 +1827,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 218,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 218
         },
         "Ash of War: Carian Greatsword": {
             "full_hex_id": "2000558C",
@@ -1843,6 +1845,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1863,13 +1871,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 219,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 219
         },
         "Ash of War: Vacuum Slice": {
             "full_hex_id": "200055F0",
@@ -1887,6 +1889,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -1917,13 +1925,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 220,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 220
         },
         "Ash of War: Black Flame Tornado": {
             "full_hex_id": "20005654",
@@ -1941,6 +1943,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Twinblade",
                 "Spear",
@@ -1957,13 +1965,7 @@
                 "Fire",
                 "Flame Art"
             ],
-            "skill_id": 221,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 221
         },
         "Ash of War: Sacred Ring of Light": {
             "full_hex_id": "200056B8",
@@ -1981,6 +1983,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Spear",
                 "Halberd",
@@ -1995,13 +2003,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 222,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 222
         },
         "Ash of War: Blood Blade": {
             "full_hex_id": "20005780",
@@ -2019,6 +2021,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -2037,13 +2045,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 224,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 224
         },
         "Ash of War: Phantom Slash": {
             "full_hex_id": "200057E4",
@@ -2061,6 +2063,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Twinblade",
                 "Spear",
@@ -2083,13 +2091,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 225,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 225
         },
         "Ash of War: Spectral Lance": {
             "full_hex_id": "20005848",
@@ -2107,6 +2109,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Spear",
                 "Great Spear",
@@ -2122,13 +2130,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 226,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 226
         },
         "Ash of War: Chilling Mist": {
             "full_hex_id": "200058AC",
@@ -2146,6 +2148,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -2177,13 +2185,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 227,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 227
         },
         "Ash of War: Poisonous Mist": {
             "full_hex_id": "20005910",
@@ -2201,6 +2203,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -2233,13 +2241,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 228,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 228
         },
         "Ash of War: Shield Bash": {
             "full_hex_id": "20007530",
@@ -2257,6 +2259,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield",
@@ -2278,13 +2286,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 300,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 300
         },
         "Ash of War: Barricade Shield": {
             "full_hex_id": "20007594",
@@ -2302,6 +2304,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield",
@@ -2323,13 +2331,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 301,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 301
         },
         "Ash of War: Parry": {
             "full_hex_id": "200075F8",
@@ -2347,6 +2349,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Curved Sword",
@@ -2372,13 +2380,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 302,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 302
         },
         "Ash of War: Carian Retaliation": {
             "full_hex_id": "20007724",
@@ -2396,6 +2398,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield"
@@ -2409,13 +2417,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 305,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 305
         },
         "Ash of War: Storm Wall": {
             "full_hex_id": "20007788",
@@ -2433,6 +2435,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield"
@@ -2453,13 +2461,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 306,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 306
         },
         "Ash of War: Golden Parry": {
             "full_hex_id": "200077EC",
@@ -2477,6 +2479,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield"
@@ -2490,13 +2498,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 307,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 307
         },
         "Ash of War: Shield Crash": {
             "full_hex_id": "20007850",
@@ -2514,6 +2516,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield",
@@ -2535,13 +2543,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 308,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 308
         },
         "Ash of War: No Skill": {
             "full_hex_id": "200078B4",
@@ -2559,6 +2561,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield",
@@ -2581,13 +2589,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 10,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 10
         },
         "Ash of War: Thops's Barrier": {
             "full_hex_id": "20007918",
@@ -2605,6 +2607,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield"
@@ -2618,13 +2626,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 309,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 309
         },
         "Ash of War: Through and Through": {
             "full_hex_id": "20009C40",
@@ -2642,6 +2644,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Greatbow"
             ],
@@ -2649,13 +2657,7 @@
             "affinities": [
                 "Standard"
             ],
-            "skill_id": 400,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 400
         },
         "Ash of War: Barrage": {
             "full_hex_id": "20009CA4",
@@ -2673,6 +2675,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Light Bow"
             ],
@@ -2680,13 +2688,7 @@
             "affinities": [
                 "Standard"
             ],
-            "skill_id": 401,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 401
         },
         "Ash of War: Mighty Shot": {
             "full_hex_id": "20009D08",
@@ -2704,6 +2706,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Light Bow",
                 "Bow"
@@ -2712,13 +2720,7 @@
             "affinities": [
                 "Standard"
             ],
-            "skill_id": 402,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 402
         },
         "Ash of War: Enchanted Shot": {
             "full_hex_id": "20009DD0",
@@ -2736,6 +2738,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Light Bow",
                 "Bow"
@@ -2744,13 +2752,7 @@
             "affinities": [
                 "Standard"
             ],
-            "skill_id": 404,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 404
         },
         "Ash of War: Sky Shot": {
             "full_hex_id": "20009E34",
@@ -2768,6 +2770,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Light Bow",
                 "Bow"
@@ -2776,13 +2784,7 @@
             "affinities": [
                 "Standard"
             ],
-            "skill_id": 405,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 405
         },
         "Ash of War: Rain of Arrows": {
             "full_hex_id": "20009E98",
@@ -2800,6 +2802,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Light Bow",
                 "Bow",
@@ -2809,13 +2817,7 @@
             "affinities": [
                 "Standard"
             ],
-            "skill_id": 406,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 406
         },
         "Ash of War: Hoarfrost Stomp": {
             "full_hex_id": "2000C3B4",
@@ -2833,6 +2835,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -2867,13 +2875,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 501,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 501
         },
         "Ash of War: Storm Stomp": {
             "full_hex_id": "2000C418",
@@ -2891,6 +2893,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -2932,13 +2940,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 502,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 502
         },
         "Ash of War: Kick": {
             "full_hex_id": "2000C47C",
@@ -2956,6 +2958,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -2997,13 +3005,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 503,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 503
         },
         "Ash of War: Lightning Ram": {
             "full_hex_id": "2000C4E0",
@@ -3021,6 +3023,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3055,13 +3063,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 504,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 504
         },
         "Ash of War: Flame of the Redmanes": {
             "full_hex_id": "2000C544",
@@ -3079,6 +3081,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3113,13 +3121,7 @@
                 "Fire",
                 "Flame Art"
             ],
-            "skill_id": 505,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 505
         },
         "Ash of War: Ground Slam": {
             "full_hex_id": "2000C5A8",
@@ -3137,6 +3139,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3178,13 +3186,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 506,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 506
         },
         "Ash of War: Golden Slam": {
             "full_hex_id": "2000C60C",
@@ -3202,6 +3204,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3236,13 +3244,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 507,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 507
         },
         "Ash of War: Waves of Darkness": {
             "full_hex_id": "2000C670",
@@ -3260,6 +3262,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Colossal Sword",
                 "Greataxe",
@@ -3276,13 +3284,7 @@
                 "Magic",
                 "Cold"
             ],
-            "skill_id": 508,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 508
         },
         "Ash of War: Hoarah Loux's Earthshaker": {
             "full_hex_id": "2000C6D4",
@@ -3300,6 +3302,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3341,13 +3349,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 509,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 509
         },
         "Ash of War: Determination": {
             "full_hex_id": "2000EA60",
@@ -3365,6 +3367,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3406,13 +3414,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 600,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 600
         },
         "Ash of War: Royal Knight's Resolve": {
             "full_hex_id": "2000EAC4",
@@ -3430,6 +3432,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3471,13 +3479,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 601,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 601
         },
         "Ash of War: Assassin's Gambit": {
             "full_hex_id": "2000EB28",
@@ -3495,6 +3497,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3512,13 +3520,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 602,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 602
         },
         "Ash of War: Golden Vow": {
             "full_hex_id": "2000EB8C",
@@ -3536,6 +3538,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3570,13 +3578,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 603,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 603
         },
         "Ash of War: Sacred Order": {
             "full_hex_id": "2000EBF0",
@@ -3594,6 +3596,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3628,13 +3636,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 604,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 604
         },
         "Ash of War: Shared Order": {
             "full_hex_id": "2000EC54",
@@ -3652,6 +3654,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3686,13 +3694,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 605,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 605
         },
         "Ash of War: Seppuku": {
             "full_hex_id": "2000ECB8",
@@ -3710,6 +3712,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword",
                 "Greatsword",
@@ -3733,13 +3741,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 606,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 606
         },
         "Ash of War: Cragblade": {
             "full_hex_id": "2000ED1C",
@@ -3757,6 +3759,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3797,13 +3805,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 607,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 607
         },
         "Ash of War: Barbaric Roar": {
             "full_hex_id": "2000FDE8",
@@ -3821,6 +3823,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword",
                 "Greatsword",
@@ -3858,13 +3866,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 650,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 650
         },
         "Ash of War: War Cry": {
             "full_hex_id": "2000FE4C",
@@ -3882,6 +3884,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword",
                 "Greatsword",
@@ -3919,13 +3927,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 651,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 651
         },
         "Ash of War: Beast's Roar": {
             "full_hex_id": "2000FEB0",
@@ -3943,6 +3945,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -3984,13 +3992,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 652,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 652
         },
         "Ash of War: Troll's Roar": {
             "full_hex_id": "2000FF14",
@@ -4008,6 +4010,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Greatsword",
                 "Colossal Sword",
@@ -4033,13 +4041,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 653,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 653
         },
         "Ash of War: Braggart's Roar": {
             "full_hex_id": "2000FF78",
@@ -4057,6 +4059,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Straight Sword",
                 "Greatsword",
@@ -4094,13 +4102,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 654,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 654
         },
         "Ash of War: Endure": {
             "full_hex_id": "20011170",
@@ -4118,6 +4120,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -4159,13 +4167,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 700,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 700
         },
         "Ash of War: Vow of the Indomitable": {
             "full_hex_id": "200111D4",
@@ -4183,6 +4185,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield",
@@ -4197,13 +4205,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 701,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 701
         },
         "Ash of War: Holy Ground": {
             "full_hex_id": "20011238",
@@ -4221,6 +4223,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Small Shield",
                 "Medium Shield",
@@ -4235,13 +4243,7 @@
                 "Lightning",
                 "Sacred"
             ],
-            "skill_id": 702,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 702
         },
         "Ash of War: Quickstep": {
             "full_hex_id": "20013880",
@@ -4260,6 +4262,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -4301,13 +4309,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 800,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 800
         },
         "Ash of War: Bloodhound's Step": {
             "full_hex_id": "200138E4",
@@ -4325,6 +4327,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -4366,13 +4374,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 801,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 801
         },
         "Ash of War: Raptor of the Mists": {
             "full_hex_id": "20013948",
@@ -4390,6 +4392,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -4431,13 +4439,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 802,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 802
         },
         "Ash of War: White Shadow's Lure": {
             "full_hex_id": "20014C08",
@@ -4455,6 +4457,12 @@
             "price_sold": 300,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "classes": [
                 "Dagger",
                 "Straight Sword",
@@ -4490,13 +4498,7 @@
                 "Blood",
                 "Occult"
             ],
-            "skill_id": 850,
-            "remarks": [],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ]
+            "skill_id": 850
         }
     },
     "$schema": "../schema/ashes-of-war.schema.json"

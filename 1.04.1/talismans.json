@@ -17,6 +17,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -30,13 +36,7 @@
                 "Crimson Amber Medallion",
                 "Crimson Amber Medallion +1",
                 "Crimson Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Crimson Amber Medallion +1": {
             "full_hex_id": "200003E9",
@@ -55,6 +55,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -68,13 +74,7 @@
                 "Crimson Amber Medallion",
                 "Crimson Amber Medallion +1",
                 "Crimson Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Crimson Amber Medallion +2": {
             "full_hex_id": "200003EA",
@@ -93,6 +93,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -106,13 +112,7 @@
                 "Crimson Amber Medallion",
                 "Crimson Amber Medallion +1",
                 "Crimson Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Cerulean Amber Medallion": {
             "full_hex_id": "200003F2",
@@ -131,6 +131,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -144,13 +150,7 @@
                 "Cerulean Amber Medallion",
                 "Cerulean Amber Medallion +1",
                 "Cerulean Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Cerulean Amber Medallion +1": {
             "full_hex_id": "200003F3",
@@ -169,6 +169,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -182,13 +188,7 @@
                 "Cerulean Amber Medallion",
                 "Cerulean Amber Medallion +1",
                 "Cerulean Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Cerulean Amber Medallion +2": {
             "full_hex_id": "200003F4",
@@ -207,6 +207,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -220,13 +226,7 @@
                 "Cerulean Amber Medallion",
                 "Cerulean Amber Medallion +1",
                 "Cerulean Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Viridian Amber Medallion": {
             "full_hex_id": "200003FC",
@@ -245,6 +245,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -258,13 +264,7 @@
                 "Viridian Amber Medallion",
                 "Viridian Amber Medallion +1",
                 "Viridian Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Viridian Amber Medallion +1": {
             "full_hex_id": "200003FD",
@@ -283,6 +283,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -296,13 +302,7 @@
                 "Viridian Amber Medallion",
                 "Viridian Amber Medallion +1",
                 "Viridian Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Viridian Amber Medallion +2": {
             "full_hex_id": "200003FE",
@@ -321,6 +321,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.3,
             "effects": [
                 {
@@ -334,13 +340,7 @@
                 "Viridian Amber Medallion",
                 "Viridian Amber Medallion +1",
                 "Viridian Amber Medallion +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Arsenal Charm": {
             "full_hex_id": "20000406",
@@ -357,6 +357,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -370,13 +376,7 @@
                 "Arsenal Charm",
                 "Arsenal Charm +1",
                 "Great-Jar's Arsenal"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Arsenal Charm +1": {
             "full_hex_id": "20000407",
@@ -393,6 +393,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -406,13 +412,7 @@
                 "Arsenal Charm",
                 "Arsenal Charm +1",
                 "Great-Jar's Arsenal"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Great-Jar's Arsenal": {
             "full_hex_id": "20000408",
@@ -430,6 +430,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -443,13 +449,7 @@
                 "Arsenal Charm",
                 "Arsenal Charm +1",
                 "Great-Jar's Arsenal"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Erdtree's Favor": {
             "full_hex_id": "20000410",
@@ -466,6 +466,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -494,13 +500,7 @@
                 "Erdtree's Favor",
                 "Erdtree's Favor +1",
                 "Erdtree's Favor +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Erdtree's Favor +1": {
             "full_hex_id": "20000411",
@@ -517,6 +517,12 @@
             "price_sold": 1500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -542,13 +548,7 @@
                 "Erdtree's Favor",
                 "Erdtree's Favor +1",
                 "Erdtree's Favor +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Erdtree's Favor +2": {
             "full_hex_id": "20000412",
@@ -566,6 +566,12 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.5,
             "effects": [
                 {
@@ -591,13 +597,7 @@
                 "Erdtree's Favor",
                 "Erdtree's Favor +1",
                 "Erdtree's Favor +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Radagon's Scarseal": {
             "full_hex_id": "2000041A",
@@ -616,6 +616,12 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -652,13 +658,7 @@
             "conflicts": [
                 "Radagon's Scarseal",
                 "Radagon's Soreseal"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Radagon's Soreseal": {
             "full_hex_id": "2000041B",
@@ -676,6 +676,15 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "hidden on ground floor behind wooden walls",
+                    "directions": "From the rooftop area, drop down onto wooden mid-floor, jump over to another one diagonally, drop down again behind the giant rat.",
+                    "location": "Fort Faroth",
+                    "region": "Dragonbarrow"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -712,13 +721,7 @@
             "conflicts": [
                 "Radagon's Scarseal",
                 "Radagon's Soreseal"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Starscourge Heirloom": {
             "full_hex_id": "20000424",
@@ -735,6 +738,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -746,13 +755,7 @@
             ],
             "conflicts": [
                 "Starscourge Heirloom"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Prosthesis-Wearer Heirloom": {
             "full_hex_id": "2000042E",
@@ -769,6 +772,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -780,13 +789,7 @@
             ],
             "conflicts": [
                 "Prosthesis-Wearer Heirloom"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Stargazer Heirloom": {
             "full_hex_id": "20000438",
@@ -803,6 +806,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -814,13 +823,7 @@
             ],
             "conflicts": [
                 "Stargazer Heirloom"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Two Fingers Heirloom": {
             "full_hex_id": "20000442",
@@ -839,6 +842,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -850,13 +859,7 @@
             ],
             "conflicts": [
                 "Two Fingers Heirloom"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Silver Scarab": {
             "full_hex_id": "2000044C",
@@ -872,6 +875,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.2,
             "effects": [
                 {
@@ -883,13 +892,7 @@
             ],
             "conflicts": [
                 "Silver Scarab"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Gold Scarab": {
             "full_hex_id": "20000456",
@@ -905,6 +908,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.2,
             "effects": [
                 {
@@ -916,13 +925,7 @@
             ],
             "conflicts": [
                 "Gold Scarab"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Moon of Nokstella": {
             "full_hex_id": "20000474",
@@ -941,6 +944,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -952,13 +961,7 @@
             ],
             "conflicts": [
                 "Moon of Nokstella"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Green Turtle Talisman": {
             "full_hex_id": "2000047E",
@@ -977,6 +980,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -988,13 +997,7 @@
             ],
             "conflicts": [
                 "Green Turtle Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Stalwart Horn Charm": {
             "full_hex_id": "20000488",
@@ -1012,6 +1015,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1024,13 +1033,7 @@
             "conflicts": [
                 "Stalwart Horn Charm",
                 "Stalwart Horn Charm +1"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Stalwart Horn Charm +1": {
             "full_hex_id": "20000489",
@@ -1048,6 +1051,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1060,13 +1069,7 @@
             "conflicts": [
                 "Stalwart Horn Charm",
                 "Stalwart Horn Charm +1"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Immunizing Horn Charm": {
             "full_hex_id": "20000492",
@@ -1084,6 +1087,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1096,13 +1105,7 @@
             "conflicts": [
                 "Immunizing Horn Charm",
                 "Immunizing Horn Charm +1"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Immunizing Horn Charm +1": {
             "full_hex_id": "20000493",
@@ -1120,6 +1123,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1132,13 +1141,7 @@
             "conflicts": [
                 "Immunizing Horn Charm",
                 "Immunizing Horn Charm +1"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Clarifying Horn Charm": {
             "full_hex_id": "2000049C",
@@ -1156,6 +1159,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1168,13 +1177,7 @@
             "conflicts": [
                 "Clarifying Horn Charm",
                 "Clarifying Horn Charm +1"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Clarifying Horn Charm +1": {
             "full_hex_id": "2000049D",
@@ -1192,6 +1195,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1204,13 +1213,7 @@
             "conflicts": [
                 "Clarifying Horn Charm",
                 "Clarifying Horn Charm +1"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Prince of Death's Pustule": {
             "full_hex_id": "200004A6",
@@ -1228,6 +1231,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1240,13 +1249,7 @@
             "conflicts": [
                 "Prince of Death's Pustule",
                 "Prince of Death's Cyst"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Prince of Death's Cyst": {
             "full_hex_id": "200004A7",
@@ -1264,6 +1267,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -1276,13 +1285,7 @@
             "conflicts": [
                 "Prince of Death's Pustule",
                 "Prince of Death's Cyst"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Mottled Necklace": {
             "full_hex_id": "200004B0",
@@ -1300,6 +1303,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1324,13 +1333,7 @@
             "conflicts": [
                 "Mottled Necklace",
                 "Mottled Necklace +1"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Mottled Necklace +1": {
             "full_hex_id": "200004B1",
@@ -1348,6 +1351,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1372,13 +1381,7 @@
             "conflicts": [
                 "Mottled Necklace",
                 "Mottled Necklace +1"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Bull-Goat's Talisman": {
             "full_hex_id": "200004BA",
@@ -1395,6 +1398,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -1406,13 +1415,7 @@
             ],
             "conflicts": [
                 "Bull-Goat's Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Marika's Scarseal": {
             "full_hex_id": "200004C4",
@@ -1431,6 +1434,12 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1467,13 +1476,7 @@
             "conflicts": [
                 "Marika's Scarseal",
                 "Marika's Soreseal"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Marika's Soreseal": {
             "full_hex_id": "200004C5",
@@ -1491,6 +1494,12 @@
             "price_sold": 3000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1527,13 +1536,7 @@
             "conflicts": [
                 "Marika's Scarseal",
                 "Marika's Soreseal"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Warrior Jar Shard": {
             "full_hex_id": "200004CE",
@@ -1551,6 +1554,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1567,13 +1576,7 @@
             "conflicts": [
                 "Warrior Jar Shard",
                 "Shard of Alexander"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Shard of Alexander": {
             "full_hex_id": "200004CF",
@@ -1591,6 +1594,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1607,13 +1616,7 @@
             "conflicts": [
                 "Warrior Jar Shard",
                 "Shard of Alexander"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Millicent's Prosthesis": {
             "full_hex_id": "200004E2",
@@ -1632,6 +1635,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.6,
             "effects": [
                 {
@@ -1676,13 +1685,7 @@
             ],
             "conflicts": [
                 "Millicent's Prosthesis"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Magic Scorpion Charm": {
             "full_hex_id": "200007D0",
@@ -1699,6 +1702,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1718,13 +1727,7 @@
             ],
             "conflicts": [
                 "Magic Scorpion Charm"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Lightning Scorpion Charm": {
             "full_hex_id": "200007DA",
@@ -1741,6 +1744,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1760,13 +1769,7 @@
             ],
             "conflicts": [
                 "Lightning Scorpion Charm"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Fire Scorpion Charm": {
             "full_hex_id": "200007E4",
@@ -1783,6 +1786,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1802,13 +1811,7 @@
             ],
             "conflicts": [
                 "Fire Scorpion Charm"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Sacred Scorpion Charm": {
             "full_hex_id": "200007EE",
@@ -1825,6 +1828,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -1844,13 +1853,7 @@
             ],
             "conflicts": [
                 "Sacred Scorpion Charm"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Red-Feathered Branchsword": {
             "full_hex_id": "200007F8",
@@ -1867,6 +1870,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.4,
             "effects": [
                 {
@@ -1882,13 +1891,7 @@
             ],
             "conflicts": [
                 "Red-Feathered Branchsword"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Ritual Sword Talisman": {
             "full_hex_id": "20000802",
@@ -1906,6 +1909,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1921,13 +1930,7 @@
             ],
             "conflicts": [
                 "Ritual Sword Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Spear Talisman": {
             "full_hex_id": "2000080C",
@@ -1944,6 +1947,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -1958,13 +1967,7 @@
             ],
             "conflicts": [
                 "Spear Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Hammer Talisman": {
             "full_hex_id": "20000816",
@@ -1981,6 +1984,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -1992,13 +2001,7 @@
             ],
             "conflicts": [
                 "Hammer Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Winged Sword Insignia": {
             "full_hex_id": "20000820",
@@ -2017,6 +2020,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.4,
             "effects": [
                 {
@@ -2056,13 +2065,7 @@
             "conflicts": [
                 "Winged Sword Insignia",
                 "Rotten Winged Sword Insignia"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Rotten Winged Sword Insignia": {
             "full_hex_id": "20000821",
@@ -2081,6 +2084,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.4,
             "effects": [
                 {
@@ -2120,13 +2129,7 @@
             "conflicts": [
                 "Winged Sword Insignia",
                 "Rotten Winged Sword Insignia"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Dagger Talisman": {
             "full_hex_id": "2000082A",
@@ -2143,6 +2146,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.1,
             "effects": [
                 {
@@ -2157,13 +2166,7 @@
             ],
             "conflicts": [
                 "Dagger Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Arrow's Reach Talisman": {
             "full_hex_id": "20000834",
@@ -2180,6 +2183,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2191,13 +2200,7 @@
             ],
             "conflicts": [
                 "Arrow's Reach Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Blue Dancer Charm": {
             "full_hex_id": "2000083E",
@@ -2216,6 +2219,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -2230,13 +2239,7 @@
             ],
             "conflicts": [
                 "Blue Dancer Charm"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Twinblade Talisman": {
             "full_hex_id": "20000848",
@@ -2253,6 +2256,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2267,13 +2276,7 @@
             ],
             "conflicts": [
                 "Twinblade Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Axe Talisman": {
             "full_hex_id": "20000852",
@@ -2290,6 +2293,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -2304,13 +2313,7 @@
             ],
             "conflicts": [
                 "Axe Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Lance Talisman": {
             "full_hex_id": "2000085C",
@@ -2327,6 +2330,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2341,13 +2350,7 @@
             ],
             "conflicts": [
                 "Lance Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Arrow's Sting Talisman": {
             "full_hex_id": "20000866",
@@ -2364,6 +2367,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2380,13 +2389,7 @@
             ],
             "conflicts": [
                 "Arrow's Sting Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Lord of Blood's Exultation": {
             "full_hex_id": "20000870",
@@ -2404,6 +2407,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -2419,13 +2428,7 @@
             ],
             "conflicts": [
                 "Lord of Blood's Exultation"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Kindred of Rot's Exultation": {
             "full_hex_id": "2000087A",
@@ -2443,6 +2446,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -2458,13 +2467,7 @@
             ],
             "conflicts": [
                 "Kindred of Rot's Exultation"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Claw Talisman": {
             "full_hex_id": "20000884",
@@ -2481,6 +2484,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2495,13 +2504,7 @@
             ],
             "conflicts": [
                 "Claw Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Roar Medallion": {
             "full_hex_id": "2000088E",
@@ -2518,6 +2521,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2533,13 +2542,7 @@
             ],
             "conflicts": [
                 "Roar Medallion"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Curved Sword Talisman": {
             "full_hex_id": "20000898",
@@ -2556,6 +2559,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2570,13 +2579,7 @@
             ],
             "conflicts": [
                 "Curved Sword Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Companion Jar": {
             "full_hex_id": "200008A2",
@@ -2593,6 +2596,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -2607,13 +2616,7 @@
             ],
             "conflicts": [
                 "Companion Jar"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Perfumer's Talisman": {
             "full_hex_id": "200008AC",
@@ -2630,6 +2633,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -2644,13 +2653,7 @@
             ],
             "conflicts": [
                 "Perfumer's Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Graven-School Talisman": {
             "full_hex_id": "20000BB8",
@@ -2668,6 +2671,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2682,13 +2691,7 @@
             ],
             "conflicts": [
                 "Graven-School Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Graven-Mass Talisman": {
             "full_hex_id": "20000BB9",
@@ -2706,6 +2709,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.0,
             "effects": [
                 {
@@ -2720,13 +2729,7 @@
             ],
             "conflicts": [
                 "Graven-Mass Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Faithful's Canvas Talisman": {
             "full_hex_id": "20000BE0",
@@ -2745,6 +2748,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2759,13 +2768,7 @@
             ],
             "conflicts": [
                 "Faithful's Canvas Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Flock's Canvas Talisman": {
             "full_hex_id": "20000BEA",
@@ -2784,6 +2787,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.0,
             "effects": [
                 {
@@ -2798,13 +2807,7 @@
             ],
             "conflicts": [
                 "Flock's Canvas Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Old Lord's Talisman": {
             "full_hex_id": "20000BF4",
@@ -2822,6 +2825,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -2833,13 +2842,7 @@
             ],
             "conflicts": [
                 "Old Lord's Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Radagon Icon": {
             "full_hex_id": "20000BFE",
@@ -2856,6 +2859,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -2867,13 +2876,7 @@
             ],
             "conflicts": [
                 "Radagon Icon"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Primal Glintstone Blade": {
             "full_hex_id": "20000C08",
@@ -2891,6 +2894,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -2910,13 +2919,7 @@
             ],
             "conflicts": [
                 "Primal Glintstone Blade"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Godfrey Icon": {
             "full_hex_id": "20000C12",
@@ -2933,6 +2936,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -2948,13 +2957,7 @@
             ],
             "conflicts": [
                 "Godfrey Icon"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Dragoncrest Shield Talisman": {
             "full_hex_id": "20000FA0",
@@ -2972,6 +2975,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -2987,13 +2996,7 @@
                 "Dragoncrest Shield Talisman +1",
                 "Dragoncrest Shield Talisman +2",
                 "Dragoncrest Greatshield Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Dragoncrest Shield Talisman +1": {
             "full_hex_id": "20000FA1",
@@ -3011,6 +3014,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3026,13 +3035,7 @@
                 "Dragoncrest Shield Talisman +1",
                 "Dragoncrest Shield Talisman +2",
                 "Dragoncrest Greatshield Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Dragoncrest Shield Talisman +2": {
             "full_hex_id": "20000FA2",
@@ -3050,6 +3053,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3065,13 +3074,7 @@
                 "Dragoncrest Shield Talisman +1",
                 "Dragoncrest Shield Talisman +2",
                 "Dragoncrest Greatshield Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Dragoncrest Greatshield Talisman": {
             "full_hex_id": "20000FA3",
@@ -3089,6 +3092,12 @@
             "price_sold": 2000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3104,13 +3113,7 @@
                 "Dragoncrest Shield Talisman +1",
                 "Dragoncrest Shield Talisman +2",
                 "Dragoncrest Greatshield Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Spelldrake Talisman": {
             "full_hex_id": "20000FAA",
@@ -3128,6 +3131,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3142,13 +3151,7 @@
                 "Spelldrake Talisman",
                 "Spelldrake Talisman +1",
                 "Spelldrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Spelldrake Talisman +1": {
             "full_hex_id": "20000FAB",
@@ -3166,6 +3169,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3180,13 +3189,7 @@
                 "Spelldrake Talisman",
                 "Spelldrake Talisman +1",
                 "Spelldrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Spelldrake Talisman +2": {
             "full_hex_id": "20000FAC",
@@ -3204,6 +3207,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3218,13 +3227,7 @@
                 "Spelldrake Talisman",
                 "Spelldrake Talisman +1",
                 "Spelldrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Flamedrake Talisman": {
             "full_hex_id": "20000FB4",
@@ -3242,6 +3245,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3256,13 +3265,7 @@
                 "Flamedrake Talisman",
                 "Flamedrake Talisman +1",
                 "Flamedrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Flamedrake Talisman +1": {
             "full_hex_id": "20000FB5",
@@ -3280,6 +3283,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3294,13 +3303,7 @@
                 "Flamedrake Talisman",
                 "Flamedrake Talisman +1",
                 "Flamedrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Flamedrake Talisman +2": {
             "full_hex_id": "20000FB6",
@@ -3318,6 +3321,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3332,13 +3341,7 @@
                 "Flamedrake Talisman",
                 "Flamedrake Talisman +1",
                 "Flamedrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Boltdrake Talisman": {
             "full_hex_id": "20000FBE",
@@ -3356,6 +3359,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3370,13 +3379,7 @@
                 "Boltdrake Talisman",
                 "Boltdrake Talisman +1",
                 "Boltdrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Boltdrake Talisman +1": {
             "full_hex_id": "20000FBF",
@@ -3394,6 +3397,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3408,13 +3417,7 @@
                 "Boltdrake Talisman",
                 "Boltdrake Talisman +1",
                 "Boltdrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Boltdrake Talisman +2": {
             "full_hex_id": "20000FC0",
@@ -3432,6 +3435,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3446,13 +3455,7 @@
                 "Boltdrake Talisman",
                 "Boltdrake Talisman +1",
                 "Boltdrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Haligdrake Talisman": {
             "full_hex_id": "20000FC8",
@@ -3470,6 +3473,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3484,13 +3493,7 @@
                 "Haligdrake Talisman",
                 "Haligdrake Talisman +1",
                 "Haligdrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Haligdrake Talisman +1": {
             "full_hex_id": "20000FC9",
@@ -3508,6 +3511,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3522,13 +3531,7 @@
                 "Haligdrake Talisman",
                 "Haligdrake Talisman +1",
                 "Haligdrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Haligdrake Talisman +2": {
             "full_hex_id": "20000FCA",
@@ -3546,6 +3549,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -3560,13 +3569,7 @@
                 "Haligdrake Talisman",
                 "Haligdrake Talisman +1",
                 "Haligdrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Pearldrake Talisman": {
             "full_hex_id": "20000FD2",
@@ -3584,6 +3587,12 @@
             "price_sold": 100,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3598,13 +3607,7 @@
                 "Pearldrake Talisman",
                 "Pearldrake Talisman +1",
                 "Pearldrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Pearldrake Talisman +1": {
             "full_hex_id": "20000FD3",
@@ -3622,6 +3625,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3636,13 +3645,7 @@
                 "Pearldrake Talisman",
                 "Pearldrake Talisman +1",
                 "Pearldrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Pearldrake Talisman +2": {
             "full_hex_id": "20000FD4",
@@ -3660,6 +3663,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3674,13 +3683,7 @@
                 "Pearldrake Talisman",
                 "Pearldrake Talisman +1",
                 "Pearldrake Talisman +2"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Crucible Scale Talisman": {
             "full_hex_id": "20000FDC",
@@ -3699,6 +3702,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.1,
             "effects": [
                 {
@@ -3713,13 +3722,7 @@
             ],
             "conflicts": [
                 "Crucible Scale Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Crucible Feather Talisman": {
             "full_hex_id": "20000FE6",
@@ -3738,6 +3741,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3750,13 +3759,7 @@
             ],
             "conflicts": [
                 "Crucible Feather Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Blue-Feathered Branchsword": {
             "full_hex_id": "20000FF0",
@@ -3773,6 +3776,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.1,
             "effects": [
                 {
@@ -3788,13 +3797,7 @@
             ],
             "conflicts": [
                 "Blue-Feathered Branchsword"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Ritual Shield Talisman": {
             "full_hex_id": "20000FFA",
@@ -3812,6 +3815,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3827,13 +3836,7 @@
             ],
             "conflicts": [
                 "Ritual Shield Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Greatshield Talisman": {
             "full_hex_id": "20001004",
@@ -3850,6 +3853,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -3861,13 +3870,7 @@
             ],
             "conflicts": [
                 "Greatshield Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Crucible Knot Talisman": {
             "full_hex_id": "2000100E",
@@ -3886,6 +3889,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -3897,13 +3906,7 @@
             ],
             "conflicts": [
                 "Crucible Knot Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Crimson Seed Talisman": {
             "full_hex_id": "20001388",
@@ -3920,6 +3923,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3931,13 +3940,7 @@
             ],
             "conflicts": [
                 "Crimson Seed Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Cerulean Seed Talisman": {
             "full_hex_id": "20001392",
@@ -3954,6 +3957,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -3965,13 +3974,7 @@
             ],
             "conflicts": [
                 "Cerulean Seed Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Blessed Dew Talisman": {
             "full_hex_id": "2000139C",
@@ -3989,6 +3992,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -4001,13 +4010,7 @@
             ],
             "conflicts": [
                 "Blessed Dew Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Taker's Cameo": {
             "full_hex_id": "200013A6",
@@ -4025,6 +4028,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.0,
             "effects": [
                 {
@@ -4050,13 +4059,7 @@
             ],
             "conflicts": [
                 "Taker's Cameo"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Godskin Swaddling Cloth": {
             "full_hex_id": "200013B0",
@@ -4074,6 +4077,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -4099,13 +4108,7 @@
             ],
             "conflicts": [
                 "Godskin Swaddling Cloth"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Assassin's Crimson Dagger": {
             "full_hex_id": "200013BA",
@@ -4122,6 +4125,12 @@
             "price_sold": 1500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -4147,13 +4156,7 @@
             ],
             "conflicts": [
                 "Assassin's Crimson Dagger"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Assassin's Cerulean Dagger": {
             "full_hex_id": "200013C4",
@@ -4170,6 +4173,12 @@
             "price_sold": 1500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -4185,13 +4194,7 @@
             ],
             "conflicts": [
                 "Assassin's Cerulean Dagger"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Crepus's Vial": {
             "full_hex_id": "20001770",
@@ -4209,6 +4212,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -4220,13 +4229,7 @@
             ],
             "conflicts": [
                 "Crepus's Vial"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Concealing Veil": {
             "full_hex_id": "2000177A",
@@ -4244,6 +4247,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.9,
             "effects": [
                 {
@@ -4258,13 +4267,7 @@
             ],
             "conflicts": [
                 "Concealing Veil"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Carian Filigreed Crest": {
             "full_hex_id": "20001784",
@@ -4282,6 +4285,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -4293,13 +4302,7 @@
             ],
             "conflicts": [
                 "Carian Filigreed Crest"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Longtail Cat Talisman": {
             "full_hex_id": "20001798",
@@ -4317,6 +4320,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -4328,13 +4337,7 @@
             ],
             "conflicts": [
                 "Longtail Cat Talisman"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Shabriri's Woe": {
             "full_hex_id": "200017A2",
@@ -4353,6 +4356,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.6,
             "effects": [
                 {
@@ -4364,13 +4373,7 @@
             ],
             "conflicts": [
                 "Shabriri's Woe"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Daedicar's Woe": {
             "full_hex_id": "200017AC",
@@ -4389,6 +4392,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.8,
             "effects": [
                 {
@@ -4400,13 +4409,7 @@
             ],
             "conflicts": [
                 "Daedicar's Woe"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Sacrificial Twig": {
             "full_hex_id": "200017B6",
@@ -4424,6 +4427,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.0,
             "effects": [
                 {
@@ -4441,13 +4450,7 @@
             ],
             "conflicts": [
                 "Sacrificial Twig"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Furled Finger's Trick-Mirror": {
             "full_hex_id": "200017C0",
@@ -4465,6 +4468,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -4477,13 +4486,7 @@
             "conflicts": [
                 "Furled Finger's Trick-Mirror",
                 "Host's Trick-Mirror"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Host's Trick-Mirror": {
             "full_hex_id": "200017CA",
@@ -4501,6 +4504,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.7,
             "effects": [
                 {
@@ -4513,13 +4522,7 @@
             "conflicts": [
                 "Furled Finger's Trick-Mirror",
                 "Host's Trick-Mirror"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Entwining Umbilical Cord": {
             "full_hex_id": "200017D4",
@@ -4534,6 +4537,12 @@
             "price_sold": 1000,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 0.5,
             "effects": [
                 {
@@ -4545,13 +4554,7 @@
             ],
             "conflicts": [
                 "Entwining Umbilical Cord"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         },
         "Ancestral Spirit's Horn": {
             "full_hex_id": "200017DE",
@@ -4569,6 +4572,12 @@
             "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
             "weight": 1.2,
             "effects": [
                 {
@@ -4584,13 +4593,7 @@
             ],
             "conflicts": [
                 "Ancestral Spirit's Horn"
-            ],
-            "locations": [
-                {
-                    "summary": "not provided"
-                }
-            ],
-            "remarks": []
+            ]
         }
     },
     "$schema": "../schema/talismans.schema.json"
