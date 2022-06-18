@@ -6,11 +6,13 @@ import scripts.user_data as user_data
 import scripts.config as cfg
 from operator import add
 from itertools import repeat
-from typing import Any, Callable, Iterator, NamedTuple, Optional, Tuple, Dict, List
+from typing import Any, Callable, Generator, Iterator, NamedTuple, Optional, Tuple, Dict, List
 from scripts.game_version import GameVersion
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
 from scripts.er_shop import Lookup
+
+IntGen = Generator[int, None, None]
 
 def _get_item_msg(filename: str, version: GameVersion) -> Dict[int, str]:
     tree = xmltree.parse(f"{cfg.ROOT}/gamedata/_Extracted/{version}/{filename}.fmg.xml")
@@ -166,7 +168,7 @@ def update_optional(d: Dict, key: str, value: Any, null_value: Any=None) -> Dict
         d[key] = value
     return d
 
-def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: List[int], increment: int=1) -> Tuple[List[int], List[int]]:
+def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: List[int], increment: int=1) -> Tuple[IntGen, IntGen]:
     """
     Returns lists of valid indices from `base_index` value which offset
     until the highest possible maxima is reached.
@@ -180,4 +182,4 @@ def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: Lis
 
     maxima = _find_offset_maxima()
     levels = range(0, (maxima + 1) * increment, increment)
-    return [*map(add, repeat(base_index), levels)], levels
+    return map(add, repeat(base_index), levels), levels

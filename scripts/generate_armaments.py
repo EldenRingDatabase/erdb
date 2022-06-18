@@ -27,7 +27,9 @@ def _get_upgrade_costs(row: ParamRow, reinforces: ParamDict) -> List[int]:
     base_price = row.get_int("reinforcePrice")
 
     indices, _ = find_offset_indices(reinforcement.index, reinforces, possible_maxima=[10, 25])
-    return [round(base_price * reinforces[str(i)].get_float("reinforcePriceRate")) for i in indices[1:]]
+    next(indices) # ignore first index
+
+    return [round(base_price * reinforces[str(i)].get_float("reinforcePriceRate")) for i in indices]
 
 def _get_requirements(row: ParamRow) -> Dict[str, int]:
     requirements = {}
