@@ -1,7 +1,7 @@
 import re
 from functools import total_ordering
 from pathlib import Path
-from typing import List, NamedTuple
+from typing import Generator, List, NamedTuple
 
 @total_ordering
 class GameVersion(NamedTuple):
@@ -51,8 +51,17 @@ class GameVersionRange(NamedTuple):
     end: GameVersion   # excluding
     only: bool=False   # only `begin`
 
+    def iterate(self, versions: List[GameVersion]) -> Generator[GameVersion, None, None]:
+        for version in versions:
+            if version in self:
+                yield version
+
     @classmethod
-    def from_string(cls: "GameVersionRange", string: str) -> "GameVersionRange":
+    def from_version(cls, version: GameVersion) -> "GameVersionRange":
+        return cls(version, GameVersion.max(), only=True)
+
+    @classmethod
+    def from_string(cls, string: str) -> "GameVersionRange":
         """
         Corresponds to /schema/userdata/version-range-pattern.schema.json
         """

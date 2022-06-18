@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List
 from scripts.game_version import GameVersion, GameVersionRange
 import pytest
 

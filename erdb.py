@@ -3,10 +3,10 @@ import json
 import scripts.config as cfg
 from pathlib import Path
 from enum import Enum
-from typing import Dict, List
+from typing import Dict, List, NamedTuple
 from jsonschema import validate, RefResolver, ValidationError
 from scripts.find_valid_values import find_valid_values
-from scripts.game_version import GameVersion
+from scripts.game_version import GameVersion, GameVersionRange
 from scripts.erdb_common import GeneratorDataBase
 from scripts.generate_armaments import ArmamentGeneratorData
 from scripts.generate_armor import ArmorGeneratorData
@@ -42,23 +42,37 @@ _GENERATORS: Dict[Generator, GeneratorDataBase] = {
     Generator.TALISMANS: TalismanGeneratorData,
 }
 
-def get_args():
-    parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
-    parser.add_argument("--generate", "-g", type=Generator, default=[], choices=list(Generator), nargs="+", help="The type of items to generate.")
-    parser.add_argument("--minimize-json", action="store_true", help="Ouput minimized JSON when generating data.")
-    parser.add_argument("--find-values", "-f", type=str, help="Find all possible values of a field per param name, format: ParamName:FieldName.")
-    parser.add_argument("--find-values-limit", type=int, default=-1, help="Limit find-values examples to X per value.")
-    parser.add_argument("--gamedata", type=GameVersion.from_string, default=cfg.VERSIONS[0], choices=cfg.VERSIONS, help="Game version to source the data from.")
-    return parser.parse_args()
+class ErdbArgs(NamedTuple):
+    generators: List[Generator]
+    minimize_json: bool
+    find_values: str
+    find_values_limit: int
+    gamedata: GameVersionRange
 
-def get_generators(args) -> List[Generator]:
-    generators = set(args.generate)
+    @classmethod
+    def from_args(cls, args) -> "ErdbArgs":
+        generators = set(args.generate)
 
-    if Generator.ALL in generators:
-        generators.update(Generator)
-        generators.remove(Generator.ALL)
+        if Generator.ALL in generators:
+            generators.update(Generator)
+            generators.remove(Generator.ALL)
 
-    return list(generators)
+        gamedata = \
+            GameVersionRange.from_version(cfg.VERSIONS[0]) \
+            if args.gamedata is None else \
+            GameVersionRange.from_string(" ".join(args.gamedata))
+
+        return cls(generators, args.minimize_json, args.find_values, args.find_values_limit, gamedata)
+
+    @classmethod
+    def create(cls) -> "ErdbArgs":
+        parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
+        parser.add_argument("--generate", "-g", type=Generator, default=[], choices=list(Generator), nargs="+", help="The type of items to generate.")
+        parser.add_argument("--minimize-json", action="store_true", help="Ouput minimized JSON when generating data.")
+        parser.add_argument("--find-values", "-f", type=str, help="Find all possible values of a field per param name, format: ParamName:FieldName.")
+        parser.add_argument("--find-values-limit", type=int, default=-1, help="Limit find-values examples to X per value.")
+        parser.add_argument("--gamedata", type=str, nargs="+", action="extend", help="Game version range to source the data from.")
+        return cls.from_args(parser.parse_args())
 
 def generate(gendata: GeneratorDataBase, version: GameVersion, minimize: bool=False) -> None:
     output_file = cfg.ROOT / str(version) / gendata.output_file()
@@ -100,22 +114,23 @@ def validate_and_write(file_path: Path, schema_name: str, data: Dict, store: Dic
     return True
 
 def main():
-    args = get_args()
+    args = ErdbArgs.create()
 
     with open(cfg.ROOT / "latest_version.txt", mode="w") as f:
         f.write(str(cfg.VERSIONS[0]))
 
-    (cfg.ROOT / str(args.gamedata)).mkdir(exist_ok=True)
+    for version in args.gamedata.iterate(cfg.VERSIONS):
+        (cfg.ROOT / str(version)).mkdir(exist_ok=True)
 
-    for gen in get_generators(args):
-        print(f"\n>>> Generating \"{gen}\" from version {args.gamedata}", flush=True)
-        gendata = _GENERATORS[gen].construct(args.gamedata)
-        generate(gendata, args.gamedata, args.minimize_json)
+        for gen in args.generators:
+            print(f"\n>>> Generating \"{gen}\" from version {version}", flush=True)
+            gendata = _GENERATORS[gen].construct(version)
+            generate(gendata, version, args.minimize_json)
 
-    if args.find_values:
-        parts = args.find_values.split(":")
-        assert len(parts) == 2, "Incorrect find-values format"
-        find_valid_values(parts[0], args.gamedata, parts[1], args.find_values_limit)
+        if args.find_values:
+            parts = args.find_values.split(":")
+            assert len(parts) == 2, "Incorrect find-values format"
+            find_valid_values(parts[0], version, parts[1], args.find_values_limit)
 
 if __name__ == "__main__":
     main()
