@@ -31,6 +31,19 @@ def _get_upgrade_costs(row: ParamRow, reinforces: ParamDict) -> List[int]:
 
     return [round(base_price * reinforces[str(i)].get_float("reinforcePriceRate")) for i in indices]
 
+def _get_correction_calc_ids(row: ParamRow) -> Dict[str, str]:
+    return {
+        "physical": row.get("correctType_Physics"),
+        "magic": row.get("correctType_Magic"),
+        "fire": row.get("correctType_Fire"),
+        "lightning": row.get("correctType_Thunder"),
+        "holy": row.get("correctType_Dark"),
+        "poison": row.get("correctType_Poison"),
+        "bleed": row.get("correctType_Blood"),
+        "sleep": row.get("correctType_Sleep"),
+        "madness": row.get("correctType_Madness")
+    }
+
 def _get_requirements(row: ParamRow) -> Dict[str, int]:
     requirements = {}
     requirements = update_optional(requirements, "strength", row.get_int("properStrength"), 0)
@@ -112,11 +125,13 @@ def _get_affinity_properties(row: ParamRow, effects: ParamDict, reinforces: Para
     return {
         "full_hex_id": row.index_hex,
         "id": row.index,
+        "reinforcement_type": str(reinforcement_type),
+        "correction_attack_id": row.get("attackElementCorrectId"),
+        "correction_calc_id": _get_correction_calc_ids(row),
         "damage": _get_damages(row),
         "scaling": _get_scalings(row),
         "guard": _get_guards(row),
         "resistance": _get_resistances(row),
-        "reinforcement_type": str(reinforcement_type),
         "status_effects": parse_status_effects([row.get(f) for f in _BEHAVIOR_EFFECTS_FIELDS], effects),
         "status_effect_overlay": get_status_effect_overlay(row, effects, reinforces, reinforcement_type),
     }
@@ -173,8 +188,8 @@ class ArmamentGeneratorData(GeneratorDataBase):
         store.update(get_schema_enums("attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
         return properties, store
 
-    def main_param_iterator(self, reinforcements: ParamDict):
-        for row in reinforcements.values():
+    def main_param_iterator(self, armaments: ParamDict):
+        for row in armaments.values():
             if row.index % 10000 == 0 and len(row.name) > 0:
                 yield row
 

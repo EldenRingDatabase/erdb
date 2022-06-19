@@ -166,6 +166,35 @@
                     "minimum": 0,
                     "default": 0
                 },
+                "reinforcement_type": {
+                    "description": "Type of the reinforcement, refer to the Reinforcements table to look up value changes per level.",
+                    "$ref": "./enums/reinforcement-names.schema.json"
+                },
+                "correction_attack_id": {
+                    "description": "ID of attack element correction, refer to the CorrectionAttack table to look up definitions.",
+                    "type": "string",
+                    "pattern": "^\\d+$"
+                },
+                "correction_calc_id": {
+                    "description": "ID of calc correction for each damage type, refer to the CorrectionGraph table to look up value multipliers.",
+                    "type": "object",
+                    "properties": {
+                        "physical": { "type": "string", "pattern": "^[0-9]|1[0-6]$" },
+                        "magic": { "type": "string", "pattern": "^[0-9]|1[0-6]$" },
+                        "fire": { "type": "string", "pattern": "^[0-9]|1[0-6]$" },
+                        "lightning": { "type": "string", "pattern": "^[0-9]|1[0-6]$" },
+                        "holy": { "type": "string", "pattern": "^[0-9]|1[0-6]$" },
+                        "poison": { "type": "string", "pattern": "^[0-9]|1[0-6]$" },
+                        "bleed": { "type": "string", "pattern": "^[0-9]|1[0-6]$" },
+                        "sleep": { "type": "string", "pattern": "^[0-9]|1[0-6]$" },
+                        "madness": { "type": "string", "pattern": "^[0-9]|1[0-6]$" }
+                    },
+                    "required": [
+                        "physical", "magic", "fire", "lightning", "holy",
+                        "poison", "bleed", "sleep", "madness"
+                    ],
+                    "additionalProperties": false
+                },
                 "damage": {
                     "description": "Base attack power values.",
                     "type": "object",
@@ -218,10 +247,6 @@
                     },
                     "additionalProperties": false
                 },
-                "reinforcement_type": {
-                    "description": "Type of the reinforcement, refer to the Reinforcement table to look up value changes per level.",
-                    "$ref": "./enums/reinforcement-names.schema.json"
-                },
                 "status_effects": {
                     "description": "Status effects of the armament, dealt on hit.",
                     "type": "object",
@@ -249,9 +274,9 @@
             },
             "additionalProperties": false,
             "required": [
-                "full_hex_id", "id", "damage", "scaling", "guard",
-                "resistance", "reinforcement_type", "status_effects",
-                "status_effect_overlay"
+                "full_hex_id", "id", "reinforcement_type", "correction_attack_id",
+                "correction_calc_id", "damage", "scaling", "guard", "resistance",
+                "status_effects", "status_effect_overlay"
             ]
         },
         "AttackAttributeNames": {
