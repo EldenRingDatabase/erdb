@@ -236,14 +236,9 @@
                 "resistance": {
                     "description": "Base guarded resistances values.",
                     "type": "object",
-                    "properties": {
-                        "poison": { "type": "integer" },
-                        "scarlet_rot": { "type": "integer" },
-                        "frostbite": { "type": "integer" },
-                        "bleed": { "type": "integer" },
-                        "sleep": { "type": "integer" },
-                        "madness": { "type": "integer" },
-                        "death_blight": { "type": "integer" }
+                    "propertyNames": { "$ref": "./enums/status-effect-names.schema.json" },
+                    "patternProperties": {
+                        "^.+$": { "type": "integer" }
                     },
                     "additionalProperties": false
                 },
@@ -254,7 +249,8 @@
                     "propertyNames": { "$ref": "./enums/status-effect-names.schema.json" },
                     "patternProperties": {
                         "^.+$": { "type": "integer" }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "status_effect_overlay": {
                     "description": "Array of values per armament level of a singular status effect which gets upgraded alongside. Added to the base armament's \"status_effects\" property.",

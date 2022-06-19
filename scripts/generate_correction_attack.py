@@ -33,9 +33,7 @@ def _get_attributes(row: ParamRow, damage_type: str, format_func) -> Dict[str, s
         field = format_func(_ATTRIBUTE[attribute], _DAMAGE_TYPE[damage_type])
 
         if format_func == _format_correction:
-            value = row.get_int(field)
-            assert value in [0, 1], "Correction values should be boolean"
-            return value
+            return row.get_bool(field)
 
         elif format_func == _format_override:
             value = row.get_int(field)

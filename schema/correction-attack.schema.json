@@ -21,11 +21,11 @@
                 "correction": {
                     "type": "object",
                     "properties": {
-                        "physical": { "$ref": "correction-attack.schema.json#/definitions/AttributesBooleanInteger" },
-                        "magic": { "$ref": "correction-attack.schema.json#/definitions/AttributesBooleanInteger" },
-                        "fire": { "$ref": "correction-attack.schema.json#/definitions/AttributesBooleanInteger" },
-                        "lightning": { "$ref": "correction-attack.schema.json#/definitions/AttributesBooleanInteger" },
-                        "holy": { "$ref": "correction-attack.schema.json#/definitions/AttributesBooleanInteger" }
+                        "physical": { "$ref": "correction-attack.schema.json#/definitions/AttributesBoolean" },
+                        "magic": { "$ref": "correction-attack.schema.json#/definitions/AttributesBoolean" },
+                        "fire": { "$ref": "correction-attack.schema.json#/definitions/AttributesBoolean" },
+                        "lightning": { "$ref": "correction-attack.schema.json#/definitions/AttributesBoolean" },
+                        "holy": { "$ref": "correction-attack.schema.json#/definitions/AttributesBoolean" }
                     },
                     "required": ["physical", "magic", "fire", "lightning", "holy"],
                     "additionalProperties": false
@@ -57,14 +57,14 @@
             },
             "additionalProperties": false
         },
-        "AttributesBooleanInteger": {
+        "AttributesBoolean": {
             "type": "object",
             "properties": {
-                "strength": { "type": "integer", "minimum": 0, "maximum": 1 },
-                "dexterity": { "type": "integer", "minimum": 0, "maximum": 1 },
-                "intelligence": { "type": "integer", "minimum": 0, "maximum": 1 },
-                "faith": { "type": "integer", "minimum": 0, "maximum": 1 },
-                "arcane": { "type": "integer", "minimum": 0, "maximum": 1 }
+                "strength": { "type": "boolean" },
+                "dexterity": { "type": "boolean" },
+                "intelligence": { "type": "boolean" },
+                "faith": { "type": "boolean" },
+                "arcane": { "type": "boolean" }
             },
             "required": ["strength", "dexterity", "intelligence", "faith", "arcane"],
             "additionalProperties": false

@@ -85,7 +85,7 @@ class CorrectionGraphGeneratorData(GeneratorDataBase):
 
         values = [0]
         for r in ranges:
-            values += [r.get_correction(v) for v in range(r.threshold_left + 1, r.threshold_right + 1)]
+            values += [r.get_correction(v) / 100.0 for v in range(r.threshold_left + 1, r.threshold_right + 1)]
         values += repeat(values[-1], 150 - len(values))
 
         assert len(values) == 150, "Correction values length mismatch"

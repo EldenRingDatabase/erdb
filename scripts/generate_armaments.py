@@ -65,11 +65,11 @@ def _get_damages(row: ParamRow) -> Dict[str, int]:
 
 def _get_scalings(row: ParamRow) -> Dict[str, float]:
     scalings = {}
-    scalings = update_optional(scalings, "strength", row.get_float("correctStrength"), 0.0)
-    scalings = update_optional(scalings, "dexterity", row.get_float("correctAgility"), 0.0)
-    scalings = update_optional(scalings, "intelligence", row.get_float("correctMagic"), 0.0)
-    scalings = update_optional(scalings, "faith", row.get_float("correctFaith"), 0.0)
-    scalings = update_optional(scalings, "arcane", row.get_float("correctLuck"), 0.0)
+    scalings = update_optional(scalings, "strength", row.get_float("correctStrength") / 100.0, 0.0)
+    scalings = update_optional(scalings, "dexterity", row.get_float("correctAgility") / 100.0, 0.0)
+    scalings = update_optional(scalings, "intelligence", row.get_float("correctMagic") / 100.0, 0.0)
+    scalings = update_optional(scalings, "faith", row.get_float("correctFaith") / 100.0, 0.0)
+    scalings = update_optional(scalings, "arcane", row.get_float("correctLuck") / 100.0, 0.0)
     return scalings
 
 def _get_guards(row: ParamRow) -> Dict[str, float]:

@@ -6,6 +6,7 @@ from enum import Enum
 from typing import Dict, List, NamedTuple
 from jsonschema import validate, RefResolver, ValidationError
 from scripts.find_valid_values import find_valid_values
+from scripts.attack_power import CalculatorData, ArmamentCalculator, Attributes
 from scripts.game_version import GameVersion, GameVersionRange
 from scripts.erdb_common import GeneratorDataBase
 from scripts.generate_armaments import ArmamentGeneratorData
@@ -51,6 +52,7 @@ class ErdbArgs(NamedTuple):
     find_values: str
     find_values_limit: int
     gamedata: GameVersionRange
+    calc_ar: List[str]
 
     @classmethod
     def from_args(cls, args) -> "ErdbArgs":
@@ -65,7 +67,7 @@ class ErdbArgs(NamedTuple):
             if args.gamedata is None else \
             GameVersionRange.from_string(" ".join(args.gamedata))
 
-        return cls(generators, args.minimize_json, args.find_values, args.find_values_limit, gamedata)
+        return cls(generators, args.minimize_json, args.find_values, args.find_values_limit, gamedata, args.calc_ar)
 
     @classmethod
     def create(cls) -> "ErdbArgs":
@@ -75,6 +77,7 @@ class ErdbArgs(NamedTuple):
         parser.add_argument("--find-values", "-f", type=str, help="Find all possible values of a field per param name, format: ParamName:FieldName.")
         parser.add_argument("--find-values-limit", type=int, default=-1, help="Limit find-values examples to X per value.")
         parser.add_argument("--gamedata", type=str, nargs="+", action="extend", help="Game version range to source the data from.")
+        parser.add_argument("--calc-ar", type=str, nargs=4, help="Calculate attack power for weapons, format: s,d,i,f,a armament affinity level")
         return cls.from_args(parser.parse_args())
 
 def generate(gendata: GeneratorDataBase, version: GameVersion, minimize: bool=False) -> None:
@@ -134,6 +137,19 @@ def main():
             parts = args.find_values.split(":")
             assert len(parts) == 2, "Incorrect find-values format"
             find_valid_values(parts[0], version, parts[1], args.find_values_limit)
+
+        if args.calc_ar:
+            attribs, armament, affinity, level = args.calc_ar
+
+            calculator_data     = CalculatorData.create(cfg.ROOT / str(version))
+            armament_calculator = ArmamentCalculator(calculator_data, armament, affinity, level)
+            player_attributes   = Attributes.from_string(attribs)
+
+            for attack_type, value in armament_calculator.attack_power(player_attributes).items():
+                print(f"{attack_type}: {value.base} +{value.scaling} ({value.total})")
+
+            for effect_type, value in armament_calculator.status_effects(player_attributes).items():
+                print(f"{effect_type}: {value.base} +{value.scaling} ({value.total})")
 
 if __name__ == "__main__":
     main()

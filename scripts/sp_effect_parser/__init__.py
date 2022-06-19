@@ -8,6 +8,7 @@ from scripts.sp_effect_parser.effect_typing import SchemaEffect
 from typing import List, Dict, Optional, Tuple
 
 _REFERENCE_EFFECT_PARAMS: List[str] = ["cycleOccurrenceSpEffectId", "applyIdOnGetSoul"]
+
 _STATUS_EFFECT_FIELDS: Dict[SpEffectType, str] = {
     SpEffectType.HEMORRHAGE: "bloodAttackPower",
     SpEffectType.FROSTBITE: "freezeAttackPower",
@@ -16,6 +17,16 @@ _STATUS_EFFECT_FIELDS: Dict[SpEffectType, str] = {
     SpEffectType.SLEEP: "sleepAttackPower",
     SpEffectType.MADNESS: "madnessAttackPower",
     SpEffectType.BLIGHT: "curseAttackPower",
+}
+
+_STATUS_EFFECT_PROPERTY_NAMES: Dict[SpEffectType, str] = {
+    SpEffectType.HEMORRHAGE: "bleed",
+    SpEffectType.FROSTBITE: "frostbite",
+    SpEffectType.POISON: "poison",
+    SpEffectType.SCARLET_ROT: "scarlet_rot",
+    SpEffectType.SLEEP: "sleep",
+    SpEffectType.MADNESS: "madness",
+    SpEffectType.BLIGHT: "death_blight",
 }
 
 def get_effects(sp_effect: ParamRow, sp_effect_type: SpEffectType, triggeree: Optional[ParamRow]=None, init_conditions: Optional[List[str]]=None) -> List[SchemaEffect]:
@@ -57,13 +68,7 @@ def get_effects_nested(sp_effect: ParamRow, sp_effects: ParamDict, add_condition
 def get_status_effect(sp_effect: ParamRow) -> Tuple[str, int]:
     # NOTE: not identifying effects by values, relying on `stateInfo` to be correct at all times
     etype = SpEffectType(sp_effect.get("stateInfo"))
-
-    name = {
-        SpEffectType.HEMORRHAGE: "Bleed",
-        SpEffectType.BLIGHT: "Death Blight",
-    }.get(etype, str(etype))
-
-    return name, sp_effect.get_int(_STATUS_EFFECT_FIELDS[etype])
+    return _STATUS_EFFECT_PROPERTY_NAMES[etype], sp_effect.get_int(_STATUS_EFFECT_FIELDS[etype])
 
 def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fields: str, add_condition: Optional[AttackCondition]=None) -> List[Dict]:
     effects: List[SchemaEffect] = []
