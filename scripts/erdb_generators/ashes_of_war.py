@@ -1,7 +1,8 @@
 from typing import Dict, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag, Affinity, WeaponClass
-from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums, parse_description
+from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description
+from scripts.erdb_generators._base import GeneratorDataBase
 
 def _is_elem_true(row: ParamRow, list_param: str, elem: str) -> bool:
     return row.get_bool(list_param + elem)

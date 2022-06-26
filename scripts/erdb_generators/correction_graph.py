@@ -2,7 +2,8 @@ from itertools import repeat
 from typing import Dict, NamedTuple, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
-from scripts.erdb_common import GeneratorDataBase, get_schema_properties
+from scripts.erdb_common import get_schema_properties
+from scripts.erdb_generators._base import GeneratorDataBase
 
 def calc_output(stage_min: float, stage_max: float, val_min: float, val_max: float, mult_val_min: float, mult_val_max: float, input_val: float) -> float:
     input_ratio = (input_val - stage_min) / (stage_max - stage_min)

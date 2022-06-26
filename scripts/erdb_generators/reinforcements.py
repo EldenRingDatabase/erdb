@@ -1,7 +1,8 @@
 from typing import Dict, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag, ReinforcementType
-from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums, find_offset_indices
+from scripts.erdb_common import get_schema_properties, get_schema_enums, find_offset_indices
+from scripts.erdb_generators._base import GeneratorDataBase
 
 def _is_base_index(index: int) -> bool:
     return index == 0 or index % 100 == 0

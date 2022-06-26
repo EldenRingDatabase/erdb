@@ -1,7 +1,8 @@
 from typing import Dict, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
-from scripts.erdb_common import GeneratorDataBase, get_schema_properties
+from scripts.erdb_common import get_schema_properties
+from scripts.erdb_generators._base import GeneratorDataBase
 
 _DAMAGE_TYPE: Dict[str, str] = {
     "physical": "Physics",

@@ -2,52 +2,18 @@ import argparse
 import json
 import scripts.config as cfg
 from pathlib import Path
-from enum import Enum
 from typing import Dict, List, NamedTuple
 from jsonschema import validate, RefResolver, ValidationError
 from scripts.find_valid_values import find_valid_values
 from scripts.attack_power import CalculatorData, ArmamentCalculator, Attributes
 from scripts.game_version import GameVersion, GameVersionRange
-from scripts.erdb_common import GeneratorDataBase
-from scripts.generate_armaments import ArmamentGeneratorData
-from scripts.generate_armor import ArmorGeneratorData
-from scripts.generate_ashes_of_war import AshOfWarGeneratorData
-from scripts.generate_correction_attack import CorrectionAttackGeneratorData
-from scripts.generate_correction_graph import CorrectionGraphGeneratorData
-from scripts.generate_reinforcements import ReinforcementGeneratorData
-from scripts.generate_spirit_ashes import SpiritAshGeneratorData
-from scripts.generate_talismans import TalismanGeneratorData
-
-class Generator(Enum):
-    ALL = "all"
-    ARMAMENTS = "armaments"
-    ARMOR = "armor"
-    ASHES_OF_WAR = "ashes-of-war"
-    CORRECTION_ATTACK = "correction-attack"
-    CORRECTION_GRAPH = "correction-graph"
-    REINFORCEMENTS = "reinforcements"
-    SPIRIT_ASHES = "spirit-ashes"
-    TALISMANS = "talismans"
-
-    def __str__(self):
-        return self.value
+from scripts.erdb_generators import ERDBGenerator, ERDBGeneratorBase
 
 cfg.ROOT = Path(__file__).parent.resolve()
 cfg.VERSIONS = sorted([GameVersion.from_string(p.name) for p in (cfg.ROOT / "gamedata" / "_Extracted").glob("*") if GameVersion.match_path(p)], reverse=True)
 
-_GENERATORS: Dict[Generator, GeneratorDataBase] = {
-    Generator.ARMAMENTS: ArmamentGeneratorData,
-    Generator.ARMOR: ArmorGeneratorData,
-    Generator.ASHES_OF_WAR: AshOfWarGeneratorData,
-    Generator.CORRECTION_ATTACK: CorrectionAttackGeneratorData,
-    Generator.CORRECTION_GRAPH: CorrectionGraphGeneratorData,
-    Generator.REINFORCEMENTS: ReinforcementGeneratorData,
-    Generator.SPIRIT_ASHES: SpiritAshGeneratorData,
-    Generator.TALISMANS: TalismanGeneratorData,
-}
-
 class ErdbArgs(NamedTuple):
-    generators: List[Generator]
+    generators: List[ERDBGenerator]
     minimize_json: bool
     find_values: str
     find_values_limit: int
@@ -58,9 +24,9 @@ class ErdbArgs(NamedTuple):
     def from_args(cls, args) -> "ErdbArgs":
         generators = set(args.generate)
 
-        if Generator.ALL in generators:
-            generators.update(Generator)
-            generators.remove(Generator.ALL)
+        if ERDBGenerator.ALL in generators:
+            generators.update(ERDBGenerator)
+            generators.remove(ERDBGenerator.ALL)
 
         gamedata = \
             GameVersionRange.from_version(cfg.VERSIONS[0]) \
@@ -72,7 +38,7 @@ class ErdbArgs(NamedTuple):
     @classmethod
     def create(cls) -> "ErdbArgs":
         parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
-        parser.add_argument("--generate", "-g", type=Generator, default=[], choices=list(Generator), nargs="+", help="The type of items to generate.")
+        parser.add_argument("--generate", "-g", type=ERDBGenerator, default=[], choices=list(ERDBGenerator), nargs="+", help="The type of items to generate.")
         parser.add_argument("--minimize-json", action="store_true", help="Ouput minimized JSON when generating data.")
         parser.add_argument("--find-values", "-f", type=str, help="Find all possible values of a field per param name, format: ParamName:FieldName.")
         parser.add_argument("--find-values-limit", type=int, default=-1, help="Limit find-values examples to X per value.")
@@ -80,24 +46,24 @@ class ErdbArgs(NamedTuple):
         parser.add_argument("--calc-ar", type=str, nargs=4, help="Calculate attack power for weapons, format: s,d,i,f,a armament affinity level")
         return cls.from_args(parser.parse_args())
 
-def generate(gendata: GeneratorDataBase, version: GameVersion, minimize: bool=False) -> None:
-    output_file = cfg.ROOT / str(version) / gendata.output_file()
+def generate(gen: ERDBGeneratorBase, version: GameVersion, minimize: bool=False) -> None:
+    output_file = cfg.ROOT / str(version) / gen.output_file()
     print(f"Output file: {output_file}", flush=True)
 
     if output_file.exists():
         print(f"Output file exists and will be overridden", flush=True)
 
-    main_iter = gendata.main_param_iterator(gendata.main_param)
-    item_data = {gendata.get_key_name(row): gendata.construct_object(row) for row in main_iter}
+    main_iter = gen.main_param_iterator(gen.main_param)
+    item_data = {gen.get_key_name(row): gen.construct_object(row) for row in main_iter}
 
     print(f"Generated {len(item_data)} elements", flush=True)
 
     item_data_full = {
-        gendata.element_name(): item_data,
-        "$schema": f"../schema/{gendata.schema_file()}"
+        gen.element_name(): item_data,
+        "$schema": f"../schema/{gen.schema_file()}"
     }
 
-    ok = validate_and_write(output_file, gendata.schema_file(), item_data_full, gendata.schema_store, minimize)
+    ok = validate_and_write(output_file, gen.schema_file(), item_data_full, gen.schema_store, minimize)
     assert ok, "Generated schema failed to validate"
 
     print(f"Validated {len(item_data)} elements", flush=True)
@@ -130,8 +96,7 @@ def main():
 
         for gen in args.generators:
             print(f"\n>>> Generating \"{gen}\" from version {version}", flush=True)
-            gendata = _GENERATORS[gen].construct(version)
-            generate(gendata, version, args.minimize_json)
+            generate(gen.construct(version), version, args.minimize_json)
 
         if args.find_values:
             parts = args.find_values.split(":")

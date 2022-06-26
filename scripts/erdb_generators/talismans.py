@@ -2,7 +2,8 @@ from typing import Dict, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
 from scripts.sp_effect_parser import parse_effects
-from scripts.erdb_common import GeneratorDataBase, get_schema_properties, get_schema_enums, parse_description
+from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description
+from scripts.erdb_generators._base import GeneratorDataBase
 
 def _find_conflicts(group: int, accessories: ParamDict) -> List[str]:
     return [t.name for t in accessories.values() if t.get_int("accessoryGroup") == group and len(t.name) > 0]

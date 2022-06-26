@@ -1,7 +1,8 @@
 from typing import Dict, Iterator, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import GoodsType, GoodsRarity, ItemIDFlag
-from scripts.erdb_common import GeneratorDataBase, find_offset_indices, get_schema_properties, parse_description
+from scripts.erdb_common import find_offset_indices, get_schema_properties, parse_description
+from scripts.erdb_generators._base import GeneratorDataBase
 
 def _is_base_spirit_ash(row: ParamRow) -> bool:
     return row.is_base_item() and row.get("goodsType") in [GoodsType.LESSER, GoodsType.GREATER]
