@@ -76,6 +76,9 @@ class CalculatorData(NamedTuple):
 
     @classmethod
     def create(cls, gamedata_path: Path) -> "CalculatorData":
+        if not isinstance(gamedata_path, Path):
+            gamedata_path = Path(gamedata_path)
+
         with open(gamedata_path / "armaments.json") as f:
             armaments = json.load(f)["Armaments"]
 
@@ -113,11 +116,11 @@ class ArmamentCalculator:
         Cache some data we will be using for this particular armament/affinity/level combo,
         called every time the ArmamentCalculator instance is updated.
         """
-        self._affinity_properties = data.armaments[self._name]["affinities"][self._affinity]
+        self._affinity_properties = data.armaments[self._name]["affinity"][self._affinity]
         reinforcement_type        = self._affinity_properties["reinforcement_type"]
         correction_attack_id      = self._affinity_properties["correction_attack_id"]
 
-        self._requirements        = data.armaments[self._name]["requirements"]
+        self._requirements        = data.armaments[self._name]["requirement"]
         self._reinforcement       = data.reinforcements[reinforcement_type][self._level]
         self._correction_attack   = CorrectionAttack.from_dict(data.correction_attack[correction_attack_id])
         self._correction_graph    = data.correction_graph
@@ -166,7 +169,7 @@ class ArmamentCalculator:
     """
     Retrieve scaled damage for an attack type/player attribute/attribute value combo.
     """
-    def _get_scaling_per_attribute(self, attack_type: str, attrib_name: str, attrib_value: str) -> float:
+    def _get_scaling_per_attribute(self, attack_type: str, attrib_name: str, attrib_value: int) -> float:
         # attack type does not scale with this attribute
         if not self._correction_attack.correction[attack_type][attrib_name]:
             return 0.0

@@ -104,7 +104,7 @@
                     "default": 1.0,
                     "minimum": 0
                 },
-                "requirements": {
+                "requirement": {
                     "description": "An object of attribute requirements of the armament.",
                     "type": "object",
                     "properties": {
@@ -122,7 +122,7 @@
                     "items": { "$ref": "effect.schema.json" },
                     "default": []
                 },
-                "affinities": {
+                "affinity": {
                     "description": "Map of possible affinities to their individual properties. \"Standard\" is always present.",
                     "type": "object",
                     "propertyNames": { "$ref": "./enums/affinity-names.schema.json" },
@@ -147,7 +147,7 @@
                 "behavior_variation_id", "class", "weight", "default_skill_id",
                 "allow_ash_of_war", "is_buffable", "is_l1_guard", "upgrade_material",
                 "upgrade_costs", "attack_attributes", "sp_consumption_rate",
-                "requirements", "effects", "affinities"
+                "requirement", "effects", "affinity"
             ]
         },
         "AffinityProperties": {

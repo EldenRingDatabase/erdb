@@ -232,7 +232,7 @@ class ArmamentGeneratorData(GeneratorDataBase):
             "upgrade_costs": upgrade_costs,
             "attack_attributes": [*map(str, _get_attack_attributes(row))],
             "sp_consumption_rate": row.get_float("staminaConsumptionRate"),
-            "requirements": _get_requirements(row),
+            "requirement": _get_requirements(row),
             "effects": weapon_effects,
-            "affinities": _get_affinities(row, self.main_param, effects, reinforces)
+            "affinity": _get_affinities(row, self.main_param, effects, reinforces)
         }
