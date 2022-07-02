@@ -3,3 +3,4 @@
 .vscode/
 venv/
 __pycache__/
+erdb-ap-fetcher-*.json

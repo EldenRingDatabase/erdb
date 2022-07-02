@@ -2,7 +2,7 @@ import argparse
 import json
 import scripts.config as cfg
 from pathlib import Path
-from typing import Dict, List, NamedTuple
+from typing import Dict, List, NamedTuple, Optional
 from jsonschema import validate, RefResolver, ValidationError
 from scripts.find_valid_values import find_valid_values
 from scripts.attack_power import CalculatorData, ArmamentCalculator, Attributes
@@ -19,6 +19,7 @@ class ErdbArgs(NamedTuple):
     find_values_limit: int
     gamedata: GameVersionRange
     calc_ar: List[str]
+    service_key: Optional[str]
 
     @classmethod
     def from_args(cls, args) -> "ErdbArgs":
@@ -33,7 +34,7 @@ class ErdbArgs(NamedTuple):
             if args.gamedata is None else \
             GameVersionRange.from_string(" ".join(args.gamedata))
 
-        return cls(generators, args.minimize_json, args.find_values, args.find_values_limit, gamedata, args.calc_ar)
+        return cls(generators, args.minimize_json, args.find_values, args.find_values_limit, gamedata, args.calc_ar, args.fetch_calc_test_data)
 
     @classmethod
     def create(cls) -> "ErdbArgs":
@@ -44,6 +45,7 @@ class ErdbArgs(NamedTuple):
         parser.add_argument("--find-values-limit", type=int, default=-1, help="Limit find-values examples to X per value.")
         parser.add_argument("--gamedata", type=str, nargs="+", action="extend", help="Game version range to source the data from.")
         parser.add_argument("--calc-ar", type=str, nargs=4, help="Calculate attack power for weapons, format: s,d,i,f,a armament affinity level")
+        parser.add_argument("--fetch-calc-test-data", type=str, help="Provide JSON key from the service account with access to a Google Sheet calculator")
         return cls.from_args(parser.parse_args())
 
 def generate(gen: ERDBGeneratorBase, version: GameVersion, minimize: bool=False) -> None:
@@ -115,6 +117,10 @@ def main():
 
             for effect_type, value in armament_calculator.status_effects(player_attributes).items():
                 print(f"{effect_type}: {value.base} +{value.scaling} ({value.total})")
+
+        if args.service_key:
+            from scripts.fetch_attack_power_data import fetch as fetch_attack_power_data
+            fetch_attack_power_data(version, args.service_key)
 
 if __name__ == "__main__":
     main()
