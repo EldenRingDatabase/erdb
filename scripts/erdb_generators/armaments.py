@@ -137,8 +137,9 @@ def _get_affinity_properties(row: ParamRow, effects: ParamDict, reinforces: Para
         "status_effect_overlay": get_status_effect_overlay(row, effects, reinforces, reinforcement_type),
     }
 
-def _get_affinities(row: ParamRow, armaments: ParamDict, effects: ParamDict, reinforces: ParamDict) -> Dict:
-    indices, levels = find_offset_indices(row.index, armaments, possible_maxima=[0, 12], increment=100)
+def _get_affinities(row: ParamRow, armaments: ParamDict, effects: ParamDict, reinforces: ParamDict, allow_ash_of_war: bool) -> Dict:
+    possible_maxima = [0, 12] if allow_ash_of_war else [0]
+    indices, levels = find_offset_indices(row.index, armaments, possible_maxima, increment=100)
     affinities = [Affinity(str(round(l / 100))) for l in levels]
     return {str(a): _get_affinity_properties(armaments[str(i)], effects, reinforces) for i, a in zip(indices, affinities)}
 
@@ -210,6 +211,8 @@ class ArmamentGeneratorData(GeneratorDataBase):
             + parse_effects(row, effects, *_RESIDENT_EFFECTS_FIELDS) \
             + parse_effects(row, effects, *_BEHAVIOR_EFFECTS_FIELDS, add_condition=AttackCondition.ON_HIT)
 
+        allow_ash_of_war = AshOfWarMountType(row.get("gemMountType")) == AshOfWarMountType.ALLOW_CHANGE
+
         return {
             "full_hex_id": row.index_hex,
             "id": row.index,
@@ -226,7 +229,7 @@ class ArmamentGeneratorData(GeneratorDataBase):
             "class": str(WeaponClass.from_id(row.get("wepType"))),
             "weight": row.get_float("weight"),
             "default_skill_id": row.get_int("swordArtsParamId"),
-            "allow_ash_of_war": AshOfWarMountType(row.get("gemMountType")) == AshOfWarMountType.ALLOW_CHANGE,
+            "allow_ash_of_war": allow_ash_of_war,
             "is_buffable": row.get_bool("isEnhance"),
             "is_l1_guard": row.get_bool("enableGuard"),
             "upgrade_material": upgrade_material,
@@ -235,5 +238,5 @@ class ArmamentGeneratorData(GeneratorDataBase):
             "sp_consumption_rate": row.get_float("staminaConsumptionRate"),
             "requirement": _get_requirements(row),
             "effects": weapon_effects,
-            "affinity": _get_affinities(row, self.main_param, effects, reinforces)
+            "affinity": _get_affinities(row, self.main_param, effects, reinforces, allow_ash_of_war)
         }
