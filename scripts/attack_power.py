@@ -59,6 +59,9 @@ class Attributes(NamedTuple):
 
         return cls(*map(int, parts))
 
+    def __str__(self) -> str:
+        return f"{self.strength},{self.dexterity},{self.intelligence},{self.faith},{self.arcane}"
+
 class CorrectionAttack(NamedTuple):
     correction: Dict[str, Dict]
     override: Dict[str, Dict]
@@ -162,9 +165,10 @@ class ArmamentCalculator:
     def _get_base_and_scaled_damage(self, attack_type: str, attributes: Attributes) -> ValueType:
         base     = self._affinity_properties["damage"].get(attack_type, 0.0) * self._reinforcement["damage"][attack_type]
         scalings = [self._get_scaling_per_attribute(attack_type, attrib_name, attrib_value) for attrib_name, attrib_value in attributes.items()]
+        low_cap  = min(scalings) # in case multiple attributes are not met, do not go below lowest scaling
 
         # return base damage and scaling which is the base * sum of scalings per every attribute
-        return ValueType(base, base * sum(scalings))
+        return ValueType(base, base * max(low_cap, sum(scalings)))
 
     """
     Retrieve scaled damage for an attack type/player attribute/attribute value combo.
