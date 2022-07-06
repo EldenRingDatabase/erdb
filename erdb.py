@@ -15,11 +15,10 @@ cfg.VERSIONS = sorted([GameVersion.from_string(p.name) for p in (cfg.ROOT / "gam
 class ErdbArgs(NamedTuple):
     generators: List[ERDBGenerator]
     minimize_json: bool
-    find_values: str
-    find_values_limit: int
+    find_values: List[str]
     gamedata: GameVersionRange
     calc_ar: List[str]
-    service_key: Optional[str]
+    service_key: str
 
     @classmethod
     def from_args(cls, args) -> "ErdbArgs":
@@ -29,20 +28,23 @@ class ErdbArgs(NamedTuple):
             generators.update(ERDBGenerator)
             generators.remove(ERDBGenerator.ALL)
 
+        if args.find_values:
+            assert len(args.find_values) in [2, 3], "Invalid arguments for --find-values"
+            args.find_values.append("-1")
+
         gamedata = \
             GameVersionRange.from_version(cfg.VERSIONS[0]) \
             if args.gamedata is None else \
             GameVersionRange.from_string(" ".join(args.gamedata))
 
-        return cls(generators, args.minimize_json, args.find_values, args.find_values_limit, gamedata, args.calc_ar, args.fetch_calc_test_data)
+        return cls(generators, args.minimize_json, args.find_values, gamedata, args.calc_ar, args.fetch_calc_test_data)
 
     @classmethod
     def create(cls) -> "ErdbArgs":
         parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
         parser.add_argument("--generate", "-g", type=ERDBGenerator, default=[], choices=list(ERDBGenerator), nargs="+", help="The type of items to generate.")
         parser.add_argument("--minimize-json", action="store_true", help="Ouput minimized JSON when generating data.")
-        parser.add_argument("--find-values", "-f", type=str, help="Find all possible values of a field per param name, format: ParamName:FieldName.")
-        parser.add_argument("--find-values-limit", type=int, default=-1, help="Limit find-values examples to X per value.")
+        parser.add_argument("--find-values", "-f", type=str, nargs="+", help="Find all possible values of a field per param name, format: ParamName FieldName [ExampleLimit].")
         parser.add_argument("--gamedata", type=str, nargs="+", action="extend", help="Game version range to source the data from.")
         parser.add_argument("--calc-ar", type=str, nargs=4, help="Calculate attack power for weapons, format: s,d,i,f,a armament affinity level")
         parser.add_argument("--fetch-calc-test-data", type=str, help="Provide JSON key from the service account with access to a Google Sheet calculator")
@@ -101,9 +103,8 @@ def main():
             generate(gen.construct(version), version, args.minimize_json)
 
         if args.find_values:
-            parts = args.find_values.split(":")
-            assert len(parts) == 2, "Incorrect find-values format"
-            find_valid_values(parts[0], version, parts[1], args.find_values_limit)
+            param_name, field_name, value_limit = args.find_values[:3]
+            find_valid_values(param_name, version, field_name, int(value_limit))
 
         if args.calc_ar:
             attribs, armament, affinity, level = args.calc_ar
