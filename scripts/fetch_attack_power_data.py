@@ -2,7 +2,6 @@ import json
 from enum import Enum
 from pathlib import Path
 from typing import List
-from scripts.game_version import GameVersion
 import scripts.config as cfg
 from time import sleep
 
@@ -142,7 +141,7 @@ class OnlineCalc:
     _writes: int
     _reads: int
 
-    def __init__(self, version: GameVersion, service_key: Path) -> None:
+    def __init__(self, version: str, service_key: Path) -> None:
         gc = gspread.service_account(filename=service_key)
         self._sheet = gc.open(f"{version} Weapon AP Calculator").worksheet("Sheet1")
         self._writes = 0
@@ -205,11 +204,11 @@ gspread requires a path to the service key, downloaded from Google API when
 setting up a serivce account login. Detailed instructions here:
 https://docs.gspread.org/en/latest/oauth2.html#for-bots-using-service-account
 """
-def fetch(version: GameVersion, service_key: str):
+def fetch(version: str, service_key: str):
     calc = OnlineCalc(version, cfg.ROOT / service_key)
     calc.set_field(Field.LEVEL, 10) # always keep 10, valid for unique and standard armaments
 
-    with open(cfg.ROOT / str(version) / "armaments.json") as f:
+    with open(cfg.ROOT / version / "armaments.json") as f:
         armaments = json.load(f)["Armaments"]
 
     # take sample for testing
