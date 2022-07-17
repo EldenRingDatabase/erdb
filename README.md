@@ -23,7 +23,7 @@ Adopting this database in a project is beneficial beyond just providing the data
 * Interesting remarks about an item or a weapon's true combo list is kept up to date.
 * Designed for easy PRs where every item is contained within its own file.
 * Ability to specify game version ranges for which a particular information is valid.
-* Each human change is checked for corectness (by accepting a PR) and validity (by CI verifying JSON schema).
+* Each human change is checked for correctness (by accepting a PR) and validity (by CI verifying JSON schema).
 
 ### JSON schema guarantee
 
@@ -32,7 +32,7 @@ Adopting this database in a project is beneficial beyond just providing the data
 
 ### Shallow structure
 
-* Structue of JSON designed as shallow and straightforward to parse as possible.
+* Structure of JSON designed as shallow and straightforward to parse as possible.
 * Digging into nested fields is avoided, while retaining a logically sensible layout.
 
 ### Data for multiple game versions

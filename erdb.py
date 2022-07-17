@@ -8,6 +8,7 @@ from scripts.find_valid_values import find_valid_values
 from scripts.attack_power import CalculatorData, ArmamentCalculator, Attributes
 from scripts.game_version import GameVersion, GameVersionRange
 from scripts.erdb_generators import ERDBGenerator, ERDBGeneratorBase
+from scripts.sourcer import source_gamedata
 
 cfg.ROOT = Path(__file__).parent.resolve()
 cfg.VERSIONS = sorted([GameVersion.from_string(p.name) for p in (cfg.ROOT / "gamedata" / "_Extracted").glob("*") if GameVersion.match_path(p)], reverse=True)
@@ -81,6 +82,16 @@ def on_calculate_ar(attribs: str, armament: str, affinity: str, level: str, game
         for effect_type, value in calc.status_effects(attr).items():
             print(f"{effect_type}: {value.base} +{value.scaling} ({value.total})")
 
+def on_source(game_dir: Path, version: GameVersion, ignore_checksum: bool):
+    game_dir = game_dir.resolve()
+    print(f"\n>>> Sourcing gamedata from \"{game_dir}\" for version {version}.")
+
+    try:
+        source_gamedata(game_dir, version, ignore_checksum)
+
+    except AssertionError as e:
+        print("Sourcing gamedata failed:", *e.args)
+
 def on_fetch_calc_data(version: str, google_key: str):
     from scripts.fetch_attack_power_data import fetch as fetch_attack_power_data
     fetch_attack_power_data(version, google_key)
@@ -89,7 +100,7 @@ def main():
     with open(cfg.ROOT / "latest_version.txt", mode="w") as f:
         f.write(str(cfg.VERSIONS[0]))
 
-    parse_args(on_generate, on_find_values, on_calculate_ar, on_fetch_calc_data)
+    parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_fetch_calc_data)
 
 if __name__ == "__main__":
     main()

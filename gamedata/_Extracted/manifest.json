@@ -1,83 +1,168 @@
 {
-    "$comment": "This file is not used in code, it serves as documentation only but in valid JSON because whynaut.",
-    "spell_attack_data.csv": {
-        "source": "https://docs.google.com/spreadsheets/d/1j4bpTbsnp5Xsgw9TP2xv6d8R4qk0ErpE9r_5LGIDraU/edit#gid=681223203"
+    "tools": {
+        "Yabber": {
+            "url": "https://github.com/JKAnderson/Yabber/releases/tag/1.3.1",
+            "files": {
+                "Yabber.DCX.exe": "27d261ef4d934add785b1dbdd53408a9",
+                "Yabber.exe": "eb20bfad542cdb1654c71ccef987320d",
+                "lib/SoulsFormats.dll": "854fb687609beb67b8b6e10139eb8cbf",
+                "lib/oo2core_6_win64.dll": ""
+            },
+            "cmds": [
+                ["Yabber.DCX.exe", "{game_dir}/msg/engus/item.msgbnd.dcx"],
+                ["Yabber.exe", "{game_dir}/msg/engus/item.msgbnd"],
+                ["Yabber.exe",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/AccessoryCaption.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/AccessoryInfo.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GemCaption.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GemInfo.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GoodsCaption.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GoodsInfo.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GoodsInfo2.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/ProtectorCaption.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/ProtectorInfo.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/WeaponCaption.fmg"]
+            ]
+        },
+        "ERExporter": {
+            "url": "https://github.com/EldenRingDatabase/ERExporter/releases/tag/1.1.0",
+            "files": {
+                "ERExporter.Param.exe": "5be256db76593ab554843415be60076f"
+            },
+            "cmds": [
+                ["ERExporter.Param.exe", "{game_dir}/regulation.bin"],
+                ["ERExporter.Param.exe",
+                    "{game_dir}/param/gameparam/EquipParamWeapon.param",
+                    "{game_dir}/param/gameparam/EquipParamGem.param",
+                    "{game_dir}/param/gameparam/EquipParamAccessory.param",
+                    "{game_dir}/param/gameparam/EquipParamProtector.param",
+                    "{game_dir}/param/gameparam/EquipParamGoods.param",
+                    "{game_dir}/param/gameparam/EquipMtrlSetParam.param",
+                    "{game_dir}/param/gameparam/ReinforceParamWeapon.param",
+                    "{game_dir}/param/gameparam/SwordArtsParam.param",
+                    "{game_dir}/param/gameparam/Magic.param",
+                    "{game_dir}/param/gameparam/SpEffectParam.param",
+                    "{game_dir}/param/gameparam/ShopLineupParam.param",
+                    "{game_dir}/param/gameparam/AttackElementCorrectParam.param",
+                    "{game_dir}/param/gameparam/CalcCorrectGraph.param"]
+            ]
+        }
     },
-    "ash_of_war_attack_data.csv": {
-        "source": "https://docs.google.com/spreadsheets/d/1j4bpTbsnp5Xsgw9TP2xv6d8R4qk0ErpE9r_5LGIDraU/edit#gid=362983777",
-        "$comment": "Motion values, base stamina cost"
-    },
-    "EquipWeaponParam.csv": {
-        "source": "Yapped",
-        "$comment": "Weight, requirements, base scalings, base absorption, base damages, reinforce type ID, crit multiplier (says multiplier but is additive), class, atk attribs, buffable, reinforcable, prevent affinity change, allow AoW change, base AoW, stamina consumption %, reinforce rate"
-    },
-    "ReinforceParamWeapon.csv": {
-        "source": "Yapped",
-        "$comment": "Damage %, scaling %, guard absorption %, max reinforcement level, reinforce price rate"
-    },
-    "SwordArtsParam.csv": {
-        "source": "Yapped",
-        "$comment": "FP consumption L2/R1/R2, coupled with EquipParamGem"
-    },
-    "EquipParamGem.csv": {
-        "source": "Yapped",
-        "start_row": 1000,
-        "$comment": "Ash of War default affinity, possible affinities, class compatbilities, coupled with SwordArtsParam."
-    },
-    "EquipParamAccessory.csv": {
-        "source": "Yapped",
-        "$comment": ""
-    },
-    "EquipParamProtector.csv": {
-        "source": "Yapped",
-        "$comment": ""
-    },
-    "EquipParamGoods.csv": {
-        "source": "Yapped",
-        "$comment": ""
-    },
-    "Magic.csv": {
-        "source": "Yapped",
-        "$comment": "Requirements, slot usage, type, is weapon/shield enchantment, usable on horseback, fp/sp consumption regular/charged, consumption loop (can be held), spell category (for item boosts)"
-    },
-    "SpEffectParam.csv": {
-        "source": "Yapped",
-        "$comment": ""
-    },
-    "EquipMtrlSetParam.csv": {
-        "source": "Yapped",
-        "$comment": "Reinforce and purchase recipies: stones, gloveworts, rememberences, crafting materials, etc"
-    },
-    "ShopLineupParam.csv": {
-        "source": "Yapped",
-        "$comment": "Links EquipMtrlSetParam to actual products"
-    },
-	"AccessoryCaption.fmg.xml": {
-		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
-		"$comment": "Talisman descriptions"
-	},
-	"AccessoryInfo.fmg.xml": {
-		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
-		"$comment": "Talisman summaries"
-	},
-	"GoodsCaption.fmg.xml": {
-		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
-		"$comment": "General item descriptions"
-	},
-	"GoodsInfo.fmg.xml": {
-		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
-		"$comment": "General item summaries"
-	},
-	"GoodsInfo2.fmg.xml": {
-		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
-		"$comment": "General item extra short info, like the name of the spirit summon or crafing material locations"
-	},
-	"ProtectorCaption.fmg.xml": {
-		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
-		"$comment": "Armor piece descriptions"
-	},
-	"ProtectorInfo.fmg.xml": {
-		"source": "Yabber: msg/engus/item-msgbnd-dcx/GR/data/INTERROOT_win64/msg/engUS",
-		"$comment": "Armor piece summaries"
-	}
+    "gamedata": {
+        "EquipParamWeapon.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": "Weight, requirements, base scalings, base absorption, base damages, reinforce type ID, crit multiplier (says multiplier but is additive), class, atk attribs, buffable, reinforcable, prevent affinity change, allow AoW change, base AoW, stamina consumption %, reinforce rate"
+        },
+        "EquipParamGem.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": "Ash of War default affinity, possible affinities, class compatbilities, coupled with SwordArtsParam."
+        },
+        "EquipParamAccessory.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": ""
+        },
+        "EquipParamProtector.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": ""
+        },
+        "EquipParamGoods.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": ""
+        },
+        "EquipMtrlSetParam.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": "Reinforce and purchase recipies: stones, gloveworts, rememberences, crafting materials, etc"
+        },
+        "ReinforceParamWeapon.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": "Damage %, scaling %, guard absorption %, max reinforcement level, reinforce price rate"
+        },
+        "SwordArtsParam.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": "FP consumption L2/R1/R2, coupled with EquipParamGem"
+        },
+        "Magic.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": "Requirements, slot usage, type, is weapon/shield enchantment, usable on horseback, fp/sp consumption regular/charged, consumption loop (can be held), spell category (for item boosts)"
+        },
+        "SpEffectParam.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": ""
+        },
+        "ShopLineupParam.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": "Links EquipMtrlSetParam to actual products"
+        },
+        "AttackElementCorrectParam.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": ""
+        },
+        "CalcCorrectGraph.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": ""
+        },
+        "AccessoryCaption.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Talisman descriptions"
+        },
+        "AccessoryInfo.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Talisman summaries"
+        },
+        "GemCaption.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Ash of War descriptions"
+        },
+        "GemInfo.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Ash of War summaries"
+        },
+        "GoodsCaption.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "General item descriptions"
+        },
+        "GoodsInfo.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "General item summaries"
+        },
+        "GoodsInfo2.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "General item extra short info, like the name of the spirit summon or crafing material locations"
+        },
+        "ProtectorCaption.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Armor piece descriptions"
+        },
+        "ProtectorInfo.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Armor piece summaries"
+        },
+        "WeaponCaption.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Armament descriptions"
+        }
+    }
 }

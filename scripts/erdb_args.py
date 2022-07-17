@@ -1,8 +1,9 @@
 import argparse
 import scripts.config as cfg
+from pathlib import Path
 from typing import List
 from scripts.erdb_generators import ERDBGenerator
-from scripts.game_version import GameVersionRange
+from scripts.game_version import GameVersion, GameVersionRange
 
 class _GeneratorsAction(argparse.Action):
     def __call__(self, parser, namespace, values: List[ERDBGenerator], option_string=None):
@@ -18,7 +19,7 @@ class _GamedataAction(argparse.Action):
     def __call__(self, parser, namespace, values: List[str], option_string=None):
         setattr(namespace, self.dest, GameVersionRange.from_string(" ".join(values)))
 
-def parse_args(on_generate, on_find_values, on_calculate_ar, on_fetch_calc_data):
+def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_fetch_calc_data):
     parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
 
     outputs_json = argparse.ArgumentParser(add_help=False)
@@ -46,6 +47,12 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_fetch_calc_data)
     calc.add_argument("affinity", type=str, help="Affinity of the armament.")
     calc.add_argument("level", type=str, help="Upgrade level of the armament.")
     calc.set_defaults(func=lambda args: on_calculate_ar(args.attribs, args.armament, args.affinity, args.level, args.gamedata))
+
+    source = subs.add_parser("source", help="Extract gamedata from an UXM-unpacked Elden Ring installation (Windows only)")
+    source.add_argument("--game-dir", "-g", type=Path, required=True, help="Path to Elden Ring's \"Game\" directory, where the binary is located.")
+    source.add_argument("--version", "-v", type=GameVersion.from_string, required=True, help="Version to create from the extracted files.")
+    source.add_argument("--ignore-checksum", action=argparse.BooleanOptionalAction, help="Ignore MD5 verification of thirdparty tools.")
+    source.set_defaults(func=lambda args: on_source(args.game_dir, args.version, args.ignore_checksum))
 
     fetch_data = subs.add_parser("fetch-calc-data", help="Fetch calculator test data from an online calculator.")
     fetch_data.add_argument("google_key", type=str, help="Path to JSON key from the service account with access to a Google Sheet calculator.")
