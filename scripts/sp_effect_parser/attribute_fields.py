@@ -420,6 +420,12 @@ _ATTRIBUTE_FIELDS = {
         effect_type=EffectType.POSITIVE,
         parser=parse.generic
     ),
+    "soul": AttributeField.create(
+        attribute=AttributeName.RUNE_ACQUISITION,
+        effect_model=EffectModel.ADDITIVE,
+        effect_type=EffectType.POSITIVE,
+        parser=parse.generic
+    ),
 }
 
 _WEAPON_ATTRIBUTE_FIELDS = {
