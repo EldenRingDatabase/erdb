@@ -2685,6 +2685,7 @@
                     "type": "positive",
                     "value": 1.04,
                     "conditions": [
+                        "Affects Sorceries",
                         "Spell Power Boost"
                     ]
                 }
@@ -2723,6 +2724,7 @@
                     "type": "positive",
                     "value": 1.08,
                     "conditions": [
+                        "Affects Sorceries",
                         "Spell Power Boost"
                     ]
                 }
@@ -2762,6 +2764,7 @@
                     "type": "positive",
                     "value": 1.04,
                     "conditions": [
+                        "Affects Incantations",
                         "Spell Power Boost"
                     ]
                 }
@@ -2801,6 +2804,7 @@
                     "type": "positive",
                     "value": 1.08,
                     "conditions": [
+                        "Affects Incantations",
                         "Spell Power Boost"
                     ]
                 }

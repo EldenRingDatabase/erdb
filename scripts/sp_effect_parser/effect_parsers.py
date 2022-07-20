@@ -35,9 +35,17 @@ def conditions(sp_effect: ParamRow, triggeree: Optional[ParamRow]=None) -> Optio
 
     def _append_triggers(source: ParamRow):
         for trigger in _TRIGGER_FIELDS:
-            effect_type_str = source.get(trigger)
-            if not (cond := SpEffectType(effect_type_str)).is_passive():
-                conds.add(str(cond))
+            effect_type = SpEffectType(source.get(trigger))
+
+            if not effect_type.is_passive():
+                conds.add(str(effect_type))
+
+            if effect_type == SpEffectType.SPELL_POWER_BOOST:
+                boostSorcery = ("magParamChange", "Affects Sorceries")
+                boostIncantation = ("miracleParamChange", "Affects Incantations")
+                for field, cond in [boostSorcery, boostIncantation]:
+                    if sp_effect.get_bool(field):
+                        conds.add(cond)
 
     def _append_conditions(source: ParamRow):
         for cond in _CONDITION_FIELDS:

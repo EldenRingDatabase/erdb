@@ -12,6 +12,8 @@
         "vs Gravity Enemies",
         "vs Undead Enemies",
         "vs Ancient Dragon Enemies",
-        "vs Dragon Enemies"
+        "vs Dragon Enemies",
+        "Affects Sorceries",
+        "Affects Incantations"
     ]
 }
