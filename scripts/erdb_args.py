@@ -19,7 +19,7 @@ class _GamedataAction(argparse.Action):
     def __call__(self, parser, namespace, values: List[str], option_string=None):
         setattr(namespace, self.dest, GameVersionRange.from_string(" ".join(values)))
 
-def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_fetch_calc_data):
+def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_map, on_fetch_calc_data):
     parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
 
     outputs_json = argparse.ArgumentParser(add_help=False)
@@ -28,6 +28,11 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_fetch
     sources_data = argparse.ArgumentParser(add_help=False)
     default_gamedata = GameVersionRange.from_version(cfg.VERSIONS[0])
     sources_data.add_argument("--gamedata", "-g", nargs="+", default=default_gamedata, action=_GamedataAction, help="Game version range to source the data from.")
+
+    exports_data = argparse.ArgumentParser(add_help=False)
+    exports_data.add_argument("--game-dir", "-g", type=Path, required=True, help="Path to Elden Ring's \"Game\" directory, where the binary is located.")
+    exports_data.add_argument("--ignore-checksum", action=argparse.BooleanOptionalAction, help="Ignore MD5 verification of thirdparty tools.")
+    exports_data.add_argument("--keep-cache", action=argparse.BooleanOptionalAction, help="Keep the unpacked files, if any.")
 
     subs = parser.add_subparsers(title="subcommands", required=True)
 
@@ -48,11 +53,15 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_fetch
     calc.add_argument("level", type=str, help="Upgrade level of the armament.")
     calc.set_defaults(func=lambda args: on_calculate_ar(args.attribs, args.armament, args.affinity, args.level, args.gamedata))
 
-    source = subs.add_parser("source", help="Extract gamedata from an UXM-unpacked Elden Ring installation (Windows only)")
-    source.add_argument("--game-dir", "-g", type=Path, required=True, help="Path to Elden Ring's \"Game\" directory, where the binary is located.")
+    source = subs.add_parser("source", help="Extract gamedata from an UXM-unpacked Elden Ring installation (Windows only)", parents=[exports_data])
     source.add_argument("--version", "-v", type=GameVersion.from_string, required=True, help="Version to create from the extracted files.")
-    source.add_argument("--ignore-checksum", action=argparse.BooleanOptionalAction, help="Ignore MD5 verification of thirdparty tools.")
     source.set_defaults(func=lambda args: on_source(args.game_dir, args.version, args.ignore_checksum))
+
+    pmap = subs.add_parser("map", help="Extract world map image from an UXM-unpacked Elden Ring installation (Windows only)", parents=[exports_data])
+    pmap.add_argument("--out", "-o", type=Path, default=None, help="Output path where the file should be written to. If not specified, the map will be shown in a window. Use file extension to specify the image format. If a directory is provided, a JPEG file will be created with a default name. Parent directories will be created automatically.")
+    pmap.add_argument("--lod", "-l", type=int, default=0, help="Level of detail of the map, 0 is highest.")
+    pmap.add_argument("--underground", action=argparse.BooleanOptionalAction, help="Specifies whether to extract the underground map instead of the overworld.")
+    pmap.set_defaults(func=lambda args: on_map(args.game_dir, args.out, args.lod, args.underground, args.ignore_checksum, args.keep_cache))
 
     fetch_data = subs.add_parser("fetch-calc-data", help="Fetch calculator test data from an online calculator.")
     fetch_data.add_argument("google_key", type=str, help="Path to JSON key from the service account with access to a Google Sheet calculator.")

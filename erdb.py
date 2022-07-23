@@ -1,14 +1,14 @@
 import json
 import scripts.config as cfg
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 from jsonschema import validate, RefResolver, ValidationError
 from scripts.erdb_args import parse_args
 from scripts.find_valid_values import find_valid_values
 from scripts.attack_power import CalculatorData, ArmamentCalculator, Attributes
 from scripts.game_version import GameVersion, GameVersionRange
 from scripts.erdb_generators import ERDBGenerator, ERDBGeneratorBase
-from scripts.sourcer import source_gamedata
+from scripts.sourcer import source_gamedata, source_map
 
 cfg.ROOT = Path(__file__).parent.resolve()
 cfg.VERSIONS = sorted([GameVersion.from_string(p.name) for p in (cfg.ROOT / "gamedata" / "_Extracted").glob("*") if GameVersion.match_path(p)], reverse=True)
@@ -92,6 +92,20 @@ def on_source(game_dir: Path, version: GameVersion, ignore_checksum: bool):
     except AssertionError as e:
         print("Sourcing gamedata failed:", *e.args)
 
+def on_map(game_dir: Path, out: Optional[Path], lod: int, underground: bool, ignore_checksum: bool, keep_cache: bool):
+    game_dir = game_dir.resolve()
+
+    if out is not None:
+        out = out.resolve()
+
+    print(f"\n>>> Extracting map from \"{game_dir}\".")
+
+    try:
+        source_map(game_dir, out, lod, underground, ignore_checksum, keep_cache)
+
+    except AssertionError as e:
+        print("Sourcing map failed:", *e.args)
+
 def on_fetch_calc_data(version: str, google_key: str):
     from scripts.fetch_attack_power_data import fetch as fetch_attack_power_data
     fetch_attack_power_data(version, google_key)
@@ -100,7 +114,7 @@ def main():
     with open(cfg.ROOT / "latest_version.txt", mode="w") as f:
         f.write(str(cfg.VERSIONS[0]))
 
-    parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_fetch_calc_data)
+    parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_map, on_fetch_calc_data)
 
 if __name__ == "__main__":
     main()
