@@ -1,12 +1,12 @@
 {
     "tools": {
         "Yabber": {
-            "url": "https://github.com/JKAnderson/Yabber/releases/tag/1.3.1",
+            "url": "https://github.com/JKAnderson/Yabber/releases/download/1.3.1/Yabber.1.3.1.zip",
             "files": {
                 "Yabber.DCX.exe": "27d261ef4d934add785b1dbdd53408a9",
                 "Yabber.exe": "eb20bfad542cdb1654c71ccef987320d",
                 "lib/SoulsFormats.dll": "854fb687609beb67b8b6e10139eb8cbf",
-                "lib/oo2core_6_win64.dll": ""
+                "lib/oo2core_6_win64.dll": "{game_dir}/oo2core_6_win64.dll"
             },
             "cmds": [
                 ["Yabber.DCX.exe", "{game_dir}/msg/engus/item.msgbnd.dcx"],
@@ -25,7 +25,7 @@
             ]
         },
         "ERExporter": {
-            "url": "https://github.com/EldenRingDatabase/ERExporter/releases/tag/1.1.0",
+            "url": "https://github.com/EldenRingDatabase/ERExporter/releases/download/1.1.0/ERExporter-1.1.0.zip",
             "files": {
                 "ERExporter.Param.exe": "5be256db76593ab554843415be60076f"
             },

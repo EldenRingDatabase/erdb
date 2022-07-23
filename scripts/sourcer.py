@@ -1,8 +1,12 @@
 import json
 import shutil
+import string
+import requests
 import subprocess as proc
 import scripts.config as cfg
 import xml.etree.ElementTree as xmltree
+from io import BytesIO
+from zipfile import ZipFile
 from itertools import chain, islice
 from time import sleep
 from hashlib import md5
@@ -40,11 +44,14 @@ def _chunks(files_iterable, size: int):
 
 class _File(NamedTuple):
     path: Path
-    md5: Optional[str]
+    verifier: str
+    verifier_is_md5: bool
 
     @classmethod
-    def from_manifest(cls, path: Path, name: str, md5: str) -> "_File":
-        return cls(path / Path(name), None if len(md5) == 0 else md5)
+    def from_manifest(cls, tool_path: Path, name: str, verifier: str, **kwargs) -> "_File":
+        verifier = verifier.format(**kwargs)
+        verifier_is_md5 = all(c in string.hexdigits for c in verifier)
+        return cls(tool_path / Path(name), verifier, verifier_is_md5)
 
     def __str__(self) -> str:
         return str(self.path)
@@ -82,14 +89,18 @@ class _Tool(NamedTuple):
         for f in self.files:
             print("*", f, flush=True)
 
-            assert f.path.exists(), f"{f} does not exist."
+            if f.verifier_is_md5:
+                assert f.path.exists(), f"{f} does not exist."
 
-            if f.md5 is not None:
-                if md5(f.path.read_bytes()).hexdigest() != f.md5:
+                if md5(f.path.read_bytes()).hexdigest() != f.verifier:
                     if ignore_checksum:
                         print(f"WARNING: Checksum for {f} mismatched, but is being ignored.", flush=True)
                     else:
                         assert False, f"Mismatched checksum of {f}."
+
+            else:
+                print(f"Copying {f.verifier} to {f.path}...")
+                shutil.copy(f.verifier, f.path)
 
         print(f"{self.name} files validated successfully!", flush=True)
 
@@ -104,7 +115,12 @@ class _Tool(NamedTuple):
     @classmethod
     def from_manifest(cls, game_dir: Path, name: str, data: Dict, skip_commands: bool=False) -> "_Tool":
         path = cfg.ROOT / "thirdparty" / name
-        files = [_File.from_manifest(path, name, md5) for name, md5 in data["files"].items()]
+
+        if not path.exists() or _is_empty(path):
+            print(name, "is not found and will be downloaded...", flush=True)
+            _Tool.download_and_unzip(data["url"], path)
+
+        files = [_File.from_manifest(path, name, verifier, game_dir=game_dir) for name, verifier in data["files"].items()]
 
         commands = \
             [] if skip_commands else \
@@ -119,6 +135,25 @@ class _Tool(NamedTuple):
     @classmethod
     def load_custom(cls, game_dir: Path, manifest, *names: str):
         return [cls.from_manifest(game_dir, name, manifest["tools"][name], skip_commands=True) for name in names]
+
+    @staticmethod
+    def download_and_unzip(url: str, destination: Path):
+        print("Downloading", url, flush=True)
+
+        resp = requests.get(url)
+
+        z = ZipFile(BytesIO(resp.content))
+        top_level_names = {name.split("/")[0] for name in z.namelist()}
+
+        # each tool should have <ToolName>/<files> as contents of its zip
+        assert len(top_level_names) == 1
+
+        main_dir = next(iter(top_level_names))
+
+        z.extractall(destination.parent)
+        shutil.move(destination.parent / main_dir, destination)
+
+        print("Extracted tool files to:", destination, flush=True)
 
 class _MapTile(NamedTuple):
     Coords = Tuple[int, int]
