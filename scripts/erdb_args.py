@@ -5,21 +5,32 @@ from typing import List
 from scripts.erdb_generators import ERDBGenerator
 from scripts.game_version import GameVersion, GameVersionRange
 
+def _parse_all_generator(gens: List[ERDBGenerator], all_effective_gens) -> List[ERDBGenerator]:
+    generators = set(gens)
+
+    if ERDBGenerator.ALL in generators:
+        generators.update(all_effective_gens)
+        generators.remove(ERDBGenerator.ALL)
+
+    return list(generators)
+
 class _GeneratorsAction(argparse.Action):
     def __call__(self, parser, namespace, values: List[ERDBGenerator], option_string=None):
-        generators = set(values)
+        setattr(namespace, self.dest, _parse_all_generator(values, ERDBGenerator))
 
-        if ERDBGenerator.ALL in generators:
-            generators.update(ERDBGenerator)
-            generators.remove(ERDBGenerator.ALL)
+class _ItemTypesAction(argparse.Action):
+    def __call__(self, parser, namespace, values: List[ERDBGenerator], option_string=None):
+        setattr(namespace, self.dest, _parse_all_generator(values, _ItemTypesAction.choices()))
 
-        setattr(namespace, self.dest, list(generators))
+    @staticmethod
+    def choices() -> List[ERDBGenerator]:
+        return [gen for gen in ERDBGenerator if gen.has_icons]
 
 class _GamedataAction(argparse.Action):
     def __call__(self, parser, namespace, values: List[str], option_string=None):
         setattr(namespace, self.dest, GameVersionRange.from_string(" ".join(values)))
 
-def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_map, on_fetch_calc_data):
+def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_map, on_icons, on_fetch_calc_data):
     parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
 
     outputs_json = argparse.ArgumentParser(add_help=False)
@@ -62,6 +73,12 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_map, 
     pmap.add_argument("--lod", "-l", type=int, default=0, help="Level of detail of the map, 0 is highest.")
     pmap.add_argument("--underground", action=argparse.BooleanOptionalAction, help="Specifies whether to extract the underground map instead of the overworld.")
     pmap.set_defaults(func=lambda args: on_map(args.game_dir, args.out, args.lod, args.underground, args.ignore_checksum, args.keep_cache))
+
+    icons = subs.add_parser("icons", help="Extract item images from an UXM-unpacked Elden Ring installation (Windows only)", parents=[exports_data])
+    icons.add_argument("types", type=ERDBGenerator, default=[ERDBGenerator.ALL], choices=_ItemTypesAction.choices(), nargs="+", action=_ItemTypesAction, help="Specify item types to export images for.")
+    icons.add_argument("--size", "-s", type=int, default=1024, choices=range(1, 1025), metavar="[1-1024]", help="Size in pixels of images to be exported, resized from maximum quality in game files (1024x1024).")
+    icons.add_argument("--destination", "-d", type=Path, default=Path.cwd, help="Directory where the images should be exported to. If not specified, current working directory is used. Parent directories will be created automatically.")
+    icons.set_defaults(func=lambda args: on_icons(args.game_dir, args.types, args.size, args.destination, args.ignore_checksum, args.keep_cache))
 
     fetch_data = subs.add_parser("fetch-calc-data", help="Fetch calculator test data from an online calculator.")
     fetch_data.add_argument("google_key", type=str, help="Path to JSON key from the service account with access to a Google Sheet calculator.")

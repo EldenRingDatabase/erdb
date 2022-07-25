@@ -5,7 +5,9 @@ import requests
 import subprocess as proc
 import scripts.config as cfg
 import xml.etree.ElementTree as xmltree
+from PIL import Image
 from io import BytesIO
+from csv import DictReader
 from zipfile import ZipFile
 from itertools import chain, islice
 from time import sleep
@@ -13,6 +15,7 @@ from hashlib import md5
 from pathlib import Path
 from typing import Tuple, Dict, List, NamedTuple, Optional
 from scripts.game_version import GameVersion
+from scripts.erdb_generators import ERDBGenerator
 
 def _prepare_writable_path(path: Path, default_filename: str) -> Path:
     (path if path.suffix == "" else path.parent).mkdir(parents=True, exist_ok=True)
@@ -21,11 +24,6 @@ def _prepare_writable_path(path: Path, default_filename: str) -> Path:
 def _is_empty(d: Path) -> bool:
     assert d.is_dir(), f"{d} is not a directory."
     return not any(d.iterdir())
-
-def _get_size(d: Path) -> str:
-    assert d.is_dir(), f"{d} is not a directory."
-    size = sum(p.stat().st_size for p in d.rglob("*"))
-    return f"{size:,}"
 
 def _load_manifest():
     with open(cfg.ROOT / "gamedata" / "_Extracted" / "manifest.json") as f:
@@ -41,6 +39,20 @@ def _chunks(files_iterable, size: int):
     it = iter(files_iterable)
     for first in it:
         yield chain([first], islice(it, size - 1))
+
+def _process_cache(*paths: Path, keep_cache: bool):
+    def _get_size(d: Path) -> str:
+        assert d.is_dir(), f"{d} is not a directory."
+        size = sum(p.stat().st_size for p in d.rglob("*"))
+        return f"{size:,}"
+
+    if keep_cache:
+        print("Keeping unpacked files due to --keep-cache option:", flush=True)
+        for p in paths: print("*", p, _get_size(p), "bytes", flush=True)
+
+    else:
+        print("Removing unpacked files (--keep-cache not specified)...", flush=True)
+        for p in paths: shutil.rmtree(p, ignore_errors=True)
 
 class _File(NamedTuple):
     path: Path
@@ -236,7 +248,6 @@ def _assemble_map(tiles: List[_MapTile], out: Optional[Path]=None):
     level = "underground" if tiles[0].underground else "overworld"
 
     print(f"Generating {X}x{Y} {level} map file with lod {lod}...", flush=True)
-    from PIL import Image
 
     expected_size = 256
     worldmap = Image.new("RGB", (X * expected_size, Y * expected_size))
@@ -272,17 +283,24 @@ def _parse_tile_masks(mask_dir: Path, lod: int=0, underground: bool=False) -> _M
 
     return masks
 
+def _unpack_missing_dds(yabber: _Tool, dds_files: List[Path]):
+    files = [f for f in dds_files if not f.exists()]
+    files = [dcx for f in files if (dcx := f.parent.parent / f.with_suffix(".tpf.dcx").name).exists()]
+
+    for files_chunk in _chunks(files, 20):
+        yabber.run_command("Yabber.exe", *map(str, files_chunk))
+
 def source_map(game_dir: Path, out: Optional[Path]=None, lod: int=0, underground: bool=False, ignore_checksum: bool=False, keep_cache: bool=False):
-    def _get_not_unpacked(tiles: List[_MapTile], func):
-        return (t.path for t in tiles if not func(t.path).is_file())
+    def _get_not_unpacked(tiles: List[_MapTile], predicate):
+        return (t.path for t in tiles if not predicate(t.path).is_file())
 
     manifest = _load_manifest()
 
     yabber, = _Tool.load_custom(game_dir, manifest, "Yabber")
     yabber.check_files(ignore_checksum)
 
-    tile_dir = (game_dir / "menu" / "71_maptile-tpfbhd" / "71_MapTile")
-    mask_dir = (game_dir / "menu" / "71_maptile-mtmskbnd" / "GR" / "data" / "INTERROOT_win64" / "menu" / "ScaleForm" / "maptile" / "mask")
+    tile_dir = game_dir / "menu" / "71_maptile-tpfbhd" / "71_MapTile"
+    mask_dir = game_dir / "menu" / "71_maptile-mtmskbnd" / "GR" / "data" / "INTERROOT_win64" / "menu" / "ScaleForm" / "maptile" / "mask"
 
     try:
 
@@ -308,15 +326,90 @@ def source_map(game_dir: Path, out: Optional[Path]=None, lod: int=0, underground
         _assemble_map(_MapTile.glob(tile_dir, ".dds", lod, underground, masks), out)
 
     except: raise
+    finally: _process_cache(tile_dir, mask_dir, keep_cache=keep_cache)
 
-    finally:
+def source_icons(game_dir: Path, types: List[ERDBGenerator], size: int, desination: Path, ignore_checksum: bool=False, keep_cache: bool=False):
+    assert 1 <= size <= 1024, f"Invalid size: {size}"
 
-        if keep_cache:
-            print("Keeping unpacked files due to --keep-cache option:", flush=True)
-            print("*", tile_dir, _get_size(tile_dir), "bytes", flush=True)
-            print("*", mask_dir, _get_size(mask_dir), "bytes", flush=True)
+    def readr(param_type: ERDBGenerator):
+        """
+        Need the make sure the item name is used from the very first occurence
+        of the icon ID, otherwise icon IDs will be assigned to a fully upgraded
+        version of the item since upgrades share the icon. Reverse reading the
+        param is easier for dict comprehension, because instead of checking if a
+        key exist, we can keep overriding and keep the code simpler.
+        """
+        with open(game_dir / "param" / "gameparam" / f"{param_type.stem}.csv", mode="r") as f:
+            reader = DictReader(f, delimiter=";")
+            rows = {int(row["Row ID"]): row for row in reader}
 
-        else:
-            print("Removing unpacked files (--keep-cache not specified)...", flush=True)
-            shutil.rmtree(tile_dir, ignore_errors=True)
-            shutil.rmtree(mask_dir, ignore_errors=True)
+            for index in reversed(rows.keys()):
+                yield index, rows[index]
+
+    def valid_row(index: int, row: Dict[str, str], id_range: Optional[Tuple[int, int]]=None) -> bool:
+        return \
+            len(row["Row Name"]) > 0 and \
+            (id_range is None or t.id_range[0] <= index < t.id_range[1])
+
+    def get_icon_id(row: Dict[str, str]) -> int:
+        return int(row["iconId"]) if "iconId" in row else int(row["iconIdM"])
+
+    def get_name(row: Dict[str, str]) -> str:
+        return row["Row Name"].replace(":", "")
+
+    def get_icon_dds(loc: Path, icon_id: int) -> Path:
+        stem = f"MENU_Knowledge_{icon_id:05}"
+        return loc / "00_Solo" / f"{stem}-tpf-dcx" / f"{stem}.dds"
+
+    manifest = _load_manifest()
+
+    yabber, er_exporter = _Tool.load_custom(game_dir, manifest, "Yabber", "ERExporter")
+    yabber.check_files(ignore_checksum)
+    er_exporter.check_files(ignore_checksum)
+
+    gameparam_dir = game_dir / "param" / "gameparam"
+    icon_dir = game_dir / "menu" / "hi" / "00_solo-tpfbhd"
+    desination.mkdir(parents=True, exist_ok=True)
+
+    try:
+
+        if not gameparam_dir.is_dir() or _is_empty(gameparam_dir):
+            er_exporter.run_command("ERExporter.Param.exe", f"{game_dir}/regulation.bin")
+
+        param_files = (game_dir / "param" / "gameparam" / f"{t.stem}.param" for t in types)
+        param_files = [f for f in param_files if not f.with_suffix(".csv").exists()]
+
+        if len(param_files) > 0:
+            er_exporter.run_command("ERExporter.Param.exe", *map(str, param_files))
+
+        if not icon_dir.is_dir() or _is_empty(icon_dir):
+            yabber.run_command("Yabber.exe", str(icon_dir.parent / "00_solo.tpfbhd"))
+
+        for t in types:
+            dest = desination / str(t)
+            dest.mkdir()
+
+            print(f"Exporting to {t}...", flush=True)
+
+            id_to_name = {get_icon_id(row): get_name(row) for index, row in readr(t) if valid_row(index, row, t.id_range)}
+            dds_files  = [get_icon_dds(icon_dir, icon_id) for icon_id in id_to_name.keys()]
+
+            _unpack_missing_dds(yabber, dds_files)
+
+            cur, count = 0, len(id_to_name)
+
+            for icon_id, name in id_to_name.items():
+                dds = get_icon_dds(icon_dir, icon_id)
+
+                if not dds.exists():
+                    print(f"[{(cur := cur + 1)}/{count}] Skipping missing icon for {name}: {dds}", flush=True)
+                    continue
+
+                with Image.open(dds) as img:
+                    out = dest / f"{name}.png"
+
+                    print(f"[{(cur := cur + 1)}/{count}] {out}", flush=True)
+                    img.resize((size, size)).save(out, format="png")
+
+    except: raise
+    finally: _process_cache(gameparam_dir, icon_dir, keep_cache=keep_cache)

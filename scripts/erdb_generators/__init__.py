@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Optional, Tuple
 from scripts.erdb_generators._base import GeneratorDataBase
 from scripts.erdb_generators.armaments import ArmamentGeneratorData
 from scripts.erdb_generators.armor import ArmorGeneratorData
@@ -25,6 +26,36 @@ class ERDBGenerator(Enum):
 
     def __str__(self):
         return self.value
+
+    @property
+    def has_icons(self) -> bool:
+        return self in (
+            ERDBGenerator.ALL,
+            ERDBGenerator.ARMAMENTS,
+            ERDBGenerator.ARMOR,
+            ERDBGenerator.ASHES_OF_WAR,
+            ERDBGenerator.SPIRIT_ASHES,
+            ERDBGenerator.TALISMANS,
+        )
+
+    @property
+    def stem(self) -> str:
+        return {
+            ERDBGenerator.ARMAMENTS: "EquipParamWeapon",
+            ERDBGenerator.ARMOR: "EquipParamProtector",
+            ERDBGenerator.ASHES_OF_WAR: "EquipParamGem",
+            ERDBGenerator.CORRECTION_ATTACK: "AttackElementCorrectParam",
+            ERDBGenerator.CORRECTION_GRAPH: "CalcCorrectGraph",
+            ERDBGenerator.REINFORCEMENTS: "ReinforceParamWeapon",
+            ERDBGenerator.SPIRIT_ASHES: "EquipParamGoods",
+            ERDBGenerator.TALISMANS: "EquipParamAccessory",
+        }[self]
+
+    @property
+    def id_range(self) -> Optional[Tuple[int, int]]:
+        return {
+            ERDBGenerator.SPIRIT_ASHES: (200000, 300000),
+        }.get(self)
 
     def construct(self, version: GameVersion) -> ERDBGeneratorBase:
         return {
