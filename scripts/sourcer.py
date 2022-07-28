@@ -29,29 +29,18 @@ def _load_manifest():
     with open(cfg.ROOT / "gamedata" / "_Extracted" / "manifest.json") as f:
         return json.load(f)
 
-def _unpacked_dcx(dcx: Path) -> Path:
-    return dcx.parent / dcx.stem
-
-def _unpacked_tpf(tpf: Path) -> Path:
-    return tpf.parent / tpf.name.replace(".", "-") / f"{tpf.stem}.dds"
-
-def _chunks(files_iterable, size: int):
-    it = iter(files_iterable)
-    for first in it:
-        yield chain([first], islice(it, size - 1))
-
 def _process_cache(*paths: Path, keep_cache: bool):
-    def _get_size(d: Path) -> str:
+    def get_size(d: Path) -> str:
         assert d.is_dir(), f"{d} is not a directory."
         size = sum(p.stat().st_size for p in d.rglob("*"))
         return f"{size:,}"
 
     if keep_cache:
         print("Keeping unpacked files due to --keep-cache option:", flush=True)
-        for p in paths: print("*", p, _get_size(p), "bytes", flush=True)
+        for p in paths: print("*", p, get_size(p), "bytes", flush=True)
 
     else:
-        print("Removing unpacked files (--keep-cache not specified)...", flush=True)
+        print("Removing unpacked files (--keep-cache not provided)...", flush=True)
         for p in paths: shutil.rmtree(p, ignore_errors=True)
 
 class _File(NamedTuple):
@@ -180,6 +169,11 @@ class _MapTile(NamedTuple):
     code: Code
 
     @property
+    def stem(self) -> str:
+        ext = "".join(self.path.suffixes)
+        return self.path.name.removesuffix(ext)
+
+    @property
     def coords(self) -> Coords:
         return (self.x, self.y)
 
@@ -284,23 +278,25 @@ def _parse_tile_masks(mask_dir: Path, lod: int=0, underground: bool=False) -> _M
     return masks
 
 def _unpack_missing_dds(yabber: _Tool, dds_files: List[Path]):
+    def chunks(files_iterable, size: int):
+        it = iter(files_iterable)
+        for first in it:
+            yield chain([first], islice(it, size - 1))
+
     files = [f for f in dds_files if not f.exists()]
     files = [dcx for f in files if (dcx := f.parent.parent / f.with_suffix(".tpf.dcx").name).exists()]
 
-    for files_chunk in _chunks(files, 20):
+    for files_chunk in chunks(files, 20):
         yabber.run_command("Yabber.exe", *map(str, files_chunk))
 
 def source_map(game_dir: Path, out: Optional[Path]=None, lod: int=0, underground: bool=False, ignore_checksum: bool=False, keep_cache: bool=False):
-    def _get_not_unpacked(tiles: List[_MapTile], predicate):
-        return (t.path for t in tiles if not predicate(t.path).is_file())
-
     manifest = _load_manifest()
 
     yabber, = _Tool.load_custom(game_dir, manifest, "Yabber")
     yabber.check_files(ignore_checksum)
 
     tile_dir = game_dir / "menu" / "71_maptile-tpfbhd" / "71_MapTile"
-    mask_dir = game_dir / "menu" / "71_maptile-mtmskbnd" / "GR" / "data" / "INTERROOT_win64" / "menu" / "ScaleForm" / "maptile" / "mask"
+    mask_dir = game_dir / "menu" / "71_maptile-mtmskbnd-dcx" / "GR" / "data" / "INTERROOT_win64" / "menu" / "ScaleForm" / "maptile" / "mask"
 
     try:
 
@@ -308,20 +304,14 @@ def source_map(game_dir: Path, out: Optional[Path]=None, lod: int=0, underground
             yabber.run_command("Yabber.exe", f"{game_dir}/menu/71_maptile.tpfbhd")
 
         if not mask_dir.is_dir() or _is_empty(mask_dir):
-            yabber.run_command("Yabber.DCX.exe", f"{game_dir}/menu/71_maptile.mtmskbnd.dcx")
-            yabber.run_command("Yabber.exe", f"{game_dir}/menu/71_maptile.mtmskbnd")
+            yabber.run_command("Yabber.exe", f"{game_dir}/menu/71_maptile.mtmskbnd.dcx")
 
         masks = _parse_tile_masks(mask_dir, lod, underground)
 
         dcx_tiles = _MapTile.glob(tile_dir, ".tpf.dcx", lod, underground, masks)
-        dcx_files = _get_not_unpacked(dcx_tiles, _unpacked_dcx)
-        for file_chunk in _chunks(dcx_files, 20):
-            yabber.run_command("Yabber.DCX.exe", *map(str, file_chunk))
+        dds_files = [t.path.parent / f"{t.stem}-tpf-dcx" / f"{t.stem}.dds" for t in dcx_tiles]
 
-        tpf_tiles = _MapTile.glob(tile_dir, ".tpf", lod, underground, masks)
-        tpf_files = _get_not_unpacked(tpf_tiles, _unpacked_tpf)
-        for file_chunk in _chunks(tpf_files, 20):
-            yabber.run_command("Yabber.exe", *map(str, file_chunk))
+        _unpack_missing_dds(yabber, dds_files)
 
         _assemble_map(_MapTile.glob(tile_dir, ".dds", lod, underground, masks), out)
 
