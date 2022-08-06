@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import Optional, Tuple
+from typing import List, Optional, Tuple
 from scripts.erdb_generators._base import GeneratorDataBase
 from scripts.erdb_generators.armaments import ArmamentGeneratorData
 from scripts.erdb_generators.armor import ArmorGeneratorData
@@ -27,6 +27,10 @@ class ERDBGenerator(Enum):
     def __str__(self):
         return self.value
 
+    def __lt__(self, other: "ERDBGenerator"):
+        assert isinstance(other, ERDBGenerator)
+        return self.value < other.value
+
     @property
     def has_icons(self) -> bool:
         return self in (
@@ -37,6 +41,10 @@ class ERDBGenerator(Enum):
             ERDBGenerator.SPIRIT_ASHES,
             ERDBGenerator.TALISMANS,
         )
+
+    @property
+    def title(self) -> str:
+        return str(self).replace("-", " ").title()
 
     @property
     def stem(self) -> str:
@@ -68,3 +76,9 @@ class ERDBGenerator(Enum):
             ERDBGenerator.SPIRIT_ASHES: SpiritAshGeneratorData,
             ERDBGenerator.TALISMANS: TalismanGeneratorData,
         }[self].construct(version)
+
+    @staticmethod
+    def effective() -> List["ERDBGenerator"]:
+        s = set(ERDBGenerator)
+        s.remove(ERDBGenerator.ALL)
+        return list(s)

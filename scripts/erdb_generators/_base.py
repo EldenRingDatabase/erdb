@@ -100,3 +100,7 @@ class GeneratorDataBase(NamedTuple):
     def get_user_data(self, row: str, field: str):
         assert field in self.schema_properties
         return self.user_data.get(row.replace(":", ""), {}).get(field, self.schema_properties[field].get("default", {}))
+
+    def generate(self) -> Dict:
+        main_iter = self.main_param_iterator(self.main_param)
+        return {self.get_key_name(row): self.construct_object(row) for row in main_iter}

@@ -2,6 +2,7 @@ import argparse
 import scripts.config as cfg
 from pathlib import Path
 from typing import List
+from scripts.changelog import FormatterBase
 from scripts.erdb_generators import ERDBGenerator
 from scripts.game_version import GameVersion, GameVersionRange
 
@@ -30,7 +31,7 @@ class _GamedataAction(argparse.Action):
     def __call__(self, parser, namespace, values: List[str], option_string=None):
         setattr(namespace, self.dest, GameVersionRange.from_string(" ".join(values)))
 
-def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_map, on_icons, on_fetch_calc_data):
+def parse_args(on_generate, on_find_values, on_calculate_ar, on_changelog, on_source, on_map, on_icons, on_fetch_calc_data):
     parser = argparse.ArgumentParser(description="Interface for ERDB operations.")
 
     outputs_json = argparse.ArgumentParser(add_help=False)
@@ -63,6 +64,13 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_source, on_map, 
     calc.add_argument("affinity", type=str, help="Affinity of the armament.")
     calc.add_argument("level", type=str, help="Upgrade level of the armament.")
     calc.set_defaults(func=lambda args: on_calculate_ar(args.attribs, args.armament, args.affinity, args.level, args.gamedata))
+
+    change = subs.add_parser("changelog", help="Create a changelog of erdb-detectable differences between specified versions.")
+    change.add_argument("version", type=GameVersion.from_string, help="Version to generate the changelog of.")
+    change.add_argument("--out", "-o", type=Path, default=None, help="Output path where changes should be written to, stdout if not specified.")
+    change.add_argument("--formatter", "-f", type=str, default=FormatterBase.identifiers()[0], choices=FormatterBase.identifiers(), help="Format to output the changelog in.")
+    change.add_argument("--from-version", type=GameVersion.from_string, default=None, help="Optional starting version of the changelog, previous if not specified.")
+    change.set_defaults(func=lambda args: on_changelog(args.version, args.out, args.formatter, args.from_version))
 
     source = subs.add_parser("source", help="Extract gamedata from an UXM-unpacked Elden Ring installation (Windows only)", parents=[exports_data])
     source.add_argument("--version", "-v", type=GameVersion.from_string, required=True, help="Version to create from the extracted files.")
