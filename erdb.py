@@ -7,7 +7,7 @@ from scripts.erdb_args import parse_args
 from scripts.find_valid_values import find_valid_values
 from scripts.attack_power import CalculatorData, ArmamentCalculator, Attributes
 from scripts.game_version import GameVersion, GameVersionRange
-from scripts.erdb_generators import ERDBGenerator
+from scripts.erdb_generators import GameParam
 from scripts.sourcer import source_gamedata, source_map, source_icons
 from scripts.changelog import generate as generate_changelog
 
@@ -36,28 +36,28 @@ def iterate_gamedata(gamedata: GameVersionRange) -> GameVersion:
         (cfg.ROOT / str(version)).mkdir(exist_ok=True)
         yield version
 
-def on_generate(generators: List[ERDBGenerator], gamedata: GameVersionRange, minimize: bool):
+def on_generate(game_params: List[GameParam], gamedata: GameVersionRange, minimize: bool):
     for version in iterate_gamedata(gamedata):
-        for gen in [factory.construct(version) for factory in generators]:
-            print(f"\n>>> Generating \"{gen.element_name()}\" from version {version}", flush=True)
+        for generator in (gp.generator(version) for gp in game_params):
+            print(f"\n>>> Generating \"{generator.element_name()}\" from version {version}", flush=True)
 
-            output_file = cfg.ROOT / str(version) / gen.output_file()
+            output_file = cfg.ROOT / str(version) / generator.output_file()
             print(f"Output file: {output_file}", flush=True)
 
             if output_file.exists():
                 print(f"Output file exists and will be overridden", flush=True)
 
-            data = gen.generate()
+            data = generator.generate()
             count = len(data)
 
             data = {
-                gen.element_name(): data,
-                "$schema": f"../schema/{gen.schema_file()}"
+                generator.element_name(): data,
+                "$schema": f"../schema/{generator.schema_file()}"
             }
 
             print(f"Generated {count} elements", flush=True)
 
-            ok = validate_and_write(output_file, gen.schema_file(), data, gen.schema_store, minimize)
+            ok = validate_and_write(output_file, generator.schema_file(), data, generator.schema_store, minimize)
             assert ok, "Generated schema failed to validate"
 
             print(f"Validated {count} elements", flush=True)
@@ -117,14 +117,14 @@ def on_map(game_dir: Path, out: Optional[Path], lod: int, underground: bool, ign
     except AssertionError as e:
         print("Sourcing map failed:", *e.args)
 
-def on_icons(game_dir: Path, types: List[ERDBGenerator], size: int, destination: Path, ignore_checksum: bool, keep_cache: bool):
+def on_icons(game_dir: Path, game_params: List[GameParam], size: int, destination: Path, ignore_checksum: bool, keep_cache: bool):
     game_dir = game_dir.resolve()
     destination = destination.resolve()
 
-    print(f"\n>>> Extracting {', '.join(map(str, types))} icons from \"{game_dir}\".")
+    print(f"\n>>> Extracting {', '.join(map(str, game_params))} icons from \"{game_dir}\".")
 
     try:
-        source_icons(game_dir, types, size, destination, ignore_checksum, keep_cache)
+        source_icons(game_dir, game_params, size, destination, ignore_checksum, keep_cache)
 
     except AssertionError as e:
         print("Sourcing icons failed:", *e.args)

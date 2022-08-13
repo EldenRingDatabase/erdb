@@ -6,7 +6,7 @@ from difflib import Differ
 from operator import methodcaller, eq
 from deepdiff import DeepDiff
 from collections import defaultdict
-from scripts.erdb_generators import ERDBGenerator
+from scripts.erdb_generators import GameParam
 from scripts.game_version import GameVersion
 
 class ChangelogFormatter(Enum):
@@ -169,7 +169,7 @@ def _get_item_changes(old_data: Dict, new_data: Dict) -> Dict[str, Set[_Change]]
 def generate(from_version: GameVersion, version: GameVersion, out: Path, formatter_id: str="markdown"):
     formatter = FormatterBase.create(formatter_id)
 
-    for gen_factory in sorted(ERDBGenerator.effective()):
+    for gen_factory in sorted(GameParam.effective()):
         print(f"Generating changelog for {gen_factory}...", flush=True)
 
         new_data = gen_factory.construct(version).generate()

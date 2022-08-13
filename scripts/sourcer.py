@@ -15,7 +15,7 @@ from hashlib import md5
 from pathlib import Path
 from typing import Tuple, Dict, List, NamedTuple, Optional
 from scripts.game_version import GameVersion
-from scripts.erdb_generators import ERDBGenerator
+from scripts.erdb_generators import GameParam
 
 def _prepare_writable_path(path: Path, default_filename: str) -> Path:
     (path if path.suffix == "" else path.parent).mkdir(parents=True, exist_ok=True)
@@ -318,10 +318,10 @@ def source_map(game_dir: Path, out: Optional[Path]=None, lod: int=0, underground
     except: raise
     finally: _process_cache(tile_dir, mask_dir, keep_cache=keep_cache)
 
-def source_icons(game_dir: Path, types: List[ERDBGenerator], size: int, desination: Path, ignore_checksum: bool=False, keep_cache: bool=False):
+def source_icons(game_dir: Path, game_params: List[GameParam], size: int, desination: Path, ignore_checksum: bool=False, keep_cache: bool=False):
     assert 1 <= size <= 1024, f"Invalid size: {size}"
 
-    def readr(param_type: ERDBGenerator):
+    def readr(gp: GameParam):
         """
         Need the make sure the item name is used from the very first occurence
         of the icon ID, otherwise icon IDs will be assigned to a fully upgraded
@@ -329,7 +329,7 @@ def source_icons(game_dir: Path, types: List[ERDBGenerator], size: int, desinati
         param is easier for dict comprehension, because instead of checking if a
         key exist, we can keep overriding and keep the code simpler.
         """
-        with open(game_dir / "param" / "gameparam" / f"{param_type.stem}.csv", mode="r") as f:
+        with open(game_dir / "param" / "gameparam" / f"{gp.stem}.csv", mode="r") as f:
             reader = DictReader(f, delimiter=";")
             rows = {int(row["Row ID"]): row for row in reader}
 
@@ -366,7 +366,7 @@ def source_icons(game_dir: Path, types: List[ERDBGenerator], size: int, desinati
         if not gameparam_dir.is_dir() or _is_empty(gameparam_dir):
             er_exporter.run_command("ERExporter.Param.exe", f"{game_dir}/regulation.bin")
 
-        param_files = (game_dir / "param" / "gameparam" / f"{t.stem}.param" for t in types)
+        param_files = (game_dir / "param" / "gameparam" / f"{gp.stem}.param" for gp in game_params)
         param_files = [f for f in param_files if not f.with_suffix(".csv").exists()]
 
         if len(param_files) > 0:
@@ -375,13 +375,13 @@ def source_icons(game_dir: Path, types: List[ERDBGenerator], size: int, desinati
         if not icon_dir.is_dir() or _is_empty(icon_dir):
             yabber.run_command("Yabber.exe", str(icon_dir.parent / "00_solo.tpfbhd"))
 
-        for t in types:
-            dest = desination / str(t)
+        for gp in game_params:
+            dest = desination / str(gp)
             dest.mkdir()
 
-            print(f"Exporting to {t}...", flush=True)
+            print(f"Exporting to {gp}...", flush=True)
 
-            id_to_name = {get_icon_id(row): get_name(row) for index, row in readr(t) if valid_row(index, row, t.id_range)}
+            id_to_name = {get_icon_id(row): get_name(row) for index, row in readr(t) if valid_row(index, row, gp.id_range)}
             dds_files  = [get_icon_dds(icon_dir, icon_id) for icon_id in id_to_name.keys()]
 
             _unpack_missing_dds(yabber, dds_files)

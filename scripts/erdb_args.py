@@ -3,29 +3,29 @@ import scripts.config as cfg
 from pathlib import Path
 from typing import List
 from scripts.changelog import FormatterBase
-from scripts.erdb_generators import ERDBGenerator
+from scripts.erdb_generators import GameParam
 from scripts.game_version import GameVersion, GameVersionRange
 
-def _parse_all_generator(gens: List[ERDBGenerator], all_effective_gens) -> List[ERDBGenerator]:
-    generators = set(gens)
+def _parse_all_game_params(game_params: List[GameParam], all_effective_game_params) -> List[GameParam]:
+    game_params = set(game_params)
 
-    if ERDBGenerator.ALL in generators:
-        generators.update(all_effective_gens)
-        generators.remove(ERDBGenerator.ALL)
+    if GameParam.ALL in game_params:
+        game_params.update(all_effective_game_params)
+        game_params.remove(GameParam.ALL)
 
-    return list(generators)
+    return list(game_params)
 
 class _GeneratorsAction(argparse.Action):
-    def __call__(self, parser, namespace, values: List[ERDBGenerator], option_string=None):
-        setattr(namespace, self.dest, _parse_all_generator(values, ERDBGenerator))
+    def __call__(self, parser, namespace, values: List[GameParam], option_string=None):
+        setattr(namespace, self.dest, _parse_all_game_params(values, GameParam))
 
 class _ItemTypesAction(argparse.Action):
-    def __call__(self, parser, namespace, values: List[ERDBGenerator], option_string=None):
-        setattr(namespace, self.dest, _parse_all_generator(values, _ItemTypesAction.choices()))
+    def __call__(self, parser, namespace, values: List[GameParam], option_string=None):
+        setattr(namespace, self.dest, _parse_all_game_params(values, _ItemTypesAction.choices()))
 
     @staticmethod
-    def choices() -> List[ERDBGenerator]:
-        return [gen for gen in ERDBGenerator if gen.has_icons]
+    def choices() -> List[GameParam]:
+        return [gp for gp in GameParam if gp.has_icons]
 
 class _GamedataAction(argparse.Action):
     def __call__(self, parser, namespace, values: List[str], option_string=None):
@@ -49,7 +49,7 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_changelog, on_so
     subs = parser.add_subparsers(title="subcommands", required=True)
 
     gen = subs.add_parser("generate", aliases=["gen"], help="List of items to generate.", parents=[sources_data, outputs_json])
-    gen.add_argument("generators", type=ERDBGenerator, default=[], choices=list(ERDBGenerator), nargs="+", action=_GeneratorsAction, help="Specify any or all generators.")
+    gen.add_argument("generators", type=GameParam, default=[], choices=list(GameParam), nargs="+", action=_GeneratorsAction, help="Specify any or all generators.")
     gen.set_defaults(func=lambda args: on_generate(args.generators, args.gamedata, args.minimize))
 
     vals = subs.add_parser("find-values", aliases=["vals"], help="Find all possible values of a field per param name.", parents=[sources_data])
@@ -83,7 +83,7 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_changelog, on_so
     pmap.set_defaults(func=lambda args: on_map(args.game_dir, args.out, args.lod, args.underground, args.ignore_checksum, args.keep_cache))
 
     icons = subs.add_parser("icons", help="Extract item images from an UXM-unpacked Elden Ring installation (Windows only)", parents=[exports_data])
-    icons.add_argument("types", type=ERDBGenerator, default=[ERDBGenerator.ALL], choices=_ItemTypesAction.choices(), nargs="+", action=_ItemTypesAction, help="Specify item types to export images for.")
+    icons.add_argument("types", type=GameParam, default=[GameParam.ALL], choices=_ItemTypesAction.choices(), nargs="+", action=_ItemTypesAction, help="Specify item types to export images for.")
     icons.add_argument("--size", "-s", type=int, default=1024, choices=range(1, 1025), metavar="[1-1024]", help="Size in pixels of images to be exported, resized from maximum quality in game files (1024x1024).")
     icons.add_argument("--destination", "-d", type=Path, default=Path.cwd, help="Directory where the images should be exported to. If not specified, current working directory is used. Parent directories will be created automatically.")
     icons.set_defaults(func=lambda args: on_icons(args.game_dir, args.types, args.size, args.destination, args.ignore_checksum, args.keep_cache))

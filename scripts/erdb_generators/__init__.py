@@ -11,9 +11,7 @@ from scripts.erdb_generators.spirit_ashes import SpiritAshGeneratorData
 from scripts.erdb_generators.talismans import TalismanGeneratorData
 from scripts.game_version import GameVersion
 
-ERDBGeneratorBase = GeneratorDataBase
-
-class ERDBGenerator(Enum):
+class GameParam(Enum):
     ALL = "all"
     ARMAMENTS = "armaments"
     ARMOR = "armor"
@@ -27,19 +25,19 @@ class ERDBGenerator(Enum):
     def __str__(self):
         return self.value
 
-    def __lt__(self, other: "ERDBGenerator"):
-        assert isinstance(other, ERDBGenerator)
+    def __lt__(self, other: "GameParam"):
+        assert isinstance(other, GameParam)
         return self.value < other.value
 
     @property
     def has_icons(self) -> bool:
         return self in (
-            ERDBGenerator.ALL,
-            ERDBGenerator.ARMAMENTS,
-            ERDBGenerator.ARMOR,
-            ERDBGenerator.ASHES_OF_WAR,
-            ERDBGenerator.SPIRIT_ASHES,
-            ERDBGenerator.TALISMANS,
+            GameParam.ALL,
+            GameParam.ARMAMENTS,
+            GameParam.ARMOR,
+            GameParam.ASHES_OF_WAR,
+            GameParam.SPIRIT_ASHES,
+            GameParam.TALISMANS,
         )
 
     @property
@@ -49,36 +47,36 @@ class ERDBGenerator(Enum):
     @property
     def stem(self) -> str:
         return {
-            ERDBGenerator.ARMAMENTS: "EquipParamWeapon",
-            ERDBGenerator.ARMOR: "EquipParamProtector",
-            ERDBGenerator.ASHES_OF_WAR: "EquipParamGem",
-            ERDBGenerator.CORRECTION_ATTACK: "AttackElementCorrectParam",
-            ERDBGenerator.CORRECTION_GRAPH: "CalcCorrectGraph",
-            ERDBGenerator.REINFORCEMENTS: "ReinforceParamWeapon",
-            ERDBGenerator.SPIRIT_ASHES: "EquipParamGoods",
-            ERDBGenerator.TALISMANS: "EquipParamAccessory",
+            GameParam.ARMAMENTS: "EquipParamWeapon",
+            GameParam.ARMOR: "EquipParamProtector",
+            GameParam.ASHES_OF_WAR: "EquipParamGem",
+            GameParam.CORRECTION_ATTACK: "AttackElementCorrectParam",
+            GameParam.CORRECTION_GRAPH: "CalcCorrectGraph",
+            GameParam.REINFORCEMENTS: "ReinforceParamWeapon",
+            GameParam.SPIRIT_ASHES: "EquipParamGoods",
+            GameParam.TALISMANS: "EquipParamAccessory",
         }[self]
 
     @property
     def id_range(self) -> Optional[Tuple[int, int]]:
         return {
-            ERDBGenerator.SPIRIT_ASHES: (200000, 300000),
+            GameParam.SPIRIT_ASHES: (200000, 300000),
         }.get(self)
 
-    def construct(self, version: GameVersion) -> ERDBGeneratorBase:
+    def generator(self, version: GameVersion) -> GeneratorDataBase:
         return {
-            ERDBGenerator.ARMAMENTS: ArmamentGeneratorData,
-            ERDBGenerator.ARMOR: ArmorGeneratorData,
-            ERDBGenerator.ASHES_OF_WAR: AshOfWarGeneratorData,
-            ERDBGenerator.CORRECTION_ATTACK: CorrectionAttackGeneratorData,
-            ERDBGenerator.CORRECTION_GRAPH: CorrectionGraphGeneratorData,
-            ERDBGenerator.REINFORCEMENTS: ReinforcementGeneratorData,
-            ERDBGenerator.SPIRIT_ASHES: SpiritAshGeneratorData,
-            ERDBGenerator.TALISMANS: TalismanGeneratorData,
+            GameParam.ARMAMENTS: ArmamentGeneratorData,
+            GameParam.ARMOR: ArmorGeneratorData,
+            GameParam.ASHES_OF_WAR: AshOfWarGeneratorData,
+            GameParam.CORRECTION_ATTACK: CorrectionAttackGeneratorData,
+            GameParam.CORRECTION_GRAPH: CorrectionGraphGeneratorData,
+            GameParam.REINFORCEMENTS: ReinforcementGeneratorData,
+            GameParam.SPIRIT_ASHES: SpiritAshGeneratorData,
+            GameParam.TALISMANS: TalismanGeneratorData,
         }[self].construct(version)
 
     @staticmethod
-    def effective() -> List["ERDBGenerator"]:
-        s = set(ERDBGenerator)
-        s.remove(ERDBGenerator.ALL)
+    def effective() -> List["GameParam"]:
+        s = set(GameParam)
+        s.remove(GameParam.ALL)
         return list(s)
