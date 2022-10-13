@@ -85,6 +85,9 @@ def on_changelog(version: GameVersion, out: Optional[Path], formatter_id: str, f
     assert version in cfg.VERSIONS, f"No {version} version found"
     assert from_version is None or from_version in cfg.VERSIONS, f"No {from_version} version found"
 
+    if out is not None:
+        out = out.resolve()
+
     if from_version is None:
         prev_id = cfg.VERSIONS.index(version) + 1
         assert prev_id < len(cfg.VERSIONS), f"No version found before {version}"

@@ -1,9 +1,10 @@
 from io import TextIOBase
 from enum import Enum
+from sys import stdout
 from typing import Any, Dict, List, NamedTuple, Optional, OrderedDict, Set
 from pathlib import Path
 from difflib import Differ
-from operator import methodcaller, eq
+from operator import methodcaller
 from deepdiff import DeepDiff
 from collections import defaultdict
 from scripts.erdb_generators import GameParam
@@ -166,14 +167,14 @@ def _get_item_changes(old_data: Dict, new_data: Dict) -> Dict[str, Set[_Change]]
 
     return item_changes
 
-def generate(from_version: GameVersion, version: GameVersion, out: Path, formatter_id: str="markdown"):
+def generate(from_version: GameVersion, version: GameVersion, out: Optional[Path], formatter_id: str="markdown"):
     formatter = FormatterBase.create(formatter_id)
 
     for gen_factory in sorted(GameParam.effective()):
         print(f"Generating changelog for {gen_factory}...", flush=True)
 
-        new_data = gen_factory.construct(version).generate()
-        old_data = gen_factory.construct(from_version).generate()
+        new_data = gen_factory.generator(version).generate()
+        old_data = gen_factory.generator(from_version).generate()
 
         item_changes = _get_item_changes(old_data, new_data)
 
@@ -204,5 +205,9 @@ def generate(from_version: GameVersion, version: GameVersion, out: Path, formatt
                 formatter.end_diff()
                 formatter.line("")
 
-    with open(out, mode="w") as f:
-        formatter.write(f)
+    if out is None:
+        formatter.write(stdout)
+
+    else:
+        with open(out, mode="w") as f:
+            formatter.write(f)
