@@ -6,6 +6,7 @@ from pathlib import Path
 from difflib import Differ
 from operator import methodcaller
 from deepdiff import DeepDiff
+from contextlib import suppress
 from collections import defaultdict
 from scripts.erdb_generators import GameParam
 from scripts.game_version import GameVersion
@@ -33,7 +34,7 @@ class _Change(NamedTuple):
 
     @property
     def display(self) -> str:
-        return " > ".join(self.property_path)
+        return " > ".join(map(str, self.property_path))
 
     def __hash__(self) -> int:
         return hash((self.display))
@@ -42,10 +43,15 @@ class _Change(NamedTuple):
         return isinstance(__o, _Change) and self.display == __o.display
 
     def navigate(self, data: Optional[Dict]) -> Any:
+        def _get_any(obj: Any, prop: Any) -> Any:
+            with suppress(KeyError):
+                return obj[prop]
+            return None
+
         out = data
 
         for p in self.property_path:
-            if (out := out.get(p)) is None:
+            if (out := _get_any(out, p)) is None:
                 return None
 
         return out
