@@ -1996,7 +1996,7 @@
                     "attribute": "Stamina Attack Rate",
                     "model": "multiplicative",
                     "type": "positive",
-                    "value": 1.4
+                    "value": 1.2
                 }
             ],
             "conflicts": [
