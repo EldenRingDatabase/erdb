@@ -1,7 +1,7 @@
 from typing import Dict, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag, Affinity, WeaponClass
-from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description
+from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description, strip_invalid_name
 from scripts.erdb_generators._base import GeneratorDataBase
 
 def _is_elem_true(row: ParamRow, list_param: str, elem: str) -> bool:
@@ -28,11 +28,16 @@ class AshOfWarGeneratorData(GeneratorDataBase):
     def element_name() -> str:
         return "AshesOfWar"
 
+    # override
+    def get_key_name(self, row: ParamRow) -> str:
+        return strip_invalid_name(self.msgs["names"][row.index])
+
     main_param_retriever = Base.ParamDictRetriever("EquipParamGem", ItemIDFlag.ACCESSORIES, id_min=10000)
 
     param_retrievers = {}
 
     msgs_retrievers = {
+        "names": Base.MsgsRetriever("GemName"),
         "summaries": Base.MsgsRetriever("GemInfo"),
         "descriptions": Base.MsgsRetriever("GemCaption")
     }
@@ -59,15 +64,15 @@ class AshOfWarGeneratorData(GeneratorDataBase):
         return {
             "full_hex_id": row.index_hex,
             "id": row.index,
-            "name": row.name,
+            "name": self.get_key_name(row),
             "summary": summaries[row.index],
             "description": parse_description(descriptions[row.index]),
             "is_tradable": row.get("disableMultiDropShare") == "0",
             "price_sold": row.get_int_corrected("sellValue"),
             "max_held": 999,
             "max_stored": 999,
-            "locations": self.get_user_data(row.name, "locations"),
-            "remarks": self.get_user_data(row.name, "remarks"),
+            "locations": self.get_user_data(self.get_key_name(row), "locations"),
+            "remarks": self.get_user_data(self.get_key_name(row), "remarks"),
             "classes": [*map(str, _get_classes(row))],
             "default_affinity": str(Affinity(row.get("defaultWepAttr"))),
             "affinities": [*map(str, _get_affinities(row))],

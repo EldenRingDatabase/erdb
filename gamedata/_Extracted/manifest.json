@@ -14,14 +14,19 @@
                 ["Yabber.exe",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/AccessoryCaption.fmg",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/AccessoryInfo.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/AccessoryName.fmg",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GemCaption.fmg",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GemInfo.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GemName.fmg",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GoodsCaption.fmg",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GoodsInfo.fmg",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GoodsInfo2.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/GoodsName.fmg",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/ProtectorCaption.fmg",
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/ProtectorInfo.fmg",
-                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/WeaponCaption.fmg"]
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/ProtectorName.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/WeaponCaption.fmg",
+                    "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/WeaponName.fmg"]
             ]
         },
         "ERExporter": {
@@ -124,6 +129,11 @@
             "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
             "$comment": "Talisman summaries"
         },
+        "AccessoryName.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Talisman names"
+        },
         "GemCaption.fmg.xml": {
             "source": "Yabber",
             "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
@@ -133,6 +143,11 @@
             "source": "Yabber",
             "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
             "$comment": "Ash of War summaries"
+        },
+        "GemName.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Ash of War names"
         },
         "GoodsCaption.fmg.xml": {
             "source": "Yabber",
@@ -149,6 +164,11 @@
             "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
             "$comment": "General item extra short info, like the name of the spirit summon or crafing material locations"
         },
+        "GoodsName.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "General item names"
+        },
         "ProtectorCaption.fmg.xml": {
             "source": "Yabber",
             "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
@@ -159,10 +179,20 @@
             "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
             "$comment": "Armor piece summaries"
         },
+        "ProtectorName.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Armor piece names"
+        },
         "WeaponCaption.fmg.xml": {
             "source": "Yabber",
             "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
             "$comment": "Armament descriptions"
+        },
+        "WeaponName.fmg.xml": {
+            "source": "Yabber",
+            "location": "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS",
+            "$comment": "Armament names"
         }
     }
 }

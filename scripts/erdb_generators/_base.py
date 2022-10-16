@@ -29,7 +29,7 @@ class GeneratorDataBase(NamedTuple):
     class MsgsRetriever(NamedTuple):
         file_name: str
 
-        def get(self, version: GameVersion) -> Dict[str, str]:
+        def get(self, version: GameVersion) -> Dict[int, str]:
             return _get_item_msg(self.file_name, version)
 
     class LookupRetriever(NamedTuple):
@@ -50,7 +50,7 @@ class GeneratorDataBase(NamedTuple):
 
     main_param: ParamDict
     params: Dict[str, ParamDict]
-    msgs: Dict[str, Dict[str, str]]
+    msgs: Dict[str, Dict[int, str]]
     lookups: Dict[str, Lookup]
     user_data: Dict[str, Dict]
 
@@ -69,9 +69,8 @@ class GeneratorDataBase(NamedTuple):
     def element_name() -> str:
         assert False, "element_name must be overridden"
 
-    @staticmethod
-    def get_key_name(row: ParamRow) -> str:
-        return row.name
+    def get_key_name(self, row: ParamRow) -> str:
+        assert False, "get_key_name must be overridden"
 
     main_param_retriever: ParamDictRetriever = None
     param_retrievers: Dict[str, ParamDictRetriever] = None

@@ -1,16 +1,23 @@
 from typing import Dict, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import Affinity, AttackCondition, ItemIDFlag, WeaponClass, AshOfWarMountType, AttackAttribute, ReinforcementType
-from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description, find_offset_indices, update_optional
+from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description, find_offset_indices, update_optional, strip_invalid_name
 from scripts.sp_effect_parser import parse_effects, parse_status_effects, parse_weapon_effects
 from scripts.erdb_generators._base import GeneratorDataBase
 
 #def _get_ingame_name(name: str) -> str:
-#        return {
-#            "Misericorde": "Miséricorde",
-#            "Great Epee": "Great Épée",
-#            "Varre's Bouquet": "Varré's Bouquet",
-#        }.get(name, name)
+#    return {
+#        "Misericorde": "Miséricorde",
+#        "Great Epee": "Great Épée",
+#        "Varre's Bouquet": "Varré's Bouquet",
+#    }.get(name, name)
+
+def _get_ascii_name(name: str) -> str:
+    return {
+        "Miséricorde": "Misericorde",
+        "Great Épée": "Great Epee",
+        "Varré's Bouquet": "Varre's Bouquet",
+    }.get(name, name)
 
 _BEHAVIOR_EFFECTS_FIELDS: List[str] = ["spEffectBehaviorId0", "spEffectBehaviorId1", "spEffectBehaviorId2"]
 _RESIDENT_EFFECTS_FIELDS: List[str] = ["residentSpEffectId", "residentSpEffectId1", "residentSpEffectId2"]
@@ -158,13 +165,10 @@ class ArmamentGeneratorData(GeneratorDataBase):
     def element_name() -> str:
         return "Armaments"
 
-    @staticmethod # override
-    def get_key_name(row: ParamRow) -> str:
-        return {
-            "Onyx Lord's Sword": "Alabaster Lord's Sword",
-            "Great epee": "Great Epee",
-            "Sacred Mohgwyn's Spear": "Mohgwyn's Sacred Spear"
-        }.get(row.name, row.name)
+    # override
+    def get_key_name(self, row: ParamRow) -> str:
+        key_name = _get_ascii_name(self.msgs["names"][row.index])
+        return strip_invalid_name(key_name)
 
     main_param_retriever = Base.ParamDictRetriever("EquipParamWeapon", ItemIDFlag.WEAPONS, id_min=1000000, id_max=49000000)
 
@@ -174,6 +178,7 @@ class ArmamentGeneratorData(GeneratorDataBase):
     }
 
     msgs_retrievers = {
+        "names": Base.MsgsRetriever("WeaponName"),
         "descriptions": Base.MsgsRetriever("WeaponCaption")
     }
 
@@ -223,8 +228,8 @@ class ArmamentGeneratorData(GeneratorDataBase):
             "price_sold": row.get_int_corrected("sellValue"),
             "max_held": 999,
             "max_stored": 999,
-            "locations": self.get_user_data(row.name, "locations"),
-            "remarks": self.get_user_data(row.name, "remarks"),
+            "locations": self.get_user_data(self.get_key_name(row), "locations"),
+            "remarks": self.get_user_data(self.get_key_name(row), "remarks"),
             "behavior_variation_id": row.get_int("behaviorVariationId"),
             "class": str(WeaponClass.from_id(row.get("wepType"))),
             "weight": row.get_float("weight"),

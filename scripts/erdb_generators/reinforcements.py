@@ -72,8 +72,8 @@ class ReinforcementGeneratorData(GeneratorDataBase):
     def element_name() -> str:
         return "Reinforcements"
 
-    @staticmethod # override
-    def get_key_name(row: ParamRow) -> str:
+    # override
+    def get_key_name(self, row: ParamRow) -> str:
         return str(ReinforcementType(str(row.index)))
 
     main_param_retriever = Base.ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE)
@@ -90,7 +90,7 @@ class ReinforcementGeneratorData(GeneratorDataBase):
 
     def main_param_iterator(self, reinforcements: ParamDict):
         for row in reinforcements.values():
-            if _is_base_index(row.index) and len(row.name) > 0:
+            if _is_base_index(row.index) and len(row.name) > 0: # NOTE: Paramdex coupling (row.name)
                 yield row
 
     def construct_object(self, row: ParamRow) -> Dict:

@@ -66,8 +66,8 @@ class CorrectionAttackGeneratorData(GeneratorDataBase):
     def element_name() -> str:
         return "CorrectionAttack"
 
-    @staticmethod # override
-    def get_key_name(row: ParamRow) -> str:
+    # override
+    def get_key_name(self, row: ParamRow) -> str:
         return str(row.index)
 
     main_param_retriever = Base.ParamDictRetriever("AttackElementCorrectParam", ItemIDFlag.NON_EQUIPABBLE)

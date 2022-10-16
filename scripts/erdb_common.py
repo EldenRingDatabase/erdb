@@ -84,3 +84,6 @@ def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: Lis
     maxima = _find_offset_maxima()
     levels = range(0, (maxima + 1) * increment, increment)
     return map(add, repeat(base_index), levels), levels
+
+def strip_invalid_name(name: str) -> str:
+    return name.removeprefix("[ERROR]").strip()

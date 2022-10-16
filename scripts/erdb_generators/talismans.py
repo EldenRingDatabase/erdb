@@ -2,11 +2,8 @@ from typing import Dict, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
 from scripts.sp_effect_parser import parse_effects
-from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description
+from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description, strip_invalid_name
 from scripts.erdb_generators._base import GeneratorDataBase
-
-def _find_conflicts(group: int, accessories: ParamDict) -> List[str]:
-    return [t.name for t in accessories.values() if t.get_int("accessoryGroup") == group and len(t.name) > 0]
 
 class TalismanGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
@@ -23,6 +20,13 @@ class TalismanGeneratorData(GeneratorDataBase):
     def element_name() -> str:
         return "Talismans"
 
+    # override
+    def get_key_name(self, row: ParamRow) -> str:
+        return strip_invalid_name(self.msgs["names"][row.index])
+
+    def _find_conflicts(self, group: int, accessories: ParamDict) -> List[str]:
+        return [self.get_key_name(t) for t in accessories.values() if t.get_int("accessoryGroup") == group and t.get_int("sortId") < 9999999]
+
     main_param_retriever = Base.ParamDictRetriever("EquipParamAccessory", ItemIDFlag.ACCESSORIES)
 
     param_retrievers = {
@@ -30,6 +34,7 @@ class TalismanGeneratorData(GeneratorDataBase):
     }
 
     msgs_retrievers = {
+        "names": Base.MsgsRetriever("AccessoryName"),
         "summaries": Base.MsgsRetriever("AccessoryInfo"),
         "descriptions": Base.MsgsRetriever("AccessoryCaption")
     }
@@ -60,16 +65,16 @@ class TalismanGeneratorData(GeneratorDataBase):
         return {
             "full_hex_id": row.index_hex,
             "id": row.index,
-            "name": row.name,
+            "name": self.get_key_name(row),
             "summary": summaries[row.index],
             "description": parse_description(descriptions[row.index]),
             "is_tradable": row.get("disableMultiDropShare") == "0",
             "price_sold": row.get_int_corrected("sellValue"),
             "max_held": 999,
             "max_stored": 999,
-            "locations": self.get_user_data(row.name, "locations"),
-            "remarks": self.get_user_data(row.name, "remarks"),
+            "locations": self.get_user_data(self.get_key_name(row), "locations"),
+            "remarks": self.get_user_data(self.get_key_name(row), "remarks"),
             "weight": row.get_float("weight"),
             "effects": parse_effects(row, effects, "refId"),
-            "conflicts": _find_conflicts(row.get_int("accessoryGroup"), talismans),
+            "conflicts": self._find_conflicts(row.get_int("accessoryGroup"), talismans),
         }
