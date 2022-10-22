@@ -2,7 +2,7 @@ from typing import Dict, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
 from scripts.sp_effect_parser import parse_effects
-from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description, strip_invalid_name
+from scripts.erdb_common import get_schema_properties, get_schema_enums, strip_invalid_name
 from scripts.erdb_generators._base import GeneratorDataBase
 
 class TalismanGeneratorData(GeneratorDataBase):
@@ -59,21 +59,8 @@ class TalismanGeneratorData(GeneratorDataBase):
     def construct_object(self, row: ParamRow) -> Dict:
         talismans = self.main_param
         effects = self.params["effects"]
-        summaries = self.msgs["summaries"]
-        descriptions = self.msgs["descriptions"]
 
-        return {
-            "full_hex_id": row.index_hex,
-            "id": row.index,
-            "name": self.get_key_name(row),
-            "summary": summaries[row.index],
-            "description": parse_description(descriptions[row.index]),
-            "is_tradable": row.get("disableMultiDropShare") == "0",
-            "price_sold": row.get_int_corrected("sellValue"),
-            "max_held": 999,
-            "max_stored": 999,
-            "locations": self.get_user_data(self.get_key_name(row), "locations"),
-            "remarks": self.get_user_data(self.get_key_name(row), "remarks"),
+        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks") | {
             "weight": row.get_float("weight"),
             "effects": parse_effects(row, effects, "refId"),
             "conflicts": self._find_conflicts(row.get_int("accessoryGroup"), talismans),

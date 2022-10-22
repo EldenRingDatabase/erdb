@@ -3,7 +3,7 @@ from scripts import er_shop
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
 from scripts.sp_effect_parser import parse_effects
-from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description, strip_invalid_name
+from scripts.erdb_common import get_schema_properties, get_schema_enums, strip_invalid_name
 from scripts.erdb_generators._base import GeneratorDataBase
 
 def _get_category(category: int) -> str:
@@ -101,8 +101,6 @@ class ArmorGeneratorData(GeneratorDataBase):
     def construct_object(self, row: ParamRow) -> Dict:
         names = self.msgs["names"]
         effects = self.params["effects"]
-        summaries = self.msgs["summaries"]
-        descriptions = self.msgs["descriptions"]
         armor_lookup = self.lookups["armor_lookup"]
 
         material = er_shop.Material(row.index, er_shop.Material.Category.PROTECTOR)
@@ -110,18 +108,7 @@ class ArmorGeneratorData(GeneratorDataBase):
         assert len(lineups) in [0, 2], "Each armor should have either none or self-/boc-made alterations"
         altered = "" if len(lineups) == 0 else strip_invalid_name(names[lineups[0].product.index])
 
-        return {
-            "full_hex_id": row.index_hex,
-            "id": row.index,
-            "name": self.get_key_name(row),
-            "summary": summaries.get(row.index, "no summary"),
-            "description": parse_description(descriptions[row.index]),
-            "is_tradable": row.get("disableMultiDropShare") == "0",
-            "price_sold": row.get_int_corrected("sellValue"),
-            "max_held": 999,
-            "max_stored": 999,
-            "locations": self.get_user_data(self.get_key_name(row), "locations"),
-            "remarks": self.get_user_data(self.get_key_name(row), "remarks"),
+        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks") | {
             "category": _get_category(row.get_int("protectorCategory")),
             "altered": altered,
             "weight": row.get_float("weight"),

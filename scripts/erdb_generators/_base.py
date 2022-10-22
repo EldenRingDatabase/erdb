@@ -2,7 +2,7 @@ import xml.etree.ElementTree as xmltree
 import scripts.config as cfg
 import scripts.er_params as er_params
 import scripts.user_data as user_data
-from typing import Callable, Iterator, NamedTuple, Optional, Tuple, Dict
+from typing import Any, Callable, Iterator, List, NamedTuple, Optional, Tuple, Dict
 from scripts.game_version import GameVersion
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
@@ -12,6 +12,9 @@ def _get_item_msg(filename: str, version: GameVersion) -> Dict[int, str]:
     tree = xmltree.parse(f"{cfg.ROOT}/gamedata/_Extracted/{version}/{filename}.fmg.xml")
     entries = tree.getroot().findall(".//text")
     return {int(e.get("id")): e.text for e in entries if e.text != "%null%"}
+
+def _parse_description(desc: str) -> List[str]:
+    return desc.replace("—", " - ").split("\n")
 
 class GeneratorDataBase(NamedTuple):
 
@@ -82,6 +85,37 @@ class GeneratorDataBase(NamedTuple):
     main_param_iterator: Callable[["GeneratorDataBase", ParamDict], Iterator[ParamRow]] = None
     construct_object: Callable[["GeneratorDataBase", ParamRow], Dict] = None
 
+    def get_fields_item(self, row: ParamRow, *, summary: bool = True, description: bool = True) -> Dict[str, Any]:
+        """
+        Covers every common field specified in item.schema.json
+        """
+
+        assert not summary or "summaries" in self.msgs, "Summary specified, yet no summaries were parsed"
+        assert not description or "descriptions" in self.msgs, "Description specified, yet no descriptions were parsed"
+
+        return {
+            "full_hex_id": row.index_hex,
+            "id": row.index,
+            "name": self.get_key_name(row),
+            "summary": self.msgs["summaries"].get(row.index, "no summary") if summary else "no summary", # individual items might not have summaries
+            "description": _parse_description(self.msgs["descriptions"][row.index]) if description else "no description",
+            "is_tradable": row.get("disableMultiDropShare") == "0", # assumption this exists for every param table
+            "price_sold": row.get_int_corrected("sellValue"),       # assumption this exists for every param table
+            "max_held": row.get_int("maxNum") if "maxNum" in row.keys else 999,
+            "max_stored": row.get_int("maxRepositoryNum") if "maxRepositoryNum" in row.keys else 999,
+        }
+
+    def get_fields_user_data(self, row: ParamRow, *args: str) -> Dict[str, Any]:
+        """
+        Covers every user data field
+        """
+        def get_user_data(row: str, field: str):
+            assert field in self.schema_properties
+            return self.user_data.get(row.replace(":", ""), {}).get(field, self.schema_properties[field].get("default", {}))
+
+        name = self.get_key_name(row)
+        return {arg: get_user_data(name, arg) for arg in args}
+
     @classmethod
     def construct(cls, version: GameVersion) -> "GeneratorDataBase":
         def _retrieve_dict(retrievers):
@@ -95,10 +129,6 @@ class GeneratorDataBase(NamedTuple):
         properties, store = cls.schema_retriever()
 
         return cls(main_param, params, msgs, lookups, user_data, properties, store)
-
-    def get_user_data(self, row: str, field: str):
-        assert field in self.schema_properties
-        return self.user_data.get(row.replace(":", ""), {}).get(field, self.schema_properties[field].get("default", {}))
 
     def generate(self) -> Dict:
         main_iter = self.main_param_iterator(self.main_param)

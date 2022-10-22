@@ -1,6 +1,6 @@
 from typing import List, NamedTuple
 from scripts.er_params import ParamDict
-from scripts.erdb_common import find_offset_indices, parse_description
+from scripts.erdb_common import find_offset_indices
 import pytest
 
 class ParamDictGenerator(NamedTuple):
@@ -39,10 +39,3 @@ def test_find_offset_indices(starting_element: int, element_interval: int, level
 
         assert list(results[element]) == list(ids)
         assert [index - element_offset for index in results[element]] == list(levels)
-
-@pytest.mark.parametrize("description, result", [
-    ("This\nbe cool\ndescription", ["This", "be cool", "description"]),
-    ("Not super\ninteresting—but whatever", ["Not super", "interesting - but whatever"]),
-])
-def test_parse_description(description: str, result: List[str]):
-    assert result == parse_description(description)

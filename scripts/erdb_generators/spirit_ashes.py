@@ -1,7 +1,7 @@
 from typing import Dict, Iterator, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import GoodsType, GoodsRarity, ItemIDFlag
-from scripts.erdb_common import find_offset_indices, get_schema_properties, parse_description, strip_invalid_name
+from scripts.erdb_common import find_offset_indices, get_schema_properties, strip_invalid_name
 from scripts.erdb_generators._base import GeneratorDataBase
 
 def _is_base_spirit_ash(row: ParamRow) -> bool:
@@ -62,32 +62,17 @@ class SpiritAshGeneratorData(GeneratorDataBase):
         goods = self.main_param
         upgrade_materials = self.params["upgrade_materials"]
         names = self.msgs["names"]
-        summaries = self.msgs["summaries"]
         summon_names = self.msgs["summon_names"]
-        descriptions = self.msgs["descriptions"]
 
         upgrade_material = upgrade_materials[row.get("reinforceMaterialId")]
         upgrade_material = names[upgrade_material.get_int("materialId01")].removesuffix("[1]").strip()
         assert upgrade_material in ["Grave Glovewort", "Ghost Glovewort"]
 
-        return {
-            "full_hex_id": row.index_hex,
-            "id": row.index,
-            "name": self.get_key_name(row),
-            "summary": summaries[row.index],
-            "description": parse_description(descriptions[row.index]),
+        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks", "summon_quantity", "abilities") | {
             "summon_name": summon_names[row.index].strip(), # sometimes trailing spaces
-            "is_tradable": row.get("disableMultiDropShare") == "0",
-            "price_sold": row.get_int_corrected("sellValue"),
-            "max_held": row.get_int("maxNum"),
-            "max_stored": row.get_int("maxRepositoryNum"),
-            "locations": self.get_user_data(self.get_key_name(row), "locations"),
-            "remarks": self.get_user_data(self.get_key_name(row), "remarks"),
             "fp_cost": row.get_int_corrected("consumeMP"),
             "hp_cost": row.get_int_corrected("consumeHP"),
             "rarity": GoodsRarity(row.get_int("rarity")).name.lower(),
-            "summon_quantity": self.get_user_data(self.get_key_name(row), "summon_quantity"),
-            "abilities": self.get_user_data(self.get_key_name(row), "abilities"),
             "upgrade_material": upgrade_material,
             "upgrade_costs": _find_upgrade_costs(goods, row.index)
         }

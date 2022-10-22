@@ -1,7 +1,7 @@
 from typing import Dict, Iterator, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import GoodsType, ItemIDFlag
-from scripts.erdb_common import get_schema_enums, get_schema_properties, parse_description, strip_invalid_name, update_optional
+from scripts.erdb_common import get_schema_enums, get_schema_properties, strip_invalid_name, update_optional
 from scripts.erdb_generators._base import GeneratorDataBase
 
 def _get_magic_type(behavior_type: str) -> str:
@@ -66,8 +66,6 @@ class SpellGeneratorData(GeneratorDataBase):
 
     def construct_object(self, row: ParamRow) -> Dict:
         row_magic = self.params["magic"][str(row.index)]
-        summaries = self.msgs["summaries"]
-        descriptions = self.msgs["descriptions"]
 
         fp_cost = row_magic.get_int("mp")
         fp_extra = row_magic.get_int("mp_charge")
@@ -78,18 +76,7 @@ class SpellGeneratorData(GeneratorDataBase):
         hold_action = "None" if fp_extra == 0 else "Charge"
         hold_action = hold_action if row_magic.get_int("consumeLoopMP_forMenu") == -1 else "Continuous"
 
-        return {
-            "full_hex_id": row.index_hex,
-            "id": row.index,
-            "name": self.get_key_name(row),
-            "summary": summaries[row.index],
-            "description": parse_description(descriptions[row.index]),
-            "is_tradable": row.get("disableMultiDropShare") == "0",
-            "price_sold": row.get_int_corrected("sellValue"),
-            "max_held": row.get_int("maxNum"),
-            "max_stored": row.get_int("maxRepositoryNum"),
-            "locations": self.get_user_data(self.get_key_name(row), "locations"),
-            "remarks": self.get_user_data(self.get_key_name(row), "remarks"),
+        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks") | {
             "fp_cost": fp_cost,
             "fp_cost_extra": fp_extra - fp_cost if hold_action == "Charge" else fp_extra,
             "sp_cost": sp_cost,

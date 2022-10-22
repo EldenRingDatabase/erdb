@@ -49,9 +49,6 @@ def get_schema_properties(*references: str) -> Tuple[Dict, Dict[str, Dict]]:
 
     return properties_full, store
 
-def parse_description(desc: str) -> List[str]:
-    return desc.replace("—", " - ").split("\n")
-
 def update_nested(d, u):
     """
     Update function which recursively updates subdictionaries.

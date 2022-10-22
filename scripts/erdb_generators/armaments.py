@@ -1,7 +1,7 @@
 from typing import Dict, List, Tuple
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import Affinity, AttackCondition, ItemIDFlag, WeaponClass, AshOfWarMountType, AttackAttribute, ReinforcementType
-from scripts.erdb_common import get_schema_properties, get_schema_enums, parse_description, find_offset_indices, update_optional, strip_invalid_name
+from scripts.erdb_common import get_schema_properties, get_schema_enums, find_offset_indices, update_optional, strip_invalid_name
 from scripts.sp_effect_parser import parse_effects, parse_status_effects, parse_weapon_effects
 from scripts.erdb_generators._base import GeneratorDataBase
 
@@ -203,7 +203,6 @@ class ArmamentGeneratorData(GeneratorDataBase):
     def construct_object(self, row: ParamRow) -> Dict:
         effects = self.params["effects"]
         reinforces = self.params["reinforces"]
-        descriptions = self.msgs["descriptions"]
 
         upgrade_costs = _get_upgrade_costs(row, reinforces)
         upgrade_material = { # assuming nothing upgrades to +10 with regular stones
@@ -218,18 +217,7 @@ class ArmamentGeneratorData(GeneratorDataBase):
 
         allow_ash_of_war = AshOfWarMountType(row.get("gemMountType")) == AshOfWarMountType.ALLOW_CHANGE
 
-        return {
-            "full_hex_id": row.index_hex,
-            "id": row.index,
-            "name": self.get_key_name(row),
-            "summary": "no summary",
-            "description": parse_description(descriptions[row.index]),
-            "is_tradable": row.get("disableMultiDropShare") == "0",
-            "price_sold": row.get_int_corrected("sellValue"),
-            "max_held": 999,
-            "max_stored": 999,
-            "locations": self.get_user_data(self.get_key_name(row), "locations"),
-            "remarks": self.get_user_data(self.get_key_name(row), "remarks"),
+        return self.get_fields_item(row, summary=False) | self.get_fields_user_data(row, "locations", "remarks") | {
             "behavior_variation_id": row.get_int("behaviorVariationId"),
             "class": str(WeaponClass.from_id(row.get("wepType"))),
             "weight": row.get_float("weight"),
