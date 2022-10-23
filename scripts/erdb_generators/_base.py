@@ -93,11 +93,15 @@ class GeneratorDataBase(NamedTuple):
         assert not summary or "summaries" in self.msgs, "Summary specified, yet no summaries were parsed"
         assert not description or "descriptions" in self.msgs, "Description specified, yet no descriptions were parsed"
 
+        # individual items might not have summaries or descriptions
+        summary = summary and row.index in self.msgs["summaries"]
+        description = description and row.index in self.msgs["descriptions"]
+
         return {
             "full_hex_id": row.index_hex,
             "id": row.index,
             "name": self.get_key_name(row),
-            "summary": self.msgs["summaries"].get(row.index, "no summary") if summary else "no summary", # individual items might not have summaries
+            "summary": self.msgs["summaries"][row.index] if summary else "no summary",
             "description": _parse_description(self.msgs["descriptions"][row.index]) if description else "no description",
             "is_tradable": row.get("disableMultiDropShare") == "0", # assumption this exists for every param table
             "price_sold": row.get_int_corrected("sellValue"),       # assumption this exists for every param table

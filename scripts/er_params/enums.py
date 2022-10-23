@@ -35,6 +35,28 @@ class GoodsRarity(IntEnum):
     RARE = 2
     LEGENDARY = 3
 
+class GoodsSortGroupID(IntEnum):
+    """
+    Defines subgroups you see in an individual menu tab.
+    Values are reused per tabs so some groups are too generic
+    to have a specific name, but there are exceptions.
+    They CAN be discerned if `GoodsType` is known.
+    """
+    GROUP_1 = 10
+    GROUP_2 = 20
+    GROUP_3 = 30
+    GROUP_4 = 40
+    GROUP_5 = 50
+    GROUP_6 = 60
+    GROUP_7 = 70
+    GROUP_8 = 80
+    GROUP_9 = 90
+    GROUP_10 = 100 # golden runes & prayer books
+    REMEMBERANCES = 110
+    ONLINE = 120 # fingers
+    GESTURES = 250
+    ANY = 255 # a lot of seemingly random stuff and unused items
+
 class ReferenceCategory(str, Enum):
     ATTACK = "0"
     BULLET = "1"

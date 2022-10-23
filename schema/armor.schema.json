@@ -96,11 +96,8 @@
                 }
             },
             "required": [
-                "category",
-                "weight",
-                "absorptions",
-                "resistances",
-                "effects"
+                "category", "altered", "weight", "absorptions",
+                "resistances", "effects"
             ]
         }
     }
