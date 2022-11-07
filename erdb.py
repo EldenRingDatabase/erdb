@@ -137,8 +137,9 @@ def on_fetch_calc_data(version: str, google_key: str):
     fetch_attack_power_data(version, google_key)
 
 def main():
-    with open(cfg.ROOT / "latest_version.txt", mode="w") as f:
-        f.write(str(cfg.VERSIONS[0]))
+    if len(cfg.VERSIONS) > 0:
+        with open(cfg.ROOT / "latest_version.txt", mode="w") as f:
+            f.write(str(cfg.VERSIONS[0]))
 
     parse_args(on_generate, on_find_values, on_calculate_ar, on_changelog, on_source, on_map, on_icons, on_fetch_calc_data)
 

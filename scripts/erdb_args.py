@@ -38,7 +38,7 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_changelog, on_so
     outputs_json.add_argument("--minimize", action="store_true", help="Output minimized JSON when generating data.")
 
     sources_data = argparse.ArgumentParser(add_help=False)
-    default_gamedata = GameVersionRange.from_version(cfg.VERSIONS[0])
+    default_gamedata = GameVersionRange.from_version(cfg.VERSIONS[0]) if len(cfg.VERSIONS) > 0 else None
     sources_data.add_argument("--gamedata", "-g", nargs="+", default=default_gamedata, action=_GamedataAction, help="Game version range to source the data from.")
 
     exports_data = argparse.ArgumentParser(add_help=False)
@@ -90,7 +90,7 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_changelog, on_so
 
     fetch_data = subs.add_parser("fetch-calc-data", help="Fetch calculator test data from an online calculator.")
     fetch_data.add_argument("google_key", type=str, help="Path to JSON key from the service account with access to a Google Sheet calculator.")
-    fetch_data.add_argument("--version", "-v", type=str, default=str(cfg.VERSIONS[0]), help="Game version to fetch the data from, used in finding Sheet name.")
+    fetch_data.add_argument("--version", "-v", type=str, default=str(cfg.VERSIONS[0]) if len(cfg.VERSIONS) > 0 else "unknown", help="Game version to fetch the data from, used in finding Sheet name.")
     fetch_data.set_defaults(func=lambda args: on_fetch_calc_data(args.version, args.google_key))
 
     args = parser.parse_args()
