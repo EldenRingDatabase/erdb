@@ -152,6 +152,14 @@ class SchemaEffect(SimpleNamespace):
         new_effect.attribute = new_attribute
         return new_effect
 
+    def __str__(self) -> str:
+        conds      = "" if self.conditions is None else f" (under conditions {self.conditions})"
+        sign_val   = "+" if self.value > 0 else "-"
+        sign_model = "%" if self.effect_model == EffectModel.MULTIPLICATIVE else "+"
+        val_pvp    = "" if self.value_pvp is None else f" ({self.value_pvp} PVP)"
+        tick       = "" if self.tick_interval is None else f" on tick {self.tick_interval} s"
+        return f"{sign_val}{self.value}{sign_model}{val_pvp} {self.attribute.value}{conds}{tick}"
+
     @classmethod
     def from_attribute_field(cls, value: float, attrib_field: AttributeField) -> "SchemaEffect":
         value = attrib_field.parser(value, attrib_field.effect_model)
@@ -162,3 +170,14 @@ class SchemaEffect(SimpleNamespace):
             effect_model=attrib_field.effect_model,
             effect_type=attrib_field.get_effective_type(value),
             value=value)
+
+    @classmethod
+    def from_dict(cls, data: Dict) -> "SchemaEffect":
+        return cls(
+            attribute=AttributeName(data["attribute"]),
+            conditions=data.get("conditions"),
+            tick_interval=data.get("tick_interval"),
+            effect_model=EffectModel(data["model"]),
+            effect_type=EffectType(data["type"]),
+            value=data["value"],
+            value_pvp=data.get("value_pvp"))

@@ -10,6 +10,7 @@ from contextlib import suppress
 from collections import defaultdict
 from scripts.erdb_generators import GameParam
 from scripts.game_version import GameVersion
+from scripts.sp_effect_parser.effect_typing import SchemaEffect
 
 class ChangelogFormatter(Enum):
     MARKDOWN = "markdown"
@@ -48,11 +49,19 @@ class _Change(NamedTuple):
                 return obj[prop]
             return None
 
+        assert len(self.property_path) > 0, "got a zero-legnth property_path"
         out = data
 
         for p in self.property_path:
             if (out := _get_any(out, p)) is None:
                 return None
+
+        if self.property_path[-1] == "effects":
+            # treat "effects" field in a special way
+            return [str(SchemaEffect.from_dict(elem)) for elem in out]
+
+        # TODO: changelog will fail if there is another field
+        #       besides "effects" that is a list of objects
 
         return out
 
@@ -175,6 +184,7 @@ def _get_item_changes(old_data: Dict, new_data: Dict) -> Dict[str, Set[_Change]]
 
 def generate(from_version: GameVersion, version: GameVersion, out: Optional[Path], formatter_id: str="markdown"):
     formatter = FormatterBase.create(formatter_id)
+    print(f"Generating changelog from {from_version} to {version}...", flush=True)
 
     for gen_factory in sorted(GameParam.effective()):
         print(f"Generating changelog for {gen_factory}...", flush=True)
