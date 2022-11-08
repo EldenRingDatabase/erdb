@@ -58,10 +58,6 @@ class GameVersion(NamedTuple):
     def max(cls) -> "GameVersion":
         return cls("99999", "99999", "99999", [99999, 99999, 99999])
 
-    @staticmethod
-    def match_path(path: Path) -> bool:
-        return re.search(r"^[0-9\.]+$", path.name)
-
     def __str__(self) -> str:
         return f"{self.major}.{self.minor}.{self.patch}"
 

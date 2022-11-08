@@ -12,7 +12,7 @@ from scripts.sourcer import source_gamedata, source_map, source_icons
 from scripts.changelog import generate as generate_changelog
 
 cfg.ROOT = Path(__file__).parent.resolve()
-cfg.VERSIONS = sorted([GameVersion.from_string(p.name) for p in (cfg.ROOT / "gamedata" / "_Extracted").glob("*") if GameVersion.match_path(p)], reverse=True)
+cfg.VERSIONS = sorted([GameVersion.from_string(p.stem) for p in (cfg.ROOT / "gamedata" / "_Extracted").glob("*zip")], reverse=True)
 
 def validate_and_write(file_path: Path, schema_name: str, data: Dict, store: Dict[str, Dict], minimize: bool) -> bool:
     try:

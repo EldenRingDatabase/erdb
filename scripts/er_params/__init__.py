@@ -1,6 +1,7 @@
 import scripts.config as cfg
 from csv import DictReader
 from typing import List, Dict
+from zipfile import Path as ZipPath
 from scripts.game_version import GameVersion
 from scripts.er_params.enums import ItemIDFlag
 
@@ -65,7 +66,8 @@ def _in_range(row_id: str, id_min: int, id_max: int):
     return id_min <= index and index <= id_max
 
 def read(param: str, version: GameVersion) -> DictReader:
-    with open(cfg.ROOT / "gamedata" / "_Extracted" / str(version) / f"{param}.csv", mode="r") as f:
+    archive = cfg.ROOT / "gamedata" / "_Extracted" / f"{version}.zip"
+    with ZipPath(archive, at=f"{param}.csv").open(mode="r") as f:
         yield from DictReader(f, delimiter=";")
 
 def load(param: str, version: GameVersion, item_id_flag: ItemIDFlag) -> ParamDict:

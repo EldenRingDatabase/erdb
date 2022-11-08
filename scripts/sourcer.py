@@ -8,7 +8,7 @@ import xml.etree.ElementTree as xmltree
 from PIL import Image
 from io import BytesIO
 from csv import DictReader
-from zipfile import ZipFile
+from zipfile import ZipFile, ZIP_DEFLATED
 from itertools import chain, islice
 from time import sleep
 from hashlib import md5
@@ -231,21 +231,19 @@ def source_gamedata(game_dir: Path, ignore_checksum: bool, version: Optional[Gam
     if version is None:
         app_version = _get_app_version(game_dir / "eldenring.exe")
         version_instance = GameVersionInstance.construct(app_version, game_dir / "regulation_version.txt")
-        print(f"Detected versions: {version_instance}.")
+        print(f"Detected versions: {version_instance}.", flush=True)
         version = version_instance.effective
 
-    print(f"Effective version: {version}.")
+    print(f"Effective version: {version}.", flush=True)
 
-    destination = cfg.ROOT / "gamedata" / "_Extracted" / str(version)
-    assert not destination.exists() or _is_empty(destination), f"{destination} exists and is not empty."
+    archive = cfg.ROOT / "gamedata" / "_Extracted" / f"{version}.zip"
+    assert not archive.exists(), f"{archive} exists and is not empty."
 
-    print(f"Creating directory {destination}.", flush=True)
-    destination.mkdir(exist_ok=True)
-
-    print("Copying source files...", flush=True)
-    for filename, metadata in manifest["gamedata"].items():
-        location = metadata["location"].format(game_dir=game_dir)
-        shutil.copy(Path(location) / filename, destination)
+    print(f"Adding files to archive...", flush=True)
+    with ZipFile(archive, "w", compression=ZIP_DEFLATED) as z:
+        for filename, metadata in manifest["gamedata"].items():
+            location = metadata["location"].format(game_dir=game_dir)
+            z.write(Path(location) / filename, arcname=filename)
 
     print(f"Sourcing version {version} complete!", flush=True)
 

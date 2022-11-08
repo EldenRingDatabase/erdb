@@ -1,3 +1,4 @@
+from zipfile import Path as ZipPath
 import xml.etree.ElementTree as xmltree
 import scripts.config as cfg
 import scripts.er_params as er_params
@@ -9,8 +10,11 @@ from scripts.er_params.enums import ItemIDFlag
 from scripts.er_shop import Lookup
 
 def _get_item_msg(filename: str, version: GameVersion) -> Dict[int, str]:
-    tree = xmltree.parse(f"{cfg.ROOT}/gamedata/_Extracted/{version}/{filename}.fmg.xml")
-    entries = tree.getroot().findall(".//text")
+    archive = cfg.ROOT / "gamedata" / "_Extracted" / f"{version}.zip"
+    with ZipPath(archive, at=f"{filename}.fmg.xml").open(mode="r", encoding="utf-8") as f:
+        tree = xmltree.fromstring(f.read())
+        entries = tree.findall(".//text")
+
     return {int(e.get("id")): e.text for e in entries if e.text != "%null%"}
 
 def _parse_description(desc: str) -> List[str]:
