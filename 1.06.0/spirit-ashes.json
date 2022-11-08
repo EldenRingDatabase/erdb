@@ -11,7 +11,6 @@
                 "",
                 "Tiche was one of the assassins who, on the night of the plot, imbued her black knife with the Rune of Death and slew Godwyn the Golden. She was the daughter of the Black Knife Ringleader, Alecto, and was killed protecting her mother during their flight from the royal capital."
             ],
-            "summon_name": "Black Knife Tiche",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -27,15 +26,16 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 132,
-            "hp_cost": 0,
-            "rarity": "legendary",
             "summon_quantity": 1,
             "abilities": [
                 "Highly mobile",
                 "Casts Blade of Death",
                 "Jump and charged attacks can knock enemies down"
             ],
+            "summon_name": "Black Knife Tiche",
+            "fp_cost": 132,
+            "hp_cost": 0,
+            "rarity": "legendary",
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 2000,
@@ -61,7 +61,6 @@
                 "",
                 "One of the two knights known as the Wings of the Storm. After his banishment, he attracted the notice of the Grace-Given Lord and later, having slain a hundred traitors as the Lord's hand, Oleg earned the hero's honor of Erdtree Burial."
             ],
-            "summon_name": "Banished Knight Oleg",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -72,11 +71,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Banished Knight Oleg",
             "fp_cost": 100,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1550,
@@ -102,7 +102,6 @@
                 "",
                 "One of the two knights dubbed the Wings of the Storm. Despite his banishment, he rejected the invitation of the Grace-Given Lord, instead keeping watch over a masterless castle for many years, gaining renown as a hero of the fringes."
             ],
-            "summon_name": "Banished Knight Engvall",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -113,11 +112,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Banished Knight Engvall",
             "fp_cost": 100,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1550,
@@ -144,7 +144,6 @@
                 "These spirits are well suited to causing a disturbance, moving nimbly like pests and hurling magic pots.",
                 "The two imps seem fond of each other's company."
             ],
-            "summon_name": "Fanged Imps",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -155,11 +154,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Fanged Imps",
             "fp_cost": 50,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 520,
@@ -187,7 +187,6 @@
                 "",
                 "Latenna was renowned as a deft magic archer. But having lost her beloved wolf companion, Lobo, she cannot move from the place where she was summoned."
             ],
-            "summon_name": "Latenna the Albinauric",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -198,11 +197,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Latenna the Albinauric",
             "fp_cost": 74,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1870,
@@ -228,7 +228,6 @@
                 "",
                 "A member of a tribe that was entombed in the earth so as to bury the maddening disease that followed them. Able to emit the terrible flame of frenzy from his eyes, but has low HP and is frail, unable to take much in the way of punishment."
             ],
-            "summon_name": "Nomad",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -239,11 +238,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Nomad",
             "fp_cost": 61,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 650,
@@ -269,7 +269,6 @@
                 "",
                 "These sisters, members of a cold-blooded race who wield flowing weapons, became puppets of their own volition."
             ],
-            "summon_name": "Nightmaiden & Swordstress",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -280,11 +279,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Nightmaiden & Swordstress",
             "fp_cost": 97,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1520,
@@ -312,7 +312,6 @@
                 "This spirit takes the form of the summoner to fight alongside them, but its mimicry does not extend to imitating the summoner's will.",
                 "Mimic tears are the result of an attempt by the Eternal City to forge a lord."
             ],
-            "summon_name": "Mimic Tear",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -323,11 +322,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Mimic Tear",
             "fp_cost": 0,
             "hp_cost": 660,
             "rarity": "legendary",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 2000,
@@ -353,7 +353,6 @@
                 "",
                 "Spirit that wields round crystalline blades, both big and small. Its sturdy body, itself hewn from crystal long ago, is hard enough to blunt its opponent's blades, but blows from bludgeoning weapons can shatter it easily."
             ],
-            "summon_name": "Crystalian",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -364,11 +363,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Crystalian",
             "fp_cost": 101,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 900,
@@ -394,7 +394,6 @@
                 "",
                 "A spirit of the horned folk who eschew letters and metalworking. Brawny, and versed in distinctive spiritual arts, this particular tribesman wields a heavy bow."
             ],
-            "summon_name": "Ancestral Follower",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -405,11 +404,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Ancestral Follower",
             "fp_cost": 63,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 830,
@@ -435,7 +435,6 @@
                 "",
                 "A spirit with the aspect of wings which takes flight to loose arrows from its bow. The misbegotten are held to be a punishment for making contact with the Crucible, and from birth they are treated as slaves, or worse."
             ],
-            "summon_name": "Winged Misbegotten",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -446,11 +445,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Winged Misbegotten",
             "fp_cost": 37,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 410,
@@ -477,7 +477,6 @@
                 "A strapping duo of cartwheeling spirits who wield ripple swords and spew freezing breath.",
                 "Both are second-generation Albinaurics, with dumpy heads that resemble those of frogs."
             ],
-            "summon_name": "Albinaurics",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -488,11 +487,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Albinaurics",
             "fp_cost": 53,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 930,
@@ -519,7 +519,6 @@
                 "These are the spirits of militiamen who live in Death, and will continue to rise again until properly finished off.",
                 "This is the grotesque fate of those who come into contact with Deathroot."
             ],
-            "summon_name": "Skeletal Militiamen",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -530,11 +529,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Skeletal Militiamen",
             "fp_cost": 44,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 160,
@@ -561,7 +561,6 @@
                 "This is the spirit of a bandit who lives in Death, and will continue to rise again until properly finished off.",
                 "After the night of the plot, Deathroot appeared in the Lands Between, and Those Who Live in Death soon followed."
             ],
-            "summon_name": "Skeletal Bandit",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -572,11 +571,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Skeletal Bandit",
             "fp_cost": 22,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 80,
@@ -602,7 +602,6 @@
                 "",
                 "Spirits of a monstrous band of musicians who employ sacred arts. It is said that when Oracle Envoys appear, playing their pipes, they do so to herald the arrival of a new god, or a new age."
             ],
-            "summon_name": "Oracle Envoy",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -613,11 +612,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Oracle Envoy",
             "fp_cost": 72,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 760,
@@ -643,7 +643,6 @@
                 "",
                 "These spirits appear some distance from the summoner. Though their movements are dull and confused, their low moans make them effective at drawing the attention of enemies. True death does not come easily for them."
             ],
-            "summon_name": "Putrid Corpses",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -654,11 +653,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Putrid Corpses",
             "fp_cost": 40,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 280,
@@ -684,7 +684,6 @@
                 "",
                 "Depraved perfumers practice their art for themselves alone. Carmaan was a notably formidable perfumer whose strength rivaled that of heroes, and it is said that he was in search of a secret physick of revivification."
             ],
-            "summon_name": "Depraved Perfumer Carmaan",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -695,11 +694,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Depraved Perfumer Carmaan",
             "fp_cost": 124,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1880,
@@ -727,7 +727,6 @@
                 "",
                 "A tale akin to the origins of the deathbed companions."
             ],
-            "summon_name": "Perfumer Tricia",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -738,11 +737,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Perfumer Tricia",
             "fp_cost": 78,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1250,
@@ -769,7 +769,6 @@
                 "Spirit of a Raya Lucaria sorcerer wearing a stone crown.",
                 "A scholar of the Olivinus Conspectus, who has mastered the use of the Glintstone Stars sorcery."
             ],
-            "summon_name": "Glintstone Sorcerer",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -780,11 +779,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Glintstone Sorcerer",
             "fp_cost": 49,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 510,
@@ -811,7 +811,6 @@
                 "Spirit of a Raya Lucaria sorcerer wearing a stone crown.",
                 "Those who study the Twinsage Conspectus are the academy's elite, capable of mastering the Glintstone Cometshard and Crystal Burst sorceries."
             ],
-            "summon_name": "Twinsage Sorcerer",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -822,11 +821,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Twinsage Sorcerer",
             "fp_cost": 89,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 870,
@@ -853,7 +853,6 @@
                 "Spirit of a page who traveled at the side of the noble he served. Uses a piercing sword and crossbow to defend his master.",
                 "One becomes a page merely by accident of being born into obscurity; nothing is asked of ability, talent, or volition."
             ],
-            "summon_name": "Page",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -864,11 +863,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Page",
             "fp_cost": 81,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 800,
@@ -895,7 +895,6 @@
                 "Hugues came from Sellia to study the Haima Conspectus at the academy, where he became a battlemage.",
                 "Haima scholars seek to quell conflict with cannon fire and the gavel, but Hugues developed a longing for it."
             ],
-            "summon_name": "Battlemage Hugues",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -906,11 +905,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Battlemage Hugues",
             "fp_cost": 122,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1860,
@@ -937,7 +937,6 @@
                 "Bowed with age, these spirits are sluggish but hard to stagger.",
                 "The warped remains of priests who searched for revelation in service of the ancient dynasty, they employ two sorceries that produce smaller and larger bubbles."
             ],
-            "summon_name": "Claymen",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -948,11 +947,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Claymen",
             "fp_cost": 77,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 790,
@@ -978,7 +978,6 @@
                 "",
                 "Finlay was one of the few survivors of the Battle of Aeonia, who in an unimaginable act of heroism carried the slumbering demigod Malenia all the way back to the Haligtree. She managed the feat alone, fending off all manner of foes along the way."
             ],
-            "summon_name": "Cleanrot Knight Finlay",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -989,11 +988,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Cleanrot Knight Finlay",
             "fp_cost": 127,
             "hp_cost": 0,
             "rarity": "legendary",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1960,
@@ -1021,7 +1021,6 @@
                 "Attacks enemies by secreting sticky threads.",
                 "The Kindred of Rot are the servants of the Goddess of Rot - servants that have been forsaken."
             ],
-            "summon_name": "Kindred of Rot",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1032,11 +1031,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Kindred of Rot",
             "fp_cost": 73,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 770,
@@ -1064,7 +1064,6 @@
                 "These marionettes are archers, each equipped with a pair of bows.",
                 "On the verge of falling apart, they are ill-disciplined and attack without warning."
             ],
-            "summon_name": "Marionette Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1075,11 +1074,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Marionette Soldiers",
             "fp_cost": 67,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 710,
@@ -1107,7 +1107,6 @@
                 "Equipped with long-hafted scythes, they also attack from the skies by lobbing fire pots.",
                 "Can sometimes malfunction when damaged."
             ],
-            "summon_name": "Avionette Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1118,11 +1117,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Avionette Soldiers",
             "fp_cost": 67,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 710,
@@ -1149,7 +1149,6 @@
                 "Spirit of a stout monk who monitored the Giants' Flame. Versed in fire incantations, and himself steeled against fire.",
                 "Though he was charged with keeping watch over the Flame, after many years of solemn duty, he has succumbed to its allure."
             ],
-            "summon_name": "Fire Monk",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1160,11 +1159,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Fire Monk",
             "fp_cost": 85,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 820,
@@ -1191,7 +1191,6 @@
                 "Amon swore fealty to the god-slaying black flame, and so became the first fire monk to turn traitor.",
                 "Or perhaps it is better said that he fled from the Giants' Flame - out of cowardice."
             ],
-            "summon_name": "Blackflame Monk Amon",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1202,11 +1201,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Blackflame Monk Amon",
             "fp_cost": 115,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1830,
@@ -1233,7 +1233,6 @@
                 "Spirit of a deformed man-serpent that wields a whip of magma.",
                 "It is said that long ago, the elder serpent that dwelled on Mt. Gelmir devoured a demigod, and the birth of the man-serpents followed."
             ],
-            "summon_name": "Man-Serpent",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1244,11 +1243,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Man-Serpent",
             "fp_cost": 62,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 660,
@@ -1274,7 +1274,6 @@
                 "",
                 "Spirits of beastmen from doomed Farum Azula, the slowly crumbling ruins in the skies. These ruins are said to be the remains of a giant mausoleum enshrining an ancient dragon, guarded by chosen beastmen who wield weapons clad in lightning."
             ],
-            "summon_name": "Azula Beastmen",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1285,11 +1284,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Azula Beastmen",
             "fp_cost": 102,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 910,
@@ -1316,7 +1316,6 @@
                 "Spirit of a mercenary belonging to a horse-riding folk. Skillfully uses a massive blade made for dismounting other riders, and enhances his already considerable strength with war cries.",
                 "The sellswords of Kaiden made their prowess known on countless battlefields."
             ],
-            "summon_name": "Kaiden Mercenary",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1327,11 +1326,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Kaiden Mercenary",
             "fp_cost": 88,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 850,
@@ -1358,7 +1358,6 @@
                 "Spirits of wolves chased from their pack. They later encountered a nameless Tarnished, who welcomed them as hunting companions.",
                 "The wolf spirits overwhelm enemies with their agility, aiding the summoner in combat."
             ],
-            "summon_name": "Lone Wolves",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1369,11 +1368,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Lone Wolves",
             "fp_cost": 55,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 615,
@@ -1401,7 +1401,6 @@
                 "The rat spirits appear at a distance from the summoner, swarming upon their victim to start the fight.",
                 "Even as spirits, these vermin seem to multiply endlessly. Enhancing these ashes can increase their numbers."
             ],
-            "summon_name": "Giant Rats",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1412,11 +1411,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Giant Rats",
             "fp_cost": 0,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 0,
@@ -1442,7 +1442,6 @@
                 "",
                 "Spirits of demi-humans that are small in stature, but have a violent, brutish disposition. Though they seem somewhat intelligent, when night falls, their blood boils and they become feral."
             ],
-            "summon_name": "Demi-Humans",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1453,11 +1452,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Demi-Humans",
             "fp_cost": 69,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 725,
@@ -1484,7 +1484,6 @@
                 "Spirit of a stray dog corrupted by the scarlet rot.",
                 "Though it is only a small creature, it is as violent as it is nimble, and its fangs fester with poisonous rot."
             ],
-            "summon_name": "Rotten Stray",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1495,11 +1494,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Rotten Stray",
             "fp_cost": 35,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 120,
@@ -1528,7 +1528,6 @@
                 "",
                 "It seems her name is Aurelia."
             ],
-            "summon_name": "Spirit Jellyfish",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1539,11 +1538,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Spirit Jellyfish",
             "fp_cost": 31,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 360,
@@ -1571,7 +1571,6 @@
                 "With its lord vanquished, and its wings wounded, the hawk perished as it solemnly gazed at its former home.",
                 "The storm is a warhawk's cradle."
             ],
-            "summon_name": "Warhawk",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1582,11 +1581,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Warhawk",
             "fp_cost": 52,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 580,
@@ -1612,7 +1612,6 @@
                 "",
                 "Spirit of a fierce hawk that faithfully rendered lifelong service to the old king of Stormveil long ago, when the true storm raged. Its cries embolden its fellows in battle, and the tempestuous winds that encircle it shred through foes."
             ],
-            "summon_name": "Stormhawk Deenh",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1623,11 +1622,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Stormhawk Deenh",
             "fp_cost": 47,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1000,
@@ -1654,7 +1654,6 @@
                 "Spirit of a Bloodhound Knight they called the Rabid Stray. Will attack without pause immediately after being summoned.",
                 "Floh vowed that there was only one lord he would serve: a true king. And so, the Rabid Stray never found a master."
             ],
-            "summon_name": "Bloodhound Knight Floh",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1665,11 +1664,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Bloodhound Knight Floh",
             "fp_cost": 95,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1480,
@@ -1695,7 +1695,6 @@
                 "",
                 "The spirits of nobles who, after death, now wander the Lands Between. Surely they were in search of something once - but whatever it was has long been forgotten."
             ],
-            "summon_name": "Wandering Nobles",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1706,11 +1705,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Wandering Nobles",
             "fp_cost": 28,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 135,
@@ -1737,7 +1737,6 @@
                 "Spirit of a nobleman who once asked to be given a place at Raya Lucaria to learn glintstone sorceries.",
                 "His talents were insufficient to be worthy of donning the stone crown, however, and he is only capable of using the most rudimentary sorcery."
             ],
-            "summon_name": "Noble Sorcerer",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1748,11 +1747,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Noble Sorcerer",
             "fp_cost": 11,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 40,
@@ -1779,7 +1779,6 @@
                 "Spirits of the vulgar militia who wield long-hafted, serrated hatchets. These brutal weapons are particularly effective at causing blood loss to opponents.",
                 "In the Lands Between, the small were scorned, and so they formed their vulgar militia as a means to make a living, albeit in ignominy."
             ],
-            "summon_name": "Vulgar Militia",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1790,11 +1789,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Vulgar Militia",
             "fp_cost": 70,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 735,
@@ -1822,7 +1822,6 @@
                 "Though he has stifled his panic within the dark confines of his helmet, he rampages as if driven mad when agitated by bloodshed or the humming of insects.",
                 "This mad soldier is all that is left of a broken gladiator."
             ],
-            "summon_name": "Mad Pumpkin Head",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1833,11 +1832,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Mad Pumpkin Head",
             "fp_cost": 110,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 950,
@@ -1865,7 +1865,6 @@
                 "These spirits appear some distance from the summoner.",
                 "The firm, fleshy tubes of the creatures remain rooted to the spot, spraying poisonous liquid over their surroundings."
             ],
-            "summon_name": "Land Squirts",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1876,11 +1875,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Land Squirts",
             "fp_cost": 0,
             "hp_cost": 240,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 385,
@@ -1908,7 +1908,6 @@
                 "Spirits of sweet little miranda flowers, carnivorous blossoms that feed upon human flesh. They creep slowly, scattering toxic pollen.",
                 "Vulnerable to fire - do take care of the little darlings."
             ],
-            "summon_name": "Miranda Sprouts",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1919,11 +1918,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Miranda Sprouts",
             "fp_cost": 0,
             "hp_cost": 185,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 435,
@@ -1953,7 +1953,6 @@
                 "",
                 "\"Tell the others - tell them how brightly a fire jar burns.\""
             ],
-            "summon_name": "Soldjars of Fortune",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -1964,11 +1963,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Soldjars of Fortune",
             "fp_cost": 0,
             "hp_cost": 135,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 415,
@@ -1995,7 +1995,6 @@
                 "Spirit of Rollo, known as the first Omenkiller.",
                 "Once a famous perfumer, Rollo imbibed a physick to rid himself of emotion, thus enabling him to enact his nightmarish labor, hunting the Omen."
             ],
-            "summon_name": "Omenkiller Rollo",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2006,11 +2005,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Omenkiller Rollo",
             "fp_cost": 113,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1810,
@@ -2037,7 +2037,6 @@
                 "Spirits of greatshield soldiers who belonged to the Fallen Hawks, a band of soldiers that once explored the Eternal City. Stout defenders with a steady guard.",
                 "Though their methods are somewhat crude, they work well as a squadron, and will attract the attention of enemies or lob ghostflame from the rearguard."
             ],
-            "summon_name": "Greatshield Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2048,11 +2047,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Greatshield Soldiers",
             "fp_cost": 74,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 255,
@@ -2079,7 +2079,6 @@
                 "Spirits of archers who belonged to the Fallen Hawks, a band of soldiers that once explored the Eternal City. Their arrows are imbued with cold ghostflame.",
                 "Though their methods are somewhat crude, they work well as a squadron, firing a hail of arrows in unison at the sound of a war cry."
             ],
-            "summon_name": "Archers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2090,11 +2089,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Archers",
             "fp_cost": 57,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 235,
@@ -2121,7 +2121,6 @@
                 "A duo of spirits, consisting of a wielder of devastating charged hammer attacks in the vanguard and a crossbowman bringing up the rear.",
                 "The soldiers who serve Godrick the Grafted are what remains of the army that fled the royal capital of the Erdtree."
             ],
-            "summon_name": "Godrick Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2132,11 +2131,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Godrick Soldiers",
             "fp_cost": 54,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 600,
@@ -2163,7 +2163,6 @@
                 "A trio of spirits, consisting of two disposable foot soldiers and their superior.",
                 "The soldiers of Raya Lucaria were also known as the Cuckoos. They were given free rein by the academy to wage war as they pleased, and they were infamous for their rapacious ways."
             ],
-            "summon_name": "Raya Lucaria Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2174,11 +2173,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Raya Lucaria Soldiers",
             "fp_cost": 59,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 635,
@@ -2205,7 +2205,6 @@
                 "Spirits of soldiers each equipped with a spear and greatshield.",
                 "The soldiers of Leyndell fight their battles defensively. During the Shattering, they were the ramparts that fortified the royal capital."
             ],
-            "summon_name": "Leyndell Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2216,11 +2215,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Leyndell Soldiers",
             "fp_cost": 64,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 670,
@@ -2248,7 +2248,6 @@
                 "",
                 "General Radahn's soldiers were all reputed to be masterful warriors, and it was popularly said that the Redmanes knew no weakness."
             ],
-            "summon_name": "Radahn Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2259,11 +2258,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Radahn Soldiers",
             "fp_cost": 71,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 740,
@@ -2290,7 +2290,6 @@
                 "Spirits of five headless soldiers who confound foes by disappearing and reappearing at will.",
                 "The mausoleum is where the bodies of soulless demigods are lain to rest, and these soldiers followed their masters into Death by severing their own heads from their bodies."
             ],
-            "summon_name": "Mausoleum Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2301,11 +2300,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Mausoleum Soldiers",
             "fp_cost": 75,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 785,
@@ -2334,7 +2334,6 @@
                 "",
                 "May the flash of our deaths guide Miquella's return."
             ],
-            "summon_name": "Haligtree Soldiers",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2345,11 +2344,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Haligtree Soldiers",
             "fp_cost": 66,
             "hp_cost": 0,
             "rarity": "common",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Grave Glovewort",
             "upgrade_costs": [
                 700,
@@ -2378,7 +2378,6 @@
                 "",
                 "After the First Defense of Leyndell, Kristoff earned the hero's honor of Erdtree Burial for the feat of capturing Godefroy the Grafted."
             ],
-            "summon_name": "Ancient Dragon Knight Kristoff",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2389,11 +2388,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Ancient Dragon Knight Kristoff",
             "fp_cost": 108,
             "hp_cost": 0,
             "rarity": "legendary",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1770,
@@ -2423,7 +2423,6 @@
                 "The longest-serving member of the Redmane Knights, Ogha studied techniques to manipulate gravity alongside Radahn.",
                 "May use a rain of gravitational arrows in response to a war cry, but only once."
             ],
-            "summon_name": "Redmane Knight Ogha",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2434,11 +2433,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Redmane Knight Ogha",
             "fp_cost": 106,
             "hp_cost": 0,
             "rarity": "legendary",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1750,
@@ -2467,7 +2467,6 @@
                 "",
                 "Lhutel sacrificed her life so that in Death she could continue to protect a soulless demigod until their revival, earning her the hero's honor of Erdtree Burial."
             ],
-            "summon_name": "Lhutel the Headless",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2478,11 +2477,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Lhutel the Headless",
             "fp_cost": 104,
             "hp_cost": 0,
             "rarity": "legendary",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1720,
@@ -2510,7 +2510,6 @@
                 "",
                 "A diamond in the rough, deserving of special care lest its potential be squandered. Nepheli Loux truly was a warrior."
             ],
-            "summon_name": "Nepheli Loux",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2521,11 +2520,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Nepheli Loux",
             "fp_cost": 90,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1450,
@@ -2555,7 +2555,6 @@
                 "The Dung Eater despaired at how he met his end.",
                 "How hideous and sinister this puppet is, and yet, its utter despair invites one to care for it."
             ],
-            "summon_name": "Dung Eater",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2566,11 +2565,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Dung Eater",
             "fp_cost": 118,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1850,
@@ -2598,7 +2598,6 @@
                 "",
                 "A Maiden without a Tarnished. A Tarnished without a Maiden. And yet no guide to bring them together."
             ],
-            "summon_name": "Finger Maiden Therolina",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2609,11 +2608,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Finger Maiden Therolina",
             "fp_cost": 82,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1280,
@@ -2641,7 +2641,6 @@
                 "",
                 "Dolores once belonged to the Roundtable Hold, where she was both a critic and a friend of Gideon the All-Knowing. It was because of her that he and Seluvis went their separate ways."
             ],
-            "summon_name": "Dolores the Sleeping Arrow",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2652,11 +2651,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Dolores the Sleeping Arrow",
             "fp_cost": 87,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1430,
@@ -2685,7 +2685,6 @@
                 "The warrior jar once told the nameless man this:",
                 "\"You are not yet ready to join the warriors inside. No, you must apply yourself! Better yourself, and one day I will return for you.\""
             ],
-            "summon_name": "Jarwight",
             "is_tradable": true,
             "price_sold": 0,
             "max_held": 1,
@@ -2696,11 +2695,12 @@
                 }
             ],
             "remarks": [],
+            "summon_quantity": 1,
+            "abilities": [],
+            "summon_name": "Jarwight",
             "fp_cost": 60,
             "hp_cost": 0,
             "rarity": "rare",
-            "summon_quantity": 1,
-            "abilities": [],
             "upgrade_material": "Ghost Glovewort",
             "upgrade_costs": [
                 1040,

@@ -4881,10 +4881,10 @@
             },
             "effects": []
         },
-        "Nox Monk Bracelets": {
+        "Nox Bracelets": {
             "full_hex_id": "10046D98",
             "id": 290200,
-            "name": "Nox Monk Bracelets",
+            "name": "Nox Bracelets",
             "summary": "Bracelets worn by members of the Empyrean family",
             "description": [
                 "Monastic bracelets of the Eternal City.",
@@ -4923,10 +4923,10 @@
             },
             "effects": []
         },
-        "Nox Monk Greaves": {
+        "Nox Greaves": {
             "full_hex_id": "10046DFC",
             "id": 290300,
-            "name": "Nox Monk Greaves",
+            "name": "Nox Greaves",
             "summary": "Waistcloth worn by members of the Empyrean family",
             "description": [
                 "Monastic greaves of the Eternal City.",
@@ -5766,18 +5766,18 @@
             "effects": []
         },
         "Sanguine Noble Hood": {
-            "full_hex_id": "1007EF40",
-            "id": 520000,
+            "full_hex_id": "1004E200",
+            "id": 320000,
             "name": "Sanguine Noble Hood",
-            "summary": "Hood made from tanned Demigod skin",
+            "summary": "Hood of dyed black cloth featuring gold embroidery",
             "description": [
-                "Hood made by sewing together patches of smooth skin.",
-                "Worn by the Godskin Apostles.",
+                "Hood of dyed black cloth featuring gold embroidery.",
+                "Worn by the nobles who serve the Lord of Blood.",
                 "",
-                "The apostles, once said to serve Destined Death, are wielders of the god-slaying black flame. But after their defeat by Maliketh, the Black Blade, the source of their power was sealed away."
+                "Known to strike from pools of blood, these assassins are missionaries come to share the gospel of accursed blood."
             ],
             "is_tradable": true,
-            "price_sold": 1000,
+            "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
             "locations": [
@@ -5788,39 +5788,39 @@
             "remarks": [],
             "category": "head",
             "altered": "",
-            "weight": 2.2,
+            "weight": 1.4,
             "absorptions": {
-                "physical": 2.3,
-                "strike": 2.1,
-                "slash": 2.1,
-                "pierce": 1.4,
+                "physical": 1.4,
+                "strike": 0.9,
+                "slash": 0.9,
+                "pierce": 0.9,
                 "magic": 4.6,
-                "fire": 4.4,
+                "fire": 3.8,
                 "lightning": 4.5,
-                "holy": 5.0
+                "holy": 4.6
             },
             "resistances": {
-                "immunity": 20,
-                "robustness": 10,
-                "focus": 33,
-                "vitality": 31,
-                "poise": 1
+                "immunity": 18,
+                "robustness": 5,
+                "focus": 29,
+                "vitality": 27,
+                "poise": 0
             },
             "effects": []
         },
         "Sanguine Noble Robe": {
-            "full_hex_id": "1007EFA4",
-            "id": 520100,
+            "full_hex_id": "1004E264",
+            "id": 320100,
             "name": "Sanguine Noble Robe",
-            "summary": "Robe made from tanned Demigod skin",
+            "summary": "Robe of dyed black cloth featuring gold embroidery",
             "description": [
-                "Robe made by sewing together patches of smooth skin.",
-                "Worn by the Godskin Apostles.",
+                "Robe of dyed black cloth featuring gold embroidery.",
+                "Worn by the nobles who serve the Lord of Blood.",
                 "",
-                "The apostles, once said to serve Destined Death, are wielders of the god-slaying black flame. But after their defeat by Maliketh, the Black Blade, the source of their power was sealed away."
+                "The grand metallic pattern on the shoulder is a signifier of the noble rank they intend to claim upon the advent of the new dynasty they are working to install."
             ],
             "is_tradable": true,
-            "price_sold": 1000,
+            "price_sold": 500,
             "max_held": 999,
             "max_stored": 999,
             "locations": [
@@ -5831,22 +5831,22 @@
             "remarks": [],
             "category": "body",
             "altered": "",
-            "weight": 4.1,
+            "weight": 5.1,
             "absorptions": {
                 "physical": 6.1,
                 "strike": 5.3,
                 "slash": 5.3,
-                "pierce": 2.7,
-                "magic": 12.6,
+                "pierce": 5.3,
+                "magic": 13.3,
                 "fire": 11.9,
-                "lightning": 12.4,
-                "holy": 13.8
+                "lightning": 13.0,
+                "holy": 13.5
             },
             "resistances": {
-                "immunity": 42,
+                "immunity": 50,
                 "robustness": 21,
-                "focus": 67,
-                "vitality": 63,
+                "focus": 83,
+                "vitality": 76,
                 "poise": 2
             },
             "effects": []
@@ -8375,10 +8375,96 @@
             },
             "effects": []
         },
-        "Sanguine Noble Bracelets": {
+        "Godskin Apostle Hood": {
+            "full_hex_id": "1007EF40",
+            "id": 520000,
+            "name": "Godskin Apostle Hood",
+            "summary": "Hood made from tanned Demigod skin",
+            "description": [
+                "Hood made by sewing together patches of smooth skin.",
+                "Worn by the Godskin Apostles.",
+                "",
+                "The apostles, once said to serve Destined Death, are wielders of the god-slaying black flame. But after their defeat by Maliketh, the Black Blade, the source of their power was sealed away."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "head",
+            "altered": "",
+            "weight": 2.2,
+            "absorptions": {
+                "physical": 2.3,
+                "strike": 2.1,
+                "slash": 2.1,
+                "pierce": 1.4,
+                "magic": 4.6,
+                "fire": 4.4,
+                "lightning": 4.5,
+                "holy": 5.0
+            },
+            "resistances": {
+                "immunity": 20,
+                "robustness": 10,
+                "focus": 33,
+                "vitality": 31,
+                "poise": 1
+            },
+            "effects": []
+        },
+        "Godskin Apostle Robe": {
+            "full_hex_id": "1007EFA4",
+            "id": 520100,
+            "name": "Godskin Apostle Robe",
+            "summary": "Robe made from tanned Demigod skin",
+            "description": [
+                "Robe made by sewing together patches of smooth skin.",
+                "Worn by the Godskin Apostles.",
+                "",
+                "The apostles, once said to serve Destined Death, are wielders of the god-slaying black flame. But after their defeat by Maliketh, the Black Blade, the source of their power was sealed away."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "body",
+            "altered": "",
+            "weight": 4.1,
+            "absorptions": {
+                "physical": 6.1,
+                "strike": 5.3,
+                "slash": 5.3,
+                "pierce": 2.7,
+                "magic": 12.6,
+                "fire": 11.9,
+                "lightning": 12.4,
+                "holy": 13.8
+            },
+            "resistances": {
+                "immunity": 42,
+                "robustness": 21,
+                "focus": 67,
+                "vitality": 63,
+                "poise": 2
+            },
+            "effects": []
+        },
+        "Godskin Apostle Bracelets": {
             "full_hex_id": "1007F008",
             "id": 520200,
-            "name": "Sanguine Noble Bracelets",
+            "name": "Godskin Apostle Bracelets",
             "summary": "Bracelets made from tanned Demigod skin",
             "description": [
                 "Black bracelets of the Godskin Apostles.",
@@ -8417,10 +8503,10 @@
             },
             "effects": []
         },
-        "Sanguine Noble Trousers": {
+        "Godskin Apostle Trousers": {
             "full_hex_id": "1007F06C",
             "id": 520300,
-            "name": "Sanguine Noble Trousers",
+            "name": "Godskin Apostle Trousers",
             "summary": "Boots made from tanned Demigod skin",
             "description": [
                 "Trousers made by sewing together patches of smooth skin.",
@@ -8460,10 +8546,10 @@
             },
             "effects": []
         },
-        "Godskin Apostle Hood": {
+        "Godskin Noble Hood": {
             "full_hex_id": "10081650",
             "id": 530000,
-            "name": "Godskin Apostle Hood",
+            "name": "Godskin Noble Hood",
             "summary": "Hood made from tanned corpulent Demigod skin",
             "description": [
                 "Hood made by sewing together patches of smooth skin.",
@@ -8504,10 +8590,10 @@
             },
             "effects": []
         },
-        "Godskin Apostle Robe": {
+        "Godskin Noble Robe": {
             "full_hex_id": "100816B4",
             "id": 530100,
-            "name": "Godskin Apostle Robe",
+            "name": "Godskin Noble Robe",
             "summary": "Robe made from tanned corpulent Demigod skin",
             "description": [
                 "Robe made by sewing together patches of smooth skin.",
@@ -8559,10 +8645,10 @@
                 }
             ]
         },
-        "Godskin Apostle Bracelets": {
+        "Godskin Noble Bracelets": {
             "full_hex_id": "10081718",
             "id": 530200,
-            "name": "Godskin Apostle Bracelets",
+            "name": "Godskin Noble Bracelets",
             "summary": "Bracelets made from tanned corpulent Demigod skin",
             "description": [
                 "Black bracelets of the Godskin Nobles.",
@@ -8601,10 +8687,10 @@
             },
             "effects": []
         },
-        "Godskin Apostle Trousers": {
+        "Godskin Noble Trousers": {
             "full_hex_id": "1008177C",
             "id": 530300,
-            "name": "Godskin Apostle Trousers",
+            "name": "Godskin Noble Trousers",
             "summary": "Boots made from tanned corpulent Demigod skin",
             "description": [
                 "Trousers made by sewing together patches of smooth skin.",
@@ -20253,10 +20339,10 @@
             },
             "effects": []
         },
-        "Chain Gauntlets": {
+        "Gauntlets": {
             "full_hex_id": "1010C9A8",
             "id": 1100200,
-            "name": "Chain Gauntlets",
+            "name": "Gauntlets",
             "summary": "Gauntlets made of woven chain",
             "description": [
                 "Gauntlets worn by ordinary soldiers.",

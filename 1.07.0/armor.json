@@ -38,7 +38,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -80,7 +80,7 @@
                 "robustness": 46,
                 "focus": 11,
                 "vitality": 21,
-                "poise": 14
+                "poise": 18
             },
             "effects": []
         },
@@ -120,7 +120,7 @@
                 "robustness": 15,
                 "focus": 6,
                 "vitality": 4,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -162,7 +162,7 @@
                 "robustness": 29,
                 "focus": 11,
                 "vitality": 7,
-                "poise": 8
+                "poise": 11
             },
             "effects": []
         },
@@ -205,7 +205,7 @@
                 "robustness": 22,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -249,7 +249,7 @@
                 "robustness": 55,
                 "focus": 11,
                 "vitality": 11,
-                "poise": 14
+                "poise": 18
             },
             "effects": []
         },
@@ -292,7 +292,7 @@
                 "robustness": 15,
                 "focus": 6,
                 "vitality": 6,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -335,7 +335,7 @@
                 "robustness": 26,
                 "focus": 7,
                 "vitality": 7,
-                "poise": 7
+                "poise": 10
             },
             "effects": []
         },
@@ -378,7 +378,7 @@
                 "robustness": 20,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -421,7 +421,7 @@
                 "robustness": 46,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 14
+                "poise": 19
             },
             "effects": []
         },
@@ -464,7 +464,7 @@
                 "robustness": 15,
                 "focus": 7,
                 "vitality": 7,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -507,7 +507,7 @@
                 "robustness": 29,
                 "focus": 13,
                 "vitality": 13,
-                "poise": 8
+                "poise": 11
             },
             "effects": []
         },
@@ -550,7 +550,7 @@
                 "robustness": 16,
                 "focus": 7,
                 "vitality": 7,
-                "poise": 3
+                "poise": 6
             },
             "effects": []
         },
@@ -593,7 +593,7 @@
                 "robustness": 34,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 8
+                "poise": 16
             },
             "effects": []
         },
@@ -636,7 +636,7 @@
                 "robustness": 35,
                 "focus": 16,
                 "vitality": 16,
-                "poise": 9
+                "poise": 11
             },
             "effects": []
         },
@@ -679,7 +679,7 @@
                 "robustness": 83,
                 "focus": 38,
                 "vitality": 38,
-                "poise": 27
+                "poise": 33
             },
             "effects": []
         },
@@ -722,7 +722,7 @@
                 "robustness": 28,
                 "focus": 13,
                 "vitality": 13,
-                "poise": 6
+                "poise": 7
             },
             "effects": []
         },
@@ -765,7 +765,7 @@
                 "robustness": 51,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 16
+                "poise": 20
             },
             "effects": []
         },
@@ -808,7 +808,7 @@
                 "robustness": 64,
                 "focus": 29,
                 "vitality": 29,
-                "poise": 22
+                "poise": 30
             },
             "effects": []
         },
@@ -850,7 +850,7 @@
                 "robustness": 8,
                 "focus": 27,
                 "vitality": 29,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -892,7 +892,7 @@
                 "robustness": 21,
                 "focus": 71,
                 "vitality": 76,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -934,7 +934,7 @@
                 "robustness": 6,
                 "focus": 21,
                 "vitality": 22,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -976,7 +976,7 @@
                 "robustness": 11,
                 "focus": 39,
                 "vitality": 41,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -1018,7 +1018,7 @@
                 "robustness": 18,
                 "focus": 57,
                 "vitality": 67,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -1060,7 +1060,7 @@
                 "robustness": 9,
                 "focus": 29,
                 "vitality": 27,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -1102,7 +1102,7 @@
                 "robustness": 23,
                 "focus": 76,
                 "vitality": 71,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -1144,7 +1144,7 @@
                 "robustness": 7,
                 "focus": 22,
                 "vitality": 21,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -1186,7 +1186,7 @@
                 "robustness": 13,
                 "focus": 41,
                 "vitality": 39,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -1228,7 +1228,7 @@
                 "robustness": 21,
                 "focus": 67,
                 "vitality": 63,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -1272,7 +1272,7 @@
                 "robustness": 10,
                 "focus": 29,
                 "vitality": 31,
-                "poise": 0
+                "poise": 2
             },
             "effects": [
                 {
@@ -1326,7 +1326,7 @@
                 "robustness": 23,
                 "focus": 67,
                 "vitality": 71,
-                "poise": 1
+                "poise": 7
             },
             "effects": [
                 {
@@ -1380,7 +1380,7 @@
                 "robustness": 8,
                 "focus": 22,
                 "vitality": 24,
-                "poise": 0
+                "poise": 1
             },
             "effects": [
                 {
@@ -1432,7 +1432,7 @@
                 "robustness": 14,
                 "focus": 41,
                 "vitality": 44,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -1476,7 +1476,7 @@
                 "robustness": 7,
                 "focus": 23,
                 "vitality": 24,
-                "poise": 0
+                "poise": 1
             },
             "effects": [
                 {
@@ -1528,7 +1528,7 @@
                 "robustness": 19,
                 "focus": 57,
                 "vitality": 61,
-                "poise": 0
+                "poise": 5
             },
             "effects": []
         },
@@ -1570,7 +1570,7 @@
                 "robustness": 8,
                 "focus": 25,
                 "vitality": 27,
-                "poise": 0
+                "poise": 2
             },
             "effects": [
                 {
@@ -1623,7 +1623,7 @@
                 "robustness": 17,
                 "focus": 59,
                 "vitality": 63,
-                "poise": 1
+                "poise": 7
             },
             "effects": [
                 {
@@ -1676,7 +1676,7 @@
                 "robustness": 6,
                 "focus": 19,
                 "vitality": 20,
-                "poise": 0
+                "poise": 1
             },
             "effects": [
                 {
@@ -1729,7 +1729,7 @@
                 "robustness": 13,
                 "focus": 38,
                 "vitality": 41,
-                "poise": 1
+                "poise": 5
             },
             "effects": [
                 {
@@ -1782,7 +1782,7 @@
                 "robustness": 10,
                 "focus": 54,
                 "vitality": 57,
-                "poise": 0
+                "poise": 5
             },
             "effects": [
                 {
@@ -2004,7 +2004,7 @@
                 "robustness": 23,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 2
+                "poise": 6
             },
             "effects": []
         },
@@ -2047,7 +2047,7 @@
                 "robustness": 48,
                 "focus": 52,
                 "vitality": 57,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -2090,7 +2090,7 @@
                 "robustness": 19,
                 "focus": 20,
                 "vitality": 21,
-                "poise": 2
+                "poise": 4
             },
             "effects": []
         },
@@ -2133,7 +2133,7 @@
                 "robustness": 35,
                 "focus": 36,
                 "vitality": 38,
-                "poise": 5
+                "poise": 11
             },
             "effects": []
         },
@@ -2176,7 +2176,7 @@
                 "robustness": 38,
                 "focus": 42,
                 "vitality": 45,
-                "poise": 4
+                "poise": 15
             },
             "effects": []
         },
@@ -2218,7 +2218,7 @@
                 "robustness": 9,
                 "focus": 27,
                 "vitality": 31,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -2258,7 +2258,7 @@
                 "robustness": 23,
                 "focus": 60,
                 "vitality": 60,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -2298,7 +2298,7 @@
                 "robustness": 14,
                 "focus": 37,
                 "vitality": 37,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -2340,7 +2340,7 @@
                 "robustness": 33,
                 "focus": 11,
                 "vitality": 11,
-                "poise": 8
+                "poise": 9
             },
             "effects": []
         },
@@ -2383,7 +2383,7 @@
                 "robustness": 76,
                 "focus": 25,
                 "vitality": 25,
-                "poise": 24
+                "poise": 28
             },
             "effects": []
         },
@@ -2425,7 +2425,7 @@
                 "robustness": 21,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 5
+                "poise": 6
             },
             "effects": []
         },
@@ -2467,7 +2467,7 @@
                 "robustness": 39,
                 "focus": 16,
                 "vitality": 16,
-                "poise": 14
+                "poise": 17
             },
             "effects": []
         },
@@ -2509,7 +2509,7 @@
                 "robustness": 57,
                 "focus": 22,
                 "vitality": 21,
-                "poise": 20
+                "poise": 27
             },
             "effects": []
         },
@@ -2551,7 +2551,7 @@
                 "robustness": 18,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -2595,7 +2595,7 @@
                 "robustness": 46,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 14
+                "poise": 19
             },
             "effects": [
                 {
@@ -2645,7 +2645,7 @@
                 "robustness": 15,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -2688,7 +2688,7 @@
                 "robustness": 29,
                 "focus": 14,
                 "vitality": 14,
-                "poise": 8
+                "poise": 11
             },
             "effects": []
         },
@@ -2731,7 +2731,7 @@
                 "robustness": 42,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 12
+                "poise": 19
             },
             "effects": []
         },
@@ -2773,7 +2773,7 @@
                 "robustness": 23,
                 "focus": 9,
                 "vitality": 8,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -2814,7 +2814,7 @@
                 "robustness": 55,
                 "focus": 21,
                 "vitality": 18,
-                "poise": 14
+                "poise": 19
             },
             "effects": []
         },
@@ -2855,7 +2855,7 @@
                 "robustness": 17,
                 "focus": 6,
                 "vitality": 4,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -2896,7 +2896,7 @@
                 "robustness": 34,
                 "focus": 13,
                 "vitality": 11,
-                "poise": 8
+                "poise": 11
             },
             "effects": []
         },
@@ -2939,7 +2939,7 @@
                 "robustness": 35,
                 "focus": 16,
                 "vitality": 18,
-                "poise": 9
+                "poise": 11
             },
             "effects": []
         },
@@ -2982,7 +2982,7 @@
                 "robustness": 83,
                 "focus": 38,
                 "vitality": 42,
-                "poise": 28
+                "poise": 34
             },
             "effects": []
         },
@@ -3025,7 +3025,7 @@
                 "robustness": 28,
                 "focus": 13,
                 "vitality": 14,
-                "poise": 6
+                "poise": 7
             },
             "effects": []
         },
@@ -3068,7 +3068,7 @@
                 "robustness": 51,
                 "focus": 24,
                 "vitality": 26,
-                "poise": 17
+                "poise": 20
             },
             "effects": []
         },
@@ -3111,7 +3111,7 @@
                 "robustness": 30,
                 "focus": 13,
                 "vitality": 14,
-                "poise": 8
+                "poise": 11
             },
             "effects": []
         },
@@ -3154,7 +3154,7 @@
                 "robustness": 69,
                 "focus": 32,
                 "vitality": 34,
-                "poise": 25
+                "poise": 33
             },
             "effects": []
         },
@@ -3199,7 +3199,7 @@
                 "robustness": 31,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 5
+                "poise": 9
             },
             "effects": []
         },
@@ -3244,7 +3244,7 @@
                 "robustness": 71,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 15
+                "poise": 21
             },
             "effects": []
         },
@@ -3289,7 +3289,7 @@
                 "robustness": 24,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 3
+                "poise": 5
             },
             "effects": []
         },
@@ -3334,7 +3334,7 @@
                 "robustness": 44,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 9
+                "poise": 12
             },
             "effects": []
         },
@@ -3379,7 +3379,7 @@
                 "robustness": 61,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 12
+                "poise": 19
             },
             "effects": []
         },
@@ -3421,7 +3421,7 @@
                 "robustness": 8,
                 "focus": 29,
                 "vitality": 29,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -3463,7 +3463,7 @@
                 "robustness": 23,
                 "focus": 83,
                 "vitality": 83,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -3505,7 +3505,7 @@
                 "robustness": 13,
                 "focus": 44,
                 "vitality": 44,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -3547,7 +3547,7 @@
                 "robustness": 19,
                 "focus": 64,
                 "vitality": 64,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -3590,7 +3590,7 @@
                 "robustness": 24,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 7
+                "poise": 8
             },
             "effects": []
         },
@@ -3633,7 +3633,7 @@
                 "robustness": 57,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 21
+                "poise": 25
             },
             "effects": []
         },
@@ -3676,7 +3676,7 @@
                 "robustness": 19,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -3719,7 +3719,7 @@
                 "robustness": 35,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 12
+                "poise": 15
             },
             "effects": []
         },
@@ -3762,7 +3762,7 @@
                 "robustness": 21,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 5
+                "poise": 8
             },
             "effects": []
         },
@@ -3805,7 +3805,7 @@
                 "robustness": 50,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -3848,7 +3848,7 @@
                 "robustness": 24,
                 "focus": 5,
                 "vitality": 5,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -3891,7 +3891,7 @@
                 "robustness": 60,
                 "focus": 18,
                 "vitality": 18,
-                "poise": 14
+                "poise": 19
             },
             "effects": []
         },
@@ -3934,7 +3934,7 @@
                 "robustness": 14,
                 "focus": 4,
                 "vitality": 4,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -3977,7 +3977,7 @@
                 "robustness": 35,
                 "focus": 7,
                 "vitality": 7,
-                "poise": 7
+                "poise": 10
             },
             "effects": []
         },
@@ -4020,7 +4020,7 @@
                 "robustness": 52,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 10
+                "poise": 17
             },
             "effects": []
         },
@@ -4065,7 +4065,7 @@
                 "robustness": 14,
                 "focus": 31,
                 "vitality": 20,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -4110,7 +4110,7 @@
                 "robustness": 32,
                 "focus": 71,
                 "vitality": 46,
-                "poise": 3
+                "poise": 13
             },
             "effects": []
         },
@@ -4154,7 +4154,7 @@
                 "robustness": 20,
                 "focus": 44,
                 "vitality": 29,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -4199,7 +4199,7 @@
                 "robustness": 25,
                 "focus": 61,
                 "vitality": 38,
-                "poise": 1
+                "poise": 12
             },
             "effects": []
         },
@@ -4242,7 +4242,7 @@
                 "robustness": 33,
                 "focus": 16,
                 "vitality": 16,
-                "poise": 8
+                "poise": 10
             },
             "effects": []
         },
@@ -4285,7 +4285,7 @@
                 "robustness": 76,
                 "focus": 38,
                 "vitality": 38,
-                "poise": 26
+                "poise": 31
             },
             "effects": []
         },
@@ -4328,7 +4328,7 @@
                 "robustness": 25,
                 "focus": 13,
                 "vitality": 13,
-                "poise": 6
+                "poise": 7
             },
             "effects": []
         },
@@ -4371,7 +4371,7 @@
                 "robustness": 47,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 16
+                "poise": 19
             },
             "effects": []
         },
@@ -4413,7 +4413,7 @@
                 "robustness": 39,
                 "focus": 18,
                 "vitality": 20,
-                "poise": 9
+                "poise": 12
             },
             "effects": []
         },
@@ -4457,7 +4457,7 @@
                 "robustness": 90,
                 "focus": 42,
                 "vitality": 46,
-                "poise": 28
+                "poise": 39
             },
             "effects": []
         },
@@ -4499,7 +4499,7 @@
                 "robustness": 30,
                 "focus": 14,
                 "vitality": 15,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -4541,7 +4541,7 @@
                 "robustness": 56,
                 "focus": 26,
                 "vitality": 29,
-                "poise": 17
+                "poise": 23
             },
             "effects": []
         },
@@ -4583,7 +4583,7 @@
                 "robustness": 75,
                 "focus": 34,
                 "vitality": 38,
-                "poise": 25
+                "poise": 35
             },
             "effects": []
         },
@@ -4625,7 +4625,7 @@
                 "robustness": 29,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 8
+                "poise": 9
             },
             "effects": []
         },
@@ -4709,7 +4709,7 @@
                 "robustness": 22,
                 "focus": 12,
                 "vitality": 12,
-                "poise": 5
+                "poise": 6
             },
             "effects": []
         },
@@ -4793,7 +4793,7 @@
                 "robustness": 61,
                 "focus": 32,
                 "vitality": 32,
-                "poise": 21
+                "poise": 28
             },
             "effects": []
         },
@@ -4835,7 +4835,7 @@
                 "robustness": 15,
                 "focus": 18,
                 "vitality": 18,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -4877,7 +4877,7 @@
                 "robustness": 42,
                 "focus": 50,
                 "vitality": 50,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -4919,7 +4919,7 @@
                 "robustness": 13,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -4961,7 +4961,7 @@
                 "robustness": 26,
                 "focus": 31,
                 "vitality": 31,
-                "poise": 4
+                "poise": 10
             },
             "effects": []
         },
@@ -5003,7 +5003,7 @@
                 "robustness": 12,
                 "focus": 14,
                 "vitality": 14,
-                "poise": 0
+                "poise": 3
             },
             "effects": []
         },
@@ -5045,7 +5045,7 @@
                 "robustness": 34,
                 "focus": 42,
                 "vitality": 42,
-                "poise": 4
+                "poise": 15
             },
             "effects": []
         },
@@ -5088,7 +5088,7 @@
                 "robustness": 15,
                 "focus": 22,
                 "vitality": 22,
-                "poise": 2
+                "poise": 5
             },
             "effects": []
         },
@@ -5131,7 +5131,7 @@
                 "robustness": 38,
                 "focus": 55,
                 "vitality": 55,
-                "poise": 8
+                "poise": 17
             },
             "effects": []
         },
@@ -5174,7 +5174,7 @@
                 "robustness": 15,
                 "focus": 22,
                 "vitality": 22,
-                "poise": 2
+                "poise": 5
             },
             "effects": []
         },
@@ -5217,7 +5217,7 @@
                 "robustness": 38,
                 "focus": 55,
                 "vitality": 55,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -5260,7 +5260,7 @@
                 "robustness": 11,
                 "focus": 17,
                 "vitality": 17,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -5303,7 +5303,7 @@
                 "robustness": 34,
                 "focus": 49,
                 "vitality": 49,
-                "poise": 5
+                "poise": 16
             },
             "effects": []
         },
@@ -5346,7 +5346,7 @@
                 "robustness": 23,
                 "focus": 27,
                 "vitality": 22,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -5389,7 +5389,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 38,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -5432,7 +5432,7 @@
                 "robustness": 26,
                 "focus": 34,
                 "vitality": 24,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -5475,7 +5475,7 @@
                 "robustness": 23,
                 "focus": 27,
                 "vitality": 20,
-                "poise": 2
+                "poise": 4
             },
             "effects": [
                 {
@@ -5528,7 +5528,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 35,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -5571,7 +5571,7 @@
                 "robustness": 26,
                 "focus": 34,
                 "vitality": 22,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -5614,7 +5614,7 @@
                 "robustness": 24,
                 "focus": 11,
                 "vitality": 12,
-                "poise": 8
+                "poise": 10
             },
             "effects": []
         },
@@ -5656,7 +5656,7 @@
                 "robustness": 25,
                 "focus": 42,
                 "vitality": 42,
-                "poise": 2
+                "poise": 12
             },
             "effects": [
                 {
@@ -5718,7 +5718,7 @@
                 "robustness": 31,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -5761,7 +5761,7 @@
                 "robustness": 22,
                 "focus": 34,
                 "vitality": 34,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -5804,7 +5804,7 @@
                 "robustness": 5,
                 "focus": 29,
                 "vitality": 27,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -5847,7 +5847,7 @@
                 "robustness": 21,
                 "focus": 83,
                 "vitality": 76,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -5890,7 +5890,7 @@
                 "robustness": 11,
                 "focus": 44,
                 "vitality": 41,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -5933,7 +5933,7 @@
                 "robustness": 22,
                 "focus": 26,
                 "vitality": 24,
-                "poise": 2
+                "poise": 5
             },
             "effects": []
         },
@@ -5978,7 +5978,7 @@
                 "robustness": 46,
                 "focus": 57,
                 "vitality": 55,
-                "poise": 5
+                "poise": 15
             },
             "effects": [
                 {
@@ -6028,7 +6028,7 @@
                 "robustness": 17,
                 "focus": 20,
                 "vitality": 19,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -6071,7 +6071,7 @@
                 "robustness": 31,
                 "focus": 37,
                 "vitality": 35,
-                "poise": 3
+                "poise": 9
             },
             "effects": []
         },
@@ -6114,7 +6114,7 @@
                 "robustness": 38,
                 "focus": 50,
                 "vitality": 42,
-                "poise": 4
+                "poise": 15
             },
             "effects": []
         },
@@ -6156,7 +6156,7 @@
                 "robustness": 29,
                 "focus": 12,
                 "vitality": 14,
-                "poise": 7
+                "poise": 9
             },
             "effects": []
         },
@@ -6198,7 +6198,7 @@
                 "robustness": 67,
                 "focus": 28,
                 "vitality": 32,
-                "poise": 23
+                "poise": 27
             },
             "effects": []
         },
@@ -6240,7 +6240,7 @@
                 "robustness": 22,
                 "focus": 9,
                 "vitality": 11,
-                "poise": 5
+                "poise": 6
             },
             "effects": []
         },
@@ -6282,7 +6282,7 @@
                 "robustness": 41,
                 "focus": 17,
                 "vitality": 20,
-                "poise": 13
+                "poise": 16
             },
             "effects": []
         },
@@ -6324,7 +6324,7 @@
                 "robustness": 21,
                 "focus": 9,
                 "vitality": 10,
-                "poise": 4
+                "poise": 7
             },
             "effects": []
         },
@@ -6366,7 +6366,7 @@
                 "robustness": 54,
                 "focus": 22,
                 "vitality": 22,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -6409,7 +6409,7 @@
                 "robustness": 20,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -6453,7 +6453,7 @@
                 "robustness": 55,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 16
+                "poise": 22
             },
             "effects": []
         },
@@ -6496,7 +6496,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -6539,7 +6539,7 @@
                 "robustness": 34,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -6582,7 +6582,7 @@
                 "robustness": 20,
                 "focus": 5,
                 "vitality": 11,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -6625,7 +6625,7 @@
                 "robustness": 55,
                 "focus": 21,
                 "vitality": 32,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -6668,7 +6668,7 @@
                 "robustness": 18,
                 "focus": 7,
                 "vitality": 11,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -6711,7 +6711,7 @@
                 "robustness": 34,
                 "focus": 13,
                 "vitality": 20,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -6754,7 +6754,7 @@
                 "robustness": 27,
                 "focus": 39,
                 "vitality": 22,
-                "poise": 13
+                "poise": 14
             },
             "effects": []
         },
@@ -6797,7 +6797,7 @@
                 "robustness": 63,
                 "focus": 90,
                 "vitality": 50,
-                "poise": 40
+                "poise": 45
             },
             "effects": []
         },
@@ -6840,7 +6840,7 @@
                 "robustness": 21,
                 "focus": 30,
                 "vitality": 17,
-                "poise": 9
+                "poise": 10
             },
             "effects": []
         },
@@ -6883,7 +6883,7 @@
                 "robustness": 39,
                 "focus": 56,
                 "vitality": 31,
-                "poise": 24
+                "poise": 27
             },
             "effects": []
         },
@@ -6926,7 +6926,7 @@
                 "robustness": 54,
                 "focus": 75,
                 "vitality": 42,
-                "poise": 37
+                "poise": 43
             },
             "effects": []
         },
@@ -6969,7 +6969,7 @@
                 "robustness": 10,
                 "focus": 25,
                 "vitality": 22,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -7012,7 +7012,7 @@
                 "robustness": 33,
                 "focus": 36,
                 "vitality": 30,
-                "poise": 2
+                "poise": 12
             },
             "effects": []
         },
@@ -7055,7 +7055,7 @@
                 "robustness": 21,
                 "focus": 23,
                 "vitality": 19,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -7098,7 +7098,7 @@
                 "robustness": 29,
                 "focus": 32,
                 "vitality": 25,
-                "poise": 1
+                "poise": 10
             },
             "effects": []
         },
@@ -7141,7 +7141,7 @@
                 "robustness": 14,
                 "focus": 18,
                 "vitality": 20,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -7184,7 +7184,7 @@
                 "robustness": 32,
                 "focus": 42,
                 "vitality": 46,
-                "poise": 3
+                "poise": 13
             },
             "effects": []
         },
@@ -7227,7 +7227,7 @@
                 "robustness": 11,
                 "focus": 15,
                 "vitality": 16,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -7270,7 +7270,7 @@
                 "robustness": 25,
                 "focus": 35,
                 "vitality": 38,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -7313,7 +7313,7 @@
                 "robustness": 15,
                 "focus": 17,
                 "vitality": 20,
-                "poise": 1
+                "poise": 2
             },
             "effects": []
         },
@@ -7355,7 +7355,7 @@
                 "robustness": 16,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 2
+                "poise": 6
             },
             "effects": []
         },
@@ -7397,7 +7397,7 @@
                 "robustness": 35,
                 "focus": 50,
                 "vitality": 50,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -7439,7 +7439,7 @@
                 "robustness": 9,
                 "focus": 14,
                 "vitality": 14,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -7481,7 +7481,7 @@
                 "robustness": 24,
                 "focus": 34,
                 "vitality": 34,
-                "poise": 4
+                "poise": 10
             },
             "effects": []
         },
@@ -7524,7 +7524,7 @@
                 "robustness": 10,
                 "focus": 31,
                 "vitality": 33,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -7567,7 +7567,7 @@
                 "robustness": 23,
                 "focus": 71,
                 "vitality": 76,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -7610,7 +7610,7 @@
                 "robustness": 13,
                 "focus": 39,
                 "vitality": 41,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -7656,7 +7656,7 @@
                 "robustness": 42,
                 "focus": 44,
                 "vitality": 18,
-                "poise": 9
+                "poise": 11
             },
             "effects": [
                 {
@@ -7707,7 +7707,7 @@
                 "robustness": 20,
                 "focus": 0,
                 "vitality": 5,
-                "poise": 3
+                "poise": 5
             },
             "effects": []
         },
@@ -7751,7 +7751,7 @@
                 "robustness": 55,
                 "focus": 18,
                 "vitality": 21,
-                "poise": 14
+                "poise": 19
             },
             "effects": []
         },
@@ -7795,7 +7795,7 @@
                 "robustness": 18,
                 "focus": 6,
                 "vitality": 7,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -7839,7 +7839,7 @@
                 "robustness": 31,
                 "focus": 7,
                 "vitality": 11,
-                "poise": 7
+                "poise": 10
             },
             "effects": []
         },
@@ -7883,7 +7883,7 @@
                 "robustness": 45,
                 "focus": 10,
                 "vitality": 16,
-                "poise": 10
+                "poise": 17
             },
             "effects": []
         },
@@ -7928,7 +7928,7 @@
                 "robustness": 42,
                 "focus": 18,
                 "vitality": 16,
-                "poise": 9
+                "poise": 11
             },
             "effects": []
         },
@@ -7971,7 +7971,7 @@
                 "robustness": 99,
                 "focus": 42,
                 "vitality": 38,
-                "poise": 28
+                "poise": 34
             },
             "effects": []
         },
@@ -8014,7 +8014,7 @@
                 "robustness": 33,
                 "focus": 14,
                 "vitality": 13,
-                "poise": 6
+                "poise": 7
             },
             "effects": []
         },
@@ -8057,7 +8057,7 @@
                 "robustness": 61,
                 "focus": 26,
                 "vitality": 24,
-                "poise": 17
+                "poise": 20
             },
             "effects": []
         },
@@ -8100,7 +8100,7 @@
                 "robustness": 82,
                 "focus": 34,
                 "vitality": 32,
-                "poise": 24
+                "poise": 33
             },
             "effects": []
         },
@@ -8142,7 +8142,7 @@
                 "robustness": 23,
                 "focus": 55,
                 "vitality": 55,
-                "poise": 8
+                "poise": 17
             },
             "effects": []
         },
@@ -8184,7 +8184,7 @@
                 "robustness": 19,
                 "focus": 47,
                 "vitality": 47,
-                "poise": 7
+                "poise": 16
             },
             "effects": []
         },
@@ -8229,7 +8229,7 @@
                 "robustness": 11,
                 "focus": 31,
                 "vitality": 35,
-                "poise": 1
+                "poise": 3
             },
             "effects": [
                 {
@@ -8281,7 +8281,7 @@
                 "robustness": 25,
                 "focus": 71,
                 "vitality": 83,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -8326,7 +8326,7 @@
                 "robustness": 8,
                 "focus": 24,
                 "vitality": 28,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -8371,7 +8371,7 @@
                 "robustness": 14,
                 "focus": 37,
                 "vitality": 41,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -8414,7 +8414,7 @@
                 "robustness": 10,
                 "focus": 33,
                 "vitality": 31,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -8457,7 +8457,7 @@
                 "robustness": 21,
                 "focus": 67,
                 "vitality": 63,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -8499,7 +8499,7 @@
                 "robustness": 8,
                 "focus": 28,
                 "vitality": 25,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -8542,7 +8542,7 @@
                 "robustness": 13,
                 "focus": 41,
                 "vitality": 39,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -8586,7 +8586,7 @@
                 "robustness": 10,
                 "focus": 27,
                 "vitality": 29,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -8631,7 +8631,7 @@
                 "robustness": 25,
                 "focus": 76,
                 "vitality": 83,
-                "poise": 5
+                "poise": 12
             },
             "effects": [
                 {
@@ -8683,7 +8683,7 @@
                 "robustness": 8,
                 "focus": 24,
                 "vitality": 25,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -8727,7 +8727,7 @@
                 "robustness": 14,
                 "focus": 39,
                 "vitality": 41,
-                "poise": 1
+                "poise": 6
             },
             "effects": []
         },
@@ -8769,7 +8769,7 @@
                 "robustness": 10,
                 "focus": 25,
                 "vitality": 34,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -8812,7 +8812,7 @@
                 "robustness": 22,
                 "focus": 55,
                 "vitality": 80,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -8854,7 +8854,7 @@
                 "robustness": 8,
                 "focus": 20,
                 "vitality": 28,
-                "poise": 1
+                "poise": 2
             },
             "effects": []
         },
@@ -8896,7 +8896,7 @@
                 "robustness": 15,
                 "focus": 40,
                 "vitality": 58,
-                "poise": 2
+                "poise": 7
             },
             "effects": []
         },
@@ -8939,7 +8939,7 @@
                 "robustness": 18,
                 "focus": 48,
                 "vitality": 63,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -8983,7 +8983,7 @@
                 "robustness": 31,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 9
+                "poise": 11
             },
             "effects": [
                 {
@@ -9037,7 +9037,7 @@
                 "robustness": 71,
                 "focus": 35,
                 "vitality": 35,
-                "poise": 27
+                "poise": 33
             },
             "effects": [
                 {
@@ -9091,7 +9091,7 @@
                 "robustness": 24,
                 "focus": 12,
                 "vitality": 12,
-                "poise": 6
+                "poise": 7
             },
             "effects": [
                 {
@@ -9145,7 +9145,7 @@
                 "robustness": 44,
                 "focus": 22,
                 "vitality": 22,
-                "poise": 16
+                "poise": 20
             },
             "effects": [
                 {
@@ -9199,7 +9199,7 @@
                 "robustness": 31,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 9
+                "poise": 11
             },
             "effects": [
                 {
@@ -9253,7 +9253,7 @@
                 "robustness": 71,
                 "focus": 35,
                 "vitality": 35,
-                "poise": 27
+                "poise": 33
             },
             "effects": [
                 {
@@ -9307,7 +9307,7 @@
                 "robustness": 61,
                 "focus": 29,
                 "vitality": 29,
-                "poise": 23
+                "poise": 31
             },
             "effects": [
                 {
@@ -9361,7 +9361,7 @@
                 "robustness": 61,
                 "focus": 29,
                 "vitality": 29,
-                "poise": 23
+                "poise": 31
             },
             "effects": [
                 {
@@ -9413,7 +9413,7 @@
                 "robustness": 11,
                 "focus": 39,
                 "vitality": 44,
-                "poise": 2
+                "poise": 4
             },
             "effects": [
                 {
@@ -9484,7 +9484,7 @@
                 "robustness": 25,
                 "focus": 83,
                 "vitality": 99,
-                "poise": 3
+                "poise": 12
             },
             "effects": []
         },
@@ -9527,7 +9527,7 @@
                 "robustness": 6,
                 "focus": 20,
                 "vitality": 22,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -9568,7 +9568,7 @@
                 "robustness": 13,
                 "focus": 39,
                 "vitality": 44,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -9610,7 +9610,7 @@
                 "robustness": 14,
                 "focus": 44,
                 "vitality": 39,
-                "poise": 2
+                "poise": 4
             },
             "effects": [
                 {
@@ -9681,7 +9681,7 @@
                 "robustness": 28,
                 "focus": 99,
                 "vitality": 83,
-                "poise": 3
+                "poise": 12
             },
             "effects": []
         },
@@ -9724,7 +9724,7 @@
                 "robustness": 8,
                 "focus": 22,
                 "vitality": 20,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -9769,7 +9769,7 @@
                 "robustness": 20,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -9814,7 +9814,7 @@
                 "robustness": 46,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 16
+                "poise": 22
             },
             "effects": []
         },
@@ -9859,7 +9859,7 @@
                 "robustness": 15,
                 "focus": 7,
                 "vitality": 7,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -9904,7 +9904,7 @@
                 "robustness": 29,
                 "focus": 13,
                 "vitality": 13,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -9949,7 +9949,7 @@
                 "robustness": 38,
                 "focus": 16,
                 "vitality": 16,
-                "poise": 13
+                "poise": 21
             },
             "effects": []
         },
@@ -9994,7 +9994,7 @@
                 "robustness": 23,
                 "focus": 9,
                 "vitality": 23,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -10039,7 +10039,7 @@
                 "robustness": 60,
                 "focus": 24,
                 "vitality": 60,
-                "poise": 21
+                "poise": 25
             },
             "effects": []
         },
@@ -10084,7 +10084,7 @@
                 "robustness": 18,
                 "focus": 7,
                 "vitality": 18,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -10129,7 +10129,7 @@
                 "robustness": 34,
                 "focus": 13,
                 "vitality": 34,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -10174,7 +10174,7 @@
                 "robustness": 52,
                 "focus": 21,
                 "vitality": 52,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -10214,7 +10214,7 @@
                 "robustness": 16,
                 "focus": 22,
                 "vitality": 22,
-                "poise": 2
+                "poise": 4
             },
             "effects": []
         },
@@ -10254,7 +10254,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 55,
-                "poise": 8
+                "poise": 17
             },
             "effects": []
         },
@@ -10294,7 +10294,7 @@
                 "robustness": 14,
                 "focus": 18,
                 "vitality": 18,
-                "poise": 2
+                "poise": 4
             },
             "effects": []
         },
@@ -10334,7 +10334,7 @@
                 "robustness": 20,
                 "focus": 26,
                 "vitality": 26,
-                "poise": 2
+                "poise": 3
             },
             "effects": []
         },
@@ -10374,7 +10374,7 @@
                 "robustness": 13,
                 "focus": 18,
                 "vitality": 18,
-                "poise": 2
+                "poise": 3
             },
             "effects": []
         },
@@ -10414,7 +10414,7 @@
                 "robustness": 38,
                 "focus": 50,
                 "vitality": 50,
-                "poise": 7
+                "poise": 16
             },
             "effects": []
         },
@@ -10456,7 +10456,7 @@
                 "robustness": 5,
                 "focus": 27,
                 "vitality": 27,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -10500,7 +10500,7 @@
                 "robustness": 24,
                 "focus": 107,
                 "vitality": 76,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -10542,7 +10542,7 @@
                 "robustness": 14,
                 "focus": 47,
                 "vitality": 51,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -10584,7 +10584,7 @@
                 "robustness": 22,
                 "focus": 69,
                 "vitality": 75,
-                "poise": 1
+                "poise": 10
             },
             "effects": []
         },
@@ -10626,7 +10626,7 @@
                 "robustness": 25,
                 "focus": 83,
                 "vitality": 90,
-                "poise": 3
+                "poise": 12
             },
             "effects": []
         },
@@ -10671,7 +10671,7 @@
                 "robustness": 9,
                 "focus": 31,
                 "vitality": 27,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -10716,7 +10716,7 @@
                 "robustness": 24,
                 "focus": 90,
                 "vitality": 76,
-                "poise": 5
+                "poise": 12
             },
             "effects": []
         },
@@ -10761,7 +10761,7 @@
                 "robustness": 7,
                 "focus": 24,
                 "vitality": 21,
-                "poise": 1
+                "poise": 2
             },
             "effects": []
         },
@@ -10806,7 +10806,7 @@
                 "robustness": 15,
                 "focus": 56,
                 "vitality": 47,
-                "poise": 3
+                "poise": 7
             },
             "effects": []
         },
@@ -10851,7 +10851,7 @@
                 "robustness": 21,
                 "focus": 75,
                 "vitality": 64,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -10894,7 +10894,7 @@
                 "robustness": 42,
                 "focus": 18,
                 "vitality": 22,
-                "poise": 12
+                "poise": 13
             },
             "effects": []
         },
@@ -10937,7 +10937,7 @@
                 "robustness": 99,
                 "focus": 42,
                 "vitality": 50,
-                "poise": 37
+                "poise": 40
             },
             "effects": []
         },
@@ -10980,7 +10980,7 @@
                 "robustness": 33,
                 "focus": 14,
                 "vitality": 17,
-                "poise": 8
+                "poise": 9
             },
             "effects": []
         },
@@ -11023,7 +11023,7 @@
                 "robustness": 61,
                 "focus": 26,
                 "vitality": 31,
-                "poise": 22
+                "poise": 24
             },
             "effects": []
         },
@@ -11066,7 +11066,7 @@
                 "robustness": 90,
                 "focus": 38,
                 "vitality": 45,
-                "poise": 33
+                "poise": 38
             },
             "effects": []
         },
@@ -11110,7 +11110,7 @@
                 "robustness": 27,
                 "focus": 11,
                 "vitality": 11,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -11155,7 +11155,7 @@
                 "robustness": 60,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 16
+                "poise": 22
             },
             "effects": []
         },
@@ -11200,7 +11200,7 @@
                 "robustness": 20,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -11245,7 +11245,7 @@
                 "robustness": 37,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -11289,7 +11289,7 @@
                 "robustness": 23,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -11334,7 +11334,7 @@
                 "robustness": 52,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 13
+                "poise": 21
             },
             "effects": []
         },
@@ -11379,7 +11379,7 @@
                 "robustness": 23,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 4
+                "poise": 7
             },
             "effects": []
         },
@@ -11424,7 +11424,7 @@
                 "robustness": 57,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 15
+                "poise": 22
             },
             "effects": []
         },
@@ -11467,7 +11467,7 @@
                 "robustness": 19,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 3
+                "poise": 5
             },
             "effects": []
         },
@@ -11510,7 +11510,7 @@
                 "robustness": 34,
                 "focus": 13,
                 "vitality": 13,
-                "poise": 8
+                "poise": 12
             },
             "effects": []
         },
@@ -11555,7 +11555,7 @@
                 "robustness": 50,
                 "focus": 19,
                 "vitality": 19,
-                "poise": 12
+                "poise": 21
             },
             "effects": []
         },
@@ -11599,7 +11599,7 @@
                 "robustness": 15,
                 "focus": 18,
                 "vitality": 18,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -11643,7 +11643,7 @@
                 "robustness": 42,
                 "focus": 50,
                 "vitality": 50,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -11684,7 +11684,7 @@
                 "robustness": 14,
                 "focus": 17,
                 "vitality": 17,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -11725,7 +11725,7 @@
                 "robustness": 26,
                 "focus": 31,
                 "vitality": 31,
-                "poise": 4
+                "poise": 10
             },
             "effects": []
         },
@@ -11768,7 +11768,7 @@
                 "robustness": 18,
                 "focus": 21,
                 "vitality": 22,
-                "poise": 2
+                "poise": 5
             },
             "effects": [
                 {
@@ -11822,7 +11822,7 @@
                 "robustness": 37,
                 "focus": 44,
                 "vitality": 48,
-                "poise": 5
+                "poise": 13
             },
             "effects": []
         },
@@ -11865,7 +11865,7 @@
                 "robustness": 13,
                 "focus": 15,
                 "vitality": 17,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -11908,7 +11908,7 @@
                 "robustness": 23,
                 "focus": 28,
                 "vitality": 31,
-                "poise": 3
+                "poise": 8
             },
             "effects": []
         },
@@ -11951,7 +11951,7 @@
                 "robustness": 32,
                 "focus": 38,
                 "vitality": 42,
-                "poise": 2
+                "poise": 12
             },
             "effects": []
         },
@@ -11996,7 +11996,7 @@
                 "robustness": 24,
                 "focus": 10,
                 "vitality": 5,
-                "poise": 5
+                "poise": 7
             },
             "effects": [
                 {
@@ -12053,7 +12053,7 @@
                 "robustness": 57,
                 "focus": 24,
                 "vitality": 11,
-                "poise": 15
+                "poise": 21
             },
             "effects": [
                 {
@@ -12110,7 +12110,7 @@
                 "robustness": 19,
                 "focus": 8,
                 "vitality": 4,
-                "poise": 3
+                "poise": 4
             },
             "effects": [
                 {
@@ -12167,7 +12167,7 @@
                 "robustness": 35,
                 "focus": 15,
                 "vitality": 7,
-                "poise": 9
+                "poise": 12
             },
             "effects": [
                 {
@@ -12227,7 +12227,7 @@
                 "robustness": 8,
                 "focus": 26,
                 "vitality": 26,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -12274,7 +12274,7 @@
                 "robustness": 23,
                 "focus": 67,
                 "vitality": 67,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -12318,7 +12318,7 @@
                 "robustness": 6,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -12362,7 +12362,7 @@
                 "robustness": 15,
                 "focus": 47,
                 "vitality": 47,
-                "poise": 1
+                "poise": 6
             },
             "effects": []
         },
@@ -12403,7 +12403,7 @@
                 "robustness": 20,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -12444,7 +12444,7 @@
                 "robustness": 19,
                 "focus": 57,
                 "vitality": 57,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -12487,7 +12487,7 @@
                 "robustness": 39,
                 "focus": 18,
                 "vitality": 16,
-                "poise": 9
+                "poise": 11
             },
             "effects": []
         },
@@ -12532,7 +12532,7 @@
                 "robustness": 90,
                 "focus": 42,
                 "vitality": 38,
-                "poise": 28
+                "poise": 34
             },
             "effects": []
         },
@@ -12577,7 +12577,7 @@
                 "robustness": 30,
                 "focus": 14,
                 "vitality": 13,
-                "poise": 6
+                "poise": 7
             },
             "effects": []
         },
@@ -12622,7 +12622,7 @@
                 "robustness": 56,
                 "focus": 26,
                 "vitality": 24,
-                "poise": 17
+                "poise": 20
             },
             "effects": []
         },
@@ -12667,7 +12667,7 @@
                 "robustness": 75,
                 "focus": 34,
                 "vitality": 32,
-                "poise": 25
+                "poise": 34
             },
             "effects": []
         },
@@ -12710,7 +12710,7 @@
                 "robustness": 14,
                 "focus": 18,
                 "vitality": 16,
-                "poise": 2
+                "poise": 5
             },
             "effects": []
         },
@@ -12753,7 +12753,7 @@
                 "robustness": 28,
                 "focus": 38,
                 "vitality": 35,
-                "poise": 3
+                "poise": 10
             },
             "effects": []
         },
@@ -12796,7 +12796,7 @@
                 "robustness": 11,
                 "focus": 14,
                 "vitality": 13,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -12837,7 +12837,7 @@
                 "robustness": 20,
                 "focus": 26,
                 "vitality": 24,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -12883,7 +12883,7 @@
                 "robustness": 9,
                 "focus": 27,
                 "vitality": 29,
-                "poise": 0
+                "poise": 3
             },
             "effects": [
                 {
@@ -12932,7 +12932,7 @@
                 "robustness": 24,
                 "focus": 76,
                 "vitality": 83,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -12975,7 +12975,7 @@
                 "robustness": 8,
                 "focus": 25,
                 "vitality": 28,
-                "poise": 1
+                "poise": 2
             },
             "effects": []
         },
@@ -13018,7 +13018,7 @@
                 "robustness": 15,
                 "focus": 47,
                 "vitality": 51,
-                "poise": 1
+                "poise": 6
             },
             "effects": []
         },
@@ -13062,7 +13062,7 @@
                 "robustness": 10,
                 "focus": 29,
                 "vitality": 27,
-                "poise": 0
+                "poise": 3
             },
             "effects": [
                 {
@@ -13115,7 +13115,7 @@
                 "robustness": 24,
                 "focus": 10,
                 "vitality": 22,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -13161,7 +13161,7 @@
                 "robustness": 57,
                 "focus": 24,
                 "vitality": 50,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -13207,7 +13207,7 @@
                 "robustness": 19,
                 "focus": 8,
                 "vitality": 17,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -13253,7 +13253,7 @@
                 "robustness": 35,
                 "focus": 15,
                 "vitality": 31,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -13299,7 +13299,7 @@
                 "robustness": 50,
                 "focus": 21,
                 "vitality": 42,
-                "poise": 14
+                "poise": 22
             },
             "effects": []
         },
@@ -13344,7 +13344,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -13389,7 +13389,7 @@
                 "robustness": 32,
                 "focus": 11,
                 "vitality": 11,
-                "poise": 9
+                "poise": 16
             },
             "effects": []
         },
@@ -13434,7 +13434,7 @@
                 "robustness": 14,
                 "focus": 6,
                 "vitality": 6,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -13479,7 +13479,7 @@
                 "robustness": 26,
                 "focus": 11,
                 "vitality": 11,
-                "poise": 8
+                "poise": 11
             },
             "effects": []
         },
@@ -13524,7 +13524,7 @@
                 "robustness": 25,
                 "focus": 0,
                 "vitality": 0,
-                "poise": 7
+                "poise": 13
             },
             "effects": []
         },
@@ -13614,7 +13614,7 @@
                 "robustness": 90,
                 "focus": 46,
                 "vitality": 46,
-                "poise": 37
+                "poise": 38
             },
             "effects": []
         },
@@ -13749,7 +13749,7 @@
                 "robustness": 75,
                 "focus": 38,
                 "vitality": 38,
-                "poise": 29
+                "poise": 35
             },
             "effects": []
         },
@@ -13795,7 +13795,7 @@
                 "robustness": 22,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -13841,7 +13841,7 @@
                 "robustness": 50,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 14
+                "poise": 19
             },
             "effects": []
         },
@@ -13886,7 +13886,7 @@
                 "robustness": 17,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -13931,7 +13931,7 @@
                 "robustness": 31,
                 "focus": 14,
                 "vitality": 14,
-                "poise": 8
+                "poise": 11
             },
             "effects": []
         },
@@ -13977,7 +13977,7 @@
                 "robustness": 45,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 12
+                "poise": 19
             },
             "effects": []
         },
@@ -14019,7 +14019,7 @@
                 "robustness": 9,
                 "focus": 29,
                 "vitality": 29,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -14061,7 +14061,7 @@
                 "robustness": 21,
                 "focus": 67,
                 "vitality": 67,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -14103,7 +14103,7 @@
                 "robustness": 4,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -14145,7 +14145,7 @@
                 "robustness": 16,
                 "focus": 57,
                 "vitality": 57,
-                "poise": 0
+                "poise": 7
             },
             "effects": []
         },
@@ -14187,7 +14187,7 @@
                 "robustness": 9,
                 "focus": 31,
                 "vitality": 27,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -14229,7 +14229,7 @@
                 "robustness": 21,
                 "focus": 71,
                 "vitality": 63,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -14272,7 +14272,7 @@
                 "robustness": 10,
                 "focus": 27,
                 "vitality": 29,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -14315,7 +14315,7 @@
                 "robustness": 25,
                 "focus": 76,
                 "vitality": 83,
-                "poise": 2
+                "poise": 8
             },
             "effects": [
                 {
@@ -14365,7 +14365,7 @@
                 "robustness": 14,
                 "focus": 39,
                 "vitality": 41,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -14408,7 +14408,7 @@
                 "robustness": 8,
                 "focus": 23,
                 "vitality": 24,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -14451,7 +14451,7 @@
                 "robustness": 21,
                 "focus": 61,
                 "vitality": 64,
-                "poise": 0
+                "poise": 7
             },
             "effects": [
                 {
@@ -14501,7 +14501,7 @@
                 "robustness": 24,
                 "focus": 76,
                 "vitality": 83,
-                "poise": 2
+                "poise": 8
             },
             "effects": [
                 {
@@ -14551,7 +14551,7 @@
                 "robustness": 21,
                 "focus": 61,
                 "vitality": 64,
-                "poise": 0
+                "poise": 7
             },
             "effects": [
                 {
@@ -14603,7 +14603,7 @@
                 "robustness": 15,
                 "focus": 46,
                 "vitality": 46,
-                "poise": 2
+                "poise": 4
             },
             "effects": [
                 {
@@ -14657,7 +14657,7 @@
                 "robustness": 26,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 3
+                "poise": 6
             },
             "effects": [
                 {
@@ -14723,7 +14723,7 @@
                 "robustness": 18,
                 "focus": 67,
                 "vitality": 63,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -14764,7 +14764,7 @@
                 "robustness": 4,
                 "focus": 21,
                 "vitality": 20,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -14805,7 +14805,7 @@
                 "robustness": 7,
                 "focus": 39,
                 "vitality": 37,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -14849,7 +14849,7 @@
                 "robustness": 26,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 3
+                "poise": 6
             },
             "effects": [
                 {
@@ -14908,7 +14908,7 @@
                 "robustness": 26,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 3
+                "poise": 6
             },
             "effects": [
                 {
@@ -14974,7 +14974,7 @@
                 "robustness": 26,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 3
+                "poise": 6
             },
             "effects": [
                 {
@@ -15033,7 +15033,7 @@
                 "robustness": 26,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 3
+                "poise": 6
             },
             "effects": [
                 {
@@ -15100,7 +15100,7 @@
                 "robustness": 22,
                 "focus": 9,
                 "vitality": 8,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -15145,7 +15145,7 @@
                 "robustness": 50,
                 "focus": 21,
                 "vitality": 18,
-                "poise": 14
+                "poise": 18
             },
             "effects": []
         },
@@ -15190,7 +15190,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 9,
-                "poise": 5
+                "poise": 6
             },
             "effects": []
         },
@@ -15232,7 +15232,7 @@
                 "robustness": 23,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -15274,7 +15274,7 @@
                 "robustness": 55,
                 "focus": 17,
                 "vitality": 17,
-                "poise": 15
+                "poise": 21
             },
             "effects": []
         },
@@ -15316,7 +15316,7 @@
                 "robustness": 19,
                 "focus": 6,
                 "vitality": 6,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -15358,7 +15358,7 @@
                 "robustness": 34,
                 "focus": 11,
                 "vitality": 11,
-                "poise": 9
+                "poise": 12
             },
             "effects": []
         },
@@ -15400,7 +15400,7 @@
                 "robustness": 50,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 12
+                "poise": 19
             },
             "effects": []
         },
@@ -15443,7 +15443,7 @@
                 "robustness": 22,
                 "focus": 0,
                 "vitality": 23,
-                "poise": 2
+                "poise": 5
             },
             "effects": []
         },
@@ -15487,7 +15487,7 @@
                 "robustness": 50,
                 "focus": 50,
                 "vitality": 55,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -15528,7 +15528,7 @@
                 "robustness": 17,
                 "focus": 17,
                 "vitality": 18,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -15569,7 +15569,7 @@
                 "robustness": 31,
                 "focus": 31,
                 "vitality": 34,
-                "poise": 4
+                "poise": 10
             },
             "effects": []
         },
@@ -15612,7 +15612,7 @@
                 "robustness": 42,
                 "focus": 42,
                 "vitality": 45,
-                "poise": 4
+                "poise": 15
             },
             "effects": []
         },
@@ -15657,7 +15657,7 @@
                 "robustness": 18,
                 "focus": 23,
                 "vitality": 22,
-                "poise": 2
+                "poise": 6
             },
             "effects": [
                 {
@@ -15716,7 +15716,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 50,
-                "poise": 8
+                "poise": 17
             },
             "effects": []
         },
@@ -15760,7 +15760,7 @@
                 "robustness": 14,
                 "focus": 18,
                 "vitality": 17,
-                "poise": 2
+                "poise": 4
             },
             "effects": []
         },
@@ -15804,7 +15804,7 @@
                 "robustness": 26,
                 "focus": 34,
                 "vitality": 31,
-                "poise": 4
+                "poise": 10
             },
             "effects": []
         },
@@ -15849,7 +15849,7 @@
                 "robustness": 20,
                 "focus": 20,
                 "vitality": 22,
-                "poise": 2
+                "poise": 5
             },
             "effects": []
         },
@@ -15894,7 +15894,7 @@
                 "robustness": 50,
                 "focus": 50,
                 "vitality": 55,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -15938,7 +15938,7 @@
                 "robustness": 17,
                 "focus": 17,
                 "vitality": 18,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -15982,7 +15982,7 @@
                 "robustness": 29,
                 "focus": 29,
                 "vitality": 31,
-                "poise": 3
+                "poise": 9
             },
             "effects": []
         },
@@ -16023,7 +16023,7 @@
                 "robustness": 14,
                 "focus": 14,
                 "vitality": 16,
-                "poise": 0
+                "poise": 3
             },
             "effects": []
         },
@@ -16068,7 +16068,7 @@
                 "robustness": 42,
                 "focus": 42,
                 "vitality": 45,
-                "poise": 4
+                "poise": 15
             },
             "effects": []
         },
@@ -16111,7 +16111,7 @@
                 "robustness": 44,
                 "focus": 35,
                 "vitality": 20,
-                "poise": 11
+                "poise": 12
             },
             "effects": []
         },
@@ -16154,7 +16154,7 @@
                 "robustness": 23,
                 "focus": 63,
                 "vitality": 63,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -16198,7 +16198,7 @@
                 "robustness": 14,
                 "focus": 39,
                 "vitality": 39,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -16241,7 +16241,7 @@
                 "robustness": 31,
                 "focus": 12,
                 "vitality": 12,
-                "poise": 8
+                "poise": 9
             },
             "effects": []
         },
@@ -16283,7 +16283,7 @@
                 "robustness": 10,
                 "focus": 29,
                 "vitality": 31,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -16325,7 +16325,7 @@
                 "robustness": 24,
                 "focus": 76,
                 "vitality": 83,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -16367,7 +16367,7 @@
                 "robustness": 8,
                 "focus": 25,
                 "vitality": 28,
-                "poise": 1
+                "poise": 2
             },
             "effects": []
         },
@@ -16409,7 +16409,7 @@
                 "robustness": 15,
                 "focus": 47,
                 "vitality": 51,
-                "poise": 1
+                "poise": 6
             },
             "effects": []
         },
@@ -16449,7 +16449,7 @@
                 "robustness": 21,
                 "focus": 61,
                 "vitality": 64,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -16493,7 +16493,7 @@
                 "robustness": 10,
                 "focus": 31,
                 "vitality": 31,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -16537,7 +16537,7 @@
                 "robustness": 21,
                 "focus": 63,
                 "vitality": 63,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -16581,7 +16581,7 @@
                 "robustness": 13,
                 "focus": 39,
                 "vitality": 39,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -16625,7 +16625,7 @@
                 "robustness": 16,
                 "focus": 54,
                 "vitality": 54,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -16670,7 +16670,7 @@
                 "robustness": 12,
                 "focus": 44,
                 "vitality": 42,
-                "poise": 2
+                "poise": 5
             },
             "effects": [
                 {
@@ -16728,7 +16728,7 @@
                 "robustness": 24,
                 "focus": 83,
                 "vitality": 76,
-                "poise": 3
+                "poise": 12
             },
             "effects": []
         },
@@ -16769,7 +16769,7 @@
                 "robustness": 8,
                 "focus": 28,
                 "vitality": 25,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -16810,7 +16810,7 @@
                 "robustness": 15,
                 "focus": 51,
                 "vitality": 47,
-                "poise": 2
+                "poise": 7
             },
             "effects": []
         },
@@ -16853,7 +16853,7 @@
                 "robustness": 11,
                 "focus": 39,
                 "vitality": 35,
-                "poise": 1
+                "poise": 5
             },
             "effects": [
                 {
@@ -16900,7 +16900,7 @@
                 "robustness": 16,
                 "focus": 57,
                 "vitality": 57,
-                "poise": 0
+                "poise": 7
             },
             "effects": []
         },
@@ -16941,7 +16941,7 @@
                 "robustness": 9,
                 "focus": 27,
                 "vitality": 27,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -16984,7 +16984,7 @@
                 "robustness": 14,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -17030,7 +17030,7 @@
                 "robustness": 35,
                 "focus": 60,
                 "vitality": 60,
-                "poise": 5
+                "poise": 15
             },
             "effects": [
                 {
@@ -17081,7 +17081,7 @@
                 "robustness": 8,
                 "focus": 17,
                 "vitality": 17,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -17123,7 +17123,7 @@
                 "robustness": 20,
                 "focus": 35,
                 "vitality": 35,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -17165,7 +17165,7 @@
                 "robustness": 32,
                 "focus": 54,
                 "vitality": 54,
-                "poise": 4
+                "poise": 15
             },
             "effects": []
         },
@@ -17210,7 +17210,7 @@
                 "robustness": 24,
                 "focus": 9,
                 "vitality": 8,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -17255,7 +17255,7 @@
                 "robustness": 60,
                 "focus": 23,
                 "vitality": 21,
-                "poise": 15
+                "poise": 21
             },
             "effects": []
         },
@@ -17299,7 +17299,7 @@
                 "robustness": 18,
                 "focus": 6,
                 "vitality": 4,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -17343,7 +17343,7 @@
                 "robustness": 31,
                 "focus": 7,
                 "vitality": 7,
-                "poise": 6
+                "poise": 10
             },
             "effects": []
         },
@@ -17388,7 +17388,7 @@
                 "robustness": 21,
                 "focus": 8,
                 "vitality": 7,
-                "poise": 3
+                "poise": 6
             },
             "effects": []
         },
@@ -17433,7 +17433,7 @@
                 "robustness": 26,
                 "focus": 5,
                 "vitality": 10,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -17478,7 +17478,7 @@
                 "robustness": 60,
                 "focus": 11,
                 "vitality": 23,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -17523,7 +17523,7 @@
                 "robustness": 20,
                 "focus": 4,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -17568,7 +17568,7 @@
                 "robustness": 37,
                 "focus": 7,
                 "vitality": 14,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -17613,7 +17613,7 @@
                 "robustness": 54,
                 "focus": 10,
                 "vitality": 21,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -17659,7 +17659,7 @@
                 "robustness": 14,
                 "focus": 39,
                 "vitality": 35,
-                "poise": 2
+                "poise": 5
             },
             "effects": [
                 {
@@ -17711,7 +17711,7 @@
                 "robustness": 25,
                 "focus": 67,
                 "vitality": 63,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -17751,7 +17751,7 @@
                 "robustness": 15,
                 "focus": 41,
                 "vitality": 39,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -17796,7 +17796,7 @@
                 "robustness": 10,
                 "focus": 33,
                 "vitality": 33,
-                "poise": 1
+                "poise": 3
             },
             "effects": [
                 {
@@ -17844,7 +17844,7 @@
                 "robustness": 24,
                 "focus": 76,
                 "vitality": 76,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -17885,7 +17885,7 @@
                 "robustness": 21,
                 "focus": 61,
                 "vitality": 61,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -17929,7 +17929,7 @@
                 "robustness": 14,
                 "focus": 35,
                 "vitality": 33,
-                "poise": 1
+                "poise": 4
             },
             "effects": [
                 {
@@ -17980,7 +17980,7 @@
                 "robustness": 28,
                 "focus": 71,
                 "vitality": 67,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -18022,7 +18022,7 @@
                 "robustness": 9,
                 "focus": 24,
                 "vitality": 22,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -18064,7 +18064,7 @@
                 "robustness": 10,
                 "focus": 30,
                 "vitality": 31,
-                "poise": 0
+                "poise": 3
             },
             "effects": []
         },
@@ -18106,7 +18106,7 @@
                 "robustness": 22,
                 "focus": 61,
                 "vitality": 64,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -18151,7 +18151,7 @@
                 "robustness": 27,
                 "focus": 24,
                 "vitality": 33,
-                "poise": 13
+                "poise": 14
             },
             "effects": [
                 {
@@ -18213,7 +18213,7 @@
                 "robustness": 63,
                 "focus": 57,
                 "vitality": 76,
-                "poise": 40
+                "poise": 43
             },
             "effects": [
                 {
@@ -18341,7 +18341,7 @@
                 "robustness": 39,
                 "focus": 35,
                 "vitality": 47,
-                "poise": 24
+                "poise": 25
             },
             "effects": [
                 {
@@ -18402,7 +18402,7 @@
                 "robustness": 20,
                 "focus": 9,
                 "vitality": 10,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -18444,7 +18444,7 @@
                 "robustness": 46,
                 "focus": 21,
                 "vitality": 23,
-                "poise": 12
+                "poise": 19
             },
             "effects": []
         },
@@ -18486,7 +18486,7 @@
                 "robustness": 15,
                 "focus": 7,
                 "vitality": 8,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -18528,7 +18528,7 @@
                 "robustness": 29,
                 "focus": 13,
                 "vitality": 14,
-                "poise": 7
+                "poise": 11
             },
             "effects": []
         },
@@ -18570,7 +18570,7 @@
                 "robustness": 38,
                 "focus": 16,
                 "vitality": 19,
-                "poise": 8
+                "poise": 18
             },
             "effects": []
         },
@@ -18614,7 +18614,7 @@
                 "robustness": 11,
                 "focus": 39,
                 "vitality": 42,
-                "poise": 2
+                "poise": 4
             },
             "effects": [
                 {
@@ -18679,7 +18679,7 @@
                 "robustness": 23,
                 "focus": 67,
                 "vitality": 71,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -18720,7 +18720,7 @@
                 "robustness": 7,
                 "focus": 21,
                 "vitality": 22,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -18760,7 +18760,7 @@
                 "robustness": 15,
                 "focus": 47,
                 "vitality": 51,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -18803,7 +18803,7 @@
                 "robustness": 20,
                 "focus": 62,
                 "vitality": 66,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -18847,7 +18847,7 @@
                 "robustness": 11,
                 "focus": 33,
                 "vitality": 39,
-                "poise": 2
+                "poise": 4
             },
             "effects": [
                 {
@@ -18879,7 +18879,7 @@
             "name": "Battlemage Robe",
             "summary": "Robe of an unaffiliated glintstone sorcerer",
             "description": [
-                "Robe worn by scholars of the Raya Lucaria Academy scholar, tattered from being worn on the battlefield.",
+                "Robe worn by scholars of the Raya Lucaria Academy, tattered from being worn on the battlefield.",
                 "",
                 "Whenever war broke out and the academy sealed its gates, only Haima's scholars dared venture outside.",
                 "Seclusion is no way to foster discovery; it is only a convenient form of escape."
@@ -18912,7 +18912,7 @@
                 "robustness": 23,
                 "focus": 63,
                 "vitality": 71,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -18952,7 +18952,7 @@
                 "robustness": 7,
                 "focus": 20,
                 "vitality": 22,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -18992,7 +18992,7 @@
                 "robustness": 14,
                 "focus": 39,
                 "vitality": 44,
-                "poise": 1
+                "poise": 6
             },
             "effects": []
         },
@@ -19039,7 +19039,7 @@
                 "robustness": 14,
                 "focus": 31,
                 "vitality": 31,
-                "poise": 1
+                "poise": 3
             },
             "effects": [
                 {
@@ -19094,7 +19094,7 @@
                 "robustness": 32,
                 "focus": 71,
                 "vitality": 71,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -19139,7 +19139,7 @@
                 "robustness": 20,
                 "focus": 44,
                 "vitality": 44,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -19184,7 +19184,7 @@
                 "robustness": 25,
                 "focus": 57,
                 "vitality": 57,
-                "poise": 0
+                "poise": 7
             },
             "effects": []
         },
@@ -19226,7 +19226,7 @@
                 "robustness": 24,
                 "focus": 67,
                 "vitality": 67,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -19268,7 +19268,7 @@
                 "robustness": 8,
                 "focus": 25,
                 "vitality": 25,
-                "poise": 1
+                "poise": 2
             },
             "effects": []
         },
@@ -19310,7 +19310,7 @@
                 "robustness": 15,
                 "focus": 47,
                 "vitality": 47,
-                "poise": 1
+                "poise": 6
             },
             "effects": []
         },
@@ -19354,7 +19354,7 @@
                 "robustness": 10,
                 "focus": 26,
                 "vitality": 29,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -19398,7 +19398,7 @@
                 "robustness": 25,
                 "focus": 63,
                 "vitality": 71,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -19445,7 +19445,7 @@
                 "robustness": 9,
                 "focus": 33,
                 "vitality": 33,
-                "poise": 1
+                "poise": 3
             },
             "effects": [
                 {
@@ -19497,7 +19497,7 @@
                 "robustness": 11,
                 "focus": 60,
                 "vitality": 60,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -19540,7 +19540,7 @@
                 "robustness": 4,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -19583,7 +19583,7 @@
                 "robustness": 15,
                 "focus": 56,
                 "vitality": 56,
-                "poise": 3
+                "poise": 7
             },
             "effects": []
         },
@@ -19625,7 +19625,7 @@
                 "robustness": 25,
                 "focus": 71,
                 "vitality": 83,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -19672,7 +19672,7 @@
                 "robustness": 23,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 3
+                "poise": 5
             },
             "effects": [
                 {
@@ -19728,7 +19728,7 @@
                 "robustness": 50,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 14
+                "poise": 18
             },
             "effects": []
         },
@@ -19770,7 +19770,7 @@
                 "robustness": 27,
                 "focus": 5,
                 "vitality": 8,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -19812,7 +19812,7 @@
                 "robustness": 63,
                 "focus": 11,
                 "vitality": 18,
-                "poise": 14
+                "poise": 18
             },
             "effects": []
         },
@@ -19854,7 +19854,7 @@
                 "robustness": 20,
                 "focus": 0,
                 "vitality": 4,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -19896,7 +19896,7 @@
                 "robustness": 37,
                 "focus": 0,
                 "vitality": 7,
-                "poise": 7
+                "poise": 10
             },
             "effects": []
         },
@@ -19938,7 +19938,7 @@
                 "robustness": 35,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 8
+                "poise": 10
             },
             "effects": [
                 {
@@ -19987,7 +19987,7 @@
                 "robustness": 35,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 8
+                "poise": 10
             },
             "effects": [
                 {
@@ -20036,7 +20036,7 @@
                 "robustness": 35,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 8
+                "poise": 10
             },
             "effects": [
                 {
@@ -20085,7 +20085,7 @@
                 "robustness": 35,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 8
+                "poise": 10
             },
             "effects": [
                 {
@@ -20134,7 +20134,7 @@
                 "robustness": 35,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 8
+                "poise": 10
             },
             "effects": [
                 {
@@ -20183,7 +20183,7 @@
                 "robustness": 35,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 8
+                "poise": 10
             },
             "effects": [
                 {
@@ -20234,7 +20234,7 @@
                 "robustness": 20,
                 "focus": 44,
                 "vitality": 44,
-                "poise": 3
+                "poise": 6
             },
             "effects": [
                 {
@@ -20292,7 +20292,7 @@
                 "robustness": 18,
                 "focus": 5,
                 "vitality": 8,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -20335,7 +20335,7 @@
                 "robustness": 42,
                 "focus": 11,
                 "vitality": 18,
-                "poise": 12
+                "poise": 17
             },
             "effects": []
         },
@@ -20377,7 +20377,7 @@
                 "robustness": 14,
                 "focus": 4,
                 "vitality": 6,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -20420,7 +20420,7 @@
                 "robustness": 26,
                 "focus": 7,
                 "vitality": 11,
-                "poise": 7
+                "poise": 10
             },
             "effects": []
         },
@@ -20462,7 +20462,7 @@
                 "robustness": 29,
                 "focus": 11,
                 "vitality": 11,
-                "poise": 7
+                "poise": 9
             },
             "effects": []
         },
@@ -20504,7 +20504,7 @@
                 "robustness": 55,
                 "focus": 21,
                 "vitality": 18,
-                "poise": 15
+                "poise": 21
             },
             "effects": []
         },
@@ -20546,7 +20546,7 @@
                 "robustness": 55,
                 "focus": 21,
                 "vitality": 18,
-                "poise": 15
+                "poise": 21
             },
             "effects": []
         },
@@ -20589,7 +20589,7 @@
                 "robustness": 14,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 2
+                "poise": 5
             },
             "effects": []
         },
@@ -20632,7 +20632,7 @@
                 "robustness": 33,
                 "focus": 16,
                 "vitality": 15,
-                "poise": 8
+                "poise": 10
             },
             "effects": [
                 {
@@ -20685,7 +20685,7 @@
                 "robustness": 10,
                 "focus": 39,
                 "vitality": 33,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -20728,7 +20728,7 @@
                 "robustness": 24,
                 "focus": 90,
                 "vitality": 76,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -20771,7 +20771,7 @@
                 "robustness": 8,
                 "focus": 30,
                 "vitality": 25,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -20814,7 +20814,7 @@
                 "robustness": 15,
                 "focus": 56,
                 "vitality": 47,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -20858,7 +20858,7 @@
                 "robustness": 33,
                 "focus": 26,
                 "vitality": 42,
-                "poise": 4
+                "poise": 6
             },
             "effects": []
         },
@@ -20903,7 +20903,7 @@
                 "robustness": 42,
                 "focus": 26,
                 "vitality": 39,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -20945,7 +20945,7 @@
                 "robustness": 16,
                 "focus": 16,
                 "vitality": 18,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -20987,7 +20987,7 @@
                 "robustness": 35,
                 "focus": 42,
                 "vitality": 50,
-                "poise": 2
+                "poise": 12
             },
             "effects": []
         },
@@ -21029,7 +21029,7 @@
                 "robustness": 12,
                 "focus": 14,
                 "vitality": 17,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -21071,7 +21071,7 @@
                 "robustness": 22,
                 "focus": 26,
                 "vitality": 31,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -21113,7 +21113,7 @@
                 "robustness": 14,
                 "focus": 14,
                 "vitality": 16,
-                "poise": 0
+                "poise": 4
             },
             "effects": []
         },
@@ -21156,7 +21156,7 @@
                 "robustness": 22,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -21199,7 +21199,7 @@
                 "robustness": 50,
                 "focus": 18,
                 "vitality": 18,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -21242,7 +21242,7 @@
                 "robustness": 17,
                 "focus": 6,
                 "vitality": 6,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -21285,7 +21285,7 @@
                 "robustness": 31,
                 "focus": 11,
                 "vitality": 11,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -21330,7 +21330,7 @@
                 "robustness": 20,
                 "focus": 47,
                 "vitality": 47,
-                "poise": 2
+                "poise": 5
             },
             "effects": [
                 {
@@ -21390,7 +21390,7 @@
                 "robustness": 22,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -21433,7 +21433,7 @@
                 "robustness": 55,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 16
+                "poise": 22
             },
             "effects": []
         },
@@ -21474,7 +21474,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -21515,7 +21515,7 @@
                 "robustness": 34,
                 "focus": 14,
                 "vitality": 14,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -21556,7 +21556,7 @@
                 "robustness": 22,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -21599,7 +21599,7 @@
                 "robustness": 55,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 16
+                "poise": 22
             },
             "effects": []
         },
@@ -21640,7 +21640,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -21681,7 +21681,7 @@
                 "robustness": 34,
                 "focus": 14,
                 "vitality": 14,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -21722,7 +21722,7 @@
                 "robustness": 22,
                 "focus": 9,
                 "vitality": 9,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -21764,7 +21764,7 @@
                 "robustness": 55,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 16
+                "poise": 22
             },
             "effects": []
         },
@@ -21805,7 +21805,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -21846,7 +21846,7 @@
                 "robustness": 34,
                 "focus": 14,
                 "vitality": 14,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -21887,7 +21887,7 @@
                 "robustness": 20,
                 "focus": 9,
                 "vitality": 10,
-                "poise": 5
+                "poise": 7
             },
             "effects": []
         },
@@ -21929,7 +21929,7 @@
                 "robustness": 50,
                 "focus": 23,
                 "vitality": 24,
-                "poise": 16
+                "poise": 22
             },
             "effects": []
         },
@@ -21970,7 +21970,7 @@
                 "robustness": 17,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -22011,7 +22011,7 @@
                 "robustness": 31,
                 "focus": 14,
                 "vitality": 15,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -22053,7 +22053,7 @@
                 "robustness": 50,
                 "focus": 23,
                 "vitality": 21,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -22094,7 +22094,7 @@
                 "robustness": 17,
                 "focus": 8,
                 "vitality": 7,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -22135,7 +22135,7 @@
                 "robustness": 31,
                 "focus": 14,
                 "vitality": 13,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -22178,7 +22178,7 @@
                 "robustness": 22,
                 "focus": 9,
                 "vitality": 10,
-                "poise": 4
+                "poise": 6
             },
             "effects": [
                 {
@@ -22228,7 +22228,7 @@
                 "robustness": 55,
                 "focus": 23,
                 "vitality": 24,
-                "poise": 15
+                "poise": 21
             },
             "effects": []
         },
@@ -22269,7 +22269,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 3
+                "poise": 4
             },
             "effects": []
         },
@@ -22310,7 +22310,7 @@
                 "robustness": 34,
                 "focus": 14,
                 "vitality": 15,
-                "poise": 9
+                "poise": 12
             },
             "effects": []
         },
@@ -22351,7 +22351,7 @@
                 "robustness": 23,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -22394,7 +22394,7 @@
                 "robustness": 55,
                 "focus": 24,
                 "vitality": 23,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -22435,7 +22435,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -22476,7 +22476,7 @@
                 "robustness": 34,
                 "focus": 15,
                 "vitality": 14,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -22519,7 +22519,7 @@
                 "robustness": 50,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -22560,7 +22560,7 @@
                 "robustness": 24,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -22603,7 +22603,7 @@
                 "robustness": 57,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -22644,7 +22644,7 @@
                 "robustness": 19,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -22685,7 +22685,7 @@
                 "robustness": 35,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -22728,7 +22728,7 @@
                 "robustness": 52,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -22769,7 +22769,7 @@
                 "robustness": 24,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -22812,7 +22812,7 @@
                 "robustness": 57,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -22853,7 +22853,7 @@
                 "robustness": 19,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -22894,7 +22894,7 @@
                 "robustness": 35,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -22937,7 +22937,7 @@
                 "robustness": 52,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -22979,7 +22979,7 @@
                 "robustness": 24,
                 "focus": 10,
                 "vitality": 10,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -23021,7 +23021,7 @@
                 "robustness": 55,
                 "focus": 24,
                 "vitality": 24,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -23062,7 +23062,7 @@
                 "robustness": 19,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -23103,7 +23103,7 @@
                 "robustness": 35,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -23145,7 +23145,7 @@
                 "robustness": 50,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -23187,7 +23187,7 @@
                 "robustness": 23,
                 "focus": 10,
                 "vitality": 11,
-                "poise": 6
+                "poise": 8
             },
             "effects": []
         },
@@ -23231,7 +23231,7 @@
                 "robustness": 55,
                 "focus": 24,
                 "vitality": 25,
-                "poise": 19
+                "poise": 24
             },
             "effects": []
         },
@@ -23271,7 +23271,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -23311,7 +23311,7 @@
                 "robustness": 34,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 11
+                "poise": 14
             },
             "effects": []
         },
@@ -23355,7 +23355,7 @@
                 "robustness": 50,
                 "focus": 21,
                 "vitality": 22,
-                "poise": 17
+                "poise": 24
             },
             "effects": []
         },
@@ -23397,7 +23397,7 @@
                 "robustness": 55,
                 "focus": 24,
                 "vitality": 23,
-                "poise": 21
+                "poise": 25
             },
             "effects": []
         },
@@ -23438,7 +23438,7 @@
                 "robustness": 18,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -23479,7 +23479,7 @@
                 "robustness": 34,
                 "focus": 15,
                 "vitality": 14,
-                "poise": 12
+                "poise": 15
             },
             "effects": []
         },
@@ -23521,7 +23521,7 @@
                 "robustness": 50,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 18
+                "poise": 25
             },
             "effects": []
         },
@@ -23564,7 +23564,7 @@
                 "robustness": 24,
                 "focus": 10,
                 "vitality": 11,
-                "poise": 5
+                "poise": 7
             },
             "effects": [
                 {
@@ -23614,7 +23614,7 @@
                 "robustness": 57,
                 "focus": 24,
                 "vitality": 25,
-                "poise": 16
+                "poise": 22
             },
             "effects": []
         },
@@ -23655,7 +23655,7 @@
                 "robustness": 19,
                 "focus": 8,
                 "vitality": 8,
-                "poise": 4
+                "poise": 5
             },
             "effects": []
         },
@@ -23696,7 +23696,7 @@
                 "robustness": 35,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -23739,7 +23739,7 @@
                 "robustness": 52,
                 "focus": 21,
                 "vitality": 22,
-                "poise": 14
+                "poise": 22
             },
             "effects": []
         },
@@ -23779,7 +23779,7 @@
                 "robustness": 18,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 2
+                "poise": 6
             },
             "effects": []
         },
@@ -23821,7 +23821,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 55,
-                "poise": 8
+                "poise": 17
             },
             "effects": []
         },
@@ -23862,7 +23862,7 @@
                 "robustness": 13,
                 "focus": 17,
                 "vitality": 17,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -23903,7 +23903,7 @@
                 "robustness": 26,
                 "focus": 34,
                 "vitality": 34,
-                "poise": 4
+                "poise": 10
             },
             "effects": []
         },
@@ -23944,7 +23944,7 @@
                 "robustness": 18,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 2
+                "poise": 6
             },
             "effects": []
         },
@@ -23985,7 +23985,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 55,
-                "poise": 8
+                "poise": 17
             },
             "effects": []
         },
@@ -24026,7 +24026,7 @@
                 "robustness": 18,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 2
+                "poise": 6
             },
             "effects": []
         },
@@ -24068,7 +24068,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 55,
-                "poise": 8
+                "poise": 17
             },
             "effects": []
         },
@@ -24109,7 +24109,7 @@
                 "robustness": 18,
                 "focus": 23,
                 "vitality": 23,
-                "poise": 2
+                "poise": 6
             },
             "effects": []
         },
@@ -24151,7 +24151,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 55,
-                "poise": 8
+                "poise": 17
             },
             "effects": []
         },
@@ -24193,7 +24193,7 @@
                 "robustness": 38,
                 "focus": 55,
                 "vitality": 50,
-                "poise": 9
+                "poise": 18
             },
             "effects": []
         },
@@ -24238,7 +24238,7 @@
                 "robustness": 18,
                 "focus": 23,
                 "vitality": 24,
-                "poise": 2
+                "poise": 5
             },
             "effects": [
                 {
@@ -24287,7 +24287,7 @@
                 "robustness": 42,
                 "focus": 55,
                 "vitality": 57,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -24332,7 +24332,7 @@
                 "robustness": 12,
                 "focus": 20,
                 "vitality": 20,
-                "poise": 2
+                "poise": 6
             },
             "effects": [
                 {
@@ -24381,7 +24381,7 @@
                 "robustness": 28,
                 "focus": 46,
                 "vitality": 46,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -24421,7 +24421,7 @@
                 "robustness": 9,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -24461,7 +24461,7 @@
                 "robustness": 17,
                 "focus": 29,
                 "vitality": 29,
-                "poise": 4
+                "poise": 9
             },
             "effects": []
         },
@@ -24504,7 +24504,7 @@
                 "robustness": 22,
                 "focus": 27,
                 "vitality": 26,
-                "poise": 2
+                "poise": 6
             },
             "effects": [
                 {
@@ -24564,7 +24564,7 @@
                 "robustness": 22,
                 "focus": 27,
                 "vitality": 26,
-                "poise": 2
+                "poise": 6
             },
             "effects": [
                 {
@@ -24622,7 +24622,7 @@
                 "robustness": 22,
                 "focus": 27,
                 "vitality": 26,
-                "poise": 2
+                "poise": 6
             },
             "effects": [
                 {
@@ -24680,7 +24680,7 @@
                 "robustness": 22,
                 "focus": 27,
                 "vitality": 26,
-                "poise": 2
+                "poise": 6
             },
             "effects": [
                 {
@@ -24738,7 +24738,7 @@
                 "robustness": 22,
                 "focus": 27,
                 "vitality": 26,
-                "poise": 2
+                "poise": 6
             },
             "effects": [
                 {
@@ -24797,7 +24797,7 @@
                 "robustness": 11,
                 "focus": 63,
                 "vitality": 107,
-                "poise": 1
+                "poise": 5
             },
             "effects": []
         },
@@ -24837,7 +24837,7 @@
                 "robustness": 7,
                 "focus": 39,
                 "vitality": 66,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -24880,7 +24880,7 @@
                 "robustness": 8,
                 "focus": 29,
                 "vitality": 45,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -24923,7 +24923,7 @@
                 "robustness": 21,
                 "focus": 76,
                 "vitality": 108,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         },
@@ -24966,7 +24966,7 @@
                 "robustness": 10,
                 "focus": 57,
                 "vitality": 93,
-                "poise": 0
+                "poise": 5
             },
             "effects": []
         },
@@ -25006,7 +25006,7 @@
                 "robustness": 21,
                 "focus": 63,
                 "vitality": 63,
-                "poise": 1
+                "poise": 7
             },
             "effects": []
         },
@@ -25046,7 +25046,7 @@
                 "robustness": 7,
                 "focus": 21,
                 "vitality": 21,
-                "poise": 0
+                "poise": 1
             },
             "effects": []
         },
@@ -25086,7 +25086,7 @@
                 "robustness": 13,
                 "focus": 39,
                 "vitality": 39,
-                "poise": 1
+                "poise": 4
             },
             "effects": []
         },
@@ -25126,7 +25126,7 @@
                 "robustness": 24,
                 "focus": 76,
                 "vitality": 76,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -25166,7 +25166,7 @@
                 "robustness": 8,
                 "focus": 25,
                 "vitality": 25,
-                "poise": 1
+                "poise": 2
             },
             "effects": []
         },
@@ -25207,7 +25207,7 @@
                 "robustness": 15,
                 "focus": 22,
                 "vitality": 22,
-                "poise": 2
+                "poise": 4
             },
             "effects": []
         },
@@ -25248,7 +25248,7 @@
                 "robustness": 35,
                 "focus": 50,
                 "vitality": 50,
-                "poise": 6
+                "poise": 16
             },
             "effects": []
         },
@@ -25289,7 +25289,7 @@
                 "robustness": 12,
                 "focus": 17,
                 "vitality": 17,
-                "poise": 1
+                "poise": 3
             },
             "effects": []
         },
@@ -25331,7 +25331,7 @@
                 "robustness": 8,
                 "focus": 27,
                 "vitality": 27,
-                "poise": 0
+                "poise": 2
             },
             "effects": []
         },
@@ -25373,7 +25373,7 @@
                 "robustness": 23,
                 "focus": 76,
                 "vitality": 76,
-                "poise": 2
+                "poise": 10
             },
             "effects": []
         },
@@ -25415,7 +25415,7 @@
                 "robustness": 19,
                 "focus": 61,
                 "vitality": 61,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -25458,7 +25458,7 @@
                 "robustness": 31,
                 "focus": 14,
                 "vitality": 14,
-                "poise": 8
+                "poise": 9
             },
             "effects": []
         },
@@ -25500,7 +25500,7 @@
                 "robustness": 32,
                 "focus": 42,
                 "vitality": 42,
-                "poise": 2
+                "poise": 12
             },
             "effects": []
         },
@@ -25543,7 +25543,7 @@
                 "robustness": 35,
                 "focus": 15,
                 "vitality": 15,
-                "poise": 10
+                "poise": 13
             },
             "effects": []
         },
@@ -25586,7 +25586,7 @@
                 "robustness": 25,
                 "focus": 34,
                 "vitality": 34,
-                "poise": 1
+                "poise": 8
             },
             "effects": []
         },
@@ -25631,7 +25631,7 @@
                 "robustness": 45,
                 "focus": 18,
                 "vitality": 22,
-                "poise": 9
+                "poise": 10
             },
             "effects": [
                 {
@@ -25687,7 +25687,7 @@
                 "robustness": 15,
                 "focus": 0,
                 "vitality": 20,
-                "poise": 1
+                "poise": 4
             },
             "effects": [
                 {
@@ -25741,7 +25741,7 @@
                 "robustness": 21,
                 "focus": 67,
                 "vitality": 67,
-                "poise": 2
+                "poise": 8
             },
             "effects": []
         }

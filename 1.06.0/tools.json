@@ -3616,6 +3616,16 @@
                         "Left-hand Buff VFX"
                     ],
                     "tick_interval": 0.06
+                },
+                {
+                    "attribute": "Stability",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.13,
+                    "conditions": [
+                        "Left-hand Buff VFX"
+                    ],
+                    "tick_interval": 0.06
                 }
             ]
         },

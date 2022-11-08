@@ -296,7 +296,7 @@
                 "Item for online play.",
                 "(Can also be used from the Multiplayer menu.)",
                 "",
-                "Send a cooperative summon sign to several summoning pools (activated pools only).",
+                "Send a cooperative summon sign to several nearby summoning pools (activated pools only).",
                 "",
                 "In cooperative multiplayer, your objective will be to defeat the area boss of the world to which you were summoned."
             ],
@@ -327,7 +327,7 @@
                 "Item for online play.",
                 "(Can also be used from the Multiplayer menu.)",
                 "",
-                "Send a competitive summon sign to several summoning pools (activated pools only).",
+                "Send a competitive summon sign to several nearby summoning pools (activated pools only).",
                 "",
                 "In competitive multiplayer, your objective will be to defeat the Host of Fingers of the world to which you were summoned."
             ],
@@ -3616,6 +3616,16 @@
                         "Left-hand Buff VFX"
                     ],
                     "tick_interval": 0.06
+                },
+                {
+                    "attribute": "Stability",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.13,
+                    "conditions": [
+                        "Left-hand Buff VFX"
+                    ],
+                    "tick_interval": 0.06
                 }
             ]
         },
@@ -4300,7 +4310,7 @@
                 "",
                 "Capable of subduing the flame of frenzy if inherited, allowing one to cheat fate and avoid becoming Lord of Frenzied Flame.",
                 "",
-                "However, the needle is as yet unfinished and can only be used in the heart of the storm beyond time said to be found in Farum Azula."
+                "However, the needle is as yet unfinished and can only be used in the heart of the storm beyond time said to be found in Faram Azula."
             ],
             "is_tradable": false,
             "price_sold": 0,

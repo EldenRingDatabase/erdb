@@ -61,7 +61,7 @@ class SpellGeneratorData(GeneratorDataBase):
         T = GoodsType
         for row in spells.values():
             if row.get("goodsType") in [T.SORCERY_1, T.INCANTATION_1, T.SORCERY_2, T.INCANTATION_2] \
-            and self.msgs["names"][row.index] not in ["[ERROR]", "%null%"]:
+            and self.msgs["names"].get(row.index, "[ERROR]") not in ["[ERROR]", "%null%"]:
                 yield row
 
     def construct_object(self, row: ParamRow) -> Dict:

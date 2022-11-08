@@ -134,10 +134,10 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 17,
+            "fp_cost": 19,
             "fp_cost_extra": 0,
-            "sp_cost": 28,
-            "sp_cost_extra": 8,
+            "sp_cost": 30,
+            "sp_cost_extra": 9,
             "type": "Sorcery",
             "slots_used": 1,
             "hold_action": "Charge",
@@ -171,10 +171,10 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 24,
+            "fp_cost": 26,
             "fp_cost_extra": 0,
-            "sp_cost": 31,
-            "sp_cost_extra": 9,
+            "sp_cost": 35,
+            "sp_cost_extra": 11,
             "type": "Sorcery",
             "slots_used": 1,
             "hold_action": "Charge",
@@ -245,7 +245,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 12,
+            "fp_cost": 14,
             "fp_cost_extra": 0,
             "sp_cost": 21,
             "sp_cost_extra": 6,
@@ -356,7 +356,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 9,
+            "fp_cost": 10,
             "fp_cost_extra": 0,
             "sp_cost": 18,
             "sp_cost_extra": 0,
@@ -393,7 +393,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 38,
+            "fp_cost": 45,
             "fp_cost_extra": 0,
             "sp_cost": 42,
             "sp_cost_extra": 13,
@@ -467,7 +467,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 10,
+            "fp_cost": 12,
             "fp_cost_extra": 0,
             "sp_cost": 22,
             "sp_cost_extra": 0,
@@ -505,8 +505,8 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 22,
-            "fp_cost_extra": 4,
+            "fp_cost": 25,
+            "fp_cost_extra": 5,
             "sp_cost": 35,
             "sp_cost_extra": 0,
             "type": "Sorcery",
@@ -542,9 +542,9 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 22,
+            "fp_cost": 25,
             "fp_cost_extra": 0,
-            "sp_cost": 38,
+            "sp_cost": 46,
             "sp_cost_extra": 0,
             "type": "Sorcery",
             "slots_used": 1,
@@ -615,7 +615,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 9,
+            "fp_cost": 12,
             "fp_cost_extra": 0,
             "sp_cost": 5,
             "sp_cost_extra": 0,
@@ -688,10 +688,10 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 27,
+            "fp_cost": 32,
             "fp_cost_extra": 0,
-            "sp_cost": 31,
-            "sp_cost_extra": 9,
+            "sp_cost": 37,
+            "sp_cost_extra": 11,
             "type": "Sorcery",
             "slots_used": 2,
             "hold_action": "Charge",
@@ -725,10 +725,10 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 32,
+            "fp_cost": 38,
             "fp_cost_extra": 0,
-            "sp_cost": 29,
-            "sp_cost_extra": 7,
+            "sp_cost": 33,
+            "sp_cost_extra": 10,
             "type": "Sorcery",
             "slots_used": 1,
             "hold_action": "Charge",
@@ -762,7 +762,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 18,
+            "fp_cost": 20,
             "fp_cost_extra": 0,
             "sp_cost": 12,
             "sp_cost_extra": 0,
@@ -799,7 +799,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 24,
+            "fp_cost": 26,
             "fp_cost_extra": 0,
             "sp_cost": 16,
             "sp_cost_extra": 0,
@@ -836,7 +836,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 30,
+            "fp_cost": 35,
             "fp_cost_extra": 0,
             "sp_cost": 20,
             "sp_cost_extra": 0,
@@ -872,7 +872,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 47,
+            "fp_cost": 55,
             "fp_cost_extra": 0,
             "sp_cost": 32,
             "sp_cost_extra": 0,
@@ -908,7 +908,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 57,
+            "fp_cost": 62,
             "fp_cost_extra": 0,
             "sp_cost": 32,
             "sp_cost_extra": 0,
@@ -945,7 +945,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 18,
+            "fp_cost": 20,
             "fp_cost_extra": 0,
             "sp_cost": 17,
             "sp_cost_extra": 5,
@@ -982,7 +982,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 24,
+            "fp_cost": 28,
             "fp_cost_extra": 0,
             "sp_cost": 30,
             "sp_cost_extra": 9,
@@ -1019,7 +1019,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 39,
+            "fp_cost": 43,
             "fp_cost_extra": 0,
             "sp_cost": 33,
             "sp_cost_extra": 10,
@@ -1130,7 +1130,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 17,
+            "fp_cost": 22,
             "fp_cost_extra": 0,
             "sp_cost": 27,
             "sp_cost_extra": 8,
@@ -1204,7 +1204,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 12,
+            "fp_cost": 14,
             "fp_cost_extra": 0,
             "sp_cost": 22,
             "sp_cost_extra": 0,
@@ -1241,7 +1241,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 22,
+            "fp_cost": 26,
             "fp_cost_extra": 0,
             "sp_cost": 22,
             "sp_cost_extra": 0,
@@ -1316,7 +1316,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 17,
+            "fp_cost": 19,
             "fp_cost_extra": 0,
             "sp_cost": 25,
             "sp_cost_extra": 8,
@@ -1501,10 +1501,10 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 21,
+            "fp_cost": 32,
             "fp_cost_extra": 0,
-            "sp_cost": 30,
-            "sp_cost_extra": 8,
+            "sp_cost": 35,
+            "sp_cost_extra": 11,
             "type": "Sorcery",
             "slots_used": 1,
             "hold_action": "Charge",
@@ -1537,7 +1537,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 34,
+            "fp_cost": 38,
             "fp_cost_extra": 0,
             "sp_cost": 26,
             "sp_cost_extra": 0,
@@ -1611,7 +1611,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 13,
+            "fp_cost": 16,
             "fp_cost_extra": 0,
             "sp_cost": 15,
             "sp_cost_extra": 0,
@@ -1685,7 +1685,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 21,
+            "fp_cost": 24,
             "fp_cost_extra": 0,
             "sp_cost": 30,
             "sp_cost_extra": 9,
@@ -1832,7 +1832,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 13,
+            "fp_cost": 18,
             "fp_cost_extra": 0,
             "sp_cost": 10,
             "sp_cost_extra": 0,
@@ -2093,7 +2093,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 16,
+            "fp_cost": 18,
             "fp_cost_extra": 0,
             "sp_cost": 21,
             "sp_cost_extra": 6,
@@ -2131,7 +2131,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 16,
+            "fp_cost": 27,
             "fp_cost_extra": 3,
             "sp_cost": 38,
             "sp_cost_extra": 0,
@@ -2169,7 +2169,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 28,
+            "fp_cost": 32,
             "fp_cost_extra": 0,
             "sp_cost": 27,
             "sp_cost_extra": 8,
@@ -2206,7 +2206,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 23,
+            "fp_cost": 26,
             "fp_cost_extra": 0,
             "sp_cost": 36,
             "sp_cost_extra": 0,
@@ -2245,7 +2245,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 6,
+            "fp_cost": 9,
             "fp_cost_extra": 0,
             "sp_cost": 26,
             "sp_cost_extra": 0,
@@ -2268,7 +2268,7 @@
                 "An aberrant sorcery discovered by exiled criminals.",
                 "Theirs are the sorceries most reviled by the academy.",
                 "",
-                "Wounds the caster with thorns of punishment, sending a trail of bloodthorns running over the ground to impale enemies from below.",
+                "Wounds the caster with thorns of sin, sending a trail of bloodthorns running over the ground to impale enemies from below.",
                 "This sorcery can be cast repeatedly.",
                 "",
                 "The guilty, their eyes gouged by thorns, lived in eternal darkness. There, they discovered the blood star."
@@ -2283,7 +2283,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 9,
+            "fp_cost": 13,
             "fp_cost_extra": 0,
             "sp_cost": 22,
             "sp_cost_extra": 0,
@@ -2320,7 +2320,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 12,
+            "fp_cost": 14,
             "fp_cost_extra": 0,
             "sp_cost": 21,
             "sp_cost_extra": 6,
@@ -2357,7 +2357,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 21,
+            "fp_cost": 24,
             "fp_cost_extra": 0,
             "sp_cost": 27,
             "sp_cost_extra": 8,
@@ -2470,7 +2470,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 17,
+            "fp_cost": 20,
             "fp_cost_extra": 0,
             "sp_cost": 27,
             "sp_cost_extra": 0,
@@ -2509,7 +2509,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 28,
+            "fp_cost": 32,
             "fp_cost_extra": 0,
             "sp_cost": 32,
             "sp_cost_extra": 10,
@@ -2733,7 +2733,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 16,
+            "fp_cost": 18,
             "fp_cost_extra": 0,
             "sp_cost": 10,
             "sp_cost_extra": 3,
@@ -2770,7 +2770,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 19,
+            "fp_cost": 21,
             "fp_cost_extra": 0,
             "sp_cost": 26,
             "sp_cost_extra": 8,
@@ -2916,7 +2916,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 30,
+            "fp_cost": 32,
             "fp_cost_extra": 0,
             "sp_cost": 34,
             "sp_cost_extra": 10,
@@ -2952,7 +2952,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 34,
+            "fp_cost": 42,
             "fp_cost_extra": 0,
             "sp_cost": 42,
             "sp_cost_extra": 0,
@@ -2989,8 +2989,8 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 26,
-            "fp_cost_extra": 4,
+            "fp_cost": 30,
+            "fp_cost_extra": 0,
             "sp_cost": 36,
             "sp_cost_extra": 11,
             "type": "Incantation",
@@ -3249,8 +3249,8 @@
             "remarks": [],
             "fp_cost": 20,
             "fp_cost_extra": 0,
-            "sp_cost": 28,
-            "sp_cost_extra": 8,
+            "sp_cost": 35,
+            "sp_cost_extra": 11,
             "type": "Incantation",
             "slots_used": 1,
             "hold_action": "Charge",
@@ -3284,7 +3284,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 12,
+            "fp_cost": 14,
             "fp_cost_extra": 0,
             "sp_cost": 21,
             "sp_cost_extra": 0,
@@ -3322,7 +3322,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 13,
+            "fp_cost": 15,
             "fp_cost_extra": 0,
             "sp_cost": 34,
             "sp_cost_extra": 0,
@@ -4086,7 +4086,7 @@
                 "Incantation of the Two Fingers' servants, who once served as the assassins of the Roundtable Hold.",
                 "",
                 "Completely silences the footsteps of the caster. Additionally, reduces fall damage and the sound produced by falling.",
-                "This incantation can be cast while in motion or crouching.",
+                "This sorcery can be cast while in motion or crouching.",
                 "",
                 "The assassins were charged with eliminating Tarnished who had strayed from guidance."
             ],
@@ -4174,7 +4174,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 24,
+            "fp_cost": 34,
             "fp_cost_extra": 0,
             "sp_cost": 24,
             "sp_cost_extra": 0,
@@ -4248,7 +4248,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 3,
+            "fp_cost": 9,
             "fp_cost_extra": 0,
             "sp_cost": 20,
             "sp_cost_extra": 0,
@@ -4325,7 +4325,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 21,
+            "fp_cost": 25,
             "fp_cost_extra": 0,
             "sp_cost": 37,
             "sp_cost_extra": 11,
@@ -4362,7 +4362,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 41,
+            "fp_cost": 47,
             "fp_cost_extra": 0,
             "sp_cost": 48,
             "sp_cost_extra": 0,
@@ -4919,7 +4919,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 19,
+            "fp_cost": 21,
             "fp_cost_extra": 0,
             "sp_cost": 32,
             "sp_cost_extra": 0,
@@ -4955,7 +4955,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 29,
+            "fp_cost": 36,
             "fp_cost_extra": 0,
             "sp_cost": 39,
             "sp_cost_extra": 0,
@@ -5028,7 +5028,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 25,
+            "fp_cost": 30,
             "fp_cost_extra": 0,
             "sp_cost": 29,
             "sp_cost_extra": 0,
@@ -5064,7 +5064,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 35,
+            "fp_cost": 45,
             "fp_cost_extra": 0,
             "sp_cost": 42,
             "sp_cost_extra": 0,
@@ -5100,7 +5100,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 22,
+            "fp_cost": 28,
             "fp_cost_extra": 0,
             "sp_cost": 45,
             "sp_cost_extra": 0,
@@ -5667,7 +5667,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 24,
+            "fp_cost": 32,
             "fp_cost_extra": 0,
             "sp_cost": 35,
             "sp_cost_extra": 0,
@@ -5704,7 +5704,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 34,
+            "fp_cost": 46,
             "fp_cost_extra": 0,
             "sp_cost": 50,
             "sp_cost_extra": 0,
@@ -5743,7 +5743,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 50,
+            "fp_cost": 62,
             "fp_cost_extra": 0,
             "sp_cost": 72,
             "sp_cost_extra": 0,
@@ -5929,9 +5929,9 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 48,
+            "fp_cost": 56,
             "fp_cost_extra": 0,
-            "sp_cost": 50,
+            "sp_cost": 66,
             "sp_cost_extra": 0,
             "type": "Incantation",
             "slots_used": 3,
@@ -6040,7 +6040,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 22,
+            "fp_cost": 30,
             "fp_cost_extra": 6,
             "sp_cost": 40,
             "sp_cost_extra": 0,
@@ -6151,7 +6151,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 20,
+            "fp_cost": 22,
             "fp_cost_extra": 0,
             "sp_cost": 32,
             "sp_cost_extra": 10,
@@ -6188,7 +6188,7 @@
                 }
             ],
             "remarks": [],
-            "fp_cost": 18,
+            "fp_cost": 20,
             "fp_cost_extra": 0,
             "sp_cost": 38,
             "sp_cost_extra": 11,
@@ -6264,7 +6264,7 @@
             "remarks": [],
             "fp_cost": 26,
             "fp_cost_extra": 0,
-            "sp_cost": 44,
+            "sp_cost": 51,
             "sp_cost_extra": 0,
             "type": "Incantation",
             "slots_used": 2,
