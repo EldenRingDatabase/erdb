@@ -1,0 +1,4604 @@
+{
+    "Talismans": {
+        "Crimson Amber Medallion": {
+            "full_hex_id": "200003E8",
+            "id": 1000,
+            "name": "Crimson Amber Medallion",
+            "summary": "Raises maximum HP",
+            "description": [
+                "A medallion with crimson amber inlaid.",
+                "Boosts maximum HP.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.06
+                }
+            ],
+            "conflicts": [
+                "Crimson Amber Medallion",
+                "Crimson Amber Medallion +1",
+                "Crimson Amber Medallion +2"
+            ]
+        },
+        "Crimson Amber Medallion +1": {
+            "full_hex_id": "200003E9",
+            "id": 1001,
+            "name": "Crimson Amber Medallion +1",
+            "summary": "Greatly raises maximum HP",
+            "description": [
+                "A medallion with crimson amber inlaid.",
+                "Greatly boosts maximum HP.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07
+                }
+            ],
+            "conflicts": [
+                "Crimson Amber Medallion",
+                "Crimson Amber Medallion +1",
+                "Crimson Amber Medallion +2"
+            ]
+        },
+        "Crimson Amber Medallion +2": {
+            "full_hex_id": "200003EA",
+            "id": 1002,
+            "name": "Crimson Amber Medallion +2",
+            "summary": "Vastly raises maximum HP",
+            "description": [
+                "A medallion with crimson amber inlaid.",
+                "Vastly boosts maximum HP.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                }
+            ],
+            "conflicts": [
+                "Crimson Amber Medallion",
+                "Crimson Amber Medallion +1",
+                "Crimson Amber Medallion +2"
+            ]
+        },
+        "Cerulean Amber Medallion": {
+            "full_hex_id": "200003F2",
+            "id": 1010,
+            "name": "Cerulean Amber Medallion",
+            "summary": "Raises maximum FP",
+            "description": [
+                "A medallion with cerulean amber inlaid.",
+                "Boosts maximum FP.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Focus",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07
+                }
+            ],
+            "conflicts": [
+                "Cerulean Amber Medallion",
+                "Cerulean Amber Medallion +1",
+                "Cerulean Amber Medallion +2"
+            ]
+        },
+        "Cerulean Amber Medallion +1": {
+            "full_hex_id": "200003F3",
+            "id": 1011,
+            "name": "Cerulean Amber Medallion +1",
+            "summary": "Greatly raises maximum FP",
+            "description": [
+                "A medallion with cerulean amber inlaid.",
+                "Greatly boosts maximum FP.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Focus",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.09
+                }
+            ],
+            "conflicts": [
+                "Cerulean Amber Medallion",
+                "Cerulean Amber Medallion +1",
+                "Cerulean Amber Medallion +2"
+            ]
+        },
+        "Cerulean Amber Medallion +2": {
+            "full_hex_id": "200003F4",
+            "id": 1012,
+            "name": "Cerulean Amber Medallion +2",
+            "summary": "Vastly raises maximum FP",
+            "description": [
+                "A medallion with cerulean amber inlaid.",
+                "Vastly boosts maximum FP.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Focus",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.11
+                }
+            ],
+            "conflicts": [
+                "Cerulean Amber Medallion",
+                "Cerulean Amber Medallion +1",
+                "Cerulean Amber Medallion +2"
+            ]
+        },
+        "Viridian Amber Medallion": {
+            "full_hex_id": "200003FC",
+            "id": 1020,
+            "name": "Viridian Amber Medallion",
+            "summary": "Raises maximum stamina",
+            "description": [
+                "A medallion with viridian amber inlaid.",
+                "Boosts maximum stamina.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Stamina",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.11
+                }
+            ],
+            "conflicts": [
+                "Viridian Amber Medallion",
+                "Viridian Amber Medallion +1",
+                "Viridian Amber Medallion +2"
+            ]
+        },
+        "Viridian Amber Medallion +1": {
+            "full_hex_id": "200003FD",
+            "id": 1021,
+            "name": "Viridian Amber Medallion +1",
+            "summary": "Greatly raises maximum stamina",
+            "description": [
+                "A medallion with viridian amber inlaid.",
+                "Greatly boosts maximum stamina.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Stamina",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.13
+                }
+            ],
+            "conflicts": [
+                "Viridian Amber Medallion",
+                "Viridian Amber Medallion +1",
+                "Viridian Amber Medallion +2"
+            ]
+        },
+        "Viridian Amber Medallion +2": {
+            "full_hex_id": "200003FE",
+            "id": 1022,
+            "name": "Viridian Amber Medallion +2",
+            "summary": "Vastly raises maximum stamina",
+            "description": [
+                "A medallion with viridian amber inlaid.",
+                "Vastly boosts maximum stamina.",
+                "",
+                "The Erdtree's old sap becomes amber, treasured as the most precious of jewels in the age of Godfrey, the first Elden Lord.",
+                "",
+                "A primordial life energy resides inside."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.3,
+            "effects": [
+                {
+                    "attribute": "Maximum Stamina",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "conflicts": [
+                "Viridian Amber Medallion",
+                "Viridian Amber Medallion +1",
+                "Viridian Amber Medallion +2"
+            ]
+        },
+        "Arsenal Charm": {
+            "full_hex_id": "20000406",
+            "id": 1030,
+            "name": "Arsenal Charm",
+            "summary": "Raises maximum equipment load",
+            "description": [
+                "An iron charm that resembles a mass of weaponry.",
+                "Boosts maximum equipment load.",
+                "",
+                "This talisman was derived from an unusual greatsword once wielded by a hero hungry for vengeance."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.5,
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ],
+            "conflicts": [
+                "Arsenal Charm",
+                "Arsenal Charm +1",
+                "Great-Jar's Arsenal"
+            ]
+        },
+        "Arsenal Charm +1": {
+            "full_hex_id": "20000407",
+            "id": 1031,
+            "name": "Arsenal Charm +1",
+            "summary": "Greatly raises maximum equip load",
+            "description": [
+                "An iron charm that resembles a mass of weaponry.",
+                "Greatly boosts maximum equipment load.",
+                "",
+                "This talisman was derived from an unusual greatsword once wielded by a hero hungry for vengeance."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.5,
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17
+                }
+            ],
+            "conflicts": [
+                "Arsenal Charm",
+                "Arsenal Charm +1",
+                "Great-Jar's Arsenal"
+            ]
+        },
+        "Great-Jar's Arsenal": {
+            "full_hex_id": "20000408",
+            "id": 1032,
+            "name": "Great-Jar's Arsenal",
+            "summary": "Vastly raises maximum equip load",
+            "description": [
+                "A charm that resembles a great jar overflowing with weaponry.",
+                "Vastly boosts maximum equipment load.",
+                "",
+                "The great jar grants this talisman to their warriors.",
+                "Carry as much as you can - grow big and strong."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.5,
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.19
+                }
+            ],
+            "conflicts": [
+                "Arsenal Charm",
+                "Arsenal Charm +1",
+                "Great-Jar's Arsenal"
+            ]
+        },
+        "Erdtree's Favor": {
+            "full_hex_id": "20000410",
+            "id": 1040,
+            "name": "Erdtree's Favor",
+            "summary": "Raises maximum HP, stamina and equip load",
+            "description": [
+                "A talisman depicting a special blessing of the Erdtree.",
+                "Slightly raises maximum HP, stamina, and equip load.",
+                "",
+                "It is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.5,
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.05,
+                    "tick_interval": 0.06
+                },
+                {
+                    "attribute": "Maximum Health",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.03,
+                    "tick_interval": 0.06
+                },
+                {
+                    "attribute": "Maximum Stamina",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07,
+                    "tick_interval": 0.06
+                }
+            ],
+            "conflicts": [
+                "Erdtree's Favor",
+                "Erdtree's Favor +1",
+                "Erdtree's Favor +2"
+            ]
+        },
+        "Erdtree's Favor +1": {
+            "full_hex_id": "20000411",
+            "id": 1041,
+            "name": "Erdtree's Favor +1",
+            "summary": "Raises maximum HP, stamina and equip load",
+            "description": [
+                "A talisman depicting a special blessing of the Erdtree.",
+                "Raises maximum HP, stamina, and equip load.",
+                "",
+                "It is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself."
+            ],
+            "is_tradable": true,
+            "price_sold": 1500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.5,
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.065
+                },
+                {
+                    "attribute": "Maximum Health",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.035
+                },
+                {
+                    "attribute": "Maximum Stamina",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.085
+                }
+            ],
+            "conflicts": [
+                "Erdtree's Favor",
+                "Erdtree's Favor +1",
+                "Erdtree's Favor +2"
+            ]
+        },
+        "Erdtree's Favor +2": {
+            "full_hex_id": "20000412",
+            "id": 1042,
+            "name": "Erdtree's Favor +2",
+            "summary": "Raises maximum HP, stamina and equip load",
+            "description": [
+                "A legendary talisman depicting a special blessing of the Erdtree.",
+                "",
+                "Greatly raises maximum HP, stamina, and equip load.",
+                "",
+                "It is said that when the Age of the Erdtree began, such blessings were personally bestowed upon their recipients by Queen Marika herself."
+            ],
+            "is_tradable": true,
+            "price_sold": 3000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.5,
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08
+                },
+                {
+                    "attribute": "Maximum Health",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04
+                },
+                {
+                    "attribute": "Maximum Stamina",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                }
+            ],
+            "conflicts": [
+                "Erdtree's Favor",
+                "Erdtree's Favor +1",
+                "Erdtree's Favor +2"
+            ]
+        },
+        "Radagon's Scarseal": {
+            "full_hex_id": "2000041A",
+            "id": 1050,
+            "name": "Radagon's Scarseal",
+            "summary": "Raises attributes, but also increases damage taken",
+            "description": [
+                "An eye engraved with an Elden Rune.",
+                "Said to be the seal of King Consort Radagon.",
+                "",
+                "Raises vigor, endurance, strength, and dexterity, but also increases damage taken.",
+                "",
+                "These seals represent the lifelong duty of those chosen by the gods."
+            ],
+            "is_tradable": true,
+            "price_sold": 3000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Endurance",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Strength",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Vigor",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                }
+            ],
+            "conflicts": [
+                "Radagon's Scarseal",
+                "Radagon's Soreseal"
+            ]
+        },
+        "Radagon's Soreseal": {
+            "full_hex_id": "2000041B",
+            "id": 1051,
+            "name": "Radagon's Soreseal",
+            "summary": "Greatly raises attributes, but also increases damage taken",
+            "description": [
+                "This legendary talisman is an eye engraved with an Elden Rune, said to be the seal of King Consort Radagon.",
+                "",
+                "Greatly raises vigor, endurance, strength, and dexterity, but also increases damage taken by a similar measure.",
+                "",
+                "Solemn duty weighs upon the one beholden; not unlike a gnawing curse from which there is no deliverance."
+            ],
+            "is_tradable": true,
+            "price_sold": 3000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "hidden on ground floor behind wooden walls",
+                    "directions": "From the rooftop area, drop down onto wooden mid-floor, jump over to another one diagonally, drop down again behind the giant rat.",
+                    "location": "Fort Faroth",
+                    "region": "Dragonbarrow"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Endurance",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Strength",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Vigor",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "conflicts": [
+                "Radagon's Scarseal",
+                "Radagon's Soreseal"
+            ]
+        },
+        "Starscourge Heirloom": {
+            "full_hex_id": "20000424",
+            "id": 1060,
+            "name": "Starscourge Heirloom",
+            "summary": "Raises strength",
+            "description": [
+                "A talisman engraved with a scene from a heroic tale.",
+                "Raises strength.",
+                "",
+                "The mightiest hero of the demigods confronted the falling stars alone - and thus did he crush them, his conquest sealing the very fate of the stars."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Strength",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "conflicts": [
+                "Starscourge Heirloom"
+            ]
+        },
+        "Prosthesis-Wearer Heirloom": {
+            "full_hex_id": "2000042E",
+            "id": 1070,
+            "name": "Prosthesis-Wearer Heirloom",
+            "summary": "Raises dexterity",
+            "description": [
+                "A talisman engraved with a scene from a heroic tale.",
+                "Raises dexterity.",
+                "",
+                "Though born into the accursed rot, when the young girl encountered her mentor and his flowing blade, she gained wings of unparalleled strength."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "conflicts": [
+                "Prosthesis-Wearer Heirloom"
+            ]
+        },
+        "Stargazer Heirloom": {
+            "full_hex_id": "20000438",
+            "id": 1080,
+            "name": "Stargazer Heirloom",
+            "summary": "Raises intelligence",
+            "description": [
+                "A talisman engraved with the legend of a queen.",
+                "Raises intelligence.",
+                "",
+                "The young astrologer gazed at the night sky as she walked. She had always chased the stars every step of her journey. Then she met the full moon - and, in time, the astrologer became a queen."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Intelligence",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "conflicts": [
+                "Stargazer Heirloom"
+            ]
+        },
+        "Two Fingers Heirloom": {
+            "full_hex_id": "20000442",
+            "id": 1090,
+            "name": "Two Fingers Heirloom",
+            "summary": "Raises faith",
+            "description": [
+                "A talisman engraved with the legend of the Two Fingers.",
+                "Raises faith.",
+                "",
+                "Fingers cannot speak, yet these were eloquent.",
+                "Persistently did they wriggle, spelling out mysteries in the air.",
+                "Thus did we gain the words. The words of our faith."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Faith",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "conflicts": [
+                "Two Fingers Heirloom"
+            ]
+        },
+        "Silver Scarab": {
+            "full_hex_id": "2000044C",
+            "id": 1100,
+            "name": "Silver Scarab",
+            "summary": "Raises item discovery",
+            "description": [
+                "A talisman facsimile of a scarab, the carrier of treasures and precious things.",
+                "",
+                "This silver scarab enhances item discovery."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.2,
+            "effects": [
+                {
+                    "attribute": "Item Discovery",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 75.0
+                }
+            ],
+            "conflicts": [
+                "Silver Scarab"
+            ]
+        },
+        "Gold Scarab": {
+            "full_hex_id": "20000456",
+            "id": 1110,
+            "name": "Gold Scarab",
+            "summary": "Increases runes obtained from defeated enemies",
+            "description": [
+                "A talisman facsimile of a scarab, the carrier of treasures and precious things.",
+                "",
+                "This golden scarab increases the amount of runes obtained from defeating enemies."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.2,
+            "effects": [
+                {
+                    "attribute": "Rune Acquisition",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "conflicts": [
+                "Gold Scarab"
+            ]
+        },
+        "Moon of Nokstella": {
+            "full_hex_id": "20000474",
+            "id": 1140,
+            "name": "Moon of Nokstella",
+            "summary": "Increases memory slots",
+            "description": [
+                "This legendary talisman is a treasure of Nokstella, the Eternal City.",
+                "",
+                "Increases memory slots.",
+                "",
+                "This talisman represents the lost black moon.",
+                "The moon of Nokstella was the guide of countless stars."
+            ],
+            "is_tradable": true,
+            "price_sold": 2000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Memory Slots",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 2.0
+                }
+            ],
+            "conflicts": [
+                "Moon of Nokstella"
+            ]
+        },
+        "Green Turtle Talisman": {
+            "full_hex_id": "2000047E",
+            "id": 1150,
+            "name": "Green Turtle Talisman",
+            "summary": "Raises stamina recovery speed",
+            "description": [
+                "A talisman in the shape of a green turtle.",
+                "Raises stamina recovery speed.",
+                "",
+                "Turtles are known as a nutritious ingredient, symbolic of inexhaustible power.",
+                "",
+                "However, those who hold turtles to be wise creatures consider the practice of eating their meat to be barbarous."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Stamina Recovery Speed",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 8.0
+                }
+            ],
+            "conflicts": [
+                "Green Turtle Talisman"
+            ]
+        },
+        "Stalwart Horn Charm": {
+            "full_hex_id": "20000488",
+            "id": 1160,
+            "name": "Stalwart Horn Charm",
+            "summary": "Raises robustness",
+            "description": [
+                "An accoutrement worn by the ancestral followers.",
+                "Raises robustness.",
+                "(Robustness governs resistance to blood loss and frost.)",
+                "",
+                "Said to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Robustness",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                }
+            ],
+            "conflicts": [
+                "Stalwart Horn Charm",
+                "Stalwart Horn Charm +1"
+            ]
+        },
+        "Stalwart Horn Charm +1": {
+            "full_hex_id": "20000489",
+            "id": 1161,
+            "name": "Stalwart Horn Charm +1",
+            "summary": "Greatly raises robustness",
+            "description": [
+                "An accoutrement worn by the ancestral followers.",
+                "Greatly raises robustness.",
+                "(Robustness governs resistance to blood loss and frost.)",
+                "",
+                "Said to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Robustness",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                }
+            ],
+            "conflicts": [
+                "Stalwart Horn Charm",
+                "Stalwart Horn Charm +1"
+            ]
+        },
+        "Immunizing Horn Charm": {
+            "full_hex_id": "20000492",
+            "id": 1170,
+            "name": "Immunizing Horn Charm",
+            "summary": "Raises immunity",
+            "description": [
+                "An accoutrement worn by the ancestral followers.",
+                "Raises immunity.",
+                "(Immunity governs resistance to poison and rot.)",
+                "",
+                "Said to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Immunity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                }
+            ],
+            "conflicts": [
+                "Immunizing Horn Charm",
+                "Immunizing Horn Charm +1"
+            ]
+        },
+        "Immunizing Horn Charm +1": {
+            "full_hex_id": "20000493",
+            "id": 1171,
+            "name": "Immunizing Horn Charm +1",
+            "summary": "Greatly raises immunity",
+            "description": [
+                "An accoutrement worn by the ancestral followers.",
+                "Greatly raises immunity.",
+                "(Immunity governs resistance to poison and rot.)",
+                "",
+                "Said to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Immunity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                }
+            ],
+            "conflicts": [
+                "Immunizing Horn Charm",
+                "Immunizing Horn Charm +1"
+            ]
+        },
+        "Clarifying Horn Charm": {
+            "full_hex_id": "2000049C",
+            "id": 1180,
+            "name": "Clarifying Horn Charm",
+            "summary": "Raises focus",
+            "description": [
+                "An accoutrement worn by the ancestral followers.",
+                "Raises focus.",
+                "(Focus governs resistance to sleep and madness.)",
+                "",
+                "Said to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Focus",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                }
+            ],
+            "conflicts": [
+                "Clarifying Horn Charm",
+                "Clarifying Horn Charm +1"
+            ]
+        },
+        "Clarifying Horn Charm +1": {
+            "full_hex_id": "2000049D",
+            "id": 1181,
+            "name": "Clarifying Horn Charm +1",
+            "summary": "Greatly raises focus",
+            "description": [
+                "An accoutrement worn by the ancestral followers.",
+                "Greatly raises focus.",
+                "(Focus governs resistance to sleep and madness.)",
+                "",
+                "Said to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Focus",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                }
+            ],
+            "conflicts": [
+                "Clarifying Horn Charm",
+                "Clarifying Horn Charm +1"
+            ]
+        },
+        "Prince of Death's Pustule": {
+            "full_hex_id": "200004A6",
+            "id": 1190,
+            "name": "Prince of Death's Pustule",
+            "summary": "Raises vitality",
+            "description": [
+                "A fetid pustule taken from facial flesh.",
+                "Raises vitality.",
+                "(Vitality governs resistance to the effects of Death.)",
+                "",
+                "It is said that this pustule came from the visage of the Prince of Death, he who used to be called Godwyn. As First Dead of the demigods, it's said he's buried deep under the capital, at the Erdtree's roots."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Vitality",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0
+                }
+            ],
+            "conflicts": [
+                "Prince of Death's Pustule",
+                "Prince of Death's Cyst"
+            ]
+        },
+        "Prince of Death's Cyst": {
+            "full_hex_id": "200004A7",
+            "id": 1191,
+            "name": "Prince of Death's Cyst",
+            "summary": "Greatly raises vitality",
+            "description": [
+                "A fetid, overgrown cyst taken from facial flesh.",
+                "Greatly raises vitality.",
+                "(Vitality governs resistance to the effects of Death.)",
+                "",
+                "It is said that this cyst came from the corrupted visage of one unable to die a true Death. Indeed, it comes from the Prince of Death, scion of the golden bough and First of the Dead among the demigods."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Vitality",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 140.0
+                }
+            ],
+            "conflicts": [
+                "Prince of Death's Pustule",
+                "Prince of Death's Cyst"
+            ]
+        },
+        "Mottled Necklace": {
+            "full_hex_id": "200004B0",
+            "id": 1200,
+            "name": "Mottled Necklace",
+            "summary": "Raises robustness, immunity, and focus",
+            "description": [
+                "A vividly-colored accoutrement precious to the ancestral followers.",
+                "",
+                "Raises immunity, robustness, and focus.",
+                "",
+                "Said to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Focus",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                },
+                {
+                    "attribute": "Immunity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                },
+                {
+                    "attribute": "Robustness",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 40.0
+                }
+            ],
+            "conflicts": [
+                "Mottled Necklace",
+                "Mottled Necklace +1"
+            ]
+        },
+        "Mottled Necklace +1": {
+            "full_hex_id": "200004B1",
+            "id": 1201,
+            "name": "Mottled Necklace +1",
+            "summary": "Greatly raises robustness, immunity, and focus",
+            "description": [
+                "A vividly-colored accoutrement precious to the ancestral followers.",
+                "",
+                "Greatly raises immunity, robustness, and focus.",
+                "",
+                "Said to be a budding horn. The ancestral followers believe that the horns of a long-lived beast continue to bud like antlers, over and over again, until the beast one day becomes an ancestral spirit."
+            ],
+            "is_tradable": true,
+            "price_sold": 2000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Focus",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                },
+                {
+                    "attribute": "Immunity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                },
+                {
+                    "attribute": "Robustness",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 60.0
+                }
+            ],
+            "conflicts": [
+                "Mottled Necklace",
+                "Mottled Necklace +1"
+            ]
+        },
+        "Bull-Goat's Talisman": {
+            "full_hex_id": "200004BA",
+            "id": 1210,
+            "name": "Bull-Goat's Talisman",
+            "summary": "Raises poise",
+            "description": [
+                "A talisman depicting the horns of a bull-goat.",
+                "Raises poise.",
+                "",
+                "Bull-goats are associated with the stout and mighty Tragoth, said to be unflinching in combat - now a silent comrade to those who fight."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.5,
+            "effects": [
+                {
+                    "attribute": "Poise",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.33
+                }
+            ],
+            "conflicts": [
+                "Bull-Goat's Talisman"
+            ]
+        },
+        "Marika's Scarseal": {
+            "full_hex_id": "200004C4",
+            "id": 1220,
+            "name": "Marika's Scarseal",
+            "summary": "Raises attributes, but also increases damage taken",
+            "description": [
+                "An eye engraved with an Elden Rune.",
+                "Said to be the seal of Queen Marika.",
+                "",
+                "Raises mind, intelligence, faith, and arcane, but also increases damage taken.",
+                "",
+                "These seals represent the lifelong duty of those chosen by the gods."
+            ],
+            "is_tradable": true,
+            "price_sold": 3000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9
+                },
+                {
+                    "attribute": "Arcane",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Faith",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Intelligence",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                },
+                {
+                    "attribute": "Mind",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0
+                }
+            ],
+            "conflicts": [
+                "Marika's Scarseal",
+                "Marika's Soreseal"
+            ]
+        },
+        "Marika's Soreseal": {
+            "full_hex_id": "200004C5",
+            "id": 1221,
+            "name": "Marika's Soreseal",
+            "summary": "Greatly raises attributes, but also increases damage taken",
+            "description": [
+                "This legendary talisman is an eye engraved with an Elden Rune, said to be the seal of Queen Marika.",
+                "",
+                "Greatly raises mind, intelligence, faith, and arcane, but also increases damage taken by a similar measure.",
+                "",
+                "Solemn duty weighs upon the one beholden; not unlike a gnawing curse from which there is no deliverance."
+            ],
+            "is_tradable": true,
+            "price_sold": 3000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85
+                },
+                {
+                    "attribute": "Arcane",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Faith",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Intelligence",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                },
+                {
+                    "attribute": "Mind",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "conflicts": [
+                "Marika's Scarseal",
+                "Marika's Soreseal"
+            ]
+        },
+        "Warrior Jar Shard": {
+            "full_hex_id": "200004CE",
+            "id": 1230,
+            "name": "Warrior Jar Shard",
+            "summary": "Boosts the attack power of skills",
+            "description": [
+                "Shard of a shattered warrior jar.",
+                "",
+                "Boosts the attack power of skills.",
+                "",
+                "Scraps of stewed flesh cling to the shard, and tatters of ornaments can be seen mingled within the slime. Relics of ancient royal warriors, perhaps."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "conditions": [
+                        "Charged Skill Attack",
+                        "Skill Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Warrior Jar Shard",
+                "Shard of Alexander"
+            ]
+        },
+        "Shard of Alexander": {
+            "full_hex_id": "200004CF",
+            "id": 1231,
+            "name": "Shard of Alexander",
+            "summary": "Greatly boosts the attack power of skills",
+            "description": [
+                "Shard of the late Alexander, a shattered warrior jar.",
+                "",
+                "Greatly boosts the attack power of skills.",
+                "",
+                "Scraps of stewed flesh cling to the shard, and tatters of ornaments can be seen mingled within the slime. Relics of a red-haired champion, it would seem."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15,
+                    "conditions": [
+                        "Charged Skill Attack",
+                        "Skill Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Warrior Jar Shard",
+                "Shard of Alexander"
+            ]
+        },
+        "Millicent's Prosthesis": {
+            "full_hex_id": "200004E2",
+            "id": 1250,
+            "name": "Millicent's Prosthesis",
+            "summary": "Boosts dexterity, raises attack power with successive attacks",
+            "description": [
+                "Part of the golden prosthesis used by Millicent.",
+                "The hand is locked into a fist that once raised a sword aloft.",
+                "",
+                "Boosts dexterity and raises attack power with successive attacks.",
+                "",
+                "The despair of sweet betrayal transformed Millicent from a mere bud into a magnificent flower. And one day, she will be reborn - as a beautiful scarlet valkyrie."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.6,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04,
+                    "conditions": [
+                        "Successive 3 Hits"
+                    ],
+                    "tick_interval": 1.0,
+                    "value_pvp": 1.04
+                },
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.06,
+                    "conditions": [
+                        "Successive 6 Hits"
+                    ],
+                    "tick_interval": 0.7,
+                    "value_pvp": 1.06
+                },
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.11,
+                    "conditions": [
+                        "Successive 9 Hits"
+                    ],
+                    "tick_interval": 0.4,
+                    "value_pvp": 1.11
+                },
+                {
+                    "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 5.0
+                }
+            ],
+            "conflicts": [
+                "Millicent's Prosthesis"
+            ]
+        },
+        "Magic Scorpion Charm": {
+            "full_hex_id": "200007D0",
+            "id": 2000,
+            "name": "Magic Scorpion Charm",
+            "summary": "Raises magic attack, but lowers damage negation",
+            "description": [
+                "A talisman carried by assassins who strike unseen.",
+                "Patterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that shimmers with magic.",
+                "",
+                "Raises magic attack power, but lowers damage negation."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Magic Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.08
+                },
+                {
+                    "attribute": "Physical Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9,
+                    "value_pvp": 0.85
+                }
+            ],
+            "conflicts": [
+                "Magic Scorpion Charm"
+            ]
+        },
+        "Lightning Scorpion Charm": {
+            "full_hex_id": "200007DA",
+            "id": 2010,
+            "name": "Lightning Scorpion Charm",
+            "summary": "Raises lightning attack, but lowers damage negation",
+            "description": [
+                "A talisman carried by assassins who strike unseen.",
+                "Patterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that sparks with lightning.",
+                "",
+                "Raises lightning attack power, but lowers damage negation."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Lightning Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.08
+                },
+                {
+                    "attribute": "Physical Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9,
+                    "value_pvp": 0.85
+                }
+            ],
+            "conflicts": [
+                "Lightning Scorpion Charm"
+            ]
+        },
+        "Fire Scorpion Charm": {
+            "full_hex_id": "200007E4",
+            "id": 2020,
+            "name": "Fire Scorpion Charm",
+            "summary": "Raises fire attack, but lowers damage negation",
+            "description": [
+                "A talisman carried by assassins who strike unseen.",
+                "Patterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart that burns with fire.",
+                "",
+                "Raises fire attack power, but lowers damage negation."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Fire Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.08
+                },
+                {
+                    "attribute": "Physical Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9,
+                    "value_pvp": 0.85
+                }
+            ],
+            "conflicts": [
+                "Fire Scorpion Charm"
+            ]
+        },
+        "Sacred Scorpion Charm": {
+            "full_hex_id": "200007EE",
+            "id": 2030,
+            "name": "Sacred Scorpion Charm",
+            "summary": "Raises holy attack, but lowers damage negation",
+            "description": [
+                "A talisman carried by assassins who strike unseen.",
+                "Patterned on a scorpion freshly shed of its exoskeleton, its claws seizing a heart with a blessed glow.",
+                "",
+                "Raises holy attack power, but lowers damage negation."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Holy Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.08
+                },
+                {
+                    "attribute": "Physical Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.9,
+                    "value_pvp": 0.85
+                }
+            ],
+            "conflicts": [
+                "Sacred Scorpion Charm"
+            ]
+        },
+        "Red-Feathered Branchsword": {
+            "full_hex_id": "200007F8",
+            "id": 2040,
+            "name": "Red-Feathered Branchsword",
+            "summary": "Raises attack power when HP is low",
+            "description": [
+                "A talisman adorned with red feathers, once used in ancient death rituals.",
+                "Raises attack power when HP is low.",
+                "",
+                "The heart sings when one draws close to death, and a glorious end awaits those who cling so tenaciously to life."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.4,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "value_pvp": 1.2
+                }
+            ],
+            "conflicts": [
+                "Red-Feathered Branchsword"
+            ]
+        },
+        "Ritual Sword Talisman": {
+            "full_hex_id": "20000802",
+            "id": 2050,
+            "name": "Ritual Sword Talisman",
+            "summary": "Raises attack power when HP is at maximum",
+            "description": [
+                "A talisman patterned after swords used in ritual combat held to honor the Erdtree.",
+                "",
+                "Raises attack power when HP is at maximum.",
+                "",
+                "The practice had died out by the age of King Consort Radagon, but remains of the arenas where ritual combat took place can still be found in every land."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "value_pvp": 1.1
+                }
+            ],
+            "conflicts": [
+                "Ritual Sword Talisman"
+            ]
+        },
+        "Spear Talisman": {
+            "full_hex_id": "2000080C",
+            "id": 2060,
+            "name": "Spear Talisman",
+            "summary": "Enhances counterattacks unique to thrusting weapons",
+            "description": [
+                "A talisman depicting a spear and a soldier.",
+                "Enhances the counterattacks that are unique to thrusting weapons.",
+                "",
+                "Spears are standard weapons for soldiers in the Lands Between. They made it possible to respond to a ferocious foe with an equally ferocious counterattack."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.5,
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15,
+                    "conditions": [
+                        "Enhance Thrusting Counter Attacks"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Spear Talisman"
+            ]
+        },
+        "Hammer Talisman": {
+            "full_hex_id": "20000816",
+            "id": 2070,
+            "name": "Hammer Talisman",
+            "summary": "Enhances stamina-reducing attacks against blockers",
+            "description": [
+                "A talisman depicting a hammer and a knight.",
+                "Enhances stamina-reducing attacks against a blocking opponent.",
+                "",
+                "Hammers are highly effective against shield-bearing foes, so much so that they are known as \"knight-killers.\""
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Stamina Attack Rate",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.4
+                }
+            ],
+            "conflicts": [
+                "Hammer Talisman"
+            ]
+        },
+        "Winged Sword Insignia": {
+            "full_hex_id": "20000820",
+            "id": 2080,
+            "name": "Winged Sword Insignia",
+            "summary": "Raises attack power with successive attacks",
+            "description": [
+                "A talisman depicting a raised prosthetic blade.",
+                "An honor bestowed upon the knights who fought alongside Malenia the Severed.",
+                "",
+                "Raises attack power with successive attacks.",
+                "",
+                "The wings symbolize Malenia and her undefeated prowess. Though she never knew relief from the accursed rot she was born into, her blade was forever beautiful - and relentless."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.4,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.03,
+                    "conditions": [
+                        "Successive 3 Hits"
+                    ],
+                    "tick_interval": 1.0,
+                    "value_pvp": 1.03
+                },
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.05,
+                    "conditions": [
+                        "Successive 6 Hits"
+                    ],
+                    "tick_interval": 0.7,
+                    "value_pvp": 1.05
+                },
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "conditions": [
+                        "Successive 9 Hits"
+                    ],
+                    "tick_interval": 0.4,
+                    "value_pvp": 1.1
+                }
+            ],
+            "conflicts": [
+                "Winged Sword Insignia",
+                "Rotten Winged Sword Insignia"
+            ]
+        },
+        "Rotten Winged Sword Insignia": {
+            "full_hex_id": "20000821",
+            "id": 2081,
+            "name": "Rotten Winged Sword Insignia",
+            "summary": "Greatly raises attack power with successive attacks",
+            "description": [
+                "A talisman depicting a raised prosthetic blade.",
+                "An honor bestowed upon the valkyries who serve the Goddess of Rot.",
+                "",
+                "Greatly raises attack power with successive attacks.",
+                "",
+                "The four sisters were born in the Swamp of Aeonia, and came to the Haligtree under the aegis of Gowry. And yet, those buds were doomed to never blossom."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.4,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.06,
+                    "conditions": [
+                        "Successive 3 Hits"
+                    ],
+                    "tick_interval": 1.0,
+                    "value_pvp": 1.06
+                },
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08,
+                    "conditions": [
+                        "Successive 6 Hits"
+                    ],
+                    "tick_interval": 0.7,
+                    "value_pvp": 1.08
+                },
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.13,
+                    "conditions": [
+                        "Successive 9 Hits"
+                    ],
+                    "tick_interval": 0.4,
+                    "value_pvp": 1.13
+                }
+            ],
+            "conflicts": [
+                "Winged Sword Insignia",
+                "Rotten Winged Sword Insignia"
+            ]
+        },
+        "Dagger Talisman": {
+            "full_hex_id": "2000082A",
+            "id": 2090,
+            "name": "Dagger Talisman",
+            "summary": "Enhances critical hits",
+            "description": [
+                "A talisman depicting a dagger and a surgeon.",
+                "Enhances critical hits.",
+                "",
+                "The white-garbed field surgeons come to the aid of friend and foe alike by dealing a final deadly thrust to spare them from the prolonged agony of a mortal wound. A sense of mercy is a catalyst for bloodlust."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.1,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "conditions": [
+                        "Enhance Critical Attacks"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Dagger Talisman"
+            ]
+        },
+        "Arrow's Reach Talisman": {
+            "full_hex_id": "20000834",
+            "id": 2100,
+            "name": "Arrow's Reach Talisman",
+            "summary": "Increases bow effective range",
+            "description": [
+                "A talisman depicting three arrows.",
+                "Carried by hunters of beasts.",
+                "",
+                "Increases the effective range of bows."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Bow Distance",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 65.0
+                }
+            ],
+            "conflicts": [
+                "Arrow's Reach Talisman"
+            ]
+        },
+        "Blue Dancer Charm": {
+            "full_hex_id": "2000083E",
+            "id": 2110,
+            "name": "Blue Dancer Charm",
+            "summary": "Raises attack power with lower equipment load",
+            "description": [
+                "A cloth doll depicting a dancer garbed in blue.",
+                "An ancient heirloom of some sort.",
+                "",
+                "Raises attack power with lower equipment load.",
+                "",
+                "The dancer in blue represents a fairy, who in legend bestowed a flowing sword upon a blind swordsman. Blade in hand, the swordsman sealed away an ancient god - a god that was Rot itself."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Physical Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15,
+                    "conditions": [
+                        "Scale Attack Power with Equip Load"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Blue Dancer Charm"
+            ]
+        },
+        "Twinblade Talisman": {
+            "full_hex_id": "20000848",
+            "id": 2120,
+            "name": "Twinblade Talisman",
+            "summary": "Enhances final hit of chain attacks",
+            "description": [
+                "A talisman depicting a twinblade and a confessor.",
+                "Enhances the final hit ending a chain of attacks.",
+                "",
+                "The twinblade technique is a tradition of the confessors, who closely guard the secret of how they preserve the momentum of their attacks. Thus is the final strike of their onslaught all the more deadly."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "conditions": [
+                        "Final Chain Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Twinblade Talisman"
+            ]
+        },
+        "Axe Talisman": {
+            "full_hex_id": "20000852",
+            "id": 2130,
+            "name": "Axe Talisman",
+            "summary": "Enhances charge attacks",
+            "description": [
+                "A talisman depicting an axe and a warrior.",
+                "Enhances charge attacks.",
+                "",
+                "The Lord who led the Long March bore an axe, and his loyal warriors honored him by wielding axes of their own, making them very effective at dealing decisive blows."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "conditions": [
+                        "Charge Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Axe Talisman"
+            ]
+        },
+        "Lance Talisman": {
+            "full_hex_id": "2000085C",
+            "id": 2140,
+            "name": "Lance Talisman",
+            "summary": "Enhances attacks on horseback",
+            "description": [
+                "A talisman depicting a lance and a knight.",
+                "Enhances attacks while on horseback.",
+                "",
+                "Knights on horseback are deadly foes. They see all below from their lofty position, meeting little meaningful resistance as they charge ahead."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15,
+                    "conditions": [
+                        "Horseback Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Lance Talisman"
+            ]
+        },
+        "Arrow's Sting Talisman": {
+            "full_hex_id": "20000866",
+            "id": 2150,
+            "name": "Arrow's Sting Talisman",
+            "summary": "Raises attack power of arrows and bolts",
+            "description": [
+                "A talisman depicting three iron arrows.",
+                "Carried by soldiers long ago.",
+                "",
+                "Raises attack power of arrows and bolts."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "conditions": [
+                        "Ammunition Attack",
+                        "Ammunition OnHit Attack",
+                        "Ranged Skill Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Arrow's Sting Talisman"
+            ]
+        },
+        "Lord of Blood's Exultation": {
+            "full_hex_id": "20000870",
+            "id": 2160,
+            "name": "Lord of Blood's Exultation",
+            "summary": "Blood loss in vicinity increases attack power",
+            "description": [
+                "A talisman depicting the exultation of the Lord of Blood.",
+                "",
+                "Raises attack power when blood loss occurs in the vicinity.",
+                "",
+                "\"Render up your offerings of blood to your Lord. Drench my consort's chamber. Slake his cocoon's thirst. His awakening shall herald the dawn of our dynasty.\""
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "conditions": [
+                        "Trigger in Presence of Blood Loss"
+                    ],
+                    "value_pvp": 1.2
+                }
+            ],
+            "conflicts": [
+                "Lord of Blood's Exultation"
+            ]
+        },
+        "Kindred of Rot's Exultation": {
+            "full_hex_id": "2000087A",
+            "id": 2170,
+            "name": "Kindred of Rot's Exultation",
+            "summary": "Poisoning or rot in vicinity increases attack power",
+            "description": [
+                "A talisman depicting the exultation of pests.",
+                "",
+                "Raises attack power when poisoning or rot occurs in the vicinity.",
+                "",
+                "\"Rot for the scarlet goddess. O scarlet blossoms, flourish in distant lands, and return to us, the unwanted children.\""
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "conditions": [
+                        "Trigger in Presence of Rot"
+                    ],
+                    "value_pvp": 1.2
+                }
+            ],
+            "conflicts": [
+                "Kindred of Rot's Exultation"
+            ]
+        },
+        "Claw Talisman": {
+            "full_hex_id": "20000884",
+            "id": 2180,
+            "name": "Claw Talisman",
+            "summary": "Enhances jump attacks",
+            "description": [
+                "A talisman depicting a claw and an assassin.",
+                "Enhances jump attacks.",
+                "",
+                "The assassins of Ravenmount are killers by trade. They assail their victims while dressed as birds of prey."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15,
+                    "conditions": [
+                        "Jump Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Claw Talisman"
+            ]
+        },
+        "Roar Medallion": {
+            "full_hex_id": "2000088E",
+            "id": 2190,
+            "name": "Roar Medallion",
+            "summary": "Enhances roars and breath attacks",
+            "description": [
+                "A bronze medallion depicting a roaring giant.",
+                "Enhances roars and breath attacks.",
+                "",
+                "In ancient times, the giants were mortal enemies of the Erdtree. Their bellowing roars desolated nature, triggered avalanches, and whipped up storms of flame."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15,
+                    "conditions": [
+                        "Roar Attack",
+                        "Unknown Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Roar Medallion"
+            ]
+        },
+        "Curved Sword Talisman": {
+            "full_hex_id": "20000898",
+            "id": 2200,
+            "name": "Curved Sword Talisman",
+            "summary": "Enhances guard counters",
+            "description": [
+                "A talisman depicting a curved sword and a swordsman.",
+                "Enhances guard counters.",
+                "",
+                "It is said that a blind swordsman was the originator of this technique - the art of allowing one's opponent to strike so as to leave them vulnerable to a well-timed reply."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "conditions": [
+                        "Guard Counter Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Curved Sword Talisman"
+            ]
+        },
+        "Companion Jar": {
+            "full_hex_id": "200008A2",
+            "id": 2210,
+            "name": "Companion Jar",
+            "summary": "Raises potency of throwing pots",
+            "description": [
+                "A talisman given by the jars to their friends.",
+                "Raises potency of thrown jars.",
+                "",
+                "Though the jars are brought to life by human flesh and blood, they are all rather kindly folk. Perhaps they were made to be better than their innards."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "conditions": [
+                        "Pot Item Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Companion Jar"
+            ]
+        },
+        "Perfumer's Talisman": {
+            "full_hex_id": "200008AC",
+            "id": 2220,
+            "name": "Perfumer's Talisman",
+            "summary": "Raises potency of perfume items",
+            "description": [
+                "A talisman depicting a set of perfume bottles.",
+                "Raises potency of perfume items.",
+                "",
+                "There are gardens known only to the perfumers. Whether hidden on the fringes of the highlands, or obscured by shadows inside caves, the flowers blossom in secret, waiting to impart their scent."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "conditions": [
+                        "Perfume Item Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Perfumer's Talisman"
+            ]
+        },
+        "Graven-School Talisman": {
+            "full_hex_id": "20000BB8",
+            "id": 3000,
+            "name": "Graven-School Talisman",
+            "summary": "Raises potency of sorceries",
+            "description": [
+                "A talisman depicting a school of graven mages, the nightmare of the academy.",
+                "",
+                "Raises potency of sorceries.",
+                "",
+                "The primeval current is a forbidden tradition of glintstone sorcery. To those who cleave to its teachings, the act of collecting sorcerers to fashion them into the seeds of stars is but another path of scientific inquiry."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04,
+                    "conditions": [
+                        "Affects Sorceries",
+                        "Spell Power Boost"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Graven-School Talisman"
+            ]
+        },
+        "Graven-Mass Talisman": {
+            "full_hex_id": "20000BB9",
+            "id": 3001,
+            "name": "Graven-Mass Talisman",
+            "summary": "Greatly raises potency of sorceries",
+            "description": [
+                "A talisman depicting the first school of graven mages - a nightmare that would continue to haunt the academy.",
+                "",
+                "Greatly raises potency of sorceries.",
+                "",
+                "The primeval current is a forbidden tradition of glintstone sorcery. To those who cleave to its teachings, the act of collecting sorcerers to fashion them into the seeds of stars is but another path of scientific inquiry."
+            ],
+            "is_tradable": true,
+            "price_sold": 2000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.0,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08,
+                    "conditions": [
+                        "Affects Sorceries",
+                        "Spell Power Boost"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Graven-Mass Talisman"
+            ]
+        },
+        "Faithful's Canvas Talisman": {
+            "full_hex_id": "20000BE0",
+            "id": 3040,
+            "name": "Faithful's Canvas Talisman",
+            "summary": "Raises potency of incantations",
+            "description": [
+                "A talisman bearing an icon that depicts a group of masked figures.",
+                "Raises potency of incantations.",
+                "",
+                "The figures represent the flock at prayer, their firm belief in the intangible inspiring even the solitary founder of their religion.",
+                "",
+                "What is faith if not an affirmation?"
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.04,
+                    "conditions": [
+                        "Affects Incantations",
+                        "Spell Power Boost"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Faithful's Canvas Talisman"
+            ]
+        },
+        "Flock's Canvas Talisman": {
+            "full_hex_id": "20000BEA",
+            "id": 3050,
+            "name": "Flock's Canvas Talisman",
+            "summary": "Greatly raises potency of incantations",
+            "description": [
+                "A talisman bearing an icon that depicts a mass of masked figures.",
+                "Greatly raises potency of incantations.",
+                "",
+                "The figures represent the flock at prayer, their firm belief in the intangible inspiring even the solitary founder of their religion.",
+                "",
+                "What is faith if not an affirmation?"
+            ],
+            "is_tradable": true,
+            "price_sold": 2000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.0,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.08,
+                    "conditions": [
+                        "Affects Incantations",
+                        "Spell Power Boost"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Flock's Canvas Talisman"
+            ]
+        },
+        "Old Lord's Talisman": {
+            "full_hex_id": "20000BF4",
+            "id": 3060,
+            "name": "Old Lord's Talisman",
+            "summary": "Extends spell effect duration",
+            "description": [
+                "A legendary talisman depicting the ancient king whose seat lies at the heart of the storm beyond time.",
+                "",
+                "Extends the duration of sorceries and incantations.",
+                "",
+                "It is said that the ancient royal city of Farum Azula has been slowly crumbling since time immemorial."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.5,
+            "effects": [
+                {
+                    "attribute": "Spell Duration",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                }
+            ],
+            "conflicts": [
+                "Old Lord's Talisman"
+            ]
+        },
+        "Radagon Icon": {
+            "full_hex_id": "20000BFE",
+            "id": 3070,
+            "name": "Radagon Icon",
+            "summary": "Shortens spell casting time",
+            "description": [
+                "A legendary talisman depicting the Elden Lord Radagon.",
+                "Shortens the casting time of sorceries and incantations.",
+                "",
+                "As the husband of Rennala of Caria, the red-haired Radagon studied sorcery, and as the husband of Queen Marika, he studied incantations. Thus did the hero aspire to be complete."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Casting Speed",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 30.0
+                }
+            ],
+            "conflicts": [
+                "Radagon Icon"
+            ]
+        },
+        "Primal Glintstone Blade": {
+            "full_hex_id": "20000C08",
+            "id": 3080,
+            "name": "Primal Glintstone Blade",
+            "summary": "Spells consume less FP, but maximum HP is reduced",
+            "description": [
+                "An old glintstone blade that has been stained with blood.",
+                "",
+                "Reduces FP consumption of sorceries and incantations at the cost of maximum HP.",
+                "",
+                "The old sorcerers would slice open their hearts with these blades to imbue a primal glintstone with their soul, and thus did they die."
+            ],
+            "is_tradable": true,
+            "price_sold": 2000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85,
+                    "tick_interval": 0.06
+                },
+                {
+                    "attribute": "Spell Focus Consumption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.75,
+                    "tick_interval": 0.06
+                }
+            ],
+            "conflicts": [
+                "Primal Glintstone Blade"
+            ]
+        },
+        "Godfrey Icon": {
+            "full_hex_id": "20000C12",
+            "id": 3090,
+            "name": "Godfrey Icon",
+            "summary": "Enhances charged spells and skills",
+            "description": [
+                "A legendary talisman depicting the Elden Lord Godfrey.",
+                "Raises charge attack power of sorceries, incantations, and skills.",
+                "",
+                "Godfrey was a ferocious warrior. When he vowed to become a lord, he took the Beast Regent Serosh upon his back to suppress the ceaseless lust for battle that raged within."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15,
+                    "conditions": [
+                        "Charged Attack",
+                        "Charged Skill Attack"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Godfrey Icon"
+            ]
+        },
+        "Dragoncrest Shield Talisman": {
+            "full_hex_id": "20000FA0",
+            "id": 4000,
+            "name": "Dragoncrest Shield Talisman",
+            "summary": "Boosts physical damage negation",
+            "description": [
+                "Wrought iron talisman depicting an ancient dragon.",
+                "Boosts physical damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "value_pvp": 1.02
+                }
+            ],
+            "conflicts": [
+                "Dragoncrest Shield Talisman",
+                "Dragoncrest Shield Talisman +1",
+                "Dragoncrest Shield Talisman +2",
+                "Dragoncrest Greatshield Talisman"
+            ]
+        },
+        "Dragoncrest Shield Talisman +1": {
+            "full_hex_id": "20000FA1",
+            "id": 4001,
+            "name": "Dragoncrest Shield Talisman +1",
+            "summary": "Greatly boosts physical damage negation",
+            "description": [
+                "Wrought iron talisman depicting a duo of ancient dragons.",
+                "Greatly boosts physical damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.03
+                }
+            ],
+            "conflicts": [
+                "Dragoncrest Shield Talisman",
+                "Dragoncrest Shield Talisman +1",
+                "Dragoncrest Shield Talisman +2",
+                "Dragoncrest Greatshield Talisman"
+            ]
+        },
+        "Dragoncrest Shield Talisman +2": {
+            "full_hex_id": "20000FA2",
+            "id": 4002,
+            "name": "Dragoncrest Shield Talisman +2",
+            "summary": "Vastly boosts physical damage negation",
+            "description": [
+                "Wrought iron talisman depicting a trio of ancient dragons.",
+                "Vastly boosts physical damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.04
+                }
+            ],
+            "conflicts": [
+                "Dragoncrest Shield Talisman",
+                "Dragoncrest Shield Talisman +1",
+                "Dragoncrest Shield Talisman +2",
+                "Dragoncrest Greatshield Talisman"
+            ]
+        },
+        "Dragoncrest Greatshield Talisman": {
+            "full_hex_id": "20000FA3",
+            "id": 4003,
+            "name": "Dragoncrest Greatshield Talisman",
+            "summary": "Enormously boosts physical damage negation",
+            "description": [
+                "Legendary talisman of wrought iron depicting a massive ancient dragon.",
+                "Enormously boosts physical damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 2000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Physical Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.05
+                }
+            ],
+            "conflicts": [
+                "Dragoncrest Shield Talisman",
+                "Dragoncrest Shield Talisman +1",
+                "Dragoncrest Shield Talisman +2",
+                "Dragoncrest Greatshield Talisman"
+            ]
+        },
+        "Spelldrake Talisman": {
+            "full_hex_id": "20000FAA",
+            "id": 4010,
+            "name": "Spelldrake Talisman",
+            "summary": "Boosts magical damage negation",
+            "description": [
+                "Talisman depicting a blue ancient dragon.",
+                "Boosts magic damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.04
+                }
+            ],
+            "conflicts": [
+                "Spelldrake Talisman",
+                "Spelldrake Talisman +1",
+                "Spelldrake Talisman +2"
+            ]
+        },
+        "Spelldrake Talisman +1": {
+            "full_hex_id": "20000FAB",
+            "id": 4011,
+            "name": "Spelldrake Talisman +1",
+            "summary": "Greatly boosts magical damage negation",
+            "description": [
+                "Talisman depicting a duo of blue ancient dragons.",
+                "Greatly boosts magic damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.05
+                }
+            ],
+            "conflicts": [
+                "Spelldrake Talisman",
+                "Spelldrake Talisman +1",
+                "Spelldrake Talisman +2"
+            ]
+        },
+        "Spelldrake Talisman +2": {
+            "full_hex_id": "20000FAC",
+            "id": 4012,
+            "name": "Spelldrake Talisman +2",
+            "summary": "Vastly boosts magical damage negation",
+            "description": [
+                "Talisman depicting a trio of blue ancient dragons.",
+                "Vastly boosts magic damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Magic Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.06
+                }
+            ],
+            "conflicts": [
+                "Spelldrake Talisman",
+                "Spelldrake Talisman +1",
+                "Spelldrake Talisman +2"
+            ]
+        },
+        "Flamedrake Talisman": {
+            "full_hex_id": "20000FB4",
+            "id": 4020,
+            "name": "Flamedrake Talisman",
+            "summary": "Boosts fire damage negation",
+            "description": [
+                "Talisman depicting a red ancient dragon.",
+                "Boosts fire damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Fire Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.04
+                }
+            ],
+            "conflicts": [
+                "Flamedrake Talisman",
+                "Flamedrake Talisman +1",
+                "Flamedrake Talisman +2"
+            ]
+        },
+        "Flamedrake Talisman +1": {
+            "full_hex_id": "20000FB5",
+            "id": 4021,
+            "name": "Flamedrake Talisman +1",
+            "summary": "Greatly boosts fire damage negation",
+            "description": [
+                "Talisman depicting a duo of red ancient dragons.",
+                "Greatly boosts fire damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Fire Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.05
+                }
+            ],
+            "conflicts": [
+                "Flamedrake Talisman",
+                "Flamedrake Talisman +1",
+                "Flamedrake Talisman +2"
+            ]
+        },
+        "Flamedrake Talisman +2": {
+            "full_hex_id": "20000FB6",
+            "id": 4022,
+            "name": "Flamedrake Talisman +2",
+            "summary": "Vastly boosts fire damage negation",
+            "description": [
+                "Talisman depicting a trio of red ancient dragons.",
+                "Vastly boosts fire damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Fire Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.06
+                }
+            ],
+            "conflicts": [
+                "Flamedrake Talisman",
+                "Flamedrake Talisman +1",
+                "Flamedrake Talisman +2"
+            ]
+        },
+        "Boltdrake Talisman": {
+            "full_hex_id": "20000FBE",
+            "id": 4030,
+            "name": "Boltdrake Talisman",
+            "summary": "Boosts lightning damage negation",
+            "description": [
+                "Talisman depicting a yellow ancient dragon.",
+                "Boosts lightning damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Lightning Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.04
+                }
+            ],
+            "conflicts": [
+                "Boltdrake Talisman",
+                "Boltdrake Talisman +1",
+                "Boltdrake Talisman +2"
+            ]
+        },
+        "Boltdrake Talisman +1": {
+            "full_hex_id": "20000FBF",
+            "id": 4031,
+            "name": "Boltdrake Talisman +1",
+            "summary": "Greatly boosts lightning damage negation",
+            "description": [
+                "Talisman depicting a duo of yellow ancient dragons.",
+                "Greatly boosts lightning damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Lightning Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.05
+                }
+            ],
+            "conflicts": [
+                "Boltdrake Talisman",
+                "Boltdrake Talisman +1",
+                "Boltdrake Talisman +2"
+            ]
+        },
+        "Boltdrake Talisman +2": {
+            "full_hex_id": "20000FC0",
+            "id": 4032,
+            "name": "Boltdrake Talisman +2",
+            "summary": "Vastly boosts lightning damage negation",
+            "description": [
+                "Talisman depicting a trio of yellow ancient dragons.",
+                "Vastly boosts lightning damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Lightning Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.06
+                }
+            ],
+            "conflicts": [
+                "Boltdrake Talisman",
+                "Boltdrake Talisman +1",
+                "Boltdrake Talisman +2"
+            ]
+        },
+        "Haligdrake Talisman": {
+            "full_hex_id": "20000FC8",
+            "id": 4040,
+            "name": "Haligdrake Talisman",
+            "summary": "Boosts holy damage negation",
+            "description": [
+                "Talisman depicting a golden ancient dragon.",
+                "Boosts holy damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Holy Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.12,
+                    "value_pvp": 1.04
+                }
+            ],
+            "conflicts": [
+                "Haligdrake Talisman",
+                "Haligdrake Talisman +1",
+                "Haligdrake Talisman +2"
+            ]
+        },
+        "Haligdrake Talisman +1": {
+            "full_hex_id": "20000FC9",
+            "id": 4041,
+            "name": "Haligdrake Talisman +1",
+            "summary": "Greatly boosts holy damage negation",
+            "description": [
+                "Talisman depicting a duo of golden ancient dragons.",
+                "Greatly boosts holy damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Holy Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.17,
+                    "value_pvp": 1.05
+                }
+            ],
+            "conflicts": [
+                "Haligdrake Talisman",
+                "Haligdrake Talisman +1",
+                "Haligdrake Talisman +2"
+            ]
+        },
+        "Haligdrake Talisman +2": {
+            "full_hex_id": "20000FCA",
+            "id": 4042,
+            "name": "Haligdrake Talisman +2",
+            "summary": "Vastly boosts holy damage negation",
+            "description": [
+                "Talisman depicting a trio of golden ancient dragons.",
+                "Vastly boosts holy damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Holy Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.06
+                }
+            ],
+            "conflicts": [
+                "Haligdrake Talisman",
+                "Haligdrake Talisman +1",
+                "Haligdrake Talisman +2"
+            ]
+        },
+        "Pearldrake Talisman": {
+            "full_hex_id": "20000FD2",
+            "id": 4050,
+            "name": "Pearldrake Talisman",
+            "summary": "Boosts non-physical damage negation",
+            "description": [
+                "Talisman depicting a pearlescent ancient dragon.",
+                "Boosts non-physical damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Elemental Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.05,
+                    "value_pvp": 1.02
+                }
+            ],
+            "conflicts": [
+                "Pearldrake Talisman",
+                "Pearldrake Talisman +1",
+                "Pearldrake Talisman +2"
+            ]
+        },
+        "Pearldrake Talisman +1": {
+            "full_hex_id": "20000FD3",
+            "id": 4051,
+            "name": "Pearldrake Talisman +1",
+            "summary": "Greatly boosts non-physical damage negation",
+            "description": [
+                "Talisman depicting a duo of pearlescent ancient dragons.",
+                "Greatly boosts non-physical damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Elemental Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.07,
+                    "value_pvp": 1.03
+                }
+            ],
+            "conflicts": [
+                "Pearldrake Talisman",
+                "Pearldrake Talisman +1",
+                "Pearldrake Talisman +2"
+            ]
+        },
+        "Pearldrake Talisman +2": {
+            "full_hex_id": "20000FD4",
+            "id": 4052,
+            "name": "Pearldrake Talisman +2",
+            "summary": "Vastly boosts non-physical damage negation",
+            "description": [
+                "Talisman depicting a trio of pearlescent ancient dragons.",
+                "Vastly boosts non-physical damage negation.",
+                "",
+                "The ancient dragons, who ruled in the prehistoric era before the Erdtree, would protect their lord as a wall of living rock.",
+                "And so it is that the shape of the dragon has become symbolic of all manner of protections."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Elemental Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.09,
+                    "value_pvp": 1.04
+                }
+            ],
+            "conflicts": [
+                "Pearldrake Talisman",
+                "Pearldrake Talisman +1",
+                "Pearldrake Talisman +2"
+            ]
+        },
+        "Crucible Scale Talisman": {
+            "full_hex_id": "20000FDC",
+            "id": 4060,
+            "name": "Crucible Scale Talisman",
+            "summary": "Reduces damage taken from critical hits",
+            "description": [
+                "A talisman fashioned from a scale that embodies the aspects of various creatures.",
+                "Said to have grown on the human body long ago.",
+                "",
+                "Reduces damage taken from critical hits.",
+                "",
+                "A vestige of the crucible of primordial life. Born partially of devolution, it was considered a signifier of the divine in ancient times, but is now increasingly disdained as an impurity as civilization has advanced."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.1,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3,
+                    "conditions": [
+                        "Trigger during Critical Hit"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Crucible Scale Talisman"
+            ]
+        },
+        "Crucible Feather Talisman": {
+            "full_hex_id": "20000FE6",
+            "id": 4070,
+            "name": "Crucible Feather Talisman",
+            "summary": "Improves dodge rolling but increases damage taken",
+            "description": [
+                "A talisman fashioned from feathers that embody the aspects of various creatures.",
+                "Said to have grown on the human body long ago.",
+                "",
+                "Improves the effectiveness of dodge rolls, but increases damage taken at all times.",
+                "",
+                "A vestige of the crucible of primordial life. Born partially of devolution, it was considered a signifier of the divine in ancient times, but is now increasingly disdained as an impurity as civilization has advanced."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.7,
+                    "tick_interval": 0.06
+                }
+            ],
+            "conflicts": [
+                "Crucible Feather Talisman"
+            ]
+        },
+        "Blue-Feathered Branchsword": {
+            "full_hex_id": "20000FF0",
+            "id": 4080,
+            "name": "Blue-Feathered Branchsword",
+            "summary": "Raises defense when HP is low",
+            "description": [
+                "A talisman adorned with blue feathers, once used in ancient death rituals.",
+                "Raises defense when HP is low.",
+                "",
+                "The heart sings when one draws close to death, and thus does one cling so tenaciously to life - to render up a death worth offering."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.1,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.5,
+                    "conditions": [
+                        "HP below 20%"
+                    ],
+                    "value_pvp": 1.5
+                }
+            ],
+            "conflicts": [
+                "Blue-Feathered Branchsword"
+            ]
+        },
+        "Ritual Shield Talisman": {
+            "full_hex_id": "20000FFA",
+            "id": 4090,
+            "name": "Ritual Shield Talisman",
+            "summary": "Raises defense when HP is at maximum",
+            "description": [
+                "A talisman patterned after shields used in ritual combat held to honor the Erdtree.",
+                "",
+                "Raises defense when HP is at maximum.",
+                "",
+                "The practice had died out by the age of King Consort Radagon, but remains of the arenas where ritual combat took place can still be found in every land."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3,
+                    "conditions": [
+                        "HP above 100%"
+                    ],
+                    "value_pvp": 1.3
+                }
+            ],
+            "conflicts": [
+                "Ritual Shield Talisman"
+            ]
+        },
+        "Greatshield Talisman": {
+            "full_hex_id": "20001004",
+            "id": 4100,
+            "name": "Greatshield Talisman",
+            "summary": "Boosts guarding ability",
+            "description": [
+                "Talisman depicting a knight holding a greatshield.",
+                "Boosts guarding ability.",
+                "",
+                "The knights of Leyndell once modelled themselves after the Tree Sentinels. Their purpose is to protect that which deserves protection, and thus the shield always comes before the sword."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Stability",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                }
+            ],
+            "conflicts": [
+                "Greatshield Talisman"
+            ]
+        },
+        "Crucible Knot Talisman": {
+            "full_hex_id": "2000100E",
+            "id": 4110,
+            "name": "Crucible Knot Talisman",
+            "summary": "Reduces damage and impact of headshots",
+            "description": [
+                "A talisman fashioned from a bony knot that embodies the aspects of various creatures.",
+                "Said to have grown on the human body long ago.",
+                "",
+                "Reduces damage and impact of headshots taken.",
+                "",
+                "A vestige of the crucible of primordial life. Born partially of devolution, it was considered a signifier of the divine in ancient times, but is now increasingly disdained as an impurity as civilization has advanced."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.5,
+            "effects": [
+                {
+                    "attribute": "Reduce Headshot Impact",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 1
+                }
+            ],
+            "conflicts": [
+                "Crucible Knot Talisman"
+            ]
+        },
+        "Crimson Seed Talisman": {
+            "full_hex_id": "20001388",
+            "id": 5000,
+            "name": "Crimson Seed Talisman",
+            "summary": "Boosts HP restoration from Flask of Crimson Tears",
+            "description": [
+                "A crimson-colored talisman patterned after an Erdtree seed.",
+                "Boosts HP restoration from the Flask of Crimson Tears.",
+                "",
+                "The Erdtree was once perfect and eternal, and thus was it believed that Erdtree seeds could not exist."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Flask Health Restoration",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "conflicts": [
+                "Crimson Seed Talisman"
+            ]
+        },
+        "Cerulean Seed Talisman": {
+            "full_hex_id": "20001392",
+            "id": 5010,
+            "name": "Cerulean Seed Talisman",
+            "summary": "Boosts FP restoration from Flask of Cerulean Tears",
+            "description": [
+                "A cerulean-colored talisman patterned after an Erdtree seed.",
+                "Boosts FP restoration from the Flask of Cerulean Tears.",
+                "",
+                "The Erdtree was once perfect and eternal, and thus was it believed that Erdtree seeds could not exist."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Flask Focus Restoration",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2
+                }
+            ],
+            "conflicts": [
+                "Cerulean Seed Talisman"
+            ]
+        },
+        "Blessed Dew Talisman": {
+            "full_hex_id": "2000139C",
+            "id": 5020,
+            "name": "Blessed Dew Talisman",
+            "summary": "Slowly restores HP",
+            "description": [
+                "Talisman depicting a drop of the Erdtree's sap, a blessed boon.",
+                "",
+                "Gradually restores HP.",
+                "",
+                "It was once thought that the blessed sap of the Erdtree would drip from its boughs forever - but that age of plenty swiftly came to a close, and with time, the Erdtree became more an object of faith."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 2.0,
+                    "tick_interval": 1.0
+                }
+            ],
+            "conflicts": [
+                "Blessed Dew Talisman"
+            ]
+        },
+        "Taker's Cameo": {
+            "full_hex_id": "200013A6",
+            "id": 5030,
+            "name": "Taker's Cameo",
+            "summary": "Restores HP upon defeating enemies",
+            "description": [
+                "A talisman engraved with a stern likeness of Praetor Rykard, master of Volcano Manor.",
+                "",
+                "Restores HP upon defeating enemies.",
+                "",
+                "When Rykard turned to heresy, taking by force became the rule. The gods themselves were no different, after all."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.0,
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 30.0,
+                    "conditions": [
+                        "Apply Kill Effect"
+                    ],
+                    "tick_interval": 1.0
+                },
+                {
+                    "attribute": "Health Points",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.03,
+                    "conditions": [
+                        "Apply Kill Effect"
+                    ],
+                    "tick_interval": 1.0
+                }
+            ],
+            "conflicts": [
+                "Taker's Cameo"
+            ]
+        },
+        "Godskin Swaddling Cloth": {
+            "full_hex_id": "200013B0",
+            "id": 5040,
+            "name": "Godskin Swaddling Cloth",
+            "summary": "Successive attacks restore HP",
+            "description": [
+                "Sacred cloth of the Godskin Apostles, made from supple skin sewn together.",
+                "",
+                "Successive attacks restore HP.",
+                "",
+                "The Gloam-Eyed Queen cradles newborn apostles swaddled in this cloth. Soon they will grow to become the death of the gods."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 30.0,
+                    "conditions": [
+                        "Successive Hits"
+                    ],
+                    "tick_interval": 4.0
+                },
+                {
+                    "attribute": "Health Points",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.03,
+                    "conditions": [
+                        "Successive Hits"
+                    ],
+                    "tick_interval": 4.0
+                }
+            ],
+            "conflicts": [
+                "Godskin Swaddling Cloth"
+            ]
+        },
+        "Assassin's Crimson Dagger": {
+            "full_hex_id": "200013BA",
+            "id": 5050,
+            "name": "Assassin's Crimson Dagger",
+            "summary": "Critical hits restore HP",
+            "description": [
+                "An assassin's dagger, misshapen and stained in crimson.",
+                "Critical hits restore HP.",
+                "",
+                "This charm is modelled after the darkly gleaming blades used in the Night of Black Knives. Those which gave the demigods their first taste of Death."
+            ],
+            "is_tradable": true,
+            "price_sold": 1500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 85.0,
+                    "conditions": [
+                        "Trigger on Critical Hit (HP)"
+                    ],
+                    "tick_interval": 4.0
+                },
+                {
+                    "attribute": "Health Points",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1,
+                    "conditions": [
+                        "Trigger on Critical Hit (HP)"
+                    ],
+                    "tick_interval": 4.0
+                }
+            ],
+            "conflicts": [
+                "Assassin's Crimson Dagger"
+            ]
+        },
+        "Assassin's Cerulean Dagger": {
+            "full_hex_id": "200013C4",
+            "id": 5060,
+            "name": "Assassin's Cerulean Dagger",
+            "summary": "Critical hits restore FP",
+            "description": [
+                "An assassin's dagger, misshapen and stained in cerulean.",
+                "Critical hits restore FP.",
+                "",
+                "This charm is modelled after the darkly gleaming blades used in the Night of Black Knives. Those which gave the demigods their first taste of Death."
+            ],
+            "is_tradable": true,
+            "price_sold": 1500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Focus Points",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 15.0,
+                    "conditions": [
+                        "Trigger on Critical Hit (FP)"
+                    ],
+                    "tick_interval": 4.0
+                }
+            ],
+            "conflicts": [
+                "Assassin's Cerulean Dagger"
+            ]
+        },
+        "Crepus's Vial": {
+            "full_hex_id": "20001770",
+            "id": 6000,
+            "name": "Crepus's Vial",
+            "summary": "Eliminates all sound made by the wearer during movement",
+            "description": [
+                "Small mysterious bottle with a dark mist sealed within.",
+                "",
+                "Eliminates all sound made by the wearer during movement.",
+                "",
+                "A ritual implement used by Roundtable Hold assassins. There was a time when Tarnished who had strayed from guidance feared nothing more than utter silence."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Enemy Hearing",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.0
+                }
+            ],
+            "conflicts": [
+                "Crepus's Vial"
+            ]
+        },
+        "Concealing Veil": {
+            "full_hex_id": "2000177A",
+            "id": 6010,
+            "name": "Concealing Veil",
+            "summary": "Conceals wearer while crouching away from foes",
+            "description": [
+                "Talisman put together from dark cloth with a lustrous sheen.",
+                "",
+                "Completely conceals the wearer's presence while crouching at a distance from foes.",
+                "",
+                "Part of one of the concealing veils used by the assassins on the Night of Black Knives."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.9,
+            "effects": [
+                {
+                    "attribute": "Invisible at Distance",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 1,
+                    "conditions": [
+                        "Trigger on Crouch"
+                    ]
+                }
+            ],
+            "conflicts": [
+                "Concealing Veil"
+            ]
+        },
+        "Carian Filigreed Crest": {
+            "full_hex_id": "20001784",
+            "id": 6020,
+            "name": "Carian Filigreed Crest",
+            "summary": "Lowers FP consumed by skills",
+            "description": [
+                "A talisman adorned with the royal crest.",
+                "",
+                "Lowers FP consumed by skills.",
+                "",
+                "An honor said to have once been awarded to Carian knights who served as direct retainers to the kingdom's princesses. Now there is only one princess: Ranni, daughter of Rennala."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Skill Focus Consumption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.75
+                }
+            ],
+            "conflicts": [
+                "Carian Filigreed Crest"
+            ]
+        },
+        "Longtail Cat Talisman": {
+            "full_hex_id": "20001798",
+            "id": 6040,
+            "name": "Longtail Cat Talisman",
+            "summary": "Grants immunity to fall damage, but does not prevent death from a high fall",
+            "description": [
+                "A brooch depicting Lacrima, the long-tailed cat.",
+                "",
+                "Grants immunity to fall damage, but does not prevent death from a high fall.",
+                "",
+                "Lacrima features in the fables of Raya Lucaria, in which she is described as a faerie cat who was fond of playing in the great bell tower."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Fall Damage",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.0
+                }
+            ],
+            "conflicts": [
+                "Longtail Cat Talisman"
+            ]
+        },
+        "Shabriri's Woe": {
+            "full_hex_id": "200017A2",
+            "id": 6050,
+            "name": "Shabriri's Woe",
+            "summary": "Constantly attracts enemies' aggression",
+            "description": [
+                "Disturbing likeness of a man whose eyes have been gouged out.",
+                "The corners of his mouth are upturned in an almost flirtatious manner.",
+                "",
+                "Constantly attracts enemies' aggression.",
+                "",
+                "It is said that the man, named Shabriri, had his eyes gouged out as punishment for the crime of slander, and, with time, the blight of the flame of frenzy came to dwell in the empty sockets."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.6,
+            "effects": [
+                {
+                    "attribute": "Attract Enemy Aggression",
+                    "model": "additive",
+                    "type": "neutral",
+                    "value": 1
+                }
+            ],
+            "conflicts": [
+                "Shabriri's Woe"
+            ]
+        },
+        "Daedicar's Woe": {
+            "full_hex_id": "200017AC",
+            "id": 6060,
+            "name": "Daedicar's Woe",
+            "summary": "Increases damage taken",
+            "description": [
+                "Disturbing likeness of a woman whose skin was flayed.",
+                "She smiles with a serene tenderness.",
+                "",
+                "Increases damage taken.",
+                "",
+                "It is said that this woman, named Daedicar, indulged in every form of adultery and wicked pleasure imaginable, giving birth to a myriad of grotesque children."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.8,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.0
+                }
+            ],
+            "conflicts": [
+                "Daedicar's Woe"
+            ]
+        },
+        "Sacrificial Twig": {
+            "full_hex_id": "200017B6",
+            "id": 6070,
+            "name": "Sacrificial Twig",
+            "summary": "Will be lost on death in place of runes",
+            "description": [
+                "A talisman fashioned from a dried twig, so slender that it might snap at the slightest touch.",
+                "",
+                "Prevents rune loss upon death, but will be lost itself in exchange.",
+                "",
+                "Believed to be a twig pruned from the Erdtree long, long ago."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.0,
+            "effects": [
+                {
+                    "attribute": "Destroy Item on Death",
+                    "model": "additive",
+                    "type": "negative",
+                    "value": 1
+                },
+                {
+                    "attribute": "Preserve Runes on Death",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 1
+                }
+            ],
+            "conflicts": [
+                "Sacrificial Twig"
+            ]
+        },
+        "Furled Finger's Trick-Mirror": {
+            "full_hex_id": "200017C0",
+            "id": 6080,
+            "name": "Furled Finger's Trick-Mirror",
+            "summary": "Take on appearance of a Host of Fingers",
+            "description": [
+                "A small, clouded mirror that reflects an image of a golden figure.",
+                "",
+                "Makes the bearer take on the appearance of a Host of Fingers.",
+                "",
+                "One of the ritual implements created by the Tarnished to deceive invaders."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Appear as Host",
+                    "model": "additive",
+                    "type": "neutral",
+                    "value": 1
+                }
+            ],
+            "conflicts": [
+                "Furled Finger's Trick-Mirror",
+                "Host's Trick-Mirror"
+            ]
+        },
+        "Host's Trick-Mirror": {
+            "full_hex_id": "200017CA",
+            "id": 6090,
+            "name": "Host's Trick-Mirror",
+            "summary": "Take on appearance of a cooperator",
+            "description": [
+                "A small, clouded mirror that reflects a flesh-and-blood figure.",
+                "",
+                "Makes the bearer take on the appearance of a summoned cooperator.",
+                "",
+                "One of the ritual implements created by the Tarnished to deceive invaders."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.7,
+            "effects": [
+                {
+                    "attribute": "Appear as Cooperator",
+                    "model": "additive",
+                    "type": "neutral",
+                    "value": 1
+                }
+            ],
+            "conflicts": [
+                "Furled Finger's Trick-Mirror",
+                "Host's Trick-Mirror"
+            ]
+        },
+        "Entwining Umbilical Cord": {
+            "full_hex_id": "200017D4",
+            "id": 6100,
+            "name": "Entwining Umbilical Cord",
+            "summary": "Changes demeanour of wearer's actions",
+            "description": [
+                "Mysterious circular object that's oddly warped.",
+                "Changes the demeanour of the wearer's actions."
+            ],
+            "is_tradable": true,
+            "price_sold": 1000,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 0.5,
+            "effects": [
+                {
+                    "attribute": "Switch Animation Gender",
+                    "model": "additive",
+                    "type": "neutral",
+                    "value": 1
+                }
+            ],
+            "conflicts": [
+                "Entwining Umbilical Cord"
+            ]
+        },
+        "Ancestral Spirit's Horn": {
+            "full_hex_id": "200017DE",
+            "id": 6110,
+            "name": "Ancestral Spirit's Horn",
+            "summary": "Restores FP upon defeating enemies",
+            "description": [
+                "Item cut from the horns of the Regal Ancestor Spirit.",
+                "",
+                "Restore FP upon defeating enemies.",
+                "",
+                "A number of new growths bud from the antler-like horns of the fallen king, each glowing with light. Thus does new life grow from death, and from death, one obtains power."
+            ],
+            "is_tradable": true,
+            "price_sold": 500,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "weight": 1.2,
+            "effects": [
+                {
+                    "attribute": "Focus Points",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 3.0,
+                    "conditions": [
+                        "Apply Kill Effect"
+                    ],
+                    "tick_interval": 1.0
+                }
+            ],
+            "conflicts": [
+                "Ancestral Spirit's Horn"
+            ]
+        }
+    },
+    "$schema": "../schema/talismans.schema.json"
+}
