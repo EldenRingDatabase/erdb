@@ -96,12 +96,12 @@ def on_changelog(version: GameVersion, out: Optional[Path], formatter_id: str, f
 
     generate_changelog(from_version, version, out, formatter_id)
 
-def on_source(game_dir: Path, version: GameVersion, ignore_checksum: bool):
+def on_source(game_dir: Path, ignore_checksum: bool, version: Optional[GameVersion]):
     game_dir = game_dir.resolve()
-    print(f"\n>>> Sourcing gamedata from \"{game_dir}\" for version {version}.")
+    print(f"\n>>> Sourcing gamedata from \"{game_dir}\".")
 
     try:
-        source_gamedata(game_dir, version, ignore_checksum)
+        source_gamedata(game_dir, ignore_checksum, version)
 
     except AssertionError as e:
         print("Sourcing gamedata failed:", *e.args)

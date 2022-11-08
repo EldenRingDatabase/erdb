@@ -73,8 +73,8 @@ def parse_args(on_generate, on_find_values, on_calculate_ar, on_changelog, on_so
     change.set_defaults(func=lambda args: on_changelog(args.version, args.out, args.formatter, args.from_version))
 
     source = subs.add_parser("source", help="Extract gamedata from an UXM-unpacked Elden Ring installation (Windows only)", parents=[exports_data])
-    source.add_argument("--version", "-v", type=GameVersion.from_string, required=True, help="Version to create from the extracted files.")
-    source.set_defaults(func=lambda args: on_source(args.game_dir, args.version, args.ignore_checksum))
+    source.add_argument("--version", "-v", type=GameVersion.from_string, required=False, help="Version directory storing the extracted files, overrides autodetection.")
+    source.set_defaults(func=lambda args: on_source(args.game_dir, args.ignore_checksum, args.version))
 
     pmap = subs.add_parser("map", help="Extract world map image from an UXM-unpacked Elden Ring installation (Windows only)", parents=[exports_data])
     pmap.add_argument("--out", "-o", type=Path, default=None, help="Output path where the file should be written to. If not specified, the map will be shown in a window. Use file extension to specify the image format. If a directory is provided, a JPEG file will be created with a default name. Parent directories will be created automatically.")

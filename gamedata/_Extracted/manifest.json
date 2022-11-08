@@ -1,5 +1,14 @@
 {
     "tools": {
+        "ERExporter.RegulationVersion": {
+            "url": "https://github.com/EldenRingDatabase/ERExporter/releases/download/RegulationVersion-1.0.0/ERExporter.RegulationVersion-1.0.0.zip",
+            "files": {
+                "ERExporter.RegulationVersion.exe": "8aa2c95beb92cade493a1e6a47e8e99d"
+            },
+            "cmds": [
+                ["ERExporter.RegulationVersion.exe", "{game_dir}/regulation.bin"]
+            ]
+        },
         "Yabber": {
             "url": "https://github.com/JKAnderson/Yabber/releases/download/1.3.1/Yabber.1.3.1.zip",
             "files": {
@@ -29,7 +38,7 @@
                     "{game_dir}/msg/engus/item-msgbnd/GR/data/INTERROOT_win64/msg/engUS/WeaponName.fmg"]
             ]
         },
-        "ERExporter": {
+        "ERExporter.Param": {
             "url": "https://github.com/EldenRingDatabase/ERExporter/releases/download/1.1.0/ERExporter-1.1.0.zip",
             "files": {
                 "ERExporter.Param.exe": "5be256db76593ab554843415be60076f"

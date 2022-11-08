@@ -14,7 +14,7 @@ from time import sleep
 from hashlib import md5
 from pathlib import Path
 from typing import Tuple, Dict, List, NamedTuple, Optional
-from scripts.game_version import GameVersion
+from scripts.game_version import GameVersion, GameVersionInstance
 from scripts.erdb_generators import GameParam
 
 def _prepare_writable_path(path: Path, default_filename: str) -> Path:
@@ -42,6 +42,19 @@ def _process_cache(*paths: Path, keep_cache: bool):
     else:
         print("Removing unpacked files (--keep-cache not provided)...", flush=True)
         for p in paths: shutil.rmtree(p, ignore_errors=True)
+
+def _get_app_version(game_exe: Path) -> List[int]:
+    try:
+        import win32api as w
+    except ModuleNotFoundError:
+        assert False, "Module \"pywin32\" is not installed, please install it manually"
+
+    info = w.GetFileVersionInfo(str(game_exe), "\\")
+    ms = info["FileVersionMS"]
+    ls = info["FileVersionLS"]
+    major, minor, patch = w.HIWORD(ms), w.LOWORD(ms), w.HIWORD(ls)
+
+    return [int(major), int(minor), int(patch)]
 
 class _File(NamedTuple):
     path: Path
@@ -203,11 +216,9 @@ class _MapTile(NamedTuple):
         # filter the valid, fully-unlocked tile variants based on their bitmask
         return [t for t in tiles if masks.get(t.coords) == t.code and not t.is_out_of_bounds]
 
-def source_gamedata(game_dir: Path, version: GameVersion, ignore_checksum: bool):
-    destination = cfg.ROOT / "gamedata" / "_Extracted" / str(version)
-    assert not destination.exists() or _is_empty(destination), f"{destination} exists and is not empty."
-
+def source_gamedata(game_dir: Path, ignore_checksum: bool, version: Optional[GameVersion] = None):
     # TODO: check if `game_dir` is UXM-unpacked (backup_ directory?)
+    #       preferably do unpacking via custom CLI tool mimicing UXM
 
     manifest = _load_manifest()
     tools = _Tool.load_all(game_dir, manifest)
@@ -216,6 +227,17 @@ def source_gamedata(game_dir: Path, version: GameVersion, ignore_checksum: bool)
         print(f"\nUsing tool \"{tool.name}\", acquired from \"{tool.url}\".", flush=True)
         tool.check_files(ignore_checksum)
         tool.run_commands()
+
+    if version is None:
+        app_version = _get_app_version(game_dir / "eldenring.exe")
+        version_instance = GameVersionInstance.construct(app_version, game_dir / "regulation_version.txt")
+        print(f"Detected versions: {version_instance}.")
+        version = version_instance.effective
+
+    print(f"Effective version: {version}.")
+
+    destination = cfg.ROOT / "gamedata" / "_Extracted" / str(version)
+    assert not destination.exists() or _is_empty(destination), f"{destination} exists and is not empty."
 
     print(f"Creating directory {destination}.", flush=True)
     destination.mkdir(exist_ok=True)
@@ -353,7 +375,7 @@ def source_icons(game_dir: Path, game_params: List[GameParam], size: int, desina
 
     manifest = _load_manifest()
 
-    yabber, er_exporter = _Tool.load_custom(game_dir, manifest, "Yabber", "ERExporter")
+    yabber, er_exporter = _Tool.load_custom(game_dir, manifest, "Yabber", "ERExporter.Param")
     yabber.check_files(ignore_checksum)
     er_exporter.check_files(ignore_checksum)
 

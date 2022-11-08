@@ -1,7 +1,7 @@
 import re
 from functools import total_ordering
 from pathlib import Path
-from typing import Generator, List, NamedTuple
+from typing import Any, Generator, List, NamedTuple
 
 @total_ordering
 class GameVersion(NamedTuple):
@@ -11,13 +11,44 @@ class GameVersion(NamedTuple):
     nums: List[int]
 
     @classmethod
-    def from_string(cls: "GameVersion", version: str) -> "GameVersion":
+    def from_nums(cls, major_int: int, minor_int: int, patch_int: int) -> "GameVersion":
+        major = str(major_int)
+        minor = f"{minor_int:02}"
+        patch = str(patch_int)
+
+        assert len(major) == 1
+        assert len(minor) == 2
+        assert len(patch) == 1
+
+        return cls(major, minor, patch, [major_int, minor_int, patch_int])
+
+    @classmethod
+    def from_string(cls, version: str) -> "GameVersion":
         parts = version.split(".")
         assert len(parts) == 3, "Invalid version string given"
         assert len(parts[1]) >= 2, "Minor part must be at least 2 digits"
 
         nums = [int(parts[0]), int(parts[1]), int(parts[2])]
         return cls(parts[0], parts[1], parts[2], nums)
+
+    @classmethod
+    def from_any(cls, obj: Any) -> "GameVersion":
+        if isinstance(obj, GameVersion):
+            return obj
+
+        if isinstance(obj, str):
+            return GameVersion.from_string(obj)
+
+        if isinstance(obj, Path):
+            with open(obj, "r") as f:
+                data = f.read()
+            return GameVersion.from_string(data)
+
+        if isinstance(obj, list):
+            assert len(obj) == 3 and all(isinstance(elem, int) for elem in obj)
+            return GameVersion.from_nums(obj[0], obj[1], obj[2])
+
+        assert False, "Cannot parse GameVersion"
 
     @classmethod
     def min(cls) -> "GameVersion":
@@ -88,3 +119,26 @@ class GameVersionRange(NamedTuple):
         assert isinstance(version, GameVersion)
         return self.begin == version if self.only \
             else self.begin <= version and version < self.end
+
+class GameVersionInstance(NamedTuple):
+    application: GameVersion
+    regulation: GameVersion
+
+    @property
+    def application(self) -> GameVersion:
+        return self.application
+
+    @property
+    def regulation(self) -> GameVersion:
+        return self.regulation
+
+    @property
+    def effective(self) -> GameVersion:
+        return max(self.application, self.regulation)
+
+    @classmethod
+    def construct(cls, application: Any, regulation: Any) -> "GameVersionInstance":
+        return cls(GameVersion.from_any(application), GameVersion.from_any(regulation))
+
+    def __str__(self) -> str:
+        return f"(app: {self.application}, regulation: {self.regulation})"
