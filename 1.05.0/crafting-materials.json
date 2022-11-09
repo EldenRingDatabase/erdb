@@ -1,0 +1,2090 @@
+{
+    "CraftingMaterials": {
+        "Sliver of Meat": {
+            "full_hex_id": "40003A98",
+            "id": 15000,
+            "name": "Sliver of Meat",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A slice of thinly carved beast flesh.",
+                "Material used for crafting items.",
+                "Found by hunting herbivorous beasts.",
+                "",
+                "The dried meat toughens the constitution."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting herbivorous beasts",
+            "products": [
+                "Immunizing Cured Meat",
+                "Invigorating Cured Meat",
+                "Clarifying Cured Meat",
+                "Dappled Cured Meat"
+            ]
+        },
+        "Beast Liver": {
+            "full_hex_id": "40003AA2",
+            "id": 15010,
+            "name": "Beast Liver",
+            "summary": "Material used for crafting items",
+            "description": [
+                "The fresh liver of a beast; a luscious fruit of life.",
+                "Material used for crafting items.",
+                "Found by hunting herbivorous beasts.",
+                "",
+                "Dried liver boosts damage negation."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting herbivorous beasts",
+            "products": [
+                "Spellproof Dried Liver",
+                "Fireproof Dried Liver",
+                "Lightningproof Dried Liver",
+                "Holyproof Dried Liver"
+            ]
+        },
+        "Lump of Flesh": {
+            "full_hex_id": "40003AAC",
+            "id": 15020,
+            "name": "Lump of Flesh",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A lump of beast flesh filled with rich juices.",
+                "Material used for crafting items.",
+                "Found by hunting carnivorous beasts.",
+                "",
+                "Meat suitable for a rustic feast."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting carnivorous beasts",
+            "products": [
+                "Exalted Flesh"
+            ]
+        },
+        "Beast Blood": {
+            "full_hex_id": "40003AB6",
+            "id": 15030,
+            "name": "Beast Blood",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Fresh beast blood, glinting with gold.",
+                "Material used for crafting items.",
+                "Found by hunting carnivorous beasts.",
+                "",
+                "This glimmering blood never rots or decays."
+            ],
+            "is_tradable": true,
+            "price_sold": 50,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting carnivorous beasts",
+            "products": [
+                "Beastlure Pot",
+                "Cursed-Blood Pot",
+                "Dragonwound Grease"
+            ]
+        },
+        "Old Fang": {
+            "full_hex_id": "40003AC0",
+            "id": 15040,
+            "name": "Old Fang",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A rarely-seen specimen of beast fang.",
+                "Material used for crafting items.",
+                "Found by hunting carnivorous beasts.",
+                "",
+                "These multiple, overlapping fangs grow from a single root. Perhaps they're a vestige of the primordial crucible."
+            ],
+            "is_tradable": true,
+            "price_sold": 50,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting carnivorous beasts",
+            "products": [
+                "Redmane Fire Pot",
+                "Academy Magic Pot"
+            ]
+        },
+        "Budding Horn": {
+            "full_hex_id": "40003ACA",
+            "id": 15050,
+            "name": "Budding Horn",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A rarely-seen specimen of a young, budding horn.",
+                "Material used for crafting items.",
+                "Found by hunting herbivorous beasts.",
+                "",
+                "This horn began to sprout on a beast that typically bears no horn. Perhaps it's a vestige of the primordial crucible."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting herbivorous beasts",
+            "products": [
+                "Dappled Cured Meat",
+                "Dappled White Cured Meat"
+            ]
+        },
+        "Flight Pinion": {
+            "full_hex_id": "40003AD4",
+            "id": 15060,
+            "name": "Flight Pinion",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Flight feather of birds.",
+                "",
+                "Material used for crafting items.",
+                "",
+                "Commonly used for arrow fletchings."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting birds",
+            "products": [
+                "Bone Arrow (Fletched)",
+                "Firebone Arrow (Fletched)",
+                "Poisonbone Arrow (Fletched)",
+                "Sleepbone Arrow (Fletched)",
+                "Lightningbone Arrow (Fletched)",
+                "Magicbone Arrow (Fletched)",
+                "Haligbone Arrow (Fletched)",
+                "Bloodbone Arrow (Fletched)",
+                "Coldbone Arrow (Fletched)",
+                "Rotbone Arrow (Fletched)",
+                "Bone Great Arrow (Fletched)"
+            ]
+        },
+        "Four-Toed Fowl Foot": {
+            "full_hex_id": "40003AE8",
+            "id": 15080,
+            "name": "Four-Toed Fowl Foot",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A four-toed fowl's foot.",
+                "Material used for crafting items.",
+                "",
+                "In the Lands Between, having three digits is seen as a bad omen. As such, the four-toed fowl's foot is a gift of great luck indeed."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting birds",
+            "products": [
+                "Silver-Pickled Fowl Foot",
+                "Gold-Pickled Fowl Foot"
+            ]
+        },
+        "Turtle Neck Meat": {
+            "full_hex_id": "40003AF2",
+            "id": 15090,
+            "name": "Turtle Neck Meat",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A splendid, lengthy cut of turtle neck meat.",
+                "Material used for crafting items.",
+                "",
+                "Considered an especially nutritious ingredient In the south of the Lands Between."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting turtles",
+            "products": [
+                "Pickled Turtle Neck"
+            ]
+        },
+        "Human Bone Shard": {
+            "full_hex_id": "40003AFC",
+            "id": 15100,
+            "name": "Human Bone Shard",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Fragment of bone with dun mottling.",
+                "Material used for crafting items.",
+                "Found by hunting Those Who Live in Death.",
+                "",
+                "Lamentably brittle, it crumbles at the lightest caress."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting Those Who Live in Death",
+            "products": [
+                "Alluring Pot",
+                "Rancor Pot",
+                "Grace Mimic",
+                "Scriptstone"
+            ]
+        },
+        "Great Dragonfly Head": {
+            "full_hex_id": "40003B06",
+            "id": 15110,
+            "name": "Great Dragonfly Head",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Head of a large dragonfly.",
+                "Material used for crafting items.",
+                "",
+                "Long believed to have the ability to neutralize poisons."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting large dragonflies",
+            "products": [
+                "Neutralizing Boluses",
+                "Immunizing Cured Meat",
+                "Immunizing White Cured Meat"
+            ]
+        },
+        "Slumbering Egg": {
+            "full_hex_id": "40003B10",
+            "id": 15120,
+            "name": "Slumbering Egg",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Owl eggs that will never hatch.",
+                "Material used for crafting items.",
+                "",
+                "Prized as a symbol of the most sublime slumber."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting owls",
+            "products": [
+                "Stimulating Boluses",
+                "Clarifying Cured Meat",
+                "Clarifying White Cured Meat"
+            ]
+        },
+        "Crab Eggs": {
+            "full_hex_id": "40003B1A",
+            "id": 15130,
+            "name": "Crab Eggs",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Eggs of large crabs which dwell in the shallows.",
+                "Material used for crafting items.",
+                "",
+                "A nutritious foodstuff that warms from within.",
+                "The flavor is exquisite.",
+                "Only those of comfort and means know the truth:",
+                "a crab's eggs are more delectable than its meat."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting large crabs",
+            "products": [
+                "Thawfrost Boluses",
+                "Invigorating Cured Meat",
+                "Invigorating White Cured Meat"
+            ]
+        },
+        "Land Octopus Ovary": {
+            "full_hex_id": "40003B24",
+            "id": 15140,
+            "name": "Land Octopus Ovary",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Puffy, milky white ovary of a land octopus.",
+                "Material used for crafting items.",
+                "",
+                "Land octopuses eat humans in order to bear young, and theirs is the blood that runs through these ovaries."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting land octopuses",
+            "products": [
+                "Stanching Boluses",
+                "Invigorating Cured Meat",
+                "Invigorating White Cured Meat",
+                "Bloodboil Aromatic"
+            ]
+        },
+        "Miranda Powder": {
+            "full_hex_id": "40003B2E",
+            "id": 15150,
+            "name": "Miranda Powder",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Pollen from a man-eating miranda flower.",
+                "Material used for crafting items.",
+                "",
+                "Throughout history, perfumers have prized this extremely fragrant form of miranda pollen, not yet scattered into the air."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Found by killing miranda flowers",
+            "products": [
+                "Spark Aromatic",
+                "Poison Spraymist",
+                "Acid Spraymist"
+            ]
+        },
+        "Strip of White Flesh": {
+            "full_hex_id": "40003B38",
+            "id": 15160,
+            "name": "Strip of White Flesh",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Thin strips of flesh taken from a bloodless creature.",
+                "Material used for crafting items.",
+                "",
+                "The dried meat toughens the constitution, boosting resistance. It's known for its long-lasting effect."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting bloodless creatures",
+            "products": [
+                "Immunizing White Cured Meat",
+                "Invigorating White Cured Meat",
+                "Clarifying White Cured Meat",
+                "Dappled White Cured Meat"
+            ]
+        },
+        "Thin Beast Bones": {
+            "full_hex_id": "40003BEC",
+            "id": 15340,
+            "name": "Thin Beast Bones",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Thin, hard beast bones.",
+                "Material used for crafting items.",
+                "Found by hunting beasts.",
+                "",
+                "Commonly used to make disposable weapons."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting beasts",
+            "products": [
+                "Bone Dart",
+                "Poisonbone Dart",
+                "Bone Arrow (Fletched)",
+                "Bone Arrow",
+                "Firebone Arrow (Fletched)",
+                "Firebone Arrow",
+                "Poisonbone Arrow (Fletched)",
+                "Poisonbone Arrow",
+                "Sleepbone Arrow (Fletched)",
+                "Sleepbone Arrow",
+                "Stormwing Bone Arrow",
+                "Lightningbone Arrow (Fletched)",
+                "Lightningbone Arrow",
+                "Rainbow Stone Arrow",
+                "Shattershard Arrow",
+                "Magicbone Arrow (Fletched)",
+                "Magicbone Arrow",
+                "Haligbone Arrow (Fletched)",
+                "Haligbone Arrow",
+                "Bloodbone Arrow (Fletched)",
+                "Bloodbone Arrow",
+                "Coldbone Arrow (Fletched)",
+                "Coldbone Arrow",
+                "Rotbone Arrow (Fletched)",
+                "Rotbone Arrow",
+                "Bone Bolt",
+                "Firebone Bolt",
+                "Lightningbone Bolt",
+                "Magicbone Bolt",
+                "Haligbone Bolt",
+                "Poisonbone Bolt",
+                "Bloodbone Bolt",
+                "Coldbone Bolt",
+                "Rotbone Bolt",
+                "Sleepbone Bolt"
+            ]
+        },
+        "Hefty Beast Bone": {
+            "full_hex_id": "40003BED",
+            "id": 15341,
+            "name": "Hefty Beast Bone",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Thick, solid beast bones.",
+                "Material used for crafting items.",
+                "Found by hunting particularly large beasts.",
+                "",
+                "Commonly used to make disposable weapons."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by hunting particularly large beasts",
+            "products": [
+                "Beastlure Pot",
+                "Exalted Flesh",
+                "Bone Great Arrow (Fletched)",
+                "Bone Great Arrow",
+                "Bone Ballista Bolt"
+            ]
+        },
+        "String": {
+            "full_hex_id": "40003C28",
+            "id": 15400,
+            "name": "String",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Boasting no special qualities, this is merely a goodly length of string.",
+                "",
+                "Material used for crafting items.",
+                "Often carried by demi-humans.",
+                "",
+                "Used to make certain items easier to use."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Object",
+            "hint": "Often carried by demi-humans",
+            "products": [
+                "Roped Fire Pot",
+                "Roped Lightning Pot",
+                "Roped Fetid Pot",
+                "Roped Poison Pot",
+                "Roped Oil Pot",
+                "Roped Magic Pot",
+                "Roped Fly Pot",
+                "Roped Volcano Pot",
+                "Roped Holy Water Pot",
+                "Drawstring Fire Grease",
+                "Drawstring Lightning Grease",
+                "Drawstring Magic Grease",
+                "Drawstring Holy Grease",
+                "Drawstring Blood Grease",
+                "Drawstring Soporific Grease",
+                "Drawstring Poison Grease",
+                "Drawstring Rot Grease"
+            ]
+        },
+        "Living Jar Shard": {
+            "full_hex_id": "40003C32",
+            "id": 15410,
+            "name": "Living Jar Shard",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A fragment of a living jar, hardened after its death.",
+                "Material used for crafting items.",
+                "",
+                "Such fragments command a high price due to the magical power locked within. This leaves the living jars unfortunate targets for poachers."
+            ],
+            "is_tradable": true,
+            "price_sold": 200,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by killing living jars",
+            "products": [
+                "Ironjar Aromatic"
+            ]
+        },
+        "Albinauric Bloodclot": {
+            "full_hex_id": "40003C3C",
+            "id": 15420,
+            "name": "Albinauric Bloodclot",
+            "summary": "Material used for crafting items",
+            "description": [
+                "The thick, coagulated blood of the Albinaurics.",
+                "Material used for crafting items.",
+                "",
+                "Albinaurics are lifeforms made by human hands.",
+                "Thus, many believe them to live impure lives, untouched by the Erdtree's grace."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by killing Albinaurics",
+            "products": [
+                "Alluring Pot",
+                "Albinauric Pot"
+            ]
+        },
+        "Stormhawk Feather": {
+            "full_hex_id": "40003C46",
+            "id": 15430,
+            "name": "Stormhawk Feather",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A feather from a hawk that lived as one with the storms.",
+                "Material used for crafting items.",
+                "",
+                "These feathers, enveloped in swirling winds, are often used for arrow fletching."
+            ],
+            "is_tradable": true,
+            "price_sold": 50,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found by killing stormhawks",
+            "products": [
+                "Stormwing Bone Arrow"
+            ]
+        },
+        "Poisonbloom": {
+            "full_hex_id": "400050AA",
+            "id": 20650,
+            "name": "Poisonbloom",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Flower that grows in toxic terrain.",
+                "Material used for crafting items.",
+                "",
+                "Dripping with a deep-green poisonous liquid."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Blooms in toxic terrain",
+            "products": [
+                "Poison Pot",
+                "Roped Poison Pot",
+                "Poison Grease",
+                "Drawstring Poison Grease",
+                "Poisonbone Dart",
+                "Poison Spraymist",
+                "Poisonbone Arrow (Fletched)",
+                "Poisonbone Arrow",
+                "Poisonbone Bolt"
+            ]
+        },
+        "Trina's Lily": {
+            "full_hex_id": "400050AB",
+            "id": 20651,
+            "name": "Trina's Lily",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A light-purple water lily that is on the verge of wilting.",
+                "Material used for crafting items.",
+                "Exceedingly rare to find.",
+                "",
+                "A symbol of faith in St. Trina.",
+                "Dulls the senses, preventing agitation."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Exceedingly rare to find",
+            "products": [
+                "Sleep Pot",
+                "Soporific Grease",
+                "Drawstring Soporific Grease",
+                "Sleepbone Arrow (Fletched)",
+                "Sleepbone Arrow",
+                "Sleepbone Bolt"
+            ]
+        },
+        "Fulgurbloom": {
+            "full_hex_id": "400050AC",
+            "id": 20652,
+            "name": "Fulgurbloom",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Yellow flower that grows in lightning-struck lands.",
+                "Material used for crafting items.",
+                "",
+                "Imbued with traces of lightning's essence."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Blooms in lightning-struck lands",
+            "products": [
+                "Lightning Pot",
+                "Ancient Dragonbolt Pot",
+                "Roped Lightning Pot",
+                "Lightningproof Dried Liver",
+                "Lightning Grease",
+                "Drawstring Lightning Grease",
+                "Lightningbone Arrow (Fletched)",
+                "Lightningbone Arrow",
+                "Lightningbone Bolt"
+            ]
+        },
+        "Miquella's Lily": {
+            "full_hex_id": "400050AD",
+            "id": 20653,
+            "name": "Miquella's Lily",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A delicate water lily of unalloyed gold that has started to fade and wilt.",
+                "Material used for crafting items.",
+                "Exceedingly rare to find.",
+                "",
+                "A flower signifying faith in the Haligtree.",
+                "Thought to be beloved by the Empyrean Miquella in his youth."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Exceedingly rare to find",
+            "products": [
+                "Bewitching Branch"
+            ]
+        },
+        "Grave Violet": {
+            "full_hex_id": "400050AE",
+            "id": 20654,
+            "name": "Grave Violet",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A purple flower that blooms in graveyards.",
+                "Material used for crafting items.",
+                "",
+                "The hue of ghostflame, it's believed to be useful in calling forth spirits."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Blooms in graveyards",
+            "products": [
+                "Rancor Pot"
+            ]
+        },
+        "Faded Erdleaf Flower": {
+            "full_hex_id": "400050B4",
+            "id": 20660,
+            "name": "Faded Erdleaf Flower",
+            "summary": "Material used for crafting items",
+            "description": [
+                "An Erdleaf flower that has faded to a pale scarlet, found blooming in rotten lands.",
+                "Material used in crafting items.",
+                "",
+                "Said to be fed by leaves that fell from the Erdtree in days of antiquity."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Blooms in rotten lands",
+            "products": [
+                "Rot Pot"
+            ]
+        },
+        "Erdleaf Flower": {
+            "full_hex_id": "400050C8",
+            "id": 20680,
+            "name": "Erdleaf Flower",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A dusky yellow flower that has started to fade to brown, found throughout the Lands Between.",
+                "Material used for crafting items.",
+                "",
+                "Said to be fed by leaves that fell from the Erdtree in days of antiquity."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Found throughout the Lands Between",
+            "products": [
+                "Furlcalling Finger Remedy",
+                "Grace Mimic",
+                "Warming Stone"
+            ]
+        },
+        "Altus Bloom": {
+            "full_hex_id": "400050C9",
+            "id": 20681,
+            "name": "Altus Bloom",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A golden-tinged flower from a succulent plant that blooms on the Altus Plateau.",
+                "Material used for crafting items.",
+                "",
+                "Said to be a funereal flower in an era long past, before the Erdtree grew."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Blooms on the Altus Plateau",
+            "products": [
+                "Uplifting Aromatic",
+                "Spark Aromatic",
+                "Ironjar Aromatic",
+                "Bloodboil Aromatic",
+                "Poison Spraymist",
+                "Acid Spraymist"
+            ]
+        },
+        "Fire Blossom": {
+            "full_hex_id": "400050CA",
+            "id": 20682,
+            "name": "Fire Blossom",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A half-ashen and smoldering flower that blooms on the Mountaintops of the Giants.",
+                "Material used for crafting items.",
+                "",
+                "Fertilized by the sparks from the forge at the peak where burns the flame of ruin."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Blooms on the Mountaintops of the Giants",
+            "products": [
+                "Giantsflame Fire Pot"
+            ]
+        },
+        "Golden Sunflower": {
+            "full_hex_id": "400050CB",
+            "id": 20683,
+            "name": "Golden Sunflower",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A golden sunflower that grows facing the Erdtree.",
+                "Material used for crafting items.",
+                "Found near Minor Erdtrees.",
+                "",
+                "At the foot of the Erdtree, they retain their color, along with a powerful holy essence."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Found near Minor Erdtrees",
+            "products": [
+                "Sacred Order Pot",
+                "Holyproof Dried Liver",
+                "Holy Grease",
+                "Drawstring Holy Grease",
+                "Haligbone Arrow (Fletched)",
+                "Haligbone Arrow",
+                "Haligbone Bolt"
+            ]
+        },
+        "Tarnished Golden Sunflower": {
+            "full_hex_id": "400050CD",
+            "id": 20685,
+            "name": "Tarnished Golden Sunflower",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A large flower that blooms facing the Erdtree.",
+                "Material used for crafting items.",
+                "Found near Minor Erdtrees.",
+                "",
+                "Though wilted and faded, it still retains holy essence."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Found near Minor Erdtrees",
+            "products": [
+                "Holy Water Pot",
+                "Roped Holy Water Pot"
+            ]
+        },
+        "Herba": {
+            "full_hex_id": "400050D2",
+            "id": 20690,
+            "name": "Herba",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Evergreen leaves that give off a faint light.",
+                "Material used for crafting items.",
+                "",
+                "This very common medicinal plant can be found in thickets and elsewhere."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Found in thickets and elsewhere",
+            "products": [
+                "Neutralizing Boluses",
+                "Stanching Boluses",
+                "Thawfrost Boluses",
+                "Stimulating Boluses",
+                "Pickled Turtle Neck"
+            ]
+        },
+        "Arteria Leaf": {
+            "full_hex_id": "400050D3",
+            "id": 20691,
+            "name": "Arteria Leaf",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Dark red leaves with thick, swollen veins.",
+                "Material used for crafting items.",
+                "Exceedingly rare to find.",
+                "",
+                "A faint pulse can be felt in the veins.",
+                "Stirs the blood, providing an enlivening effect."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Exceedingly rare to find",
+            "products": [
+                "Exalted Flesh",
+                "Uplifting Aromatic",
+                "Bloodboil Aromatic"
+            ]
+        },
+        "Dewkissed Herba": {
+            "full_hex_id": "400050E6",
+            "id": 20710,
+            "name": "Dewkissed Herba",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A herb that grows in the false night in and around the Eternal City.",
+                "Material used for crafting items.",
+                "",
+                "Soaked in arcane dew, it gives off the faint glow of starlight."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Found in and around the Eternal City",
+            "products": [
+                "Preserving Boluses",
+                "Rejuvenating Boluses",
+                "Clarifying Boluses",
+                "Glowstone"
+            ]
+        },
+        "Rowa Fruit": {
+            "full_hex_id": "400050F0",
+            "id": 20720,
+            "name": "Rowa Fruit",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Berry-like red fruits that grow in shrubs.",
+                "Material used for crafting items.",
+                "",
+                "Easily found everywhere in the Lands Between, it has a wide variety of uses."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Easily found everywhere in the Lands Between",
+            "products": [
+                "Rowa Raisin",
+                "Pickled Turtle Neck",
+                "Immunizing Cured Meat",
+                "Spellproof Dried Liver",
+                "Fireproof Dried Liver",
+                "Lightningproof Dried Liver",
+                "Silver-Pickled Fowl Foot",
+                "Gold-Pickled Fowl Foot",
+                "Exalted Flesh",
+                "Immunizing White Cured Meat",
+                "Soft Cotton"
+            ]
+        },
+        "Golden Rowa": {
+            "full_hex_id": "400050F1",
+            "id": 20721,
+            "name": "Golden Rowa",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A Rowa fruit tinted with gold.",
+                "Material used for crafting items.",
+                "",
+                "Easily found near the Erdtree."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Easily found near the Erdtree",
+            "products": [
+                "Sweet Raisin",
+                "Invigorating Cured Meat",
+                "Dappled Cured Meat",
+                "Holyproof Dried Liver",
+                "Invigorating White Cured Meat",
+                "Dappled White Cured Meat"
+            ]
+        },
+        "Rimed Rowa": {
+            "full_hex_id": "400050F2",
+            "id": 20722,
+            "name": "Rimed Rowa",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A berry-like fruit, thought to be the original strain of Rowa.",
+                "Material used for crafting items.",
+                "Found in frigid highlands.",
+                "",
+                "This hardy species takes root even when frozen solid."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Found in frigid highlands",
+            "products": [
+                "Frozen Raisin",
+                "Clarifying Cured Meat",
+                "Clarifying White Cured Meat"
+            ]
+        },
+        "Bloodrose": {
+            "full_hex_id": "400050F3",
+            "id": 20723,
+            "name": "Bloodrose",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Blood-slick roses that bloom in blood-soaked soil.",
+                "Material used for crafting items.",
+                "",
+                "Particularly beloved by those who serve the Lord of Blood. Glory to his inevitable reign."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Blooms in blood-soaked soil",
+            "products": [
+                "Cursed-Blood Pot",
+                "Blood Grease",
+                "Drawstring Blood Grease",
+                "Bloodbone Arrow (Fletched)",
+                "Bloodbone Arrow",
+                "Bloodbone Bolt"
+            ]
+        },
+        "Eye of Yelough": {
+            "full_hex_id": "40005104",
+            "id": 20740,
+            "name": "Eye of Yelough",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A shrub fruit bursting with ripened pulp.",
+                "Material used for crafting items.",
+                "",
+                "Grown in lands afflicted by frenzy, it's used for its pain-relieving properties... Though it's also known to be a dangerous intoxicant."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Grown in lands afflicted by frenzy",
+            "products": [
+                "Clarifying Boluses",
+                "Clarifying Cured Meat",
+                "Clarifying White Cured Meat"
+            ]
+        },
+        "Crystal Bud": {
+            "full_hex_id": "4000510E",
+            "id": 20750,
+            "name": "Crystal Bud",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A young plant, crystalized before it could mature.",
+                "Material used for crafting items.",
+                "",
+                "Widely found in Liurnia Lake."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Widely found in Liurnia Lake",
+            "products": [
+                "Magic Grease",
+                "Drawstring Magic Grease",
+                "Shield Grease",
+                "Cuckoo Glintstone"
+            ]
+        },
+        "Rimed Crystal Bud": {
+            "full_hex_id": "4000510F",
+            "id": 20751,
+            "name": "Rimed Crystal Bud",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A young plant, frozen into a crystal before it could mature. Material used for crafting items.",
+                "",
+                "Widely found in cold regions."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Widely found in cold regions",
+            "products": [
+                "Freezing Pot",
+                "Freezing Grease",
+                "Coldbone Arrow (Fletched)",
+                "Coldbone Arrow",
+                "Coldbone Bolt"
+            ]
+        },
+        "Sacramental Bud": {
+            "full_hex_id": "40005111",
+            "id": 20753,
+            "name": "Sacramental Bud",
+            "summary": "Material used for crafting items",
+            "description": [
+                "An immature bud containing fresh blood.",
+                "Material used for crafting items.",
+                "",
+                "Believed to originate long ago from a strain of buds cultivated with youthful, sacramental blood."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Exceedingly rare to find",
+            "products": [
+                "Preserving Boluses",
+                "Bewitching Branch"
+            ]
+        },
+        "Mushroom": {
+            "full_hex_id": "40005118",
+            "id": 20760,
+            "name": "Mushroom",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A fungal growth that thrives in damp thickets and elsewhere. Material used for crafting items.",
+                "",
+                "Its thick, spongy flesh makes it a key component in throwing pots."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Thrives in damp thickets and elsewhere",
+            "products": [
+                "Fire Pot",
+                "Redmane Fire Pot",
+                "Lightning Pot",
+                "Ancient Dragonbolt Pot",
+                "Fetid Pot",
+                "Swarm Pot",
+                "Holy Water Pot",
+                "Sacred Order Pot",
+                "Roped Fire Pot",
+                "Roped Lightning Pot",
+                "Roped Fetid Pot",
+                "Roped Fly Pot",
+                "Roped Holy Water Pot",
+                "Albinauric Pot",
+                "Cursed-Blood Pot",
+                "Sleep Pot"
+            ]
+        },
+        "Melted Mushroom": {
+            "full_hex_id": "40005119",
+            "id": 20761,
+            "name": "Melted Mushroom",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A mushroom that grows in the false night in and around the Eternal City.",
+                "Material used for crafting items.",
+                "",
+                "It drips with a viscous fluid that behaves much like oil."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Found in and around the Eternal City",
+            "products": [
+                "Oil Pot",
+                "Roped Oil Pot",
+                "Soap"
+            ]
+        },
+        "Toxic Mushroom": {
+            "full_hex_id": "40005122",
+            "id": 20770,
+            "name": "Toxic Mushroom",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A mushroom covered in toxic mold that grows in rotten lands. Material used for crafting items.",
+                "",
+                "A skilled hand can repurpose its toxic mold into an effective ward against scarlet rot."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Grows in rotten lands",
+            "products": [
+                "Poison Pot",
+                "Roped Poison Pot",
+                "Rot Pot"
+            ]
+        },
+        "Root Resin": {
+            "full_hex_id": "40005127",
+            "id": 20775,
+            "name": "Root Resin",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Resin secreted from the roots of the Greattree.",
+                "Can also be found near trees on the surface.",
+                "Material used in crafting items.",
+                "",
+                "The roots of the Greattree were once linked to those of the Erdtree, or so they say, and it is for this reason catacombs are built around Greattree roots."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Secreted from the roots of the Greattree.\nCan also be found near trees on the surface.",
+            "products": [
+                "Fire Grease",
+                "Lightning Grease",
+                "Magic Grease",
+                "Holy Grease",
+                "Blood Grease",
+                "Soporific Grease",
+                "Poison Grease",
+                "Freezing Grease",
+                "Dragonwound Grease",
+                "Rot Grease",
+                "Drawstring Fire Grease",
+                "Drawstring Lightning Grease",
+                "Drawstring Magic Grease",
+                "Drawstring Holy Grease",
+                "Drawstring Blood Grease",
+                "Drawstring Soporific Grease",
+                "Drawstring Poison Grease",
+                "Drawstring Rot Grease",
+                "Shield Grease"
+            ]
+        },
+        "Cracked Crystal": {
+            "full_hex_id": "4000512C",
+            "id": 20780,
+            "name": "Cracked Crystal",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A cracked, impure, degraded, and altogether unremarkable crystal.",
+                "Material used for crafting items.",
+                "",
+                "Widely found in crystal tunnels."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Object",
+            "hint": "Widely found in crystal tunnels",
+            "products": [
+                "Crystal Dart",
+                "Cuckoo Glintstone",
+                "Shattershard Arrow"
+            ]
+        },
+        "Sanctuary Stone": {
+            "full_hex_id": "4000513B",
+            "id": 20795,
+            "name": "Sanctuary Stone",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A rare piece of stone fragment found near places where ruins have fallen from the sky.",
+                "Material used for crafting items.",
+                "",
+                "It feeds and strengthens the light as it shines."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Object",
+            "hint": "Found near the remains of fallen ruins, but rarely",
+            "products": [
+                "Warming Stone",
+                "Frenzyflame Stone"
+            ]
+        },
+        "Nascent Butterfly": {
+            "full_hex_id": "40005140",
+            "id": 20800,
+            "name": "Nascent Butterfly",
+            "summary": "Material used for crafting items",
+            "description": [
+                "An arcane butterfly with translucent wings.",
+                "Material used for crafting items. Exceedingly rare to find.",
+                "",
+                "This butterfly appears as if it's just emerged from its cocoon for its entire life."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Exceedingly rare to find",
+            "products": [
+                "Dappled Cured Meat",
+                "Dappled White Cured Meat"
+            ]
+        },
+        "Aeonian Butterfly": {
+            "full_hex_id": "40005141",
+            "id": 20801,
+            "name": "Aeonian Butterfly",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A butterfly with withered, scarlet wings found in the Swamp of Aeonia.",
+                "Material used for crafting items.",
+                "",
+                "According to myth, these butterflies were once the wings of the Goddess of Rot herself."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found in the Swamp of Aeonia",
+            "products": [
+                "Rot Pot",
+                "Rot Grease",
+                "Drawstring Rot Grease",
+                "Rotbone Arrow (Fletched)",
+                "Rotbone Arrow",
+                "Rotbone Bolt"
+            ]
+        },
+        "Smoldering Butterfly": {
+            "full_hex_id": "40005142",
+            "id": 20802,
+            "name": "Smoldering Butterfly",
+            "summary": "Material used for crafting items",
+            "description": [
+                "An eternally burning butterfly found near wildfires and elsewhere.",
+                "Material used for crafting items.",
+                "",
+                "Serves as the kindling for a number of items."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found near wildfires and elsewhere",
+            "products": [
+                "Fire Pot",
+                "Redmane Fire Pot",
+                "Roped Fire Pot",
+                "Immunizing Cured Meat",
+                "Fireproof Dried Liver",
+                "Immunizing White Cured Meat",
+                "Fire Grease",
+                "Drawstring Fire Grease",
+                "Soft Cotton",
+                "Warming Stone",
+                "Firebone Arrow (Fletched)",
+                "Firebone Arrow",
+                "Firebone Bolt"
+            ]
+        },
+        "Silver Firefly": {
+            "full_hex_id": "4000514A",
+            "id": 20810,
+            "name": "Silver Firefly",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Firefly that gives off a silvery light.",
+                "Material used in crafting items.",
+                "Found near bodies of cold water untouched by sunlight.",
+                "",
+                "The light of fireflies is believed to have an alluring magic. Silver light is considered to invite riches."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found near cold waters untouched by sunlight",
+            "products": [
+                "Silver-Pickled Fowl Foot"
+            ]
+        },
+        "Gold Firefly": {
+            "full_hex_id": "4000514B",
+            "id": 20811,
+            "name": "Gold Firefly",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Firefly that gives off a golden light.",
+                "Material used in crafting items.",
+                "Found near bodies of water close to Minor Erdtrees.",
+                "",
+                "The light of fireflies is believed to have an alluring magic. Golden light is considered to invite runes."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found near waters close to Minor Erdtrees",
+            "products": [
+                "Gold-Pickled Fowl Foot"
+            ]
+        },
+        "Glintstone Firefly": {
+            "full_hex_id": "4000514C",
+            "id": 20812,
+            "name": "Glintstone Firefly",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A firefly whose glowing tail has hardened into",
+                "glintstone, widely found in Liurnia Lake.",
+                "Material used for crafting items.",
+                "",
+                "Alas, now that its tail is glintstone,",
+                "it can no longer beguile potential mates."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Widely found in Liurnia Lake",
+            "products": [
+                "Roped Magic Pot",
+                "Magic Pot",
+                "Academy Magic Pot",
+                "Spellproof Dried Liver",
+                "Magicbone Arrow (Fletched)",
+                "Magicbone Arrow",
+                "Magicbone Bolt"
+            ]
+        },
+        "Golden Centipede": {
+            "full_hex_id": "40005154",
+            "id": 20820,
+            "name": "Golden Centipede",
+            "summary": "Material used for crafting items",
+            "description": [
+                "The golden, desiccated remains of a centipede.",
+                "Material used for crafting items.",
+                "",
+                "Kept as a fetish by Golden Order fundamentalists, especially the hunters of Those Who Live in Death.",
+                "As such, they're found near churches and similar."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found near churches and similar",
+            "products": [
+                "Sacred Order Pot",
+                "Rejuvenating Boluses"
+            ]
+        },
+        "Silver Tear Husk": {
+            "full_hex_id": "40005159",
+            "id": 20825,
+            "name": "Silver Tear Husk",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A hardened husk shed by a formless life form known as the Silver Tear, found in and around the Eternal City.",
+                "Material used for crafting items.",
+                "",
+                "The Silver Tear makes mockery of life, reborn again and again into imitation.",
+                "Perhaps, one day, it will be reborn a lord..."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found in and around the Eternal City",
+            "products": [
+                "Shield Grease",
+                "Uplifting Aromatic"
+            ]
+        },
+        "Gold-Tinged Excrement": {
+            "full_hex_id": "4000515E",
+            "id": 20830,
+            "name": "Gold-Tinged Excrement",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Someone's excrement. It has a golden tinge.",
+                "Material used for crafting items.",
+                "Often hidden in woods and thickets.",
+                "",
+                "Gold-tinged excrement is a highly stable substance; it doesn't dry out, nor does it lose its customary warmth or scent. For better or for worse, it remains as it is."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Often hidden in woods and thickets",
+            "products": [
+                "Fetid Pot",
+                "Roped Fetid Pot"
+            ]
+        },
+        "Blood-Tainted Excrement": {
+            "full_hex_id": "4000515F",
+            "id": 20831,
+            "name": "Blood-Tainted Excrement",
+            "summary": "Material used for crafting items",
+            "description": [
+                "The bloody excrement of a carnivorous beast.",
+                "Material used for crafting items.",
+                "Found in the land of the new dynasty.",
+                "",
+                "Mixed inside with half-digested flesh are dense colonies of tiny eggs of unknown but assuredly revolting origin."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found in the land of the new dynasty",
+            "products": [
+                "Swarm Pot",
+                "Roped Fly Pot"
+            ]
+        },
+        "Cave Moss": {
+            "full_hex_id": "40005168",
+            "id": 20840,
+            "name": "Cave Moss",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Faintly luminescent moss that grows in dark caves.",
+                "Material used in crafting items.",
+                "",
+                "A fundamental ingredient for medicinal boluses."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Gives off pale light in dark caves",
+            "products": [
+                "Neutralizing Boluses",
+                "Stanching Boluses",
+                "Thawfrost Boluses",
+                "Stimulating Boluses"
+            ]
+        },
+        "Budding Cave Moss": {
+            "full_hex_id": "40005169",
+            "id": 20841,
+            "name": "Budding Cave Moss",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Faintly luminescent moss that grows in dark caves, speckled with tiny, yellow flowers.",
+                "Material used for crafting items.",
+                "",
+                "It is primarily used in perfumes."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Gives off pale light in dark caves",
+            "products": [
+                "Uplifting Aromatic",
+                "Ironjar Aromatic",
+                "Bloodboil Aromatic"
+            ]
+        },
+        "Crystal Cave Moss": {
+            "full_hex_id": "4000516A",
+            "id": 20842,
+            "name": "Crystal Cave Moss",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Faintly luminescent moss that grows in dark caves, laced with fine crystals.",
+                "Material used for crafting items.",
+                "",
+                "Among mosses, it possesses unique medicinal properties."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Flora",
+            "hint": "Gives off pale light in dark caves",
+            "products": [
+                "Preserving Boluses",
+                "Rejuvenating Boluses",
+                "Clarifying Boluses"
+            ]
+        },
+        "Yellow Ember": {
+            "full_hex_id": "4000516D",
+            "id": 20845,
+            "name": "Yellow Ember",
+            "summary": "Material used for crafting items",
+            "description": [
+                "An ember taken from the eye socket of a corpse.",
+                "Material used for crafting items.",
+                "",
+                "A sign that the deceased suffered from the flame of frenzy. This grape has ripened and burst."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Fauna",
+            "hint": "Found in lands afflicted by frenzy",
+            "products": [
+                "Frenzyflame Stone"
+            ]
+        },
+        "Volcanic Stone": {
+            "full_hex_id": "40005172",
+            "id": 20850,
+            "name": "Volcanic Stone",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A smoldering rock containing hot gas.",
+                "Material used for crafting items.",
+                "",
+                "Found on Mt. Gelmir."
+            ],
+            "is_tradable": true,
+            "price_sold": 10,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Object",
+            "hint": "Found on Mt. Gelmir",
+            "products": [
+                "Roped Volcano Pot",
+                "Volcano Pot"
+            ]
+        },
+        "Formic Rock": {
+            "full_hex_id": "40005174",
+            "id": 20852,
+            "name": "Formic Rock",
+            "summary": "Material used for crafting items",
+            "description": [
+                "Rock formed from solidified giant ant venom. Highly acidic. Material used for crafting items.",
+                "",
+                "Found near Ainsel River and other places where giant ants live."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Object",
+            "hint": "Found near Ainsel River and other places where giant ants live",
+            "products": [
+                "Acid Spraymist"
+            ]
+        },
+        "Gravel Stone": {
+            "full_hex_id": "40005177",
+            "id": 20855,
+            "name": "Gravel Stone",
+            "summary": "Material used for crafting items",
+            "description": [
+                "A small clump of sharp, pointed stones.",
+                "Material used for crafting items.",
+                "",
+                "Such compound stones, found in lands once beset by ancient dragons, are said to be the scales of those very beasts."
+            ],
+            "is_tradable": true,
+            "price_sold": 100,
+            "max_held": 999,
+            "max_stored": 999,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Object",
+            "hint": "Found in lands once beset by ancient dragons",
+            "products": [
+                "Ancient Dragonbolt Pot",
+                "Dragonwound Grease"
+            ]
+        }
+    },
+    "$schema": "../schema/crafting-materials.schema.json"
+}

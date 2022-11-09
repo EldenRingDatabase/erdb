@@ -25,7 +25,7 @@
             "allOf": [{"$ref": "item.schema.json"}],
             "properties": {
                 "name": {
-                    "#comment": "Override list of possible names to be Tool names only.",
+                    "#comment": "Override list of possible names to be Item names only.",
                     "$ref": "./enums/item-names.schema.json"
                 },
                 "category": {

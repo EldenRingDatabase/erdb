@@ -44,10 +44,12 @@ class GeneratorDataBase(NamedTuple):
         shop_lineup_id_max: Optional[int]
         material_set_id_min: Optional[int]
         material_set_id_max: Optional[int]
+        recipe: bool = False
 
         def get(self, version: GameVersion) -> Lookup:
             Retr = GeneratorDataBase.ParamDictRetriever
-            shop = Retr("ShopLineupParam", ItemIDFlag.NON_EQUIPABBLE, self.shop_lineup_id_min, self.shop_lineup_id_max)
+            shop_param = "ShopLineupParam_Recipe" if self.recipe else "ShopLineupParam"
+            shop = Retr(shop_param, ItemIDFlag.NON_EQUIPABBLE, self.shop_lineup_id_min, self.shop_lineup_id_max)
             mats = Retr("EquipMtrlSetParam", ItemIDFlag.NON_EQUIPABBLE, self.material_set_id_min, self.material_set_id_max)
             return Lookup(shop.get(version), mats.get(version))
 

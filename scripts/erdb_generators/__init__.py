@@ -11,6 +11,7 @@ from scripts.erdb_generators.spirit_ashes import SpiritAshGeneratorData
 from scripts.erdb_generators.talismans import TalismanGeneratorData
 from scripts.erdb_generators.spells import SpellGeneratorData
 from scripts.erdb_generators.tools import ToolGeneratorData
+from scripts.erdb_generators.crafting_materials import CraftingMaterialGeneratorData
 from scripts.game_version import GameVersion
 
 class GameParam(Enum):
@@ -25,6 +26,7 @@ class GameParam(Enum):
     TALISMANS = "talismans"
     SPELLS = "spells"
     TOOLS = "tools"
+    CRAFTING_MATERIALS = "crafting-materials"
 
     def __str__(self):
         return self.value
@@ -44,6 +46,7 @@ class GameParam(Enum):
             GameParam.TALISMANS,
             GameParam.SPELLS,
             GameParam.TOOLS,
+            GameParam.CRAFTING_MATERIALS,
         )
 
     @property
@@ -63,6 +66,7 @@ class GameParam(Enum):
             GameParam.TALISMANS: "EquipParamAccessory",
             GameParam.SPELLS: "EquipParamGoods",
             GameParam.TOOLS: "EquipParamGoods",
+            GameParam.CRAFTING_MATERIALS: "EquipParamGoods",
         }[self]
 
     @property
@@ -83,6 +87,7 @@ class GameParam(Enum):
             GameParam.TALISMANS: TalismanGeneratorData,
             GameParam.SPELLS: SpellGeneratorData,
             GameParam.TOOLS: ToolGeneratorData,
+            GameParam.CRAFTING_MATERIALS: CraftingMaterialGeneratorData,
         }[self].construct(version)
 
     @staticmethod
