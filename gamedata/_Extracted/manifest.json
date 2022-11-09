@@ -57,6 +57,7 @@
                     "{game_dir}/param/gameparam/Magic.param",
                     "{game_dir}/param/gameparam/SpEffectParam.param",
                     "{game_dir}/param/gameparam/ShopLineupParam.param",
+                    "{game_dir}/param/gameparam/ShopLineupParam_Recipe.param",
                     "{game_dir}/param/gameparam/AttackElementCorrectParam.param",
                     "{game_dir}/param/gameparam/CalcCorrectGraph.param"]
             ]
@@ -117,6 +118,11 @@
             "source": "ERExporter",
             "location": "{game_dir}/param/gameparam",
             "$comment": "Links EquipMtrlSetParam to actual products"
+        },
+        "ShopLineupParam_Recipe.csv": {
+            "source": "ERExporter",
+            "location": "{game_dir}/param/gameparam",
+            "$comment": "Links EquipMtrlSetParam to actual products for crafting items"
         },
         "AttackElementCorrectParam.csv": {
             "source": "ERExporter",
