@@ -31,10 +31,7 @@
                 "category": {
                     "description": "Crafting Material category to discern its use.",
                     "type": "string",
-                    "enum": [
-                        "Fauna", "Flora", "Object", "Flask",
-                        "Smithing Stone", "Somber Smithing Stone", "Glovewort"
-                    ]
+                    "enum": ["Fauna", "Flora", "Object"]
                 },
                 "hint": {
                     "description": "In-game hint on where to find the Crafting Material.",
