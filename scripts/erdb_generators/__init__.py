@@ -13,6 +13,7 @@ from scripts.erdb_generators.spells import SpellGeneratorData
 from scripts.erdb_generators.tools import ToolGeneratorData
 from scripts.erdb_generators.crafting_materials import CraftingMaterialGeneratorData
 from scripts.erdb_generators.bolstering_materials import BolsteringMaterialGeneratorData
+from scripts.erdb_generators.keys import KeyGeneratorData
 from scripts.game_version import GameVersion
 
 class GameParam(Enum):
@@ -29,6 +30,7 @@ class GameParam(Enum):
     TOOLS = "tools"
     CRAFTING_MATERIALS = "crafting-materials"
     BOLSTERING_MATERIALS = "bolstering-materials"
+    KEYS = "keys"
 
     def __str__(self):
         return self.value
@@ -50,6 +52,7 @@ class GameParam(Enum):
             GameParam.TOOLS,
             GameParam.CRAFTING_MATERIALS,
             GameParam.BOLSTERING_MATERIALS,
+            GameParam.KEYS,
         )
 
     @property
@@ -71,6 +74,7 @@ class GameParam(Enum):
             GameParam.TOOLS: "EquipParamGoods",
             GameParam.CRAFTING_MATERIALS: "EquipParamGoods",
             GameParam.BOLSTERING_MATERIALS: "EquipParamGoods",
+            GameParam.KEYS: "EquipParamGoods",
         }[self]
 
     @property
@@ -93,6 +97,7 @@ class GameParam(Enum):
             GameParam.TOOLS: ToolGeneratorData,
             GameParam.CRAFTING_MATERIALS: CraftingMaterialGeneratorData,
             GameParam.BOLSTERING_MATERIALS: BolsteringMaterialGeneratorData,
+            GameParam.KEYS: KeyGeneratorData,
         }[self].construct(version)
 
     @staticmethod
