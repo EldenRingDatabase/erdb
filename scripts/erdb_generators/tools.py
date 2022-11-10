@@ -6,19 +6,27 @@ from scripts.erdb_common import get_schema_enums, get_schema_properties, strip_i
 from scripts.erdb_generators._base import GeneratorDataBase
 
 def _get_category(row: ParamRow) -> str:
+    goods_type = row.get("goodsType")
+
+    if goods_type == GoodsType.WONDROUS_PHYSICK_TEAR:
+        return "Crystal Tear"
+
+    if goods_type == GoodsType.GREAT_RUNE:
+        return "Great Rune"
+
     G = GoodsSortGroupID
     return {
-        G.GROUP_1: "Essentials",
-        G.GROUP_2: "Edibles",
-        G.GROUP_3: "Pots",
-        G.GROUP_4: "Aromatics",
-        G.GROUP_5: "Throwables",
+        G.GROUP_1: "Essential",
+        G.GROUP_2: "Edible",
+        G.GROUP_3: "Pot",
+        G.GROUP_4: "Aromatic",
+        G.GROUP_5: "Throwable",
         G.GROUP_6: "Offensive",
         G.GROUP_7: "Grease",
-        G.GROUP_8: "Utilities",
-        G.GROUP_9: "Utilities",
-        G.GROUP_10: "Golden Runes",
-        G.REMEMBERANCES: "Rememberances",
+        G.GROUP_8: "Utility",
+        G.GROUP_9: "Utility",
+        G.GROUP_10: "Golden Rune",
+        G.REMEMBERANCES: "Rememberance",
         G.ONLINE: "Online"
     }[row.get_int("sortGroupId")]
 
@@ -28,9 +36,7 @@ def _get_availability(row: ParamRow) -> str:
     return "Always" if row.get_bool("enable_multi") else "Singleplayer"
 
 def _is_note_item(name: str) -> bool:
-    """
-    GoodsType.INFO_ITEM doesn't apply to all note items
-    """
+    #GoodsType.INFO_ITEM doesn't apply to all note items
     return name.startswith("Note: ")
 
 class ToolGeneratorData(GeneratorDataBase):
@@ -77,6 +83,8 @@ class ToolGeneratorData(GeneratorDataBase):
         return properties, store
 
     def main_param_iterator(self, tools: ParamDict) -> Iterator[ParamRow]:
+        T = GoodsType
+
         for row in tools.values():
             name = self.get_key_name(row) if row.index in self.msgs["names"] else ""
             if name == "" or _is_note_item(name) or name == "Weathered Map": # 2 defined in game, one is NORMAL_ITEM
@@ -84,7 +92,7 @@ class ToolGeneratorData(GeneratorDataBase):
 
             if 1 <= row.get_int("sortId") < 999999 \
             and row.get_int("sortGroupId") != GoodsSortGroupID.GESTURES \
-            and row.get("goodsType") in [GoodsType.NORMAL_ITEM, GoodsType.REMEMBRANCE]:
+            and row.get("goodsType") in [T.NORMAL_ITEM, T.REMEMBRANCE, T.WONDROUS_PHYSICK_TEAR, T.GREAT_RUNE]:
                 yield row
 
     def construct_object(self, row: ParamRow) -> Dict:

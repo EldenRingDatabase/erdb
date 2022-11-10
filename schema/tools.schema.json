@@ -32,9 +32,10 @@
                     "description": "Tool category to discern its use.",
                     "type": "string",
                     "enum": [
-                        "Essentials", "Edibles", "Pots", "Aromatics",
-                        "Throwables", "Offensive", "Grease", "Utilities",
-                        "Golden Runes", "Rememberances", "Online"
+                        "Essential", "Edible", "Pot", "Aromatic",
+                        "Throwable", "Offensive", "Grease", "Utility",
+                        "Golden Rune", "Great Rune", "Rememberance",
+                        "Crystal Tear", "Online"
                     ]
                 },
                 "availability": {

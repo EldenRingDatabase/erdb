@@ -469,7 +469,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Singleplayer",
             "fp_cost": 0,
             "is_consumed": false,
@@ -500,7 +500,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Singleplayer",
             "fp_cost": 0,
             "is_consumed": false,
@@ -594,10 +594,196 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
+            "is_ladder_usable": false,
+            "is_horseback_usable": true,
+            "effects": []
+        },
+        "Godrick's Great Rune": {
+            "full_hex_id": "400000BF",
+            "id": 191,
+            "name": "Godrick's Great Rune",
+            "summary": "Raises all attributes",
+            "description": [
+                "A Great Rune of the shardbearer Godrick.",
+                "Its blessing raises all attributes.",
+                "",
+                "This Great Rune is known as the anchor ring, found in the center of the Elden Ring.",
+                "",
+                "The first demigods were The Elden Lord Godfrey and his offspring, the golden lineage."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Great Rune",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": true,
+            "effects": []
+        },
+        "Radahn's Great Rune": {
+            "full_hex_id": "400000C0",
+            "id": 192,
+            "name": "Radahn's Great Rune",
+            "summary": "Raises maximum HP, FP and stamina",
+            "description": [
+                "A Great Rune of the shardbearer Radahn.",
+                "Its blessing raises maximum HP, FP and Stamina.",
+                "",
+                "Radahn was amongst the children of Rennala and Radagon, who became demigod stepchildren after Radagon's union with Queen Marika.",
+                "",
+                "The Great Rune burns, to resist the encroachment of the scarlet rot."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Great Rune",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": true,
+            "effects": []
+        },
+        "Morgott's Great Rune": {
+            "full_hex_id": "400000C1",
+            "id": 193,
+            "name": "Morgott's Great Rune",
+            "summary": "Greatly raises maximum HP",
+            "description": [
+                "A Great Rune of the shardbearer Morgott.",
+                "Its blessing greatly raises maximum HP.",
+                "",
+                "This Great Rune is the anchor ring that houses the base, and proves two things:",
+                "",
+                "That the Omen King was born of the golden lineage, and that he was indeed the Lord of Leyndell."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Great Rune",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": true,
+            "effects": []
+        },
+        "Rykard's Great Rune": {
+            "full_hex_id": "400000C2",
+            "id": 194,
+            "name": "Rykard's Great Rune",
+            "summary": "Restores HP upon defeating enemies",
+            "description": [
+                "A Great Rune of the shardbearer Rykard.",
+                "Its blessing restores HP upon defeating enemies.",
+                "",
+                "Rykard was amongst the children of Rennala and Radagon, who became demigod stepchildren after Radagon's union with Queen Marika.",
+                "",
+                "But Rykard fed himself to the blasphemous serpent, Great Rune and all."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Great Rune",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": true,
+            "effects": []
+        },
+        "Mohg's Great Rune": {
+            "full_hex_id": "400000C3",
+            "id": 195,
+            "name": "Mohg's Great Rune",
+            "summary": "Grants a blessing of blood to phantoms",
+            "description": [
+                "A Great Rune of the shardbearer Mohg.",
+                "Its blessing grants a blessing of blood to summoned phantoms, and imparts a Phantom Great Rune upon successful invasion.",
+                "",
+                "Mohg and Morgott are twin brothers, and their Great Runes are naturally similar.",
+                "",
+                "But Mohg's rune is soaked in accursed blood, from his devout love for the wretched mire that he was born into far below the earth."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Great Rune",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": true,
+            "effects": []
+        },
+        "Malenia's Great Rune": {
+            "full_hex_id": "400000C4",
+            "id": 196,
+            "name": "Malenia's Great Rune",
+            "summary": "Attacks recover HP after damage is taken",
+            "description": [
+                "A Great Rune of the shardbearer Malenia.",
+                "The blessing of this half-rotted rune reduces the healing power of Flask of Crimson Tears.",
+                "",
+                "And yet, due to the infusion of Malenia's spirit of resistance, attacks made immediately after receiving damage will partially recover HP.",
+                "",
+                "Malenia is daughter to Queen Marika and Radagon, and her Great Rune should have been the most sacred of all."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 0,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Great Rune",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
             "is_ladder_usable": false,
             "is_horseback_usable": true,
             "effects": []
@@ -623,7 +809,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -654,7 +840,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -685,7 +871,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 10,
             "is_consumed": true,
@@ -714,7 +900,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -745,7 +931,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -778,7 +964,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -809,7 +995,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -841,7 +1027,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 5,
             "is_consumed": true,
@@ -873,7 +1059,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 11,
             "is_consumed": true,
@@ -904,7 +1090,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -933,7 +1119,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -962,7 +1148,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -993,7 +1179,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 11,
             "is_consumed": true,
@@ -1025,7 +1211,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 9,
             "is_consumed": true,
@@ -1054,7 +1240,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1083,7 +1269,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1116,7 +1302,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1145,7 +1331,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1174,7 +1360,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1203,7 +1389,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 3,
             "is_consumed": true,
@@ -1234,7 +1420,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1263,7 +1449,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1295,7 +1481,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 5,
             "is_consumed": true,
@@ -1324,7 +1510,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1355,7 +1541,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 8,
             "is_consumed": true,
@@ -1386,7 +1572,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1417,7 +1603,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 9,
             "is_consumed": true,
@@ -1448,7 +1634,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 5,
             "is_consumed": true,
@@ -1477,7 +1663,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 3,
             "is_consumed": true,
@@ -1508,7 +1694,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 6,
             "is_consumed": true,
@@ -1539,7 +1725,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Pots",
+            "category": "Pot",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1570,7 +1756,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1601,7 +1787,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1632,7 +1818,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1664,7 +1850,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1704,7 +1890,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1743,7 +1929,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1774,7 +1960,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1806,7 +1992,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1839,7 +2025,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1870,7 +2056,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1901,7 +2087,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1932,7 +2118,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1963,7 +2149,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -1994,7 +2180,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2025,7 +2211,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2056,7 +2242,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2087,7 +2273,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2118,7 +2304,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2149,7 +2335,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2180,7 +2366,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2211,7 +2397,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2242,7 +2428,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2273,7 +2459,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2304,7 +2490,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2335,7 +2521,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2366,7 +2552,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2404,7 +2590,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2442,7 +2628,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2480,7 +2666,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2516,7 +2702,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2564,7 +2750,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2601,7 +2787,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2638,7 +2824,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2675,7 +2861,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2715,7 +2901,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2753,7 +2939,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2791,7 +2977,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2829,7 +3015,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2867,7 +3053,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Essentials",
+            "category": "Essential",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2909,7 +3095,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2947,7 +3133,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -2985,7 +3171,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3023,7 +3209,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Edibles",
+            "category": "Edible",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3642,7 +3828,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3671,7 +3857,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3700,7 +3886,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3731,7 +3917,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3762,7 +3948,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 1,
             "is_consumed": true,
@@ -3793,7 +3979,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3823,7 +4009,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3853,7 +4039,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3883,7 +4069,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3913,7 +4099,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3943,7 +4129,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -3976,7 +4162,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4008,7 +4194,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4039,7 +4225,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4070,7 +4256,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4101,7 +4287,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4162,7 +4348,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4193,7 +4379,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4282,7 +4468,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Singleplayer",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4312,7 +4498,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Singleplayer",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4341,7 +4527,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4370,7 +4556,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4399,7 +4585,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4428,7 +4614,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4457,7 +4643,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4488,7 +4674,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4517,7 +4703,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4549,7 +4735,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": false,
@@ -4579,7 +4765,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4616,7 +4802,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4653,7 +4839,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4690,7 +4876,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4727,7 +4913,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4764,7 +4950,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4801,7 +4987,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4838,7 +5024,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4875,7 +5061,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4912,7 +5098,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4949,7 +5135,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -4986,7 +5172,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5023,7 +5209,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5060,7 +5246,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5097,7 +5283,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5134,7 +5320,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5171,7 +5357,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5208,7 +5394,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5245,7 +5431,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5282,7 +5468,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5320,7 +5506,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5358,7 +5544,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5396,7 +5582,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5434,7 +5620,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5472,7 +5658,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5510,7 +5696,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5548,7 +5734,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5588,7 +5774,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5626,7 +5812,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5664,7 +5850,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5702,7 +5888,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5740,7 +5926,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5778,7 +5964,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5816,7 +6002,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5854,7 +6040,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Rememberances",
+            "category": "Rememberance",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -5891,7 +6077,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Golden Runes",
+            "category": "Golden Rune",
             "availability": "Always",
             "fp_cost": 0,
             "is_consumed": true,
@@ -6050,7 +6236,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 6,
             "is_consumed": true,
@@ -6110,7 +6296,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 4,
             "is_consumed": true,
@@ -6140,7 +6326,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 10,
             "is_consumed": true,
@@ -6171,7 +6357,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 13,
             "is_consumed": true,
@@ -6202,7 +6388,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 5,
             "is_consumed": true,
@@ -6262,7 +6448,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 20,
             "is_consumed": true,
@@ -6292,7 +6478,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 15,
             "is_consumed": true,
@@ -6323,7 +6509,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 2,
             "is_consumed": true,
@@ -6354,7 +6540,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Throwables",
+            "category": "Throwable",
             "availability": "Always",
             "fp_cost": 14,
             "is_consumed": true,
@@ -6482,7 +6668,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Aromatics",
+            "category": "Aromatic",
             "availability": "Always",
             "fp_cost": 22,
             "is_consumed": true,
@@ -6513,7 +6699,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Aromatics",
+            "category": "Aromatic",
             "availability": "Always",
             "fp_cost": 5,
             "is_consumed": true,
@@ -6544,7 +6730,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Aromatics",
+            "category": "Aromatic",
             "availability": "Always",
             "fp_cost": 18,
             "is_consumed": true,
@@ -6575,7 +6761,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Aromatics",
+            "category": "Aromatic",
             "availability": "Always",
             "fp_cost": 21,
             "is_consumed": true,
@@ -6606,7 +6792,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Aromatics",
+            "category": "Aromatic",
             "availability": "Always",
             "fp_cost": 12,
             "is_consumed": true,
@@ -6637,7 +6823,7 @@
                 }
             ],
             "remarks": [],
-            "category": "Aromatics",
+            "category": "Aromatic",
             "availability": "Always",
             "fp_cost": 13,
             "is_consumed": true,
@@ -6667,13 +6853,1068 @@
                 }
             ],
             "remarks": [],
-            "category": "Utilities",
+            "category": "Utility",
             "availability": "Singleplayer",
             "fp_cost": 0,
             "is_consumed": true,
             "is_ladder_usable": false,
             "is_horseback_usable": true,
             "effects": []
+        },
+        "Crimsonspill Crystal Tear": {
+            "full_hex_id": "40002AF8",
+            "id": 11000,
+            "name": "Crimsonspill Crystal Tear",
+            "summary": "Temporarily boosts max HP in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily raises one's maximum HP."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Maximum Health",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.1
+                }
+            ]
+        },
+        "Greenspill Crystal Tear": {
+            "full_hex_id": "40002AF9",
+            "id": 11001,
+            "name": "Greenspill Crystal Tear",
+            "summary": "Temporarily boosts stamina in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily raises one's maximum stamina."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Maximum Stamina",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15
+                }
+            ]
+        },
+        "Crimson Crystal Tear": {
+            "full_hex_id": "40002AFB",
+            "id": 11003,
+            "name": "Crimson Crystal Tear",
+            "summary": "Restores half of total HP in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction restores half of one's maximum HP."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.5
+                }
+            ]
+        },
+        "Cerulean Crystal Tear": {
+            "full_hex_id": "40002AFD",
+            "id": 11005,
+            "name": "Cerulean Crystal Tear",
+            "summary": "Restores half of total FP in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction restores half of one's maximum FP."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Focus Points",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.5
+                }
+            ]
+        },
+        "Speckled Hardtear": {
+            "full_hex_id": "40002AFE",
+            "id": 11006,
+            "name": "Speckled Hardtear",
+            "summary": "Boosts resistance and heals status in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily raises all resistances and heals all status ailments."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Focus",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0,
+                    "tick_interval": 181.0
+                },
+                {
+                    "attribute": "Immunity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0,
+                    "tick_interval": 181.0
+                },
+                {
+                    "attribute": "Robustness",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0,
+                    "tick_interval": 181.0
+                },
+                {
+                    "attribute": "Vitality",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 90.0,
+                    "tick_interval": 181.0
+                }
+            ]
+        },
+        "Crimson Bubbletear": {
+            "full_hex_id": "40002AFF",
+            "id": 11007,
+            "name": "Crimson Bubbletear",
+            "summary": "Restores HP when near death in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction automatically heals one's HP in the moment before death.",
+                "",
+                "However, this effect only occurs once, and will expire after a certain duration."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": []
+        },
+        "Opaline Bubbletear": {
+            "full_hex_id": "40002B00",
+            "id": 11008,
+            "name": "Opaline Bubbletear",
+            "summary": "Significantly negates damage in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "Provides significant damage negation.",
+                "",
+                "However, this effect only occurs once, and will expire after a certain duration."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.9
+                }
+            ]
+        },
+        "Crimsonburst Crystal Tear": {
+            "full_hex_id": "40002B01",
+            "id": 11009,
+            "name": "Crimsonburst Crystal Tear",
+            "summary": "Steadily restores HP for a time in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction gradually restores one's HP over time."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Health Points",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 7.0,
+                    "conditions": [
+                        "HP/FP/Stamina Recovery"
+                    ],
+                    "tick_interval": 1.0
+                }
+            ]
+        },
+        "Greenburst Crystal Tear": {
+            "full_hex_id": "40002B02",
+            "id": 11010,
+            "name": "Greenburst Crystal Tear",
+            "summary": "Temporarily boosts stamina recovery speed in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts stamina recovery speed."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Stamina Recovery Speed",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 15.0
+                }
+            ]
+        },
+        "Opaline Hardtear": {
+            "full_hex_id": "40002B03",
+            "id": 11011,
+            "name": "Opaline Hardtear",
+            "summary": "Temporarily boosts all damage negation in physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts all forms of damage negation."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.14,
+                    "value_pvp": 1.1
+                }
+            ]
+        },
+        "Winged Crystal Tear": {
+            "full_hex_id": "40002B04",
+            "id": 11012,
+            "name": "Winged Crystal Tear",
+            "summary": "Temporarily reduces equip load in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "Temporarily reduces equipment load."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Maximum Equip Load",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 4.5
+                }
+            ]
+        },
+        "Thorny Cracked Tear": {
+            "full_hex_id": "40002B05",
+            "id": 11013,
+            "name": "Thorny Cracked Tear",
+            "summary": "Makes consecutive attacks grow stronger in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction makes consecutive attacks grow stronger the longer they continue. However, the effect lasts only for a short time."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": []
+        },
+        "Spiked Cracked Tear": {
+            "full_hex_id": "40002B06",
+            "id": 11014,
+            "name": "Spiked Cracked Tear",
+            "summary": "Enhances charged attacks for a time in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction increases the power of charged attacks for a certain duration."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.15,
+                    "conditions": [
+                        "Charge Attack"
+                    ]
+                }
+            ]
+        },
+        "Windy Crystal Tear": {
+            "full_hex_id": "40002B07",
+            "id": 11015,
+            "name": "Windy Crystal Tear",
+            "summary": "Enhances dodge rolls for a time in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction increases the effectiveness of dodge rolls for a certain duration. However, damage taken is also increased during the concoction's effect."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Absorption",
+                    "model": "multiplicative",
+                    "type": "negative",
+                    "value": 0.85,
+                    "tick_interval": 0.05
+                }
+            ]
+        },
+        "Ruptured Crystal Tear": {
+            "full_hex_id": "40002B09",
+            "id": 11017,
+            "name": "Ruptured Crystal Tear",
+            "summary": "Causes concoction to explode in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "Causes the resulting concoction to explode.",
+                "",
+                "A defective crystal tear which possesses absolutely no medicinal qualities. A lesson said to be learned the hard way for some; faith can be a volatile matter, after all."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": []
+        },
+        "Leaden Hardtear": {
+            "full_hex_id": "40002B0A",
+            "id": 11018,
+            "name": "Leaden Hardtear",
+            "summary": "Temporarily boosts poise in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts one's poise."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": []
+        },
+        "Twiggy Cracked Tear": {
+            "full_hex_id": "40002B0B",
+            "id": 11019,
+            "name": "Twiggy Cracked Tear",
+            "summary": "Briefly stop rune loss on death in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction prevents one's runes from being lost upon death. However, the effect lasts only for a short time."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": []
+        },
+        "Crimsonwhorl Bubbletear": {
+            "full_hex_id": "40002B0C",
+            "id": 11020,
+            "name": "Crimsonwhorl Bubbletear",
+            "summary": "Converts damage received into HP in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction converts incoming damage into recovered HP instead. However, physical damage cannot be converted.",
+                "",
+                "This effect is only brief and will quickly expire."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Elemental Absorption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.99
+                }
+            ]
+        },
+        "Strength-knot Crystal Tear": {
+            "full_hex_id": "40002B0D",
+            "id": 11021,
+            "name": "Strength-knot Crystal Tear",
+            "summary": "Temporarily boosts strength in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts one's strength."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Strength",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 10.0
+                }
+            ]
+        },
+        "Dexterity-knot Crystal Tear": {
+            "full_hex_id": "40002B0E",
+            "id": 11022,
+            "name": "Dexterity-knot Crystal Tear",
+            "summary": "Temporarily boosts dexterity in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts one's dexterity."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Dexterity",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 10.0
+                }
+            ]
+        },
+        "Intelligence-knot Crystal Tear": {
+            "full_hex_id": "40002B0F",
+            "id": 11023,
+            "name": "Intelligence-knot Crystal Tear",
+            "summary": "Temporarily boosts intelligence in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts one's intelligence."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Intelligence",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 10.0
+                }
+            ]
+        },
+        "Faith-knot Crystal Tear": {
+            "full_hex_id": "40002B10",
+            "id": 11024,
+            "name": "Faith-knot Crystal Tear",
+            "summary": "Temporarily boosts faith in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts one's faith."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Faith",
+                    "model": "additive",
+                    "type": "positive",
+                    "value": 10.0
+                }
+            ]
+        },
+        "Cerulean Hidden Tear": {
+            "full_hex_id": "40002B11",
+            "id": 11025,
+            "name": "Cerulean Hidden Tear",
+            "summary": "Eliminates all FP consumption in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction eliminates all FP consumption.",
+                "",
+                "However, this effect is only brief and will quickly expire."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Skill Focus Consumption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.0,
+                    "tick_interval": 0.05
+                },
+                {
+                    "attribute": "Spell Focus Consumption",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 0.0,
+                    "tick_interval": 0.05
+                }
+            ]
+        },
+        "Stonebarb Cracked Tear": {
+            "full_hex_id": "40002B12",
+            "id": 11026,
+            "name": "Stonebarb Cracked Tear",
+            "summary": "Makes attacks more likely to break enemy stances in a mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction makes one's attacks more likely to break enemy stances. However, the effect lasts only for a short time."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Stamina Attack Rate",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.3
+                }
+            ]
+        },
+        "Purifying Crystal Tear": {
+            "full_hex_id": "40002B13",
+            "id": 11027,
+            "name": "Purifying Crystal Tear",
+            "summary": "Purifies the Lord of Blood's curse in a mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction purifies the curse from Mohg, Lord of Blood's terrifying rite of blood."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": []
+        },
+        "Flame-Shrouding Cracked Tear": {
+            "full_hex_id": "40002B14",
+            "id": 11028,
+            "name": "Flame-Shrouding Cracked Tear",
+            "summary": "Temporarily boosts fire attacks in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts the power of one's fire attacks."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Fire Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.15
+                }
+            ]
+        },
+        "Magic-Shrouding Cracked Tear": {
+            "full_hex_id": "40002B15",
+            "id": 11029,
+            "name": "Magic-Shrouding Cracked Tear",
+            "summary": "Temporarily boosts magic attacks in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts the power of one's magic attacks."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Magic Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.15
+                }
+            ]
+        },
+        "Lightning-Shrouding Cracked Tear": {
+            "full_hex_id": "40002B16",
+            "id": 11030,
+            "name": "Lightning-Shrouding Cracked Tear",
+            "summary": "Temporarily boosts lightning attacks in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts the power of one's lightning attacks."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Lightning Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.15
+                }
+            ]
+        },
+        "Holy-Shrouding Cracked Tear": {
+            "full_hex_id": "40002B17",
+            "id": 11031,
+            "name": "Holy-Shrouding Cracked Tear",
+            "summary": "Temporarily boosts holy attacks in mixed physick",
+            "description": [
+                "A crystal tear formed slowly over the ages where the Erdtree's bounty falls to the ground.",
+                "",
+                "Can be mixed in the Flask of Wondrous Physick.",
+                "The resulting concoction temporarily boosts the power of one's holy attacks."
+            ],
+            "is_tradable": true,
+            "price_sold": 0,
+            "max_held": 1,
+            "max_stored": 1,
+            "locations": [
+                {
+                    "summary": "not provided"
+                }
+            ],
+            "remarks": [],
+            "category": "Crystal Tear",
+            "availability": "Singleplayer",
+            "fp_cost": 0,
+            "is_consumed": false,
+            "is_ladder_usable": false,
+            "is_horseback_usable": false,
+            "effects": [
+                {
+                    "attribute": "Holy Attack Power",
+                    "model": "multiplicative",
+                    "type": "positive",
+                    "value": 1.2,
+                    "value_pvp": 1.15
+                }
+            ]
         }
     },
     "$schema": "../schema/tools.schema.json"
