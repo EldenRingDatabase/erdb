@@ -5,20 +5,6 @@ from scripts.erdb_common import get_schema_properties, get_schema_enums, find_of
 from scripts.sp_effect_parser import parse_effects, parse_status_effects, parse_weapon_effects
 from scripts.erdb_generators._base import GeneratorDataBase
 
-#def _get_ingame_name(name: str) -> str:
-#    return {
-#        "Misericorde": "Miséricorde",
-#        "Great Epee": "Great Épée",
-#        "Varre's Bouquet": "Varré's Bouquet",
-#    }.get(name, name)
-
-def _get_ascii_name(name: str) -> str:
-    return {
-        "Miséricorde": "Misericorde",
-        "Great Épée": "Great Epee",
-        "Varré's Bouquet": "Varre's Bouquet",
-    }.get(name, name)
-
 _BEHAVIOR_EFFECTS_FIELDS: List[str] = ["spEffectBehaviorId0", "spEffectBehaviorId1", "spEffectBehaviorId2"]
 _RESIDENT_EFFECTS_FIELDS: List[str] = ["residentSpEffectId", "residentSpEffectId1", "residentSpEffectId2"]
 
@@ -167,8 +153,7 @@ class ArmamentGeneratorData(GeneratorDataBase):
 
     # override
     def get_key_name(self, row: ParamRow) -> str:
-        key_name = _get_ascii_name(self.msgs["names"][row.index])
-        return strip_invalid_name(key_name)
+        return strip_invalid_name(self.msgs["names"][row.index])
 
     main_param_retriever = Base.ParamDictRetriever("EquipParamWeapon", ItemIDFlag.WEAPONS, id_min=1000000, id_max=49000000)
 

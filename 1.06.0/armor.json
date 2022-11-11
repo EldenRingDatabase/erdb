@@ -4028,7 +4028,7 @@
             "full_hex_id": "1003D090",
             "id": 250000,
             "name": "Nomadic Merchant's Chapeau",
-            "summary": "Peddler Kal\u00e9's hat",
+            "summary": "Peddler Kalé's hat",
             "description": [
                 "Chapeau of the nomadic merchants.",
                 "Decorated with tiny gems in a wide spectrum of colors.",
@@ -4073,7 +4073,7 @@
             "full_hex_id": "1003D0F4",
             "id": 250100,
             "name": "Nomadic Merchant's Finery",
-            "summary": "Peddler Kal\u00e9's cloak",
+            "summary": "Peddler Kalé's cloak",
             "description": [
                 "Finery of the nomadic merchants.",
                 "Decorated with tiny gems in a wide spectrum of colors.",
@@ -4118,7 +4118,7 @@
             "full_hex_id": "1003D1BC",
             "id": 250300,
             "name": "Nomadic Merchant's Trousers",
-            "summary": "Peddler Kal\u00e9's trousers",
+            "summary": "Peddler Kalé's trousers",
             "description": [
                 "Trousers of the nomadic merchants.",
                 "",
@@ -4162,7 +4162,7 @@
             "full_hex_id": "1003D4DC",
             "id": 251100,
             "name": "Nomadic Merchant's Finery (Altered)",
-            "summary": "Peddler Kal\u00e9's vest",
+            "summary": "Peddler Kalé's vest",
             "description": [
                 "Finery of the nomadic merchants.",
                 "Decorated with tiny gems in a wide spectrum of colors.",
@@ -6290,7 +6290,7 @@
             "full_hex_id": "10053408",
             "id": 341000,
             "name": "Cleanrot Helm (Altered)",
-            "summary": "Light helm of a Wing Knight. Somewhat decayed\u2026",
+            "summary": "Light helm of a Wing Knight. Somewhat decayed…",
             "description": [
                 "Winged helm of the Cleanrot Knights, celebrated for their undefeated campaign in the Shattering.",
                 "",
@@ -6332,7 +6332,7 @@
             "full_hex_id": "1005346C",
             "id": 341100,
             "name": "Cleanrot Armor (Altered)",
-            "summary": "Armor of a Wing Knight. Somewhat decayed\u2026",
+            "summary": "Armor of a Wing Knight. Somewhat decayed…",
             "description": [
                 "Armor of the Cleanrot Knights, celebrated for their undefeated campaign in the Shattering.",
                 "",
@@ -10424,7 +10424,7 @@
             "name": "Prophet Blindfold",
             "summary": "Blindfold of the exiled prophets",
             "description": [
-                "Blindfold of exiled prophets who foretold misfortune - and were persecuted and driven from their homes as a result.",
+                "Blindfold of exiled prophets who foretold misfortune—and were persecuted and driven from their homes as a result.",
                 "",
                 "Why hesitate, if the path leading to the future is clear? Just close your eyes, and walk."
             ],
@@ -10510,7 +10510,7 @@
             "name": "Prophet Trousers",
             "summary": "Trousers of the exiled prophets",
             "description": [
-                "Trousers of exiled prophets who foretold misfortune - and were persecuted and driven from their homes as a result.",
+                "Trousers of exiled prophets who foretold misfortune—and were persecuted and driven from their homes as a result.",
                 "",
                 "Made from rough fabric that scrapes against the skin like a sharpening file."
             ],
@@ -10552,7 +10552,7 @@
             "name": "Prophet Robe (Altered)",
             "summary": "Robe of the exiled prophets",
             "description": [
-                "Robe of exiled prophets who foretold misfortune - and were persecuted and driven from their homes as a result.",
+                "Robe of exiled prophets who foretold misfortune—and were persecuted and driven from their homes as a result.",
                 "",
                 "Made from rough fabric that scrapes against the skin like a sharpening file."
             ],
@@ -10594,7 +10594,7 @@
             "name": "Prophet Robe",
             "summary": "Tunic of the exiled prophets",
             "description": [
-                "Robe of exiled prophets who foretold misfortune - and were persecuted and driven from their homes as a result.",
+                "Robe of exiled prophets who foretold misfortune—and were persecuted and driven from their homes as a result.",
                 "",
                 "The shackles around the neck warn passersby not to lend an ear to their sermons."
             ],
@@ -11792,7 +11792,7 @@
                 "Bloodstained white gown of the war surgeons who were effectively mercy killers.",
                 "",
                 "Of the surgeons that were abducted by the Lord of Blood, none were able to tame the accursed blood.",
-                "None but Varr\u00e9, that is; though he was an exception."
+                "None but Varré, that is; though he was an exception."
             ],
             "is_tradable": true,
             "price_sold": 100,
@@ -11835,7 +11835,7 @@
                 "Bloodstained white gloves of the war surgeons who were effectively mercy killers.",
                 "",
                 "Of the surgeons that were abducted by the Lord of Blood, none were able to tame the accursed blood.",
-                "None but Varr\u00e9, that is; though he was an exception."
+                "None but Varré, that is; though he was an exception."
             ],
             "is_tradable": true,
             "price_sold": 100,
@@ -11878,7 +11878,7 @@
                 "Bloodstained trousers of the war surgeons who were effectively mercy killers.",
                 "",
                 "Of the surgeons that were abducted by the Lord of Blood, none were able to tame the accursed blood.",
-                "None but Varr\u00e9, that is; though he was an exception."
+                "None but Varré, that is; though he was an exception."
             ],
             "is_tradable": true,
             "price_sold": 100,
@@ -11921,7 +11921,7 @@
                 "Bloodstained white gown of the war surgeons who were effectively mercy killers.",
                 "",
                 "Of the surgeons that were abducted by the Lord of Blood, none were able to tame the accursed blood.",
-                "None but Varr\u00e9, that is; though he was an exception."
+                "None but Varré, that is; though he was an exception."
             ],
             "is_tradable": true,
             "price_sold": 100,
@@ -11966,7 +11966,7 @@
                 "",
                 "Slowly replenishes HP when HP is reduced.",
                 "",
-                "It is said that the bones belong to an ancient lord\u2015the soulless king. The lord of the lost and desperate, who was known as Ensha."
+                "It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha."
             ],
             "is_tradable": true,
             "price_sold": 500,
@@ -12023,7 +12023,7 @@
                 "",
                 "Slowly replenishes HP when HP is reduced.",
                 "",
-                "It is said that the bones belong to an ancient lord\u2015the soulless king. The lord of the lost and desperate, who was known as Ensha."
+                "It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha."
             ],
             "is_tradable": true,
             "price_sold": 500,
@@ -12080,7 +12080,7 @@
                 "",
                 "Slowly replenishes HP when HP is reduced.",
                 "",
-                "It is said that the bones belong to an ancient lord\u2015the soulless king. The lord of the lost and desperate, who was known as Ensha."
+                "It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha."
             ],
             "is_tradable": true,
             "price_sold": 500,
@@ -12137,7 +12137,7 @@
                 "",
                 "Slowly replenishes HP when HP is reduced.",
                 "",
-                "It is said that the bones belong to an ancient lord\u2015the soulless king. The lord of the lost and desperate, who was known as Ensha."
+                "It is said that the bones belong to an ancient lord―the soulless king. The lord of the lost and desperate, who was known as Ensha."
             ],
             "is_tradable": true,
             "price_sold": 500,
@@ -13314,7 +13314,7 @@
                 "",
                 "Malenia awaited Miquella at the foot of the husk.",
                 "",
-                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god - he is the most fearsome Empyrean of all.\""
+                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all.\""
             ],
             "is_tradable": true,
             "price_sold": 2000,
@@ -13359,7 +13359,7 @@
                 "",
                 "Malenia awaited Miquella at the foot of the husk.",
                 "",
-                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god - he is the most fearsome Empyrean of all.\""
+                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all.\""
             ],
             "is_tradable": true,
             "price_sold": 2000,
@@ -13404,7 +13404,7 @@
                 "",
                 "Malenia awaited Miquella at the foot of the husk.",
                 "",
-                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god - he is the most fearsome Empyrean of all.\""
+                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all.\""
             ],
             "is_tradable": true,
             "price_sold": 2000,
@@ -13449,7 +13449,7 @@
                 "",
                 "Malenia awaited Miquella at the foot of the husk.",
                 "",
-                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god - he is the most fearsome Empyrean of all.\""
+                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all.\""
             ],
             "is_tradable": true,
             "price_sold": 2000,
@@ -13494,7 +13494,7 @@
                 "",
                 "Malenia awaited Miquella at the foot of the husk.",
                 "",
-                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god - he is the most fearsome Empyrean of all.\""
+                "\"My brother will keep his promise. He possesses the wisdom, the allure, of a god—he is the most fearsome Empyrean of all.\""
             ],
             "is_tradable": true,
             "price_sold": 2000,
@@ -14878,7 +14878,7 @@
                 "",
                 "Increases intelligence and dexterity to the detriment of HP.",
                 "",
-                "Scholars of the Lazuli Conspectus study Carian sorceries - a heterodox pursuit that views the moon as equal to the stars."
+                "Scholars of the Lazuli Conspectus study Carian sorceries—a heterodox pursuit that views the moon as equal to the stars."
             ],
             "is_tradable": true,
             "price_sold": 500,
@@ -18076,7 +18076,7 @@
             "description": [
                 "Grubby blue robe worn by magisterial officials to carry out their grim tasks.",
                 "",
-                "Surveillance, executions, gruesome rituals\u2026 The darkest duties drive the wheels of mankind."
+                "Surveillance, executions, gruesome rituals… The darkest duties drive the wheels of mankind."
             ],
             "is_tradable": true,
             "price_sold": 500,
@@ -23157,7 +23157,7 @@
             "description": [
                 "Helm worn by knights who fought by General Radahn's side.",
                 "",
-                "The red plume is a symbol of Radahn's pedigree as Lord Radagon's son - the mane of the proud Red Lion."
+                "The red plume is a symbol of Radahn's pedigree as Lord Radagon's son—the mane of the proud Red Lion."
             ],
             "is_tradable": true,
             "price_sold": 200,

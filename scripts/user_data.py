@@ -20,7 +20,7 @@ def _parse_user_file(path: Path, version: GameVersion) -> Dict:
     assert path.is_file
     assert path.suffix == ".json"
 
-    with open(path) as f:
+    with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     del data["$schema"]

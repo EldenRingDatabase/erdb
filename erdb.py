@@ -25,9 +25,9 @@ def validate_and_write(file_path: Path, schema_name: str, data: Dict, store: Dic
         return False
 
     finally:
-        with open(file_path, mode="w") as f:
+        with open(file_path, mode="w", encoding="utf-8") as f:
             kwargs = {"separators": (",", ":")} if minimize else {"indent": 4}
-            json.dump(data, f, **kwargs)
+            json.dump(data, f, ensure_ascii=False, **kwargs)
 
     return True
 

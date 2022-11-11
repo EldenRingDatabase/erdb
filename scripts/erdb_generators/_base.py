@@ -1,9 +1,10 @@
-from zipfile import Path as ZipPath
 import xml.etree.ElementTree as xmltree
 import scripts.config as cfg
 import scripts.er_params as er_params
 import scripts.user_data as user_data
-from typing import Any, Callable, Iterator, List, NamedTuple, Optional, Tuple, Dict
+from typing import Any, Callable, Iterator, NamedTuple, Optional, Tuple, Dict
+from zipfile import Path as ZipPath
+from unicodedata import normalize, combining
 from scripts.game_version import GameVersion
 from scripts.er_params import ParamDict, ParamRow
 from scripts.er_params.enums import ItemIDFlag
@@ -17,8 +18,9 @@ def _get_item_msg(filename: str, version: GameVersion) -> Dict[int, str]:
 
     return {int(e.get("id")): e.text for e in entries if e.text != "%null%"}
 
-def _parse_description(desc: str) -> List[str]:
-    return desc.replace("—", " - ").split("\n")
+def _remove_accents(string: str) -> str:
+    nfkd_form = normalize("NFKD", string)
+    return "".join(c for c in nfkd_form if not combining(c))
 
 class GeneratorDataBase(NamedTuple):
 
@@ -108,7 +110,7 @@ class GeneratorDataBase(NamedTuple):
             "id": row.index,
             "name": self.get_key_name(row),
             "summary": self.msgs["summaries"][row.index] if summary else "no summary",
-            "description": _parse_description(self.msgs["descriptions"][row.index]) if description else "no description",
+            "description": self.msgs["descriptions"][row.index].split("\n") if description else "no description",
             "is_tradable": row.get("disableMultiDropShare") == "0", # assumption this exists for every param table
             "price_sold": row.get_int_corrected("sellValue"),       # assumption this exists for every param table
             "max_held": row.get_int("maxNum") if "maxNum" in row.keys else 999,
@@ -142,4 +144,4 @@ class GeneratorDataBase(NamedTuple):
 
     def generate(self) -> Dict:
         main_iter = self.main_param_iterator(self.main_param)
-        return {self.get_key_name(row): self.construct_object(row) for row in main_iter}
+        return {_remove_accents(self.get_key_name(row)): self.construct_object(row) for row in main_iter}

@@ -208,7 +208,7 @@ def fetch(version: str, service_key: str):
     calc = OnlineCalc(version, cfg.ROOT / service_key)
     calc.set_field(Field.LEVEL, 10) # always keep 10, valid for unique and standard armaments
 
-    with open(cfg.ROOT / version / "armaments.json") as f:
+    with open(cfg.ROOT / version / "armaments.json", encoding="utf-8") as f:
         armaments = json.load(f)["Armaments"]
 
     # take sample for testing

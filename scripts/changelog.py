@@ -225,5 +225,5 @@ def generate(from_version: GameVersion, version: GameVersion, out: Optional[Path
         formatter.write(stdout)
 
     else:
-        with open(out, mode="w") as f:
+        with open(out, mode="w", encoding="utf-8") as f:
             formatter.write(f)

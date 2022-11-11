@@ -11,7 +11,7 @@ IntGen = Generator[int, None, None]
 def load_schema(filename: str, subdirectory: str="") -> Tuple[str, Dict]:
     subdirectory = f"{subdirectory}/" if len(subdirectory) > 0 else subdirectory
     filename = f"{subdirectory}{filename}.schema.json"
-    with open(cfg.ROOT / "schema" / filename, mode="r") as f:
+    with open(cfg.ROOT / "schema" / filename, mode="r", encoding="utf-8") as f:
         return filename, json.load(f)
 
 def get_schema_enums(*enum_names: str) -> Dict[str, Dict]:
