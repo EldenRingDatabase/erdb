@@ -17,6 +17,7 @@ from scripts.erdb_generators.keys import KeyGeneratorData
 from scripts.erdb_generators.ammo import AmmoGeneratorData
 from scripts.erdb_generators.shop import ShopGeneratorData
 from scripts.erdb_generators.info import InfoGeneratorData
+from scripts.erdb_generators.gestures import GestureGeneratorData
 from scripts.game_version import GameVersion
 
 class GameParam(Enum):
@@ -37,6 +38,7 @@ class GameParam(Enum):
     AMMO = "ammo"
     SHOP = "shop"
     INFO = "info"
+    GESTURES = "gestures"
 
     def __str__(self):
         return self.value
@@ -62,6 +64,7 @@ class GameParam(Enum):
             GameParam.AMMO,
             GameParam.SHOP,
             GameParam.INFO,
+            GameParam.GESTURES,
         )
 
     @property
@@ -87,6 +90,7 @@ class GameParam(Enum):
             GameParam.AMMO: "EquipParamWeapon",
             GameParam.SHOP: "EquipParamGoods",
             GameParam.INFO: "EquipParamGoods",
+            GameParam.GESTURES: "EquipParamGoods",
         }[self]
 
     @property
@@ -113,6 +117,7 @@ class GameParam(Enum):
             GameParam.AMMO: AmmoGeneratorData,
             GameParam.SHOP: ShopGeneratorData,
             GameParam.INFO: InfoGeneratorData,
+            GameParam.GESTURES: GestureGeneratorData,
         }[self].construct(version)
 
     @staticmethod

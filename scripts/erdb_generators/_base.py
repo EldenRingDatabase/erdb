@@ -110,7 +110,7 @@ class GeneratorDataBase(NamedTuple):
             "id": row.index,
             "name": self.get_key_name(row),
             "summary": self.msgs["summaries"][row.index] if summary else "no summary",
-            "description": self.msgs["descriptions"][row.index].split("\n") if description else "no description",
+            "description": self.msgs["descriptions"][row.index].split("\n") if description else ["no description"],
             "is_tradable": row.get("disableMultiDropShare") == "0", # assumption this exists for every param table
             "price_sold": row.get_int_corrected("sellValue"),       # assumption this exists for every param table
             "max_held": row.get_int("maxNum") if "maxNum" in row.keys else 999,
