@@ -15,6 +15,7 @@ from scripts.erdb_generators.crafting_materials import CraftingMaterialGenerator
 from scripts.erdb_generators.bolstering_materials import BolsteringMaterialGeneratorData
 from scripts.erdb_generators.keys import KeyGeneratorData
 from scripts.erdb_generators.ammo import AmmoGeneratorData
+from scripts.erdb_generators.shop import ShopGeneratorData
 from scripts.game_version import GameVersion
 
 class GameParam(Enum):
@@ -33,6 +34,7 @@ class GameParam(Enum):
     BOLSTERING_MATERIALS = "bolstering-materials"
     KEYS = "keys"
     AMMO = "ammo"
+    SHOP = "shop"
 
     def __str__(self):
         return self.value
@@ -56,6 +58,7 @@ class GameParam(Enum):
             GameParam.BOLSTERING_MATERIALS,
             GameParam.KEYS,
             GameParam.AMMO,
+            GameParam.SHOP,
         )
 
     @property
@@ -79,6 +82,7 @@ class GameParam(Enum):
             GameParam.BOLSTERING_MATERIALS: "EquipParamGoods",
             GameParam.KEYS: "EquipParamGoods",
             GameParam.AMMO: "EquipParamWeapon",
+            GameParam.SHOP: "EquipParamGoods",
         }[self]
 
     @property
@@ -103,6 +107,7 @@ class GameParam(Enum):
             GameParam.BOLSTERING_MATERIALS: BolsteringMaterialGeneratorData,
             GameParam.KEYS: KeyGeneratorData,
             GameParam.AMMO: AmmoGeneratorData,
+            GameParam.SHOP: ShopGeneratorData,
         }[self].construct(version)
 
     @staticmethod

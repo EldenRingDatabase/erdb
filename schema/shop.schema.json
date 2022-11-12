@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Shop",
+    "type": "object",
+    "properties": {
+        "Shop": {
+            "title": "Shop Items Map",
+            "additionalProperties": false,
+            "propertyNames": {
+                "$ref": "./enums/item-names.schema.json"
+            },
+            "patternProperties": {
+                "^.+$": {
+                    "type": "object",
+                    "$ref": "shop.schema.json#/definitions/Shop"
+                }
+            }
+        }
+    },
+    "required": ["Shop"],
+    "definitions": {
+        "Shop": {
+            "title": "Shop",
+            "description": "Schema for Shop items.",
+            "allOf": [{"$ref": "item.schema.json"}],
+            "properties": {
+                "name": {
+                    "#comment": "Override list of possible names to be Item names only.",
+                    "$ref": "./enums/item-names.schema.json"
+                },
+                "category": {
+                    "description": "Shop Item category to discern its use.",
+                    "type": "string",
+                    "enum": ["Cookbook", "Bell Bearing", "Spellbook"]
+                }
+            },
+            "required": ["category"]
+        }
+    }
+}
