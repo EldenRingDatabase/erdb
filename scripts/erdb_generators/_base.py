@@ -83,6 +83,9 @@ class GeneratorDataBase(NamedTuple):
     def get_key_name(self, row: ParamRow) -> str:
         assert False, "get_key_name must be overridden"
 
+    def top_level_properties(self) -> Dict:
+        return self.schema_properties
+
     main_param_retriever: ParamDictRetriever = None
     param_retrievers: Dict[str, ParamDictRetriever] = None
     msgs_retrievers: Dict[str, MsgsRetriever] = None

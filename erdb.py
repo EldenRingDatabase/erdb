@@ -3,6 +3,7 @@ import scripts.config as cfg
 from pathlib import Path
 from typing import Dict, List, Optional
 from jsonschema import validate, RefResolver, ValidationError
+from scripts.directus_client import DirectusClient
 from scripts.erdb_args import parse_args
 from scripts.find_valid_values import find_valid_values
 from scripts.attack_power import CalculatorData, ArmamentCalculator, Attributes
@@ -61,6 +62,17 @@ def on_generate(game_params: List[GameParam], gamedata: GameVersionRange, minimi
             assert ok, "Generated schema failed to validate"
 
             print(f"Validated {count} elements", flush=True)
+
+def on_replicate(gamedata: GameVersionRange, endpoint: str, token: str):
+    directus = DirectusClient(endpoint, token)
+
+    for version in iterate_gamedata(gamedata):
+        for game_param in GameParam.ALL.effective():
+            generator = game_param.generator(version)
+            directus.update_collection(game_param, generator.top_level_properties())
+            directus.import_data(game_param, generator.generate())
+
+        return # TODO: support multiple game versions in one API
 
 def on_find_values(param: str, field: str, limit: int, gamedata: GameVersionRange):
     for version in iterate_gamedata(gamedata):
@@ -141,7 +153,7 @@ def main():
         with open(cfg.ROOT / "latest_version.txt", mode="w") as f:
             f.write(str(cfg.VERSIONS[0]))
 
-    parse_args(on_generate, on_find_values, on_calculate_ar, on_changelog, on_source, on_map, on_icons, on_fetch_calc_data)
+    parse_args(on_generate, on_replicate, on_find_values, on_calculate_ar, on_changelog, on_source, on_map, on_icons, on_fetch_calc_data)
 
 if __name__ == "__main__":
     main()

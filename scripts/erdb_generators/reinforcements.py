@@ -76,6 +76,10 @@ class ReinforcementGeneratorData(GeneratorDataBase):
     def get_key_name(self, row: ParamRow) -> str:
         return str(ReinforcementType(str(row.index)))
 
+    # override
+    def top_level_properties(self) -> Dict:
+        return {str(i): {"type": "object"} for i in range(26)}
+
     main_param_retriever = Base.ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE)
 
     param_retrievers = {}

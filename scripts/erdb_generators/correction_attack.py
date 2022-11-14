@@ -70,6 +70,14 @@ class CorrectionAttackGeneratorData(GeneratorDataBase):
     def get_key_name(self, row: ParamRow) -> str:
         return str(row.index)
 
+    # override
+    def top_level_properties(self) -> Dict:
+        return {
+            "correction": {"type": "object"},
+            "override": {"type": "object"},
+            "ratio": {"type": "object"}
+        }
+
     main_param_retriever = Base.ParamDictRetriever("AttackElementCorrectParam", ItemIDFlag.NON_EQUIPABBLE)
 
     param_retrievers = {}

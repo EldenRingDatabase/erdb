@@ -65,6 +65,10 @@ class CorrectionGraphGeneratorData(GeneratorDataBase):
     def get_key_name(self, row: ParamRow) -> str:
         return str(row.index)
 
+    # override
+    def top_level_properties(self) -> Dict:
+        return {str(i): {"type": "number"} for i in range(1, 151)}
+
     main_param_retriever = Base.ParamDictRetriever("CalcCorrectGraph", ItemIDFlag.NON_EQUIPABBLE)
 
     param_retrievers = {}
