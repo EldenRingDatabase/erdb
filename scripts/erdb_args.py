@@ -54,8 +54,9 @@ def parse_args(on_generate, on_replicate, on_find_values, on_calculate_ar, on_ch
 
     repl = subs.add_parser("replicate", aliases=["repl"], help="Generates and replicates data on a Directus server", parents=[parses_gamedata])
     repl.add_argument("endpoint", type=str, help="Address of the Directus instance.")
-    repl.add_argument("token", type=str, help="Token to authenticate with.")
-    repl.set_defaults(func=lambda args: on_replicate(args.gamedata, args.endpoint, args.token))
+    repl.add_argument("--token", "-t", type=str, help="Token to authenticate with.")
+    repl.add_argument("--api", "-a", type=int, choices=[1], default=1, help="ERDB API version to generate.")
+    repl.set_defaults(func=lambda args: on_replicate(args.gamedata, args.endpoint, args.token, args.api))
 
     vals = subs.add_parser("find-values", aliases=["vals"], help="Find all possible values of a field per param name.", parents=[parses_gamedata])
     vals.add_argument("param", type=str, help="Name of the parameter table, ex. SpEffectParam")

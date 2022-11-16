@@ -1,12 +1,10 @@
 import requests
 import json
 from typing import Dict, List, Tuple
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from contextlib import contextmanager
 from scripts.erdb_generators import GameParam
-
-def _collection_name(game_param: GameParam) -> str:
-    return game_param.value.replace("-", "_")
+from scripts.game_version import GameVersion
 
 def _get_type(schema_type: str) -> str:
     return {
@@ -43,6 +41,10 @@ def _get_fields(properties: Dict[str, Dict]) -> List[Dict]:
 class DirectusClient:
     endpoint: str
     access_token: str
+    active_folders: List[str] = field(default_factory=list)
+
+    def _get_active_parent(self) -> Dict:
+        return {} if len(self.active_folders) == 0 else {"group": self.active_folders[-1]}
 
     def _call(self, method: str, path: str, ignore_errors: bool = False, **kwargs) -> requests.Response:
         func = {
@@ -83,7 +85,7 @@ class DirectusClient:
         self._post("/collections",
             json={
                 "collection": collection,
-                "meta": {},
+                "meta": self._get_active_parent(),
                 "schema": {},
                 "fields": [_get_pk_field()] + _get_fields(properties)
             }
@@ -98,19 +100,32 @@ class DirectusClient:
             }
         )
 
-    def update_collection(self, game_param: GameParam, properties: Dict[str, Dict]):
-        collection = _collection_name(game_param)
+    @contextmanager
+    def enter_folder(self, name: str, collapsed: bool = True):
+        self._delete(f"/collections/{name}", ignore_errors=True)
+        self._post("/collections", ignore_errors=True,
+            json={
+                "collection": name,
+                "meta": self._get_active_parent() | {"collapse": collapsed},
+                "schema": None
+            }
+        )
+
+        self.active_folders.append(name)
+        yield
+        del self.active_folders[-1]
+
+    def update_collection(self, collection: str, properties: Dict[str, Dict]):
         print(f"Creating collection \"{collection}\"...", flush=True)
 
         self._delete_collection(collection, ignore_errors=True)
         self._create_collection(collection, properties)
 
-    def import_data(self, game_param: GameParam, data: Dict[str, Dict]):
+    def import_data(self, collection: str, data: Dict[str, Dict]):
         if len(data) == 0:
             print("Skipping an attempt to import zero-length data", flush=True)
             return
 
-        collection = _collection_name(game_param)
         data: List[Dict] = [{"ascii_name": name} | props for name, props in data.items()]
 
         print(f"Importing {len(data)} items...", flush=True)

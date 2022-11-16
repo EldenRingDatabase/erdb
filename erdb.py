@@ -63,16 +63,25 @@ def on_generate(game_params: List[GameParam], gamedata: GameVersionRange, minimi
 
             print(f"Validated {count} elements", flush=True)
 
-def on_replicate(gamedata: GameVersionRange, endpoint: str, token: str):
+def on_replicate(gamedata: GameVersionRange, endpoint: str, token: str, api_version: int):
+    def get_collection_name(game_version: GameVersion, game_param: GameParam) -> str:
+        param = game_param.value.replace("-", "_")
+        version = str(game_version).replace(".", "")
+        return f"{param}_{version}_v{api_version}"
+
     directus = DirectusClient(endpoint, token)
 
-    for version in iterate_gamedata(gamedata):
-        for game_param in GameParam.ALL.effective():
-            generator = game_param.generator(version)
-            directus.update_collection(game_param, generator.top_level_properties())
-            directus.import_data(game_param, generator.generate())
+    with directus.enter_folder(f"api_v{api_version}", collapsed=False):
+        for game_version in iterate_gamedata(gamedata):
 
-        return # TODO: support multiple game versions in one API
+            with directus.enter_folder(str(game_version).replace(".", "")):
+                for game_param in GameParam.ALL.effective():
+
+                    collection = get_collection_name(game_version, game_param)
+                    generator = game_param.generator(game_version)
+
+                    directus.update_collection(collection, generator.top_level_properties())
+                    directus.import_data(collection, generator.generate())
 
 def on_find_values(param: str, field: str, limit: int, gamedata: GameVersionRange):
     for version in iterate_gamedata(gamedata):
