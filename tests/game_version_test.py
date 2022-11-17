@@ -1,6 +1,8 @@
 from typing import List
-from scripts.game_version import GameVersion, GameVersionRange
 import pytest
+
+from erdb.typing.game_version import GameVersion, GameVersionRange
+
 
 def _make(major: str, minor: str, patch: str) -> GameVersion:
     assert len(minor) >= 2, "Minor part must be at least 2 digits"

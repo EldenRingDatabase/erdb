@@ -1,7 +1,9 @@
 from typing import List, NamedTuple
-from scripts.er_params import ParamDict
-from scripts.erdb_common import find_offset_indices
 import pytest
+
+from erdb.typing.params import ParamDict
+from erdb.utils.common import find_offset_indices
+
 
 class ParamDictGenerator(NamedTuple):
     starting_element: int

@@ -2,7 +2,9 @@ import json
 from pathlib import Path
 from typing import Dict, List, Tuple
 import pytest
-from scripts.attack_power import Attributes, CalculatorData, ArmamentCalculator
+
+from erdb.utils.attack_power import Attributes, CalculatorData, ArmamentCalculator
+
 
 """
 Version of the game the sample data has been explicitly collected for

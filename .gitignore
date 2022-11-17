@@ -3,6 +3,11 @@
 .vscode/
 venv/
 __pycache__/
+.pytest_cache/
 erdb-ap-fetcher-*.json
 thirdparty/*
 !thirdparty/README.md
+src/erdb/data/thirdparty/*
+!src/erdb/data/thirdparty/README.md
+*.egg-info/
+*.egg
