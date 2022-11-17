@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "erdb"
-version = "0.0.1"
+version = "0.0.2"
 description = "parse ELDEN RING files into JSON"
 authors = [{name = "Filip Tomaszewski", email = "phil25@pm.me"}]
 readme = "README.md"
