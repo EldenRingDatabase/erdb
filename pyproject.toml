@@ -1,3 +1,35 @@
 [build-system]
-requires = ["setuptools>=45.0", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "erdb"
+version = "0.0.1"
+description = "parse ELDEN RING files into JSON"
+authors = [{name = "Filip Tomaszewski", email = "phil25@pm.me"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "jsonschema >= 4.5",
+    "Pillow >= 9.2",
+    "deepdiff >= 6.2",
+    "requests >= 2.28",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest >= 7.1"
+]
+
+[project.urls]
+Home = "https://github.com/EldenRingDatabase/erdb"
+
+[project.scripts]
+erdb = "erdb.main.cli:entrypoint"
