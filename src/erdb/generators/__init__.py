@@ -22,7 +22,7 @@ from erdb.generators.gestures import GestureGeneratorData
 from erdb.typing.game_version import GameVersion
 
 
-class Table(Enum):
+class Table(str, Enum):
     ALL = "all"
     ARMAMENTS = "armaments"
     ARMOR = "armor"
@@ -101,7 +101,8 @@ class Table(Enum):
             Table.SPIRIT_ASHES: (200000, 300000),
         }.get(self)
 
-    def generator(self, version: GameVersion) -> GeneratorDataBase:
+    @property
+    def generator(self) -> GeneratorDataBase:
         return {
             Table.ARMAMENTS: ArmamentGeneratorData,
             Table.ARMOR: ArmorGeneratorData,
@@ -120,7 +121,10 @@ class Table(Enum):
             Table.SHOP: ShopGeneratorData,
             Table.INFO: InfoGeneratorData,
             Table.GESTURES: GestureGeneratorData,
-        }[self].construct(version)
+        }[self]
+
+    def make_generator(self, version: GameVersion) -> GeneratorDataBase:
+        return self.generator.construct(version)
 
     @staticmethod
     def effective() -> List[Self]:

@@ -1,38 +1,31 @@
-from typing import Dict, Tuple, Iterator
-
-import erdb.loaders.schema as schema
 from erdb.shop import Material
+from erdb.typing.models.effect import Effect
+from erdb.typing.models.armor import Armor, Absorptions, Resistances
 from erdb.typing.params import ParamDict, ParamRow
 from erdb.typing.enums import ItemIDFlag
+from erdb.typing.categories import ArmorCategory
 from erdb.effect_parser import parse_effects
 from erdb.utils.common import strip_invalid_name
 from erdb.generators._base import GeneratorDataBase
 
 
-def _get_category(category: int) -> str:
-    """
-    There is an unused category 4 (hair). It's not part of the schema,
-    so let's have this throw an error in case it's ever used.
-    """
-    return {0: "head", 1: "body", 2: "arms", 3: "legs"}[category]
-
-def _get_absorptions(row: ParamRow) -> Dict[str, float]:
-    def _parse(val: float):
+def _get_absorptions(row: ParamRow) -> Absorptions:
+    def parse(val: float):
         return round((1 - val) * 100, 1)
 
-    return {
-        "physical": _parse(row.get_float("neutralDamageCutRate")),
-        "strike": _parse(row.get_float("blowDamageCutRate")),
-        "slash": _parse(row.get_float("slashDamageCutRate")),
-        "pierce": _parse(row.get_float("thrustDamageCutRate")),
-        "magic": _parse(row.get_float("magicDamageCutRate")),
-        "fire": _parse(row.get_float("fireDamageCutRate")),
-        "lightning": _parse(row.get_float("thunderDamageCutRate")),
-        "holy": _parse(row.get_float("darkDamageCutRate")),
-    }
+    return Absorptions(
+        physical=parse(row.get_float("neutralDamageCutRate")),
+        strike=parse(row.get_float("blowDamageCutRate")),
+        slash=parse(row.get_float("slashDamageCutRate")),
+        pierce=parse(row.get_float("thrustDamageCutRate")),
+        magic=parse(row.get_float("magicDamageCutRate")),
+        fire=parse(row.get_float("fireDamageCutRate")),
+        lightning=parse(row.get_float("thunderDamageCutRate")),
+        holy=parse(row.get_float("darkDamageCutRate")),
+    )
 
-def _get_resistances(row: ParamRow) -> Dict[str, int]:
-    def _check_equal(*values: int):
+def _get_resistances(row: ParamRow) -> Resistances:
+    def check_equal(*values: int):
         ret = values[0]
         for val in values:
             if ret != val:
@@ -40,13 +33,13 @@ def _get_resistances(row: ParamRow) -> Dict[str, int]:
             ret = val
         return ret
 
-    return {
-        "immunity": _check_equal(row.get_int("resistPoison"), row.get_int("resistDisease")),
-        "robustness": _check_equal(row.get_int("resistFreeze"), row.get_int("resistBlood")),
-        "focus": _check_equal(row.get_int("resistSleep"), row.get_int("resistMadness")),
-        "vitality": _check_equal(row.get_int("resistCurse")),
-        "poise": round(row.get_float("toughnessCorrectRate") * 1000)
-    }
+    return Resistances(
+        immunity=check_equal(row.get_int("resistPoison"), row.get_int("resistDisease")),
+        robustness=check_equal(row.get_int("resistFreeze"), row.get_int("resistBlood")),
+        focus=check_equal(row.get_int("resistSleep"), row.get_int("resistMadness")),
+        vitality=check_equal(row.get_int("resistCurse")),
+        poise=round(row.get_float("toughnessCorrectRate") * 1000)
+    )
 
 class ArmorGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
@@ -56,12 +49,12 @@ class ArmorGeneratorData(GeneratorDataBase):
         return "armor.json"
 
     @staticmethod # override
-    def schema_file() -> str:
-        return "armor.schema.json"
-
-    @staticmethod # override
     def element_name() -> str:
         return "ArmorPieces"
+
+    @staticmethod # override
+    def model() -> Armor:
+        return Armor
 
     # override
     def get_key_name(self, row: ParamRow) -> str:
@@ -86,22 +79,12 @@ class ArmorGeneratorData(GeneratorDataBase):
         )
     }
 
-    @staticmethod
-    def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = schema.load_properties(
-            "item/properties",
-            "item/definitions/ItemUserData/properties",
-            "armor/definitions/ArmorPiece/properties")
-        store.update(schema.load_properties("effect")[1])
-        store.update(schema.load_enums("armor-names", "attribute-names", "attack-types", "effect-types", "health-conditions", "attack-conditions"))
-        return properties, store
-
-    def main_param_iterator(self, armor: ParamDict) -> Iterator[ParamRow]:
+    def main_param_iterator(self, armor: ParamDict):
         for row in armor.values():
             if row.index >= 40000 and len(row.name) > 0:
                 yield row
 
-    def construct_object(self, row: ParamRow) -> Dict:
+    def construct_object(self, row: ParamRow) -> Armor:
         names = self.msgs["names"]
         effects = self.params["effects"]
         armor_lookup = self.lookups["armor_lookup"]
@@ -111,11 +94,15 @@ class ArmorGeneratorData(GeneratorDataBase):
         assert len(lineups) in [0, 2], "Each armor should have either none or self-/boc-made alterations"
         altered = "" if len(lineups) == 0 else strip_invalid_name(names[lineups[0].product.index])
 
-        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks") | {
-            "category": _get_category(row.get_int("protectorCategory")),
-            "altered": altered,
-            "weight": row.get_float("weight"),
-            "absorptions": _get_absorptions(row),
-            "resistances": _get_resistances(row),
-            "effects": parse_effects(row, effects, "residentSpEffectId", "residentSpEffectId2", "residentSpEffectId3"),
-        }
+        armor_effects = parse_effects(row, effects, "residentSpEffectId", "residentSpEffectId2", "residentSpEffectId3")
+
+        return Armor(
+            **self.get_fields_item(row, summary=False),
+            **self.get_fields_user_data(row, "locations", "remarks"),
+            category=ArmorCategory.from_row(row),
+            altered=altered,
+            weight=row.get_float("weight"),
+            absorptions=_get_absorptions(row),
+            resistances=_get_resistances(row),
+            effects=[Effect(**eff) for eff in armor_effects]
+        )

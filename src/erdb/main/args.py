@@ -120,16 +120,6 @@ class Generate(_Subcommand):
         _Argument.make("tables", type=Table, default=[], choices=list(Table), nargs="+", action=_GeneratorsAction, help="Specify any or all generators.")
     ] + _Argument.parses_gamedata() + _Argument.outputs_json()
 
-class Replicate(_Subcommand):
-    command = "replicate"
-    summary = "Generates and replicates data on a Directus server"
-    aliases = ["repl"]
-    arguments = [
-        _Argument.make("endpoint", type=str, help="Address of the Directus instance."),
-        _Argument.make("--token", "-t", type=str, required=True, help="Token to authenticate with."),
-        _Argument.make("--api", "-a", type=int, choices=[1], default=1, help="ERDB API version to generate."),
-    ] + _Argument.parses_gamedata()
-
 class FindValues(_Subcommand):
     command = "find-values"
     summary = "Find all possible values of a field per param name."
@@ -148,7 +138,7 @@ class CalculateAR(_Subcommand):
         _Argument.make("attribs", type=str, help="Player attributes in format \"str,dex,int,fth,arc\"."),
         _Argument.make("armament", type=str, help="Name of the armament."),
         _Argument.make("affinity", type=str, help="Affinity of the armament."),
-        _Argument.make("level", type=str, help="Upgrade level of the armament."),
+        _Argument.make("level", type=int, help="Upgrade level of the armament."),
         _Argument.make("--data-path", type=Path, required=True, help="Location of the generated data."),
     ]
 
@@ -187,6 +177,16 @@ class Icons(_Subcommand):
         _Argument.make("types", type=Table, default=[], nargs="+", choices=_ItemTypesAction.choices(), action=_ItemTypesAction, help="Specify item types to export images for."),
         _Argument.make("--size", "-s", type=int, default=1024, choices=range(1, 1025), metavar="[1-1024]", help="Size in pixels of images to be exported, resized from maximum quality in game files (1024x1024)."),
     ] + _Argument.sources_gamedata() + _Argument.outputs_file()
+
+class ServeAPI(_Subcommand):
+    command = "serve-api"
+    summary = "Being serving the API web server."
+    aliases = ["api"]
+    arguments = [
+        _Argument.make("--port", "-p", type=int, required=True, help="Port number to listen on."),
+        _Argument.make("--bind", "-b", type=str, default="0.0.0.0", help="Address to bind the server on."),
+        _Argument.make("--precache", action=BooleanOptionalAction, help="Pregenerate all data instead of lazy loading."),
+    ]
 
 def parse_args(argv: Sequence[str], handlers: Dict[str, Callable]) -> Namespace:
     parser = ArgumentParser(description="Interface for ERDB operations.")

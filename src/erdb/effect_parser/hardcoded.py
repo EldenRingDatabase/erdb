@@ -39,9 +39,6 @@ and/or are simply too difficult to parse (Winged Sword Insignia). They are liste
 The list for each SpEffect ID should contain only the problematic effect(s). If any effect is parsable,
 it will be appended to this list automatically during generation.
 
-If an effect has a list of conditions, they must be adhere to whatever is defined in the JSON schema.
-The validation process will show any mismatches.
-
 !! THIS LIST MUST BE CONFIRMED AFTER EACH UPDATE !!
 Last confirmed ER version: 1.04.1
 """

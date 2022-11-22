@@ -1,7 +1,7 @@
 from itertools import repeat
-from typing import Dict, NamedTuple, Tuple
+from typing import Any, NamedTuple
 
-import erdb.loaders.schema as schema
+from erdb.typing.models.correction_graph import CorrectionGraph
 from erdb.typing.params import ParamDict, ParamRow
 from erdb.typing.enums import ItemIDFlag
 from erdb.generators._base import GeneratorDataBase
@@ -56,20 +56,16 @@ class CorrectionGraphGeneratorData(GeneratorDataBase):
         return "correction-graph.json"
 
     @staticmethod # override
-    def schema_file() -> str:
-        return "correction-graph.schema.json"
-
-    @staticmethod # override
     def element_name() -> str:
         return "CorrectionGraph"
+
+    @staticmethod # override
+    def model() -> Any:
+        return CorrectionGraph
 
     # override
     def get_key_name(self, row: ParamRow) -> str:
         return str(row.index)
-
-    # override
-    def top_level_properties(self) -> Dict:
-        return {str(i): {"type": "number"} for i in range(1, 151)}
 
     main_param_retriever = Base.ParamDictRetriever("CalcCorrectGraph", ItemIDFlag.NON_EQUIPABBLE)
 
@@ -77,15 +73,11 @@ class CorrectionGraphGeneratorData(GeneratorDataBase):
     msgs_retrievers = {}
     lookup_retrievers = {}
 
-    @staticmethod
-    def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        return schema.load_properties("correction-graph")
-
     def main_param_iterator(self, correct_graph: ParamDict):
         for index in range(0, 17):
             yield correct_graph[str(index)]
 
-    def construct_object(self, row: ParamRow) -> Dict:
+    def construct_object(self, row: ParamRow) -> CorrectionGraph:
         points = range(0, 5)
         points_shift = range(1, 5)
         ranges = [CorrectionRange.from_row(row, left, right) for left, right in zip(points, points_shift)]
@@ -97,4 +89,5 @@ class CorrectionGraphGeneratorData(GeneratorDataBase):
 
         assert len(values) == 150, "Correction values length mismatch"
 
-        return {str(i + 1): values[i] for i in range(0, 150)}
+        # 0th index is not valid, add another 0 to offset
+        return [0] + values

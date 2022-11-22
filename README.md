@@ -23,12 +23,12 @@ Adopting the database in a project is beneficial beyond just providing the data 
 * Interesting remarks about an item or a weapon's true combo list is kept up to date.
 * Designed for easy PRs where every item is contained within its own file.
 * Ability to specify game version ranges for which a particular information is valid.
-* Each human change is checked for correctness (by accepting a PR) and validity (by CI verifying JSON schema) [IN PROGRESS].
+* Each human change is checked for correctness (by accepting a PR) and validity (by CI) [IN PROGRESS].
 
-### JSON schema guarantee
+### Schema guarantee
 
-* JSON layout adheres to a strictly defined schema structure, ensuring integrity of all values.
-* JSON schema is a standard that many tools use to, for example, autogenerate data classes.
+* Layout adheres to a strictly defined schema structure, ensuring integrity of all values.
+* Sets up REST API endpoints with OpenAPI-compatible documentation.
 
 ### Shallow structure
 

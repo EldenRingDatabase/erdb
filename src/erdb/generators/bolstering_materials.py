@@ -1,20 +1,10 @@
-from typing import Dict, Iterator, Tuple
-
-import erdb.loaders.schema as schema
+from erdb.typing.models.bolstering_material import BolsteringMaterial
+from erdb.typing.categories import BolsteringMaterialCategory
 from erdb.typing.params import ParamDict, ParamRow
-from erdb.typing.enums import GoodsSortGroupID, GoodsType, ItemIDFlag
+from erdb.typing.enums import GoodsType, ItemIDFlag
 from erdb.utils.common import strip_invalid_name
 from erdb.generators._base import GeneratorDataBase
 
-
-def _get_category(row: ParamRow) -> str:
-    G = GoodsSortGroupID
-    return {
-        G.GROUP_1: "Flask",
-        G.GROUP_2: "Smithing Stone",
-        G.GROUP_3: "Somber Smithing Stone",
-        G.GROUP_4: "Glovewort",
-    }[row.get_int("sortGroupId")]
 
 class BolsteringMaterialGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
@@ -24,12 +14,12 @@ class BolsteringMaterialGeneratorData(GeneratorDataBase):
         return "bolstering-materials.json"
 
     @staticmethod # override
-    def schema_file() -> str:
-        return "bolstering-materials.schema.json"
-
-    @staticmethod # override
     def element_name() -> str:
         return "BolsteringMaterials"
+
+    @staticmethod # override
+    def model() -> BolsteringMaterial:
+        return BolsteringMaterial
 
     # override
     def get_key_name(self, row: ParamRow) -> str:
@@ -47,21 +37,14 @@ class BolsteringMaterialGeneratorData(GeneratorDataBase):
 
     lookup_retrievers = {}
 
-    @staticmethod
-    def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = schema.load_properties(
-            "item/properties",
-            "item/definitions/ItemUserData/properties",
-            "bolstering-materials/definitions/BolsteringMaterial/properties")
-        store.update(schema.load_enums("item-names"))
-        return properties, store
-
-    def main_param_iterator(self, materials: ParamDict) -> Iterator[ParamRow]:
+    def main_param_iterator(self, materials: ParamDict):
         for row in materials.values():
             if row.get("goodsType") == GoodsType.REINFORCEMENT_MATERIAL:
                 yield row
 
-    def construct_object(self, row: ParamRow) -> Dict:
-        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks") | {
-            "category": _get_category(row)
-        }
+    def construct_object(self, row: ParamRow) -> BolsteringMaterial:
+        return BolsteringMaterial(
+            **self.get_fields_item(row),
+            **self.get_fields_user_data(row, "locations", "remarks"),
+            category=BolsteringMaterialCategory.from_row(row),
+        )

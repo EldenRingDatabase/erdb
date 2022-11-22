@@ -1,5 +1,5 @@
 from enum import Enum, IntEnum
-from typing import Dict
+from typing import Self
 
 
 class ItemIDFlag(IntEnum):
@@ -31,10 +31,38 @@ class GoodsType(str, Enum):
     SORCERY_2 = "17"
     INCANTATION_2 = "18"
 
-class GoodsRarity(IntEnum):
-    COMMON = 1
-    RARE = 2
-    LEGENDARY = 3
+class GoodsRarity(str, Enum):
+    COMMON = "Common"
+    RARE = "Rare"
+    LEGENDARY = "Legendary"
+
+    @staticmethod
+    def from_id(index: str) -> Self:
+        return {
+            0: GoodsRarity.COMMON, # some crafting materials use 0, but the rest is "common"
+            1: GoodsRarity.COMMON,
+            2: GoodsRarity.RARE,
+            3: GoodsRarity.LEGENDARY,
+        }[index]
+
+class ArmamentUpgradeMaterial(str, Enum):
+    NONE = "None"
+    SMITHING_STONE = "Smithing Stone"
+    SOMBER_SMITHING_STONE = "Somber Smithing Stone"
+
+class ToolAvailability(str, Enum):
+    ALWAYS = "Always"
+    SINGLEPLAYER = "Singleplayer"
+    MULTIPLAYER = "Multiplayer"
+
+class SpellHoldAction(str, Enum):
+    NONE = "None"
+    CHARGE = "Charge"
+    CONTINUOUS = "Continuous"
+
+class SpiritAshUpgradeMaterial(str, Enum):
+    GRAVE_GLOVEWORT = "Grave Glovewort"
+    GHOST_GLOVEWORT = "Ghost Glovewort"
 
 class GoodsSortGroupID(IntEnum):
     """
@@ -64,176 +92,75 @@ class ReferenceCategory(str, Enum):
     SP_EFFECT = "2"
 
 class Affinity(str, Enum):
-    STANDARD = "0"
-    HEAVY = "1"
-    KEEN = "2"
-    QUALITY = "3"
-    FIRE = "4"
-    FLAME_ART = "5"
-    LIGHTNING = "6"
-    SACRED = "7"
-    MAGIC = "8"
-    COLD = "9"
-    POISON = "10"
-    BLOOD = "11"
-    OCCULT = "12"
+    STANDARD = "Standard"
+    HEAVY = "Heavy"
+    KEEN = "Keen"
+    QUALITY = "Quality"
+    FIRE = "Fire"
+    FLAME_ART = "Flame Art"
+    LIGHTNING = "Lightning"
+    SACRED = "Sacred"
+    MAGIC = "Magic"
+    COLD = "Cold"
+    POISON = "Poison"
+    BLOOD = "Blood"
+    OCCULT = "Occult"
 
-    def __str__(self) -> str:
-        return _AFFINITY_STR[self]
+    @property
+    def id(self) -> int:
+        return {
+            Affinity.STANDARD: 0,
+            Affinity.HEAVY: 1,
+            Affinity.KEEN: 2,
+            Affinity.QUALITY: 3,
+            Affinity.FIRE: 4,
+            Affinity.FLAME_ART: 5,
+            Affinity.LIGHTNING: 6,
+            Affinity.SACRED: 7,
+            Affinity.MAGIC: 8,
+            Affinity.COLD: 9,
+            Affinity.POISON: 10,
+            Affinity.BLOOD: 11,
+            Affinity.OCCULT: 12,
+        }[self]
 
-_AFFINITY_STR: Dict[Affinity, str] = {
-    Affinity.STANDARD: "Standard",
-    Affinity.HEAVY: "Heavy",
-    Affinity.KEEN: "Keen",
-    Affinity.QUALITY: "Quality",
-    Affinity.FIRE: "Fire",
-    Affinity.FLAME_ART: "Flame Art",
-    Affinity.LIGHTNING: "Lightning",
-    Affinity.SACRED: "Sacred",
-    Affinity.MAGIC: "Magic",
-    Affinity.COLD: "Cold",
-    Affinity.POISON: "Poison",
-    Affinity.BLOOD: "Blood",
-    Affinity.OCCULT: "Occult",
-}
+    @staticmethod
+    def from_id(index: int) -> Self:
+        return {
+            0: Affinity.STANDARD,
+            1: Affinity.HEAVY,
+            2: Affinity.KEEN,
+            3: Affinity.QUALITY,
+            4: Affinity.FIRE,
+            5: Affinity.FLAME_ART,
+            6: Affinity.LIGHTNING,
+            7: Affinity.SACRED,
+            8: Affinity.MAGIC,
+            9: Affinity.COLD,
+            10: Affinity.POISON,
+            11: Affinity.BLOOD,
+            12: Affinity.OCCULT,
+        }[index]
 
 class AttackAttribute(str, Enum):
-    STANDARD = "3"
-    STRIKE = "1"
-    SLASH = "0"
-    PIERCE = "2"
+    STANDARD = "Standard"
+    STRIKE = "Strike"
+    SLASH = "Slash"
+    PIERCE = "Pierce"
 
-    def __str__(self) -> str:
+    @staticmethod
+    def from_id(index: int) -> Self:
         return {
-            AttackAttribute.STANDARD: "Standard",
-            AttackAttribute.STRIKE: "Strike",
-            AttackAttribute.SLASH: "Slash",
-            AttackAttribute.PIERCE: "Pierce",
-        }.get(self)
+            0: AttackAttribute.SLASH,
+            1: AttackAttribute.STRIKE,
+            2: AttackAttribute.PIERCE,
+            3: AttackAttribute.STANDARD,
+        }[index]
 
 class AshOfWarMountType(str, Enum):
     PREVENT_CHANG = "0"
     UNUSED_VALUE = "1"
     ALLOW_CHANGE = "2"
-
-class WeaponClass(str, Enum):
-    DAGGER = "Dagger"
-    STRAIGHT_SWORD = "SwordNormal"
-    GREATSWORD = "SwordLarge"
-    COLOSSAL_SWORD = "SwordGigantic"
-    CURVED_SWORD = "SaberNormal"
-    CURVED_GREATSWORD = "SaberLarge"
-    KATANA = "katana" # yes, lowercase
-    TWINBLADE = "SwordDoubleEdge"
-    THRUSTING_SWORD = "SwordPierce"
-    HEAVY_THRUSTING_SWORD = "RapierHeavy"
-    AXE = "AxeNormal"
-    GREATAXE = "AxeLarge"
-    HAMMER = "HammerNormal"
-    GREAT_HAMMER = "HammerLarge"
-    FLAIL = "Flail"
-    SPEAR = "SpearNormal"
-    # unused spear = "SpearLarge"
-    GREAT_SPEAR = "SpearHeavy"
-    HALBERD = "SpearAxe"
-    REAPER = "Sickle"
-    FIST = "Knuckle"
-    CLAW = "Claw"
-    WHIP = "Whip"
-    COLOSSAL_WEAPON = "AxhammerLarge"
-    LIGHT_BOW = "BowSmall"
-    BOW = "BowNormal"
-    GREATBOW = "BowLarge"
-    CROSSBOW = "ClossBow" # clossbow...
-    BALLISTA = "Ballista"
-    GLINTSTONE_STAFF = "Staff"
-    # unused catalyst = "Sorcery"
-    SACRED_SEAL = "Talisman"
-    SMALL_SHIELD = "ShieldSmall"
-    MEDIUM_SHIELD = "ShieldNormal"
-    GREATSHIELD = "ShieldLarge"
-    TORCH = "Torch"
-
-    @staticmethod
-    def from_id(index: str) -> "WeaponClass":
-        return _WEAPON_CLASS_ID[index]
-
-    def __str__(self) -> str:
-        return _WEAPON_CLASS_STR[self]
-
-_WEAPON_CLASS_ID: Dict[str, WeaponClass] = {
-    "1": WeaponClass.DAGGER,
-    "3": WeaponClass.STRAIGHT_SWORD,
-    "5": WeaponClass.GREATSWORD,
-    "7": WeaponClass.COLOSSAL_SWORD,
-    "9": WeaponClass.CURVED_SWORD,
-    "11": WeaponClass.CURVED_GREATSWORD,
-    "13": WeaponClass.KATANA,
-    "14": WeaponClass.TWINBLADE,
-    "15": WeaponClass.THRUSTING_SWORD,
-    "16": WeaponClass.HEAVY_THRUSTING_SWORD,
-    "17": WeaponClass.AXE,
-    "19": WeaponClass.GREATAXE,
-    "21": WeaponClass.HAMMER,
-    "23": WeaponClass.GREAT_HAMMER,
-    "24": WeaponClass.FLAIL,
-    "25": WeaponClass.SPEAR,
-    "28": WeaponClass.GREAT_SPEAR,
-    "29": WeaponClass.HALBERD,
-    "31": WeaponClass.REAPER,
-    "35": WeaponClass.FIST,
-    "37": WeaponClass.CLAW,
-    "39": WeaponClass.WHIP,
-    "41": WeaponClass.COLOSSAL_WEAPON,
-    "50": WeaponClass.LIGHT_BOW,
-    "51": WeaponClass.BOW,
-    "53": WeaponClass.GREATBOW,
-    "55": WeaponClass.CROSSBOW,
-    "56": WeaponClass.BALLISTA,
-    "57": WeaponClass.GLINTSTONE_STAFF,
-    "61": WeaponClass.SACRED_SEAL,
-    "65": WeaponClass.SMALL_SHIELD,
-    "67": WeaponClass.MEDIUM_SHIELD,
-    "69": WeaponClass.GREATSHIELD,
-    "87": WeaponClass.TORCH,
-}
-
-_WEAPON_CLASS_STR: Dict[WeaponClass, str] = {
-    WeaponClass.DAGGER: "Dagger",
-    WeaponClass.STRAIGHT_SWORD: "Straight Sword",
-    WeaponClass.GREATSWORD: "Greatsword",
-    WeaponClass.COLOSSAL_SWORD: "Colossal Sword",
-    WeaponClass.CURVED_SWORD: "Curved Sword",
-    WeaponClass.CURVED_GREATSWORD: "Curved Greatsword",
-    WeaponClass.KATANA: "Katana",
-    WeaponClass.TWINBLADE: "Twinblade",
-    WeaponClass.THRUSTING_SWORD: "Thrusting Sword",
-    WeaponClass.HEAVY_THRUSTING_SWORD: "Heavy Thrusting Sword",
-    WeaponClass.AXE: "Axe",
-    WeaponClass.GREATAXE: "Greataxe",
-    WeaponClass.HAMMER: "Hammer",
-    WeaponClass.GREAT_HAMMER: "Great Hammer",
-    WeaponClass.FLAIL: "Flail",
-    WeaponClass.SPEAR: "Spear",
-    WeaponClass.GREAT_SPEAR: "Great Spear",
-    WeaponClass.HALBERD: "Halberd",
-    WeaponClass.REAPER: "Reaper",
-    WeaponClass.FIST: "Fist",
-    WeaponClass.CLAW: "Claw",
-    WeaponClass.WHIP: "Whip",
-    WeaponClass.COLOSSAL_WEAPON: "Colossal Weapon",
-    WeaponClass.LIGHT_BOW: "Light Bow",
-    WeaponClass.BOW: "Bow",
-    WeaponClass.GREATBOW: "Greatbow",
-    WeaponClass.CROSSBOW: "Crossbow",
-    WeaponClass.BALLISTA: "Ballista",
-    WeaponClass.GLINTSTONE_STAFF: "Glintstone Staff",
-    WeaponClass.SACRED_SEAL: "Sacred Seal",
-    WeaponClass.SMALL_SHIELD: "Small Shield",
-    WeaponClass.MEDIUM_SHIELD: "Medium Shield",
-    WeaponClass.GREATSHIELD: "Greatshield",
-    WeaponClass.TORCH: "Torch",
-}
 
 class AttackCondition(str, Enum):
     NONE = "0"
@@ -250,7 +177,7 @@ class AttackCondition(str, Enum):
     def __str__(self) -> str:
         return _ATTACK_CONDITION_STR[self]
 
-_ATTACK_CONDITION_STR: Dict[AttackCondition, str] = {
+_ATTACK_CONDITION_STR: dict[AttackCondition, str] = {
     AttackCondition.NONE: "0",
     AttackCondition.ON_HIT: "On Hit",
     AttackCondition.SUCCESSIVE_HITS: "Successive Hits",
@@ -312,7 +239,7 @@ class AttackType(str, Enum):
     def __str__(self) -> str:
         return _ATTACK_TYPE_STR[self]
 
-_ATTACK_TYPE_STR: Dict[AttackType, str] = {
+_ATTACK_TYPE_STR: dict[AttackType, str] = {
     AttackType.NONE: "None",
     AttackType.FULL_MOON_SPELL: "Full Moon Spell",
     AttackType.CARIAN_SWORD_SPELL: "Carian Sword Spell",
@@ -782,7 +709,7 @@ class SpEffectType(str, Enum):
             self.CONDITIONAL_9,
         ]
 
-_SP_EFFECT_TYPE_STR: Dict[SpEffectType, str] = {
+_SP_EFFECT_TYPE_STR: dict[SpEffectType, str] = {
     SpEffectType.NONE: "None",
     SpEffectType.POISON: "Poison",
     SpEffectType.UNKNOWN: "Unknown",
@@ -1188,64 +1115,244 @@ _SP_EFFECT_TYPE_STR: Dict[SpEffectType, str] = {
     SpEffectType.CUSTOM_TRIGGER_32: "Custom Trigger",
 }
 
-class ReinforcementType(str, Enum):
-    NO_REINFORCEMENT = "3000"
-    STANDARD = "0"
-    HEAVY = "100"
-    KEEN = "200"
-    QUALITY = "300"
-    FIRE = "400"
-    FLAME_ART = "500"
-    LIGHTNING = "600"
-    SACRED = "700"
-    MAGIC = "800"
-    COLD = "900"
-    POISON = "1000"
-    BLOOD = "1100"
-    OCCULT = "1200"
-    CATALYST = "1900"
-    UNIQUE = "2200"
-    UNIQUE_CATALYST = "2400"
-    CROSSBOW_BALLISTA = "3100"
-    UNIQUE_CROSSBOW_BALLISTA = "3200"
-    PULLEY_CROSSBOW = "3300"
-    SPECIAL_KEEN = "5000"
-    SPECIAL_HEAVY = "6000"
-    SMALL_SHIELD = "8000"
-    MEDIUM_SHIELD = "8100"
-    GREATSHIELD = "8200"
-    UNIQUE_GREATSHIELD = "8300"
-    COIL_SHIELD = "8500"
+class Region(str, Enum):
+    ROUNDTABLE_HOLD = "Roundtable Hold"
+    LIMGRAVE = "Limgrave"
+    WEEPING_PENINSULA = "Weeping Peninsula"
+    LIURNIA_OF_THE_LAKES = "Liurnia of the Lakes"
+    CAELID = "Caelid"
+    ALTUS_PLATEAU = "Altus Plateau"
+    MT_GELMIR = "Mt. Gelmir"
+    DRAGONBARROW = "Dragonbarrow"
+    MOUNTAINTOPS_OF_THE_GIANTS = "Mountaintops of the Giants"
+    CONSECRATED_SNOWFIELD = "Consecrated Snowfield"
+    SIOFRA_RIVER = "Siofra River"
+    AINSEL_RIVER = "Ainsel River"
+    DEEPROOT_DEPTHS = "Deeproot Depths"
+    LAKE_OF_ROT = "Lake of Rot"
 
-    def __str__(self) -> str:
-        return _REINFORCEMENT_TYPE[self]
+# TODO: find out specific names (remove (1), (2), etc...)
+class Location(str, Enum):
+    STORMVEIL_CASTLE = "Stormveil Castle"
+    LEYNDELL_ROYAL_CAPITAL = "Leyndell, Royal Capital"
+    CRUMBLING_FARUM_AZULA = "Crumbling Farum Azula"
+    ACADEMY_OF_RAYA_LUCARIA = "Academy of Raya Lucaria"
+    MIQUELLAS_HALIGTREE = "Miquella's Haligtree"
+    ELPHAEL_BRACE_OF_THE_HALIGTREE = "Elphael, Brace of the Haligtree"
+    VOLCANO_MANOR = "Volcano Manor"
+    STRANDED_GRAVEYARD = "Stranded Graveyard"
+    FRINGEFOLK_HEROS_GRAVE = "Fringefolk Hero's Grave"
+    TOMBSWARD_CATACOMBS = "Tombsward Catacombs"
+    IMPALERS_CATACOMBS = "Impaler's Catacombs"
+    STORMFOOT_CATACOMBS = "Stormfoot Catacombs"
+    ROADS_END_CATACOMBS = "Road's End Catacombs"
+    MURKWATER_CATACOMBS = "Murkwater Catacombs"
+    BLACK_KNIFE_CATACOMBS = "Black Knife Catacombs"
+    CLIFFBOTTOM_CATACOMBS = "Cliffbottom Catacombs"
+    WYNDHAM_CATACOMBS = "Wyndham Catacombs"
+    SAINTED_HEROS_GRAVE = "Sainted Hero's Grave"
+    GELMIR_HEROS_GRAVE = "Gelmir Hero's Grave"
+    AURIZA_HEROS_GRAVE = "Auriza Hero's Grave"
+    DEATHTOUCHED_CATACOMBS = "Deathtouched Catacombs"
+    UNSIGHTLY_CATACOMBS = "Unsightly Catacombs"
+    AURIZA_SIDE_TOMB = "Auriza Side Tomb"
+    MINOR_ERDTREE_CATACOMBS = "Minor Erdtree Catacombs"
+    CAELID_CATACOMBS = "Caelid Catacombs"
+    WAR_DEAD_CATACOMBS = "War-Dead Catacombs"
+    GIANT_CONQUERING_HEROS_GRAVE = "Giant-Conquering Hero's Grave"
+    GIANTS_MOUNTAINTOP_CATACOMBS = "Giants' Mountaintop Catacombs"
+    CONSECRATED_SNOWFIELD_CATACOMBS = "Consecrated Snowfield Catacombs"
+    HIDDEN_PATH_TO_THE_HALIGTREE = "Hidden Path to the Haligtree"
+    MURKWATER_CAVE = "Murkwater Cave"
+    EARTHBORE_CAVE = "Earthbore Cave"
+    TOMBSWARD_CAVE = "Tombsward Cave"
+    GROVESIDE_CAVE = "Groveside Cave"
+    STILLWATER_CAVE = "Stillwater Cave"
+    LAKESIDE_CRYSTAL_CAVE = "Lakeside Crystal Cave"
+    ACADEMY_CRYSTAL_CAVE = "Academy Crystal Cave"
+    SEETHEWATER_CAVE = "Seethewater Cave"
+    VOLCANO_CAVE = "Volcano Cave"
+    DRAGONBARROW_CAVE = "Dragonbarrow Cave"
+    SELLIA_HIDEAWAY = "Sellia Hideaway"
+    CAVE_OF_THE_FORLORN = "Cave of the Forlorn"
+    COASTAL_CAVE = "Coastal Cave"
+    HIGHROAD_CAVE = "Highroad Cave"
+    PERFUMERS_GROTTO = "Perfumer's Grotto"
+    SAGES_CAVE = "Sage's Cave"
+    ABANDONED_CAVE = "Abandoned Cave"
+    GAOL_CAVE = "Gaol Cave"
+    SPIRITCALLERS_CAVE = "Spiritcaller's Cave"
+    MORNE_TUNNEL = "Morne Tunnel"
+    LIMGRAVE_TUNNELS = "Limgrave Tunnels"
+    RAYA_LUCARIA_CRYSTAL_TUNNEL = "Raya Lucaria Crystal Tunnel"
+    OLD_ALTUS_TUNNEL = "Old Altus Tunnel"
+    ALTUS_TUNNEL = "Altus Tunnel"
+    GAEL_TUNNEL = "Gael Tunnel"
+    SELLIA_CRYSTAL_TUNNEL = "Sellia Crystal Tunnel"
+    YELOUGH_ANIX_TUNNEL = "Yelough Anix Tunnel"
+    DIVINE_TOWER_OF_LIMGRAVE = "Divine Tower of Limgrave"
+    CARIAN_STUDY_HALL = "Carian Study Hall"
+    DIVINE_TOWER_OF_LIURNIA = "Divine Tower of Liurnia"
+    SEALED_TUNNEL = "Sealed Tunnel"
+    DIVINE_TOWER_OF_WEST_ALTUS = "Divine Tower of West Altus"
+    DIVINE_TOWER_OF_CAELID = "Divine Tower of Caelid"
+    DIVINE_TOWER_OF_EAST_ALTUS = "Divine Tower of East Altus"
+    ISOLATED_DIVINE_TOWER = "Isolated Divine Tower"
+    SUBTERRANEAN_SHUNNING_GROUNDS = "Subterranean Shunning-Grounds"
+    RUIN_STREWN_PRECIPICE = "Ruin-Strewn Precipice"
+    ISOLATED_MERCHANTS_SHACK_1 = "Isolated Merchant's Shack (1)"
+    FOURTH_CHURCH_OF_MARIKA = "Fourth Church of Marika"
+    WITCHBANE_RUINS = "Witchbane Ruins"
+    CHURCH_OF_DRAGON_COMMUNION = "Church of Dragon Communion"
+    STORMHILL_SHACK = "Stormhill Shack"
+    TOWER_OF_RETURN = "Tower of Return"
+    WEEPING_EVERGAOL = "Weeping Evergaol"
+    TOMBSWARD_RUINS = "Tombsward Ruins"
+    CHURCH_OF_ELLEH = "Church of Elleh"
+    GATEFRONT_RUINS = "Gatefront Ruins"
+    STORMHILL_EVERGAOL = "Stormhill Evergaol"
+    STORMGATE = "Stormgate"
+    WARMASTERS_SHACK = "Warmaster's Shack"
+    CASTLE_MORNE = "Castle Morne"
+    MINOR_ERDTREE_1 = "Minor Erdtree (1)"
+    CHURCH_OF_PILGRIMAGE = "Church of Pilgrimage"
+    DEMI_HUMAN_FOREST_RUINS = "Demi-Human Forest Ruins"
+    DRAGON_BURNT_RUINS = "Dragon-Burnt Ruins"
+    CALLU_BAPTISMAL_CHURCH = "Callu Baptismal Church"
+    AILING_VILLAGE = "Ailing Village"
+    BRIDGE_OF_SACRIFICE = "Bridge of Sacrifice"
+    FOREST_LOOKOUT_TOWER = "Forest Lookout Tower"
+    FORLORN_HOUND_EVERGAOL = "Forlorn Hound Evergaol"
+    WAYPOINT_RUINS = "Waypoint Ruins"
+    ARTISTS_SHACK_1 = "Artist's Shack (1)"
+    ORIDYSS_RISE = "Oridys's Rise"
+    SIOFRA_RIVER_WELL = "Siofra River Well"
+    MISTWOOD_RUINS = "Mistwood Ruins"
+    MINOR_ERDTREE_2 = "Minor Erdtree (2)"
+    SUMMONWATER_VILLAGE = "Summonwater Village"
+    FORT_HAIGHT = "Fort Haight"
+    THIRD_CHURCH_OF_MARIKA = "Third Church of Marika"
+    CHELONAS_RISE = "Chelona's Rise"
+    RINGLEADERS_EVERGAOL = "Ringleader's Evergaol"
+    MINOR_ERDTREE_3 = "Minor Erdtree (3)"
+    REVENGERS_SHACK = "Revenger's Shack"
+    CUCKOOS_EVERGAOL = "Cuckoo's Evergaol"
+    THE_FOUR_BELFRIES = "The Four Belfries"
+    DEEP_AINSEL_WELL = "Deep Ainsel Well"
+    MOONFOLK_RUINS = "Moonfolk Ruins"
+    CONVERTED_TOWER = "Converted Tower"
+    TEMPLE_QUARTER = "Temple Quarter"
+    KINGSREALM_RUINS = "Kingsrealm Ruins"
+    SELUVISS_RISE = "Seluvis's Rise"
+    RANNIS_RISE = "Ranni's Rise"
+    THREE_SISTERS = "Three Sisters"
+    RENNAS_RISE = "Renna's Rise"
+    LUNAR_ESTATE_RUINS = "Lunar Estate Ruins"
+    VILLAGE_OF_THE_ALBINAURICS = "Village of the Albinaurics"
+    CATHEDRAL_OF_MANUS_CELES = "Cathedral of Manus Celes"
+    ROSE_CHURCH = "Rose Church"
+    TESTUS_RISE = "Testu's Rise"
+    CARIA_MANOR = "Caria Manor"
+    SLUMBERING_WOLFS_SHACK = "Slumbering Wolf's Shack"
+    BOILPRAWN_SHACK = "Boilprawn Shack"
+    BELLUM_CHURCH = "Bellum Church"
+    ROYAL_GRAVE_EVERGAOL = "Royal Grave Evergaol"
+    LASKYAR_RUINS = "Laskyar Ruins"
+    ACADEMY_GATE_TOWN = "Academy Gate Town"
+    CHURCH_OF_VOWS = "Church of Vows"
+    CHURCH_OF_INHIBITION = "Church of Inhibition"
+    MALEFACTORS_EVERGAOL = "Malefactor's Evergaol"
+    HIGHWAY_LOOKOUT_TOWER_1 = "Highway Lookout Tower (1)"
+    ARTISTS_SHACK_2 = "Artist's Shack (2)"
+    AINSEL_RIVER_WELL = "Ainsel River Well"
+    ULD_PALACE_RUINS = "Uld Palace Ruins"
+    FRENZIED_FLAME_VILLAGE = "Frenzied Flame Village"
+    MINOR_ERDTREE_4 = "Minor Erdtree (4)"
+    FRENZY_FLAMING_TOWER = "Frenzy-Flaming Tower"
+    CHURCH_OF_IRITH = "Church of Irith"
+    PURIFIED_RUINS = "Purified Ruins"
+    JARBURG = "Jarburg"
+    CONVERTED_FRINGE_TOWER = "Converted Fringe Tower"
+    FORT_LAIEDD = "Fort Laiedd"
+    PERFUMERS_RUINS = "Perfumer's Ruins"
+    HERMITS_SHACK = "Hermit's Shack"
+    CRAFTSMANS_SHACK = "Craftsman's Shack"
+    STORMCALLER_CHURCH = "Stormcaller Church"
+    HERMIT_VILLAGE = "Hermit Village"
+    MINOR_ERDTREE_5 = "Minor Erdtree (5)"
+    GRAND_LIFT_OF_DECTUS = "Grand Lift of Dectus"
+    LUX_RUINS = "Lux Ruins"
+    WYNDHAM_RUINS = "Wyndham Ruins"
+    CORPSE_STENCH_SHACK = "Corpse-Stench Shack"
+    GOLDEN_LINEAGE_EVERGAOL = "Golden Lineage Evergaol"
+    SECOND_CHURCH_OF_MARIKA = "Second Church of Marika"
+    MIRAGE_RISE = "Mirage Rise"
+    THE_SHADED_CASTLE = "The Shaded Castle"
+    ST_TRINAS_HIDEAWAY = "St. Trina's Hideaway"
+    WRITHEBLOOD_RUINS = "Writheblood Ruins"
+    WEST_WINDMILL_PASTURE = "West Windmill Pasture"
+    WOODFOLK_RUINS = "Woodfolk Ruins"
+    MINOR_ERDTREE_6 = "Minor Erdtree (6)"
+    DOMINULA_WINDMILL_VILLAGE = "Dominula, Windmill Village"
+    EAST_WINDMILL_PASTURE = "East Windmill Pasture"
+    VILLAGE_WINDMILL_PASTURE = "Village Windmill Pasture"
+    HIGHWAY_LOOKOUT_TOWER_2 = "Highway Lookout Tower (2)"
+    MINOR_ERDTREE_CHURCH = "Minor Erdtree Church"
+    HERMIT_MERCHANTS_SHACK = "Hermit Merchant's Shack"
+    MINOR_ERDTREE_7 = "Minor Erdtree (7)"
+    SMOLDERING_CHURCH = "Smoldering Church"
+    SHACK_OF_THE_ROTTING = "Shack of the Rotting"
+    CAELID_WAYPOINT_RUINS = "Caelid Waypoint Ruins"
+    FORT_GAEL = "Fort Gael"
+    FORSAKEN_RUINS = "Forsaken Ruins"
+    MINOR_ERDTREE_8 = "Minor Erdtree (8)"
+    CAELEM_RUINS = "Caelem Ruins"
+    CATHEDRAL_OF_DRAGON_COMMUNION = "Cathedral of Dragon Communion"
+    STREET_OF_SAGES_RUINS = "Street of Sages Ruins"
+    ISOLATED_MERCHANTS_SHACK_2 = "Isolated Merchant's Shack (2)"
+    SWAMP_LOOKOUT_TOWER = "Swamp Lookout Tower"
+    SELLIA_GATEWAY = "Sellia Gateway"
+    SELLIA_EVERGAOL = "Sellia Evergaol"
+    DEEP_SIOFRA_WELL = "Deep Siofra Well"
+    GOWRYS_SHACK = "Gowry's Shack"
+    CHURCH_OF_THE_PLAGUE = "Church of the Plague"
+    SELLIA_TOWN_OF_SORCERY = "Sellia, Town of Sorcery"
+    REDMANE_CASTLE = "Redmane Castle"
+    WAILING_DUNES = "Wailing Dunes"
+    FORT_FAROTH = "Fort Faroth"
+    MINOR_ERDTREE_9 = "Minor Erdtree (9)"
+    BESTIAL_SANCTUM = "Bestial Sanctum"
+    LENNES_RISE = "Lenne's Rise"
+    YELOUGH_ANIX_RUINS = "Yelough Anix Ruins"
+    APOSTATE_DERELICT = "Apostate Derelict"
+    ORDINA_LITURGICAL_TOWN = "Ordina, Liturgical Town"
+    ZAMOR_RUINS = "Zamor Ruins"
+    GRAND_LIFT_OF_ROLD = "Grand Lift of Rold"
+    SHACK_OF_THE_LOFTY = "Shack of the Lofty"
+    MINOR_ERDTREE_10 = "Minor Erdtree (10)"
+    ALBINAURIC_RISE = "Albinauric Rise"
+    CHURCH_OF_REPOSE = "Church of Repose"
+    STARGAZERS_RUINS = "Stargazers' Ruins"
+    CASTLE_SOL = "Castle Sol"
+    GUARDIANS_GARRISON = "Guardians' Garrison"
+    MINOR_ERDTREE_11 = "Minor Erdtree (11)"
+    HERETICAL_RISE = "Heretical Rise"
+    LORD_CONTENDERS_EVERGAOL = "Lord Contender's Evergaol"
+    FORGE_OF_THE_GIANTS = "Forge of the Giants"
+    FIRST_CHURCH_OF_MARIKA = "First Church of Marika"
+    UHL_PALACE_RUINS_1 = "Uhl Palace Ruins (1)"
+    UHL_PALACE_RUINS_2 = "Uhl Palace Ruins (2)"
+    NOKSTELLA_ETERNAL_CITY = "Nokstella, Eternal City"
+    GRAND_CLOISTER = "Grand Cloister"
+    NIGHTS_SACRED_GROUND = "Night's Sacred Ground"
+    SIOFRA_AQUEDUCT = "Siofra Aqueduct"
+    HALLOWHORN_GROUNDS_1 = "Hallowhorn Grounds (1)"
+    HALLOWHORN_GROUNDS_2 = "Hallowhorn Grounds (2)"
+    MOHGWYN_DYNASTY_MAUSOLEUM = "Mohgwyn Dynasty Mausoleum"
+    NOKRON_ETERNAL_CITY = "Nokron, Eternal City"
 
-_REINFORCEMENT_TYPE: Dict[ReinforcementType, str] = {
-    ReinforcementType.NO_REINFORCEMENT: "No Reinforcement",
-    ReinforcementType.STANDARD: "Standard",
-    ReinforcementType.HEAVY: "Heavy",
-    ReinforcementType.KEEN: "Keen",
-    ReinforcementType.QUALITY: "Quality",
-    ReinforcementType.FIRE: "Fire",
-    ReinforcementType.FLAME_ART: "Flame Art",
-    ReinforcementType.LIGHTNING: "Lightning",
-    ReinforcementType.SACRED: "Sacred",
-    ReinforcementType.MAGIC: "Magic",
-    ReinforcementType.COLD: "Cold",
-    ReinforcementType.POISON: "Poison",
-    ReinforcementType.BLOOD: "Blood",
-    ReinforcementType.OCCULT: "Occult",
-    ReinforcementType.CATALYST: "Catalyst",
-    ReinforcementType.UNIQUE: "Unique",
-    ReinforcementType.UNIQUE_CATALYST: "Unique Catalyst",
-    ReinforcementType.CROSSBOW_BALLISTA: "Crossbow Ballista",
-    ReinforcementType.UNIQUE_CROSSBOW_BALLISTA: "Unique Crossbow Ballista",
-    ReinforcementType.PULLEY_CROSSBOW: "Pulley Crossbow",
-    ReinforcementType.SPECIAL_KEEN: "Special Keen",
-    ReinforcementType.SPECIAL_HEAVY: "Special heavy",
-    ReinforcementType.SMALL_SHIELD: "Small Shield",
-    ReinforcementType.MEDIUM_SHIELD: "Medium Shield",
-    ReinforcementType.GREATSHIELD: "Greatshield",
-    ReinforcementType.UNIQUE_GREATSHIELD: "Unique Greatshield",
-    ReinforcementType.COIL_SHIELD: "Coil Shield"
-}
+class Currency(str, Enum):
+    RUNES = "Runes"
+    DRAGON_HEARTS = "Dragon Hearts"
+    STARLIGHT_SHARDS = "Starlight Shards"
+    LOST_ASHES_OF_WAR = "Lost Ashes of War"

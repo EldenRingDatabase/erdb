@@ -1,20 +1,11 @@
-from typing import Dict, Iterator, Tuple
-
-import erdb.loaders.schema as schema
 from erdb.shop import Product, Material
+from erdb.typing.models.crafting_material import CraftingMaterial
 from erdb.typing.params import ParamDict, ParamRow
-from erdb.typing.enums import GoodsSortGroupID, GoodsType, ItemIDFlag
+from erdb.typing.enums import GoodsType, ItemIDFlag
+from erdb.typing.categories import CraftingMaterialCategory
 from erdb.utils.common import strip_invalid_name
 from erdb.generators._base import GeneratorDataBase
 
-
-def _get_category(row: ParamRow) -> str:
-    G = GoodsSortGroupID
-    return {
-        G.GROUP_1: "Fauna",
-        G.GROUP_2: "Flora",
-        G.GROUP_3: "Object",
-    }[row.get_int("sortGroupId")]
 
 class CraftingMaterialGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
@@ -24,12 +15,12 @@ class CraftingMaterialGeneratorData(GeneratorDataBase):
         return "crafting-materials.json"
 
     @staticmethod # override
-    def schema_file() -> str:
-        return "crafting-materials.schema.json"
-
-    @staticmethod # override
     def element_name() -> str:
         return "CraftingMaterials"
+
+    @staticmethod # override
+    def model() -> CraftingMaterial:
+        return CraftingMaterial
 
     # override
     def get_key_name(self, row: ParamRow) -> str:
@@ -55,21 +46,12 @@ class CraftingMaterialGeneratorData(GeneratorDataBase):
         )
     }
 
-    @staticmethod
-    def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = schema.load_properties(
-            "item/properties",
-            "item/definitions/ItemUserData/properties",
-            "crafting-materials/definitions/CraftingMaterial/properties")
-        store.update(schema.load_enums("item-names", "ammo-names"))
-        return properties, store
-
-    def main_param_iterator(self, materials: ParamDict) -> Iterator[ParamRow]:
+    def main_param_iterator(self, materials: ParamDict):
         for row in materials.values():
             if row.get("goodsType") == GoodsType.CRAFTING_MATERIAL:
                 yield row
 
-    def construct_object(self, row: ParamRow) -> Dict:
+    def construct_object(self, row: ParamRow) -> CraftingMaterial:
         crafting_lookup = self.lookups["crafting_lookup"]
 
         names = {
@@ -81,8 +63,10 @@ class CraftingMaterialGeneratorData(GeneratorDataBase):
         lineups = crafting_lookup.get_lineups_from_material(material)
         assert len(lineups) > 0
 
-        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks") | {
-            "category": _get_category(row),
-            "hint": self.msgs["hints"].get(row.index, ""),
-            "products": [strip_invalid_name(names[l.product.category][l.product.index]) for l in lineups]
-        }
+        return CraftingMaterial(
+            **self.get_fields_item(row),
+            **self.get_fields_user_data(row, "locations", "remarks"),
+            category=CraftingMaterialCategory.from_row(row),
+            hint=self.msgs["hints"].get(row.index, ""),
+            products=[strip_invalid_name(names[l.product.category][l.product.index]) for l in lineups]
+        )

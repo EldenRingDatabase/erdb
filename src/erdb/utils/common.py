@@ -1,25 +1,13 @@
-import collections
 from operator import add
 from itertools import repeat
 from pathlib import Path
 from typing import Any, Generator, Tuple, Dict, List
+from pydantic.json import pydantic_encoder
 
 from erdb.typing.params import ParamDict
 
 
 IntGen = Generator[int, None, None]
-
-def update_nested(d, u):
-    """
-    Update function which recursively updates subdictionaries.
-    Borrowed from https://stackoverflow.com/a/3233356
-    """
-    for k, v in u.items():
-        if isinstance(v, collections.abc.Mapping):
-            d[k] = update_nested(d.get(k, {}), v)
-        else:
-            d[k] = v
-    return d
 
 def update_optional(d: Dict, key: str, value: Any, null_value: Any=None) -> Dict:
     if value != null_value:
@@ -48,3 +36,20 @@ def strip_invalid_name(name: str) -> str:
 def prepare_writable_path(path: Path, default_filename: str) -> Path:
     (path if path.suffix == "" else path.parent).mkdir(parents=True, exist_ok=True)
     return path / default_filename if path.is_dir() else path
+
+def remove_nulls(val: dict | list | Any) -> dict | list | Any:
+    """
+    Recursively remove all None values from dictionaries and lists, and returns
+    the result as a new dictionary or list.
+    """
+    if isinstance(val, list):
+        return [remove_nulls(x) for x in val if x is not None]
+
+    elif isinstance(val, dict):
+        return {k: remove_nulls(v) for k, v in val.items() if v is not None}
+
+    else:
+        return val
+
+def pydantic_encoder_no_nulls(obj: Any) -> Any:
+    return remove_nulls(pydantic_encoder(obj))

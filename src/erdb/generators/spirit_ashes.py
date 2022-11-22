@@ -1,8 +1,6 @@
-from typing import Dict, Iterator, List, Tuple
-
-import erdb.loaders.schema as schema
+from erdb.typing.models.spirit_ash import SpiritAsh
 from erdb.typing.params import ParamDict, ParamRow
-from erdb.typing.enums import GoodsType, GoodsRarity, ItemIDFlag
+from erdb.typing.enums import GoodsType, ItemIDFlag, SpiritAshUpgradeMaterial
 from erdb.utils.common import strip_invalid_name, find_offset_indices
 from erdb.generators._base import GeneratorDataBase
 
@@ -10,7 +8,7 @@ from erdb.generators._base import GeneratorDataBase
 def _is_base_spirit_ash(row: ParamRow) -> bool:
     return row.is_base_item() and row.get("goodsType") in [GoodsType.LESSER, GoodsType.GREATER]
 
-def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> List[int]:
+def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> list[int]:
     indices, _ = find_offset_indices(base_item_id, goods, possible_maxima=[9]) # not 10, ignore last one
     return [goods[str(i)].get_int("reinforcePrice") for i in indices]
 
@@ -22,12 +20,12 @@ class SpiritAshGeneratorData(GeneratorDataBase):
         return "spirit-ashes.json"
 
     @staticmethod # override
-    def schema_file() -> str:
-        return "spirit-ashes.schema.json"
-
-    @staticmethod # override
     def element_name() -> str:
         return "SpiritAshes"
+
+    @staticmethod # override
+    def model() -> SpiritAsh:
+        return SpiritAsh
 
     # override
     def get_key_name(self, row: ParamRow) -> str:
@@ -48,20 +46,12 @@ class SpiritAshGeneratorData(GeneratorDataBase):
 
     lookup_retrievers = {}
 
-    @staticmethod
-    def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        return schema.load_properties(
-            "item/properties",
-            "item/definitions/ItemUserData/properties",
-            "spirit-ashes/definitions/SpiritAsh/properties",
-            "spirit-ashes/definitions/SpiritAshUserData/properties")
-
-    def main_param_iterator(self, spirit_ashes: ParamDict) -> Iterator[ParamRow]:
+    def main_param_iterator(self, spirit_ashes: ParamDict):
         for row in spirit_ashes.values():
             if _is_base_spirit_ash(row):
                 yield row
 
-    def construct_object(self, row: ParamRow) -> Dict:
+    def construct_object(self, row: ParamRow) -> SpiritAsh:
         goods = self.main_param
         upgrade_materials = self.params["upgrade_materials"]
         names = self.msgs["names"]
@@ -69,13 +59,17 @@ class SpiritAshGeneratorData(GeneratorDataBase):
 
         upgrade_material = upgrade_materials[row.get("reinforceMaterialId")]
         upgrade_material = names[upgrade_material.get_int("materialId01")].removesuffix("[1]").strip()
-        assert upgrade_material in ["Grave Glovewort", "Ghost Glovewort"]
+        upgrade_material = {
+            "Grave Glovewort": SpiritAshUpgradeMaterial.GRAVE_GLOVEWORT,
+            "Ghost Glovewort": SpiritAshUpgradeMaterial.GHOST_GLOVEWORT,
+        }[upgrade_material]
 
-        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks", "summon_quantity", "abilities") | {
-            "summon_name": summon_names[row.index].strip(), # sometimes trailing spaces
-            "fp_cost": row.get_int_corrected("consumeMP"),
-            "hp_cost": row.get_int_corrected("consumeHP"),
-            "rarity": GoodsRarity(row.get_int("rarity")).name.lower(),
-            "upgrade_material": upgrade_material,
-            "upgrade_costs": _find_upgrade_costs(goods, row.index)
-        }
+        return SpiritAsh(
+            **self.get_fields_item(row),
+            **self.get_fields_user_data(row, "locations", "remarks", "summon_quantity", "abilities"),
+            summon_name=summon_names[row.index].strip(), # sometimes trailing spaces
+            fp_cost=row.get_int_corrected("consumeMP"),
+            hp_cost=row.get_int_corrected("consumeHP"),
+            upgrade_material=upgrade_material,
+            upgrade_costs=_find_upgrade_costs(goods, row.index)
+        )

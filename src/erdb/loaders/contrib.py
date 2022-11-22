@@ -25,8 +25,6 @@ def _parse_user_file(path: Path, version: GameVersion) -> Dict:
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    del data["$schema"]
-
     ret = dict()
 
     for version_range, properties in data.items():

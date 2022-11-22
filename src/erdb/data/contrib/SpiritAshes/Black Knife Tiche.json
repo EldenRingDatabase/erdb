@@ -1,5 +1,4 @@
 {
-    "$schema": "../../schema/userdata/spirit-ash.schema.json",
     "any version": {
         "summon_quantity": 1,
         "abilities": [

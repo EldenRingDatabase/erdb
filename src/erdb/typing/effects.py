@@ -16,7 +16,6 @@ class EffectModel(str, Enum):
 """
 Helper class of attributes used for effects, these are self-made
 and don't correspond to anything in the game.
-Schema counterpart in ./enums/attributes-names.schema.json
 """
 class AttributeName(str, Enum):
     MAXIMUM_HEALTH = "Maximum Health",
@@ -173,12 +172,12 @@ class SchemaEffect(SimpleNamespace):
             value=value)
 
     @classmethod
-    def from_dict(cls, data: Dict) -> "SchemaEffect":
+    def from_obj(cls, obj: Any) -> "SchemaEffect":
         return cls(
-            attribute=AttributeName(data["attribute"]),
-            conditions=data.get("conditions"),
-            tick_interval=data.get("tick_interval"),
-            effect_model=EffectModel(data["model"]),
-            effect_type=EffectType(data["type"]),
-            value=data["value"],
-            value_pvp=data.get("value_pvp"))
+            attribute=AttributeName(getattr(obj, "attribute")),
+            conditions=getattr(obj, "conditions", None),
+            tick_interval=getattr(obj, "tick_interval"),
+            effect_model=EffectModel(getattr(obj, "model")),
+            effect_type=EffectType(getattr(obj, "type")),
+            value=getattr(obj, "value", None),
+            value_pvp=getattr(obj, "value_pvp", None))

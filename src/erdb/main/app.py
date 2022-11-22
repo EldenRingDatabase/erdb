@@ -1,36 +1,18 @@
 import json
 from pathlib import Path
 from typing import Dict, List, Sequence
-from jsonschema import validate, RefResolver, ValidationError
 
 from erdb.main.args import parse_args
 from erdb.generators import Table
 from erdb.loaders import GAME_VERSIONS
+from erdb.app_api.main import serve as serve_app_api
 from erdb.utils.attack_power import Attributes, CalculatorData, ArmamentCalculator
-from erdb.utils.common import prepare_writable_path
 from erdb.utils.changelog import generate as generate_changelog
-from erdb.utils.directus_client import DirectusClient
 from erdb.utils.find_valid_values import find_valid_values
 from erdb.utils.sourcer import source_gamedata, source_map, source_icons
+from erdb.utils.common import pydantic_encoder_no_nulls
 from erdb.typing.game_version import GameVersion, GameVersionRange
 
-
-def _validate_and_write(file_path: Path, schema_name: str, data: Dict, store: Dict[str, Dict], minimize: bool) -> bool:
-    try:
-        resolver = RefResolver(base_uri="unused", referrer="unused", store=store)
-        validate(data, store[schema_name], resolver=resolver)
-
-    except ValidationError as e:
-        readable_path = "/".join(str(part) for part in e.path)
-        print(f"Failed to validate \"{readable_path}\": {e.message}", flush=True)
-        return False
-
-    finally:
-        with open(file_path, mode="w", encoding="utf-8") as f:
-            kwargs = {"separators": (",", ":")} if minimize else {"indent": 4}
-            json.dump(data, f, ensure_ascii=False, **kwargs)
-
-    return True
 
 class App:
     args: Dict
@@ -38,13 +20,13 @@ class App:
     def __init__(self, argv: Sequence[str]) -> None:
         self.args = parse_args(argv, handlers={
             "generate": self.generate,
-            "replicate": self.replicate,
             "find-values": self.find_values,
             "calculate-ar": self.calculate_ar,
             "changelog": self.changelog,
             "source": self.source,
             "map": self.source_map,
             "icons": self.source_icons,
+            "serve-api": self.serve_api,
         })
 
     def run(self) -> int:
@@ -62,7 +44,7 @@ class App:
             destination = out / str(version)
             destination.mkdir(parents=True, exist_ok=True)
 
-            for gen in (tb.generator(version) for tb in tables):
+            for gen in (tb.make_generator(version) for tb in tables):
                 print(f"\n>>> Generating \"{gen.element_name()}\" from version {version}", flush=True)
 
                 output_file = destination / gen.output_file()
@@ -72,38 +54,11 @@ class App:
                     print(f"Output file exists and will be overridden", flush=True)
 
                 data = gen.generate()
-                count = len(data)
+                print(f"Generated {len(data)} elements", flush=True)
 
-                data = {gen.element_name(): data}
-                print(f"Generated {count} elements", flush=True)
-
-                ok = _validate_and_write(output_file, gen.schema_file(), data, gen.schema_store, minimize)
-                assert ok, "Generated schema failed to validate"
-
-                print(f"Validated {count} elements", flush=True)
-
-        return 0
-
-    @staticmethod
-    def replicate(endpoint: str, token: str, api: int, gamedata: GameVersionRange) -> int:
-        def get_collection_name(game_version: GameVersion, table: Table) -> str:
-            collection = table.value.replace("-", "_")
-            version = str(game_version).replace(".", "")
-            return f"{collection}_{version}_v{api}"
-
-        directus = DirectusClient(endpoint, token)
-
-        with directus.enter_folder(f"api_v{api}", collapsed=False):
-            for game_version in gamedata.iterate(GAME_VERSIONS):
-
-                with directus.enter_folder(str(game_version).replace(".", "")):
-                    for game_param in Table.ALL.effective():
-
-                        collection = get_collection_name(game_version, game_param)
-                        generator = game_param.generator(game_version)
-
-                        directus.update_collection(collection, generator.top_level_properties())
-                        directus.import_data(collection, generator.generate())
+                with open(output_file, mode="w", encoding="utf-8") as f:
+                    kwargs = {"separators": (",", ":")} if minimize else {"indent": 4}
+                    json.dump(data, f, ensure_ascii=False, default=pydantic_encoder_no_nulls, allow_nan=False, **kwargs)
 
         return 0
 
@@ -116,7 +71,7 @@ class App:
         return 0
 
     @staticmethod
-    def calculate_ar(attribs: str, armament: str, affinity: str, level: str, data_path: Path) -> int:
+    def calculate_ar(attribs: str, armament: str, affinity: str, level: int, data_path: Path) -> int:
         print(f"\n>>> Calculating AR for {affinity} {armament} +{level} at {attribs}")
 
         data = CalculatorData.create(data_path)
@@ -199,4 +154,9 @@ class App:
             print("Sourcing icons failed:", *e.args)
             return 1
 
+        return 0
+
+    @staticmethod
+    def serve_api(port: int, bind: str, precache: bool) -> int:
+        serve_app_api(port, bind=bind, precache=precache)
         return 0

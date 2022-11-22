@@ -47,9 +47,10 @@ class _Change(NamedTuple):
 
     def navigate(self, data: Optional[Dict]) -> Any:
         def _get_any(obj: Any, prop: Any) -> Any:
-            with suppress(KeyError):
-                return obj[prop]
-            return None
+            if isinstance(obj, list):
+                with suppress(KeyError):
+                    return obj[prop]
+            return getattr(obj, prop, None)
 
         assert len(self.property_path) > 0, "got a zero-legnth property_path"
         out = data
@@ -60,7 +61,7 @@ class _Change(NamedTuple):
 
         if self.property_path[-1] == "effects":
             # treat "effects" field in a special way
-            return [str(SchemaEffect.from_dict(elem)) for elem in out]
+            return [str(SchemaEffect.from_obj(elem)) for elem in out]
 
         # TODO: changelog will fail if there is another field
         #       besides "effects" that is a list of objects
@@ -191,8 +192,8 @@ def generate(from_version: GameVersion, version: GameVersion, out: Optional[Path
     for gen_factory in sorted(Table.effective()):
         print(f"Generating changelog for {gen_factory}...", flush=True)
 
-        new_data = gen_factory.generator(version).generate()
-        old_data = gen_factory.generator(from_version).generate()
+        new_data = gen_factory.make_generator(version).generate()
+        old_data = gen_factory.make_generator(from_version).generate()
 
         item_changes = _get_item_changes(old_data, new_data)
 

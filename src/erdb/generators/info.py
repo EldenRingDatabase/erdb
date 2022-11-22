@@ -1,18 +1,10 @@
-from typing import Dict, Iterator, Tuple
-
-import erdb.loaders.schema as schema
+from erdb.typing.models.info import Info
 from erdb.typing.params import ParamDict, ParamRow
-from erdb.typing.enums import GoodsSortGroupID, GoodsType, ItemIDFlag
+from erdb.typing.enums import GoodsType, ItemIDFlag
+from erdb.typing.categories import InfoCategory
 from erdb.utils.common import strip_invalid_name
 from erdb.generators._base import GeneratorDataBase
 
-
-def _get_category(row: ParamRow) -> str:
-    G = GoodsSortGroupID
-    return {
-        G.GROUP_1: "Painting" if "Painting" in row.name else "Note" if "Note" in row.name else "Clue",
-        G.GROUP_2: "Tutorial",
-    }[row.get_int("sortGroupId")]
 
 class InfoGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
@@ -22,12 +14,12 @@ class InfoGeneratorData(GeneratorDataBase):
         return "info.json"
 
     @staticmethod # override
-    def schema_file() -> str:
-        return "info.schema.json"
-
-    @staticmethod # override
     def element_name() -> str:
         return "Info"
+
+    @staticmethod # override
+    def model() -> Info:
+        return Info
 
     # override
     def get_key_name(self, row: ParamRow) -> str:
@@ -45,23 +37,15 @@ class InfoGeneratorData(GeneratorDataBase):
 
     lookup_retrievers = {}
 
-    @staticmethod
-    def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        properties, store = schema.load_properties(
-            "item/properties",
-            "item/definitions/ItemUserData/properties",
-            "info/definitions/Info/properties")
-        store.update(schema.load_enums("item-names"))
-        return properties, store
-
-    def main_param_iterator(self, info: ParamDict) -> Iterator[ParamRow]:
-        Gsid = GoodsSortGroupID
+    def main_param_iterator(self, info: ParamDict):
         for row in info.values():
             if 1 <= row.get_int("sortId") < 999999 \
             and row.get("goodsType") == GoodsType.INFO_ITEM:
                 yield row
 
-    def construct_object(self, row: ParamRow) -> Dict:
-        return self.get_fields_item(row) | self.get_fields_user_data(row, "locations", "remarks") | {
-            "category": _get_category(row)
-        }
+    def construct_object(self, row: ParamRow) -> Info:
+        return Info(
+            **self.get_fields_item(row),
+            **self.get_fields_user_data(row, "locations", "remarks"),
+            category=InfoCategory.from_row(row),
+        )

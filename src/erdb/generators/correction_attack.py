@@ -1,11 +1,11 @@
-from typing import Dict, Tuple
+from typing import Any
 
-import erdb.loaders.schema as schema
+from erdb.typing.models.correction_attack import CorrectionAttack, Correction, Override, Ratio
 from erdb.typing.params import ParamDict, ParamRow
 from erdb.typing.enums import ItemIDFlag
 from erdb.generators._base import GeneratorDataBase
 
-_DAMAGE_TYPE: Dict[str, str] = {
+_DAMAGE_TYPE: dict[str, str] = {
     "physical": "Physics",
     "magic": "Magic",
     "fire": "Fire",
@@ -13,7 +13,7 @@ _DAMAGE_TYPE: Dict[str, str] = {
     "holy": "Dark",
 }
 
-_ATTRIBUTE: Dict[str, str] = {
+_ATTRIBUTE: dict[str, str] = {
     "strength": "Strength",
     "dexterity": "Dexterity",
     "intelligence": "Magic",
@@ -21,36 +21,23 @@ _ATTRIBUTE: Dict[str, str] = {
     "arcane": "Luck",
 }
 
-def _format_correction(attribute: str, damage_type: str) -> str:
-    return f"is{attribute}Correct_by{damage_type}"
+def _get_attributes(row: ParamRow, damage_type: str, cls: Any) -> Any:
+    def get_field(attribute: str, damage_type: str) -> int:
+        field = cls.get_property(_ATTRIBUTE[attribute], _DAMAGE_TYPE[damage_type])
 
-def _format_override(attribute: str, damage_type: str) -> str:
-    return f"overwrite{attribute}CorrectRate_by{damage_type}"
+        return {
+            Correction: row.get_bool(field),
+            Override: None if (value := row.get_int(field)) == -1 else float(value) / 100.0,
+            Ratio: row.get_float(field) / 100.0,
+        }[cls]
 
-def _format_ratio(attribute: str, damage_type: str) -> str:
-    return f"Influence{attribute}CorrectRate_by{damage_type}"
+    ret = {attrib: get_field(attrib, damage_type) for attrib in _ATTRIBUTE.keys()}
+    ret = {k: v for k, v in ret.items() if v is not None}
+    return cls.get_field_type()(**ret)
 
-def _get_attributes(row: ParamRow, damage_type: str, format_func) -> Dict[str, str]:
-    def _get_field(row: ParamRow, attribute: str, damage_type: str, format_func) -> int:
-        field = format_func(_ATTRIBUTE[attribute], _DAMAGE_TYPE[damage_type])
-
-        if format_func == _format_correction:
-            return row.get_bool(field)
-
-        elif format_func == _format_override:
-            value = row.get_int(field)
-            return None if value == -1 else float(value) / 100.0
-
-        elif format_func == _format_ratio:
-            return row.get_float(field) / 100.0
-
-        assert False, "Invalid format function"
-
-    ret = {attrib: _get_field(row, attrib, damage_type, format_func) for attrib in _ATTRIBUTE.keys()}
-    return {k: v for k, v in ret.items() if v is not None}
-
-def _get_damage_types(row: ParamRow, format_func) -> Dict[str, Dict[str, str]]:
-    return {damage: _get_attributes(row, damage, format_func) for damage in _DAMAGE_TYPE.keys()}
+def _get_damage_types(row: ParamRow, cls: Any) -> Any:
+    data = {damage: _get_attributes(row, damage, cls) for damage in _DAMAGE_TYPE.keys()}
+    return cls(**data)
 
 class CorrectionAttackGeneratorData(GeneratorDataBase):
     Base = GeneratorDataBase
@@ -60,24 +47,16 @@ class CorrectionAttackGeneratorData(GeneratorDataBase):
         return "correction-attack.json"
 
     @staticmethod # override
-    def schema_file() -> str:
-        return "correction-attack.schema.json"
-
-    @staticmethod # override
     def element_name() -> str:
         return "CorrectionAttack"
+
+    @staticmethod # override
+    def model() -> CorrectionAttack:
+        return CorrectionAttack
 
     # override
     def get_key_name(self, row: ParamRow) -> str:
         return str(row.index)
-
-    # override
-    def top_level_properties(self) -> Dict:
-        return {
-            "correction": {"type": "object"},
-            "override": {"type": "object"},
-            "ratio": {"type": "object"}
-        }
 
     main_param_retriever = Base.ParamDictRetriever("AttackElementCorrectParam", ItemIDFlag.NON_EQUIPABBLE)
 
@@ -85,17 +64,13 @@ class CorrectionAttackGeneratorData(GeneratorDataBase):
     msgs_retrievers = {}
     lookup_retrievers = {}
 
-    @staticmethod
-    def schema_retriever() -> Tuple[Dict, Dict[str, Dict]]:
-        return schema.load_properties("correction-attack")
-
     def main_param_iterator(self, correct_attack: ParamDict):
         for row in correct_attack.values():
             yield row
 
-    def construct_object(self, row: ParamRow) -> Dict:
-        return {
-            "correction": _get_damage_types(row, _format_correction),
-            "override": _get_damage_types(row, _format_override),
-            "ratio": _get_damage_types(row, _format_ratio),
-        }
+    def construct_object(self, row: ParamRow) -> CorrectionAttack:
+        return CorrectionAttack(
+            correction=_get_damage_types(row, Correction),
+            override=_get_damage_types(row, Override),
+            ratio=_get_damage_types(row, Ratio),
+        )

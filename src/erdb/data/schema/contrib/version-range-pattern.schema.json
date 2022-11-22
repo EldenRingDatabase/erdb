@@ -1,6 +1,0 @@
-{
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "propertyNames": {
-        "pattern": "^\\$schema$|^any version$|^(from|until|only) \\d+\\.\\d\\d+\\.\\d+$|^from \\d+\\.\\d\\d+\\.\\d+ until \\d+\\.\\d\\d+\\.\\d+$"
-    }
-}

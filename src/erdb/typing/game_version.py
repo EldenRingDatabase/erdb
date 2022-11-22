@@ -90,9 +90,6 @@ class GameVersionRange(NamedTuple):
 
     @classmethod
     def from_string(cls, string: str) -> "GameVersionRange":
-        """
-        Corresponds to /schema/userdata/version-range-pattern.schema.json
-        """
         def _ver(match: re.Match[str]) -> GameVersion:
             return GameVersion.from_string(match.group(1))
 

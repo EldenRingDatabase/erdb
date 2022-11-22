@@ -4,6 +4,7 @@ import erdb.effect_parser.attribute_fields as attrib_fields
 import erdb.effect_parser.parsers as parse
 import erdb.effect_parser.hardcoded as hardcoded_effects
 from erdb.effect_parser.aggregator import aggregate_effects
+from erdb.typing.models.effect import StatusEffects
 from erdb.typing.params import ParamRow, ParamDict
 from erdb.typing.enums import SpEffectType, AttackCondition
 from erdb.typing.effects import SchemaEffect
@@ -11,7 +12,7 @@ from erdb.typing.effects import SchemaEffect
 
 _REFERENCE_EFFECT_PARAMS: List[str] = ["cycleOccurrenceSpEffectId", "applyIdOnGetSoul"]
 
-_STATUS_EFFECT_FIELDS: Dict[SpEffectType, str] = {
+_SP_EFFECT_TO_FIELD: Dict[SpEffectType, str] = {
     SpEffectType.HEMORRHAGE: "bloodAttackPower",
     SpEffectType.FROSTBITE: "freezeAttackPower",
     SpEffectType.POISON: "poizonAttackPower",
@@ -21,7 +22,7 @@ _STATUS_EFFECT_FIELDS: Dict[SpEffectType, str] = {
     SpEffectType.BLIGHT: "curseAttackPower",
 }
 
-_STATUS_EFFECT_PROPERTY_NAMES: Dict[SpEffectType, str] = {
+_SP_EFFECT_TO_STR: Dict[SpEffectType, str] = {
     SpEffectType.HEMORRHAGE: "bleed",
     SpEffectType.FROSTBITE: "frostbite",
     SpEffectType.POISON: "poison",
@@ -70,7 +71,7 @@ def get_effects_nested(sp_effect: ParamRow, sp_effects: ParamDict, add_condition
 def get_status_effect(sp_effect: ParamRow) -> Tuple[str, int]:
     # NOTE: not identifying effects by values, relying on `stateInfo` to be correct at all times
     etype = SpEffectType(sp_effect.get("stateInfo"))
-    return _STATUS_EFFECT_PROPERTY_NAMES[etype], sp_effect.get_int(_STATUS_EFFECT_FIELDS[etype])
+    return _SP_EFFECT_TO_STR[etype], sp_effect.get_int(_SP_EFFECT_TO_FIELD[etype])
 
 def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fields: str, add_condition: Optional[AttackCondition]=None) -> List[Dict]:
     effects: List[SchemaEffect] = []
@@ -84,11 +85,12 @@ def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fiel
 
     return [e.to_dict() for e in aggregate_effects(effects)]
 
-def parse_status_effects(effect_ids: List[str], sp_effects: ParamDict) -> Dict[str, int]:
+def parse_status_effects(effect_ids: List[str], sp_effects: ParamDict) -> StatusEffects:
     # Getting 0th effect if value no found, bug with Antspur Rapier -- get anything to return a 0 status effect
     effects = [sp_effects.get(i, sp_effects["0"]) for i in effect_ids if i != "-1"]
     status_effects = hardcoded_effects.get_status_effect_ranges()
-    return dict([get_status_effect(e) for e in effects if e.index in status_effects])
+    return StatusEffects(**dict([get_status_effect(e) for e in effects if e.index in status_effects]))
+    #return StatusEffects(**[get_status_effect(e) for e in effects if e.index in status_effects])
 
 def parse_weapon_effects(weapon: ParamRow) -> List[Dict]:
     effects: List[SchemaEffect] = []
