@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, Optional, Tuple, Self
+from typing import Self
 
 from erdb.generators._base import GeneratorDataBase
 from erdb.generators.armaments import ArmamentGeneratorData
@@ -96,7 +96,7 @@ class Table(str, Enum):
         }[self]
 
     @property
-    def id_range(self) -> Optional[Tuple[int, int]]:
+    def id_range(self) -> tuple[int, int] | None:
         return {
             Table.SPIRIT_ASHES: (200000, 300000),
         }.get(self)
@@ -127,7 +127,7 @@ class Table(str, Enum):
         return self.generator.construct(version)
 
     @staticmethod
-    def effective() -> List[Self]:
+    def effective() -> list[Self]:
         s = set(Table)
         s.remove(Table.ALL)
         return list(s)

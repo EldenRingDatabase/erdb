@@ -1,7 +1,7 @@
 from inspect import Parameter, signature
 from argparse import ArgumentParser, BooleanOptionalAction, Namespace, Action
 from pathlib import Path
-from typing import Any, Callable, Dict, Generator, List, NamedTuple, Sequence, Tuple, Self
+from typing import Any, Callable, Generator, NamedTuple, Sequence, Self
 
 from erdb.generators import Table
 from erdb.loaders import GAME_VERSIONS
@@ -9,7 +9,7 @@ from erdb.utils.changelog import FormatterBase
 from erdb.typing.game_version import GameVersion, GameVersionRange
 
 
-def _parse_all_tables(tables: List[Table], all_effective_tables) -> List[Table]:
+def _parse_all_tables(tables: list[Table], all_effective_tables) -> list[Table]:
     tables = set(tables)
 
     if Table.ALL in tables:
@@ -29,30 +29,30 @@ def _infer_annotation(type: Any, **kwargs) -> Any:
             return type | None
 
         if isinstance(kwargs["default"], list):
-            return List[type]
+            return list[type]
 
     return type
 
 class _GeneratorsAction(Action):
-    def __call__(self, parser, namespace, values: List[Table], option_string=None):
+    def __call__(self, parser, namespace, values: list[Table], option_string=None):
         setattr(namespace, self.dest, _parse_all_tables(values, Table))
 
 class _GamedataAction(Action):
-    def __call__(self, parser, namespace, values: List[str], option_string=None):
+    def __call__(self, parser, namespace, values: list[str], option_string=None):
         setattr(namespace, self.dest, GameVersionRange.from_string(" ".join(values)))
 
 class _ItemTypesAction(Action):
-    def __call__(self, parser, namespace, values: List[Table], option_string=None):
+    def __call__(self, parser, namespace, values: list[Table], option_string=None):
         setattr(namespace, self.dest, _parse_all_tables(values, _ItemTypesAction.choices()))
 
     @staticmethod
-    def choices() -> List[Table]:
+    def choices() -> list[Table]:
         return [tb for tb in Table if tb.has_icons]
 
 class _Argument(NamedTuple):
-    names: Tuple
+    names: tuple
     param: Parameter
-    kwargs: Dict
+    kwargs: dict
 
     @classmethod
     def make(cls, *names: str, type: Any | None = None, annotation: Any | None = None, **kwargs) -> Self:
@@ -69,19 +69,19 @@ class _Argument(NamedTuple):
         )
 
     @classmethod
-    def outputs_file(cls) -> List[Self]:
+    def outputs_file(cls) -> list[Self]:
         return [
             cls.make("--out", "-o", type=Path, default=None, help="Optional output path.")
         ]
 
     @classmethod
-    def outputs_json(cls) -> List[Self]:
+    def outputs_json(cls) -> list[Self]:
         return [
             cls.make("--minimize", action="store_true", help="Output minimized JSON when generating data.")
         ] + cls.outputs_file()
 
     @classmethod
-    def parses_gamedata(cls) -> List[Self]:
+    def parses_gamedata(cls) -> list[Self]:
         default = GameVersionRange.from_version(GAME_VERSIONS[0]) if len(GAME_VERSIONS) > 0 else None
         return [
             cls.make(
@@ -91,7 +91,7 @@ class _Argument(NamedTuple):
         ]
 
     @classmethod
-    def sources_gamedata(cls) -> List[Self]:
+    def sources_gamedata(cls) -> list[Self]:
         return [
             cls.make("--game-dir", type=Path, required=True, help="Path to ELDEN RING's \"Game\" directory, where the binary is located."),
             cls.make("--ignore-checksum", action=BooleanOptionalAction, help="Ignore MD5 verification of thirdparty tools."),
@@ -101,15 +101,15 @@ class _Argument(NamedTuple):
 class _Subcommand(NamedTuple):
     command: str
     summary: str
-    aliases: List[str] = []
-    arguments: List[_Argument] = []
+    aliases: list[str] = []
+    arguments: list[_Argument] = []
 
     @classmethod
     def iterate(cls) -> Generator[Self, None, None]:
         yield from iter(cls.__subclasses__())
 
     @classmethod
-    def get_parameters(cls) -> List[Parameter]:
+    def get_parameters(cls) -> list[Parameter]:
         return [arg.param for arg in cls.arguments]
 
 class Generate(_Subcommand):
@@ -188,7 +188,7 @@ class ServeAPI(_Subcommand):
         _Argument.make("--precache", action=BooleanOptionalAction, help="Pregenerate all data instead of lazy loading."),
     ]
 
-def parse_args(argv: Sequence[str], handlers: Dict[str, Callable]) -> Namespace:
+def parse_args(argv: Sequence[str], handlers: dict[str, Callable]) -> Namespace:
     parser = ArgumentParser(description="Interface for ERDB operations.")
     subs = parser.add_subparsers(title="subcommands", required=True)
 

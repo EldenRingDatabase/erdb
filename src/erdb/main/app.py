@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from typing import Dict, List, Sequence
+from typing import Sequence
 
 from erdb.main.args import parse_args
 from erdb.generators import Table
@@ -15,7 +15,7 @@ from erdb.typing.game_version import GameVersion, GameVersionRange
 
 
 class App:
-    args: Dict
+    args: dict
 
     def __init__(self, argv: Sequence[str]) -> None:
         self.args = parse_args(argv, handlers={
@@ -34,7 +34,7 @@ class App:
         return handler(**self.args)
 
     @staticmethod
-    def generate(tables: List[Table], gamedata: GameVersionRange, minimize: bool, out: Path | None) -> int:
+    def generate(tables: list[Table], gamedata: GameVersionRange, minimize: bool, out: Path | None) -> int:
         if out is None:
             out = Path.cwd()
         else:
@@ -137,7 +137,7 @@ class App:
         return 0
 
     @staticmethod
-    def source_icons(types: List[Table], size: int, game_dir: Path, ignore_checksum: bool, keep_cache: bool, out: Path | None) -> int:
+    def source_icons(types: list[Table], size: int, game_dir: Path, ignore_checksum: bool, keep_cache: bool, out: Path | None) -> int:
         game_dir = game_dir.resolve()
 
         if out is None:

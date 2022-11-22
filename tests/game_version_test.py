@@ -1,4 +1,3 @@
-from typing import List
 import pytest
 
 from erdb.typing.game_version import GameVersion, GameVersionRange
@@ -17,7 +16,7 @@ def base() -> GameVersion:
     (["1", "03", "3"], ["1", "03", "3"]),
     (["3", "03", "3"], ["3", "03", "3"]),
 ])
-def test_eq(left: List[str], right: List[str]):
+def test_eq(left: list[str], right: list[str]):
     assert _make(*left) == _make(*right)
 
 @pytest.mark.parametrize("left,right", [
@@ -25,7 +24,7 @@ def test_eq(left: List[str], right: List[str]):
     (["1", "04", "3"], ["1", "03", "3"]),
     (["4", "03", "3"], ["3", "03", "3"]),
 ])
-def test_ne(left: List[str], right: List[str]):
+def test_ne(left: list[str], right: list[str]):
     assert _make(*left) != _make(*right)
 
 @pytest.mark.parametrize("left", [["1", "02", "2"], ["1", "01", "9"], ["0", "09", "9"]])

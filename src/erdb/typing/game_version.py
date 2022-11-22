@@ -1,7 +1,7 @@
 import re
 from functools import total_ordering
 from pathlib import Path
-from typing import Any, Generator, List, NamedTuple
+from typing import Any, Generator, NamedTuple
 
 
 @total_ordering
@@ -9,7 +9,7 @@ class GameVersion(NamedTuple):
     major: str
     minor: str
     patch: str
-    nums: List[int]
+    nums: list[int]
 
     @classmethod
     def from_nums(cls, major_int: int, minor_int: int, patch_int: int) -> "GameVersion":
@@ -79,7 +79,7 @@ class GameVersionRange(NamedTuple):
     end: GameVersion   # excluding
     only: bool=False   # only `begin`
 
-    def iterate(self, versions: List[GameVersion]) -> Generator[GameVersion, None, None]:
+    def iterate(self, versions: list[GameVersion]) -> Generator[GameVersion, None, None]:
         for version in versions:
             if version in self:
                 yield version

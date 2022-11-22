@@ -1,5 +1,3 @@
-from typing import Dict
-
 import erdb.effect_parser.parsers as parse
 from erdb.typing.effects import EffectModel, EffectType, AttributeName, AttributeField
 from erdb.typing.enums import AttackCondition
@@ -461,5 +459,5 @@ _WEAPON_ATTRIBUTE_FIELDS = {
     ),
 }
 
-def get(weapon: bool=False) -> Dict[str, AttributeField]:
+def get(weapon: bool = False) -> dict[str, AttributeField]:
     return _WEAPON_ATTRIBUTE_FIELDS if weapon else _ATTRIBUTE_FIELDS

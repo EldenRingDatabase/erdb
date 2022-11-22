@@ -1,10 +1,8 @@
-from typing import List, Dict
-
 from erdb.typing.enums import ItemIDFlag
 
 
 class ParamRow(object):
-    def __init__(self, row: Dict[str, str], item_id_flag: ItemIDFlag) -> None:
+    def __init__(self, row: dict[str, str], item_id_flag: ItemIDFlag) -> None:
         self._index = int(row["Row ID"])
         self._item_id_flag = item_id_flag
         self._index_hex = f"{self._index + item_id_flag:08X}"
@@ -28,7 +26,7 @@ class ParamRow(object):
         return self._name
 
     @property
-    def keys(self) -> List[str]:
+    def keys(self) -> list[str]:
         return self._row.keys()
 
     def get(self, field: str) -> str:
@@ -57,4 +55,4 @@ class ParamRow(object):
         """
         return self._index % 100 == 0
 
-ParamDict = Dict[str, ParamRow]
+ParamDict = dict[str, ParamRow]

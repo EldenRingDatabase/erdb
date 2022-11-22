@@ -1,7 +1,7 @@
 from operator import add
 from itertools import repeat
 from pathlib import Path
-from typing import Any, Generator, Tuple, Dict, List
+from typing import Any, Generator
 from pydantic.json import pydantic_encoder
 
 from erdb.typing.params import ParamDict
@@ -9,12 +9,12 @@ from erdb.typing.params import ParamDict
 
 IntGen = Generator[int, None, None]
 
-def update_optional(d: Dict, key: str, value: Any, null_value: Any=None) -> Dict:
+def update_optional(d: dict, key: str, value: Any, null_value: Any = None) -> dict:
     if value != null_value:
         d[key] = value
     return d
 
-def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: List[int], increment: int=1) -> Tuple[IntGen, IntGen]:
+def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: list[int], increment: int = 1) -> tuple[IntGen, IntGen]:
     """
     Returns lists of valid indices from `base_index` value which offset
     until the highest possible maxima is reached.

@@ -1,7 +1,7 @@
 from copy import deepcopy
 from enum import Enum
 from types import SimpleNamespace
-from typing import Any, Callable, Dict, NamedTuple, Optional, List
+from typing import Any, Callable, NamedTuple
 
 
 class EffectType(str, Enum):
@@ -98,7 +98,7 @@ class AttributeField(NamedTuple):
     effect_model: EffectModel
     effect_type: EffectType
     parser: Callable
-    conditions: Optional[List[str]]
+    conditions: list[str] | None
     default_value: Any
 
     def get_effective_type(self, value: Any):
@@ -112,7 +112,7 @@ class AttributeField(NamedTuple):
 
     @classmethod
     def create(cls, attribute: AttributeName, effect_model: EffectModel, effect_type: EffectType,
-               parser: Callable, conditions: Optional[List[str]]=None, default_value: Optional[Any]=None) -> "AttributeField":
+               parser: Callable, conditions: list[str] | None = None, default_value: Any | None = None) -> "AttributeField":
 
         def _default_value_from_model():
             return 1 if effect_model == EffectModel.MULTIPLICATIVE else 0
@@ -122,14 +122,14 @@ class AttributeField(NamedTuple):
 
 class SchemaEffect(SimpleNamespace):
     attribute: AttributeName
-    conditions: Optional[List[str]]=None
-    tick_interval: Optional[float]=None
+    conditions: list[str] | None = None
+    tick_interval: float | None = None
     effect_model: EffectModel
     effect_type: EffectType
     value: float
-    value_pvp: Optional[float]=None
+    value_pvp: float | None = None
 
-    def to_dict(self) -> Dict:
+    def to_dict(self) -> dict:
         d = {
             "attribute": self.attribute,
             "model": self.effect_model,

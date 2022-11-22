@@ -1,7 +1,7 @@
 from io import TextIOBase
 from enum import Enum
 from sys import stdout
-from typing import Any, Dict, List, NamedTuple, Optional, OrderedDict, Set
+from typing import Any, NamedTuple, OrderedDict
 from pathlib import Path
 from difflib import Differ
 from operator import methodcaller
@@ -32,7 +32,7 @@ class _ChangeType(Enum):
 
 class _Change(NamedTuple):
     change_type: _ChangeType
-    property_path: List[str]
+    property_path: list[str]
     indices_change: bool
 
     @property
@@ -45,7 +45,7 @@ class _Change(NamedTuple):
     def __eq__(self, __o: object) -> bool:
         return isinstance(__o, _Change) and self.display == __o.display
 
-    def navigate(self, data: Optional[Dict]) -> Any:
+    def navigate(self, data: dict | None) -> Any:
         def _get_any(obj: Any, prop: Any) -> Any:
             if isinstance(obj, list):
                 with suppress(KeyError):
@@ -69,7 +69,7 @@ class _Change(NamedTuple):
         return out
 
     @classmethod
-    def create(cls, change_type: _ChangeType, path: List) -> "_Change":
+    def create(cls, change_type: _ChangeType, path: list) -> "_Change":
         assert len(path) > 0, "Invalid change path"
 
         if isinstance(path[-1], int):
@@ -86,7 +86,7 @@ class FormatterBase():
     _begin_diff = ""
     _end_diff   = ""
 
-    _data: Dict[str, List[str]]
+    _data: dict[str, list[str]]
     _last_section: str
 
     def __init__(self) -> None:
@@ -111,7 +111,7 @@ class FormatterBase():
     def line(self, *args: Any):
         self._data[self._last_section].append(" ".join(map(str, args)))
 
-    def table_of_contents(self, sections: List[str], out: TextIOBase):
+    def table_of_contents(self, sections: list[str], out: TextIOBase):
         pass
 
     def write(self, out: TextIOBase):
@@ -131,7 +131,7 @@ class FormatterBase():
         return cls.__name__.removeprefix("Formatter").lower()
 
     @classmethod
-    def identifiers(cls) -> List[str]:
+    def identifiers(cls) -> list[str]:
         return [*map(methodcaller("_get_identifier"), cls.__subclasses__())]
 
     @classmethod
@@ -149,7 +149,7 @@ class FormatterMarkdown(FormatterBase):
     _begin_diff = "```diff"
     _end_diff   = "```"
 
-    def table_of_contents(self, sections: List[str], out: TextIOBase):
+    def table_of_contents(self, sections: list[str], out: TextIOBase):
         out.write("# Contents\n")
 
         for section in sections:
@@ -172,7 +172,7 @@ class FormatterText(FormatterBase):
     _begin_diff = "---"
     _end_diff   = "---"
 
-def _get_item_changes(old_data: Dict, new_data: Dict) -> Dict[str, Set[_Change]]:
+def _get_item_changes(old_data: dict, new_data: dict) -> dict[str, set[_Change]]:
     diff = DeepDiff(old_data, new_data, view="tree")
     item_changes = defaultdict(set)
 
@@ -185,7 +185,7 @@ def _get_item_changes(old_data: Dict, new_data: Dict) -> Dict[str, Set[_Change]]
 
     return item_changes
 
-def generate(from_version: GameVersion, version: GameVersion, out: Optional[Path], formatter_id: str="markdown"):
+def generate(from_version: GameVersion, version: GameVersion, out: Path | None, formatter_id: str = "markdown"):
     formatter = FormatterBase.create(formatter_id)
     print(f"Generating changelog from {from_version} to {version}...", flush=True)
 

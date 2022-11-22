@@ -1,6 +1,4 @@
 import math
-from typing import Optional, List, Dict
-
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import SpEffectType, AttackType
 from erdb.typing.effects import AttributeField, EffectModel
@@ -32,7 +30,7 @@ def _floor_decimal_2(value: float) -> float:
     value = round(value, 6) # do not floor cases like 1.89999999999
     return math.floor(value * 100) / 100.0
 
-def conditions(sp_effect: ParamRow, triggeree: Optional[ParamRow]=None) -> Optional[List[str]]:
+def conditions(sp_effect: ParamRow, triggeree: ParamRow | None = None) -> list[str] | None:
     conds = set()
 
     def _append_triggers(source: ParamRow):
@@ -68,11 +66,11 @@ def conditions(sp_effect: ParamRow, triggeree: Optional[ParamRow]=None) -> Optio
 
     return None if len(conds) == 0 else sorted(list(conds))
 
-def interval(sp_effect: ParamRow) -> Optional[float]:
+def interval(sp_effect: ParamRow) -> float | None:
     interv = sp_effect.get("motionInterval")
     return None if interv == "0" else float(interv)
 
-def value_pvp(sp_effect: ParamRow, field_pve: str, attrib_fields: Dict[str, AttributeField]) -> Optional[float]:
+def value_pvp(sp_effect: ParamRow, field_pve: str, attrib_fields: dict[str, AttributeField]) -> float | None:
     if not (field_pvp := _PVE_TO_PVP.get(field_pve, None)):
         return None
 

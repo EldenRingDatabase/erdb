@@ -1,5 +1,3 @@
-from typing import List
-
 from erdb.typing.params import ParamDict
 from erdb.shop.shop_typing import Material, Lineup, Product
 
@@ -15,8 +13,8 @@ class Lookup(object):
         self._shop_lineup = shop_lineup
         self._material_sets = material_sets
 
-    def get_lineups_from_material(self, material: Material) -> List[Lineup]:
-        lineups: List[Lineup] = []
+    def get_lineups_from_material(self, material: Material) -> list[Lineup]:
+        lineups: list[Lineup] = []
 
         for lineup_param in self._shop_lineup.values():
             if (mat_id := lineup_param.get_int("mtrlId")) == -1:

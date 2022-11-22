@@ -1,7 +1,7 @@
 import json
 from math import floor
 from pathlib import Path
-from typing import Dict, Iterator, NamedTuple, Tuple
+from typing import Iterator, NamedTuple
 
 
 """
@@ -17,7 +17,7 @@ class ValueType(NamedTuple):
     def total(self) -> float:
         return floor(self.base + self.scaling)
 
-    def __iter__(self) -> Iterator[Tuple[float, float]]:
+    def __iter__(self) -> Iterator[tuple[float, float]]:
         return iter((self.base, self.scaling))
 
 class AttackPower(NamedTuple):
@@ -64,19 +64,19 @@ class Attributes(NamedTuple):
         return f"{self.strength},{self.dexterity},{self.intelligence},{self.faith},{self.arcane}"
 
 class CorrectionAttack(NamedTuple):
-    correction: Dict[str, Dict]
-    override: Dict[str, Dict]
-    ratio: Dict[str, Dict]
+    correction: dict[str, dict]
+    override: dict[str, dict]
+    ratio: dict[str, dict]
 
     @classmethod
-    def from_dict(cls, data: Dict) -> "CorrectionAttack":
+    def from_dict(cls, data: dict) -> "CorrectionAttack":
         return cls(data["correction"], data["override"], data["ratio"])
 
 class CalculatorData(NamedTuple):
-    armaments: Dict[str, Dict]
-    reinforcements: Dict[str, list[Dict]]
-    correction_attack: Dict[str, Dict[str, str]]
-    correction_graph: Dict[str, Dict[str, float]]
+    armaments: dict[str, dict]
+    reinforcements: dict[str, list[dict]]
+    correction_attack: dict[str, dict[str, str]]
+    correction_graph: dict[str, dict[str, float]]
 
     @classmethod
     def create(cls, data_path: Path) -> "CalculatorData":
@@ -103,13 +103,13 @@ class ArmamentCalculator:
     _level: int
 
     # data cache relevant for this armament, affinity and level
-    _affinity_properties: Dict
-    _requirements: Dict[str, int]
-    _reinforcement: Dict
+    _affinity_properties: dict
+    _requirements: dict[str, int]
+    _reinforcement: dict
     _correction_attack: CorrectionAttack
-    _correction_graph: Dict[str, Dict[str, float]]
+    _correction_graph: dict[str, dict[str, float]]
 
-    def __init__(self, data: CalculatorData, name: str, affinity: str="Standard", level: int=0) -> None:
+    def __init__(self, data: CalculatorData, name: str, affinity: str = "Standard", level: int = 0) -> None:
         self._name = name
         self._affinity = affinity
         self._level = level

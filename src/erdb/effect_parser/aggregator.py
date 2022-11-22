@@ -1,6 +1,6 @@
 import operator as op
 from types import SimpleNamespace
-from typing import List, Dict, Set, NamedTuple
+from typing import NamedTuple
 
 from erdb.typing.effects import AttributeName, SchemaEffect
 
@@ -8,11 +8,11 @@ from erdb.typing.effects import AttributeName, SchemaEffect
 _A = AttributeName
 
 class AttributeAggregatorHint(NamedTuple):
-    base: Set[AttributeName]
+    base: set[AttributeName]
     effective: AttributeName
 
 class AggregatedSchemaEffect(SimpleNamespace):
-    attribute_names: Set[AttributeName]
+    attribute_names: set[AttributeName]
     example_effect: SchemaEffect
 
     @classmethod
@@ -24,7 +24,7 @@ Specifies which attribute sets can be collapsed into their effective attribute.
 ORDER IS IMPORTANT because effective attributes are taken into consideration in
 consecutive iterations.
 """
-_AGGREGATOR_HINTS: List[AttributeAggregatorHint] = [
+_AGGREGATOR_HINTS: list[AttributeAggregatorHint] = [
     AttributeAggregatorHint(
         base={_A.STANDARD_ABSORPTION, _A.STRIKE_ABSORPTION, _A.SLASH_ABSORPTION, _A.PIERCE_ABSORPTION},
         effective=_A.PHYSICAL_ABSORPTION
@@ -75,8 +75,8 @@ _AGGREGATOR_HINTS: List[AttributeAggregatorHint] = [
     ),
 ]
 
-def _get_aggregated_effects(effects: List[SchemaEffect]) -> Dict[int, AggregatedSchemaEffect]:
-    aggregated_effects: Dict[int, AggregatedSchemaEffect] = dict()
+def _get_aggregated_effects(effects: list[SchemaEffect]) -> dict[int, AggregatedSchemaEffect]:
+    aggregated_effects: dict[int, AggregatedSchemaEffect] = dict()
 
     for effect in effects:
         if (key := effect.get_values_hash()) in aggregated_effects:
@@ -86,7 +86,7 @@ def _get_aggregated_effects(effects: List[SchemaEffect]) -> Dict[int, Aggregated
 
     return aggregated_effects
 
-def _aggregate_attributes(attributes: Set[AttributeName], hints: List[AttributeAggregatorHint]) -> Set[AttributeName]:
+def _aggregate_attributes(attributes: set[AttributeName], hints: list[AttributeAggregatorHint]) -> set[AttributeName]:
     for hint in hints:
         if hint.base.issubset(attributes):
             attributes.difference_update(hint.base)
@@ -94,7 +94,7 @@ def _aggregate_attributes(attributes: Set[AttributeName], hints: List[AttributeA
 
     return attributes
 
-def _aggregated_effects_to_effects(aggregated_effects: Dict[int, AggregatedSchemaEffect]) -> List[SchemaEffect]:
+def _aggregated_effects_to_effects(aggregated_effects: dict[int, AggregatedSchemaEffect]) -> list[SchemaEffect]:
     effects = []
 
     for aggregated_effect in aggregated_effects.values():
@@ -103,7 +103,7 @@ def _aggregated_effects_to_effects(aggregated_effects: Dict[int, AggregatedSchem
 
     return effects
 
-def aggregate_effects(base_effects: List[SchemaEffect]) -> List[SchemaEffect]:
+def aggregate_effects(base_effects: list[SchemaEffect]) -> list[SchemaEffect]:
     aggregated_effects = _get_aggregated_effects(base_effects)
 
     for key, aggregated_effect in aggregated_effects.items():

@@ -1,7 +1,6 @@
 import json
 from enum import Enum
 from pathlib import Path
-from typing import List
 from time import sleep
 
 
@@ -87,10 +86,10 @@ class Field(Enum):
     MADNESS_ROUNDED = "L45" # rounded
 
     @staticmethod
-    def attribs() -> List["Field"]:
+    def attribs() -> list["Field"]:
         return [Field.STRENGTH, Field.DEXTERITY, Field.INTELLIGENCE, Field.FAITH, Field.ARCANE]
 
-_ATTRIB_SET: List[str] = [
+_ATTRIB_SET: list[str] = [
     "20,18,30,30,7",  # holy
     "9,7,30,30,20",   # holy unoptimal
     "20,80,11,15,7",  # dexterity
@@ -167,7 +166,7 @@ class OnlineCalc:
         self._inc_write()
 
     @retry_on_quota_limit(times=60, time=5)
-    def set_fields(self, fields: List[Field], values: List):
+    def set_fields(self, fields: list[Field], values: list):
         assert len(fields) == len(values)
         batch = [{"range": f.value, "values": [[v]]} for f, v in zip(fields, values)]
         self._sheet.batch_update(batch)
@@ -196,7 +195,7 @@ class OnlineCalc:
 
         self.set_fields(Field.attribs(), [*map(int, parts)])
 
-def _get_attack_values(ap: List[str]) -> List[float]:
+def _get_attack_values(ap: list[str]) -> list[float]:
     return [float(v) for v in ap if v not in ["", "-   "]]
 
 """

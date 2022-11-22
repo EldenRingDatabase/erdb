@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from typing import Dict, List, Tuple
 import pytest
 
 from erdb.utils.attack_power import Attributes, CalculatorData, ArmamentCalculator
@@ -23,8 +22,8 @@ def pytest_generate_tests(metafunc):
     with open(_GAMEDATA_DIR / "armaments.json") as f:
         armaments = json.load(f)["Armaments"]
 
-    armament_data: List[Tuple[str, str]] = []
-    armament_ids: List[str] = []
+    armament_data: list[tuple[str, str]] = []
+    armament_ids: list[str] = []
 
     for armament, properties in armaments.items():
         for affinity in properties["affinity"].keys():
@@ -39,7 +38,7 @@ def calc_data() -> CalculatorData:
     return CalculatorData.create(_GAMEDATA_DIR)
 
 @pytest.fixture(scope="module")
-def results_data() -> Dict[str, Dict]:
+def results_data() -> dict[str, dict]:
     def load(attribs):
         with open(_DATA_DIR / f"{attribs}.json") as f:
             return json.load(f)

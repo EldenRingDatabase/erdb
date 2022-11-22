@@ -1,11 +1,9 @@
-from typing import List, Dict
-
 from erdb.loaders.params import load as load_params
 from erdb.typing.params import ParamDict
 from erdb.typing.enums import ItemIDFlag
 
 
-def _get_values(effects: ParamDict, field: str, limit: int=10) -> Dict[str, List[str]]:
+def _get_values(effects: ParamDict, field: str, limit: int = 10) -> dict[str, list[str]]:
     values = {}
 
     for effect in effects.values():
@@ -23,7 +21,7 @@ def _get_values(effects: ParamDict, field: str, limit: int=10) -> Dict[str, List
 
     return values
 
-def find_valid_values(param_name: str, version: str, field: str, limit: int=8):
+def find_valid_values(param_name: str, version: str, field: str, limit: int = 8):
     """
     Interesting param.fields overview:
     * SpEffectParam:conditionHp                      -- trigger when HP below %

@@ -12,7 +12,7 @@ from itertools import chain, islice
 from time import sleep
 from hashlib import md5
 from pathlib import Path
-from typing import Tuple, Dict, List, NamedTuple, Optional
+from typing import NamedTuple
 
 from erdb.generators import Table
 from erdb.loaders import PKG_DATA_PATH
@@ -45,7 +45,7 @@ def _process_cache(*paths: Path, keep_cache: bool):
         print("Removing unpacked files (--keep-cache not provided)...", flush=True)
         for p in paths: shutil.rmtree(p, ignore_errors=True)
 
-def _get_app_version(game_exe: Path) -> List[int]:
+def _get_app_version(game_exe: Path) -> list[int]:
     try:
         import win32api as w
     except ModuleNotFoundError:
@@ -73,7 +73,7 @@ class _File(NamedTuple):
         return str(self.path)
 
 class _Command(NamedTuple):
-    args: List[str]
+    args: list[str]
 
     def run(self, cwd: Path):
         print(f"> [{cwd}]", *self.args, flush=True)
@@ -89,15 +89,15 @@ class _Command(NamedTuple):
         assert p.returncode == 0, f"Command failed with return code {p.returncode}."
 
     @classmethod
-    def make(cls, args: List[str], **kwargs) -> "_Command":
+    def make(cls, args: list[str], **kwargs) -> "_Command":
         return cls([arg.format(**kwargs) for arg in args])
 
 class _Tool(NamedTuple):
     name: str
     url: str
     path: Path
-    files: List[_File]
-    commands: List[_Command]
+    files: list[_File]
+    commands: list[_Command]
 
     def check_files(self, ignore_checksum: bool):
         print(f"Validating files in \"{self.path}\"...", flush=True)
@@ -129,7 +129,7 @@ class _Tool(NamedTuple):
         _Command.make([*args]).run(self.path)
 
     @classmethod
-    def from_manifest(cls, game_dir: Path, name: str, data: Dict, skip_commands: bool=False) -> "_Tool":
+    def from_manifest(cls, game_dir: Path, name: str, data: dict, skip_commands: bool = False) -> "_Tool":
         path = PKG_DATA_PATH / "thirdparty" / name
 
         if not path.exists() or _is_empty(path):
@@ -172,9 +172,9 @@ class _Tool(NamedTuple):
         print("Extracted tool files to:", destination, flush=True)
 
 class _MapTile(NamedTuple):
-    Coords = Tuple[int, int]
+    Coords = tuple[int, int]
     Code = int
-    Masks = Dict[Coords, Code]
+    Masks = dict[Coords, Code]
 
     path: Path
     underground: bool
@@ -211,14 +211,14 @@ class _MapTile(NamedTuple):
         return cls(path, parts[2] == "M01", int(parts[3][1]), int(parts[4]), int(parts[5]), int(parts[6], 16))
 
     @staticmethod
-    def glob(path: Path, extension: str, lod: int, underground: bool, masks: Masks) -> List["_MapTile"]:
+    def glob(path: Path, extension: str, lod: int, underground: bool, masks: Masks) -> list["_MapTile"]:
         glob_filter = f"*MENU_MapTile_M0{1 if underground else 0}_L{lod}*{extension}"
         tiles = (_MapTile.from_path(p) for p in path.rglob(glob_filter))
 
         # filter the valid, fully-unlocked tile variants based on their bitmask
         return [t for t in tiles if masks.get(t.coords) == t.code and not t.is_out_of_bounds]
 
-def source_gamedata(game_dir: Path, ignore_checksum: bool, version: Optional[GameVersion] = None):
+def source_gamedata(game_dir: Path, ignore_checksum: bool, version: GameVersion | None = None):
     # TODO: check if `game_dir` is UXM-unpacked (backup_ directory?)
     #       preferably do unpacking via custom CLI tool mimicing UXM
 
@@ -249,7 +249,7 @@ def source_gamedata(game_dir: Path, ignore_checksum: bool, version: Optional[Gam
 
     print(f"Sourcing version {version} complete!", flush=True)
 
-def _assemble_map(tiles: List[_MapTile], out: Optional[Path]=None):
+def _assemble_map(tiles: list[_MapTile], out: Path | None = None):
     if len(tiles) == 0:
         print(f"WARNING: No tiles found with specified options.", flush=True)
         return
@@ -283,7 +283,7 @@ def _assemble_map(tiles: List[_MapTile], out: Optional[Path]=None):
 
     worldmap.save(out, format=out.suffix[1:]) # remove the initial dot
 
-def _parse_tile_masks(mask_dir: Path, lod: int=0, underground: bool=False) -> _MapTile.Masks:
+def _parse_tile_masks(mask_dir: Path, lod: int = 0, underground: bool = False) -> _MapTile.Masks:
     masks: _MapTile.Masks = dict()
 
     mtmsk = f"MENU_MapTile_M0{1 if underground else 0}.mtmsk"
@@ -299,7 +299,7 @@ def _parse_tile_masks(mask_dir: Path, lod: int=0, underground: bool=False) -> _M
 
     return masks
 
-def _unpack_missing_dds(yabber: _Tool, dds_files: List[Path]):
+def _unpack_missing_dds(yabber: _Tool, dds_files: list[Path]):
     def chunks(files_iterable, size: int):
         it = iter(files_iterable)
         for first in it:
@@ -311,7 +311,7 @@ def _unpack_missing_dds(yabber: _Tool, dds_files: List[Path]):
     for files_chunk in chunks(files, 20):
         yabber.run_command("Yabber.exe", *map(str, files_chunk))
 
-def source_map(game_dir: Path, out: Optional[Path]=None, lod: int=0, underground: bool=False, ignore_checksum: bool=False, keep_cache: bool=False):
+def source_map(game_dir: Path, out: Path | None = None, lod: int = 0, underground: bool = False, ignore_checksum: bool = False, keep_cache: bool = False):
     manifest = _load_manifest()
 
     yabber, = _Tool.load_custom(game_dir, manifest, "Yabber")
@@ -340,7 +340,7 @@ def source_map(game_dir: Path, out: Optional[Path]=None, lod: int=0, underground
     except: raise
     finally: _process_cache(tile_dir, mask_dir, keep_cache=keep_cache)
 
-def source_icons(game_dir: Path, tables: List[Table], size: int, desination: Path, ignore_checksum: bool=False, keep_cache: bool=False):
+def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Path, ignore_checksum: bool = False, keep_cache: bool = False):
     assert 1 <= size <= 1024, f"Invalid size: {size}"
 
     def readr(tb: Table):
@@ -358,15 +358,15 @@ def source_icons(game_dir: Path, tables: List[Table], size: int, desination: Pat
             for index in reversed(rows.keys()):
                 yield index, rows[index]
 
-    def valid_row(index: int, row: Dict[str, str], id_range: Optional[Tuple[int, int]] = None) -> bool:
+    def valid_row(index: int, row: dict[str, str], id_range: tuple[int, int] | None = None) -> bool:
         return \
             len(row["Row Name"]) > 0 and \
             (id_range is None or tb.id_range[0] <= index < tb.id_range[1])
 
-    def get_icon_id(row: Dict[str, str]) -> int:
+    def get_icon_id(row: dict[str, str]) -> int:
         return int(row["iconId"]) if "iconId" in row else int(row["iconIdM"])
 
-    def get_name(row: Dict[str, str]) -> str:
+    def get_name(row: dict[str, str]) -> str:
         return row["Row Name"].replace(":", "")
 
     def get_icon_dds(loc: Path, icon_id: int) -> Path:
