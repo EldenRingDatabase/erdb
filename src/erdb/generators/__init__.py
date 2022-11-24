@@ -1,46 +1,81 @@
-from enum import Enum
-from typing import Self
+from enum import StrEnum
+from typing import Any, Self, NamedTuple
 
-from erdb.generators._base import GeneratorDataBase
-from erdb.generators.armaments import ArmamentGeneratorData
-from erdb.generators.armor import ArmorGeneratorData
-from erdb.generators.ashes_of_war import AshOfWarGeneratorData
-from erdb.generators.correction_attack import CorrectionAttackGeneratorData
-from erdb.generators.correction_graph import CorrectionGraphGeneratorData
-from erdb.generators.reinforcements import ReinforcementGeneratorData
-from erdb.generators.spirit_ashes import SpiritAshGeneratorData
-from erdb.generators.talismans import TalismanGeneratorData
-from erdb.generators.spells import SpellGeneratorData
-from erdb.generators.tools import ToolGeneratorData
-from erdb.generators.crafting_materials import CraftingMaterialGeneratorData
-from erdb.generators.bolstering_materials import BolsteringMaterialGeneratorData
-from erdb.generators.keys import KeyGeneratorData
-from erdb.generators.ammo import AmmoGeneratorData
-from erdb.generators.shop import ShopGeneratorData
-from erdb.generators.info import InfoGeneratorData
-from erdb.generators.gestures import GestureGeneratorData
+from erdb.generators._retrievers import RetrieverData
+from erdb.generators._common import TableSpec
+from erdb.generators.ammo import AmmoTableSpec
+from erdb.generators.armaments import ArmamentTableSpec
+from erdb.generators.armor import ArmorTableSpec
+from erdb.generators.ashes_of_war import AshOfWarTableSpec
+from erdb.generators.bolstering_materials import BolsteringMaterialTableSpec
+from erdb.generators.correction_attack import CorrectionAttackTableSpec
+from erdb.generators.correction_graph import CorrectionGraphTableSpec
+from erdb.generators.crafting_materials import CraftingMaterialTableSpec
+from erdb.generators.gestures import GestureTableSpec
+from erdb.generators.info import InfoTableSpec
+from erdb.generators.keys import KeyTableSpec
+from erdb.generators.reinforcements import ReinforcementTableSpec
+from erdb.generators.shop import ShopTableSpec
+from erdb.generators.spells import SpellTableSpec
+from erdb.generators.spirit_ashes import SpiritAshTableSpec
+from erdb.generators.talismans import TalismanTableSpec
+from erdb.generators.tools import ToolTableSpec
 from erdb.typing.game_version import GameVersion
+from erdb.typing.params import ParamRow
 
 
-class Table(str, Enum):
+class Generator(NamedTuple):
+    spec: TableSpec
+    data: RetrieverData
+
+    def generate(self) -> dict:
+        def key(row: ParamRow) -> Any:
+            return self.spec.get_pk(self.data, row)
+
+        def value(row: ParamRow) -> Any:
+            return self.spec.make_object(self.data, row)
+
+        def valid(row: ParamRow) -> bool:
+            return all(pred(row) for pred in self.spec.predicates)
+
+        rows = self.data.main_param.values()
+        return {key(row): value(row) for row in rows if valid(row)}
+
+    @classmethod
+    def create(cls, spec: TableSpec, version: GameVersion) -> Self:
+        def retrieve_dict(retrievers: dict):
+            return {field: retrievers[field].get(version) for field in retrievers.keys()}
+
+        return cls(
+            spec,
+            RetrieverData(
+                spec.main_param_retriever.get(version),
+                retrieve_dict(spec.param_retrievers),
+                retrieve_dict(spec.msg_retrievers),
+                retrieve_dict(spec.shop_retrievers),
+                spec.contrib_retriever.get(spec.title(), version),
+            )
+        )
+
+class Table(StrEnum):
     ALL = "all"
+    AMMO = "ammo"
     ARMAMENTS = "armaments"
     ARMOR = "armor"
     ASHES_OF_WAR = "ashes-of-war"
+    BOLSTERING_MATERIALS = "bolstering-materials"
     CORRECTION_ATTACK = "correction-attack"
     CORRECTION_GRAPH = "correction-graph"
-    REINFORCEMENTS = "reinforcements"
-    SPIRIT_ASHES = "spirit-ashes"
-    TALISMANS = "talismans"
-    SPELLS = "spells"
-    TOOLS = "tools"
     CRAFTING_MATERIALS = "crafting-materials"
-    BOLSTERING_MATERIALS = "bolstering-materials"
-    KEYS = "keys"
-    AMMO = "ammo"
-    SHOP = "shop"
-    INFO = "info"
     GESTURES = "gestures"
+    INFO = "info"
+    KEYS = "keys"
+    REINFORCEMENTS = "reinforcements"
+    SHOP = "shop"
+    SPELLS = "spells"
+    SPIRIT_ASHES = "spirit-ashes"
+    TASLISMANS = "talismans"
+    TOOLS = "tools"
 
     def __str__(self):
         return self.value
@@ -49,50 +84,29 @@ class Table(str, Enum):
         assert isinstance(other, Table)
         return self.value < other.value
 
-    @property
-    def has_icons(self) -> bool:
-        return self in (
-            Table.ALL,
-            Table.ARMAMENTS,
-            Table.ARMOR,
-            Table.ASHES_OF_WAR,
-            Table.SPIRIT_ASHES,
-            Table.TALISMANS,
-            Table.SPELLS,
-            Table.TOOLS,
-            Table.CRAFTING_MATERIALS,
-            Table.BOLSTERING_MATERIALS,
-            Table.KEYS,
-            Table.AMMO,
-            Table.SHOP,
-            Table.INFO,
-            Table.GESTURES,
-        )
+    def make_generator(self, version: GameVersion) -> Generator:
+        return Generator.create(self.spec, version)
 
     @property
-    def title(self) -> str:
-        return str(self).replace("-", " ").title()
-
-    @property
-    def stem(self) -> str:
+    def spec(self) -> TableSpec:
         return {
-            Table.ARMAMENTS: "EquipParamWeapon",
-            Table.ARMOR: "EquipParamProtector",
-            Table.ASHES_OF_WAR: "EquipParamGem",
-            Table.CORRECTION_ATTACK: "AttackElementCorrectParam",
-            Table.CORRECTION_GRAPH: "CalcCorrectGraph",
-            Table.REINFORCEMENTS: "ReinforceParamWeapon",
-            Table.SPIRIT_ASHES: "EquipParamGoods",
-            Table.TALISMANS: "EquipParamAccessory",
-            Table.SPELLS: "EquipParamGoods",
-            Table.TOOLS: "EquipParamGoods",
-            Table.CRAFTING_MATERIALS: "EquipParamGoods",
-            Table.BOLSTERING_MATERIALS: "EquipParamGoods",
-            Table.KEYS: "EquipParamGoods",
-            Table.AMMO: "EquipParamWeapon",
-            Table.SHOP: "EquipParamGoods",
-            Table.INFO: "EquipParamGoods",
-            Table.GESTURES: "EquipParamGoods",
+            Table.AMMO: AmmoTableSpec,
+            Table.ARMAMENTS: ArmamentTableSpec,
+            Table.ARMOR: ArmorTableSpec,
+            Table.ASHES_OF_WAR: AshOfWarTableSpec,
+            Table.BOLSTERING_MATERIALS: BolsteringMaterialTableSpec,
+            Table.CORRECTION_ATTACK: CorrectionAttackTableSpec,
+            Table.CORRECTION_GRAPH: CorrectionGraphTableSpec,
+            Table.CRAFTING_MATERIALS: CraftingMaterialTableSpec,
+            Table.GESTURES: GestureTableSpec,
+            Table.INFO: InfoTableSpec,
+            Table.KEYS: KeyTableSpec,
+            Table.REINFORCEMENTS: ReinforcementTableSpec,
+            Table.SHOP: ShopTableSpec,
+            Table.SPELLS: SpellTableSpec,
+            Table.SPIRIT_ASHES: SpiritAshTableSpec,
+            Table.TASLISMANS: TalismanTableSpec,
+            Table.TOOLS: ToolTableSpec,
         }[self]
 
     @property
@@ -102,32 +116,15 @@ class Table(str, Enum):
         }.get(self)
 
     @property
-    def generator(self) -> GeneratorDataBase:
-        return {
-            Table.ARMAMENTS: ArmamentGeneratorData,
-            Table.ARMOR: ArmorGeneratorData,
-            Table.ASHES_OF_WAR: AshOfWarGeneratorData,
-            Table.CORRECTION_ATTACK: CorrectionAttackGeneratorData,
-            Table.CORRECTION_GRAPH: CorrectionGraphGeneratorData,
-            Table.REINFORCEMENTS: ReinforcementGeneratorData,
-            Table.SPIRIT_ASHES: SpiritAshGeneratorData,
-            Table.TALISMANS: TalismanGeneratorData,
-            Table.SPELLS: SpellGeneratorData,
-            Table.TOOLS: ToolGeneratorData,
-            Table.CRAFTING_MATERIALS: CraftingMaterialGeneratorData,
-            Table.BOLSTERING_MATERIALS: BolsteringMaterialGeneratorData,
-            Table.KEYS: KeyGeneratorData,
-            Table.AMMO: AmmoGeneratorData,
-            Table.SHOP: ShopGeneratorData,
-            Table.INFO: InfoGeneratorData,
-            Table.GESTURES: GestureGeneratorData,
-        }[self]
+    def param_name(self) -> str:
+        return self.spec.main_param_retriever.param_name
 
-    def make_generator(self, version: GameVersion) -> GeneratorDataBase:
-        return self.generator.construct(version)
+    @property
+    def title(self) -> str:
+        return str(self).replace("-", " ").title()
 
-    @staticmethod
-    def effective() -> list[Self]:
+    @classmethod
+    def effective(cls) -> list[Self]:
         s = set(Table)
         s.remove(Table.ALL)
         return list(s)

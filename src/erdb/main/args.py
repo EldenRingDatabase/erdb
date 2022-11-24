@@ -10,13 +10,13 @@ from erdb.typing.game_version import GameVersion, GameVersionRange
 
 
 def _parse_all_tables(tables: list[Table], all_effective_tables) -> list[Table]:
-    tables = set(tables)
+    table_set = set(tables)
 
-    if Table.ALL in tables:
-        tables.update(all_effective_tables)
-        tables.remove(Table.ALL)
+    if Table.ALL in table_set:
+        table_set.update(all_effective_tables)
+        table_set.remove(Table.ALL)
 
-    return list(tables)
+    return list(table_set)
 
 def _infer_annotation(type: Any, **kwargs) -> Any:
     if kwargs.get("action") in ["store_true", BooleanOptionalAction]:
@@ -47,7 +47,7 @@ class _ItemTypesAction(Action):
 
     @staticmethod
     def choices() -> list[Table]:
-        return [tb for tb in Table if tb.has_icons]
+        return [tb for tb in Table.effective() if tb.spec.has_icons]
 
 class _Argument(NamedTuple):
     names: tuple
@@ -105,7 +105,7 @@ class _Subcommand(NamedTuple):
     arguments: list[_Argument] = []
 
     @classmethod
-    def iterate(cls) -> Generator[Self, None, None]:
+    def iterate(cls):
         yield from iter(cls.__subclasses__())
 
     @classmethod
@@ -188,7 +188,7 @@ class ServeAPI(_Subcommand):
         _Argument.make("--precache", action=BooleanOptionalAction, help="Pregenerate all data instead of lazy loading."),
     ]
 
-def parse_args(argv: Sequence[str], handlers: dict[str, Callable]) -> Namespace:
+def parse_args(argv: Sequence[str], handlers: dict[str, Callable]) -> dict[str, Any]:
     parser = ArgumentParser(description="Interface for ERDB operations.")
     subs = parser.add_subparsers(title="subcommands", required=True)
 

@@ -61,7 +61,7 @@ class _Change(NamedTuple):
 
         if self.property_path[-1] == "effects":
             # treat "effects" field in a special way
-            return [str(SchemaEffect.from_obj(elem)) for elem in out]
+            return [str(SchemaEffect.from_obj(elem)) for elem in out] # type: ignore
 
         # TODO: changelog will fail if there is another field
         #       besides "effects" that is a list of objects
@@ -120,7 +120,7 @@ class FormatterBase():
         if len(data) == 0:
             return
 
-        self.table_of_contents(data.keys(), out)
+        self.table_of_contents(list(data.keys()), out)
 
         for section, lines in data.items():
             out.write(self._section.format(value=section) + "\n")
@@ -189,15 +189,15 @@ def generate(from_version: GameVersion, version: GameVersion, out: Path | None, 
     formatter = FormatterBase.create(formatter_id)
     print(f"Generating changelog from {from_version} to {version}...", flush=True)
 
-    for gen_factory in sorted(Table.effective()):
-        print(f"Generating changelog for {gen_factory}...", flush=True)
+    for tb in sorted(Table.effective()):
+        print(f"Generating changelog for {tb}...", flush=True)
 
-        new_data = gen_factory.make_generator(version).generate()
-        old_data = gen_factory.make_generator(from_version).generate()
+        new_data = tb.make_generator(version).generate()
+        old_data = tb.make_generator(from_version).generate()
 
         item_changes = _get_item_changes(old_data, new_data)
 
-        formatter.section(gen_factory.title)
+        formatter.section(tb.title)
 
         for item_name, changes in item_changes.items():
             formatter.header(item_name)
@@ -225,7 +225,7 @@ def generate(from_version: GameVersion, version: GameVersion, out: Path | None, 
                 formatter.line("")
 
     if out is None:
-        formatter.write(stdout)
+        formatter.write(stdout) # type: ignore
 
     else:
         with open(out, mode="w", encoding="utf-8") as f:

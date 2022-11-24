@@ -1,50 +1,30 @@
 from erdb.typing.models.bolstering_material import BolsteringMaterial
 from erdb.typing.categories import BolsteringMaterialCategory
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsType, ItemIDFlag
-from erdb.utils.common import strip_invalid_name
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
-class BolsteringMaterialGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class BolsteringMaterialTableSpec(TableSpecContext):
+    model = BolsteringMaterial
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "bolstering-materials.json"
+    predicates: list[RowPredicate] = [
+        lambda row: row.get("goodsType") == GoodsType.REINFORCEMENT_MATERIAL,
+    ]
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "BolsteringMaterials"
+    main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
-    @staticmethod # override
-    def model() -> BolsteringMaterial:
-        return BolsteringMaterial
-
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
-        return strip_invalid_name(self.msgs["names"][row.index])
-
-    main_param_retriever = Base.ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
-
-    param_retrievers = {}
-
-    msgs_retrievers = {
-        "names": Base.MsgsRetriever("GoodsName"),
-        "summaries": Base.MsgsRetriever("GoodsInfo"),
-        "descriptions": Base.MsgsRetriever("GoodsCaption")
+    msg_retrievers = {
+        "names": MsgsRetriever("GoodsName"),
+        "summaries": MsgsRetriever("GoodsInfo"),
+        "descriptions": MsgsRetriever("GoodsCaption")
     }
 
-    lookup_retrievers = {}
-
-    def main_param_iterator(self, materials: ParamDict):
-        for row in materials.values():
-            if row.get("goodsType") == GoodsType.REINFORCEMENT_MATERIAL:
-                yield row
-
-    def construct_object(self, row: ParamRow) -> BolsteringMaterial:
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
         return BolsteringMaterial(
-            **self.get_fields_item(row),
-            **self.get_fields_user_data(row, "locations", "remarks"),
+            **cls.make_item(data, row),
+            **cls.make_contrib(data, row, "locations", "remarks"),
             category=BolsteringMaterialCategory.from_row(row),
         )

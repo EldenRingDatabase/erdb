@@ -1,12 +1,13 @@
 from pydantic import Field
+from pydantic.dataclasses import dataclass
 
-from erdb.typing.models import dataclass
+from erdb.typing.models import dt_config
 from erdb.typing.models.armament import Affinity
 from erdb.typing.models.item import Item
 from erdb.typing.categories import ArmamentCategory
 
 
-@dataclass
+@dataclass(config=dt_config)
 class AshOfWar(Item):
     armament_categories: list[ArmamentCategory] = Field(...,
         description="Applicable weapons classes the Ash of War can be applied to.",

@@ -1,13 +1,14 @@
 from pydantic import Field, NonNegativeInt
+from pydantic.dataclasses import dataclass
 
-from erdb.typing.models import dataclass
+from erdb.typing.models import dt_config
 from erdb.typing.models.item import Item
 from erdb.typing.models.effect import Effect
 from erdb.typing.categories import ToolCategory
 from erdb.typing.enums import ToolAvailability
 
 
-@dataclass
+@dataclass(config=dt_config)
 class Tool(Item):
     category: ToolCategory = Field(...,
         description="Tool category to discern its use.",

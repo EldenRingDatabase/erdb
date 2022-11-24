@@ -1,11 +1,11 @@
 from erdb.typing.models.tool import Tool
 from erdb.typing.models.effect import Effect
 from erdb.effect_parser import parse_effects
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsSortGroupID, GoodsType, ItemIDFlag, ToolAvailability
 from erdb.typing.categories import ToolCategory
-from erdb.utils.common import strip_invalid_name
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
 def _get_availability(row: ParamRow) -> ToolAvailability:
@@ -17,61 +17,38 @@ def _get_availability(row: ParamRow) -> ToolAvailability:
     return T.ALWAYS if row.get_bool("enable_multi") else T.SINGLEPLAYER
 
 def _is_note_item(name: str) -> bool:
-    # GoodsType.INFO_ITEM doesn't apply to all note items
-    return name.startswith("Note: ")
+    # 2 Weathered Maps defined in-game, one is NORMAL_ITEM
+    return name.startswith("Note: ") or name == "Weathered Map"
 
-class ToolGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class ToolTableSpec(TableSpecContext):
+    model = Tool
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "tools.json"
+    main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "Tools"
-
-    @staticmethod # override
-    def model() -> Tool:
-        return Tool
-
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
-        return strip_invalid_name(self.msgs["names"][row.index])
-
-    main_param_retriever = Base.ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
+    predicates: list[RowPredicate] = [
+        lambda row: 1 <= row.get_int("sortId") < 999999,
+        lambda row: row.get_int("sortGroupId") != GoodsSortGroupID.GESTURES,
+        lambda row: row.get("goodsType") in [GoodsType.NORMAL_ITEM, GoodsType.REMEMBRANCE, GoodsType.WONDROUS_PHYSICK_TEAR, GoodsType.GREAT_RUNE],
+        lambda row: not _is_note_item(row.name),
+    ]
 
     param_retrievers = {
-        "effects": Base.ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE)
+        "effects": ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE)
     }
 
-    msgs_retrievers = {
-        "names": Base.MsgsRetriever("GoodsName"),
-        "summaries": Base.MsgsRetriever("GoodsInfo"),
-        "descriptions": Base.MsgsRetriever("GoodsCaption")
+    msg_retrievers = {
+        "names": MsgsRetriever("GoodsName"),
+        "summaries": MsgsRetriever("GoodsInfo"),
+        "descriptions": MsgsRetriever("GoodsCaption")
     }
 
-    lookup_retrievers = {}
-
-    def main_param_iterator(self, tools: ParamDict):
-        T = GoodsType
-
-        for row in tools.values():
-            name = self.get_key_name(row) if row.index in self.msgs["names"] else ""
-            if name == "" or _is_note_item(name) or name == "Weathered Map": # 2 defined in game, one is NORMAL_ITEM
-                continue
-
-            if 1 <= row.get_int("sortId") < 999999 \
-            and row.get_int("sortGroupId") != GoodsSortGroupID.GESTURES \
-            and row.get("goodsType") in [T.NORMAL_ITEM, T.REMEMBRANCE, T.WONDROUS_PHYSICK_TEAR, T.GREAT_RUNE]:
-                yield row
-
-    def construct_object(self, row: ParamRow) -> Tool:
-        effects = self.params["effects"]
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
+        effects = data.params["effects"]
 
         return Tool(
-            **self.get_fields_item(row),
-            **self.get_fields_user_data(row, "locations", "remarks"),
+            **cls.make_item(data, row),
+            **cls.make_contrib(data, row, "locations", "remarks"),
             category=ToolCategory.from_row(row),
             availability=_get_availability(row),
             fp_cost=row.get_int("consumeMP"),

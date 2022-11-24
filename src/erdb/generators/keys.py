@@ -1,54 +1,33 @@
 from erdb.typing.models.key import Key
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsSortGroupID, GoodsType, ItemIDFlag
 from erdb.typing.categories import KeyCategory
-from erdb.utils.common import strip_invalid_name
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
-class KeyGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class KeyTableSpec(TableSpecContext):
+    model = Key
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "keys.json"
+    main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "Keys"
+    predicates: list[RowPredicate] = [
+        lambda row: 1 <= row.get_int("sortId") < 999999,
+        lambda row: row.get("goodsType") in [GoodsType.KEY_ITEM, GoodsType.REGENERATIVE_MATERIAL],
+        lambda row: row.get_int("sortGroupId") not in [GoodsSortGroupID.GROUP_8, GoodsSortGroupID.GROUP_9, GoodsSortGroupID.GROUP_10],
+        lambda row: "Cookbook" not in row.name,
+    ]
 
-    @staticmethod # override
-    def model() -> Key:
-        return Key
-
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
-        return strip_invalid_name(self.msgs["names"][row.index])
-
-    main_param_retriever = Base.ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
-
-    param_retrievers = {}
-
-    msgs_retrievers = {
-        "names": Base.MsgsRetriever("GoodsName"),
-        "summaries": Base.MsgsRetriever("GoodsInfo"),
-        "descriptions": Base.MsgsRetriever("GoodsCaption")
+    msg_retrievers = {
+        "names": MsgsRetriever("GoodsName"),
+        "summaries": MsgsRetriever("GoodsInfo"),
+        "descriptions": MsgsRetriever("GoodsCaption")
     }
 
-    lookup_retrievers = {}
-
-    def main_param_iterator(self, keys: ParamDict):
-        Gsid = GoodsSortGroupID
-        for row in keys.values():
-            if 1 <= row.get_int("sortId") < 999999 \
-            and row.get("goodsType") in [GoodsType.KEY_ITEM, GoodsType.REGENERATIVE_MATERIAL] \
-            and row.get_int("sortGroupId") not in [Gsid.GROUP_8, Gsid.GROUP_9, Gsid.GROUP_10] \
-            and "Cookbook" not in row.name:
-                yield row
-
-    def construct_object(self, row: ParamRow) -> Key:
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
         return Key(
-            **self.get_fields_item(row),
-            **self.get_fields_user_data(row, "locations", "remarks"),
+            **cls.make_item(data, row),
+            **cls.make_contrib(data, row, "locations", "remarks"),
             category=KeyCategory.from_row(row),
         )

@@ -23,7 +23,7 @@ class DataEndpoint:
 
     @property
     def model(self) -> Any:
-        return dict[str, self.table.generator.model()]
+        return dict[str, self.table.spec.model]
 
     @property
     def summary(self) -> str:
@@ -46,7 +46,7 @@ class DataEndpoint:
         game_version: GameVersionEnum,
         keys: list[str] | None = Query(None, alias="k", description="Specify a list of keys (ascii names) to retrieve specific items."),
         query: str | None = Query(None, description="Filter elements by field in format \"{field}:{value}\".", regex=r"^\w+\:.+$"),
-    ) -> dict:
+    ) -> Any:
         data = generate(game_version, self.table)
 
         if keys is not None:
@@ -75,7 +75,7 @@ class ItemEndpoint:
 
     @property
     def model(self) -> Any:
-        return self.table.generator.model()
+        return self.table.spec.model
 
     @property
     def summary(self) -> str:
@@ -91,7 +91,7 @@ class ItemEndpoint:
             status.HTTP_404_NOT_FOUND: {"model": _Detail}
         }
 
-    def __call__(self, game_version: GameVersionEnum, key: str) -> dict:
+    def __call__(self, game_version: GameVersionEnum, key: str) -> Any:
         try:
             return generate(game_version, self.table)[key]
 

@@ -1,10 +1,11 @@
 from itertools import repeat
-from typing import Any, NamedTuple
+from typing import NamedTuple
 
 from erdb.typing.models.correction_graph import CorrectionGraph
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
 def calc_output(stage_min: float, stage_max: float, val_min: float, val_max: float, mult_val_min: float, mult_val_max: float, input_val: float) -> float:
@@ -48,46 +49,34 @@ class CorrectionRange(NamedTuple):
             row.get_float(f"adjPt_maxGrowVal{left}"),
         )
 
-class CorrectionGraphGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class CorrectionGraphTableSpec(TableSpecContext):
+    model = CorrectionGraph
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "correction-graph.json"
+    main_param_retriever = ParamDictRetriever("CalcCorrectGraph", ItemIDFlag.NON_EQUIPABBLE)
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "CorrectionGraph"
+    predicates: list[RowPredicate] = [
+        lambda row: row.index < 17
+    ]
 
-    @staticmethod # override
-    def model() -> Any:
-        return CorrectionGraph
+    has_icons = False
 
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
+    @classmethod # override
+    def get_pk(cls, data: RetrieverData, row: ParamRow) -> str:
         return str(row.index)
 
-    main_param_retriever = Base.ParamDictRetriever("CalcCorrectGraph", ItemIDFlag.NON_EQUIPABBLE)
-
-    param_retrievers = {}
-    msgs_retrievers = {}
-    lookup_retrievers = {}
-
-    def main_param_iterator(self, correct_graph: ParamDict):
-        for index in range(0, 17):
-            yield correct_graph[str(index)]
-
-    def construct_object(self, row: ParamRow) -> CorrectionGraph:
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
         points = range(0, 5)
         points_shift = range(1, 5)
         ranges = [CorrectionRange.from_row(row, left, right) for left, right in zip(points, points_shift)]
 
-        values = [0]
+        values: list[float] = [0.]
+
         for r in ranges:
             values += [r.get_correction(v) / 100.0 for v in range(r.threshold_left + 1, r.threshold_right + 1)]
-        values += repeat(values[-1], 150 - len(values))
 
+        values += list(repeat(values[-1], 150 - len(values)))
         assert len(values) == 150, "Correction values length mismatch"
 
         # 0th index is not valid, add another 0 to offset
-        return [0] + values
+        return [0.] + values

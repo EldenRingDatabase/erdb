@@ -18,7 +18,7 @@ class ValueType(NamedTuple):
         return floor(self.base + self.scaling)
 
     def __iter__(self) -> Iterator[tuple[float, float]]:
-        return iter((self.base, self.scaling))
+        return iter((self.base, self.scaling)) # type: ignore
 
 class AttackPower(NamedTuple):
     physical: ValueType
@@ -76,7 +76,7 @@ class CalculatorData(NamedTuple):
     armaments: dict[str, dict]
     reinforcements: dict[str, list[dict]]
     correction_attack: dict[str, dict[str, str]]
-    correction_graph: dict[str, dict[str, float]]
+    correction_graph: dict[str, list[float]]
 
     @classmethod
     def create(cls, data_path: Path) -> "CalculatorData":
@@ -107,7 +107,7 @@ class ArmamentCalculator:
     _requirements: dict[str, int]
     _reinforcement: dict
     _correction_attack: CorrectionAttack
-    _correction_graph: dict[str, dict[str, float]]
+    _correction_graph: dict[str, list[float]]
 
     def __init__(self, data: CalculatorData, name: str, affinity: str = "Standard", level: int = 0) -> None:
         self._name = name

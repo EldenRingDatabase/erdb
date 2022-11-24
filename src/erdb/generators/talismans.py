@@ -1,61 +1,46 @@
 from erdb.typing.models.talisman import Talisman
 from erdb.typing.models.effect import Effect
+from erdb.typing.models import NonEmptyStr
 from erdb.effect_parser import parse_effects
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
-from erdb.utils.common import strip_invalid_name
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
-class TalismanGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class TalismanTableSpec(TableSpecContext):
+    model = Talisman
 
-    @staticmethod
-    def output_file() -> str:
-        return "talismans.json"
+    main_param_retriever = ParamDictRetriever("EquipParamAccessory", ItemIDFlag.ACCESSORIES)
 
-    @staticmethod
-    def element_name() -> str:
-        return "Talismans"
-
-    @staticmethod
-    def model() -> Talisman:
-        return Talisman
-
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
-        return strip_invalid_name(self.msgs["names"][row.index])
-
-    def _find_conflicts(self, group: int, accessories: ParamDict) -> list[str]:
-        return [self.get_key_name(t) for t in accessories.values() if t.get_int("accessoryGroup") == group and t.index < 9999999]
-
-    main_param_retriever = Base.ParamDictRetriever("EquipParamAccessory", ItemIDFlag.ACCESSORIES)
+    predicates: list[RowPredicate] = [
+        lambda row: 1000 <= row.index < 999999,
+    ]
 
     param_retrievers = {
-        "effects": Base.ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE, id_min=310000, id_max=400000)
+        "effects": ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE, id_min=310000, id_max=400000)
     }
 
-    msgs_retrievers = {
-        "names": Base.MsgsRetriever("AccessoryName"),
-        "summaries": Base.MsgsRetriever("AccessoryInfo"),
-        "descriptions": Base.MsgsRetriever("AccessoryCaption")
+    msg_retrievers = {
+        "names": MsgsRetriever("AccessoryName"),
+        "summaries": MsgsRetriever("AccessoryInfo"),
+        "descriptions": MsgsRetriever("AccessoryCaption")
     }
 
-    lookup_retrievers = {}
+    @classmethod
+    def _find_conflicts(cls, data: RetrieverData, group: int) -> list[NonEmptyStr]:
+        def valid(row: ParamRow) -> bool:
+            return row.get_int("accessoryGroup") == group and row.index < 9999999
+        return [NonEmptyStr(cls.parse_name(data.msgs["names"][row.index])) for row in data.main_param.values() if valid(row)]
 
-    def main_param_iterator(self, talismans: ParamDict):
-        for row in talismans.values():
-            if row.index >= 1000 and row.index < 999999:
-                yield row
-
-    def construct_object(self, row: ParamRow) -> Talisman:
-        talismans = self.main_param
-        effects = self.params["effects"]
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
+        effects = data.params["effects"]
 
         return Talisman(
-            **self.get_fields_item(row),
-            **self.get_fields_user_data(row, "locations", "remarks"),
+            **cls.make_item(data, row),
+            **cls.make_contrib(data, row, "locations", "remarks"),
             weight=row.get_float("weight"),
             effects=[Effect(**eff) for eff in parse_effects(row, effects, "refId")],
-            conflicts=self._find_conflicts(row.get_int("accessoryGroup"), talismans),
+            conflicts=cls._find_conflicts(data, row.get_int("accessoryGroup")),
         )

@@ -1,13 +1,14 @@
 from pydantic import Field, NonNegativeInt, PositiveInt
+from pydantic.dataclasses import dataclass
 
-from erdb.typing.models import dataclass
+from erdb.typing.models import dt_config
 from erdb.typing.models.item import Item
 from erdb.typing.models.common import StatRequirements
 from erdb.typing.categories import SpellCategory
 from erdb.typing.enums import SpellHoldAction
 
 
-@dataclass
+@dataclass(config=dt_config)
 class Spell(Item):
     fp_cost: NonNegativeInt = Field(...,
         description="Cost of FP to cast.",

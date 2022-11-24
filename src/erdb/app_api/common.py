@@ -10,7 +10,7 @@ from erdb.typing.game_version import GameVersion
 GameVersionEnum = Enum("GameVersionEnum", {str(v).replace(".", "_"): str(v) for v in GAME_VERSIONS})
 
 @cache
-def generate(game_version: GameVersionEnum, table: Table) -> dict:
+def generate(game_version: GameVersionEnum, table: Table) -> dict: # type: ignore
     ver = GameVersion.from_string(game_version.value)
     return table.make_generator(ver).generate()
 

@@ -27,7 +27,7 @@ class ParamRow(object):
 
     @property
     def keys(self) -> list[str]:
-        return self._row.keys()
+        return list(self._row.keys())
 
     def get(self, field: str) -> str:
         assert field in self._row

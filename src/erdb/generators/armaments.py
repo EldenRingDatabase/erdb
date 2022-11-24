@@ -4,9 +4,10 @@ from erdb.typing.models.effect import Effect, StatusEffects
 from erdb.typing.params import ParamRow, ParamDict
 from erdb.typing.enums import Affinity, AttackCondition, ItemIDFlag, AshOfWarMountType, AttackAttribute, ArmamentUpgradeMaterial
 from erdb.typing.categories import ArmamentCategory
-from erdb.utils.common import find_offset_indices, update_optional, strip_invalid_name
+from erdb.utils.common import find_offset_indices, update_optional
 from erdb.effect_parser import parse_effects, parse_status_effects, parse_weapon_effects
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
 _BEHAVIOR_EFFECTS_FIELDS: list[str] = ["spEffectBehaviorId0", "spEffectBehaviorId1", "spEffectBehaviorId2"]
@@ -20,7 +21,6 @@ def _get_upgrade_costs(row: ParamRow, reinforces: ParamDict) -> list[int]:
     reinforcement_id = row.get_int("reinforceTypeId")
 
     reinforcement = reinforces[str(reinforcement_id)]
-    #reinforcement = reinforces[str(reinforcement_type.get_id())]
     base_price = row.get_int("reinforcePrice")
 
     indices, _ = find_offset_indices(reinforcement.index, reinforces, possible_maxima=[0, 10, 25])
@@ -29,18 +29,17 @@ def _get_upgrade_costs(row: ParamRow, reinforces: ParamDict) -> list[int]:
     return [round(base_price * reinforces[str(i)].get_float("reinforcePriceRate")) for i in indices]
 
 def _get_correction_calc_ids(row: ParamRow) -> CorrectionCalcID:
-    corrections = {
-        "physical": row.get("correctType_Physics"),
-        "magic": row.get("correctType_Magic"),
-        "fire": row.get("correctType_Fire"),
-        "lightning": row.get("correctType_Thunder"),
-        "holy": row.get("correctType_Dark"),
-        "poison": row.get("correctType_Poison"),
-        "bleed": row.get("correctType_Blood"),
-        "sleep": row.get("correctType_Sleep"),
-        "madness": row.get("correctType_Madness")
-    }
-    return CorrectionCalcID(**corrections)
+    return CorrectionCalcID(
+        physical=row.get_int("correctType_Physics"),
+        magic=row.get_int("correctType_Magic"),
+        fire=row.get_int("correctType_Fire"),
+        lightning=row.get_int("correctType_Thunder"),
+        holy=row.get_int("correctType_Dark"),
+        poison=row.get_int("correctType_Poison"),
+        bleed=row.get_int("correctType_Blood"),
+        sleep=row.get_int("correctType_Sleep"),
+        madness=row.get_int("correctType_Madness")
+    )
 
 def _get_requirements(row: ParamRow) -> StatRequirements:
     requirements = {}
@@ -120,7 +119,7 @@ def _get_affinity_properties(row: ParamRow, effects: ParamDict, reinforces: Para
         full_hex_id=row.index_hex,
         id=row.index,
         reinforcement_id=reinforcement_id,
-        correction_attack_id=row.get("attackElementCorrectId"),
+        correction_attack_id=row.get_int("attackElementCorrectId"),
         correction_calc_id=_get_correction_calc_ids(row),
         damage=_get_damages(row),
         scaling=_get_scalings(row),
@@ -136,47 +135,30 @@ def _get_affinities(row: ParamRow, armaments: ParamDict, effects: ParamDict, rei
     affinities: list[Affinity] = [Affinity.from_id(round(l / 100)) for l in levels]
     return {a: _get_affinity_properties(armaments[str(i)], effects, reinforces) for i, a in zip(indices, affinities)}
 
-class ArmamentGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class ArmamentTableSpec(TableSpecContext):
+    model = Armament
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "armaments.json"
+    main_param_retriever = ParamDictRetriever("EquipParamWeapon", ItemIDFlag.WEAPONS, id_min=1000000, id_max=49000000)
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "Armaments"
-
-    @staticmethod # override
-    def model() -> Armament:
-        return Armament
-
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
-        return strip_invalid_name(self.msgs["names"][row.index])
-
-    main_param_retriever = Base.ParamDictRetriever("EquipParamWeapon", ItemIDFlag.WEAPONS, id_min=1000000, id_max=49000000)
+    predicates: list[RowPredicate] = [
+        lambda row: row.index % 10000 == 0,
+        lambda row: len(row.name) > 0,
+    ]
 
     param_retrievers = {
-        "effects": Base.ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE),
-        "reinforces": Base.ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE),
+        "effects": ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE),
+        "reinforces": ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE),
     }
 
-    msgs_retrievers = {
-        "names": Base.MsgsRetriever("WeaponName"),
-        "descriptions": Base.MsgsRetriever("WeaponCaption")
+    msg_retrievers = {
+        "names": MsgsRetriever("WeaponName"),
+        "descriptions": MsgsRetriever("WeaponCaption")
     }
 
-    lookup_retrievers = {}
-
-    def main_param_iterator(self, armaments: ParamDict):
-        for row in armaments.values():
-            if row.index % 10000 == 0 and len(row.name) > 0:
-                yield row
-
-    def construct_object(self, row: ParamRow) -> Armament:
-        effects = self.params["effects"]
-        reinforces = self.params["reinforces"]
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
+        effects = data.params["effects"]
+        reinforces = data.params["reinforces"]
 
         upgrade_costs = _get_upgrade_costs(row, reinforces)
         upgrade_material = { # assuming nothing upgrades to +10 with regular stones
@@ -192,8 +174,8 @@ class ArmamentGeneratorData(GeneratorDataBase):
         allow_ash_of_war = AshOfWarMountType(row.get("gemMountType")) == AshOfWarMountType.ALLOW_CHANGE
 
         return Armament(
-            **self.get_fields_item(row, summary=False),
-            **self.get_fields_user_data(row, "locations", "remarks"),
+            **cls.make_item(data, row, summary=False),
+            **cls.make_contrib(data, row, "locations", "remarks"),
             behavior_variation_id=row.get_int("behaviorVariationId"),
             category=ArmamentCategory.from_row(row),
             weight=row.get_float("weight"),
@@ -207,5 +189,5 @@ class ArmamentGeneratorData(GeneratorDataBase):
             sp_consumption_rate=row.get_float("staminaConsumptionRate"),
             requirements=_get_requirements(row),
             effects=[Effect(**eff) for eff in weapon_effects],
-            affinity=_get_affinities(row, self.main_param, effects, reinforces, allow_ash_of_war)
+            affinity=_get_affinities(row, data.main_param, effects, reinforces, allow_ash_of_war)
         )

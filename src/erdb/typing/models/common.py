@@ -1,9 +1,10 @@
 from pydantic import Field
+from pydantic.dataclasses import dataclass
 
-from erdb.typing.models import dataclass
+from erdb.typing.models import dt_config
 
 
-@dataclass
+@dataclass(config=dt_config)
 class Damage:
     physical: int | None = None
     magic: int | None = None
@@ -12,7 +13,7 @@ class Damage:
     holy: int | None = None
     stamina: int | None = None
 
-@dataclass
+@dataclass(config=dt_config)
 class StatRequirements:
     strength: int | None = Field(None, ge=0, le=99)
     dexterity: int | None = Field(None, ge=0, le=99)

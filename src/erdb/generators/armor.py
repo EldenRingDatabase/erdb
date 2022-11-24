@@ -1,12 +1,12 @@
 from erdb.shop import Material
 from erdb.typing.models.effect import Effect
 from erdb.typing.models.armor import Armor, Absorptions, Resistances
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
 from erdb.typing.categories import ArmorCategory
 from erdb.effect_parser import parse_effects
-from erdb.utils.common import strip_invalid_name
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData, ShopRetriever
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
 def _get_absorptions(row: ParamRow) -> Absorptions:
@@ -41,64 +41,49 @@ def _get_resistances(row: ParamRow) -> Resistances:
         poise=round(row.get_float("toughnessCorrectRate") * 1000)
     )
 
-class ArmorGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class ArmorTableSpec(TableSpecContext):
+    model = Armor
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "armor.json"
+    main_param_retriever = ParamDictRetriever("EquipParamProtector", ItemIDFlag.PROTECTORS)
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "ArmorPieces"
-
-    @staticmethod # override
-    def model() -> Armor:
-        return Armor
-
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
-        return strip_invalid_name(self.msgs["names"][row.index])
-
-    main_param_retriever = Base.ParamDictRetriever("EquipParamProtector", ItemIDFlag.PROTECTORS)
+    predicates: list[RowPredicate] = [
+        lambda row: row.index >= 40000,
+        lambda row: len(row.name) > 0,
+    ]
 
     param_retrievers = {
-        "effects": Base.ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE)
+        "effects": ParamDictRetriever("SpEffectParam", ItemIDFlag.NON_EQUIPABBLE),
     }
 
-    msgs_retrievers = {
-        "names": Base.MsgsRetriever("ProtectorName"),
-        "summaries": Base.MsgsRetriever("ProtectorInfo"),
-        "descriptions": Base.MsgsRetriever("ProtectorCaption")
+    msg_retrievers = {
+        "names": MsgsRetriever("ProtectorName"),
+        "summaries": MsgsRetriever("ProtectorInfo"),
+        "descriptions": MsgsRetriever("ProtectorCaption"),
     }
 
-    lookup_retrievers = {
-        "armor_lookup": Base.LookupRetriever(
+    shop_retrievers = {
+        "armor_shop": ShopRetriever(
             shop_lineup_id_min=110000, shop_lineup_id_max=112000,
             material_set_id_min=900100, material_set_id_max=901000,
         )
     }
 
-    def main_param_iterator(self, armor: ParamDict):
-        for row in armor.values():
-            if row.index >= 40000 and len(row.name) > 0:
-                yield row
-
-    def construct_object(self, row: ParamRow) -> Armor:
-        names = self.msgs["names"]
-        effects = self.params["effects"]
-        armor_lookup = self.lookups["armor_lookup"]
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
+        names = data.msgs["names"]
+        effects = data.params["effects"]
+        armor_shop = data.shops["armor_shop"]
 
         material = Material(row.index, Material.Category.PROTECTOR)
-        lineups = armor_lookup.get_lineups_from_material(material)
+        lineups = armor_shop.get_lineups_from_material(material)
         assert len(lineups) in [0, 2], "Each armor should have either none or self-/boc-made alterations"
-        altered = "" if len(lineups) == 0 else strip_invalid_name(names[lineups[0].product.index])
+        altered = "" if len(lineups) == 0 else cls.parse_name(names[lineups[0].product.index])
 
         armor_effects = parse_effects(row, effects, "residentSpEffectId", "residentSpEffectId2", "residentSpEffectId3")
 
         return Armor(
-            **self.get_fields_item(row, summary=False),
-            **self.get_fields_user_data(row, "locations", "remarks"),
+            **cls.make_item(data, row, summary=False),
+            **cls.make_contrib(data, row, "locations", "remarks"),
             category=ArmorCategory.from_row(row),
             altered=altered,
             weight=row.get_float("weight"),

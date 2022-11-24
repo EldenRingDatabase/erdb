@@ -105,7 +105,7 @@ class BolsteringMaterialCategory(_CategoryBase):
             G.GROUP_2: B.SMITHING_STONE,
             G.GROUP_3: B.SOMBER_SMITHING_STONE,
             G.GROUP_4: B.GLOVEWORT,
-        }.get(row.get_int("sortGroupId"))
+        }.get(G(row.get_int("sortGroupId")))
 
 class CraftingMaterialCategory(_CategoryBase):
     FAUNA = "Fauna"
@@ -120,7 +120,7 @@ class CraftingMaterialCategory(_CategoryBase):
             G.GROUP_1: B.FAUNA,
             G.GROUP_2: B.FLORA,
             G.GROUP_3: B.OBJECT,
-        }.get(row.get_int("sortGroupId"))
+        }.get(G(row.get_int("sortGroupId")))
 
 class InfoCategory(_CategoryBase):
     PAINTING = "Painting"
@@ -135,7 +135,7 @@ class InfoCategory(_CategoryBase):
         return {
             G.GROUP_1: I.PAINTING if "Painting" in row.name else I.NOTE if "Note" in row.name else I.CLUE,
             G.GROUP_2: I.TUTORIAL,
-        }.get(row.get_int("sortGroupId"))
+        }.get(G(row.get_int("sortGroupId")))
 
 class KeyCategory(_CategoryBase):
     GREAT_RUNE = "Great Rune"
@@ -163,7 +163,7 @@ class KeyCategory(_CategoryBase):
             G.GROUP_5: K.EXCHANGE if row.get_bool("isConsume") else K.QUEST,
             G.GROUP_6: K.FEATURE,
             G.GROUP_7: K.MAP,
-        }.get(row.get_int("sortGroupId"))
+        }.get(G(row.get_int("sortGroupId")))
 
 class ShopCategory(_CategoryBase):
     COOKBOOK = "Cookbook"
@@ -179,7 +179,7 @@ class ShopCategory(_CategoryBase):
             G.GROUP_8: S.BELL_BEARING,
             G.GROUP_9: S.BELL_BEARING,
             G.GROUP_10: S.SPELLBOOK,
-        }.get(row.get_int("sortGroupId"))
+        }.get(G(row.get_int("sortGroupId")))
 
 class SpellCategory(_CategoryBase):
     INCANTATION = "Incantation"
@@ -233,7 +233,7 @@ class ToolCategory(_CategoryBase):
             G.GROUP_10: T.GOLDEN_RUNE,
             G.REMEMBERANCES: T.REMEMBERANCE,
             G.ONLINE: T.ONLINE
-        }.get(row.get_int("sortGroupId"))
+        }.get(G(row.get_int("sortGroupId")))
 
 _ARMAMENT_CATEGORY_IDS: dict[int, ArmamentCategory] = {
     1: ArmamentCategory.DAGGER,

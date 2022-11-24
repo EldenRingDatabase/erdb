@@ -52,8 +52,8 @@ def _get_app_version(game_exe: Path) -> list[int]:
         assert False, "Module \"pywin32\" is not installed, please install it manually"
 
     info = w.GetFileVersionInfo(str(game_exe), "\\")
-    ms = info["FileVersionMS"]
-    ls = info["FileVersionLS"]
+    ms = info["FileVersionMS"] # type: ignore
+    ls = info["FileVersionLS"] # type: ignore
     major, minor, patch = w.HIWORD(ms), w.LOWORD(ms), w.HIWORD(ls)
 
     return [int(major), int(minor), int(patch)]
@@ -79,6 +79,7 @@ class _Command(NamedTuple):
         print(f"> [{cwd}]", *self.args, flush=True)
 
         p = proc.Popen(self.args, cwd=cwd, stdout=proc.PIPE, stderr=proc.STDOUT, text=True, shell=True, bufsize=1)
+        assert p.stdout is not None
 
         for line in p.stdout:
             print(line.strip(), flush=True)
@@ -198,7 +199,7 @@ class _MapTile(NamedTuple):
         Tiles with this bit are always out of bounds, filtering them
         will allow us to trim more unused tiles at edges of the map.
         """
-        return self.code & (1 << 14)
+        return bool(self.code & (1 << 14))
 
     @classmethod
     def from_path(cls, path: Path):
@@ -290,12 +291,12 @@ def _parse_tile_masks(mask_dir: Path, lod: int = 0, underground: bool = False) -
     tree = xmltree.parse(mask_dir / mtmsk)
 
     for entry in tree.getroot().findall(".//MapTileMask"):
-        index = int(entry.attrib.get("id"))
+        index = int(str(entry.attrib.get("id")))
         this_lod, coords = divmod(index, 10000)
 
         if this_lod == lod:
             x, y = divmod(coords, 100)
-            masks[(x, y)] = int(entry.attrib.get("mask"))
+            masks[(x, y)] = int(str(entry.attrib.get("mask")))
 
     return masks
 
@@ -351,17 +352,17 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Pat
         param is easier for dict comprehension, because instead of checking if a
         key exist, we can keep overriding and keep the code simpler.
         """
-        with open(game_dir / "param" / "gameparam" / f"{tb.stem}.csv", mode="r") as f:
+        with open(game_dir / "param" / "gameparam" / f"{tb.param_name}.csv", mode="r") as f:
             reader = DictReader(f, delimiter=";")
             rows = {int(row["Row ID"]): row for row in reader}
 
             for index in reversed(rows.keys()):
                 yield index, rows[index]
 
-    def valid_row(index: int, row: dict[str, str], id_range: tuple[int, int] | None = None) -> bool:
+    def valid_row(index: int, row: dict[str, str], tb: Table) -> bool:
         return \
             len(row["Row Name"]) > 0 and \
-            (id_range is None or tb.id_range[0] <= index < tb.id_range[1])
+            (tb.id_range is None or tb.id_range[0] <= index < tb.id_range[1])
 
     def get_icon_id(row: dict[str, str]) -> int:
         return int(row["iconId"]) if "iconId" in row else int(row["iconIdM"])
@@ -388,7 +389,7 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Pat
         if not table_dir.is_dir() or _is_empty(table_dir):
             er_exporter.run_command("ERExporter.Param.exe", f"{game_dir}/regulation.bin")
 
-        param_files = (game_dir / "param" / "gameparam" / f"{tb.stem}.param" for tb in tables)
+        param_files = (game_dir / "param" / "gameparam" / f"{tb.param_name}.param" for tb in tables)
         param_files = [f for f in param_files if not f.with_suffix(".csv").exists()]
 
         if len(param_files) > 0:
@@ -403,7 +404,7 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Pat
 
             print(f"Exporting to {dest}...", flush=True)
 
-            id_to_name = {get_icon_id(row): get_name(row) for index, row in readr(tb) if valid_row(index, row, tb.id_range)}
+            id_to_name = {get_icon_id(row): get_name(row) for index, row in readr(tb) if valid_row(index, row, tb)}
             dds_files  = [get_icon_dds(icon_dir, icon_id) for icon_id in id_to_name.keys()]
 
             _unpack_missing_dds(yabber, dds_files)

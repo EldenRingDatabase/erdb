@@ -1,17 +1,18 @@
-from pydantic import Field, PositiveInt, NonNegativeInt, constr
+from pydantic import Field, PositiveInt, NonNegativeInt
+from pydantic.dataclasses import dataclass
 
-from erdb.typing.models import dataclass
+from erdb.typing.models import dt_config, NonEmptyStr
 from erdb.typing.models.item import Item
 from erdb.typing.enums import SpiritAshUpgradeMaterial
 
 
-@dataclass
+@dataclass(config=dt_config)
 class SpiritAshUserData:
     summon_quantity: PositiveInt = Field(1,
         description="The number of spririts this Spirit Ash summons.",
         example=1,
     )
-    abilities: list[constr(min_length=1)] = Field([],
+    abilities: list[NonEmptyStr] = Field([],
         description="Strenghts of the Spirit Ash. Each briefly described with minimum amount of words.",
         example=[
             "Highly mobile",
@@ -20,7 +21,7 @@ class SpiritAshUserData:
         ],
     )
 
-@dataclass
+@dataclass(config=dt_config)
 class SpiritAsh(SpiritAshUserData, Item):
     summon_name: str = Field(...,
         description="Specific name of the summoned spirit(s). Rarely differs from Item name.",

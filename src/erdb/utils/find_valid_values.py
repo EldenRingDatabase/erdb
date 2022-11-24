@@ -1,6 +1,7 @@
 from erdb.loaders.params import load as load_params
 from erdb.typing.params import ParamDict
 from erdb.typing.enums import ItemIDFlag
+from erdb.typing.game_version import GameVersion
 
 
 def _get_values(effects: ParamDict, field: str, limit: int = 10) -> dict[str, list[str]]:
@@ -37,7 +38,7 @@ def find_valid_values(param_name: str, version: str, field: str, limit: int = 8)
     * SpEffectParam:magicSubCategoryChange1/2/3      -- seem to specify conditions exclusively
     """
 
-    params = load_params(param_name, version, ItemIDFlag.NON_EQUIPABBLE)
+    params = load_params(param_name, GameVersion.from_string(version), ItemIDFlag.NON_EQUIPABBLE)
     values = _get_values(params, field, limit=8 if limit < 0 else limit)
 
     for value in sorted(values.keys(), key=float):

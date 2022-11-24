@@ -1,3 +1,4 @@
+from typing import Iterator
 import xml.etree.ElementTree as xmltree
 from csv import DictReader
 from zipfile import Path as ZipPath
@@ -12,10 +13,10 @@ def _in_range(row_id: str, id_min: int, id_max: int):
     index = int(row_id)
     return id_min <= index and index <= id_max
 
-def _load(param: str, version: GameVersion) -> DictReader:
+def _load(param: str, version: GameVersion) -> Iterator[dict[str, str]]:
     archive = PKG_DATA_PATH / "gamedata" / f"{version}.zip"
     with ZipPath(archive, at=f"{param}.csv").open(mode="r") as f:
-        yield from DictReader(f, delimiter=";")
+        yield from DictReader(f, delimiter=";") # type: ignore
 
 def load(param: str, version: GameVersion, item_id_flag: ItemIDFlag) -> ParamDict:
     return {row["Row ID"]: ParamRow(row, item_id_flag) for row in _load(param, version)}
@@ -30,4 +31,4 @@ def load_msg(filename: str, version: GameVersion) -> dict[int, str]:
         tree = xmltree.fromstring(f.read())
         entries = tree.findall(".//text")
 
-    return {int(e.get("id")): e.text for e in entries if e.text != "%null%"}
+    return {int(str(e.get("id"))): str(e.text) for e in entries if e.text != "%null%"}

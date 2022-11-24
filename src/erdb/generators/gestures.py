@@ -1,48 +1,28 @@
 from erdb.typing.models.gesture import Gesture
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsSortGroupID, ItemIDFlag
-from erdb.utils.common import strip_invalid_name
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
-class GestureGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class GestureTableSpec(TableSpecContext):
+    model = Gesture
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "gestures.json"
+    predicates: list[RowPredicate] = [
+        lambda row: row.get_int("sortGroupId") == GoodsSortGroupID.GESTURES,
+    ]
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "Gestures"
+    main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
-    @staticmethod # override
-    def model() -> Gesture:
-        return Gesture
-
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
-        return strip_invalid_name(self.msgs["names"][row.index])
-
-    main_param_retriever = Base.ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
-
-    param_retrievers = {}
-
-    msgs_retrievers = {
-        "names": Base.MsgsRetriever("GoodsName"),
-        "summaries": Base.MsgsRetriever("GoodsInfo"),
-        "descriptions": Base.MsgsRetriever("GoodsCaption")
+    msg_retrievers = {
+        "names": MsgsRetriever("GoodsName"),
+        "summaries": MsgsRetriever("GoodsInfo"),
+        "descriptions": MsgsRetriever("GoodsCaption")
     }
 
-    lookup_retrievers = {}
-
-    def main_param_iterator(self, gestures: ParamDict):
-        for row in gestures.values():
-            if row.get_int("sortGroupId") == GoodsSortGroupID.GESTURES:
-                yield row
-
-    def construct_object(self, row: ParamRow) -> Gesture:
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
         return Gesture(
-            **self.get_fields_item(row),
-            **self.get_fields_user_data(row, "locations", "remarks")
+            **cls.make_item(data, row),
+            **cls.make_contrib(data, row, "locations", "remarks")
         )

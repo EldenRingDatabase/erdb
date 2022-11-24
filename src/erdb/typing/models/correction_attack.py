@@ -1,7 +1,9 @@
-from erdb.typing.models import dataclass
+from pydantic.dataclasses import dataclass
+
+from erdb.typing.models import dt_config
 
 
-@dataclass
+@dataclass(config=dt_config)
 class AttributesCorrection:
     strength: bool
     dexterity: bool
@@ -9,7 +11,7 @@ class AttributesCorrection:
     faith: bool
     arcane: bool
 
-@dataclass
+@dataclass(config=dt_config)
 class AttributesOverride:
     strength: float | None = None
     dexterity: float | None = None
@@ -17,7 +19,7 @@ class AttributesOverride:
     faith: float | None = None
     arcane: float | None = None
 
-@dataclass
+@dataclass(config=dt_config)
 class AttributesRatio:
     strength: float
     dexterity: float
@@ -25,7 +27,7 @@ class AttributesRatio:
     faith: float
     arcane: float
 
-@dataclass
+@dataclass(config=dt_config)
 class Correction:
     physical: AttributesCorrection
     magic: AttributesCorrection
@@ -41,7 +43,7 @@ class Correction:
     def get_property(attribute: str, damage_type: str) -> str:
         return f"is{attribute}Correct_by{damage_type}"
 
-@dataclass
+@dataclass(config=dt_config)
 class Override:
     physical: AttributesOverride | None = None
     magic: AttributesOverride | None = None
@@ -57,7 +59,7 @@ class Override:
     def get_property(attribute: str, damage_type: str) -> str:
         return f"overwrite{attribute}CorrectRate_by{damage_type}"
 
-@dataclass
+@dataclass(config=dt_config)
 class Ratio:
     physical: AttributesRatio
     magic: AttributesRatio
@@ -73,7 +75,7 @@ class Ratio:
     def get_field_type():
         return AttributesRatio
 
-@dataclass
+@dataclass(config=dt_config)
 class CorrectionAttack:
     correction: Correction
     override: Override

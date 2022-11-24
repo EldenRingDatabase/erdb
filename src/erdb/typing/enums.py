@@ -36,8 +36,8 @@ class GoodsRarity(str, Enum):
     RARE = "Rare"
     LEGENDARY = "Legendary"
 
-    @staticmethod
-    def from_id(index: str) -> Self:
+    @classmethod
+    def from_id(cls, index: int) -> Self:
         return {
             0: GoodsRarity.COMMON, # some crafting materials use 0, but the rest is "common"
             1: GoodsRarity.COMMON,
@@ -124,8 +124,8 @@ class Affinity(str, Enum):
             Affinity.OCCULT: 12,
         }[self]
 
-    @staticmethod
-    def from_id(index: int) -> Self:
+    @classmethod
+    def from_id(cls, index: int) -> Self:
         return {
             0: Affinity.STANDARD,
             1: Affinity.HEAVY,
@@ -148,8 +148,8 @@ class AttackAttribute(str, Enum):
     SLASH = "Slash"
     PIERCE = "Pierce"
 
-    @staticmethod
-    def from_id(index: int) -> Self:
+    @classmethod
+    def from_id(cls, index: int) -> Self:
         return {
             0: AttackAttribute.SLASH,
             1: AttackAttribute.STRIKE,
@@ -694,7 +694,7 @@ class SpEffectType(str, Enum):
     def __str__(self) -> str:
         return _SP_EFFECT_TYPE_STR[self]
 
-    def is_passive(self) -> str:
+    def is_passive(self) -> bool:
         """
         Some stateInfo effect types act as trigger condtions for effects, others specify whether the effect
         is passive. This list can be used to check whether this type is used as a condtion.

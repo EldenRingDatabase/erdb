@@ -1,8 +1,9 @@
 from erdb.typing.models.reinforcement import Reinforcement, ReinforcementLevel, DamageMultiplier, ScalingMultiplier, GuardMultiplier, ResistanceMultiplier
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
 from erdb.utils.common import find_offset_indices
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
+from erdb.generators._common import RowPredicate, TableSpecContext
 
 
 def _is_base_index(index: int) -> bool:
@@ -57,36 +58,23 @@ def _get_reinforcement_level(row: ParamRow, level: int) -> ReinforcementLevel:
         resistance=_get_resistances(row)
     )
 
-class ReinforcementGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class ReinforcementTableSpec(TableSpecContext):
+    model = Reinforcement
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "reinforcements.json"
+    main_param_retriever = ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE)
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "Reinforcements"
+    predicates: list[RowPredicate] = [
+        lambda row: _is_base_index(row.index),
+        lambda row: len(row.name) > 0,
+    ]
 
-    @staticmethod # override
-    def model() -> Reinforcement:
-        return Reinforcement
+    has_icons = False
 
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
+    @classmethod # override
+    def get_pk(cls, data: RetrieverData, row: ParamRow) -> str:
         return str(row.index)
 
-    main_param_retriever = Base.ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE)
-
-    param_retrievers = {}
-    msgs_retrievers = {}
-    lookup_retrievers = {}
-
-    def main_param_iterator(self, reinforcements: ParamDict):
-        for row in reinforcements.values():
-            if _is_base_index(row.index) and len(row.name) > 0: # NOTE: Paramdex coupling (row.name)
-                yield row
-
-    def construct_object(self, row: ParamRow) -> Reinforcement:
-        indices, offset = find_offset_indices(row.index, self.main_param, possible_maxima=[0, 10, 25])
-        return [_get_reinforcement_level(self.main_param[str(i)], lvl) for i, lvl in zip(indices, offset)]
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
+        indices, offset = find_offset_indices(row.index, data.main_param, possible_maxima=[0, 10, 25])
+        return Reinforcement([_get_reinforcement_level(data.main_param[str(i)], lvl) for i, lvl in zip(indices, offset)])

@@ -13,7 +13,7 @@ def _overlay_properties(ret: dict, source: dict):
         if isinstance(value, list):
             ret[key] = ret.get(key, list()) + value
         elif isinstance(value, set):
-            ret[key] = ret.get(key, set()) + value
+            ret[key] = ret.get(key, set()) + value # type: ignore
         else:
             ret[key] = value
 

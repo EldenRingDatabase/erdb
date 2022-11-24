@@ -1,13 +1,14 @@
 from pydantic import Field
+from pydantic.dataclasses import dataclass
 
-from erdb.typing.models import dataclass
+from erdb.typing.models import dt_config
 from erdb.typing.models.item import Item
 from erdb.typing.models.common import Damage
 from erdb.typing.models.effect import Effect, StatusEffects
 from erdb.typing.categories import AmmoCategory
 
 
-@dataclass
+@dataclass(config=dt_config)
 class Ammo(Item):
     damage: Damage = Field(...,
         description="Base attack power values.",

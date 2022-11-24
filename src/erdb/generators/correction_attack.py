@@ -1,9 +1,11 @@
 from typing import Any
 
 from erdb.typing.models.correction_attack import CorrectionAttack, Correction, Override, Ratio
-from erdb.typing.params import ParamDict, ParamRow
+from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
-from erdb.generators._base import GeneratorDataBase
+from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
+from erdb.generators._common import TableSpecContext
+
 
 _DAMAGE_TYPE: dict[str, str] = {
     "physical": "Physics",
@@ -39,36 +41,19 @@ def _get_damage_types(row: ParamRow, cls: Any) -> Any:
     data = {damage: _get_attributes(row, damage, cls) for damage in _DAMAGE_TYPE.keys()}
     return cls(**data)
 
-class CorrectionAttackGeneratorData(GeneratorDataBase):
-    Base = GeneratorDataBase
+class CorrectionAttackTableSpec(TableSpecContext):
+    model = CorrectionAttack
 
-    @staticmethod # override
-    def output_file() -> str:
-        return "correction-attack.json"
+    main_param_retriever = ParamDictRetriever("AttackElementCorrectParam", ItemIDFlag.NON_EQUIPABBLE)
 
-    @staticmethod # override
-    def element_name() -> str:
-        return "CorrectionAttack"
+    has_icons = False
 
-    @staticmethod # override
-    def model() -> CorrectionAttack:
-        return CorrectionAttack
-
-    # override
-    def get_key_name(self, row: ParamRow) -> str:
+    @classmethod # override
+    def get_pk(cls, data: RetrieverData, row: ParamRow) -> str:
         return str(row.index)
 
-    main_param_retriever = Base.ParamDictRetriever("AttackElementCorrectParam", ItemIDFlag.NON_EQUIPABBLE)
-
-    param_retrievers = {}
-    msgs_retrievers = {}
-    lookup_retrievers = {}
-
-    def main_param_iterator(self, correct_attack: ParamDict):
-        for row in correct_attack.values():
-            yield row
-
-    def construct_object(self, row: ParamRow) -> CorrectionAttack:
+    @classmethod
+    def make_object(cls, data: RetrieverData, row: ParamRow):
         return CorrectionAttack(
             correction=_get_damage_types(row, Correction),
             override=_get_damage_types(row, Override),

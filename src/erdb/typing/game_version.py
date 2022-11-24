@@ -119,14 +119,6 @@ class GameVersionInstance(NamedTuple):
     regulation: GameVersion
 
     @property
-    def application(self) -> GameVersion:
-        return self.application
-
-    @property
-    def regulation(self) -> GameVersion:
-        return self.regulation
-
-    @property
     def effective(self) -> GameVersion:
         return max(self.application, self.regulation)
 

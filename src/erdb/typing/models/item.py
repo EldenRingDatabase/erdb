@@ -1,11 +1,12 @@
-from pydantic import Field, PositiveInt, NonNegativeInt, constr
+from pydantic import Field, PositiveInt, NonNegativeInt
+from pydantic.dataclasses import dataclass
 
-from erdb.typing.models import dataclass
+from erdb.typing.models import dt_config, NonEmptyStr
 from erdb.typing.models.location import LocationDetail
 from erdb.typing.enums import GoodsRarity
 
 
-@dataclass
+@dataclass(config=dt_config)
 class Item:
     full_hex_id: str = Field(...,
         description="Full ID of the Item in capital hexadecimal form. IDs differ per affinity or upgrade level.",
@@ -63,7 +64,7 @@ class Item:
         min_items=1,
         # example provided by LocationDetail model
     )
-    remarks: list[constr(min_length=1)] = Field([],
+    remarks: list[NonEmptyStr] = Field([],
         description="List of remarks and trivia about this item.",
         example=[
             "Activates the equipped Great Rune until death.",

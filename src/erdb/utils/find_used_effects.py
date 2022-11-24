@@ -2,8 +2,9 @@ from typing import Dict, List, Set
 
 from erdb.loaders.params import load as load_params
 from erdb.typing.params import ParamDict
-from erdb.typing import sp_effect
 from erdb.typing.enums import ItemIDFlag
+from erdb.typing.game_version import GameVersion
+from erdb.typing import sp_effect
 
 
 _IGNORED_FIELDS = [
@@ -52,14 +53,14 @@ def get_changing_fields(effect_ids: Dict[str, Set[str]], effects: ParamDict) -> 
     return list(changing_fields)
 
 def main():
-    talismans = load_params("EquipParamAccessory", "1.04.1", ItemIDFlag.ACCESSORIES)
+    talismans = load_params("EquipParamAccessory", GameVersion.from_string("1.04.1"), ItemIDFlag.ACCESSORIES)
     # resident effects for talismans are conditials for attack increases
     effect_ids = get_effect_ids(talismans, ["refId"])
 
 #    protectors = er_params.load("EquipParamProtector", "1.04.1", ItemIDFlag.PROTECTORS)
 #    effect_ids = get_effect_ids(protectors, ["residentSpEffectId", "residentSpEffectId2", "residentSpEffectId3"])
 
-    effects = load_params("SpEffectParam", "1.04.1", ItemIDFlag.NON_EQUIPABBLE)
+    effects = load_params("SpEffectParam", GameVersion.from_string("1.04.1"), ItemIDFlag.NON_EQUIPABBLE)
     changing_fields = get_changing_fields(effect_ids, effects)
 
     with open("out.txt", "w") as f:

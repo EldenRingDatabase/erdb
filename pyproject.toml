@@ -34,3 +34,6 @@ Home = "https://github.com/EldenRingDatabase/erdb"
 
 [project.scripts]
 erdb = "erdb.main.cli:entrypoint"
+
+[tool.mypy]
+plugins = "pydantic.mypy"

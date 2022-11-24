@@ -204,7 +204,7 @@ setting up a serivce account login. Detailed instructions here:
 https://docs.gspread.org/en/latest/oauth2.html#for-bots-using-service-account
 """
 def fetch(version: str, service_key: str):
-    calc = OnlineCalc(version, service_key)
+    calc = OnlineCalc(version, Path(service_key))
     calc.set_field(Field.LEVEL, 10) # always keep 10, valid for unique and standard armaments
 
     with open(Path.cwd() / version / "armaments.json", encoding="utf-8") as f:

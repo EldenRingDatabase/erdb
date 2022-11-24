@@ -1,9 +1,10 @@
-from pydantic import NonNegativeFloat, conlist, conint
+from pydantic import Field, NonNegativeFloat, conlist
+from pydantic.dataclasses import dataclass
 
-from erdb.typing.models import dataclass
+from erdb.typing.models import dt_config
 
 
-@dataclass
+@dataclass(config=dt_config)
 class DamageMultiplier:
     physical: NonNegativeFloat
     magic: NonNegativeFloat
@@ -12,7 +13,7 @@ class DamageMultiplier:
     holy: NonNegativeFloat
     stamina: NonNegativeFloat
 
-@dataclass
+@dataclass(config=dt_config)
 class ScalingMultiplier:
     strength: NonNegativeFloat
     dexterity: NonNegativeFloat
@@ -20,7 +21,7 @@ class ScalingMultiplier:
     faith: NonNegativeFloat
     arcane: NonNegativeFloat
 
-@dataclass
+@dataclass(config=dt_config)
 class GuardMultiplier:
     physical: NonNegativeFloat
     magic: NonNegativeFloat
@@ -29,7 +30,7 @@ class GuardMultiplier:
     holy: NonNegativeFloat
     guard_boost: NonNegativeFloat
 
-@dataclass
+@dataclass(config=dt_config)
 class ResistanceMultiplier:
     bleed: NonNegativeFloat
     frostbite: NonNegativeFloat
@@ -39,12 +40,12 @@ class ResistanceMultiplier:
     madness: NonNegativeFloat
     death_blight: NonNegativeFloat
 
-@dataclass
+@dataclass(config=dt_config)
 class ReinforcementLevel:
-    level: conint(ge=0, le=25)
-    damage: DamageMultiplier
-    scaling: ScalingMultiplier
-    guard: GuardMultiplier
-    resistance: ResistanceMultiplier
+    level: int = Field(..., ge=0, le=25)
+    damage: DamageMultiplier = Field(...)
+    scaling: ScalingMultiplier = Field(...)
+    guard: GuardMultiplier = Field(...)
+    resistance: ResistanceMultiplier = Field(...)
 
 Reinforcement = conlist(ReinforcementLevel, min_items=1, max_items=26)

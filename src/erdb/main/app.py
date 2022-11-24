@@ -44,10 +44,10 @@ class App:
             destination = out / str(version)
             destination.mkdir(parents=True, exist_ok=True)
 
-            for gen in (tb.make_generator(version) for tb in tables):
-                print(f"\n>>> Generating \"{gen.element_name()}\" from version {version}", flush=True)
+            for tb, gen in ((tb, tb.make_generator(version)) for tb in tables):
+                print(f"\n>>> Generating \"{tb}\" from version {version}", flush=True)
 
-                output_file = destination / gen.output_file()
+                output_file = destination / f"{tb}.json"
                 print(f"Output file: {output_file}", flush=True)
 
                 if output_file.exists():
@@ -66,7 +66,7 @@ class App:
     def find_values(param: str, field: str, limit: int, gamedata: GameVersionRange) -> int:
         for game_version in gamedata.iterate(GAME_VERSIONS):
             print(f"\n>>> Finding values for version {game_version}")
-            find_valid_values(param, game_version, field, limit)
+            find_valid_values(param, str(game_version), field, limit)
 
         return 0
 
