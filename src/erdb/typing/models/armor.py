@@ -7,7 +7,7 @@ from erdb.typing.models.effect import Effect
 from erdb.typing.categories import ArmorCategory
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Absorptions:
     physical: float
     strike: float
@@ -18,7 +18,7 @@ class Absorptions:
     lightning: float
     holy: float
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Resistances:
     immunity: int
     robustness: int
@@ -26,7 +26,7 @@ class Resistances:
     vitality: int
     poise: int
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Armor(Item):
     category: ArmorCategory = Field(...,
         description="Category of the Armor.",

@@ -2,12 +2,15 @@ from erdb.typing.models.key import Key
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsSortGroupID, GoodsType, ItemIDFlag
 from erdb.typing.categories import KeyCategory
+from erdb.typing.api_version import ApiVersion
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
 from erdb.generators._common import RowPredicate, TableSpecContext
 
 
 class KeyTableSpec(TableSpecContext):
-    model = Key
+    model = {
+        ApiVersion.VER_1: Key,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
@@ -25,7 +28,7 @@ class KeyTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         return Key(
             **cls.make_item(data, row),
             **cls.make_contrib(data, row, "locations", "remarks"),

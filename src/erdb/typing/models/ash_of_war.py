@@ -7,7 +7,7 @@ from erdb.typing.models.item import Item
 from erdb.typing.categories import ArmamentCategory
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class AshOfWar(Item):
     armament_categories: list[ArmamentCategory] = Field(...,
         description="Applicable weapons classes the Ash of War can be applied to.",

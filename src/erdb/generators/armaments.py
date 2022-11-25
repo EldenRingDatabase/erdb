@@ -4,6 +4,7 @@ from erdb.typing.models.effect import Effect, StatusEffects
 from erdb.typing.params import ParamRow, ParamDict
 from erdb.typing.enums import Affinity, AttackCondition, ItemIDFlag, AshOfWarMountType, AttackAttribute, ArmamentUpgradeMaterial
 from erdb.typing.categories import ArmamentCategory
+from erdb.typing.api_version import ApiVersion
 from erdb.utils.common import find_offset_indices, update_optional
 from erdb.effect_parser import parse_effects, parse_status_effects, parse_weapon_effects
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
@@ -136,7 +137,9 @@ def _get_affinities(row: ParamRow, armaments: ParamDict, effects: ParamDict, rei
     return {a: _get_affinity_properties(armaments[str(i)], effects, reinforces) for i, a in zip(indices, affinities)}
 
 class ArmamentTableSpec(TableSpecContext):
-    model = Armament
+    model = {
+        ApiVersion.VER_1: Armament,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamWeapon", ItemIDFlag.WEAPONS, id_min=1000000, id_max=49000000)
 
@@ -156,7 +159,7 @@ class ArmamentTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         effects = data.params["effects"]
         reinforces = data.params["reinforces"]
 

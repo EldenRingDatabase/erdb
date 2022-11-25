@@ -4,6 +4,7 @@ from erdb.typing.models.effect import Effect
 from erdb.typing.categories import AmmoCategory
 from erdb.typing.enums import ItemIDFlag
 from erdb.typing.params import ParamRow
+from erdb.typing.api_version import ApiVersion
 from erdb.utils.common import update_optional
 from erdb.effect_parser import parse_status_effects, parse_weapon_effects
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
@@ -23,7 +24,9 @@ def _get_damages(row: ParamRow) -> Damage:
     return Damage(**damages)
 
 class AmmoTableSpec(TableSpecContext):
-    model = Ammo
+    model = {
+        ApiVersion.VER_1: Ammo,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamWeapon", ItemIDFlag.WEAPONS)
 
@@ -42,7 +45,7 @@ class AmmoTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         effects = data.params["effects"]
         effect_ids = [row.get(f) for f in _BEHAVIOR_EFFECTS_FIELDS]
 

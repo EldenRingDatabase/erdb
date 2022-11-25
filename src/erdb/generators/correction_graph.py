@@ -4,6 +4,7 @@ from typing import NamedTuple
 from erdb.typing.models.correction_graph import CorrectionGraph
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
+from erdb.typing.api_version import ApiVersion
 from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
 from erdb.generators._common import RowPredicate, TableSpecContext
 
@@ -50,7 +51,9 @@ class CorrectionRange(NamedTuple):
         )
 
 class CorrectionGraphTableSpec(TableSpecContext):
-    model = CorrectionGraph
+    model = {
+        ApiVersion.VER_1: CorrectionGraph,
+    }
 
     main_param_retriever = ParamDictRetriever("CalcCorrectGraph", ItemIDFlag.NON_EQUIPABBLE)
 
@@ -65,7 +68,7 @@ class CorrectionGraphTableSpec(TableSpecContext):
         return str(row.index)
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         points = range(0, 5)
         points_shift = range(1, 5)
         ranges = [CorrectionRange.from_row(row, left, right) for left, right in zip(points, points_shift)]

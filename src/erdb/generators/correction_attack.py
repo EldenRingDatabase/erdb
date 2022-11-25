@@ -3,6 +3,7 @@ from typing import Any
 from erdb.typing.models.correction_attack import CorrectionAttack, Correction, Override, Ratio
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
+from erdb.typing.api_version import ApiVersion
 from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
 from erdb.generators._common import TableSpecContext
 
@@ -42,7 +43,9 @@ def _get_damage_types(row: ParamRow, cls: Any) -> Any:
     return cls(**data)
 
 class CorrectionAttackTableSpec(TableSpecContext):
-    model = CorrectionAttack
+    model = {
+        ApiVersion.VER_1: CorrectionAttack,
+    }
 
     main_param_retriever = ParamDictRetriever("AttackElementCorrectParam", ItemIDFlag.NON_EQUIPABBLE)
 
@@ -53,7 +56,7 @@ class CorrectionAttackTableSpec(TableSpecContext):
         return str(row.index)
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         return CorrectionAttack(
             correction=_get_damage_types(row, Correction),
             override=_get_damage_types(row, Override),

@@ -1,6 +1,7 @@
 from erdb.typing.models.reinforcement import Reinforcement, ReinforcementLevel, DamageMultiplier, ScalingMultiplier, GuardMultiplier, ResistanceMultiplier
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
+from erdb.typing.api_version import ApiVersion
 from erdb.utils.common import find_offset_indices
 from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
 from erdb.generators._common import RowPredicate, TableSpecContext
@@ -59,7 +60,9 @@ def _get_reinforcement_level(row: ParamRow, level: int) -> ReinforcementLevel:
     )
 
 class ReinforcementTableSpec(TableSpecContext):
-    model = Reinforcement
+    model = {
+        ApiVersion.VER_1: Reinforcement,
+    }
 
     main_param_retriever = ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE)
 
@@ -75,6 +78,6 @@ class ReinforcementTableSpec(TableSpecContext):
         return str(row.index)
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         indices, offset = find_offset_indices(row.index, data.main_param, possible_maxima=[0, 10, 25])
         return Reinforcement([_get_reinforcement_level(data.main_param[str(i)], lvl) for i, lvl in zip(indices, offset)])

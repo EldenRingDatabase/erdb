@@ -4,12 +4,15 @@ from erdb.typing.models import NonEmptyStr
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsType, ItemIDFlag
 from erdb.typing.categories import CraftingMaterialCategory
+from erdb.typing.api_version import ApiVersion
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData, ShopRetriever
 from erdb.generators._common import RowPredicate, TableSpecContext
 
 
 class CraftingMaterialTableSpec(TableSpecContext):
-    model = CraftingMaterial
+    model = {
+        ApiVersion.VER_1: CraftingMaterial,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
@@ -34,7 +37,7 @@ class CraftingMaterialTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         crafting_shop = data.shops["crafting_shop"]
 
         names = {

@@ -6,7 +6,7 @@ from erdb.typing.models.item import Item
 from erdb.typing.categories import BolsteringMaterialCategory
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class BolsteringMaterial(Item):
     category: BolsteringMaterialCategory = Field(...,
         description="Bolstering Material category to discern its use.",

@@ -1,9 +1,10 @@
 from erdb.typing.models.tool import Tool
 from erdb.typing.models.effect import Effect
-from erdb.effect_parser import parse_effects
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsSortGroupID, GoodsType, ItemIDFlag, ToolAvailability
 from erdb.typing.categories import ToolCategory
+from erdb.typing.api_version import ApiVersion
+from erdb.effect_parser import parse_effects
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
 from erdb.generators._common import RowPredicate, TableSpecContext
 
@@ -21,7 +22,9 @@ def _is_note_item(name: str) -> bool:
     return name.startswith("Note: ") or name == "Weathered Map"
 
 class ToolTableSpec(TableSpecContext):
-    model = Tool
+    model = {
+        ApiVersion.VER_1: Tool,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
@@ -43,7 +46,7 @@ class ToolTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         effects = data.params["effects"]
 
         return Tool(

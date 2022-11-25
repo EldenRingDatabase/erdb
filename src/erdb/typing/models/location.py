@@ -6,7 +6,7 @@ from erdb.typing.models import dt_config, NonEmptyStr
 from erdb.typing.enums import Region, Location, Currency
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class LocationDetail:
     summary: str = Field("no summary",
         description="Short, consice summary of the location. To help concatenating with other data, there are no capital letters or periods at the end.",

@@ -2,6 +2,7 @@ from erdb.typing.models.ash_of_war import AshOfWar
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag, Affinity
 from erdb.typing.categories import ArmamentCategory
+from erdb.typing.api_version import ApiVersion
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
 from erdb.generators._common import TableSpecContext
 
@@ -13,11 +14,11 @@ def _get_affinities(row: ParamRow) -> list[Affinity]:
     return [a for a in Affinity if row.get_bool(f"configurableWepAttr{str(a.id).zfill(2)}")]
 
 class AshOfWarTableSpec(TableSpecContext):
-    model = AshOfWar
+    model = {
+        ApiVersion.VER_1: AshOfWar,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamGem", ItemIDFlag.ACCESSORIES, id_min=10000)
-
-    param_retrievers = {}
 
     msg_retrievers = {
         "names": MsgsRetriever("GemName"),
@@ -26,7 +27,7 @@ class AshOfWarTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         return AshOfWar(
             **cls.make_item(data, row),
             **cls.make_contrib(data, row, "locations", "remarks"),

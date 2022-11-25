@@ -4,6 +4,7 @@ from erdb.typing.models.armor import Armor, Absorptions, Resistances
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
 from erdb.typing.categories import ArmorCategory
+from erdb.typing.api_version import ApiVersion
 from erdb.effect_parser import parse_effects
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData, ShopRetriever
 from erdb.generators._common import RowPredicate, TableSpecContext
@@ -42,7 +43,9 @@ def _get_resistances(row: ParamRow) -> Resistances:
     )
 
 class ArmorTableSpec(TableSpecContext):
-    model = Armor
+    model = {
+        ApiVersion.VER_1: Armor,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamProtector", ItemIDFlag.PROTECTORS)
 
@@ -69,7 +72,7 @@ class ArmorTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         names = data.msgs["names"]
         effects = data.params["effects"]
         armor_shop = data.shops["armor_shop"]

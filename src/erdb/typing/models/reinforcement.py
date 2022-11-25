@@ -4,7 +4,7 @@ from pydantic.dataclasses import dataclass
 from erdb.typing.models import dt_config
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class DamageMultiplier:
     physical: NonNegativeFloat
     magic: NonNegativeFloat
@@ -13,7 +13,7 @@ class DamageMultiplier:
     holy: NonNegativeFloat
     stamina: NonNegativeFloat
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class ScalingMultiplier:
     strength: NonNegativeFloat
     dexterity: NonNegativeFloat
@@ -21,7 +21,7 @@ class ScalingMultiplier:
     faith: NonNegativeFloat
     arcane: NonNegativeFloat
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class GuardMultiplier:
     physical: NonNegativeFloat
     magic: NonNegativeFloat
@@ -30,7 +30,7 @@ class GuardMultiplier:
     holy: NonNegativeFloat
     guard_boost: NonNegativeFloat
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class ResistanceMultiplier:
     bleed: NonNegativeFloat
     frostbite: NonNegativeFloat
@@ -40,7 +40,7 @@ class ResistanceMultiplier:
     madness: NonNegativeFloat
     death_blight: NonNegativeFloat
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class ReinforcementLevel:
     level: int = Field(..., ge=0, le=25)
     damage: DamageMultiplier = Field(...)

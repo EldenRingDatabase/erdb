@@ -9,7 +9,7 @@ from erdb.typing.categories import ArmamentCategory
 from erdb.typing.enums import Affinity, ArmamentUpgradeMaterial, AttackAttribute
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class CorrectionCalcID:
     physical: NonNegativeInt
     magic: NonNegativeInt
@@ -21,7 +21,7 @@ class CorrectionCalcID:
     sleep: NonNegativeInt
     madness: NonNegativeInt
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Scaling:
     strength: NonNegativeFloat | None = None
     dexterity: NonNegativeFloat | None = None
@@ -29,7 +29,7 @@ class Scaling:
     faith: NonNegativeFloat | None = None
     arcane: NonNegativeFloat | None = None
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Guard:
     physical: NonNegativeInt | None = None
     magic: NonNegativeInt | None = None
@@ -38,7 +38,7 @@ class Guard:
     holy: NonNegativeInt | None = None
     guard_boost: NonNegativeInt | None = None
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class AffinityProperties:
     full_hex_id: str = Field(...,
         description="Full hex ID override for the Armament with Affinity applied.",
@@ -104,7 +104,7 @@ class AffinityProperties:
         ]
     )
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Armament(Item):
     behavior_variation_id: NonNegativeInt = Field(...,
         description="Behavior variation ID used to identify attack params.",

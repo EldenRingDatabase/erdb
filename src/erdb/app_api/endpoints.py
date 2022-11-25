@@ -5,6 +5,7 @@ from pydantic.dataclasses import dataclass
 
 from erdb.generators import Table
 from erdb.app_api.common import GameVersionEnum, generate, as_str
+from erdb.typing.api_version import ApiVersion
 
 
 @dataclass
@@ -12,9 +13,11 @@ class _Detail:
     detail: str
 
 class DataEndpoint:
+    api: ApiVersion
     table: Table
 
-    def __init__(self, table: Table) -> None:
+    def __init__(self, api: ApiVersion, table: Table) -> None:
+        self.api = api
         self.table = table
 
     @property
@@ -23,7 +26,7 @@ class DataEndpoint:
 
     @property
     def model(self) -> Any:
-        return dict[str, self.table.spec.model]
+        return dict[str, self.table.spec.model[self.api]] # type: ignore
 
     @property
     def summary(self) -> str:
@@ -47,7 +50,7 @@ class DataEndpoint:
         keys: list[str] | None = Query(None, alias="k", description="Specify a list of keys (ascii names) to retrieve specific items."),
         query: str | None = Query(None, description="Filter elements by field in format \"{field}:{value}\".", regex=r"^\w+\:.+$"),
     ) -> Any:
-        data = generate(game_version, self.table)
+        data = generate(self.api, game_version, self.table)
 
         if keys is not None:
             data = {k: v for k, v in data.items() if k in keys}
@@ -64,9 +67,11 @@ class DataEndpoint:
         return data
 
 class ItemEndpoint:
+    api: ApiVersion
     table: Table
 
-    def __init__(self, table: Table) -> None:
+    def __init__(self, api: ApiVersion, table: Table) -> None:
+        self.api = api
         self.table = table
 
     @property
@@ -75,7 +80,7 @@ class ItemEndpoint:
 
     @property
     def model(self) -> Any:
-        return self.table.spec.model
+        return self.table.spec.model[self.api]
 
     @property
     def summary(self) -> str:
@@ -93,7 +98,7 @@ class ItemEndpoint:
 
     def __call__(self, game_version: GameVersionEnum, key: str) -> Any:
         try:
-            return generate(game_version, self.table)[key]
+            return generate(self.api, game_version, self.table)[key]
 
         except KeyError:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"detail": f"{self.table.title} has no key: \"{key}\""})

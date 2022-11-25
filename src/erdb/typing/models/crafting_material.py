@@ -6,7 +6,7 @@ from erdb.typing.models.item import Item
 from erdb.typing.categories import CraftingMaterialCategory
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class CraftingMaterial(Item):
     category: CraftingMaterialCategory = Field(...,
         description="Crafting Material category to discern its use.",

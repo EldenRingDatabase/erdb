@@ -8,7 +8,7 @@ from erdb.typing.models.effect import Effect, StatusEffects
 from erdb.typing.categories import AmmoCategory
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Ammo(Item):
     damage: Damage = Field(...,
         description="Base attack power values.",

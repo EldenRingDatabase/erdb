@@ -21,6 +21,7 @@ from erdb.generators.spirit_ashes import SpiritAshTableSpec
 from erdb.generators.talismans import TalismanTableSpec
 from erdb.generators.tools import ToolTableSpec
 from erdb.typing.game_version import GameVersion
+from erdb.typing.api_version import ApiVersion
 from erdb.typing.params import ParamRow
 
 
@@ -28,12 +29,14 @@ class Generator(NamedTuple):
     spec: TableSpec
     data: RetrieverData
 
-    def generate(self) -> dict:
+    def generate(self, api: ApiVersion | None = None) -> dict:
+        api = self.spec.latest_api() if api is None else api
+
         def key(row: ParamRow) -> Any:
             return self.spec.get_pk(self.data, row)
 
         def value(row: ParamRow) -> Any:
-            return self.spec.make_object(self.data, row)
+            return self.spec.make_object(api, self.data, row)
 
         def valid(row: ParamRow) -> bool:
             return all(pred(row) for pred in self.spec.predicates)

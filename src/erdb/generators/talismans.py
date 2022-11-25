@@ -4,12 +4,15 @@ from erdb.typing.models import NonEmptyStr
 from erdb.effect_parser import parse_effects
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
+from erdb.typing.api_version import ApiVersion
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
 from erdb.generators._common import RowPredicate, TableSpecContext
 
 
 class TalismanTableSpec(TableSpecContext):
-    model = Talisman
+    model = {
+        ApiVersion.VER_1: Talisman,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamAccessory", ItemIDFlag.ACCESSORIES)
 
@@ -34,7 +37,7 @@ class TalismanTableSpec(TableSpecContext):
         return [NonEmptyStr(cls.parse_name(data.msgs["names"][row.index])) for row in data.main_param.values() if valid(row)]
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         effects = data.params["effects"]
 
         return Talisman(

@@ -6,7 +6,7 @@ from erdb.typing.models.item import Item
 from erdb.typing.models.effect import Effect
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Talisman(Item):
     weight: PositiveFloat = Field(...,
         description="Weight of the Talisman",

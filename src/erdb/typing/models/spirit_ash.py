@@ -6,7 +6,7 @@ from erdb.typing.models.item import Item
 from erdb.typing.enums import SpiritAshUpgradeMaterial
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class SpiritAshUserData:
     summon_quantity: PositiveInt = Field(1,
         description="The number of spririts this Spirit Ash summons.",
@@ -21,7 +21,7 @@ class SpiritAshUserData:
         ],
     )
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class SpiritAsh(SpiritAshUserData, Item):
     summon_name: str = Field(...,
         description="Specific name of the summoned spirit(s). Rarely differs from Item name.",

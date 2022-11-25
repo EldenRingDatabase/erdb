@@ -8,7 +8,7 @@ from erdb.typing.categories import ToolCategory
 from erdb.typing.enums import ToolAvailability
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Tool(Item):
     category: ToolCategory = Field(...,
         description="Tool category to discern its use.",

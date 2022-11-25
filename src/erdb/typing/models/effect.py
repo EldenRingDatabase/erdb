@@ -4,7 +4,7 @@ from pydantic.dataclasses import dataclass
 from erdb.typing.models import dt_config
 from erdb.typing.effects import AttributeName, EffectModel, EffectType
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class StatusEffects:
     bleed: int | None = None
     frostbite: int | None = None
@@ -14,7 +14,7 @@ class StatusEffects:
     madness: int | None = None
     death_blight: int | None = None
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Effect:
     attribute: AttributeName = Field(...,
         description="Specific attribute this effect alters.",

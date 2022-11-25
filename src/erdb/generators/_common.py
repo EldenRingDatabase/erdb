@@ -3,6 +3,7 @@ from unicodedata import normalize, combining
 
 from erdb.typing.enums import GoodsRarity
 from erdb.typing.params import ParamRow
+from erdb.typing.api_version import ApiVersion
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, ShopRetriever, ContribRetriever, RetrieverData
 
 
@@ -13,7 +14,7 @@ def _remove_accents(string: str) -> str:
     return "".join(c for c in nfkd_form if not combining(c))
 
 class TableSpec(Protocol):
-    model: Any
+    model: dict[ApiVersion, Any]
 
     predicates: list[RowPredicate]
 
@@ -30,11 +31,15 @@ class TableSpec(Protocol):
         ...
 
     @classmethod
+    def latest_api(cls) -> ApiVersion:
+        ...
+
+    @classmethod
     def get_pk(cls, data: RetrieverData, row: ParamRow) -> str:
         ...
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow) -> Any:
         ...
 
 class TableSpecContext:
@@ -49,6 +54,10 @@ class TableSpecContext:
     @classmethod # override
     def title(cls) -> str:
         return cls.__name__.removesuffix("TableSpec")
+
+    @classmethod # override
+    def latest_api(cls: TableSpec) -> ApiVersion:
+        return list(cls.model.keys())[-1]
 
     @classmethod # override
     def get_pk(cls, data: RetrieverData, row: ParamRow) -> str:

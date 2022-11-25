@@ -1,6 +1,7 @@
 from erdb.typing.models.spirit_ash import SpiritAsh
 from erdb.typing.params import ParamDict, ParamRow
 from erdb.typing.enums import GoodsType, ItemIDFlag, SpiritAshUpgradeMaterial
+from erdb.typing.api_version import ApiVersion
 from erdb.utils.common import find_offset_indices
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
 from erdb.generators._common import RowPredicate, TableSpecContext
@@ -11,7 +12,9 @@ def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> list[int]:
     return [goods[str(i)].get_int("reinforcePrice") for i in indices]
 
 class SpiritAshTableSpec(TableSpecContext):
-    model = SpiritAsh
+    model = {
+        ApiVersion.VER_1: SpiritAsh,
+    }
 
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
@@ -32,7 +35,7 @@ class SpiritAshTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         upgrade_materials = data.params["upgrade_materials"]
         names = data.msgs["names"]
         summon_names = data.msgs["summon_names"]

@@ -3,6 +3,7 @@ from erdb.typing.models.common import StatRequirements
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsType, ItemIDFlag, SpellHoldAction
 from erdb.typing.categories import SpellCategory
+from erdb.typing.api_version import ApiVersion
 from erdb.utils.common import update_optional
 from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
 from erdb.generators._common import RowPredicate, TableSpecContext
@@ -16,7 +17,9 @@ def _get_spell_requirements(row: ParamRow) -> StatRequirements:
     return StatRequirements(**requirements)
 
 class SpellTableSpec(TableSpecContext):
-    model = Spell
+    model = {
+        ApiVersion.VER_1: Spell,
+    }
 
     # Spells are defined in Goods and Magic tables, correct full hex IDs are calculated from Goods
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
@@ -37,7 +40,7 @@ class SpellTableSpec(TableSpecContext):
     }
 
     @classmethod
-    def make_object(cls, data: RetrieverData, row: ParamRow):
+    def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         row_magic = data.params["magic"][str(row.index)]
 
         fp_cost = row_magic.get_int("mp")

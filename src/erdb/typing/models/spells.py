@@ -8,7 +8,7 @@ from erdb.typing.categories import SpellCategory
 from erdb.typing.enums import SpellHoldAction
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Spell(Item):
     fp_cost: NonNegativeInt = Field(...,
         description="Cost of FP to cast.",

@@ -6,7 +6,7 @@ from erdb.typing.models.location import LocationDetail
 from erdb.typing.enums import GoodsRarity
 
 
-@dataclass(config=dt_config)
+@dataclass(config=dt_config())
 class Item:
     full_hex_id: str = Field(...,
         description="Full ID of the Item in capital hexadecimal form. IDs differ per affinity or upgrade level.",
