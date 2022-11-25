@@ -4,8 +4,8 @@ from erdb.typing.models.correction_attack import CorrectionAttack, Correction, O
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
 from erdb.typing.api_version import ApiVersion
-from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
-from erdb.generators._common import TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, RetrieverData
+from erdb.table._common import TableSpecContext
 
 
 _DAMAGE_TYPE: dict[str, str] = {

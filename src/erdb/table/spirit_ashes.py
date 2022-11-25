@@ -3,8 +3,8 @@ from erdb.typing.params import ParamDict, ParamRow
 from erdb.typing.enums import GoodsType, ItemIDFlag, SpiritAshUpgradeMaterial
 from erdb.typing.api_version import ApiVersion
 from erdb.utils.common import find_offset_indices
-from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
-from erdb.generators._common import RowPredicate, TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.table._common import RowPredicate, TableSpecContext
 
 
 def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> list[int]:

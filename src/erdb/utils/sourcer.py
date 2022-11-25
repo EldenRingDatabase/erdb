@@ -14,7 +14,7 @@ from hashlib import md5
 from pathlib import Path
 from typing import NamedTuple
 
-from erdb.generators import Table
+from erdb.table import Table
 from erdb.loaders import PKG_DATA_PATH
 from erdb.typing.game_version import GameVersion, GameVersionInstance
 

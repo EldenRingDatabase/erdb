@@ -2,7 +2,7 @@ from functools import cache
 from enum import Enum
 from typing import Any
 
-from erdb.generators import Table
+from erdb.table import Table
 from erdb.loaders import GAME_VERSIONS
 from erdb.typing.game_version import GameVersion
 from erdb.typing.api_version import ApiVersion

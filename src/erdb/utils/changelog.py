@@ -9,7 +9,7 @@ from deepdiff import DeepDiff
 from contextlib import suppress
 from collections import defaultdict
 
-from erdb.generators import Table
+from erdb.table import Table
 from erdb.typing.game_version import GameVersion
 from erdb.typing.effects import SchemaEffect
 

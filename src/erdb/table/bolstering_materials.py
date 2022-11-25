@@ -3,8 +3,8 @@ from erdb.typing.categories import BolsteringMaterialCategory
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsType, ItemIDFlag
 from erdb.typing.api_version import ApiVersion
-from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
-from erdb.generators._common import RowPredicate, TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.table._common import RowPredicate, TableSpecContext
 
 
 class BolsteringMaterialTableSpec(TableSpecContext):

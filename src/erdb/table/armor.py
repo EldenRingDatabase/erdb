@@ -6,8 +6,8 @@ from erdb.typing.enums import ItemIDFlag
 from erdb.typing.categories import ArmorCategory
 from erdb.typing.api_version import ApiVersion
 from erdb.effect_parser import parse_effects
-from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData, ShopRetriever
-from erdb.generators._common import RowPredicate, TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData, ShopRetriever
+from erdb.table._common import RowPredicate, TableSpecContext
 
 
 def _get_absorptions(row: ParamRow) -> Absorptions:

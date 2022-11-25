@@ -3,8 +3,8 @@ from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
 from erdb.typing.api_version import ApiVersion
 from erdb.utils.common import find_offset_indices
-from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
-from erdb.generators._common import RowPredicate, TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, RetrieverData
+from erdb.table._common import RowPredicate, TableSpecContext
 
 
 def _is_base_index(index: int) -> bool:

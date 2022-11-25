@@ -3,8 +3,8 @@ from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag, Affinity
 from erdb.typing.categories import ArmamentCategory
 from erdb.typing.api_version import ApiVersion
-from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
-from erdb.generators._common import TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.table._common import TableSpecContext
 
 
 def _get_categories(row: ParamRow) -> list[ArmamentCategory]:

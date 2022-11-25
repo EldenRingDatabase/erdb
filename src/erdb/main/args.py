@@ -1,9 +1,9 @@
 from inspect import Parameter, signature
-from argparse import ArgumentParser, BooleanOptionalAction, Namespace, Action
+from argparse import ArgumentParser, BooleanOptionalAction, Action
 from pathlib import Path
-from typing import Any, Callable, Generator, NamedTuple, Sequence, Self
+from typing import Any, Callable, NamedTuple, Sequence, Self
 
-from erdb.generators import Table
+from erdb.table import Table
 from erdb.loaders import GAME_VERSIONS
 from erdb.utils.changelog import FormatterBase
 from erdb.typing.game_version import GameVersion, GameVersionRange
@@ -33,7 +33,7 @@ def _infer_annotation(type: Any, **kwargs) -> Any:
 
     return type
 
-class _GeneratorsAction(Action):
+class _TablesAction(Action):
     def __call__(self, parser, namespace, values: list[Table], option_string=None):
         setattr(namespace, self.dest, _parse_all_tables(values, Table))
 
@@ -117,7 +117,7 @@ class Generate(_Subcommand):
     summary = "Generates JSON data for specified gamedata items."
     aliases = ["gen"]
     arguments = [
-        _Argument.make("tables", type=Table, default=[], choices=list(Table), nargs="+", action=_GeneratorsAction, help="Specify any or all generators.")
+        _Argument.make("tables", type=Table, default=[], choices=list(Table), nargs="+", action=_TablesAction, help="Specify any or all tables.")
     ] + _Argument.parses_gamedata() + _Argument.outputs_json()
 
 class FindValues(_Subcommand):

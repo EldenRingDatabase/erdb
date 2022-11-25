@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Sequence
 
 from erdb.main.args import parse_args
-from erdb.generators import Table
+from erdb.table import Table
 from erdb.loaders import GAME_VERSIONS
 from erdb.app_api.main import serve as serve_app_api
 from erdb.utils.attack_power import Attributes, CalculatorData, ArmamentCalculator

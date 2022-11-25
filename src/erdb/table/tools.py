@@ -5,8 +5,8 @@ from erdb.typing.enums import GoodsSortGroupID, GoodsType, ItemIDFlag, ToolAvail
 from erdb.typing.categories import ToolCategory
 from erdb.typing.api_version import ApiVersion
 from erdb.effect_parser import parse_effects
-from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
-from erdb.generators._common import RowPredicate, TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.table._common import RowPredicate, TableSpecContext
 
 
 def _get_availability(row: ParamRow) -> ToolAvailability:

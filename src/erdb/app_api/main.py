@@ -5,7 +5,7 @@ from fastapi_versioning import VersionedFastAPI, versioned_api_route
 from erdb.app_api.endpoints import DataEndpoint, ItemEndpoint
 from erdb.app_api.common import precache_data
 from erdb.typing.api_version import ApiVersion
-from erdb.generators import Table
+from erdb.table import Table
 
 
 def _get_router(api: ApiVersion, table: Table) -> APIRouter:

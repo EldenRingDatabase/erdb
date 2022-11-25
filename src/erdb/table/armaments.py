@@ -7,8 +7,8 @@ from erdb.typing.categories import ArmamentCategory
 from erdb.typing.api_version import ApiVersion
 from erdb.utils.common import find_offset_indices, update_optional
 from erdb.effect_parser import parse_effects, parse_status_effects, parse_weapon_effects
-from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
-from erdb.generators._common import RowPredicate, TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
+from erdb.table._common import RowPredicate, TableSpecContext
 
 
 _BEHAVIOR_EFFECTS_FIELDS: list[str] = ["spEffectBehaviorId0", "spEffectBehaviorId1", "spEffectBehaviorId2"]

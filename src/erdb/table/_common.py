@@ -4,7 +4,7 @@ from unicodedata import normalize, combining
 from erdb.typing.enums import GoodsRarity
 from erdb.typing.params import ParamRow
 from erdb.typing.api_version import ApiVersion
-from erdb.generators._retrievers import ParamDictRetriever, MsgsRetriever, ShopRetriever, ContribRetriever, RetrieverData
+from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, ShopRetriever, ContribRetriever, RetrieverData
 
 
 RowPredicate = Callable[[ParamRow], bool]

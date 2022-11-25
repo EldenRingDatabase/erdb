@@ -3,7 +3,7 @@ from fastapi import Query, status
 from fastapi.responses import JSONResponse
 from pydantic.dataclasses import dataclass
 
-from erdb.generators import Table
+from erdb.table import Table
 from erdb.app_api.common import GameVersionEnum, generate, as_str
 from erdb.typing.api_version import ApiVersion
 

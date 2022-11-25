@@ -5,8 +5,8 @@ from erdb.typing.models.correction_graph import CorrectionGraph
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
 from erdb.typing.api_version import ApiVersion
-from erdb.generators._retrievers import ParamDictRetriever, RetrieverData
-from erdb.generators._common import RowPredicate, TableSpecContext
+from erdb.table._retrievers import ParamDictRetriever, RetrieverData
+from erdb.table._common import RowPredicate, TableSpecContext
 
 
 def calc_output(stage_min: float, stage_max: float, val_min: float, val_max: float, mult_val_min: float, mult_val_max: float, input_val: float) -> float:
