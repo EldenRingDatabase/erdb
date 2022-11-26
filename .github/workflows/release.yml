@@ -54,4 +54,4 @@ jobs:
           context: .
           push: true
           tags: erdb:${{ github.event.inputs.build-version }}
-          build_args: BUILD_VERSION=${{ github.event.inputs.build-version }}
+          build-args: BUILD_VERSION=${{ github.event.inputs.build-version }}
