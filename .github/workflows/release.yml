@@ -16,6 +16,11 @@ on:
         default: true
         type: boolean
         description: "Release the Docker image to GHCR"
+      release-github:
+        required: true
+        default: true
+        type: boolean
+        description: "Draft release on GitHub"
 
 env:
   REGISTRY: ghcr.io
@@ -82,3 +87,18 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: BUILD_VERSION=${{ inputs.build-version }}
+
+  github:
+    name: Draft release on GitHub
+    if: ${{ inputs.release-github }}
+    needs: [pypi, ghcr]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          draft: true
+          name: "Release v${{ inputs.build-version }}"
+          tag_name: ${{ inputs.build-version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
