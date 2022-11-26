@@ -6,6 +6,16 @@ on:
       build-version:
         required: true
         description: "Release version and its future tag (ex. 1.0.0)"
+      release-pypi:
+        required: true
+        default: true
+        type: boolean
+        description: "Release the Python package to PyPI"
+      release-ghcr:
+        required: true
+        default: true
+        type: boolean
+        description: "Release the Docker image to GHCR"
 
 env:
   REGISTRY: ghcr.io
@@ -14,6 +24,7 @@ env:
 jobs:
   pypi:
     name: Publish Python package on PyPI
+    if: ${{ github.event.inputs.release-pypi }}
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
@@ -39,7 +50,7 @@ jobs:
 
   ghcr:
     name: Publish Docker image on GHCR
-    needs: pypi # Dockerfile installs ERDB from PyPI
+    if: ${{ github.event.inputs.release-ghcr }}
     runs-on: ubuntu-22.04
     permissions:
       contents: read
