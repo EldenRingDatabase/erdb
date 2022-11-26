@@ -2,6 +2,9 @@ FROM python:3.11-alpine
 
 ARG BUILD_VERSION
 
+# Flit fails otherwise
+ARG FLIT_ROOT_INSTALL=1
+
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
