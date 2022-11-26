@@ -99,6 +99,6 @@ jobs:
         with:
           draft: true
           name: "Release v${{ inputs.build-version }}"
-          tag_name: ${{ inputs.build-version }}
+          tag_name: v${{ inputs.build-version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
