@@ -33,7 +33,7 @@ class TalismanTableSpec(TableSpecContext):
     @classmethod
     def _find_conflicts(cls, data: RetrieverData, group: int) -> list[NonEmptyStr]:
         def valid(row: ParamRow) -> bool:
-            return row.get_int("accessoryGroup") == group and row.index < 9999999
+            return row["accessoryGroup"].as_int == group and row.index < 9999999
         return [NonEmptyStr(cls.parse_name(data.msgs["names"][row.index])) for row in data.main_param.values() if valid(row)]
 
     @classmethod
@@ -43,7 +43,7 @@ class TalismanTableSpec(TableSpecContext):
         return Talisman(
             **cls.make_item(data, row),
             **cls.make_contrib(data, row, "locations", "remarks"),
-            weight=row.get_float("weight"),
+            weight=row["weight"].as_float,
             effects=[Effect(**eff) for eff in parse_effects(row, effects, "refId")],
-            conflicts=cls._find_conflicts(data, row.get_int("accessoryGroup")),
+            conflicts=cls._find_conflicts(data, row["accessoryGroup"].as_int),
         )

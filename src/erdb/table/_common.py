@@ -84,11 +84,11 @@ class TableSpecContext:
             "name": cls.parse_name(data.msgs["names"][row.index]),
             "summary": data.msgs["summaries"][row.index] if summary else "no summary",
             "description": data.msgs["descriptions"][row.index].split("\n") if description else ["no description"],
-            "is_tradable": row.get("disableMultiDropShare") == "0", # assumption this exists for every param table
-            "price_sold": row.get_int_corrected("sellValue"),       # assumption this exists for every param table
-            "rarity": GoodsRarity.from_id(row.get_int("rarity")),   # assumption this exists for every param table
-            "max_held": row.get_int("maxNum") if "maxNum" in row.keys else 999,
-            "max_stored": row.get_int("maxRepositoryNum") if "maxRepositoryNum" in row.keys else 999,
+            "is_tradable": not row["disableMultiDropShare"].as_bool, # assumption this exists for every param table
+            "price_sold": row["sellValue"].get_int(0),               # assumption this exists for every param table
+            "rarity": GoodsRarity.from_id(row["rarity"].as_int),     # assumption this exists for every param table
+            "max_held": row["maxNum"].as_int if "maxNum" in row else 999,
+            "max_stored": row["maxRepositoryNum"].as_int if "maxRepositoryNum" in row else 999,
         }
 
     @classmethod

@@ -1,5 +1,5 @@
 from itertools import repeat
-from typing import NamedTuple
+from typing import NamedTuple, Self
 
 from erdb.typing.models.correction_graph import CorrectionGraph
 from erdb.typing.params import ParamRow
@@ -41,13 +41,13 @@ class CorrectionRange(NamedTuple):
         return self.coefficient_left + ((self.coefficient_right - self.coefficient_left) * growth)
 
     @classmethod
-    def from_row(cls, row: ParamRow, left: int, right: int) -> "CorrectionRange":
+    def from_row(cls, row: ParamRow, left: int, right: int) -> Self:
         return cls(
-            row.get_int(f"stageMaxVal{left}"),
-            row.get_int(f"stageMaxVal{right}"),
-            row.get_float(f"stageMaxGrowVal{left}"),
-            row.get_float(f"stageMaxGrowVal{right}"),
-            row.get_float(f"adjPt_maxGrowVal{left}"),
+            row[f"stageMaxVal{left}"].as_int,
+            row[f"stageMaxVal{right}"].as_int,
+            row[f"stageMaxGrowVal{left}"].as_float,
+            row[f"stageMaxGrowVal{right}"].as_float,
+            row[f"adjPt_maxGrowVal{left}"].as_float,
         )
 
 class CorrectionGraphTableSpec(TableSpecContext):

@@ -29,7 +29,7 @@ class AmmoCategory(_CategoryBase):
             83: AmmoCategory.GREATARROW,
             85: AmmoCategory.BOLT,
             86: AmmoCategory.GREATBOLT,
-        }.get(row.get_int("wepType"))
+        }.get(row["wepType"].as_int)
 
 class ArmamentCategory(_CategoryBase):
     DAGGER = "Dagger"
@@ -69,7 +69,7 @@ class ArmamentCategory(_CategoryBase):
 
     @classmethod
     def get(cls, row: ParamRow) -> Self | None:
-        return _ARMAMENT_CATEGORY_IDS.get(row.get_int("wepType"))
+        return _ARMAMENT_CATEGORY_IDS.get(row["wepType"].as_int)
 
     @property
     def ingame(self) -> str:
@@ -88,7 +88,7 @@ class ArmorCategory(_CategoryBase):
             1: ArmorCategory.BODY,
             2: ArmorCategory.ARMS,
             3: ArmorCategory.LEGS,
-        }.get(row.get_int("protectorCategory"))
+        }.get(row["protectorCategory"].as_int)
 
 class BolsteringMaterialCategory(_CategoryBase):
     FLASK = "Flask"
@@ -105,7 +105,7 @@ class BolsteringMaterialCategory(_CategoryBase):
             G.GROUP_2: B.SMITHING_STONE,
             G.GROUP_3: B.SOMBER_SMITHING_STONE,
             G.GROUP_4: B.GLOVEWORT,
-        }.get(G(row.get_int("sortGroupId")))
+        }.get(G(row["sortGroupId"].as_int))
 
 class CraftingMaterialCategory(_CategoryBase):
     FAUNA = "Fauna"
@@ -120,7 +120,7 @@ class CraftingMaterialCategory(_CategoryBase):
             G.GROUP_1: B.FAUNA,
             G.GROUP_2: B.FLORA,
             G.GROUP_3: B.OBJECT,
-        }.get(G(row.get_int("sortGroupId")))
+        }.get(G(row["sortGroupId"].as_int))
 
 class InfoCategory(_CategoryBase):
     PAINTING = "Painting"
@@ -135,7 +135,7 @@ class InfoCategory(_CategoryBase):
         return {
             G.GROUP_1: I.PAINTING if "Painting" in row.name else I.NOTE if "Note" in row.name else I.CLUE,
             G.GROUP_2: I.TUTORIAL,
-        }.get(G(row.get_int("sortGroupId")))
+        }.get(G(row["sortGroupId"].as_int))
 
 class KeyCategory(_CategoryBase):
     GREAT_RUNE = "Great Rune"
@@ -160,10 +160,10 @@ class KeyCategory(_CategoryBase):
         return {
             G.GROUP_3: K.CONTAINER,
             G.GROUP_4: K.EXPLORATION,
-            G.GROUP_5: K.EXCHANGE if row.get_bool("isConsume") else K.QUEST,
+            G.GROUP_5: K.EXCHANGE if row["isConsume"].as_bool else K.QUEST,
             G.GROUP_6: K.FEATURE,
             G.GROUP_7: K.MAP,
-        }.get(G(row.get_int("sortGroupId")))
+        }.get(G(row["sortGroupId"].as_int))
 
 class ShopCategory(_CategoryBase):
     COOKBOOK = "Cookbook"
@@ -179,7 +179,7 @@ class ShopCategory(_CategoryBase):
             G.GROUP_8: S.BELL_BEARING,
             G.GROUP_9: S.BELL_BEARING,
             G.GROUP_10: S.SPELLBOOK,
-        }.get(G(row.get_int("sortGroupId")))
+        }.get(G(row["sortGroupId"].as_int))
 
 class SpellCategory(_CategoryBase):
     INCANTATION = "Incantation"
@@ -190,7 +190,7 @@ class SpellCategory(_CategoryBase):
         return {
             0: SpellCategory.SORCERY,
             1: SpellCategory.INCANTATION,
-        }.get(row.get_int("ezStateBehaviorType"))
+        }.get(row["ezStateBehaviorType"].as_int)
 
 class ToolCategory(_CategoryBase):
     ESSENTIAL = "Essential"
@@ -212,7 +212,7 @@ class ToolCategory(_CategoryBase):
         G = GoodsSortGroupID
         T = ToolCategory
 
-        goods_type = row.get("goodsType")
+        goods_type = row["goodsType"]
 
         if goods_type == GoodsType.WONDROUS_PHYSICK_TEAR:
             return T.CRYSTAL_TEAR
@@ -233,7 +233,7 @@ class ToolCategory(_CategoryBase):
             G.GROUP_10: T.GOLDEN_RUNE,
             G.REMEMBERANCES: T.REMEMBERANCE,
             G.ONLINE: T.ONLINE
-        }.get(G(row.get_int("sortGroupId")))
+        }.get(G(row["sortGroupId"].as_int))
 
 _ARMAMENT_CATEGORY_IDS: dict[int, ArmamentCategory] = {
     1: ArmamentCategory.DAGGER,

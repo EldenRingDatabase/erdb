@@ -35,7 +35,7 @@ def conditions(sp_effect: ParamRow, triggeree: ParamRow | None = None) -> list[s
 
     def _append_triggers(source: ParamRow):
         for trigger in _TRIGGER_FIELDS:
-            effect_type = SpEffectType(source.get(trigger))
+            effect_type = SpEffectType(source[trigger])
 
             if not effect_type.is_passive():
                 conds.add(str(effect_type))
@@ -44,17 +44,17 @@ def conditions(sp_effect: ParamRow, triggeree: ParamRow | None = None) -> list[s
                 boostSorcery = ("magParamChange", "Affects Sorceries")
                 boostIncantation = ("miracleParamChange", "Affects Incantations")
                 for field, cond in [boostSorcery, boostIncantation]:
-                    if sp_effect.get_bool(field):
+                    if sp_effect[field].as_bool:
                         conds.add(cond)
 
     def _append_conditions(source: ParamRow):
         for cond in _CONDITION_FIELDS:
-            attack_type_str = source.get(cond)
+            attack_type_str = source[cond]
             if (cond := AttackType(attack_type_str)) != AttackType.NONE:
                 conds.add(str(cond))
 
     for field, direction in [("conditionHp", "below"), ("conditionHpRate", "above")]:
-        if (cond := sp_effect.get_int(field)) != -1:
+        if cond := sp_effect[field].get_int():
             conds.add(f"HP {direction} {cond}%")
 
     _append_triggers(sp_effect)
@@ -67,7 +67,7 @@ def conditions(sp_effect: ParamRow, triggeree: ParamRow | None = None) -> list[s
     return None if len(conds) == 0 else sorted(list(conds))
 
 def interval(sp_effect: ParamRow) -> float | None:
-    interv = sp_effect.get("motionInterval")
+    interv = sp_effect["motionInterval"]
     return None if interv == "0" else float(interv)
 
 def value_pvp(sp_effect: ParamRow, field_pve: str, attrib_fields: dict[str, AttributeField]) -> float | None:
@@ -75,9 +75,9 @@ def value_pvp(sp_effect: ParamRow, field_pve: str, attrib_fields: dict[str, Attr
         return None
 
     attrib_field = attrib_fields[field_pve]
-    val = sp_effect.get(field_pvp)
+    val = sp_effect[field_pvp].as_float
 
-    return attrib_field.parser(float(val), attrib_field.effect_model)
+    return attrib_field.parser(val, attrib_field.effect_model)
 
 def generic(value: float, model: EffectModel) -> float:
     return value

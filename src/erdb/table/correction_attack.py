@@ -29,9 +29,9 @@ def _get_attributes(row: ParamRow, damage_type: str, cls: Any) -> Any:
         field = cls.get_property(_ATTRIBUTE[attribute], _DAMAGE_TYPE[damage_type])
 
         return {
-            Correction: row.get_bool(field),
-            Override: None if (value := row.get_int(field)) == -1 else float(value) / 100.0,
-            Ratio: row.get_float(field) / 100.0,
+            Correction: row[field].as_bool,
+            Override: value / 100.0 if (value := row[field].get_float()) else None,
+            Ratio: row[field].as_float / 100.0,
         }[cls]
 
     ret = {attrib: get_field(attrib, damage_type) for attrib in _ATTRIBUTE.keys()}

@@ -7,47 +7,44 @@ from erdb.table._retrievers import ParamDictRetriever, RetrieverData
 from erdb.table._common import RowPredicate, TableSpecContext
 
 
-def _is_base_index(index: int) -> bool:
-    return index == 0 or index % 100 == 0
-
 def _get_damages(row: ParamRow) -> DamageMultiplier:
     return DamageMultiplier(
-        physical=row.get_float("physicsAtkRate"),
-        magic=row.get_float("magicAtkRate"),
-        fire=row.get_float("fireAtkRate"),
-        lightning=row.get_float("thunderAtkRate"),
-        holy=row.get_float("darkAtkRate"),
-        stamina=row.get_float("staminaAtkRate"),
+        physical=row["physicsAtkRate"].as_float,
+        magic=row["magicAtkRate"].as_float,
+        fire=row["fireAtkRate"].as_float,
+        lightning=row["thunderAtkRate"].as_float,
+        holy=row["darkAtkRate"].as_float,
+        stamina=row["staminaAtkRate"].as_float,
     )
 
 def _get_scalings(row: ParamRow) -> ScalingMultiplier:
     return ScalingMultiplier(
-        strength=row.get_float("correctStrengthRate"),
-        dexterity=row.get_float("correctAgilityRate"),
-        intelligence=row.get_float("correctMagicRate"),
-        faith=row.get_float("correctFaithRate"),
-        arcane=row.get_float("correctLuckRate"),
+        strength=row["correctStrengthRate"].as_float,
+        dexterity=row["correctAgilityRate"].as_float,
+        intelligence=row["correctMagicRate"].as_float,
+        faith=row["correctFaithRate"].as_float,
+        arcane=row["correctLuckRate"].as_float,
     )
 
 def _get_guards(row: ParamRow) -> GuardMultiplier:
     return GuardMultiplier(
-        physical=row.get_float("physicsGuardCutRate"),
-        magic=row.get_float("magicGuardCutRate"),
-        fire=row.get_float("fireGuardCutRate"),
-        lightning=row.get_float("thunderGuardCutRate"),
-        holy=row.get_float("darkGuardCutRate"),
-        guard_boost=row.get_float("staminaGuardDefRate"),
+        physical=row["physicsGuardCutRate"].as_float,
+        magic=row["magicGuardCutRate"].as_float,
+        fire=row["fireGuardCutRate"].as_float,
+        lightning=row["thunderGuardCutRate"].as_float,
+        holy=row["darkGuardCutRate"].as_float,
+        guard_boost=row["staminaGuardDefRate"].as_float,
     )
 
 def _get_resistances(row: ParamRow) -> ResistanceMultiplier:
     return ResistanceMultiplier(
-        poison=row.get_float("poisonGuardResistRate"),
-        scarlet_rot=row.get_float("diseaseGuardResistRate"),
-        frostbite=row.get_float("freezeGuardDefRate"),
-        bleed=row.get_float("bloodGuardResistRate"),
-        sleep=row.get_float("sleepGuardDefRate"),
-        madness=row.get_float("madnessGuardDefRate"),
-        death_blight=row.get_float("curseGuardResistRate"),
+        poison=row["poisonGuardResistRate"].as_float,
+        scarlet_rot=row["diseaseGuardResistRate"].as_float,
+        frostbite=row["freezeGuardDefRate"].as_float,
+        bleed=row["bloodGuardResistRate"].as_float,
+        sleep=row["sleepGuardDefRate"].as_float,
+        madness=row["madnessGuardDefRate"].as_float,
+        death_blight=row["curseGuardResistRate"].as_float,
     )
 
 def _get_reinforcement_level(row: ParamRow, level: int) -> ReinforcementLevel:
@@ -67,7 +64,7 @@ class ReinforcementTableSpec(TableSpecContext):
     main_param_retriever = ParamDictRetriever("ReinforceParamWeapon", ItemIDFlag.NON_EQUIPABBLE)
 
     predicates: list[RowPredicate] = [
-        lambda row: _is_base_index(row.index),
+        lambda row: row.is_base_item,
         lambda row: len(row.name) > 0,
     ]
 
@@ -80,4 +77,4 @@ class ReinforcementTableSpec(TableSpecContext):
     @classmethod
     def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
         indices, offset = find_offset_indices(row.index, data.main_param, possible_maxima=[0, 10, 25])
-        return Reinforcement([_get_reinforcement_level(data.main_param[str(i)], lvl) for i, lvl in zip(indices, offset)])
+        return Reinforcement([_get_reinforcement_level(data.main_param[i], lvl) for i, lvl in zip(indices, offset)])

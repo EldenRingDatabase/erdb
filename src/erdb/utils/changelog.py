@@ -1,7 +1,7 @@
 from io import TextIOBase
 from enum import Enum
 from sys import stdout
-from typing import Any, NamedTuple, OrderedDict
+from typing import Any, NamedTuple, OrderedDict, Self
 from pathlib import Path
 from difflib import Differ
 from operator import methodcaller
@@ -23,8 +23,8 @@ class _ChangeType(Enum):
     ADDED = "added"
     REMOVED = "removed"
 
-    @staticmethod
-    def get(report_type: str) -> "_ChangeType":
+    @classmethod
+    def get(cls, report_type: str) -> Self:
         if report_type == "values_changed": return _ChangeType.VALUE
         if report_type.endswith("added"):   return _ChangeType.ADDED
         if report_type.endswith("removed"): return _ChangeType.REMOVED
@@ -69,7 +69,7 @@ class _Change(NamedTuple):
         return out
 
     @classmethod
-    def create(cls, change_type: _ChangeType, path: list) -> "_Change":
+    def create(cls, change_type: _ChangeType, path: list) -> Self:
         assert len(path) > 0, "Invalid change path"
 
         if isinstance(path[-1], int):
@@ -135,7 +135,7 @@ class FormatterBase():
         return [*map(methodcaller("_get_identifier"), cls.__subclasses__())]
 
     @classmethod
-    def create(cls, identifier) -> "FormatterBase":
+    def create(cls, identifier) -> Self:
         for subcls in cls.__subclasses__():
             if identifier == subcls._get_identifier():
                 return subcls()

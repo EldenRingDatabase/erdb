@@ -3,6 +3,7 @@ from typing import Self
 
 
 class ItemIDFlag(IntEnum):
+    DISABLE_CHECK = -1 # mark this flag irrelevant, fail if any calls requiring it are made
     NON_EQUIPABBLE = 0 # params used only for references, ex. param sets
     WEAPONS = 0
     PROTECTORS = 1 << 28

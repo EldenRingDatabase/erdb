@@ -8,10 +8,10 @@ from erdb.table._common import TableSpecContext
 
 
 def _get_categories(row: ParamRow) -> list[ArmamentCategory]:
-    return [a for a in list(ArmamentCategory) if row.get_bool(f"canMountWep_{a.ingame}")]
+    return [a for a in list(ArmamentCategory) if row[f"canMountWep_{a.ingame}"].as_bool]
 
 def _get_affinities(row: ParamRow) -> list[Affinity]:
-    return [a for a in Affinity if row.get_bool(f"configurableWepAttr{str(a.id).zfill(2)}")]
+    return [a for a in Affinity if row[f"configurableWepAttr{str(a.id).zfill(2)}"].as_bool]
 
 class AshOfWarTableSpec(TableSpecContext):
     model = {
@@ -32,7 +32,7 @@ class AshOfWarTableSpec(TableSpecContext):
             **cls.make_item(data, row),
             **cls.make_contrib(data, row, "locations", "remarks"),
             armament_categories=_get_categories(row),
-            default_affinity=Affinity.from_id(row.get_int("defaultWepAttr")),
+            default_affinity=Affinity.from_id(row["defaultWepAttr"].as_int),
             possible_affinities=_get_affinities(row),
-            skill_id=row.get_int("swordArtsParamId"),
+            skill_id=row["swordArtsParamId"].as_int,
         )

@@ -1,5 +1,5 @@
 from enum import IntEnum
-from typing import Dict, List, NamedTuple
+from typing import Dict, List, NamedTuple, Self
 
 from erdb.typing.params import ParamRow
 
@@ -69,18 +69,18 @@ class Lineup(NamedTuple):
     currency: Currency=Currency.RUNES
 
     @classmethod
-    def from_params(cls, lineup_param: ParamRow, material_set: ParamRow) -> "Lineup":
-        product = Product(lineup_param.get_int("equipId"), Product.Category(lineup_param.get_int("equipType")))
+    def from_params(cls, lineup_param: ParamRow, material_set: ParamRow) -> Self:
+        product = Product(lineup_param["equipId"].as_int, Product.Category(lineup_param["equipType"].as_int))
         materials: Dict[Material, int] = {}
 
         for param in _MATERIAL_SET_PARAM_LIST:
-            if (mat_id := material_set.get_int(param.index)) != -1:
-                category = Material.Category(material_set.get_int(param.category))
-                materials[Material(mat_id, category)] = material_set.get_int(param.quantity)
+            if mat_id := material_set[param.index].get_int():
+                category = Material.Category(material_set[param.category].as_int)
+                materials[Material(mat_id, category)] = material_set[param.quantity].as_int
 
         return cls(
             product=product,
-            price=lineup_param.get_int("value"),
+            price=lineup_param["value"].as_int,
             materials=materials,
-            currency=Currency(lineup_param.get_int("costType"))
+            currency=Currency(lineup_param["costType"].as_int)
         )

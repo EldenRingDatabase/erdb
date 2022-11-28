@@ -34,10 +34,10 @@ def get_effects(sp_effect: ParamRow, sp_effect_type: SpEffectType, triggeree: Pa
     effects = hardcoded_effects.get(sp_effect.index, sp_effect_type)
 
     for field, attrib_field in attrib_fields.get().items():
-        if sp_effect.get(field) == str(attrib_field.default_value):
+        if sp_effect[field] == str(attrib_field.default_value):
             continue
 
-        effect = SchemaEffect.from_attribute_field(sp_effect.get_float(field), attrib_field)
+        effect = SchemaEffect.from_attribute_field(sp_effect[field].as_float, attrib_field)
 
         effect.conditions = init_conditions
         if conds := parse.conditions(sp_effect, triggeree):
@@ -51,30 +51,30 @@ def get_effects(sp_effect: ParamRow, sp_effect_type: SpEffectType, triggeree: Pa
     return effects
 
 def get_effects_nested(sp_effect: ParamRow, sp_effects: ParamDict, add_condition: AttackCondition | None) -> list[SchemaEffect]:
-    sp_effect_type = SpEffectType(sp_effect.get("stateInfo"))
+    sp_effect_type = SpEffectType(sp_effect["stateInfo"])
     effects = get_effects(sp_effect, sp_effect_type, init_conditions=[str(add_condition)] if add_condition else None)
 
-    for ref_id in (sp_effect.get(ref_field) for ref_field in _REFERENCE_EFFECT_PARAMS):
+    for ref_id in (sp_effect[ref_field].as_int for ref_field in _REFERENCE_EFFECT_PARAMS):
         if ref_sp_effect := sp_effects.get(ref_id):
             if ref_sp_effect.index > 0:
                 effects += get_effects(ref_sp_effect, sp_effect_type, sp_effect)
 
     for condition_offset in hardcoded_effects.get_conditions(sp_effect.index):
-        ref_sp_effect = sp_effects.get(str(sp_effect.index + condition_offset.offset))
-        init_conditions =  None if condition_offset.condition is None else [str(condition_offset.condition)]
+        ref_sp_effect = sp_effects[sp_effect.index + condition_offset.offset]
+        init_conditions = None if condition_offset.condition is None else [str(condition_offset.condition)]
         effects += get_effects(ref_sp_effect, sp_effect_type, sp_effect, init_conditions)
 
     return effects
 
 def get_status_effect(sp_effect: ParamRow) -> tuple[str, int]:
     # NOTE: not identifying effects by values, relying on `stateInfo` to be correct at all times
-    etype = SpEffectType(sp_effect.get("stateInfo"))
-    return _SP_EFFECT_TO_STR[etype], sp_effect.get_int(_SP_EFFECT_TO_FIELD[etype])
+    etype = SpEffectType(sp_effect["stateInfo"])
+    return _SP_EFFECT_TO_STR[etype], sp_effect[_SP_EFFECT_TO_FIELD[etype]].as_int
 
 def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fields: str, add_condition: AttackCondition | None = None) -> list[dict]:
     effects: list[SchemaEffect] = []
 
-    for effect_id in (row.get(ref_field) for ref_field in effect_referencing_fields):
+    for effect_id in (row[ref_field].as_int for ref_field in effect_referencing_fields):
         if effect_id in hardcoded_effects.get_status_effect_ranges():
             continue
 
@@ -83,18 +83,17 @@ def parse_effects(row: ParamRow, sp_effects: ParamDict, *effect_referencing_fiel
 
     return [e.to_dict() for e in aggregate_effects(effects)]
 
-def parse_status_effects(effect_ids: list[str], sp_effects: ParamDict) -> StatusEffects:
+def parse_status_effects(effect_ids: list[int], sp_effects: ParamDict) -> StatusEffects:
     # Getting 0th effect if value no found, bug with Antspur Rapier -- get anything to return a 0 status effect
-    effects = [sp_effects.get(i, sp_effects["0"]) for i in effect_ids if i != "-1"]
+    effects = [sp_effects.get(i, sp_effects[0]) for i in effect_ids if i != -1]
     status_effects = hardcoded_effects.get_status_effect_ranges()
     return StatusEffects(**dict([get_status_effect(e) for e in effects if e.index in status_effects]))
-    #return StatusEffects(**[get_status_effect(e) for e in effects if e.index in status_effects])
 
 def parse_weapon_effects(weapon: ParamRow) -> list[dict]:
     effects: list[SchemaEffect] = []
 
     for field, attrib_field in attrib_fields.get(weapon=True).items():
-        if weapon.get(field) != str(attrib_field.default_value):
-            effects.append(SchemaEffect.from_attribute_field(weapon.get_float(field), attrib_field))
+        if weapon[field] != str(attrib_field.default_value):
+            effects.append(SchemaEffect.from_attribute_field(weapon[field].as_float, attrib_field))
 
     return [e.to_dict() for e in effects]

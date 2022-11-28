@@ -1,16 +1,11 @@
 from operator import add
 from itertools import repeat
 from pathlib import Path
-from typing import Any, Generator
+from typing import Any, overload
 from pydantic.json import pydantic_encoder
 
 from erdb.typing.params import ParamDict
 
-
-def update_optional(d: dict, key: str, value: Any, null_value: Any = None) -> dict:
-    if value != null_value:
-        d[key] = value
-    return d
 
 def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: list[int], increment: int = 1) -> tuple[map, range]:
     """
@@ -21,7 +16,7 @@ def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: lis
     """
     def _find_offset_maxima() -> int | None:
         for maxima in sorted(possible_maxima, reverse=True): # from largest
-            if str(base_index + maxima * increment) in params.keys():
+            if (base_index + maxima * increment) in params.keys():
                 return maxima
         return None
 
@@ -34,6 +29,15 @@ def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: lis
 def prepare_writable_path(path: Path, default_filename: str) -> Path:
     (path if path.suffix == "" else path.parent).mkdir(parents=True, exist_ok=True)
     return path / default_filename if path.is_dir() else path
+
+@overload
+def remove_nulls(val: dict) -> dict: ...
+
+@overload
+def remove_nulls(val: list) -> list: ...
+
+@overload
+def remove_nulls(val: Any) -> Any: ...
 
 def remove_nulls(val: dict | list | Any) -> dict | list | Any:
     """

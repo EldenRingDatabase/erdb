@@ -4,17 +4,19 @@ from erdb.typing.params import ParamRow
 from erdb.typing.enums import GoodsType, ItemIDFlag, SpellHoldAction
 from erdb.typing.categories import SpellCategory
 from erdb.typing.api_version import ApiVersion
-from erdb.utils.common import update_optional
+from erdb.utils.common import remove_nulls
 from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
 from erdb.table._common import RowPredicate, TableSpecContext
 
 
 def _get_spell_requirements(row: ParamRow) -> StatRequirements:
-    requirements = {}
-    requirements = update_optional(requirements, "intelligence", row.get_int("requirementIntellect"), 0)
-    requirements = update_optional(requirements, "faith", row.get_int("requirementFaith"), 0)
-    requirements = update_optional(requirements, "arcane", row.get_int("requirementLuck"), 0)
-    return StatRequirements(**requirements)
+    data = {
+        "intelligence": row["requirementIntellect"].get_int(null_value=0),
+        "faith": row["requirementFaith"].get_int(null_value=0),
+        "arcane": row["requirementLuck"].get_int(null_value=0),
+    }
+
+    return StatRequirements(**remove_nulls(data))
 
 class SpellTableSpec(TableSpecContext):
     model = {
@@ -25,8 +27,8 @@ class SpellTableSpec(TableSpecContext):
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
     predicates: list[RowPredicate] = [
-        lambda row: 1 <= row.get_int("sortId") < 999999,
-        lambda row: row.get("goodsType") in [GoodsType.SORCERY_1, GoodsType.INCANTATION_1, GoodsType.SORCERY_2, GoodsType.INCANTATION_2],
+        lambda row: 1 <= row["sortId"].as_int < 999999,
+        lambda row: row["goodsType"] in [GoodsType.SORCERY_1, GoodsType.INCANTATION_1, GoodsType.SORCERY_2, GoodsType.INCANTATION_2],
     ]
 
     param_retrievers = {
@@ -41,16 +43,16 @@ class SpellTableSpec(TableSpecContext):
 
     @classmethod
     def make_object(cls, api: ApiVersion, data: RetrieverData, row: ParamRow):
-        row_magic = data.params["magic"][str(row.index)]
+        row_magic = data.params["magic"][row.index]
 
-        fp_cost = row_magic.get_int("mp")
-        fp_extra = row_magic.get_int("mp_charge")
+        fp_cost = row_magic["mp"].as_int
+        fp_extra = row_magic["mp_charge"].as_int
 
-        sp_cost = row_magic.get_int("stamina")
-        sp_extra = row_magic.get_int("stamina_charge")
+        sp_cost = row_magic["stamina"].as_int
+        sp_extra = row_magic["stamina_charge"].as_int
 
         hold_action = SpellHoldAction.NONE if fp_extra == 0 else SpellHoldAction.CHARGE
-        hold_action = hold_action if row_magic.get_int("consumeLoopMP_forMenu") == -1 else SpellHoldAction.CONTINUOUS
+        hold_action = SpellHoldAction.CONTINUOUS if row_magic["consumeLoopMP_forMenu"].get_int() else hold_action 
 
         return Spell(
             **cls.make_item(data, row),
@@ -60,10 +62,10 @@ class SpellTableSpec(TableSpecContext):
             sp_cost=sp_cost,
             sp_cost_extra=sp_extra - sp_cost if hold_action == "Charge" else sp_extra,
             category=SpellCategory.from_row(row_magic),
-            slots_used=row_magic.get_int("slotLength"),
+            slots_used=row_magic["slotLength"].as_int,
             hold_action=hold_action,
-            is_weapon_buff=row_magic.get_bool("isEnchant"),
-            is_shield_buff=row_magic.get_bool("isShieldEnchant"),
-            is_horseback_castable=row_magic.get_bool("enableRiding"),
+            is_weapon_buff=row_magic["isEnchant"].as_bool,
+            is_shield_buff=row_magic["isShieldEnchant"].as_bool,
+            is_horseback_castable=row_magic["enableRiding"].as_bool,
             requirements=_get_spell_requirements(row_magic),
         )

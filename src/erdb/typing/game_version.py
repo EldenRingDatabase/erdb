@@ -1,7 +1,7 @@
 import re
 from functools import total_ordering
 from pathlib import Path
-from typing import Any, Generator, NamedTuple
+from typing import Any, Generator, NamedTuple, Self
 
 
 @total_ordering
@@ -12,7 +12,7 @@ class GameVersion(NamedTuple):
     nums: list[int]
 
     @classmethod
-    def from_nums(cls, major_int: int, minor_int: int, patch_int: int) -> "GameVersion":
+    def from_nums(cls, major_int: int, minor_int: int, patch_int: int) -> Self:
         major = str(major_int)
         minor = f"{minor_int:02}"
         patch = str(patch_int)
@@ -24,7 +24,7 @@ class GameVersion(NamedTuple):
         return cls(major, minor, patch, [major_int, minor_int, patch_int])
 
     @classmethod
-    def from_string(cls, version: str) -> "GameVersion":
+    def from_string(cls, version: str) -> Self:
         parts = version.split(".")
         assert len(parts) == 3, "Invalid version string given"
         assert len(parts[1]) >= 2, "Minor part must be at least 2 digits"
@@ -33,7 +33,7 @@ class GameVersion(NamedTuple):
         return cls(parts[0], parts[1], parts[2], nums)
 
     @classmethod
-    def from_any(cls, obj: Any) -> "GameVersion":
+    def from_any(cls, obj: Any) -> Self:
         if isinstance(obj, GameVersion):
             return obj
 
@@ -52,11 +52,11 @@ class GameVersion(NamedTuple):
         assert False, "Cannot parse GameVersion"
 
     @classmethod
-    def min(cls) -> "GameVersion":
+    def min(cls) -> Self:
         return cls("0", "00", "0", [0, 0, 0])
 
     @classmethod
-    def max(cls) -> "GameVersion":
+    def max(cls) -> Self:
         return cls("99999", "99999", "99999", [99999, 99999, 99999])
 
     def __str__(self) -> str:
@@ -85,11 +85,11 @@ class GameVersionRange(NamedTuple):
                 yield version
 
     @classmethod
-    def from_version(cls, version: GameVersion) -> "GameVersionRange":
+    def from_version(cls, version: GameVersion) -> Self:
         return cls(version, GameVersion.max(), only=True)
 
     @classmethod
-    def from_string(cls, string: str) -> "GameVersionRange":
+    def from_string(cls, string: str) -> Self:
         def _ver(match: re.Match[str]) -> GameVersion:
             return GameVersion.from_string(match.group(1))
 
@@ -123,7 +123,7 @@ class GameVersionInstance(NamedTuple):
         return max(self.application, self.regulation)
 
     @classmethod
-    def construct(cls, application: Any, regulation: Any) -> "GameVersionInstance":
+    def construct(cls, application: Any, regulation: Any) -> Self:
         return cls(GameVersion.from_any(application), GameVersion.from_any(regulation))
 
     def __str__(self) -> str:

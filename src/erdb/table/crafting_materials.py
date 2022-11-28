@@ -17,7 +17,7 @@ class CraftingMaterialTableSpec(TableSpecContext):
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
     predicates: list[RowPredicate] = [
-        lambda row: row.get("goodsType") == GoodsType.CRAFTING_MATERIAL
+        lambda row: row["goodsType"] == GoodsType.CRAFTING_MATERIAL
     ]
 
     msg_retrievers = {

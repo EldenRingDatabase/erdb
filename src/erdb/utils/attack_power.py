@@ -1,7 +1,7 @@
 import json
 from math import floor
 from pathlib import Path
-from typing import Iterator, NamedTuple
+from typing import Iterator, NamedTuple, Self
 
 
 """
@@ -52,7 +52,7 @@ class Attributes(NamedTuple):
         return zip(self._fields, self)
 
     @classmethod
-    def from_string(cls, string: str) -> "Attributes":
+    def from_string(cls, string: str) -> Self:
         parts = string.split(",")
 
         assert len(parts) == 5, "Invalid Attributes string"
@@ -69,7 +69,7 @@ class CorrectionAttack(NamedTuple):
     ratio: dict[str, dict]
 
     @classmethod
-    def from_dict(cls, data: dict) -> "CorrectionAttack":
+    def from_dict(cls, data: dict) -> Self:
         return cls(data["correction"], data["override"], data["ratio"])
 
 class CalculatorData(NamedTuple):
@@ -79,7 +79,7 @@ class CalculatorData(NamedTuple):
     correction_graph: dict[str, list[float]]
 
     @classmethod
-    def create(cls, data_path: Path) -> "CalculatorData":
+    def create(cls, data_path: Path) -> Self:
         if not isinstance(data_path, Path):
             data_path = Path(data_path)
 

@@ -12,7 +12,7 @@ from itertools import chain, islice
 from time import sleep
 from hashlib import md5
 from pathlib import Path
-from typing import NamedTuple
+from typing import NamedTuple, Self
 
 from erdb.table import Table
 from erdb.loaders import PKG_DATA_PATH
@@ -64,7 +64,7 @@ class _File(NamedTuple):
     verifier_is_md5: bool
 
     @classmethod
-    def from_manifest(cls, tool_path: Path, name: str, verifier: str, **kwargs) -> "_File":
+    def from_manifest(cls, tool_path: Path, name: str, verifier: str, **kwargs) -> Self:
         verifier = verifier.format(**kwargs)
         verifier_is_md5 = all(c in string.hexdigits for c in verifier)
         return cls(tool_path / Path(name), verifier, verifier_is_md5)
@@ -90,7 +90,7 @@ class _Command(NamedTuple):
         assert p.returncode == 0, f"Command failed with return code {p.returncode}."
 
     @classmethod
-    def make(cls, args: list[str], **kwargs) -> "_Command":
+    def make(cls, args: list[str], **kwargs) -> Self:
         return cls([arg.format(**kwargs) for arg in args])
 
 class _Tool(NamedTuple):
@@ -130,7 +130,7 @@ class _Tool(NamedTuple):
         _Command.make([*args]).run(self.path)
 
     @classmethod
-    def from_manifest(cls, game_dir: Path, name: str, data: dict, skip_commands: bool = False) -> "_Tool":
+    def from_manifest(cls, game_dir: Path, name: str, data: dict, skip_commands: bool = False) -> Self:
         path = PKG_DATA_PATH / "thirdparty" / name
 
         if not path.exists() or _is_empty(path):

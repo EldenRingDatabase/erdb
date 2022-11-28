@@ -1,4 +1,4 @@
-from typing import Dict, List, NamedTuple, Tuple, Union
+from typing import Dict, List, NamedTuple, Self, Tuple, Union
 
 from erdb.typing.effects import EffectModel, EffectType, AttributeName, SchemaEffect
 from erdb.typing.enums import SpEffectType, AttackType, AttackCondition
@@ -29,7 +29,7 @@ class SpEffectRanges(NamedTuple):
         return any(__x in r for r in self.ranges)
 
     @classmethod
-    def construct(cls, *ranges: Tuple[int, int]) -> "SpEffectRanges":
+    def construct(cls, *ranges: Tuple[int, int]) -> Self:
         return cls([cls.IntRange(r[0], r[1]) for r in ranges])
 
 """
@@ -102,7 +102,7 @@ Some SpEffects reference other SpEffects by themselves or their stateInfo. Some 
 while others can be problematic. This is the list of problematic SpEffects which hardcodes the offsets
 of the effects they are referencing, along with a potential condition which activates them.
 """
-_FROM_OFFSET: Dict[int, SpEffectConditionOffset] = {
+_FROM_OFFSET: Dict[int, list[SpEffectConditionOffset]] = {
     350400: [ # Godskin Swaddling Cloth
         SpEffectConditionOffset(AttackCondition.SUCCESSIVE_HITS, 1)
     ],

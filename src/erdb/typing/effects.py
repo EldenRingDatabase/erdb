@@ -1,7 +1,7 @@
 from copy import deepcopy
 from enum import Enum
 from types import SimpleNamespace
-from typing import Any, Callable, NamedTuple
+from typing import Any, Callable, NamedTuple, Self
 
 
 class EffectType(str, Enum):
@@ -112,7 +112,7 @@ class AttributeField(NamedTuple):
 
     @classmethod
     def create(cls, attribute: AttributeName, effect_model: EffectModel, effect_type: EffectType,
-               parser: Callable, conditions: list[str] | None = None, default_value: Any | None = None) -> "AttributeField":
+               parser: Callable, conditions: list[str] | None = None, default_value: Any | None = None) -> Self:
 
         def _default_value_from_model():
             return 1 if effect_model == EffectModel.MULTIPLICATIVE else 0
@@ -147,7 +147,7 @@ class SchemaEffect(SimpleNamespace):
         conds = None if self.conditions is None else tuple(self.conditions)
         return hash((conds, self.tick_interval, self.effect_model, self.effect_type, self.value, self.value_pvp))
 
-    def clone(self, new_attribute: AttributeName) -> "SchemaEffect":
+    def clone(self, new_attribute: AttributeName) -> Self:
         new_effect = deepcopy(self)
         new_effect.attribute = new_attribute
         return new_effect
@@ -161,7 +161,7 @@ class SchemaEffect(SimpleNamespace):
         return f"{sign_val}{self.value}{sign_model}{val_pvp} {self.attribute.value}{conds}{tick}"
 
     @classmethod
-    def from_attribute_field(cls, value: float, attrib_field: AttributeField) -> "SchemaEffect":
+    def from_attribute_field(cls, value: float, attrib_field: AttributeField) -> Self:
         value = attrib_field.parser(value, attrib_field.effect_model)
 
         return cls(
@@ -172,7 +172,7 @@ class SchemaEffect(SimpleNamespace):
             value=value)
 
     @classmethod
-    def from_obj(cls, obj: Any) -> "SchemaEffect":
+    def from_obj(cls, obj: Any) -> Self:
         return cls(
             attribute=AttributeName(getattr(obj, "attribute")),
             conditions=getattr(obj, "conditions", None),

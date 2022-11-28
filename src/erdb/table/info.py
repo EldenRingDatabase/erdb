@@ -15,8 +15,8 @@ class InfoTableSpec(TableSpecContext):
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
     predicates: list[RowPredicate] = [
-        lambda row: 1 <= row.get_int("sortId") < 999999,
-        lambda row: row.get("goodsType") == GoodsType.INFO_ITEM,
+        lambda row: 1 <= row["sortId"].as_int < 999999,
+        lambda row: row["goodsType"] == GoodsType.INFO_ITEM,
     ]
 
     msg_retrievers = {

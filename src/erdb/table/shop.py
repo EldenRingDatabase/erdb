@@ -15,10 +15,10 @@ class ShopTableSpec(TableSpecContext):
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
     predicates: list[RowPredicate] = [
-        lambda row: 1 <= row.get_int("sortId") < 999999,
-        lambda row: row.get("goodsType") == GoodsType.KEY_ITEM,
-        lambda row: (row.get_int("sortGroupId") in [GoodsSortGroupID.GROUP_8, GoodsSortGroupID.GROUP_9, GoodsSortGroupID.GROUP_10] \
-            or (row.get_int("sortGroupId") == GoodsSortGroupID.GROUP_6 and "Cookbook" in row.name)),
+        lambda row: 1 <= row["sortId"].as_int < 999999,
+        lambda row: row["goodsType"] == GoodsType.KEY_ITEM,
+        lambda row: (row["sortGroupId"].as_int in [GoodsSortGroupID.GROUP_8, GoodsSortGroupID.GROUP_9, GoodsSortGroupID.GROUP_10] \
+            or (row["sortGroupId"].as_int == GoodsSortGroupID.GROUP_6 and "Cookbook" in row.name)),
     ]
 
     msg_retrievers = {

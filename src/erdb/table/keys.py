@@ -15,9 +15,9 @@ class KeyTableSpec(TableSpecContext):
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
     predicates: list[RowPredicate] = [
-        lambda row: 1 <= row.get_int("sortId") < 999999,
-        lambda row: row.get("goodsType") in [GoodsType.KEY_ITEM, GoodsType.REGENERATIVE_MATERIAL],
-        lambda row: row.get_int("sortGroupId") not in [GoodsSortGroupID.GROUP_8, GoodsSortGroupID.GROUP_9, GoodsSortGroupID.GROUP_10],
+        lambda row: 1 <= row["sortId"].as_int < 999999,
+        lambda row: row["goodsType"] in [GoodsType.KEY_ITEM, GoodsType.REGENERATIVE_MATERIAL],
+        lambda row: row["sortGroupId"].as_int not in [GoodsSortGroupID.GROUP_8, GoodsSortGroupID.GROUP_9, GoodsSortGroupID.GROUP_10],
         lambda row: "Cookbook" not in row.name,
     ]
 

@@ -9,7 +9,7 @@ from erdb.table._common import RowPredicate, TableSpecContext
 
 def _find_upgrade_costs(goods: ParamDict, base_item_id: int) -> list[int]:
     indices, _ = find_offset_indices(base_item_id, goods, possible_maxima=[9]) # not 10, ignore last one
-    return [goods[str(i)].get_int("reinforcePrice") for i in indices]
+    return [goods[i]["reinforcePrice"].as_int for i in indices]
 
 class SpiritAshTableSpec(TableSpecContext):
     model = {
@@ -19,8 +19,8 @@ class SpiritAshTableSpec(TableSpecContext):
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
     predicates: list[RowPredicate] = [
-        lambda row: row.is_base_item(),
-        lambda row: row.get("goodsType") in [GoodsType.LESSER, GoodsType.GREATER],
+        lambda row: row.is_base_item,
+        lambda row: row["goodsType"] in [GoodsType.LESSER, GoodsType.GREATER],
     ]
 
     param_retrievers = {
@@ -40,8 +40,8 @@ class SpiritAshTableSpec(TableSpecContext):
         names = data.msgs["names"]
         summon_names = data.msgs["summon_names"]
 
-        upgrade_material = upgrade_materials[row.get("reinforceMaterialId")]
-        upgrade_material = names[upgrade_material.get_int("materialId01")].removesuffix("[1]").strip()
+        upgrade_material = upgrade_materials[row["reinforceMaterialId"].as_int]
+        upgrade_material = names[upgrade_material["materialId01"].as_int].removesuffix("[1]").strip()
         upgrade_material = {
             "Grave Glovewort": SpiritAshUpgradeMaterial.GRAVE_GLOVEWORT,
             "Ghost Glovewort": SpiritAshUpgradeMaterial.GHOST_GLOVEWORT,
@@ -51,8 +51,8 @@ class SpiritAshTableSpec(TableSpecContext):
             **cls.make_item(data, row),
             **cls.make_contrib(data, row, "locations", "remarks", "summon_quantity", "abilities"),
             summon_name=summon_names[row.index].strip(), # sometimes trailing spaces
-            fp_cost=row.get_int_corrected("consumeMP"),
-            hp_cost=row.get_int_corrected("consumeHP"),
+            fp_cost=row["consumeMP"].get_int(0),
+            hp_cost=row["consumeHP"].get_int(0),
             upgrade_material=upgrade_material,
             upgrade_costs=_find_upgrade_costs(data.main_param, row.index)
         )

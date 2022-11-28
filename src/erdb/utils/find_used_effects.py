@@ -1,4 +1,4 @@
-from typing import Dict, List, Set
+from collections import defaultdict
 
 from erdb.loaders.params import load as load_params
 from erdb.typing.params import ParamDict
@@ -14,35 +14,29 @@ _IGNORED_FIELDS = [
     "vfxId", "vfxId1", "vfxId2", "vfxId3", "vfxId4", "vfxId5", "vfxId6", "vfxId7"
 ]
 
-def get_effect_ids(rows: ParamDict, fields: List[str]) -> Dict[str, Set[str]]:
-    ids = {}
+def get_effect_ids(rows: ParamDict, fields: list[str]) -> dict[int, set[str]]:
+    ids = defaultdict(set)
 
     for row in rows.values():
         for field in fields:
-            i = row.get(field)
-            if i == "-1":
-                continue
-
-            if i not in ids:
-                ids[i] = set()
-
-            ids[i].add(row.name)
+            if i := row[field].get_int():
+                ids[i].add(row.name)
 
     return ids
 
-def get_changing_fields(effect_ids: Dict[str, Set[str]], effects: ParamDict) -> List[str]:
+def get_changing_fields(effect_ids: dict[int, set[str]], effects: ParamDict) -> list[str]:
     changing_fields = set()
-    null_effect = effects["2"] # IDs "0" and "1" seem to have some properties filled in
+    null_effect = effects[2] # IDs 0 and 1 seem to have some properties filled in
 
-    for field in null_effect.keys:
+    for field in null_effect.field_dict.keys():
         if field in _IGNORED_FIELDS:
             continue
 
-        null_value = null_effect.get(field)
+        null_value = null_effect[field]
         items = []
 
         for i, item_names in effect_ids.items():
-            if null_value != effects[i].get(field):
+            if null_value != effects[i][field]:
                 items += item_names
 
         if len(items) > 0 and len(items) != len(effect_ids):

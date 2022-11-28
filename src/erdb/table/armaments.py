@@ -5,7 +5,7 @@ from erdb.typing.params import ParamRow, ParamDict
 from erdb.typing.enums import Affinity, AttackCondition, ItemIDFlag, AshOfWarMountType, AttackAttribute, ArmamentUpgradeMaterial
 from erdb.typing.categories import ArmamentCategory
 from erdb.typing.api_version import ApiVersion
-from erdb.utils.common import find_offset_indices, update_optional
+from erdb.utils.common import find_offset_indices, remove_nulls
 from erdb.effect_parser import parse_effects, parse_status_effects, parse_weapon_effects
 from erdb.table._retrievers import ParamDictRetriever, MsgsRetriever, RetrieverData
 from erdb.table._common import RowPredicate, TableSpecContext
@@ -15,95 +15,106 @@ _BEHAVIOR_EFFECTS_FIELDS: list[str] = ["spEffectBehaviorId0", "spEffectBehaviorI
 _RESIDENT_EFFECTS_FIELDS: list[str] = ["residentSpEffectId", "residentSpEffectId1", "residentSpEffectId2"]
 
 def _get_attack_attributes(row: ParamRow) -> list[AttackAttribute]:
-    attributes = {AttackAttribute.from_id(row.get_int(field)) for field in ["atkAttribute", "atkAttribute2"]}
+    attributes = {AttackAttribute.from_id(row[field].as_int) for field in ["atkAttribute", "atkAttribute2"]}
     return sorted(list(attributes))
 
 def _get_upgrade_costs(row: ParamRow, reinforces: ParamDict) -> list[int]:
-    reinforcement_id = row.get_int("reinforceTypeId")
+    reinforcement_id = row["reinforceTypeId"].as_int
 
-    reinforcement = reinforces[str(reinforcement_id)]
-    base_price = row.get_int("reinforcePrice")
+    reinforcement = reinforces[reinforcement_id]
+    base_price = row["reinforcePrice"].as_int
 
     indices, _ = find_offset_indices(reinforcement.index, reinforces, possible_maxima=[0, 10, 25])
     next(indices) # ignore first index
 
-    return [round(base_price * reinforces[str(i)].get_float("reinforcePriceRate")) for i in indices]
+    return [round(base_price * reinforces[i]["reinforcePriceRate"].as_float) for i in indices]
 
 def _get_correction_calc_ids(row: ParamRow) -> CorrectionCalcID:
     return CorrectionCalcID(
-        physical=row.get_int("correctType_Physics"),
-        magic=row.get_int("correctType_Magic"),
-        fire=row.get_int("correctType_Fire"),
-        lightning=row.get_int("correctType_Thunder"),
-        holy=row.get_int("correctType_Dark"),
-        poison=row.get_int("correctType_Poison"),
-        bleed=row.get_int("correctType_Blood"),
-        sleep=row.get_int("correctType_Sleep"),
-        madness=row.get_int("correctType_Madness")
+        physical=row["correctType_Physics"].as_int,
+        magic=row["correctType_Magic"].as_int,
+        fire=row["correctType_Fire"].as_int,
+        lightning=row["correctType_Thunder"].as_int,
+        holy=row["correctType_Dark"].as_int,
+        poison=row["correctType_Poison"].as_int,
+        bleed=row["correctType_Blood"].as_int,
+        sleep=row["correctType_Sleep"].as_int,
+        madness=row["correctType_Madness"].as_int
     )
 
 def _get_requirements(row: ParamRow) -> StatRequirements:
-    requirements = {}
-    requirements = update_optional(requirements, "strength", row.get_int("properStrength"), 0)
-    requirements = update_optional(requirements, "dexterity", row.get_int("properAgility"), 0)
-    requirements = update_optional(requirements, "intelligence", row.get_int("properMagic"), 0)
-    requirements = update_optional(requirements, "faith", row.get_int("properFaith"), 0)
-    requirements = update_optional(requirements, "arcane", row.get_int("properLuck"), 0)
-    return StatRequirements(**requirements)
+    data = {
+        "strength": row["properStrength"].get_int(null_value=0),
+        "dexterity": row["properAgility"].get_int(null_value=0),
+        "intelligence": row["properMagic"].get_int(null_value=0),
+        "faith": row["properFaith"].get_int(null_value=0),
+        "arcane": row["properLuck"].get_int(null_value=0),
+    }
+
+    return StatRequirements(**remove_nulls(data))
 
 def _get_damages(row: ParamRow) -> Damage:
-    damages = {}
-    damages = update_optional(damages, "physical", row.get_int("attackBasePhysics"), 0)
-    damages = update_optional(damages, "magic", row.get_int("attackBaseMagic"), 0)
-    damages = update_optional(damages, "fire", row.get_int("attackBaseFire"), 0)
-    damages = update_optional(damages, "lightning", row.get_int("attackBaseThunder"), 0)
-    damages = update_optional(damages, "holy", row.get_int("attackBaseDark"), 0)
-    damages = update_optional(damages, "stamina", row.get_int("attackBaseStamina"), 0)
-    return Damage(**damages)
+    data = {
+        "physical": row["attackBasePhysics"].get_int(null_value=0),
+        "magic": row["attackBaseMagic"].get_int(null_value=0),
+        "fire": row["attackBaseFire"].get_int(null_value=0),
+        "lightning": row["attackBaseThunder"].get_int(null_value=0),
+        "holy": row["attackBaseDark"].get_int(null_value=0),
+        "stamina": row["attackBaseStamina"].get_int(null_value=0),
+    }
+
+    return Damage(**remove_nulls(data))
 
 def _get_scalings(row: ParamRow) -> Scaling:
-    scalings = {}
-    scalings = update_optional(scalings, "strength", row.get_float("correctStrength") / 100.0, 0.0)
-    scalings = update_optional(scalings, "dexterity", row.get_float("correctAgility") / 100.0, 0.0)
-    scalings = update_optional(scalings, "intelligence", row.get_float("correctMagic") / 100.0, 0.0)
-    scalings = update_optional(scalings, "faith", row.get_float("correctFaith") / 100.0, 0.0)
-    scalings = update_optional(scalings, "arcane", row.get_float("correctLuck") / 100.0, 0.0)
-    return Scaling(**scalings)
+    formatter = lambda x: x / 100.
+    data = {
+        "strength": row["correctStrength"].get_float(null_value=0, formatter=formatter),
+        "dexterity": row["correctAgility"].get_float(null_value=0, formatter=formatter),
+        "intelligence": row["correctMagic"].get_float(null_value=0, formatter=formatter),
+        "faith": row["correctFaith"].get_float(null_value=0, formatter=formatter),
+        "arcane": row["correctLuck"].get_float(null_value=0, formatter=formatter),
+    }
+
+    return Scaling(**remove_nulls(data))
 
 def _get_guards(row: ParamRow) -> Guard:
-    guards = {}
-    guards = update_optional(guards, "physical", row.get_float("physGuardCutRate"), 0.0)
-    guards = update_optional(guards, "magic", row.get_float("magGuardCutRate"), 0.0)
-    guards = update_optional(guards, "fire", row.get_float("fireGuardCutRate"), 0.0)
-    guards = update_optional(guards, "lightning", row.get_float("thunGuardCutRate"), 0.0)
-    guards = update_optional(guards, "holy", row.get_float("darkGuardCutRate"), 0.0)
-    guards = update_optional(guards, "guard_boost", row.get_float("staminaGuardDef"), 0.0)
-    return Guard(**guards)
+    data = {
+        "physical": row["physGuardCutRate"].get_float(null_value=0),
+        "magic": row["magGuardCutRate"].get_float(null_value=0),
+        "fire": row["fireGuardCutRate"].get_float(null_value=0),
+        "lightning": row["thunGuardCutRate"].get_float(null_value=0),
+        "holy": row["darkGuardCutRate"].get_float(null_value=0),
+        "guard_boost": row["staminaGuardDef"].get_float(null_value=0),
+    }
+
+    return Guard(**remove_nulls(data))
 
 def _get_resistances(row: ParamRow) -> StatusEffects:
-    resistances = {}
-    resistances = update_optional(resistances, "poison", row.get_int("poisonGuardResist"), 0)
-    resistances = update_optional(resistances, "scarlet_rot", row.get_int("diseaseGuardResist"), 0)
-    resistances = update_optional(resistances, "frostbite", row.get_int("freezeGuardResist"), 0)
-    resistances = update_optional(resistances, "bleed", row.get_int("bloodGuardResist"), 0)
-    resistances = update_optional(resistances, "sleep", row.get_int("sleepGuardResist"), 0)
-    resistances = update_optional(resistances, "madness", row.get_int("madnessGuardResist"), 0)
-    resistances = update_optional(resistances, "death_blight", row.get_int("curseGuardResist"), 0)
-    return StatusEffects(**resistances)
+    data = {
+        "poison": row["poisonGuardResist"].get_int(null_value=0),
+        "scarlet_rot": row["diseaseGuardResist"].get_int(null_value=0),
+        "frostbite": row["freezeGuardResist"].get_int(null_value=0),
+        "bleed": row["bloodGuardResist"].get_int(null_value=0),
+        "sleep": row["sleepGuardResist"].get_int(null_value=0),
+        "madness": row["madnessGuardResist"].get_int(null_value=0),
+        "death_blight": row["curseGuardResist"].get_int(null_value=0),
+    }
+
+    return StatusEffects(**remove_nulls(data))
 
 def get_status_effect_overlay(row: ParamRow, effects: ParamDict, reinforces: ParamDict, reinforcement_id: int) -> list[StatusEffects]:
-    if (reinforcement := reinforces.get(str(reinforcement_id + 1))) is None:
+    if (reinforcement := reinforces.get(reinforcement_id + 1)) is None:
         return []
 
     effect_fields = ["spEffectId1", "spEffectId2", "spEffectId3"]
-    effect_fields = [f for f in effect_fields if reinforcement.get_int(f) > 0]
+    effect_fields = [f for f in effect_fields if reinforcement[f].as_int > 0]
 
     assert len(effect_fields) <= 1, "Up to one effect field can have offset added"
 
     if len(effect_fields) == 0:
         return []
 
-    assert str(reinforcement_id + 25) in reinforces, "Only +25 reinforcements upgrade status effects"
+    assert (reinforcement_id + 25) in reinforces, "Only +25 reinforcements upgrade status effects"
 
     weapfield = {
         "spEffectId1": "spEffectBehaviorId0",
@@ -111,22 +122,22 @@ def get_status_effect_overlay(row: ParamRow, effects: ParamDict, reinforces: Par
         "spEffectId3": "spEffectBehaviorId2",
     }[effect_fields[0]]
 
-    effect_ids = [row.get_int(weapfield) + offset for offset in range(0, 26)]
-    return [parse_status_effects([str(i)], effects) for i in effect_ids]
+    effect_ids = [row[weapfield].as_int + offset for offset in range(0, 26)]
+    return [parse_status_effects([i], effects) for i in effect_ids]
 
 def _get_affinity_properties(row: ParamRow, effects: ParamDict, reinforces: ParamDict) -> AffinityProperties:
-    reinforcement_id = row.get_int("reinforceTypeId")
+    reinforcement_id = row["reinforceTypeId"].as_int
     return AffinityProperties(
         full_hex_id=row.index_hex,
         id=row.index,
         reinforcement_id=reinforcement_id,
-        correction_attack_id=row.get_int("attackElementCorrectId"),
+        correction_attack_id=row["attackElementCorrectId"].as_int,
         correction_calc_id=_get_correction_calc_ids(row),
         damage=_get_damages(row),
         scaling=_get_scalings(row),
         guard=_get_guards(row),
         resistance=_get_resistances(row),
-        status_effects=parse_status_effects([row.get(f) for f in _BEHAVIOR_EFFECTS_FIELDS], effects),
+        status_effects=parse_status_effects([row[f].as_int for f in _BEHAVIOR_EFFECTS_FIELDS], effects),
         status_effect_overlay=get_status_effect_overlay(row, effects, reinforces, reinforcement_id),
     )
 
@@ -134,7 +145,7 @@ def _get_affinities(row: ParamRow, armaments: ParamDict, effects: ParamDict, rei
     possible_maxima = [0, 12] if allow_ash_of_war else [0]
     indices, levels = find_offset_indices(row.index, armaments, possible_maxima, increment=100)
     affinities: list[Affinity] = [Affinity.from_id(round(l / 100)) for l in levels]
-    return {a: _get_affinity_properties(armaments[str(i)], effects, reinforces) for i, a in zip(indices, affinities)}
+    return {a: _get_affinity_properties(armaments[i], effects, reinforces) for i, a in zip(indices, affinities)}
 
 class ArmamentTableSpec(TableSpecContext):
     model = {
@@ -174,22 +185,22 @@ class ArmamentTableSpec(TableSpecContext):
             + parse_effects(row, effects, *_RESIDENT_EFFECTS_FIELDS) \
             + parse_effects(row, effects, *_BEHAVIOR_EFFECTS_FIELDS, add_condition=AttackCondition.ON_HIT)
 
-        allow_ash_of_war = AshOfWarMountType(row.get("gemMountType")) == AshOfWarMountType.ALLOW_CHANGE
+        allow_ash_of_war = AshOfWarMountType(row["gemMountType"]) == AshOfWarMountType.ALLOW_CHANGE
 
         return Armament(
             **cls.make_item(data, row, summary=False),
             **cls.make_contrib(data, row, "locations", "remarks"),
-            behavior_variation_id=row.get_int("behaviorVariationId"),
+            behavior_variation_id=row["behaviorVariationId"].as_int,
             category=ArmamentCategory.from_row(row),
-            weight=row.get_float("weight"),
-            default_skill_id=row.get_int("swordArtsParamId"),
+            weight=row["weight"].as_float,
+            default_skill_id=row["swordArtsParamId"].as_int,
             allow_ash_of_war=allow_ash_of_war,
-            is_buffable=row.get_bool("isEnhance"),
-            is_l1_guard=row.get_bool("enableGuard"),
+            is_buffable=row["isEnhance"].as_bool,
+            is_l1_guard=row["enableGuard"].as_bool,
             upgrade_material=upgrade_material,
             upgrade_costs=upgrade_costs,
             attack_attributes=_get_attack_attributes(row),
-            sp_consumption_rate=row.get_float("staminaConsumptionRate"),
+            sp_consumption_rate=row["staminaConsumptionRate"].as_float,
             requirements=_get_requirements(row),
             effects=[Effect(**eff) for eff in weapon_effects],
             affinity=_get_affinities(row, data.main_param, effects, reinforces, allow_ash_of_war)

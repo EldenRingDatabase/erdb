@@ -12,7 +12,7 @@ class GestureTableSpec(TableSpecContext):
     }
 
     predicates: list[RowPredicate] = [
-        lambda row: row.get_int("sortGroupId") == GoodsSortGroupID.GESTURES,
+        lambda row: row["sortGroupId"].as_int == GoodsSortGroupID.GESTURES,
     ]
 
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)

@@ -17,11 +17,9 @@ class Lookup(object):
         lineups: list[Lineup] = []
 
         for lineup_param in self._shop_lineup.values():
-            if (mat_id := lineup_param.get_int("mtrlId")) == -1:
-                continue
-
-            lineup = Lineup.from_params(lineup_param, self._material_sets[str(mat_id)])
-            if material in lineup.materials.keys():
-                lineups.append(lineup)
+            if mat_id := lineup_param["mtrlId"].get_int():
+                lineup = Lineup.from_params(lineup_param, self._material_sets[mat_id])
+                if material in lineup.materials.keys():
+                    lineups.append(lineup)
 
         return lineups

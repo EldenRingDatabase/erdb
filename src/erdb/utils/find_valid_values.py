@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from erdb.loaders.params import load as load_params
 from erdb.typing.params import ParamDict
 from erdb.typing.enums import ItemIDFlag
@@ -5,13 +7,10 @@ from erdb.typing.game_version import GameVersion
 
 
 def _get_values(effects: ParamDict, field: str, limit: int = 10) -> dict[str, list[str]]:
-    values = {}
+    values = defaultdict(list)
 
     for effect in effects.values():
-        val = effect.get(field)
-        if val not in values:
-            values[val] = []
-
+        val = effect[field]
         case = str(effect.index) if len(effect.name) == 0 else effect.name
 
         if len(values[val]) < limit:

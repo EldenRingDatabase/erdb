@@ -15,31 +15,28 @@ def _get_absorptions(row: ParamRow) -> Absorptions:
         return round((1 - val) * 100, 1)
 
     return Absorptions(
-        physical=parse(row.get_float("neutralDamageCutRate")),
-        strike=parse(row.get_float("blowDamageCutRate")),
-        slash=parse(row.get_float("slashDamageCutRate")),
-        pierce=parse(row.get_float("thrustDamageCutRate")),
-        magic=parse(row.get_float("magicDamageCutRate")),
-        fire=parse(row.get_float("fireDamageCutRate")),
-        lightning=parse(row.get_float("thunderDamageCutRate")),
-        holy=parse(row.get_float("darkDamageCutRate")),
+        physical=parse(row["neutralDamageCutRate"].as_float),
+        strike=parse(row["blowDamageCutRate"].as_float),
+        slash=parse(row["slashDamageCutRate"].as_float),
+        pierce=parse(row["thrustDamageCutRate"].as_float),
+        magic=parse(row["magicDamageCutRate"].as_float),
+        fire=parse(row["fireDamageCutRate"].as_float),
+        lightning=parse(row["thunderDamageCutRate"].as_float),
+        holy=parse(row["darkDamageCutRate"].as_float),
     )
 
 def _get_resistances(row: ParamRow) -> Resistances:
-    def check_equal(*values: int):
-        ret = values[0]
-        for val in values:
-            if ret != val:
-                print(f"WARNING: Values mismatch for {row.name} resistances ({ret} != {val}), displaying the latter.", flush=True)
-            ret = val
-        return ret
+    def check_equal(val1: int, val2: int) -> int:
+        if val1 != val2:
+            print(f"WARNING: Values mismatch for {row.name} resistances ({val1} != {val2}), displaying the latter.", flush=True)
+        return val2
 
     return Resistances(
-        immunity=check_equal(row.get_int("resistPoison"), row.get_int("resistDisease")),
-        robustness=check_equal(row.get_int("resistFreeze"), row.get_int("resistBlood")),
-        focus=check_equal(row.get_int("resistSleep"), row.get_int("resistMadness")),
-        vitality=check_equal(row.get_int("resistCurse")),
-        poise=round(row.get_float("toughnessCorrectRate") * 1000)
+        immunity=check_equal(row["resistPoison"].as_int, row["resistDisease"].as_int),
+        robustness=check_equal(row["resistFreeze"].as_int, row["resistBlood"].as_int),
+        focus=check_equal(row["resistSleep"].as_int, row["resistMadness"].as_int),
+        vitality=row["resistCurse"].as_int,
+        poise=round(row["toughnessCorrectRate"].as_float * 1000)
     )
 
 class ArmorTableSpec(TableSpecContext):
@@ -89,7 +86,7 @@ class ArmorTableSpec(TableSpecContext):
             **cls.make_contrib(data, row, "locations", "remarks"),
             category=ArmorCategory.from_row(row),
             altered=altered,
-            weight=row.get_float("weight"),
+            weight=row["weight"].as_float,
             absorptions=_get_absorptions(row),
             resistances=_get_resistances(row),
             effects=[Effect(**eff) for eff in armor_effects]

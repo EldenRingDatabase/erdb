@@ -1,6 +1,6 @@
 import operator as op
 from types import SimpleNamespace
-from typing import NamedTuple
+from typing import NamedTuple, Self
 
 from erdb.typing.effects import AttributeName, SchemaEffect
 
@@ -16,7 +16,7 @@ class AggregatedSchemaEffect(SimpleNamespace):
     example_effect: SchemaEffect
 
     @classmethod
-    def from_effect(cls, effect: SchemaEffect) -> "AggregatedSchemaEffect":
+    def from_effect(cls, effect: SchemaEffect) -> Self:
         return cls(attribute_names={effect.attribute}, example_effect=effect)
 
 """
