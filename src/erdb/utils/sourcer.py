@@ -16,7 +16,10 @@ from typing import NamedTuple, Self
 
 from erdb.table import Table
 from erdb.loaders import PKG_DATA_PATH
+from erdb.utils.common import get_filename
 from erdb.typing.game_version import GameVersion, GameVersionInstance
+from erdb.typing.params import ParamRow
+from erdb.typing.enums import ItemIDFlag
 
 
 def _prepare_writable_path(path: Path, default_filename: str) -> Path:
@@ -57,6 +60,12 @@ def _get_app_version(game_exe: Path) -> list[int]:
     major, minor, patch = w.HIWORD(ms), w.LOWORD(ms), w.HIWORD(ls)
 
     return [int(major), int(minor), int(patch)]
+
+def _get_effective_version(game_dir: Path) -> GameVersion:
+    app_version = _get_app_version(game_dir / "eldenring.exe")
+    version_instance = GameVersionInstance.construct(app_version, game_dir / "regulation_version.txt")
+    print(f"Detected versions: {version_instance}.", flush=True)
+    return version_instance.effective
 
 class _File(NamedTuple):
     path: Path
@@ -232,10 +241,7 @@ def source_gamedata(game_dir: Path, ignore_checksum: bool, version: GameVersion 
         tool.run_commands()
 
     if version is None:
-        app_version = _get_app_version(game_dir / "eldenring.exe")
-        version_instance = GameVersionInstance.construct(app_version, game_dir / "regulation_version.txt")
-        print(f"Detected versions: {version_instance}.", flush=True)
-        version = version_instance.effective
+        version = _get_effective_version(game_dir)
 
     print(f"Effective version: {version}.", flush=True)
 
@@ -357,18 +363,24 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Pat
             rows = {int(row["Row ID"]): row for row in reader}
 
             for index in reversed(rows.keys()):
-                yield index, rows[index]
+                yield ParamRow.make(rows[index], ItemIDFlag.DISABLE_CHECK)
 
-    def valid_row(index: int, row: dict[str, str], tb: Table) -> bool:
-        return \
-            len(row["Row Name"]) > 0 and \
-            (tb.id_range is None or tb.id_range[0] <= index < tb.id_range[1])
+    def get_names(tb: Table):
+        assert "names" in tb.spec.msg_retrievers, f"Table {tb} must specify a \"names\" msg retriever to write icons."
 
-    def get_icon_id(row: dict[str, str]) -> int:
-        return int(row["iconId"]) if "iconId" in row else int(row["iconIdM"])
+        names_file = names_dir / "GR" / "data" / "INTERROOT_win64" / "msg" / "engUS" / (tb.spec.msg_retrievers["names"].file_name + ".fmg")
+        yabber.run_command("Yabber.exe", str(names_file))
 
-    def get_name(row: dict[str, str]) -> str:
-        return row["Row Name"].replace(":", "")
+        tree = xmltree.parse(names_file.with_suffix(".fmg.xml"))
+        entries = tree.findall(".//text")
+
+        return {int(str(e.get("id"))) : str(e.text) for e in entries}
+
+    def is_valid_row(tb: Table, row: ParamRow) -> bool:
+        return all(pred(row) for pred in tb.spec.predicates) and row.index in tb.spec.main_param_retriever
+
+    def get_icon_id(row: ParamRow) -> int:
+        return row["iconId"].as_int if "iconId" in row else row["iconIdM"].as_int
 
     def get_icon_dds(loc: Path, icon_id: int) -> Path:
         stem = f"MENU_Knowledge_{icon_id:05}"
@@ -381,6 +393,7 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Pat
     er_exporter.check_files(ignore_checksum)
 
     table_dir = game_dir / "param" / "gameparam"
+    names_dir = game_dir / "msg" / "engus" / "item-msgbnd-dcx"
     icon_dir = game_dir / "menu" / "hi" / "00_solo-tpfbhd"
     desination.mkdir(parents=True, exist_ok=True)
 
@@ -395,16 +408,20 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Pat
         if len(param_files) > 0:
             er_exporter.run_command("ERExporter.Param.exe", *map(str, param_files))
 
+        if not names_dir.is_dir() or _is_empty(names_dir):
+            yabber.run_command("Yabber.exe", str(names_dir.parent / "item.msgbnd.dcx"))
+
         if not icon_dir.is_dir() or _is_empty(icon_dir):
             yabber.run_command("Yabber.exe", str(icon_dir.parent / "00_solo.tpfbhd"))
 
         for tb in tables:
+            names = get_names(tb)
             dest = desination / str(tb)
             dest.mkdir()
 
             print(f"Exporting to {dest}...", flush=True)
 
-            id_to_name = {get_icon_id(row): get_name(row) for index, row in readr(tb) if valid_row(index, row, tb)}
+            id_to_name = {get_icon_id(row): get_filename(names[row.index]) for row in readr(tb) if is_valid_row(tb, row)}
             dds_files  = [get_icon_dds(icon_dir, icon_id) for icon_id in id_to_name.keys()]
 
             _unpack_missing_dds(yabber, dds_files)
@@ -425,4 +442,4 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Pat
                     img.resize((size, size)).save(out, format="png")
 
     except: raise
-    finally: _process_cache(table_dir, icon_dir, keep_cache=keep_cache)
+    finally: _process_cache(table_dir, names_dir, icon_dir, keep_cache=keep_cache)

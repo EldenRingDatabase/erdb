@@ -27,6 +27,11 @@ class ParamDictRetriever(NamedTuple):
         func = load_params if len(args) <= 3 else load_param_ids
         return func(*args) # type: ignore
 
+    def __contains__(self, __x: object) -> bool:
+        assert isinstance(__x, int), f"Can only check for integer range"
+        return  (not self.id_min or self.id_min <= __x) \
+            and (not self.id_max or self.id_max >= __x)
+
 class MsgsRetriever(NamedTuple):
     file_name: str
 

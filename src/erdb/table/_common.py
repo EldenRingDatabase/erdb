@@ -1,6 +1,7 @@
 from typing import Any, Callable, Protocol
 from unicodedata import normalize, combining
 
+from erdb.utils.common import get_filename
 from erdb.typing.enums import GoodsRarity
 from erdb.typing.params import ParamRow
 from erdb.typing.api_version import ApiVersion
@@ -96,7 +97,7 @@ class TableSpecContext:
         row_name = cls.get_pk(data, row)
 
         def get_user_value(field: str):
-            return data.contrib.get(row_name.replace(":", ""), {}).get(field)
+            return data.contrib.get(get_filename(row_name), {}).get(field)
 
         user_data = {field: get_user_value(field) for field in fields}
         user_data = {k: v for k, v in user_data.items() if v is not None}

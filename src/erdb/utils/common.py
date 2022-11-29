@@ -1,3 +1,4 @@
+import re
 from operator import add
 from itertools import repeat
 from pathlib import Path
@@ -55,3 +56,6 @@ def remove_nulls(val: dict | list | Any) -> dict | list | Any:
 
 def pydantic_encoder_no_nulls(obj: Any) -> Any:
     return remove_nulls(pydantic_encoder(obj))
+
+def get_filename(name: str) -> str:
+    return re.sub(r"(?u)[^-\w. &\[\]']", "", name)

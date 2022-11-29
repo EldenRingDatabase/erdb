@@ -113,12 +113,6 @@ class Table(StrEnum):
         }[self]
 
     @property
-    def id_range(self) -> tuple[int, int] | None:
-        return {
-            Table.SPIRIT_ASHES: (200000, 300000),
-        }.get(self)
-
-    @property
     def param_name(self) -> str:
         return self.spec.main_param_retriever.param_name
 
