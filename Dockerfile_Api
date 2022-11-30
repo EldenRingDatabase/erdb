@@ -1,0 +1,8 @@
+ARG BUILD_VERSION
+
+FROM ghcr.io/eldenringdatabase/erdb:${BUILD_VERSION}
+
+EXPOSE 8107
+
+ENTRYPOINT [ "python3", "-m", "erdb" ]
+CMD [ "serve-api", "--port", "8107", "--precache" ]
