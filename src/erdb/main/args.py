@@ -47,7 +47,7 @@ class _ItemTypesAction(Action):
 
     @staticmethod
     def choices() -> list[Table]:
-        return [Table.ALL] + [tb for tb in Table.effective() if tb.spec.has_icons]
+        return [Table.ALL] + [tb for tb in Table.effective() if tb.spec.has_icons()]
 
 class _Argument(NamedTuple):
     names: tuple

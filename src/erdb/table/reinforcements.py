@@ -68,8 +68,6 @@ class ReinforcementTableSpec(TableSpecContext):
         lambda row: len(row.name) > 0,
     ]
 
-    has_icons = False
-
     @classmethod # override
     def get_pk(cls, data: RetrieverData, row: ParamRow) -> str:
         return str(row.index)

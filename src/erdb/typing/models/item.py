@@ -51,6 +51,10 @@ class Item:
         description="Rarity of the Item.",
         example=GoodsRarity.COMMON,
     )
+    icon: NonNegativeInt = Field(...,
+        description="ID of the icon which can be shared across many items. Icons can be sourced from the game files using ERDB.",
+        example=584,
+    )
     max_held: NonNegativeInt = Field(...,
         description="The maximum amount of the Item that a player can have on them.",
         example=99,

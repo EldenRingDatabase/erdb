@@ -25,10 +25,12 @@ class TableSpec(Protocol):
     shop_retrievers: dict[str, ShopRetriever]
     contrib_retriever: ContribRetriever
 
-    has_icons: bool
-
     @classmethod
     def title(cls) -> str:
+        ...
+
+    @classmethod
+    def has_icons(cls) -> bool:
         ...
 
     @classmethod
@@ -50,11 +52,16 @@ class TableSpecContext:
     msg_retrievers: dict[str, MsgsRetriever] = {}
     shop_retrievers: dict[str, ShopRetriever] = {}
     contrib_retriever: ContribRetriever = ContribRetriever()
-    has_icons = True
 
     @classmethod # override
     def title(cls) -> str:
         return cls.__name__.removesuffix("TableSpec")
+
+    @classmethod
+    def has_icons(cls: TableSpec) -> bool:
+        for model in cls.model.values():
+            return hasattr(model, "icon")
+        assert False, "TableSpec model dict really should not be empty..."
 
     @classmethod # override
     def latest_api(cls: TableSpec) -> ApiVersion:
@@ -88,6 +95,7 @@ class TableSpecContext:
             "is_tradable": not row["disableMultiDropShare"].as_bool, # assumption this exists for every param table
             "price_sold": row["sellValue"].get_int(0),               # assumption this exists for every param table
             "rarity": GoodsRarity.from_id(row["rarity"].as_int),     # assumption this exists for every param table
+            "icon": row["iconId"].as_int if "iconId" in row else row["iconIdM"].as_int,
             "max_held": row["maxNum"].as_int if "maxNum" in row else 999,
             "max_stored": row["maxRepositoryNum"].as_int if "maxRepositoryNum" in row else 999,
         }

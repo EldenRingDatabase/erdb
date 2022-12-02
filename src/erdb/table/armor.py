@@ -87,6 +87,7 @@ class ArmorTableSpec(TableSpecContext):
             category=ArmorCategory.from_row(row),
             altered=altered,
             weight=row["weight"].as_float,
+            icon_fem=row["iconIdF"].as_int,
             absorptions=_get_absorptions(row),
             resistances=_get_resistances(row),
             effects=[Effect(**eff) for eff in armor_effects]

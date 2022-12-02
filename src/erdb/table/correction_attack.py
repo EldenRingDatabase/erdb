@@ -49,8 +49,6 @@ class CorrectionAttackTableSpec(TableSpecContext):
 
     main_param_retriever = ParamDictRetriever("AttackElementCorrectParam", ItemIDFlag.NON_EQUIPABBLE)
 
-    has_icons = False
-
     @classmethod # override
     def get_pk(cls, data: RetrieverData, row: ParamRow) -> str:
         return str(row.index)

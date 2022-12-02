@@ -61,8 +61,6 @@ class CorrectionGraphTableSpec(TableSpecContext):
         lambda row: row.index < 17
     ]
 
-    has_icons = False
-
     @classmethod # override
     def get_pk(cls, data: RetrieverData, row: ParamRow) -> str:
         return str(row.index)

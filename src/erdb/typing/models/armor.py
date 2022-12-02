@@ -1,4 +1,4 @@
-from pydantic import Field, PositiveFloat
+from pydantic import Field, PositiveFloat, NonNegativeInt
 from pydantic.dataclasses import dataclass
 
 from erdb.typing.models import dt_config
@@ -39,6 +39,10 @@ class Armor(Item):
     weight: PositiveFloat = Field(...,
         description="Weight of the Armor.",
         example=9.2,
+    )
+    icon_fem: NonNegativeInt = Field(...,
+        description="Icon ID to the female version of the Armor, `icon` field specifies the male version which is usually the same.",
+        example=584,
     )
     absorptions: Absorptions = Field(...,
         description="Absorption values for the Armor.",
