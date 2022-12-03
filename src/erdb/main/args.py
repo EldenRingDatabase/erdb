@@ -176,6 +176,7 @@ class Icons(_Subcommand):
     arguments = [
         _Argument.make("types", type=Table, default=[], nargs="+", choices=_ItemTypesAction.choices(), action=_ItemTypesAction, help="Specify item types to export images for."),
         _Argument.make("--size", "-s", type=int, default=1024, choices=range(1, 1025), metavar="[1-1024]", help="Size in pixels of images to be exported, resized from maximum quality in game files (1024x1024)."),
+        _Argument.make("--file-format", "-f", type=str, default="{icon_id}.png", help="Specify the formatting for file names, including extension. Available fields: {icon_id}, {name}, {table}. NOTE: multiple items can share {icon_id}, therefore {name} alone is not exhaustive and only one will be used."),
     ] + _Argument.sources_gamedata() + _Argument.outputs_file()
 
 class ServeAPI(_Subcommand):

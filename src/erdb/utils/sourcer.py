@@ -288,7 +288,7 @@ def _assemble_map(tiles: list[_MapTile], out: Path | None = None):
     out = _prepare_writable_path(out, f"er_map_{level}_l{lod}.jpeg")
     print(f"Writing to {out}...", flush=True)
 
-    worldmap.save(out, format=out.suffix[1:]) # remove the initial dot
+    worldmap.save(out)
 
 def _parse_tile_masks(mask_dir: Path, lod: int = 0, underground: bool = False) -> _MapTile.Masks:
     masks: _MapTile.Masks = dict()
@@ -347,7 +347,7 @@ def source_map(game_dir: Path, out: Path | None = None, lod: int = 0, undergroun
     except: raise
     finally: _process_cache(tile_dir, mask_dir, keep_cache=keep_cache)
 
-def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Path, ignore_checksum: bool = False, keep_cache: bool = False):
+def source_icons(game_dir: Path, tables: list[Table], size: int, file_format: str, desination: Path, ignore_checksum: bool = False, keep_cache: bool = False):
     assert 1 <= size <= 1024, f"Invalid size: {size}"
 
     def readr(tb: Table):
@@ -436,10 +436,10 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, desination: Pat
                     continue
 
                 with Image.open(dds) as img:
-                    out = dest / f"{name}.png"
+                    out = dest / file_format.format(icon_id=icon_id, name=name, table=tb)
 
                     print(f"[{(cur := cur + 1)}/{count}] {out}", flush=True)
-                    img.resize((size, size)).save(out, format="png")
+                    img.resize((size, size)).save(out)
 
     except: raise
     finally: _process_cache(table_dir, names_dir, icon_dir, keep_cache=keep_cache)

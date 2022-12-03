@@ -137,7 +137,7 @@ class App:
         return 0
 
     @staticmethod
-    def source_icons(types: list[Table], size: int, game_dir: Path, ignore_checksum: bool, keep_cache: bool, out: Path | None) -> int:
+    def source_icons(types: list[Table], size: int, file_format: str, game_dir: Path, ignore_checksum: bool, keep_cache: bool, out: Path | None) -> int:
         game_dir = game_dir.resolve()
 
         if out is None:
@@ -148,7 +148,7 @@ class App:
         print(f"\n>>> Extracting {', '.join(map(str, types))} icons from \"{game_dir}\".")
 
         try:
-            source_icons(game_dir, types, size, out, ignore_checksum, keep_cache)
+            source_icons(game_dir, types, size, file_format, out, ignore_checksum, keep_cache)
 
         except AssertionError as e:
             print("Sourcing icons failed:", *e.args)
