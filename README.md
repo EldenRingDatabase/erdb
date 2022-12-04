@@ -1,8 +1,41 @@
-# *[WIP]* ERDB: ELDEN RING parser
+## ERDB: tool for parsing ELDEN RING files
 
-Tool for generating a parsable, JSON-based sets of data for ELDEN RING. Readable by any; human or program alike.
+### What this is
 
-# Features
+ERDB is a CLI tool for parsing an ELDEN RING installation and converting it into a more display-friendly structure in JSON format.
+For example, it can collect data from multiple game params about an item and compile it to a single JSON object holding all the properties you could find on a Wikipedia page about it.
+This is only the main functionality and it covers all in-game items and more, with a possibility to extend the features thanks to the mini-framework for interacting with ELDEN RING files.
+
+### Who this is for
+
+ERDB is primarily targeted at people developing tools and mods for ELDEN RING.
+You can generate data from your installation (native or modded), or use the REST API endpoint (outlined in [Usage](#usage) section) for any existing version of the game.
+If you ever created a build planner or any sort of a tool which needs to deal with in-game items, you know how painful it is to get a hold of and store the data and assets.
+This is an attempt at unifying that data into something that is easily accessible and parsed by anyone, with instant updates when a new game version relases.
+
+## Usage
+
+There are several ways to use ERDB, and you're probably looking for the last one:
+
+1. **Python package**: `pip install erdb` makes it accessible from CLI by calling `erdb` ([CLI manual](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual)).
+1. **Docker image**: Python package in form of a Docker image accepting same arguments ([package page](https://github.com/EldenRingDatabase/erdb/pkgs/container/erdb)).
+1. **Docker API image**: build on the regular image, only serves the REST API on port `8107` ([package page](https://github.com/EldenRingDatabase/erdb/pkgs/container/erdb-api)).
+1. **Existing REST service**: REST API is almost available without a need to use ERDB directly [COMING SOON].
+
+## Tool features
+
+This is a short summary of all subcommands ERDB provides as a CLI tool:
+
+* [`generate`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-generate): Generate JSON data for specified tables.
+* [`find-values`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-find-values): Find all possible values of a field per param name.
+* [`calculate-ar`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-calculate-ar): Calculate attack power of an armament
+* [`changelog`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-changelog): Create a changelog of ERDB-detectable differences between specified versions.
+* [`source`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-source): Extract gamedata from an UXM-unpacked ELDEN RING installation (Windows only).
+* [`map`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-map): Extract world map image from an UXM-unpacked ELDEN RING installation (Windows only).
+* [`icons`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-icons): Extract item images from an UXM-unpacked ELDEN RING installation (Windows only).
+* [`serve-api`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-serve-api): Begin serving the API web server.
+
+## Data features
 
 Adopting the database in a project is beneficial beyond just providing the data itself:
 
@@ -19,11 +52,11 @@ Adopting the database in a project is beneficial beyond just providing the data 
 
 ### User contributed information
 
-* Made in mind with user contributions, new findings can be available in every adaptation of this database.
+* Made in mind with user contributions, new findings can be available in every adaptation of the database.
 * Interesting remarks about an item or a weapon's true combo list is kept up to date.
 * Designed for easy PRs where every item is contained within its own file.
 * Ability to specify game version ranges for which a particular information is valid.
-* Each human change is checked for correctness (by accepting a PR) and validity (by CI) [IN PROGRESS].
+* Each human change is checked for correctness (by accepting a PR) and validity (by CI) [COMING SOON].
 
 ### Schema guarantee
 
@@ -35,16 +68,11 @@ Adopting the database in a project is beneficial beyond just providing the data 
 * Structure of JSON designed as shallow and straightforward to parse as possible.
 * Digging into nested fields is avoided, while retaining a logically sensible layout.
 
-### Data for multiple game versions
+### Availablility
 
-* Every released game version is supported, from 1.02.1 and up.
-* [Sources are retained across versions](https://github.com/EldenRingDatabase/erdb/tree/master/src/erdb/data/gamedata).
-
-### Always available
-
-* No extra servers, data is hosted in a repo, uptime is that of GitHub's [IN PROGRESS].
-* Download the files and check for updates (recommended) or view the raw content online.
-* Public endpoint exposing a REST API for versatile data retrieval [IN PROGRESS].
+* Public endpoint exposing a REST API for remote data retrieval [COMING SOON].
+* Generate the data yourself and embed it in your app.
+* Every released game version is supported, from 1.02.1 and up ([sources](https://github.com/EldenRingDatabase/erdb/tree/master/src/erdb/data/gamedata)).
 
 <sup>1</sup> Some values or means of retrieving them are hardcoded in very specific cases, all listed [here](https://github.com/EldenRingDatabase/erdb/wiki/Data-Generation-Completeness). \
 <sup>2</sup> Unnecessary information is lost, ex. armor's separate values for bleed/frostbite are treated as a single robustness value.

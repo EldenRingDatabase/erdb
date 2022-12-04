@@ -126,7 +126,7 @@ class _Subcommand(NamedTuple):
 
 class Generate(_Subcommand):
     command = "generate"
-    summary = "Generates JSON data for specified tables."
+    summary = "Generate JSON data for specified tables."
     details = """\
     Parse extracted gamedata into a well-structured JSON output.
     The resulting data will be written to `{table}.json` files in a folder named after the `--out` argument, or cwd if not provided.
