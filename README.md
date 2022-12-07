@@ -9,7 +9,7 @@ This is only the main functionality and it covers all in-game items and more, wi
 ### Who this is for
 
 ERDB is primarily targeted at people developing tools and mods for ELDEN RING.
-You can generate data from your installation (native or modded), or use the REST API endpoint (outlined in [Usage](#usage) section) for any existing version of the game.
+You can generate data from your installation (native or modded), or use the public REST API (outlined in [Usage](#usage) section) for any existing version of the game.
 If you ever created a build planner or any sort of a tool which needs to deal with in-game items, you know how painful it is to get a hold of and store the data and assets.
 This is an attempt at unifying that data into something that is easily accessible and parsed by anyone, with instant updates when a new game version relases.
 
@@ -20,7 +20,7 @@ There are several ways to use ERDB, and you're probably looking for the last one
 1. **Python package**: `pip install erdb` makes it accessible from CLI by calling `erdb` ([CLI manual](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual)).
 1. **Docker image**: Python package in form of a Docker image accepting same arguments ([package page](https://github.com/EldenRingDatabase/erdb/pkgs/container/erdb)).
 1. **Docker API image**: build on the regular image, only serves the REST API on port `8107` ([package page](https://github.com/EldenRingDatabase/erdb/pkgs/container/erdb-api)).
-1. **Existing REST service**: REST API is almost available without a need to use ERDB directly [COMING SOON].
+1. **Public REST service**: REST API is available without a need to use ERDB directly ([docs](https://api.erdb.wiki/v1/docs), [alt docs](https://api.erdb.wiki/v1/redoc)).
 
 ## Tool features
 
@@ -70,7 +70,7 @@ Adopting the database in a project is beneficial beyond just providing the data 
 
 ### Availablility
 
-* Public endpoint exposing a REST API for remote data retrieval [COMING SOON].
+* Public webserver providing a REST API for remote data retrieval (see [Usage](#usage) section).
 * Generate the data yourself and embed it in your app.
 * Every released game version is supported, from 1.02.1 and up ([sources](https://github.com/EldenRingDatabase/erdb/tree/master/src/erdb/data/gamedata)).
 
