@@ -1,6 +1,5 @@
 from functools import cache
 from enum import Enum
-from typing import Any
 
 from erdb.table import Table
 from erdb.loaders import GAME_VERSIONS
@@ -28,7 +27,3 @@ def precache_data():
                 generate(api, game_version, tb)
 
         print(flush=True)
-
-def as_str(obj: Any, field: str) -> str:
-    v = getattr(obj, field)
-    return v.value if isinstance(v, Enum) else str(v)

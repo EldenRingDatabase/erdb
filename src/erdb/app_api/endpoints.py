@@ -4,7 +4,8 @@ from fastapi.responses import JSONResponse
 from pydantic.dataclasses import dataclass
 
 from erdb.table import Table
-from erdb.app_api.common import GameVersionEnum, generate, as_str
+from erdb.app_api.common import GameVersionEnum, generate
+from erdb.utils.common import getattrstr
 from erdb.typing.api_version import ApiVersion
 
 
@@ -59,7 +60,7 @@ class DataEndpoint:
             field, value = query.split(":", maxsplit=1)
 
             try:
-                data = {k: v for k, v in data.items() if as_str(v, field) == value}
+                data = {k: v for k, v in data.items() if getattrstr(v, field) == value}
             
             except AttributeError:
                 return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content={"detail": f"{self.table.title} has no field: \"{field}\"."})

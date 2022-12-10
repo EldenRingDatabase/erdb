@@ -1,4 +1,5 @@
 import re
+from enum import Enum
 from operator import add
 from itertools import repeat
 from pathlib import Path
@@ -59,3 +60,9 @@ def pydantic_encoder_no_nulls(obj: Any) -> Any:
 
 def get_filename(name: str) -> str:
     return re.sub(r"(?u)[^-\w. &\[\]']", "", name)
+
+def as_str(v: Any) -> str:
+    return v.value if isinstance(v, Enum) else str(v)
+
+def getattrstr(obj: Any, field: str) -> str:
+    return as_str(getattr(obj, field))

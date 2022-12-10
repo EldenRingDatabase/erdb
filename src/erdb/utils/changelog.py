@@ -10,6 +10,7 @@ from contextlib import suppress
 from collections import defaultdict
 
 from erdb.table import Table
+from erdb.utils.common import as_str
 from erdb.typing.game_version import GameVersion
 from erdb.typing.effects import SchemaEffect
 
@@ -31,13 +32,15 @@ class _ChangeType(Enum):
         assert False, f"Unsupported report type: {report_type}"
 
 class _Change(NamedTuple):
+    Collection = dict[str, set[Self]] # item name -> set of changes
+
     change_type: _ChangeType
-    property_path: list[str]
+    property_path: list
     indices_change: bool
 
     @property
     def display(self) -> str:
-        return " > ".join(map(str, self.property_path))
+        return " > ".join(map(as_str, self.property_path))
 
     def __hash__(self) -> int:
         return hash((self.display))
@@ -47,12 +50,12 @@ class _Change(NamedTuple):
 
     def navigate(self, data: dict | None) -> Any:
         def _get_any(obj: Any, prop: Any) -> Any:
-            if isinstance(obj, list):
+            if isinstance(obj, list) or isinstance(obj, dict):
                 with suppress(KeyError):
                     return obj[prop]
             return getattr(obj, prop, None)
 
-        assert len(self.property_path) > 0, "got a zero-legnth property_path"
+        assert len(self.property_path) > 0, "got a zero-length property_path"
         out = data
 
         for p in self.property_path:
@@ -79,12 +82,15 @@ class _Change(NamedTuple):
         else:
             return cls(change_type, path, indices_change=False)
 
-class FormatterBase():
+class FormatterBase:
     _section    = "{value}"
     _header     = "{value}"
     _prop       = "{value}"
     _begin_diff = ""
     _end_diff   = ""
+    _begin_list = ""
+    _elem_list  = "- "
+    _end_list   = ""
 
     _data: dict[str, list[str]]
     _last_section: str
@@ -92,24 +98,32 @@ class FormatterBase():
     def __init__(self) -> None:
         self._data = OrderedDict()
 
+    def _append(self, line: str):
+        self._data[self._last_section].append(line)
+
     def section(self, section: str):
         self._data[section] = list()
         self._last_section = section
 
     def header(self, header: str):
-        self._data[self._last_section].append(self._header.format(value=header))
+        self._append(self._header.format(value=header))
 
     def prop(self, prop: str):
-        self._data[self._last_section].append(self._prop.format(value=prop))
+        self._append(self._prop.format(value=prop))
 
     def begin_diff(self):
-        self._data[self._last_section].append(self._begin_diff)
+        self._append(self._begin_diff)
 
     def end_diff(self):
-        self._data[self._last_section].append(self._end_diff)
+        self._append(self._end_diff)
+
+    def add_list(self, elems: list[str]):
+        self._append(self._begin_list)
+        [self._append(self._elem_list + elem) for elem in elems]
+        self._append(self._end_list)
 
     def line(self, *args: Any):
-        self._data[self._last_section].append(" ".join(map(str, args)))
+        self._append(" ".join(map(str, args)))
 
     def table_of_contents(self, sections: list[str], out: TextIOBase):
         pass
@@ -148,6 +162,7 @@ class FormatterMarkdown(FormatterBase):
     _prop       = "`{value}`"
     _begin_diff = "```diff"
     _end_diff   = "```"
+    _elem_list  = "* "
 
     def table_of_contents(self, sections: list[str], out: TextIOBase):
         out.write("# Contents\n")
@@ -172,9 +187,15 @@ class FormatterText(FormatterBase):
     _begin_diff = "---"
     _end_diff   = "---"
 
-def _get_item_changes(old_data: dict, new_data: dict) -> dict[str, set[_Change]]:
+def _get_item_changes(old_data: dict, new_data: dict) -> tuple[list[str], list[str], _Change.Collection]:
     diff = DeepDiff(old_data, new_data, view="tree")
+
+    def pop_toplevel(change_type: str) -> list[str]:
+        return [c.path(output_format="list")[0] for c in diff.pop(change_type, [])]
+
     item_changes = defaultdict(set)
+    added = pop_toplevel("dictionary_item_added")
+    removed = pop_toplevel("dictionary_item_removed")
 
     for report_type, changes in diff.items():
         change_type = _ChangeType.get(report_type)
@@ -183,7 +204,7 @@ def _get_item_changes(old_data: dict, new_data: dict) -> dict[str, set[_Change]]
             item_name, *change_path = change.path(output_format="list")
             item_changes[item_name].add(_Change.create(change_type, change_path))
 
-    return item_changes
+    return added, removed, item_changes
 
 def generate(from_version: GameVersion, version: GameVersion, out: Path | None, formatter_id: str = "markdown"):
     formatter = FormatterBase.create(formatter_id)
@@ -195,9 +216,17 @@ def generate(from_version: GameVersion, version: GameVersion, out: Path | None, 
         new_data = tb.make_generator(version).generate()
         old_data = tb.make_generator(from_version).generate()
 
-        item_changes = _get_item_changes(old_data, new_data)
+        added, removed, item_changes = _get_item_changes(old_data, new_data)
 
         formatter.section(tb.title)
+
+        if len(added) > 0:
+            formatter.header(f"New items added")
+            formatter.add_list(added)
+
+        if len(removed) > 0:
+            formatter.header(f"Items removed")
+            formatter.add_list(removed)
 
         for item_name, changes in item_changes.items():
             formatter.header(item_name)
