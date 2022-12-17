@@ -1,4 +1,4 @@
-from pydantic import Field, NonNegativeFloat, conlist
+from pydantic import Field, NonNegativeFloat, ConstrainedList
 from pydantic.dataclasses import dataclass
 
 from erdb.typing.models import dt_config
@@ -48,4 +48,14 @@ class ReinforcementLevel:
     guard: GuardMultiplier = Field(...)
     resistance: ResistanceMultiplier = Field(...)
 
+"""
+`conlist` cannot be used, otherwise model is not pickable.
+
+Functional equivalent:
 Reinforcement = conlist(ReinforcementLevel, min_items=1, max_items=26)
+"""
+class Reinforcement(ConstrainedList):
+    item_type = ReinforcementLevel
+    __args__ = (ReinforcementLevel,)
+    min_items = 1
+    max_items = 26

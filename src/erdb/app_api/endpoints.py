@@ -4,7 +4,7 @@ from fastapi.responses import JSONResponse
 from pydantic.dataclasses import dataclass
 
 from erdb.table import Table
-from erdb.app_api.common import GameVersionEnum, generate
+from erdb.app_api.common import DataProxy, GameVersionEnum
 from erdb.utils.common import getattrstr
 from erdb.typing.api_version import ApiVersion
 
@@ -14,10 +14,12 @@ class _Detail:
     detail: str
 
 class DataEndpoint:
+    data_proxy: DataProxy
     api: ApiVersion
     table: Table
 
-    def __init__(self, api: ApiVersion, table: Table) -> None:
+    def __init__(self, data_proxy: DataProxy, api: ApiVersion, table: Table) -> None:
+        self.data_proxy = data_proxy
         self.api = api
         self.table = table
 
@@ -51,7 +53,7 @@ class DataEndpoint:
         keys: list[str] | None = Query(None, alias="k", description="Specify a list of keys (ascii names) to retrieve specific items."),
         query: str | None = Query(None, description="Filter elements by field in format \"{field}:{value}\".", regex=r"^\w+\:.+$"),
     ) -> Any:
-        data = generate(self.api, game_version, self.table)
+        data = self.data_proxy.generate(self.api, game_version, self.table)
 
         if keys is not None:
             data = {k: v for k, v in data.items() if k in keys}
@@ -68,10 +70,12 @@ class DataEndpoint:
         return data
 
 class ItemEndpoint:
+    data_proxy: DataProxy
     api: ApiVersion
     table: Table
 
-    def __init__(self, api: ApiVersion, table: Table) -> None:
+    def __init__(self, data_proxy: DataProxy, api: ApiVersion, table: Table) -> None:
+        self.data_proxy = data_proxy
         self.api = api
         self.table = table
 
@@ -99,7 +103,7 @@ class ItemEndpoint:
 
     def __call__(self, game_version: GameVersionEnum, key: str) -> Any:
         try:
-            return generate(self.api, game_version, self.table)[key]
+            return self.data_proxy.generate(self.api, game_version, self.table)[key]
 
         except KeyError:
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"detail": f"{self.table.title} has no key: \"{key}\""})
