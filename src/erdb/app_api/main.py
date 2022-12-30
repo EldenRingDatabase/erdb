@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI, APIRouter, Depends
 from fastapi_versioning import VersionedFastAPI, versioned_api_route
+from fastapi.middleware.cors import CORSMiddleware
 
 from erdb.app_api.endpoints import DataEndpoint, ItemEndpoint
 from erdb.app_api.common import DataProxy
@@ -41,5 +42,6 @@ def serve(port: int, *, bind: str = "0.0.0.0", precache: bool = False):
                 app.include_router(_get_router(data_proxy, api, tb))
 
         app = VersionedFastAPI(app, version_format="API v{major}", prefix_format="/v{major}")
+        app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["GET"], allow_headers=["*"])
 
         uvicorn.run(app, host=bind, port=port)
