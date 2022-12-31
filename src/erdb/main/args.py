@@ -7,6 +7,7 @@ from textwrap import wrap, dedent
 from erdb.table import Table
 from erdb.loaders import GAME_VERSIONS
 from erdb.utils.changelog import FormatterBase
+from erdb.utils.common import Destination
 from erdb.typing.game_version import GameVersion, GameVersionRange
 
 
@@ -70,9 +71,15 @@ class _Argument(NamedTuple):
         )
 
     @classmethod
+    def outputs_uri(cls) -> list[Self]:
+        return [
+            cls.make("--out", "-o", type=Destination.from_str, default=None, annotation=Destination | None, help="Optional output in standard URI syntax, can be a regular file/directory path.")
+        ]
+
+    @classmethod
     def outputs_file(cls) -> list[Self]:
         return [
-            cls.make("--out", "-o", type=Path, default=None, help="Optional output path.")
+            cls.make("--out", "-o", type=Path, default=None, help="Optional output file path.")
         ]
 
     @classmethod
@@ -80,6 +87,12 @@ class _Argument(NamedTuple):
         return [
             cls.make("--minimize", action="store_true", help="Output minimized JSON when generating data.")
         ] + cls.outputs_file()
+
+    @classmethod
+    def parses_generated_data(cls) -> list[Self]:
+        return [
+            cls.make("--data-path", type=Path, required=True, help="Location of the ERDB-generated data."),
+        ]
 
     @classmethod
     def parses_gamedata(cls) -> list[Self]:
@@ -210,8 +223,7 @@ class CalculateAR(_Subcommand):
         _Argument.make("armament", type=str, help="Name of the armament."),
         _Argument.make("affinity", type=str, help="Affinity of the armament."),
         _Argument.make("level", type=int, help="Upgrade level of the armament."),
-        _Argument.make("--data-path", type=Path, required=True, help="Location of the generated data."),
-    ]
+    ] + _Argument.parses_generated_data()
 
 class Changelog(_Subcommand):
     command = "changelog"
@@ -313,8 +325,12 @@ class Icons(_Subcommand):
             "erdb icons tools keys --game-dir \"/path/to/ELDEN RING/Game\" --file-format \"{icon_id} - {name}.ico\"",
         ),
         (
-            "Extract all icons in a small file size",
+            "Extract all icons in small file size",
             "erdb icons all --game-dir \"/path/to/ELDEN RING/Game\" --size 128",
+        ),
+        (
+            "Extract all icons and upload them to a Cloudflare image hosting instance",
+            "erdb icons all --game-dir \"/path/to/ELDEN RING/Game\" --out \"https://account_id:api_token@\" --file-format \"icons/{table}/{icon_id}\"",
         ),
     ]
 
@@ -322,7 +338,7 @@ class Icons(_Subcommand):
         _Argument.make("types", type=Table, default=[], nargs="+", choices=_ItemTypesAction.choices(), action=_ItemTypesAction, help="Specify item types to export images for."),
         _Argument.make("--size", "-s", type=int, default=1024, choices=range(1, 1025), metavar="[1-1024]", help="Size in pixels of images to be exported, resized from maximum quality in game files (1024x1024)."),
         _Argument.make("--file-format", "-f", type=str, default="{icon_id}.png", help="Specify the formatting for file names, including extension. Available fields: {icon_id}, {name}, {table}. NOTE: multiple items can share {icon_id}, therefore {name} alone is not exhaustive and only one will be used."),
-    ] + _Argument.sources_gamedata() + _Argument.outputs_file()
+    ] + _Argument.sources_gamedata() + _Argument.outputs_uri()
 
 class ServeAPI(_Subcommand):
     command = "serve-api"
@@ -348,6 +364,32 @@ class ServeAPI(_Subcommand):
         _Argument.make("--bind", "-b", type=str, default="0.0.0.0", help="Address to bind the server on."),
         _Argument.make("--precache", action=BooleanOptionalAction, help="Pregenerate all data instead of lazy loading."),
     ]
+
+class GenerateWiki(_Subcommand):
+    command = "generate-wiki"
+    summary = "Generate a static Wikipedia website."
+    details = """\
+    Fetch generated ERDB data and create static Wikipedia pages using predefined Jinja2 templates.
+    Powered using the UIkit3 CSS framework, which is automatically downloaded if not found at the destination.
+    Use `--ukit-version` to override which version will be downloaded instead of an internally defined one.
+    """
+
+    aliases = ["wiki"]
+
+    examples = [
+        (
+            "Generate wiki pages for 1.08.1 data at a specified location",
+            "erdb generate-wiki --data-path ./1.08.1/ --out ../wiki-location/"
+        ),
+        (
+            "Generate wiki pages for 1.08.1 using explicitly-provided version of UIkit",
+            "erdb generate-wiki --data-path ./1.08.1/ --uikit-version 3.15.18"
+        ),
+    ]
+
+    arguments = [
+        _Argument.make("--uikit-version", type=str, default=None, help="UIkit version to override, defaults to internal, frozen-on value."),
+    ] + _Argument.parses_generated_data() + _Argument.outputs_file()
 
 def parse_args(argv: Sequence[str], handlers: dict[str, Callable]) -> dict[str, Any]:
     parser = ArgumentParser(description="Interface for ERDB operations.")

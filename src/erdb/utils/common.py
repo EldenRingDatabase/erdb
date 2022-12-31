@@ -3,11 +3,32 @@ from enum import Enum
 from operator import add
 from itertools import repeat
 from pathlib import Path
-from typing import Any, overload
+from typing import Any, NamedTuple, overload, Self
+from urllib.parse import urlparse
 from pydantic.json import pydantic_encoder
 
 from erdb.typing.params import ParamDict
 
+
+class Destination(NamedTuple):
+    protocol: str
+    path: Path
+    netloc: str | None = None
+    username: str | None = None
+    password: str | None = None
+
+    @property
+    def is_local(self) -> bool:
+        return self.protocol == "file"
+
+    @classmethod
+    def from_str(cls, value: str) -> Self:
+        data = urlparse(value)
+
+        if data.scheme in ["", "file"]:
+            return cls("file", Path(value))
+
+        return cls(data.scheme, Path(data.path), data.netloc, data.username, data.password)
 
 def find_offset_indices(base_index: int, params: ParamDict, possible_maxima: list[int], increment: int = 1) -> tuple[map, range]:
     """
@@ -66,3 +87,12 @@ def as_str(v: Any) -> str:
 
 def getattrstr(obj: Any, field: str) -> str:
     return as_str(getattr(obj, field))
+
+def scaling_grade(value: float, null_value: str = "-") -> str:
+    if value >= 1.75: return "S"
+    if value >= 1.4: return "A"
+    if value >= 0.9: return "B"
+    if value >= 0.6: return "C"
+    if value >= 0.25: return "D"
+    if value > 0.0: return "E"
+    return null_value

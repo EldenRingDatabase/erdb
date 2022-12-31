@@ -16,7 +16,8 @@ from typing import NamedTuple, Self
 
 from erdb.table import Table
 from erdb.loaders import PKG_DATA_PATH
-from erdb.utils.common import get_filename
+from erdb.utils.common import Destination, get_filename
+from erdb.utils.cloudflare_images_client import CloudflareImagesClient
 from erdb.typing.game_version import GameVersion, GameVersionInstance
 from erdb.typing.params import ParamRow
 from erdb.typing.enums import ItemIDFlag
@@ -347,7 +348,7 @@ def source_map(game_dir: Path, out: Path | None = None, lod: int = 0, undergroun
     except: raise
     finally: _process_cache(tile_dir, mask_dir, keep_cache=keep_cache)
 
-def source_icons(game_dir: Path, tables: list[Table], size: int, file_format: str, desination: Path, ignore_checksum: bool = False, keep_cache: bool = False):
+def source_icons(game_dir: Path, tables: list[Table], size: int, file_format: str, destination: Destination, ignore_checksum: bool = False, keep_cache: bool = False):
     assert 1 <= size <= 1024, f"Invalid size: {size}"
 
     def readr(tb: Table):
@@ -395,7 +396,18 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, file_format: st
     table_dir = game_dir / "param" / "gameparam"
     names_dir = game_dir / "msg" / "engus" / "item-msgbnd-dcx"
     icon_dir = game_dir / "menu" / "hi" / "00_solo-tpfbhd"
-    desination.mkdir(parents=True, exist_ok=True)
+
+    if not destination.is_local:
+        assert destination.protocol in ["http", "https"], "Invalid destination scheme"
+        assert destination.username is not None, "Username not provided"
+        assert destination.password is not None, "API token not provided"
+
+        local_out = None
+        cf_images = CloudflareImagesClient(destination.username, destination.password)
+    else:
+        local_out = destination.path.resolve()
+        local_out.mkdir(parents=True, exist_ok=True)
+        cf_images = None
 
     try:
 
@@ -416,10 +428,11 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, file_format: st
 
         for tb in tables:
             names = get_names(tb)
-            dest = desination / str(tb)
-            dest.mkdir()
 
-            print(f"Exporting to {dest}...", flush=True)
+            if local_out:
+                (local_out / str(tb)).mkdir()
+
+            print(f"Exporting images of {tb}...", flush=True)
 
             id_to_name = {get_icon_id(row): get_filename(names[row.index]) for row in readr(tb) if is_valid_row(tb, row)}
             dds_files  = [get_icon_dds(icon_dir, icon_id) for icon_id in id_to_name.keys()]
@@ -436,10 +449,22 @@ def source_icons(game_dir: Path, tables: list[Table], size: int, file_format: st
                     continue
 
                 with Image.open(dds) as img:
-                    out = dest / file_format.format(icon_id=icon_id, name=name, table=tb)
+                    filename = file_format.format(icon_id=icon_id, name=name, table=tb)
 
-                    print(f"[{(cur := cur + 1)}/{count}] {out}", flush=True)
-                    img.resize((size, size)).save(out)
+                    if local_out:
+                        out = local_out / str(tb) / filename
+
+                        print(f"[{(cur := cur + 1)}/{count}] {out}", flush=True)
+                        img.resize((size, size)).save(out)
+
+                    else:
+                        assert cf_images is not None
+
+                        data = BytesIO()
+                        img.save(data, format="PNG")
+
+                        print(f"[{(cur := cur + 1)}/{count}] {filename}", flush=True)
+                        cf_images.upload(data.getvalue(), filename)
 
     except: raise
     finally: _process_cache(table_dir, names_dir, icon_dir, keep_cache=keep_cache)

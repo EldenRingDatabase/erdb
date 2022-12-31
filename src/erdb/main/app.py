@@ -6,11 +6,12 @@ from erdb.main.args import parse_args
 from erdb.table import Table
 from erdb.loaders import GAME_VERSIONS
 from erdb.app_api.main import serve as serve_app_api
+from erdb.app_wiki import generate as generate_app_wiki
 from erdb.utils.attack_power import Attributes, CalculatorData, ArmamentCalculator
 from erdb.utils.changelog import generate as generate_changelog
 from erdb.utils.find_valid_values import find_valid_values
 from erdb.utils.sourcer import source_gamedata, source_map, source_icons
-from erdb.utils.common import pydantic_encoder_no_nulls
+from erdb.utils.common import Destination, pydantic_encoder_no_nulls
 from erdb.typing.game_version import GameVersion, GameVersionRange
 
 
@@ -27,6 +28,7 @@ class App:
             "map": self.source_map,
             "icons": self.source_icons,
             "serve-api": self.serve_api,
+            "generate-wiki": self.generate_wiki,
         })
 
     def run(self) -> int:
@@ -137,13 +139,11 @@ class App:
         return 0
 
     @staticmethod
-    def source_icons(types: list[Table], size: int, file_format: str, game_dir: Path, ignore_checksum: bool, keep_cache: bool, out: Path | None) -> int:
+    def source_icons(types: list[Table], size: int, file_format: str, game_dir: Path, ignore_checksum: bool, keep_cache: bool, out: Destination | None) -> int:
         game_dir = game_dir.resolve()
 
         if out is None:
-            out = Path.cwd()
-        else:
-            out = out.resolve()
+            out = Destination.from_str(str(Path.cwd()))
 
         print(f"\n>>> Extracting {', '.join(map(str, types))} icons from \"{game_dir}\".")
 
@@ -159,4 +159,12 @@ class App:
     @staticmethod
     def serve_api(port: int, bind: str, precache: bool) -> int:
         serve_app_api(port, bind=bind, precache=precache)
+        return 0
+
+    @staticmethod
+    def generate_wiki(uikit_version: str | None, data_path: Path, out: Path | None) -> int:
+        data_path = data_path.resolve()
+        out = Path.cwd() / "erdb.wiki" if out is None else out.resolve()
+
+        generate_app_wiki(uikit_version, data_path, out)
         return 0

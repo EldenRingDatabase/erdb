@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Armaments Index</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ uikit_relative }}/css/uikit.min.css" />
+        <script src="{{ uikit_relative }}/js/uikit.min.js"></script>
+        <script src="{{ uikit_relative }}/js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
+
+<body>
+    <section class="uk-section-xsmall">
+        <div class="uk-container">
+
+            <div class="uk-text-center" uk-sticky="position:bottom" style="background-color:rgb(255, 120, 120)">
+                <b>This website is <i>heavily</i> work in progress. Reports and requests go <a href="https://github.com/EldenRingDatabase/erdb/issues" target="_blank">here</a>.</b>
+            </div>
+
+            <ul class="uk-list uk-list-divider">
+                {% for key, item in items.items() %}
+                    <li>
+                        <span class="uk-icon uk-icon-image" style="background-image:url(https://assets.erdb.workers.dev/icons/armaments/{{ item.icon }}/icon)"></span>
+                        <a clas="uk-link-text" href="{{ key }}.html"> {{ item.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </section>
+</body>

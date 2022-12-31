@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ item.name }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ uikit_relative }}/css/uikit.min.css" />
+        <script src="{{ uikit_relative }}/js/uikit.min.js"></script>
+        <script src="{{ uikit_relative }}/js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
+
+{% set fields_attribs = {"STR": "strength", "DEX": "dexterity", "INT": "intelligence", "FTH": "faith", "ARC": "arcane"} %}
+{% set fields_damage = {"PHS": "physical", "MAG": "magic", "FIR": "fire", "LGT": "lightning", "HLY": "holy", "STM": "stamina"} %}
+{% set fields_guard = {"PHS": "physical", "MAG": "magic", "FIR": "fire", "LGT": "lightning", "HLY": "holy", "BST": "guard_boost"} %}
+
+{% macro print_optional(dictionary, property_name, default="-") -%}
+    {% if property_name in dictionary %}
+        {{ caller(dictionary[property_name]) }}
+    {% else %}
+        {{ default }}
+    {% endif %}
+{%- endmacro %}
+
+{% macro armament_thread(type_name, headers) %}
+    <thead>
+        <tr>
+            <th>{{ type_name }}</th>
+            {% for header, tooltip in headers.items() %}
+                <th class="uk-text-center" uk-tooltip="{{ tooltip }}">{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+{% endmacro %}
+
+{% macro affinity_table(headers, level) -%}
+    <table class="uk-table uk-table-small uk-table-striped">
+        {{ armament_thread("Affinity", headers) }}
+        <tbody>
+            {% for affinity, properties in item.affinity.items() %}
+                <tr>
+                    <td class="uk-text-nowrap uk-text-bold uk-width-small">{{ affinity }} +{{ level }}</td>
+                    {{ caller(properties, reinforcements[properties.reinforcement_id | string]) }}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%- endmacro %}
+
+{% macro level_table(headers, affinity) -%}
+    <table class="uk-table uk-table-small uk-table-striped">
+        {{ armament_thread("Level", headers) }}
+        <tbody>
+            {% for level in range(0, item.upgrade_costs | length + 1) | reverse %}
+                <tr>
+                    <td class="uk-text-nowrap uk-text-bold uk-width-small">{{ affinity }} +{{ level }}</td>
+                    {{ caller(level) }}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%- endmacro %}
+
+<body>
+    <header>
+        <div class="uk-container">
+
+            <div class="uk-text-center" uk-sticky="position:bottom" style="background-color:rgb(255, 120, 120)">
+                <b>This website is <i>heavily</i> work in progress. Reports and requests go <a href="https://github.com/EldenRingDatabase/erdb/issues" target="_blank">here</a>.</b>
+            </div>
+
+            <nav class="uk-navbar-container" uk-navbar="mode:click" data-uk-navbar>
+
+                <div class="uk-margin-left uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a href="#"><span uk-icon="home"></span> ERDB</a>
+                        </li>
+                        <li class="uk-active">
+                            <a href="#"><span uk-icon="database"></span> ITEMS <span uk-icon="triangle-down"></span></a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">Ammo</a></li>
+                                    <li class="uk-active"><a href="index.html">Armaments</a></li>
+                                    <li><a href="#">Armor</a></li>
+                                    <li><a href="#">Ashes Of War</a></li>
+                                    <li><a href="#">Bolstering Materials</a></li>
+                                    <li><a href="#">Crafting Materials</a></li>
+                                    <li><a href="#">Gestures</a></li>
+                                    <li><a href="#">Info</a></li>
+                                    <li><a href="#">Keys</a></li>
+                                    <li><a href="#">Shop</a></li>
+                                    <li><a href="#">Spells</a></li>
+                                    <li><a href="#">Spirit Ashes</a></li>
+                                    <li><a href="#">Talismans</a></li>
+                                    <li><a href="#">Tools</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#"><span uk-icon="cog"></span> TOOLS <span uk-icon="triangle-down"></span></a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">AR Calculator</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="uk-navbar-center">
+                    <div class="uk-navbar-item">
+                        <button class="uk-button uk-button-default" type="button">1.08.1</button>
+                        <div uk-dropdown="mode:click">
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li><a href="#">latest</a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li class="uk-active"><a href="#">1.08.1</a></li>
+                                <li><a href="#">1.08.0</a></li>
+                                <li><a href="#">1.07.1</a></li>
+                                <li><a href="#">1.07.0</a></li>
+                                <li><a href="#">1.06.0</a></li>
+                                <li><a href="#">1.05.0</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-margin-right uk-navbar-right">
+                    <div class="uk-navbar-item">
+                        <form id="search-form" class="uk-search uk-search-navbar uk-button-default" action="">
+                            <span uk-search-icon></span>
+                            <input class="uk-search-input" type="search" placeholder="Search...">
+                        </form>
+                    </div>
+                </div>
+
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="uk-section-xsmall">
+        <div class="uk-container">
+            <div class="uk-grid" uk-grid>
+                <div class="uk-width-2-3">
+                    <ul class="uk-breadcrumb">
+                        <li><a href="#">ERDB</a></li>
+                        <li><a href="#">Items</a></li>
+                        <li><a href="index.html">Armaments</a></li>
+                        <li>{{ item.name }}</li>
+                    </ul>
+                </div>
+                <div class="uk-width-auto">
+                    <a href="#"><span uk-icon="code"></span> API</span></a>
+                </div>
+                <div class="uk-width-auto">
+                    <a href="#"><span uk-icon="link"></span> FextraLife</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="uk-section-xsmall">
+        <div class="uk-container">
+            <div class="uk-grid-divider" uk-grid>
+
+                <div class="uk-width-auto@m">
+
+                    <div class="uk-card uk-card-default uk-card-hover">
+                        <div class="uk-card-media-top uk-text-center uk-padding">
+                            <img src="https://assets.erdb.workers.dev/icons/armaments/{{ item.icon }}/low" width="350" height="350">
+                        </div>
+                        <div class="uk-card-body uk-text-center uk-padding-remove-top uk-padding-remove-bottom">
+                            <hr class="uk-divider-icon uk-margin-remove-adjacent">
+                            <h3 class="uk-card-title">{{ item.name }}</h3>
+                            <p>{{ item.category }} <span class="uk-text-meta">[{{ item.attack_attributes | join(' / ') }}]</span></p>
+                        </div>
+                        <div class="uk-card-footer uk-margin-top">
+                            <div class="uk-grid uk-grid-small uk-grid-divider uk-flex uk-flex-middle uk-text-center uk-text-light uk-text-small" data-uk-grid>
+                                {% for abbrv, full in fields_attribs.items() %}
+                                    <div class="uk-width-expand" uk-tooltip="{{ full }}">
+                                        {% call(value) print_optional(item.requirements, full, default="{} -".format(abbrv)) %}
+                                            {{ abbrv }} <span class="uk-text-bold">{{ value }}</span>
+                                        {% endcall %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="uk-width-expand@m">
+
+                    <article class="uk-comment uk-comment-primary">
+                        <div class="uk-comment-body">
+                            {% for line in item.description %}
+                                <p>{{ line }}</p>
+                            {% endfor %}
+                        </div>
+                    </article>
+
+                    <div class="uk-grid-small uk-child-width-1-2 uk-grid-divider uk-text-center uk-margin-medium" data-uk-grid>
+                        <div uk-tooltip="Full ID of the Item in capital hexadecimal form. IDs differ per affinity or upgrade level.">
+                            ITEM HEX ID <span class="uk-text-bold">#{{ item.full_hex_id }}</span>
+                        </div>
+                        <div uk-tooltip="ID of the Item in its individual class. IDs differ per affinity or upgrade level.">
+                            ARMAMENT ID <span class="uk-text-bold">{{ item.id }}</span>
+                        </div>
+                    </div>
+
+                    <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-divider uk-text-center uk-margin-medium" data-uk-grid>
+                        <div uk-tooltip="Weight of the Armament.">
+                            WEIGHT <span class="uk-text-bold">{{ item.weight }}</span>
+                        </div>
+                        <div uk-tooltip="Rarity of the Item.">
+                            RARITY <span class="uk-text-bold">{{ item.rarity }}</span>
+                        </div>
+                        <div uk-tooltip="The amount of Runes the Item is sold for, 0 if not applicabe.">
+                            VALUE <span class="uk-text-bold">{{ item.price_sold }}</span> Runes
+                        </div>
+                        <div uk-tooltip="Specifies whether other Ashes of War can be put on the Armament and its affinity potentially changed.">
+                            {% if item.allow_ash_of_war %}
+                                ASH OF WAR <span class="uk-text-bold" uk-icon="check"></span>
+                            {% else %}
+                                ASH OF WAR <span class="uk-text-bold" uk-icon="close"></span>
+                            {% endif %}
+                        </div>
+                        <div uk-tooltip="Specifies whether the Armament is buffable.">
+                            {% if item.is_buffable %}
+                                BUFFABLE <span class="uk-text-bold" uk-icon="check"></span>
+                            {% else %}
+                                BUFFABLE <span class="uk-text-bold" uk-icon="close"></span>
+                            {% endif %}
+                        </div>
+                        <div uk-tooltip="Specifies whether the Armament is used for guarding when equipped in left hand.">
+                            {% if item.is_l1_guard %}
+                                L1 ACTION <span class="uk-text-bold">guard</span>
+                            {% else %}
+                                L1 ACTION <span class="uk-text-bold">attack</span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="uk-grid-small uk-grid-divider uk-text-center uk-margin-medium" data-uk-grid>
+                        <div class="uk-width-3-5" uk-tooltip="Stones the Armament upgrades with, if upgradable.">
+                            MATERIAL <span class="uk-text-bold">{{ item.upgrade_material }}</span>
+                        </div>
+                        <div class="uk-width-2-5">
+                            <a class="uk-button uk-button-default uk-button-small" href="#modal-upgrade-costs" uk-toggle>Upgrade Costs</a>
+                            <div id="modal-upgrade-costs" uk-offcanvas="flip:true">
+                                <div class="uk-offcanvas-bar uk-text-left">
+                                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                                    <br>
+                                    <div class="uk-grid-small" uk-grid>
+                                        <div class="uk-width-expand" uk-leader>+0 <span uk-icon="chevron-double-right"></span> +{{ item.upgrade_costs | length }}</div>
+                                        <div><span class="uk-text-bold">{{ item.upgrade_costs | sum }}</span> Runes</div>
+                                    </div>
+                                    <hr>
+                                    {% for cost in item.upgrade_costs %}
+                                        <div class="uk-grid-small" uk-grid>
+                                            <div class="uk-width-expand" uk-leader>+{{ loop.index0 }} <span uk-icon="chevron-double-right"></span> +{{ loop.index }}</div>
+                                            <div><span class="uk-text-bold">{{ cost }}</span> Runes</div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if item.effects %}
+                        <dl class="uk-description-list uk-description-list-divider uk-padding-small">
+                            {% for effect in item.effects %}
+                                <dt><b>{{ effect.attribute }}</b></dt>
+                                <dd>{{ effect.conditions | join(", ") }}: {{ "+" if effect.model == "additive" else "*" }}{{ effect.value }}</dd>
+                            {% endfor %}
+                        </dl>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="uk-section-xsmall">
+        <div class="uk-container">
+            <div class="uk-grid-large uk-grid-divider uk-child-width-1-2 uk-padding" uk-grid="masonry:true">
+                <div>
+                    <h4><span uk-icon="location"></span> WHERE TO FIND</h4>
+                    <i>None</i>
+                </div>
+                <div>
+                    <h4><span uk-icon="users"></span> COMMUNITY REMARKS</h4>
+                    <i>None</i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="uk-section-xsmall">
+        <div class="uk-container">
+            <div class="uk-grid-small" uk-grid>
+                <div class="uk-width-auto">
+                    <ul class="uk-tab-left uk-text-right" uk-tab="connect:#switcher-affinity">
+                        {% if item.allow_ash_of_war %}
+                            <li><a href="#"><span uk-icon="nut"></span>(By Level)</a></li>
+                        {% endif %}
+                        {% for affinity in item.affinity.keys() %}
+                            <li><a href="#"><span uk-icon="nut"></span>{{ affinity }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="uk-width-expand">
+                    <ul id="switcher-affinity" class="uk-switcher">
+                        {% if item.allow_ash_of_war %}
+                            <li>
+                                <ul uk-tab>
+                                    {% for level in range(0, item.upgrade_costs | length + 1) | reverse %}
+                                        <li><a href="#">+{{ level }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                <ul class="uk-switcher uk-margin">
+                                    {% for level in range(0, item.upgrade_costs | length + 1) | reverse %}
+                                        <li>
+                                            <div class="uk-grid-small uk-grid-divider uk-child-width-1-2@l" uk-grid>
+                                                <div>
+                                                    <h3 class="uk-card-title"><span uk-icon="bolt"></span> ATTACK POWER</h3>
+                                                    {% call(properties, reinforcement) affinity_table(fields_damage, level) %}
+                                                        {% for property_name in fields_damage.values() %}
+                                                            <td class="uk-text-center">
+                                                                {% call(value) print_optional(properties.damage, property_name) %}
+                                                                    {{ (value * reinforcement[level].damage[property_name]) | int }}
+                                                                {% endcall %}
+                                                            </td>
+                                                        {% endfor %}
+                                                    {% endcall %}
+                                                </div>
+                                                <div>
+                                                    <h3 class="uk-card-title"><span uk-icon="settings"></span> ATTRIBUTE SCALING</h3>
+                                                    {% call(properties, reinforcement) affinity_table(fields_attribs, level) %}
+                                                        {% for property_name in fields_attribs.values() %}
+                                                            <td>
+                                                                {% call(value) print_optional(properties.scaling, property_name) %}
+                                                                    {% set scale_value = value * reinforcement[level].scaling[property_name] %}
+                                                                    <span class="uk-text-emphasis">{{ scale_value | scaling_grade }}</span> <span class="uk-text-lighter uk-text-meta">{{ scale_value | round(2) }}</span>
+                                                                {% endcall %}
+                                                            </td>
+                                                        {% endfor %}
+                                                    {% endcall %}
+                                                </div>
+                                                <div>
+                                                    <h3 class="uk-card-title"><span uk-icon="star"></span> PASSIVE EFFECTS</h3>
+                                                    {% call(properties, reinforcement) affinity_table({"effects": "list of effects"}, level) %}
+                                                        <td class="uk-text-center">
+                                                            <div class="uk-grid uk-grid-small uk-grid-divider uk-text-center" data-uk-grid>
+                                                                {% if level < properties.status_effect_overlay | length %}
+                                                                    {% for effect, value in properties.status_effect_overlay[level].items() %}
+                                                                        <div class="uk-width-expand"><span class="uk-text-emphasis">{{ effect }}</span> ({{ value }})</div>
+                                                                    {% endfor %}
+                                                                {% else %}
+                                                                    <div class="uk-width-expand">-</div>
+                                                                {% endif %}
+                                                            </div>
+                                                        </td>
+                                                    {% endcall %}
+                                                </div>
+                                                <div>
+                                                    <h3 class="uk-card-title"><span uk-icon="nut"></span> GUARD NEGATION</h3>
+                                                    {% call(properties, reinforcement) affinity_table(fields_guard, level) %}
+                                                        {% for property_name in fields_guard.values() %}
+                                                            <td class="uk-text-center">
+                                                                {% call(value) print_optional(properties.guard, property_name) %}
+                                                                    {{ (value * reinforcement[level].guard[property_name]) | int }}
+                                                                {% endcall %}
+                                                            </td>
+                                                        {% endfor %}
+                                                    {% endcall %}
+                                                </div>
+                                            </div>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% endif %} {# item.allow_ash_of_war #}
+                        {% for affinity, properties in item.affinity.items() %}
+                            {% set reinforcement = reinforcements[properties.reinforcement_id | string] %}
+                            <li>
+                                <div class="uk-grid-small uk-grid-divider uk-child-width-1-2@l" uk-grid>
+                                    <div>
+                                        <h3 class="uk-card-title"><span uk-icon="bolt"></span> ATTACK POWER</h3>
+                                        {% call(level) level_table(fields_damage, affinity) %}
+                                            {% for property_name in fields_damage.values() %}
+                                                <td class="uk-text-center">
+                                                    {% call(value) print_optional(properties.damage, property_name) %}
+                                                        {{ (value * reinforcement[level].damage[property_name]) | int }}
+                                                    {% endcall %}
+                                                </td>
+                                            {% endfor %}
+                                        {% endcall %}
+                                    </div>
+                                    <div>
+                                        <h3 class="uk-card-title"><span uk-icon="settings"></span> ATTRIBUTE SCALING</h3>
+                                        {% call(level) level_table(fields_attribs, affinity) %}
+                                            {% for property_name in fields_attribs.values() %}
+                                                <td>
+                                                    {% call(value) print_optional(properties.scaling, property_name) %}
+                                                        {% set scale_value = value * reinforcement[level].scaling[property_name] %}
+                                                        <span class="uk-text-emphasis">{{ scale_value | scaling_grade }}</span> <span class="uk-text-lighter uk-text-meta">{{ scale_value | round(2) }}</span>
+                                                    {% endcall %}
+                                                </td>
+                                            {% endfor %}
+                                        {% endcall %}
+                                    </div>
+                                    <div>
+                                        <h3 class="uk-card-title"><span uk-icon="star"></span> PASSIVE EFFECTS</h3>
+                                        {% call(level) level_table({"effects": "list of effects"}, affinity) %}
+                                            <td class="uk-text-center">
+                                                <div class="uk-grid uk-grid-small uk-grid-divider uk-text-center" data-uk-grid>
+                                                    {% if level < properties.status_effect_overlay | length %}
+                                                        {% for effect, value in properties.status_effect_overlay[level].items() %}
+                                                            <div class="uk-width-expand"><span class="uk-text-emphasis">{{ effect }}</span> ({{ value }})</div>
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        <div class="uk-width-expand">-</div>
+                                                    {% endif %}
+                                                </div>
+                                            </td>
+                                        {% endcall %}
+                                    </div>
+                                    <div>
+                                        <h3 class="uk-card-title"><span uk-icon="nut"></span> GUARD NEGATION</h3>
+                                        {% call(level) level_table(fields_guard, affinity) %}
+                                            {% for property_name in fields_guard.values() %}
+                                                <td class="uk-text-center">
+                                                    {% call(value) print_optional(properties.guard, property_name) %}
+                                                        {{ (value * reinforcement[level].guard[property_name]) | int }}
+                                                    {% endcall %}
+                                                </td>
+                                            {% endfor %}
+                                        {% endcall %}
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
