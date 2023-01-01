@@ -16,13 +16,13 @@
 {% set fields_damage = {"PHS": "physical", "MAG": "magic", "FIR": "fire", "LGT": "lightning", "HLY": "holy", "STM": "stamina"} %}
 {% set fields_guard = {"PHS": "physical", "MAG": "magic", "FIR": "fire", "LGT": "lightning", "HLY": "holy", "BST": "guard_boost"} %}
 
-{% macro print_optional(dictionary, property_name, default="-") -%}
+{% macro print_optional(dictionary, property_name, default="-") %}
     {% if property_name in dictionary %}
         {{ caller(dictionary[property_name]) }}
     {% else %}
         {{ default }}
     {% endif %}
-{%- endmacro %}
+{% endmacro %}
 
 {% macro armament_thread(type_name, headers) %}
     <thead>
@@ -35,7 +35,7 @@
     </thead>
 {% endmacro %}
 
-{% macro affinity_table(headers, level) -%}
+{% macro affinity_table(headers, level) %}
     <table class="uk-table uk-table-small uk-table-striped">
         {{ armament_thread("Affinity", headers) }}
         <tbody>
@@ -47,9 +47,9 @@
             {% endfor %}
         </tbody>
     </table>
-{%- endmacro %}
+{% endmacro %}
 
-{% macro level_table(headers, affinity) -%}
+{% macro level_table(headers, affinity) %}
     <table class="uk-table uk-table-small uk-table-striped">
         {{ armament_thread("Level", headers) }}
         <tbody>
@@ -61,7 +61,7 @@
             {% endfor %}
         </tbody>
     </table>
-{%- endmacro %}
+{% endmacro %}
 
 <body>
     <header>

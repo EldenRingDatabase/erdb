@@ -2,10 +2,11 @@ import re
 import json
 import shutil
 import requests
-from io import BytesIO
+from io import BytesIO, TextIOWrapper
 from pathlib import Path
 from zipfile import ZipFile
 from jinja2 import Environment, FileSystemLoader
+from htmlmin import minify as minifyhtml
 
 from erdb.loaders import PKG_DATA_PATH
 from erdb.utils.common import scaling_grade
@@ -74,12 +75,17 @@ def _find_uikit_relative(start: Path, until: Path) -> str:
 
     return ""
 
-def generate(uikit_version: str | None, data_path: Path, out: Path):
+def _write_html(f: TextIOWrapper, minimize: bool, data: str):
+    f.write(minifyhtml(data, remove_all_empty_space=True, remove_comments=True) if minimize else data)
+
+def generate(uikit_version: str | None, data_path: Path, minimize: bool, out: Path):
     out.mkdir(parents=True, exist_ok=True)
     _ensure_uikit_version(uikit_version, out / "uikit")
 
     env = Environment(loader=FileSystemLoader(PKG_DATA_PATH / "wiki" / "templates"))
     env.filters["scaling_grade"] = scaling_grade
+    env.trim_blocks = True
+    env.lstrip_blocks = True
 
     items_path = out / "items"
 
@@ -110,12 +116,12 @@ def generate(uikit_version: str | None, data_path: Path, out: Path):
 
             single = env.get_template(f"{table}-single.html.jinja")
             with open(item_path / f"{key}.html", mode="w", encoding="utf-8") as f:
-                f.write(single.render(uikit_relative=uikit_relative, **data))
+                _write_html(f, minimize, single.render(uikit_relative=uikit_relative, **data))
 
         print(f"Generating index page", flush=True)
 
         index = env.get_template(f"{table}-index.html.jinja")
         with open(item_path / "index.html", mode="w", encoding="utf-8") as f:
-            f.write(index.render(uikit_relative=uikit_relative, items=main_data))
+            _write_html(f, minimize, index.render(uikit_relative=uikit_relative, items=main_data))
 
         print(flush=True)

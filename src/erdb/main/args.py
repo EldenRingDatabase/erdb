@@ -71,6 +71,12 @@ class _Argument(NamedTuple):
         )
 
     @classmethod
+    def minimize_output(cls) -> list[Self]:
+        return [
+            cls.make("--minimize", action="store_true", help="Output minimized text file when generating data.")
+        ]
+
+    @classmethod
     def outputs_uri(cls) -> list[Self]:
         return [
             cls.make("--out", "-o", type=Destination.from_str, default=None, annotation=Destination | None, help="Optional output in standard URI syntax, can be a regular file/directory path.")
@@ -84,9 +90,7 @@ class _Argument(NamedTuple):
 
     @classmethod
     def outputs_json(cls) -> list[Self]:
-        return [
-            cls.make("--minimize", action="store_true", help="Output minimized JSON when generating data.")
-        ] + cls.outputs_file()
+        return cls.minimize_output() + cls.outputs_file()
 
     @classmethod
     def parses_generated_data(cls) -> list[Self]:
@@ -389,7 +393,7 @@ class GenerateWiki(_Subcommand):
 
     arguments = [
         _Argument.make("--uikit-version", type=str, default=None, help="UIkit version to override, defaults to internal, frozen-on value."),
-    ] + _Argument.parses_generated_data() + _Argument.outputs_file()
+    ] + _Argument.parses_generated_data() + _Argument.minimize_output() + _Argument.outputs_file()
 
 def parse_args(argv: Sequence[str], handlers: dict[str, Callable]) -> dict[str, Any]:
     parser = ArgumentParser(description="Interface for ERDB operations.")

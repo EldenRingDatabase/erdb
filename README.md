@@ -34,6 +34,7 @@ This is a short summary of all subcommands ERDB provides as a CLI tool:
 * [`map`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-map): Extract world map image from an UXM-unpacked ELDEN RING installation (Windows only).
 * [`icons`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-icons): Extract item images from an UXM-unpacked ELDEN RING installation (Windows only).
 * [`serve-api`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-serve-api): Begin serving the API web server.
+* [`generate-wiki`](https://github.com/EldenRingDatabase/erdb/wiki/CLI-Interface-Manual#erdb-generate-wiki): Generate a static Wikipedia website.
 
 ## Data features
 
