@@ -12,23 +12,157 @@
     </body>
 </html>
 
+{% set fields_attribs = {"STR": "strength", "DEX": "dexterity", "INT": "intelligence", "FTH": "faith", "ARC": "arcane"} %}
+
+{% set armament_categories = [
+    "Dagger", "Straight Sword", "Greatsword", "Colossal Sword", "Curved Sword",
+    "Curved Greatsword", "Katana", "Twinblade", "Thrusting Sword", "Heavy Thrusting Sword",
+    "Axe", "Greataxe", "Hammer", "Great Hammer", "Flail",
+    "Spear", "Great Spear", "Halberd", "Reaper", "Fist",
+    "Claw", "Whip", "Colossal Weapon", "Light Bow", "Bow",
+    "Greatbow", "Crossbow", "Ballista", "Glintstone Staff", "Sacred Seal",
+    "Small Shield", "Medium Shield", "Greatshield", "Torch",
+] %}
+
+{% set armament_attack_attributes = ["Standard", "Strike", "Slash", "Pierce"] %}
+
+{% macro armament_card(item, icon_profile="icon") %}
+    <div class="uk-card uk-card-default uk-card-hover">
+        <div class="uk-card-media-top uk-text-center uk-padding">
+            <img src="https://assets.erdb.workers.dev/icons/armaments/{{ item[icon_profile] }}/menu">
+        </div>
+        <div class="uk-card-body uk-text-center uk-padding-remove-top">
+            <hr class="uk-divider-icon uk-margin-remove-adjacent">
+            <h3 class="uk-card-title">{{ item.name }}</h3>
+            <p>{{ item.category }} <span class="uk-text-meta" style="white-space:nowrap">[{{ item.attack_attributes | join(' / ') }}]</span></p>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro print_optional(dictionary, property_name, default="-") %}
+    {% if property_name in dictionary %}
+        {{ caller(dictionary[property_name]) }}
+    {% else %}
+        {{ default }}
+    {% endif %}
+{% endmacro %}
+
 <body>
-    <section class="uk-section-xsmall">
-        <div class="uk-container">
 
-            <div class="uk-text-center" uk-sticky="position:bottom" style="background-color:rgb(255, 120, 120)">
-                <b>This website is <i>heavily</i> work in progress. Reports and requests go <a href="https://github.com/EldenRingDatabase/erdb/issues" target="_blank">here</a>.</b>
-            </div>
+    <section class="uk-section-small uk-section-default">
 
-            <ul class="uk-list uk-list-divider">
-                {% for key, item in items.items() %}
+        <div class="uk-container uk-margin-large-bottom">
+
+            <div uk-filter="target: .js-filter">
+                <div class="uk-grid uk-grid-small" uk-grid>
+                    <div class="uk-width-auto">
+                        <button class="uk-active uk-button uk-button-default" uk-filter-control>Clear Filters</button>
+                    </div>
+                    <div class="uk-width-expand">
+                        <form id="search-form" action="">
+                            <div class="uk-inline uk-width-1-1">
+                                <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon:search"></span>
+                                <input class="uk-input uk-width-1-1 search-field" type="text" placeholder="Filter..." autofocus>
+                                <a hidden href="#" class="search-anchor" uk-filter-control="[data-armament-tags*='']">Search</a>
+                                <a hidden href="#" class="search-anchor-all" uk-filter-control>Search All</a>
+                                <a hidden href="#" class="search-anchor-none" uk-filter-control="[data-armament-empty='']">Search None</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <ul uk-accordion="multiple:true">
                     <li>
-                        <span class="uk-icon uk-icon-image" style="background-image:url(https://assets.erdb.workers.dev/icons/armaments/{{ item.icon }}/icon)"></span>
-                        <a clas="uk-link-text" href="{{ key }}.html"> {{ item.name }}</a>
+                        <a class="uk-accordion-title" href="#">Classes</a>
+                        <div class="uk-accordion-content">
+                            <div class="uk-grid-small uk-margin uk-child-width-auto" uk-grid>
+                                {% for name in armament_categories %}
+                                    <div>
+                                        <button class="uk-button uk-button-default" uk-filter-control="filter: [data-armament-category='{{name}}']; group: armament-category">{{ name }}</button>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </li>
-                {% endfor %}
-            </ul>
+                    <li>
+                        <a class="uk-accordion-title" href="#">Attack Attributes</a>
+                        <div class="uk-accordion-content">
+                            <div class="uk-grid-small uk-margin uk-child-width-auto" uk-grid>
+                                {% for name in armament_attack_attributes %}
+                                    <div>
+                                        <button class="uk-button uk-button-default" uk-filter-control="filter: [data-armament-attack-attributes*='{{name}}']; group: armament-attack-attributes">{{ name }}</button>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="js-filter uk-grid uk-grid-medium uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m uk-child-width-1-5@l uk-grid-match" uk-grid="masonry:true">
+                    {% for key, item in items.items() %}
+                        <div data-armament-category="{{item.category}}" data-armament-attack-attributes="{{item.attack_attributes | join(' ')}}" data-armament-tags="{{key | lower}} {{item.name | lower}} {{item.category | lower}} {{item.attack_attributes | join(' ') | lower}}">
+                            <a href="{{key}}.html">
+                                {{ armament_card(item) }}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
 
         </div>
     </section>
+    <script type="text/javascript">
+const util = UIkit.util;
+const searchField = util.$('.search-field');
+const searchAnchor = util.$('.search-anchor');
+const searchAnchorAll = util.$('.search-anchor-all');
+const searchAnchorNone = util.$('.search-anchor-none');
+const filterButton = util.$$('button[uk-filter-control]');
+const searchForm = util.$('#search-form');
+let debounce, lastSearchValue;
+
+const getSearchTerm = value => '[data-armament-tags*="' + value + '"]';
+const setSearchTerm = value => util.attr(searchAnchor, 'uk-filter-control', getSearchTerm(value));
+
+const doSearch = value => {
+    setSearchTerm(value.toLowerCase());
+    searchAnchor.click();
+};
+
+const showAll = () => {
+    setSearchTerm("");
+    searchAnchorAll.click();
+};
+
+const hideAll = () => searchAnchorNone.click();
+
+util.on(searchField, 'keyup', () => {
+    if (lastSearchValue == searchField.value) {
+        return;
+    }
+
+    lastSearchValue = searchField.value
+    hideAll();
+
+	clearTimeout(debounce);
+	debounce = setTimeout(() => searchField.value.length ? doSearch(searchField.value) : showAll(), 100);
+});
+
+util.on(searchForm, 'keypress', e => {
+	const key = e.charCode || e.keyCode || 0;
+	if (key == 13) {
+		e.preventDefault();
+	}
+});
+
+util.on(filterButton, 'click', () => {
+    searchField.value = '';
+	setSearchTerm("");
+});
+
+util.on(searchAnchorNone, 'click', e => {
+	e.preventDefault();
+});
+    </script>
 </body>
