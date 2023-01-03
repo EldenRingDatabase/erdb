@@ -78,7 +78,7 @@
                             <div class="uk-grid-small uk-margin uk-child-width-auto" uk-grid>
                                 {% for name in armament_categories %}
                                     <div>
-                                        <button class="uk-button uk-button-default" uk-filter-control="filter: [data-armament-category='{{name}}']; group: armament-category">{{ name }}</button>
+                                        <button class="uk-button uk-button-default" uk-filter-control="filter: [data-armament-category='{{name}}']; group: armament-category"><span class="uk-icon uk-icon-image" style="background-image:url(https://assets.erdb.workers.dev/icons/armaments/{{ items.values() | selectattr('category', 'equalto', name) | map(attribute='icon') | first }}/icon)"></span> {{ name }}</button>
                                     </div>
                                 {% endfor %}
                             </div>
