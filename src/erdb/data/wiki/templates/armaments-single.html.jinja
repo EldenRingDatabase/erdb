@@ -35,8 +35,15 @@
     </thead>
 {% endmacro %}
 
-{% macro affinity_table(headers, level) %}
+{% macro iterate_levels_r() %}
+    {% for level in range(0, item.upgrade_costs | length + 1) | reverse %}
+        {{ caller(level) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro affinity_table(caption, headers, level) %}
     <table class="uk-table uk-table-small uk-table-striped">
+        <caption>{{ caption }}</caption>
         {{ armament_thread("Affinity", headers) }}
         <tbody>
             {% for affinity, properties in item.affinity.items() %}
@@ -49,8 +56,9 @@
     </table>
 {% endmacro %}
 
-{% macro level_table(headers, affinity) %}
+{% macro level_table(caption, headers, affinity) %}
     <table class="uk-table uk-table-small uk-table-striped">
+        <caption>{{ caption }}</caption>
         {{ armament_thread("Level", headers) }}
         <tbody>
             {% for level in range(0, item.upgrade_costs | length + 1) | reverse %}
@@ -303,151 +311,146 @@
 
     <section class="uk-section-xsmall">
         <div class="uk-container">
-            <div class="uk-grid-small" uk-grid>
-                <div class="uk-width-auto">
-                    <ul class="uk-tab-left uk-text-right" uk-tab="connect:#switcher-affinity">
-                        {% if item.allow_ash_of_war %}
-                            <li><a href="#"><span uk-icon="nut"></span>(By Level)</a></li>
-                        {% endif %}
-                        {% for affinity in item.affinity.keys() %}
-                            <li><a href="#"><span uk-icon="nut"></span>{{ affinity }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="uk-width-expand">
-                    <ul id="switcher-affinity" class="uk-switcher">
-                        {% if item.allow_ash_of_war %}
-                            <li>
-                                <ul uk-tab>
-                                    {% for level in range(0, item.upgrade_costs | length + 1) | reverse %}
-                                        <li><a href="#">+{{ level }}</a></li>
-                                    {% endfor %}
-                                </ul>
-                                <ul class="uk-switcher uk-margin">
-                                    {% for level in range(0, item.upgrade_costs | length + 1) | reverse %}
-                                        <li>
-                                            <div class="uk-grid-small uk-grid-divider uk-child-width-1-2@l" uk-grid>
-                                                <div>
-                                                    <h3 class="uk-card-title"><span uk-icon="bolt"></span> ATTACK POWER</h3>
-                                                    {% call(properties, reinforcement) affinity_table(fields_damage, level) %}
-                                                        {% for property_name in fields_damage.values() %}
-                                                            <td class="uk-text-center">
-                                                                {% call(value) print_optional(properties.damage, property_name) %}
-                                                                    {{ (value * reinforcement[level].damage[property_name]) | int }}
-                                                                {% endcall %}
-                                                            </td>
-                                                        {% endfor %}
-                                                    {% endcall %}
-                                                </div>
-                                                <div>
-                                                    <h3 class="uk-card-title"><span uk-icon="settings"></span> ATTRIBUTE SCALING</h3>
-                                                    {% call(properties, reinforcement) affinity_table(fields_attribs, level) %}
-                                                        {% for property_name in fields_attribs.values() %}
-                                                            <td>
-                                                                {% call(value) print_optional(properties.scaling, property_name) %}
-                                                                    {% set scale_value = value * reinforcement[level].scaling[property_name] %}
-                                                                    <span class="uk-text-emphasis">{{ scale_value | scaling_grade }}</span> <span class="uk-text-lighter uk-text-meta">{{ scale_value | round(2) }}</span>
-                                                                {% endcall %}
-                                                            </td>
-                                                        {% endfor %}
-                                                    {% endcall %}
-                                                </div>
-                                                <div>
-                                                    <h3 class="uk-card-title"><span uk-icon="star"></span> PASSIVE EFFECTS</h3>
-                                                    {% call(properties, reinforcement) affinity_table({"effects": "list of effects"}, level) %}
-                                                        <td class="uk-text-center">
-                                                            <div class="uk-grid uk-grid-small uk-grid-divider uk-text-center" data-uk-grid>
-                                                                {% if level < properties.status_effect_overlay | length %}
-                                                                    {% for effect, value in properties.status_effect_overlay[level].items() %}
-                                                                        <div class="uk-width-expand"><span class="uk-text-emphasis">{{ effect }}</span> ({{ value }})</div>
-                                                                    {% endfor %}
-                                                                {% else %}
-                                                                    <div class="uk-width-expand">-</div>
-                                                                {% endif %}
-                                                            </div>
-                                                        </td>
-                                                    {% endcall %}
-                                                </div>
-                                                <div>
-                                                    <h3 class="uk-card-title"><span uk-icon="nut"></span> GUARD NEGATION</h3>
-                                                    {% call(properties, reinforcement) affinity_table(fields_guard, level) %}
-                                                        {% for property_name in fields_guard.values() %}
-                                                            <td class="uk-text-center">
-                                                                {% call(value) print_optional(properties.guard, property_name) %}
-                                                                    {{ (value * reinforcement[level].guard[property_name]) | int }}
-                                                                {% endcall %}
-                                                            </td>
-                                                        {% endfor %}
-                                                    {% endcall %}
-                                                </div>
-                                            </div>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                        {% endif %} {# item.allow_ash_of_war #}
-                        {% for affinity, properties in item.affinity.items() %}
-                            {% set reinforcement = reinforcements[properties.reinforcement_id | string] %}
-                            <li>
-                                <div class="uk-grid-small uk-grid-divider uk-child-width-1-2@l" uk-grid>
-                                    <div>
-                                        <h3 class="uk-card-title"><span uk-icon="bolt"></span> ATTACK POWER</h3>
-                                        {% call(level) level_table(fields_damage, affinity) %}
-                                            {% for property_name in fields_damage.values() %}
-                                                <td class="uk-text-center">
-                                                    {% call(value) print_optional(properties.damage, property_name) %}
-                                                        {{ (value * reinforcement[level].damage[property_name]) | int }}
-                                                    {% endcall %}
-                                                </td>
-                                            {% endfor %}
+            <ul uk-accordion>
+                {% if item.allow_ash_of_war %}
+                    <li class="uk-open">
+                        <a class="uk-accordion-title" href="#">All Affinities</a>
+                        <div class="uk-accordion-content">
+                            <div class="uk-grid-small" uk-grid>
+                                <div class="uk-width-auto">
+                                    <ul class="uk-tab-left uk-text-right" uk-tab="connect:#switcher-affinity-overview">
+                                        {% call(level) iterate_levels_r() %}
+                                            <li class="uk-active"><a href="#">+{{ level }}</a></li>
                                         {% endcall %}
-                                    </div>
-                                    <div>
-                                        <h3 class="uk-card-title"><span uk-icon="settings"></span> ATTRIBUTE SCALING</h3>
-                                        {% call(level) level_table(fields_attribs, affinity) %}
-                                            {% for property_name in fields_attribs.values() %}
-                                                <td>
-                                                    {% call(value) print_optional(properties.scaling, property_name) %}
-                                                        {% set scale_value = value * reinforcement[level].scaling[property_name] %}
-                                                        <span class="uk-text-emphasis">{{ scale_value | scaling_grade }}</span> <span class="uk-text-lighter uk-text-meta">{{ scale_value | round(2) }}</span>
-                                                    {% endcall %}
-                                                </td>
-                                            {% endfor %}
-                                        {% endcall %}
-                                    </div>
-                                    <div>
-                                        <h3 class="uk-card-title"><span uk-icon="star"></span> PASSIVE EFFECTS</h3>
-                                        {% call(level) level_table({"effects": "list of effects"}, affinity) %}
-                                            <td class="uk-text-center">
-                                                <div class="uk-grid uk-grid-small uk-grid-divider uk-text-center" data-uk-grid>
-                                                    {% if level < properties.status_effect_overlay | length %}
-                                                        {% for effect, value in properties.status_effect_overlay[level].items() %}
-                                                            <div class="uk-width-expand"><span class="uk-text-emphasis">{{ effect }}</span> ({{ value }})</div>
-                                                        {% endfor %}
-                                                    {% else %}
-                                                        <div class="uk-width-expand">-</div>
-                                                    {% endif %}
-                                                </div>
-                                            </td>
-                                        {% endcall %}
-                                    </div>
-                                    <div>
-                                        <h3 class="uk-card-title"><span uk-icon="nut"></span> GUARD NEGATION</h3>
-                                        {% call(level) level_table(fields_guard, affinity) %}
-                                            {% for property_name in fields_guard.values() %}
-                                                <td class="uk-text-center">
-                                                    {% call(value) print_optional(properties.guard, property_name) %}
-                                                        {{ (value * reinforcement[level].guard[property_name]) | int }}
-                                                    {% endcall %}
-                                                </td>
-                                            {% endfor %}
-                                        {% endcall %}
-                                    </div>
+                                    </ul>
                                 </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+                                <div class="uk-width-expand">
+                                    <ul id="switcher-affinity-overview" class="uk-switcher uk-margin">
+                                        {% call(level) iterate_levels_r() %}
+                                            <li>
+                                                <div class="uk-grid-small uk-grid-divider uk-child-width-1-2@l" uk-grid>
+                                                    <div>
+                                                        {% call(properties, reinforcement) affinity_table("Attack Power", fields_damage, level) %}
+                                                            {% for property_name in fields_damage.values() %}
+                                                                <td class="uk-text-center">
+                                                                    {% call(value) print_optional(properties.damage, property_name) %}
+                                                                        {{ (value * reinforcement[level].damage[property_name]) | int }}
+                                                                    {% endcall %}
+                                                                </td>
+                                                            {% endfor %}
+                                                        {% endcall %}
+                                                    </div>
+                                                    <div>
+                                                        {% call(properties, reinforcement) affinity_table("Attribute Scaling", fields_attribs, level) %}
+                                                            {% for property_name in fields_attribs.values() %}
+                                                                <td class="uk-text-center">
+                                                                    {% call(value) print_optional(properties.scaling, property_name) %}
+                                                                        {% set scale_value = value * reinforcement[level].scaling[property_name] %}
+                                                                        <span uk-tooltip="{{scale_value | round(2)}}">{{ scale_value | scaling_grade }}</span>
+                                                                    {% endcall %}
+                                                                </td>
+                                                            {% endfor %}
+                                                        {% endcall %}
+                                                    </div>
+                                                    <div>
+                                                        {% call(properties, reinforcement) affinity_table("Passive Effects", {"effects": "list of effects"}, level) %}
+                                                            <td class="uk-text-center">
+                                                                <div class="uk-grid uk-grid-small uk-grid-divider uk-text-center" data-uk-grid>
+                                                                    {% if level < properties.status_effect_overlay | length %}
+                                                                        {% for effect, value in properties.status_effect_overlay[level].items() %}
+                                                                            <div class="uk-width-expand"><span class="uk-text-emphasis">{{ effect }}</span> ({{ value }})</div>
+                                                                        {% endfor %}
+                                                                    {% else %}
+                                                                        <div class="uk-width-expand">-</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </td>
+                                                        {% endcall %}
+                                                    </div>
+                                                    <div>
+                                                        {% call(properties, reinforcement) affinity_table("Guard Negation", fields_guard, level) %}
+                                                            {% for property_name in fields_guard.values() %}
+                                                                <td class="uk-text-center">
+                                                                    {% call(value) print_optional(properties.guard, property_name) %}
+                                                                        {{ (value * reinforcement[level].guard[property_name]) | int }}
+                                                                    {% endcall %}
+                                                                </td>
+                                                            {% endfor %}
+                                                        {% endcall %}
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        {% endcall %}
+                                    </ul>
+                                <div>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %} {# item.allow_ash_of_war #}
+                {% for affinity, properties in item.affinity.items() %}
+                    {% set reinforcement = reinforcements[properties.reinforcement_id | string] %}
+                    {% if item.allow_ash_of_war %}
+                    <li>
+                    {% else %}
+                    <li class="uk-open"> {# only a single entry and "All Affinities" is not used, make sure something is open #}
+                    {% endif %}
+                        <a class="uk-accordion-title" href="#">{{ affinity }}</a>
+                        <div class="uk-accordion-content">
+                            <div class="uk-grid-small uk-grid-divider uk-child-width-1-2@l" uk-grid>
+                                <div>
+                                    {% call(level) level_table("Attack Power", fields_damage, affinity) %}
+                                        {% for property_name in fields_damage.values() %}
+                                            <td class="uk-text-center">
+                                                {% call(value) print_optional(properties.damage, property_name) %}
+                                                    {{ (value * reinforcement[level].damage[property_name]) | int }}
+                                                {% endcall %}
+                                            </td>
+                                        {% endfor %}
+                                    {% endcall %}
+                                </div>
+                                <div>
+                                    {% call(level) level_table("Attribute Scaling", fields_attribs, affinity) %}
+                                        {% for property_name in fields_attribs.values() %}
+                                            <td class="uk-text-center">
+                                                {% call(value) print_optional(properties.scaling, property_name) %}
+                                                    {% set scale_value = value * reinforcement[level].scaling[property_name] %}
+                                                    <span uk-tooltip="{{scale_value | round(2)}}">{{ scale_value | scaling_grade }}</span>
+                                                {% endcall %}
+                                            </td>
+                                        {% endfor %}
+                                    {% endcall %}
+                                </div>
+                                <div>
+                                    {% call(level) level_table("Passive Effects", {"effects": "list of effects"}, affinity) %}
+                                        <td class="uk-text-center">
+                                            <div class="uk-grid uk-grid-small uk-grid-divider uk-text-center" data-uk-grid>
+                                                {% if level < properties.status_effect_overlay | length %}
+                                                    {% for effect, value in properties.status_effect_overlay[level].items() %}
+                                                        <div class="uk-width-expand"><span class="uk-text-emphasis">{{ effect }}</span> ({{ value }})</div>
+                                                    {% endfor %}
+                                                {% else %}
+                                                    <div class="uk-width-expand">-</div>
+                                                {% endif %}
+                                            </div>
+                                        </td>
+                                    {% endcall %}
+                                </div>
+                                <div>
+                                    {% call(level) level_table("Guard Negation", fields_guard, affinity) %}
+                                        {% for property_name in fields_guard.values() %}
+                                            <td class="uk-text-center">
+                                                {% call(value) print_optional(properties.guard, property_name) %}
+                                                    {{ (value * reinforcement[level].guard[property_name]) | int }}
+                                                {% endcall %}
+                                            </td>
+                                        {% endfor %}
+                                    {% endcall %}
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
     </section>
 
