@@ -107,6 +107,33 @@ jobs:
           labels: ${{ steps.meta-api.outputs.labels }}
           build-args: BUILD_VERSION=${{ inputs.build-version }}
 
+  nyasu:
+    name: Deploy API image
+    if: ${{ inputs.release-ghcr }}
+    needs: ghcr
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Trigger deployment
+        uses: indiesdev/curl@v1.1
+        with:
+          method: "PATCH"
+          url: https://k8s.nyasu.business/deployments/erdb/version
+          bearer-token: ${{ secrets.NYASU_DEPLOY_TOKEN }}
+          body: '{ "version": "${{ inputs.build-version }}" }'
+
+      - name: Delay 30s
+        run: sleep 30s
+        shell: bash
+
+      - name: Show deployment status
+        uses: indiesdev/curl@v1.1
+        with:
+          method: "GET"
+          url: https://k8s.nyasu.business/deployments/erdb/status
+          bearer-token: ${{ secrets.NYASU_DEPLOY_TOKEN }}
+          log-response: true
+
+
   github:
     name: Draft release on GitHub
     if: ${{ inputs.release-github }}
