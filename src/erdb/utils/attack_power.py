@@ -1,7 +1,5 @@
-import json
 from math import floor
-from pathlib import Path
-from typing import Iterator, NamedTuple, Self
+from typing import Iterator, NamedTuple
 
 
 """
@@ -14,7 +12,7 @@ class ValueType(NamedTuple):
     scaling: float
 
     @property
-    def total(self) -> float:
+    def total(self) -> int:
         return floor(self.base + self.scaling)
 
     def __iter__(self) -> Iterator[tuple[float, float]]:
@@ -26,6 +24,10 @@ class AttackPower(NamedTuple):
     fire: ValueType
     lightning: ValueType
     holy: ValueType
+
+    @property
+    def total(self) -> int:
+        return floor(sum(f.base + f.scaling for f in self))
 
     def items(self):
         return zip(self._fields, self)
@@ -52,7 +54,7 @@ class Attributes(NamedTuple):
         return zip(self._fields, self)
 
     @classmethod
-    def from_string(cls, string: str) -> Self:
+    def from_string(cls, string: str) -> "Attributes":
         parts = string.split(",")
 
         assert len(parts) == 5, "Invalid Attributes string"
@@ -69,7 +71,7 @@ class CorrectionAttack(NamedTuple):
     ratio: dict[str, dict]
 
     @classmethod
-    def from_dict(cls, data: dict) -> Self:
+    def from_dict(cls, data: dict) -> "CorrectionAttack":
         return cls(data["correction"], data["override"], data["ratio"])
 
 class CalculatorData(NamedTuple):
@@ -77,25 +79,6 @@ class CalculatorData(NamedTuple):
     reinforcements: dict[str, list[dict]]
     correction_attack: dict[str, dict[str, str]]
     correction_graph: dict[str, list[float]]
-
-    @classmethod
-    def create(cls, data_path: Path) -> Self:
-        if not isinstance(data_path, Path):
-            data_path = Path(data_path)
-
-        with open(data_path / "armaments.json") as f:
-            armaments = json.load(f)
-
-        with open(data_path / "reinforcements.json") as f:
-            reinforcements = json.load(f)
-
-        with open(data_path / "correction-attack.json") as f:
-            correction_attack = json.load(f)
-
-        with open(data_path / "correction-graph.json") as f:
-            correction_graph = json.load(f)
-
-        return cls(armaments, reinforcements, correction_attack, correction_graph)
 
 class ArmamentCalculator:
     _name: str

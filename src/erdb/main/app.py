@@ -74,9 +74,18 @@ class App:
 
     @staticmethod
     def calculate_ar(attribs: str, armament: str, affinity: str, level: int, data_path: Path) -> int:
+        def load_data_file(name: str):
+            with open(data_path / name) as f:
+                return json.load(f)
+
         print(f"\n>>> Calculating AR for {affinity} {armament} +{level} at {attribs}")
 
-        data = CalculatorData.create(data_path)
+        armaments = load_data_file("armaments.json")
+        reinforcements = load_data_file("reinforcements.json")
+        correction_attack = load_data_file("correction-attack.json")
+        correction_graph = load_data_file("correction-graph.json")
+
+        data = CalculatorData(armaments, reinforcements, correction_attack, correction_graph)
         calc = ArmamentCalculator(data, armament, affinity, level)
         attr = Attributes.from_string(attribs)
 

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AR Calculator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{site_root}}uikit/css/uikit.min.css" />
+        <script src="{{site_root}}uikit/js/uikit.min.js"></script>
+        <script src="{{site_root}}uikit/js/uikit-icons.min.js"></script>
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    </head>
+</html>
+
+{% set attack_powers = ["Physical", "Magic", "Fire", "Lightning", "Holy"] %}
+{% set status_effects = ["Bleed", "Frostbite", "Poison", "Scarlet Rot", "Sleep", "Madness"] %}
+{% set attributes = {"STR": "Strength", "DEX": "Dexterity", "INT": "Intelligence", "FTH": "Faith", "ARC": "Arcane"} %}
+
+{% set armament_categories = [
+    "Dagger", "Straight Sword", "Greatsword", "Colossal Sword", "Curved Sword",
+    "Curved Greatsword", "Katana", "Twinblade", "Thrusting Sword", "Heavy Thrusting Sword",
+    "Axe", "Greataxe", "Hammer", "Great Hammer", "Flail",
+    "Spear", "Great Spear", "Halberd", "Reaper", "Fist",
+    "Claw", "Whip", "Colossal Weapon", "Light Bow", "Bow",
+    "Greatbow", "Crossbow", "Ballista", "Glintstone Staff", "Sacred Seal",
+    "Small Shield", "Medium Shield", "Greatshield", "Torch",
+] %}
+
+{% macro to_id(value) %}
+{{ value | lower | replace("\'", "") | replace(".", "") | replace(" ", "-") }}
+{% endmacro %}
+
+<body>
+    <py-config hidden>
+        terminal = false
+        [[fetch]]
+        from = "{{ site_root }}scripts/"
+        files = ["attack_power.py"]
+    </py-config>
+
+    <script type="text/javascript">
+        armaments_raw = {{ armaments | tojson }}
+        reinforcements_raw = {{ reinforcements | tojson }}
+        correction_attack_raw = {{ correction_attack | tojson }}
+        correction_graph_raw = {{ correction_graph | tojson }}
+    </script>
+
+    <py-script src="{{site_root}}scripts/ar_calculator.py"></py-script>
+
+    <template id="armament-display-template">
+        <li id="armament-display-element" class="uk-padding">
+            <div class="uk-grid" uk-grid>
+                <div class="uk-width-auto">
+                    <img id="armament-display-icon" src="" width="100" height="100">
+                </div>
+                <div class="uk-width-expand">
+                    <div class="uk-grid uk-grid-collapse uk-padding-small uk-padding-remove-horizontal" uk-grid>
+                        <div class="uk-width-expand">
+                            <h3 id="armament-display-title">Armament Name</h3>
+                        </div>
+                        <div class="uk-width-auto">
+                            <a id="armament-display-remove" class="uk-icon-button uk-button-danger"><span uk-icon="trash"></span></a>
+                        </div>
+                    </div>
+                    <select id="armament-display-affinities" class="uk-select uk-form-width-small"></select>
+                    <select id="armament-display-levels" class="uk-select uk-form-width-xsmall"></select>
+                </div>
+            </div>
+            <div class="uk-grid-small uk-grid-divider uk-child-width-1-1 uk-child-width-1-2@m" uk-grid>
+                <div>
+                    <table class="uk-table uk-table-small">
+                        <thead>
+                            {% for field in attributes.keys() %}
+                                <th class="uk-text-center">{{ field }}</th>
+                            {% endfor %}
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% for field in attributes.values() %}
+                                    <td class="uk-text-center" id="armament-display-requirement-{{field | lower}}">-</td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <table class="uk-table uk-table-small">
+                        <thead>
+                            {% for field in attributes.keys() %}
+                                <th class="uk-text-center">{{ field }}</th>
+                            {% endfor %}
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {% for field in attributes.values() %}
+                                    <td class="uk-text-center" id="armament-display-scaling-{{field | lower}}">-</td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="uk-grid-small uk-grid-divider uk-child-width-1-2 uk-child-width-1-4@m" uk-grid>
+                <div>
+                    <table class="uk-table uk-table-small uk-table-divider">
+                        <caption class="uk-text-center">Attack Power</caption>
+                        <tbody>
+                            <tr class="uk-text-bold">
+                                <td>Total</td><td id="armament-display-attack-power-total">-</td>
+                            </tr>
+                            {% for field in attack_powers %}
+                                <tr>
+                                    <td>{{ field }}</td><td id="armament-display-attack-power-{{field | lower}}">-</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <table class="uk-table uk-table-small uk-table-divider">
+                        <caption class="uk-text-center">Status Effects</caption>
+                            {% for field in status_effects %}
+                                <tr>
+                                    <td>{{ field }}</td><td id="armament-display-status-effect-{{field | replace(' ', '_') | lower}}">-</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <table class="uk-table uk-table-small uk-table-divider">
+                        <caption class="uk-text-center">Guard</caption>
+                        <tbody>
+                            <tr class="uk-text-bold">
+                                <td>Boost</td><td id="armament-display-guard-boost">-</td>
+                            </tr>
+                            {% for field in attack_powers %}
+                                <tr>
+                                    <td>{{ field }}</td><td id="armament-display-guard-{{field | lower}}">-</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <table class="uk-table uk-table-small uk-table-divider">
+                        <caption class="uk-text-center">Resistances</caption>
+                        <tbody>
+                            {% for field in status_effects %}
+                                <tr>
+                                    <td>{{ field }}</td><td id="armament-display-resistance-{{field | replace(' ', '_') | lower}}">-</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </li>
+    </template>
+
+    <section class="uk-section-small uk-section-default">
+        <div class="uk-container uk-margin-large-bottom">
+
+            <article class="uk-comment uk-comment-primary uk-margin uk-text-center">
+                This tool is <b>heavily</b> WIP with plenty more features to come. Please leave your requests and reports <a href="https://github.com/EldenRingDatabase/erdb/issues">here</a> or find me on souls Discords (Phil25#0807).
+            </article>
+
+            <div class="uk-grid uk-grid-divider" uk-grid>
+
+                <div class="uk-width-1-1@s uk-width-auto@m">
+                    <div class="uk-text-center" uk-sticky="offset:20;media:960">
+
+                        <a id="open-armament-selection" class="uk-button uk-button-default" href="#modal-armament-selector" uk-toggle>Select Armaments...</a>
+
+                        <div class="uk-container uk-margin uk-width-small">
+                            <div class="uk-grid-small" uk-grid>
+                                {% for abbrv, full in attributes.items() %}
+                                    <div class="uk-width-1-2 uk-flex uk-flex-middle uk-flex-right">
+                                        <label>{{ abbrv }}</label>
+                                    </div>
+                                    <div class="uk-width-1-2 uk-flex uk-flex-middle uk-flex-left">
+                                        <input id="player-attributes-{{full | lower}}" class="uk-input" type="number" min="1", max="99" value="10">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="uk-width-expand">
+                    <ul id="armament-display-container" class="uk-list uk-list-striped">
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <div id="modal-armament-selector" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h6 class="uk-modal-title">Armament Selector</h6>
+            </div>
+            <div class="uk-modal-body" uk-overflow-auto>
+                <div id="armament-selection-grid" class="uk-dropdown-grid uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry:true">
+                    {% for category in armament_categories %}
+                        <div>
+                            <ul class="uk-nav">
+                                <li class="uk-nav-header"><b>{{ category }}</b></li>
+                                <li><a id="selection-category-{{to_id(category) | trim}}" data-armament-category="{{category}}" class="uk-button-default uk-text-italic" href="#">&nbsp;<span uk-icon="plus-circle"></span> Toggle All</a></li>
+                                {% for key, armament in armaments.items() %}
+                                    {% if armament.category == category %}
+                                        <li><a id="selection-armament-{{to_id(key) | trim}}" data-armament-key="{{key}}" data-armament-category="{{category}}" class="uk-button-default" href="#">&nbsp;<span class="uk-icon uk-icon-image" style="background-image:url(https://assets.erdb.workers.dev/icons/armaments/{{armament.icon}}/icon)"></span> {{ armament.name }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="uk-modal-footer uk-text-right">
+                <button id="save-armament-selection" class="uk-button uk-button-primary uk-modal-close" type="button">Save (<b>0</b>)</button>
+                <button id="close-armament-selection" class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+</body>

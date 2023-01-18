@@ -5,9 +5,10 @@ import requests
 from io import BytesIO, TextIOWrapper
 from pathlib import Path
 from zipfile import ZipFile
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, Template, FileSystemLoader
 from htmlmin import minify as minifyhtml
 
+import erdb.utils.attack_power as attack_power_module
 from erdb.loaders import PKG_DATA_PATH
 from erdb.utils.common import scaling_grade
 from erdb.table import Table
@@ -63,30 +64,22 @@ def _ensure_uikit_version(desired: str | None, uikit_dir: Path):
         print(f"> Current UIkit version ({current}) doesn't match desired ({desired}).", flush=True)
         _download_uikit(desired, uikit_dir)
 
-def _find_uikit_relative(start: Path, until: Path) -> str:
-    path = start
-    relative = ""
+def _read_json(file: Path):
+    with open(file, mode="r", encoding="utf-8") as f:
+        return json.load(f)
 
-    while (path := path.parent) != until.parent:
-        relative += "../"
+def _write_html(template: Template, root: Path, file: Path, minimize: bool, **data):
+    def relative_root():
+        depth = len(file.parent.relative_to(root).parts)
+        return "../" * depth
 
-        if "uikit" in (p.name for p in path.iterdir()):
-            return f"{relative}uikit"
+    def write(f: TextIOWrapper, data: str):
+        f.write(minifyhtml(data, remove_all_empty_space=True, remove_comments=True) if minimize else data)
 
-    return ""
+    with open(file, mode="w", encoding="utf-8") as f:
+        write(f, template.render(site_root=relative_root(), **data))
 
-def _write_html(f: TextIOWrapper, minimize: bool, data: str):
-    f.write(minifyhtml(data, remove_all_empty_space=True, remove_comments=True) if minimize else data)
-
-def generate(uikit_version: str | None, data_path: Path, minimize: bool, out: Path):
-    out.mkdir(parents=True, exist_ok=True)
-    _ensure_uikit_version(uikit_version, out / "uikit")
-
-    env = Environment(loader=FileSystemLoader(PKG_DATA_PATH / "wiki" / "templates"))
-    env.filters["scaling_grade"] = scaling_grade
-    env.trim_blocks = True
-    env.lstrip_blocks = True
-
+def _generate_items(env: Environment, data_path: Path, minimize: bool, out: Path):
     items_path = out / "items"
 
     for table, dependencies in _ITEMS.items():
@@ -94,8 +87,6 @@ def generate(uikit_version: str | None, data_path: Path, minimize: bool, out: Pa
 
         item_path = items_path / table
         item_path.mkdir(parents=True, exist_ok=True)
-
-        uikit_relative = _find_uikit_relative(item_path, out)
 
         with open(data_path / f"{table}.json", mode="r", encoding="utf-8") as f:
             main_data = json.load(f)
@@ -115,13 +106,44 @@ def generate(uikit_version: str | None, data_path: Path, minimize: bool, out: Pa
             data["item"] = item
 
             single = env.get_template(f"{table}-single.html.jinja")
-            with open(item_path / f"{key}.html", mode="w", encoding="utf-8") as f:
-                _write_html(f, minimize, single.render(uikit_relative=uikit_relative, **data))
+            _write_html(single, out, item_path / f"{key}.html", minimize, **data)
 
         print(f"Generating index page", flush=True)
 
         index = env.get_template(f"{table}-index.html.jinja")
-        with open(item_path / "index.html", mode="w", encoding="utf-8") as f:
-            _write_html(f, minimize, index.render(uikit_relative=uikit_relative, items=main_data))
+        _write_html(index, out, item_path / "index.html", minimize, items=main_data)
 
         print(flush=True)
+
+def _generate_tools(env: Environment, data_path: Path, out: Path):
+    tools_path = out / "tools"
+    tools_path.mkdir(parents=True, exist_ok=True)
+
+    print(">>> Generating AR calculator", flush=True)
+
+    data = {
+        "armaments": _read_json(data_path / "armaments.json"),
+        "correction_attack": _read_json(data_path / "correction-attack.json"),
+        "correction_graph": _read_json(data_path / "correction-graph.json"),
+        "reinforcements": _read_json(data_path / "reinforcements.json"),
+    }
+
+    shutil.copy(attack_power_module.__file__, out / "scripts")
+
+    ar_calculator = env.get_template("ar-calculator.html.jinja")
+    _write_html(ar_calculator, out, tools_path / "ar-calculator.html", minimize=False, **data)
+
+def generate(uikit_version: str | None, data_path: Path, minimize: bool, out: Path):
+    out.mkdir(parents=True, exist_ok=True)
+    _ensure_uikit_version(uikit_version, out / "uikit")
+
+    env = Environment(loader=FileSystemLoader(PKG_DATA_PATH / "wiki" / "templates"))
+    env.filters["scaling_grade"] = scaling_grade
+    env.trim_blocks = True
+    env.lstrip_blocks = True
+
+    print(f">>> Copying scripts", flush=True)
+    shutil.copytree(PKG_DATA_PATH / "wiki" / "scripts", out / "scripts", dirs_exist_ok=True)
+
+    _generate_items(env, data_path, minimize, out)
+    _generate_tools(env, data_path, out)
