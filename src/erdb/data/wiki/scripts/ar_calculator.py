@@ -213,9 +213,14 @@ class _Container:
 
         for attribute in ["strength", "dexterity", "intelligence", "faith", "arcane"]:
             scaling = affinity["scaling"].get(attribute, 0.) * reinforcement["scaling"][attribute]
+            requirement = armament["requirements"].get(attribute, 0)
+            is_met = getattr(attribs, attribute) >= requirement
+
             et.scaling[attribute].innerText = _scaling_grade(scaling)
             et.scaling[attribute].setAttribute("uk-tooltip", round(scaling, 2))
-            et.requirement[attribute].innerText = norm(armament["requirements"].get(attribute, 0))
+
+            getattr(et.requirement[attribute].classList, "remove" if is_met else "add")("uk-text-danger")
+            et.requirement[attribute].innerText = norm(requirement)
 
     def _on_attributes(self, attribs: Attributes):
         self._attribs = attribs
