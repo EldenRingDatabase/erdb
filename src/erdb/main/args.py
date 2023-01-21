@@ -374,8 +374,9 @@ class GenerateWiki(_Subcommand):
     summary = "Generate a static Wikipedia website."
     details = """\
     Fetch generated ERDB data and create static Wikipedia pages using predefined Jinja2 templates.
-    Powered using the UIkit3 CSS framework, which is automatically downloaded if not found at the destination.
-    Use `--ukit-version` to override which version will be downloaded instead of an internally defined one.
+    Powered using the UIkit3 CSS framework and pyscript library, which are automatically downloaded
+    if not found at the destination. Use `--ukit-version` and `--pyscript-version` to override which
+    version will be downloaded instead of an internally defined one.
     """
 
     aliases = ["wiki"]
@@ -386,13 +387,14 @@ class GenerateWiki(_Subcommand):
             "erdb generate-wiki --data-path ./1.08.1/ --out ../wiki-location/"
         ),
         (
-            "Generate wiki pages for 1.08.1 using explicitly-provided version of UIkit",
-            "erdb generate-wiki --data-path ./1.08.1/ --uikit-version 3.15.18"
+            "Generate wiki pages for 1.08.1 using explicitly-provided version of UIkit and pyscript",
+            "erdb generate-wiki --data-path ./1.08.1/ --uikit-version 3.15.18 --pyscript-version 2022.12.1"
         ),
     ]
 
     arguments = [
         _Argument.make("--uikit-version", type=str, default=None, help="UIkit version to override, defaults to internal, frozen-on value."),
+        _Argument.make("--pyscript-version", type=str, default=None, help="pyscript version to override, defaults to internal, frozen-on value."),
     ] + _Argument.parses_generated_data() + _Argument.minimize_output() + _Argument.outputs_file()
 
 def parse_args(argv: Sequence[str], handlers: dict[str, Callable]) -> dict[str, Any]:

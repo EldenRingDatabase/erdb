@@ -1,6 +1,7 @@
 import re
 import json
 import shutil
+from typing import Iterable, NamedTuple
 import requests
 from io import BytesIO, TextIOWrapper
 from pathlib import Path
@@ -14,55 +15,96 @@ from erdb.utils.common import scaling_grade
 from erdb.table import Table
 
 
-_UIKIT_VERSION_FREEZE = "3.15.18"
-_UIKIT_FILES = ("css/uikit.min.css", "js/uikit.min.js", "js/uikit-icons.min.js")
-
 _ITEMS = {
     Table.ARMAMENTS: ["reinforcements"]
 }
 
-def _current_uikit_version(uikit_dir: Path) -> str | None:
-    versions: set[str] = set()
+class ThirdpartyLibrary(NamedTuple):
+    name: str
+    destination: Path
+    freeze_version: str
+    files: Iterable[str]
 
-    for loc in _UIKIT_FILES:
-        if not (uikit_dir / loc).exists():
-            return None
+    def _current_version(self) -> str | None:
+        assert False, "not implemented"
 
-        with open(uikit_dir / loc, mode="r") as f:
-            content = f.read(64) # version string is contained at the start
+    def _download(self, version: str):
+        assert False, "not implemented"
 
-            if version_lookup := re.search(r"UIkit (\d+\.\d+\.\d+)", content):
-                versions.add(version_lookup.group(1))
+    def ensure_version(self, desired: str | None):
+        current = self._current_version()
 
-            else:
-                return None # a file's wrong
+        if current is None: # local not found
+            self._download(self.freeze_version if desired is None else desired)
 
-    # every version must be the same
-    return next(iter(versions)) if len(versions) == 1 else None
+        elif desired is not None and desired != current:
+            print(f"> Current {self.name} version ({current}) doesn't match desired ({desired}).", flush=True)
+            self._download(desired)
 
-def _download_uikit(version: str, dest: Path):
-    print(f"> Downloading UIkit {version}...", flush=True)
+class UIkit(ThirdpartyLibrary):
+    def _current_version(self) -> str | None:
+        versions: set[str] = set()
 
-    shutil.rmtree(dest, ignore_errors=True)
-    dest.mkdir(parents=True, exist_ok=False)
+        for loc in self.files:
+            if not (self.destination / loc).exists():
+                return None
 
-    resp = requests.get(f"https://github.com/uikit/uikit/releases/download/v{version}/uikit-{version}.zip")
-    z = ZipFile(BytesIO(resp.content))
+            with open(self.destination / loc, mode="r") as f:
+                content = f.read(64) # version string is contained at the start
 
-    for loc in _UIKIT_FILES:
-        z.extract(loc, dest)
+                if version_lookup := re.search(r"UIkit (\d+\.\d+\.\d+)", content):
+                    versions.add(version_lookup.group(1))
 
-    print(f"> UIkit {version} installed at {dest}.", flush=True)
+                else:
+                    return None # a file's wrong
 
-def _ensure_uikit_version(desired: str | None, uikit_dir: Path):
-    current = _current_uikit_version(uikit_dir) 
+        # every version must be the same
+        return next(iter(versions)) if len(versions) == 1 else None
 
-    if current is None: # local not found
-        _download_uikit(_UIKIT_VERSION_FREEZE if desired is None else desired, uikit_dir)
+    def _download(self, version: str):
+        print(f"> Downloading {self.name} {version}...", flush=True)
 
-    elif desired is not None and desired != current:
-        print(f"> Current UIkit version ({current}) doesn't match desired ({desired}).", flush=True)
-        _download_uikit(desired, uikit_dir)
+        shutil.rmtree(self.destination, ignore_errors=True)
+        self.destination.mkdir(parents=True, exist_ok=False)
+
+        resp = requests.get(f"https://github.com/uikit/uikit/releases/download/v{version}/uikit-{version}.zip")
+        z = ZipFile(BytesIO(resp.content))
+
+        for loc in self.files:
+            z.extract(loc, self.destination)
+
+        print(f"> {self.name} {version} installed at {self.destination}.", flush=True)
+
+class PyScript(ThirdpartyLibrary):
+    def _current_version(self) -> str | None:
+        for loc in [*self.files, "version.txt"]:
+            if not (self.destination / loc).exists():
+                return None
+
+        with open(self.destination / "version.txt", mode="r") as f:
+            version = f.read()
+
+        return version if len(version) > 0 else None
+
+    def _download(self, version: str):
+        print(f"> Downloading {self.name} {version}...", flush=True)
+
+        shutil.rmtree(self.destination, ignore_errors=True)
+        self.destination.mkdir(parents=True, exist_ok=False)
+
+        for loc in self.files:
+            with open(self.destination / loc, mode="wb") as f:
+                resp = requests.get(f"https://pyscript.net/releases/{version}/{loc}")
+
+                if resp.status_code != 200:
+                    return
+
+                f.write(resp.content)
+
+        with open(self.destination / "version.txt", mode="w") as f:
+            f.write(version)
+
+        print(f"> {self.name} {version} installed at {self.destination}.", flush=True)
 
 def _read_json(file: Path):
     with open(file, mode="r", encoding="utf-8") as f:
@@ -133,9 +175,21 @@ def _generate_tools(env: Environment, data_path: Path, out: Path):
     ar_calculator = env.get_template("ar-calculator.html.jinja")
     _write_html(ar_calculator, out, tools_path / "ar-calculator.html", minimize=False, **data)
 
-def generate(uikit_version: str | None, data_path: Path, minimize: bool, out: Path):
-    out.mkdir(parents=True, exist_ok=True)
-    _ensure_uikit_version(uikit_version, out / "uikit")
+def generate(uikit_version: str | None, pyscript_version: str | None, data_path: Path, minimize: bool, out: Path):
+    thirdparty = out / "thirdparty"
+    thirdparty.mkdir(parents=True, exist_ok=True)
+
+    UIkit(
+        "UIkit", thirdparty / "uikit",
+        freeze_version="3.15.18",
+        files=("css/uikit.min.css", "js/uikit.min.js", "js/uikit-icons.min.js")
+    ).ensure_version(uikit_version)
+
+    PyScript(
+        "pyscript", thirdparty / "pyscript",
+        freeze_version="2022.12.1",
+        files=("pyscript.css", "pyscript.js")
+    ).ensure_version(pyscript_version)
 
     env = Environment(loader=FileSystemLoader(PKG_DATA_PATH / "wiki" / "templates"))
     env.filters["scaling_grade"] = scaling_grade

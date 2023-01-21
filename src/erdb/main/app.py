@@ -171,9 +171,9 @@ class App:
         return 0
 
     @staticmethod
-    def generate_wiki(uikit_version: str | None, data_path: Path, minimize: bool, out: Path | None) -> int:
+    def generate_wiki(uikit_version: str | None, pyscript_version: str | None, data_path: Path, minimize: bool, out: Path | None) -> int:
         data_path = data_path.resolve()
         out = Path.cwd() / "erdb.wiki" if out is None else out.resolve()
 
-        generate_app_wiki(uikit_version, data_path, minimize, out)
+        generate_app_wiki(uikit_version, pyscript_version, data_path, minimize, out)
         return 0
