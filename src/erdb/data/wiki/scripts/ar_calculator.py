@@ -6,8 +6,9 @@ from js import document, armaments_raw, reinforcements_raw, correction_attack_ra
 from pyodide.ffi.wrappers import add_event_listener # type: ignore
 from attack_power import CalculatorData, ArmamentCalculator, Attributes # type: ignore
 
-# element is inherit to py-script runtime, assume it's been defined
+# define things inherent to py-script runtime
 Element = Element # type: ignore
+pyscript = pyscript # type: ignore
 
 # instantiating lots of data in JavaScript then porting seems more stable
 armaments = armaments_raw.to_py()
@@ -20,16 +21,27 @@ calculator_data = CalculatorData(armaments, reinforcements, correction_attack, c
 active_class = "uk-button-primary"
 categories = {a["category"] for a in armaments.values()}
 
+def debounce(interval: float):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            if hasattr(wrapper, "_handle"):
+                wrapper._handle.cancel()
+
+            to_call = partial(func, *args, **kwargs)
+            wrapper._handle = pyscript.loop.call_later(interval, to_call)
+        return wrapper
+    return decorator
+
 def _to_key(value: str) -> str:
     return value.lower().replace("'", "").replace(".", "").replace(" ", "-")
 
-def _add_click_listener(id: str, callback):
+def _add_listener(id: str, event: str, callback):
     elem = document.getElementById(id)
-    add_event_listener(elem, "click", partial(callback, element=elem))
+    add_event_listener(elem, event, partial(callback, element=elem))
+    return elem
 
-def _add_click_listeners(format: str, values: Iterable, callback):
-    for val in values:
-        _add_click_listener(format.format(val), callback)
+def _add_click_listeners(format: str, values: Iterable, callback) -> list:
+    return [_add_listener(format.format(val), "click", callback) for val in values]
 
 def _scaling_grade(value: float, null_value: str = "-") -> str:
     if value >= 1.75: return "S"
@@ -255,22 +267,25 @@ class _Container:
 class _ArmamentSelector:
     class _Armament(NamedTuple):
         element: Element
+        key: str
+        category: str
+        tags: str
 
         @staticmethod
         def has_key(element) -> bool:
             return element.getAttribute("data-armament-key") is not None
 
+        @classmethod
+        def create(cls, element: Element) -> "_ArmamentSelector._Armament":
+            key = element.getAttribute("data-armament-key")
+            category = element.getAttribute("data-armament-category")
+            return cls(element, key, category,
+                tags=f"{key.lower()} {category.lower()}"
+            )
+
         @property
         def is_selected(self) -> bool:
             return active_class in self.element.classList
-
-        @property
-        def key(self) -> str:
-            return self.element.getAttribute("data-armament-key")
-
-        @property
-        def category(self) -> str:
-            return self.element.getAttribute("data-armament-category")
 
         def select(self):
             self.element.classList.add(active_class)
@@ -281,7 +296,10 @@ class _ArmamentSelector:
     _factory: _EntryFactory
     _container: _Container
 
+    _filter_field: Any
     _choices: list[_Armament]
+    _categories: dict[str, Any]
+    _category_buttons: list
 
     _selection: set[str] = set()
     _temporary: set[str] = set()
@@ -290,20 +308,42 @@ class _ArmamentSelector:
     _save_button = document.getElementById("save-armament-selection")
 
     def __init__(self, factory: _EntryFactory, container: _Container) -> None:
-        _add_click_listeners("selection-category-{}", (_to_key(cat) for cat in categories), self.on_category)
+        self._category_buttons = _add_click_listeners("selection-category-{}", (_to_key(cat) for cat in categories), self.on_category)
         _add_click_listeners("selection-armament-{}", (_to_key(arm) for arm in armaments), self.on_armament)
-        _add_click_listener("open-armament-selection", self.on_open)
-        _add_click_listener("save-armament-selection", self.on_save)
-        _add_click_listener("close-armament-selection", self.on_close)
+        _add_listener("toggle-armament-selection", "click", self.on_all_armaments)
+        _add_listener("open-armament-selection", "click", self.on_open)
+        _add_listener("save-armament-selection", "click", self.on_save)
+        _add_listener("close-armament-selection", "click", self.on_close)
+        self._filter_field = _add_listener("filter-armament-selection", "input", self._on_filter)
 
         self._factory = factory
         self._container = container
 
         self._choices = [
-            self._Armament(a) for a
+            self._Armament.create(a) for a
             in document.getElementById("armament-selection-grid").getElementsByTagName("a")
             if self._Armament.has_key(a)
         ]
+
+        self._categories = {cat: document.getElementById(f"armament-selection-category-{_to_key(cat)}") for cat in categories}
+
+    @debounce(0.25)
+    def _on_filter(self, *args, element):
+        visible_categories = set()
+        is_empty = len(element.value) == 0
+
+        for choice in self._choices:
+            if element.value.lower() in choice.tags:
+                choice.element.hidden = False
+                visible_categories.add(choice.category)
+            else:
+                choice.element.hidden = True
+
+        for category, elem in self._categories.items():
+            elem.hidden = category not in visible_categories
+
+        for button in self._category_buttons:
+            button.hidden = not is_empty
 
     def _on_remove(self, *args, et: _ArmamentEntry):
         self._container.remove(et.key)
@@ -317,6 +357,18 @@ class _ArmamentSelector:
 
     def _update_save_button(self):
         self._save_button.innerHTML = f"Save (<b>{len(self._temporary)}</b>)"
+
+    def toggle(self):
+        self._open_button.click()
+
+    @debounce(0.3) # larger debounce than _on_filter to postpone the save after filter is completed
+    def select_and_save(self):
+        if len(self._filter_field.value) == 0:
+            return
+
+        [self.on_armament(element=a.element) for a in self._choices if not a.is_selected and not a.element.hidden]
+        self.on_save()
+        self.toggle()
 
     def on_open(self, *args, element=None):
         self._temporary = copy(self._selection)
@@ -343,6 +395,8 @@ class _ArmamentSelector:
 
     def on_close(self, *args, element=None):
         self._temporary.clear()
+        self._filter_field.value = ""
+        self._on_filter(element=self._filter_field)
         self._update_open_button()
 
     def on_category(self, *args, element):
@@ -358,7 +412,7 @@ class _ArmamentSelector:
             [self.on_armament(element=a.element) for a in choices if not a.is_selected]
 
     def on_armament(self, *args, element):
-        arm = self._Armament(element)
+        arm = self._Armament.create(element)
 
         if arm.is_selected:
             self._temporary.remove(arm.key)
@@ -370,9 +424,26 @@ class _ArmamentSelector:
 
         self._update_save_button()
 
+    def on_all_armaments(self, *args, element=None):
+        if all(a.is_selected for a in self._choices if not a.element.hidden):
+            [self.on_armament(element=a.element) for a in self._choices if a.is_selected and not a.element.hidden]
+
+        else:
+            [self.on_armament(element=a.element) for a in self._choices if not a.is_selected and not a.element.hidden]
+
 factory = _EntryFactory()
 attribute_menu = _AttributeMenu()
 container = _Container(attribute_menu)
 
 selector = _ArmamentSelector(factory, container)
 selector.on_save()
+
+def on_key_down(keyboard_event):
+    if keyboard_event.code == "Slash":
+        keyboard_event.preventDefault()
+        selector.toggle()
+    elif keyboard_event.code == "Enter":
+        keyboard_event.preventDefault()
+        selector.select_and_save()
+
+add_event_listener(document, "keydown", on_key_down)

@@ -161,9 +161,10 @@
     <section class="uk-section-small uk-section-default">
         <div class="uk-container uk-margin-large-bottom">
 
-            <article class="uk-comment uk-comment-primary uk-margin uk-text-center">
-                This tool is <b>heavily</b> WIP with plenty more features to come. Please leave your requests and reports <a href="https://github.com/EldenRingDatabase/erdb/issues" target="_blank">here</a> or find me on souls Discords (Phil25#0807).
-            </article>
+            <div uk-alert>
+                <button class="uk-alert-close" type="button" aria-label="Close" uk-close></button>
+                <p>This tool is <b>heavily</b> WIP with plenty more features to come. Please leave your requests and reports <a href="https://github.com/EldenRingDatabase/erdb/issues" target="_blank">here</a> or find me on souls Discords (Phil25#0807).</p>
+            </div>
 
             <div class="uk-grid uk-grid-divider" uk-grid>
 
@@ -205,9 +206,18 @@
                 <h6 class="uk-modal-title">Armament Selector</h6>
             </div>
             <div class="uk-modal-body" uk-overflow-auto>
+                <div class="uk-grid-small" uk-grid>
+                    <div class="uk-inline uk-width-expand">
+                        <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon:search"></span>
+                        <input id="filter-armament-selection" class="uk-input uk-width-1-1" type="text" placeholder="Filter..." autofocus>
+                    </div>
+                    <div class="uk-inline uk-width-auto">
+                        <button id="toggle-armament-selection" class="uk-button uk-button-default uk-text-italic" href="#">&nbsp;<span uk-icon="plus-circle"></span> Toggle All</button>
+                    </div>
+                </div>
                 <div id="armament-selection-grid" class="uk-dropdown-grid uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry:true">
                     {% for category in armament_categories %}
-                        <div>
+                        <div id="armament-selection-category-{{to_id(category) | trim}}">
                             <ul class="uk-nav">
                                 <li class="uk-nav-header"><b>{{ category }}</b></li>
                                 <li><a id="selection-category-{{to_id(category) | trim}}" data-armament-category="{{category}}" class="uk-button-default uk-text-italic" href="#">&nbsp;<span uk-icon="plus-circle"></span> Toggle All</a></li>
