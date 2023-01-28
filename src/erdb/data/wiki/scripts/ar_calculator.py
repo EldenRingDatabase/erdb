@@ -29,6 +29,9 @@ def debounce(delay: float):
         return wrapper
     return decorator
 
+def wrap_list(start_tag: str, values: Iterable[str], end_tag: str) -> str:
+    return start_tag + f"{end_tag}{start_tag}".join(values) + end_tag
+
 class ElementWrapper:
     class _Attributes(NamedTuple):
         parent: "ElementWrapper"
@@ -218,20 +221,16 @@ class ArmamentEntry(NamedTuple):
     def _normalize(value: int) -> str:
         return "-" if value == 0 else str(value)
 
-    @staticmethod
-    def _wrap_list(start_tag: str, values: Iterable[str], end_tag: str) -> str:
-        return start_tag + f"{end_tag}{start_tag}".join(values) + end_tag
-
     def set_title(self, name: str, icon_id: int):
         self.priv_title.inner_text = name
         self.priv_icon.src = f"https://assets.erdb.workers.dev/icons/armaments/{icon_id}/menu"
 
     def set_affinities(self, affinities: list[str]):
-        self.priv_affinities.inner_html = self._wrap_list("<option>", affinities, "</option>")
+        self.priv_affinities.inner_html = wrap_list("<option>", affinities, "</option>")
         self.priv_affinities.is_enabled = len(affinities) > 1
 
     def set_levels(self, levels: list[str]):
-        self.priv_levels.inner_html = self._wrap_list("<option>", levels, "</option>")
+        self.priv_levels.inner_html = wrap_list("<option>", levels, "</option>")
 
     def set_attack_power(self, attack_type: str, value: int):
         self.priv_attack_power[attack_type].inner_text = self._normalize(value)
@@ -272,6 +271,14 @@ class ArmamentEntry(NamedTuple):
 
     def add_levels_listener(self, callback):
         self.priv_levels.add_listener("change", callback, armentry=self)
+
+    @property
+    def total_attack_power(self) -> int:
+        return int(self.priv_attack_power["total"].inner_text)
+
+    @property
+    def guard_boost(self) -> int:
+        return int(self.priv_guard["boost"].inner_text)
 
     @classmethod
     def create(cls, key: str, element: ElementWrapper):
@@ -360,15 +367,28 @@ class ArmamentEntryFactory(NamedTuple):
 
 class ArmamentContainer:
     _container = ElementWrapper("armament-display-container")
-    _attribs: Attributes = None
+    _sort_selector = ElementWrapper("armament-sorting-method")
+    _attribs: Attributes | None = None
     _calcs: dict[str, ArmamentCalculator] = {}
     _elems: dict[str, ArmamentEntry] = {}
+
+    _sort_methods: dict[str, dict[str, Any]] = {
+        "▼ Total AR": {"key": lambda x: x.total_attack_power, "reverse": True},
+        "▲ Total AR": {"key": lambda x: x.total_attack_power, "reverse": False},
+        "▼ Guard Boost": {"key": lambda x: x.guard_boost, "reverse": True},
+        "▲ Guard Boost": {"key": lambda x: x.guard_boost, "reverse": False},
+        "Name (a → z)": {"key": lambda x: x.key, "reverse": False},
+        "Name (z → a)": {"key": lambda x: x.key, "reverse": True},
+    }
 
     def __init__(self, attribute_menu: AttributeMenu) -> None:
         self._attribs = attribute_menu.register_callback(self._on_attributes)
 
-    @staticmethod
-    def _update_values(et: ArmamentEntry, calc: ArmamentCalculator, attribs: Attributes):
+        self._sort_selector.inner_html = wrap_list("<option>", self._sort_methods.keys(), "</option>")
+        self._update_sorting(self._sort_selector)
+        self._sort_selector.add_listener("change", self._update_sorting)
+
+    def _update_values(self, et: ArmamentEntry, calc: ArmamentCalculator, attribs: Attributes):
         armament = armaments[et.key]
         affinity = armament["affinity"][calc.affinity]
         reinforcement = reinforcements[str(affinity["reinforcement_id"])][calc.level]
@@ -390,6 +410,8 @@ class ArmamentContainer:
             et.set_scaling(attribute, affinity["scaling"].get(attribute, 0.) * reinforcement["scaling"][attribute])
             et.set_requirement(attribute, armament["requirements"].get(attribute, 0), getattr(attribs, attribute))
 
+        self._update_sorting(self._sort_selector)
+
     def _on_attributes(self, attribs: Attributes):
         self._attribs = attribs
 
@@ -405,6 +427,13 @@ class ArmamentContainer:
         self._calcs[armentry.key].set_level(level, calculator_data)
         self._update_values(armentry, self._calcs[armentry.key], self._attribs)
 
+    @debounce(delay=0.2)
+    def _update_sorting(self, element: ElementWrapper):
+        # Two nodes cannot exist in the same list at once, readding them
+        # in a specific order removes the original and effectively sorts
+        for e in sorted(self._elems.values(), **self._sort_methods[element.value]):
+            self._container.child_list.add(e.wrapped)
+
     def add(self, armentry: ArmamentEntry):
         self._calcs[armentry.key] = ArmamentCalculator(calculator_data, armentry.key, "Standard", 0)
         self._elems[armentry.key] = armentry
@@ -414,6 +443,9 @@ class ArmamentContainer:
 
         self._update_values(armentry, self._calcs[armentry.key], self._attribs)
         self._container.child_list.add(armentry.wrapped)
+
+        # debounce coming in clutch
+        self._update_sorting(self._sort_selector)
 
     def remove(self, key: str):
         self._container.child_list.remove(self._elems[key].wrapped)

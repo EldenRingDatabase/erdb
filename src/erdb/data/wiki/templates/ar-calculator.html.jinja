@@ -171,8 +171,6 @@
                 <div class="uk-width-1-1@s uk-width-auto@m">
                     <div class="uk-text-center" uk-sticky="offset:20;media:960">
 
-                        <a id="open-armament-selection" class="uk-button uk-button-default" href="#modal-armament-selector" uk-toggle>Select Armaments...</a>
-
                         <div class="uk-container uk-margin uk-width-small">
                             <div class="uk-grid-small" uk-grid>
                                 {% for abbrv, full in attributes.items() %}
@@ -190,6 +188,23 @@
                 </div>
 
                 <div class="uk-width-expand">
+                    <div class="uk-background-muted">
+                        <div class="uk-grid-small uk-child-width-auto uk-padding-small" uk-grid>
+                            <div>
+                                <a id="open-armament-selection" class="uk-button uk-button-default" href="#modal-armament-selector" uk-toggle>Select Armaments...</a>
+                            </div>
+                            <div>
+                                <select id="armament-sorting-method" class="uk-select" uk-tooltip="Sorting method">
+                                </select>
+                            </div>
+                            <div class="uk-width-expand">
+                            </div>
+                            <div hidden>
+                                <a class="uk-button uk-button-default"><span uk-icon="info"></span></a>
+                            </div>
+                        </div>
+                    </div>
+
                     <ul id="armament-display-container" class="uk-list uk-list-striped">
                     </ul>
                 </div>
