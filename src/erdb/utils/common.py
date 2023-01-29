@@ -96,3 +96,18 @@ def scaling_grade(value: float, null_value: str = "-") -> str:
     if value >= 0.25: return "D"
     if value > 0.0: return "E"
     return null_value
+
+def to_somber(level: int) -> int:
+    return {
+        0: 0, 1: 0,
+        2: 1, 3: 1, 4: 1,
+        5: 2, 6: 2,
+        7: 3, 8: 3, 9: 3,
+        10: 4, 11: 4,
+        12: 5, 13: 5, 14: 5,
+        15: 6, 16: 6,
+        17: 7, 18: 7, 19: 7,
+        20: 8, 21: 8,
+        22: 9, 23: 9, 24: 9,
+        25: 10,
+    }[level]

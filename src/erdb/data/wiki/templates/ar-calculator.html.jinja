@@ -15,6 +15,7 @@
 {% set attack_powers = ["Physical", "Magic", "Fire", "Lightning", "Holy"] %}
 {% set status_effects = ["Bleed", "Frostbite", "Poison", "Scarlet Rot", "Sleep", "Madness"] %}
 {% set attributes = {"STR": "Strength", "DEX": "Dexterity", "INT": "Intelligence", "FTH": "Faith", "ARC": "Arcane"} %}
+{% set affinities = ["Standard", "Heavy", "Keen", "Quality", "Fire", "Flame Art", "Lightning", "Sacred", "Magic", "Cold", "Poison", "Blood", "Occult"] %}
 
 {% set armament_categories = [
     "Dagger", "Straight Sword", "Greatsword", "Colossal Sword", "Curved Sword",
@@ -178,9 +179,33 @@
                                         <label>{{ abbrv }}</label>
                                     </div>
                                     <div class="uk-width-1-2 uk-flex uk-flex-middle uk-flex-left">
-                                        <input id="player-attributes-{{full | lower}}" class="uk-input" type="number" min="1", max="99" value="10">
+                                        <input id="player-attributes-{{full | lower}}" class="uk-input" type="number" min="1" max="99" value="10">
                                     </div>
                                 {% endfor %}
+                                <div class="uk-width-expand">
+                                    <label>Two-Handed</label>
+                                </div>
+                                <div class="uk-width-auto">
+                                    <input id="player-two-handed-checkbox" class="uk-checkbox" type="checkbox">
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <select id="armament-level-select" class="uk-select">
+                                        {% for i in range(0, 26) %}
+                                            <option value="{{i}}/{{i | to_somber}}">+{{ i }} / +{{ i | to_somber }}</option>
+                                        {% endfor %}
+                                        <option value="Mixed" hidden>Mixed</option>
+                                    </select>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <select id="armament-affinity-select" class="uk-select">
+                                        {% for affinity in affinities %}
+                                            <option>{{ affinity }}</option>
+                                        {% endfor %}
+                                        {% for affinity in affinities %}
+                                            <option hidden>{{ affinity }} (*)</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </div>
                         </div>
 

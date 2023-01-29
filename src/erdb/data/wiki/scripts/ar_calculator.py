@@ -68,6 +68,9 @@ class ElementWrapper:
         def remove(self, element: "ElementWrapper"):
             self.parent._element.removeChild(element._element)
 
+        def __len__(self) -> int:
+            return self.parent._element.childElementCount
+
     _element: JsProxy
     _attributes: _Attributes
     _class_list: _ClassList
@@ -98,7 +101,7 @@ class ElementWrapper:
         return self._child_list
 
     @property
-    def value(self) -> Any:
+    def value(self) -> str:
         return self._element.value
 
     @value.setter
@@ -145,6 +148,10 @@ class ElementWrapper:
     def is_visible(self, value: bool):
         self._element.hidden = not value
 
+    @property
+    def is_checked(self) -> bool:
+        return self._element.checked
+
     def clone(self) -> "ElementWrapper":
         return ElementWrapper(self._element.cloneNode(True, deep=True))
 
@@ -176,6 +183,7 @@ class AttributeMenu:
         ElementWrapper("player-attributes-faith"),
         ElementWrapper("player-attributes-arcane"),
     ]
+    _str_multiplier: float = 1.
 
     def register_callback(self, callback) -> Attributes:
         assert self._callback is None
@@ -184,10 +192,16 @@ class AttributeMenu:
         for e in self._attribs:
             e.add_listener("input", self._on_change)
 
+        two_handed = ElementWrapper("player-two-handed-checkbox")
+        two_handed.add_listener("change", self._on_two_handed)
+        self._str_multiplier = 1.5 if two_handed.is_checked else 1.
+
         return self._create_attribs()
 
     def _create_attribs(self):
-        return Attributes(*(int(elem.value) for elem in self._attribs))
+        values = [*(int(elem.value) for elem in self._attribs)]
+        values[0] = floor(values[0] * self._str_multiplier)
+        return Attributes(*values)
 
     def _on_change(self, element: ElementWrapper):
         try:
@@ -197,6 +211,10 @@ class AttributeMenu:
             return
 
         element.value = value
+        self._callback(self._create_attribs()) # type: ignore (optimization to not assert)
+
+    def _on_two_handed(self, element: ElementWrapper):
+        self._str_multiplier = 1.5 if element.is_checked else 1.
         self._callback(self._create_attribs()) # type: ignore (optimization to not assert)
 
 class ArmamentEntry(NamedTuple):
@@ -279,6 +297,30 @@ class ArmamentEntry(NamedTuple):
     @property
     def guard_boost(self) -> int:
         return int(self.priv_guard["boost"].inner_text)
+
+    @property
+    def level(self) -> int:
+        return int(self.priv_levels.value[1:]) # drop initial "+"
+
+    @level.setter
+    def level(self, value: int):
+        self.priv_levels.value = f"+{value}"
+
+    @property
+    def affinity_count(self) -> int:
+        return len(self.priv_affinities.child_list)
+
+    @property
+    def affinity(self) -> str:
+        selection = self.priv_affinities.value
+        return {
+            "Somber": "Standard" # treat as "Standard" externally
+        }.get(selection, selection)
+
+    @affinity.setter
+    def affinity(self, value: str):
+        if len(self.priv_affinities.child_list) > 1:
+            self.priv_affinities.value = value
 
     @classmethod
     def create(cls, key: str, element: ElementWrapper):
@@ -366,11 +408,35 @@ class ArmamentEntryFactory(NamedTuple):
         return et
 
 class ArmamentContainer:
+    class _SelectedLevels:
+        _unupgradable: int = 0
+        _standard: int = 0
+        _somber: int = 0
+
+        def as_value(self) -> str:
+            return f"{self._standard}/{self._somber}"
+
+        def set_levels(self, value: str):
+            self._standard, self._somber = map(int, value.split("/"))
+
+        def __getitem__(self, armentry: ArmamentEntry) -> int:
+            armament = armaments[armentry.key]
+            return {
+                "None": self._unupgradable,
+                "Smithing Stone": self._standard,
+                "Somber Smithing Stone": self._somber,
+            }[armament["upgrade_material"]]
+
     _container = ElementWrapper("armament-display-container")
     _sort_selector = ElementWrapper("armament-sorting-method")
+    _level_selector = ElementWrapper("armament-level-select")
+    _affinity_selector = ElementWrapper("armament-affinity-select")
     _attribs: Attributes | None = None
+    _levels = _SelectedLevels()
+    _affinity = "Standard"
     _calcs: dict[str, ArmamentCalculator] = {}
     _elems: dict[str, ArmamentEntry] = {}
+    _alteration = "(*)"
 
     _sort_methods: dict[str, dict[str, Any]] = {
         "▼ Total AR": {"key": lambda x: x.total_attack_power, "reverse": True},
@@ -387,6 +453,12 @@ class ArmamentContainer:
         self._sort_selector.inner_html = wrap_list("<option>", self._sort_methods.keys(), "</option>")
         self._update_sorting(self._sort_selector)
         self._sort_selector.add_listener("change", self._update_sorting)
+
+        self._update_levels(self._level_selector)
+        self._level_selector.add_listener("change", self._update_levels)
+
+        self._update_affinities(self._affinity_selector)
+        self._affinity_selector.add_listener("change", self._update_affinities)
 
     def _update_values(self, et: ArmamentEntry, calc: ArmamentCalculator, attribs: Attributes):
         armament = armaments[et.key]
@@ -422,19 +494,78 @@ class ArmamentContainer:
         self._calcs[armentry.key].set_affinity(element.value, calculator_data)
         self._update_values(armentry, self._calcs[armentry.key], self._attribs)
 
+        if self._affinity != armentry.affinity:
+            self._affinity_selector.value = f"{self._affinity} {self._alteration}"
+
+        self._update_affinity_selector()
+
     def _on_level(self, element: ElementWrapper, armentry: ArmamentEntry):
-        level = int(element.value[1:]) # drop initial "+"
-        self._calcs[armentry.key].set_level(level, calculator_data)
+        self._calcs[armentry.key].set_level(armentry.level, calculator_data)
         self._update_values(armentry, self._calcs[armentry.key], self._attribs)
 
-    @debounce(delay=0.2)
+        if self._levels[armentry] != armentry.level:
+            self._level_selector.value = "Mixed"
+
+        elif self._level_selector.value == "Mixed":
+            if all(self._levels[e] == e.level for e in self._elems.values()):
+                self._level_selector.value = self._levels.as_value()
+
+    @debounce(delay=0.1)
     def _update_sorting(self, element: ElementWrapper):
         # Two nodes cannot exist in the same list at once, readding them
         # in a specific order removes the original and effectively sorts
         for e in sorted(self._elems.values(), **self._sort_methods[element.value]):
             self._container.child_list.add(e.wrapped)
 
+    def _update_levels(self, element: ElementWrapper):
+        if element.value == "Mixed":
+            return
+
+        self._levels.set_levels(element.value)
+
+        for e in self._elems.values():
+            if (desired_level := self._levels[e]) != e.level:
+                e.level = desired_level
+                self._calcs[e.key].set_level(e.level, calculator_data)
+                self._update_values(e, self._calcs[e.key], self._attribs)
+
+    def _update_affinities(self, element: ElementWrapper):
+        if element.value.endswith(self._alteration):
+            return
+
+        self._affinity = element.value
+
+        for e in self._elems.values():
+            if self._affinity != e.affinity:
+                e.affinity = self._affinity
+                self._calcs[e.key].set_affinity(e.affinity, calculator_data)
+                self._update_values(e, self._calcs[e.key], self._attribs)
+
+    def _update_affinity_selector(self):
+        def find_first_variable_affinity():
+            for e in self._elems.values():
+                if e.affinity_count > 1:
+                    return e.affinity
+
+            return "Standard"
+
+        if not self._affinity_selector.value.endswith(self._alteration):
+            return
+
+        if len(self._elems) == 0:
+            self._affinity_selector.value = self._affinity
+            return
+
+        first = find_first_variable_affinity()
+
+        if all(first == e.affinity or e.affinity_count == 1 for e in self._elems.values()):
+            self._affinity = first
+            self._affinity_selector.value = first
+
     def add(self, armentry: ArmamentEntry):
+        armentry.level = self._levels[armentry]
+        armentry.affinity = self._affinity
+
         self._calcs[armentry.key] = ArmamentCalculator(calculator_data, armentry.key, "Standard", 0)
         self._elems[armentry.key] = armentry
 
@@ -451,6 +582,8 @@ class ArmamentContainer:
         self._container.child_list.remove(self._elems[key].wrapped)
         del self._calcs[key]
         del self._elems[key]
+
+        self._update_affinity_selector()
 
 class ArmamentSelector:
     class _Armament(NamedTuple):

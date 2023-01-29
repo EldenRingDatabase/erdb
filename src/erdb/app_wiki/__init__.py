@@ -11,7 +11,7 @@ from htmlmin import minify as minifyhtml
 
 import erdb.utils.attack_power as attack_power_module
 from erdb.loaders import PKG_DATA_PATH
-from erdb.utils.common import scaling_grade
+from erdb.utils.common import scaling_grade, to_somber
 from erdb.table import Table
 
 
@@ -193,6 +193,7 @@ def generate(uikit_version: str | None, pyscript_version: str | None, data_path:
 
     env = Environment(loader=FileSystemLoader(PKG_DATA_PATH / "wiki" / "templates"))
     env.filters["scaling_grade"] = scaling_grade
+    env.filters["to_somber"] = to_somber
     env.trim_blocks = True
     env.lstrip_blocks = True
 
