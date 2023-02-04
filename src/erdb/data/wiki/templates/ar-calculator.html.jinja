@@ -224,8 +224,8 @@
                             </div>
                             <div class="uk-width-expand">
                             </div>
-                            <div hidden>
-                                <a class="uk-button uk-button-default"><span uk-icon="info"></span></a>
+                            <div>
+                                <a id="open-help-menu" class="uk-button uk-button-default" uk-toggle="target:#offcanvas-help-and-tips"><span uk-icon="info"></span></a>
                             </div>
                         </div>
                     </div>
@@ -275,6 +275,39 @@
                 <button id="save-armament-selection" class="uk-button uk-button-primary uk-modal-close" type="button">Save (<b>0</b>)</button>
                 <button id="close-armament-selection" class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
             </div>
+        </div>
+    </div>
+
+    <div id="offcanvas-help-and-tips" uk-offcanvas="flip:true">
+        <div class="uk-offcanvas-bar">
+
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+            <h3>Help</h3>
+
+            <p>This AR calculator uses data which was automatically mined from ELDEN RING files with the <a href="https://github.com/EldenRingDatabase/erdb/" target="_blank">ERDB</a> tool. It's currently in development and I welcome any reports or requests to improve it.</p>
+
+            <h3>Tips</h3>
+
+            <ul>
+                <li>Hover over a scaling grade to see the precise value.</li>
+                <li>In Armament Selector, you can filter by both names or classes.</li>
+                <li>To quickly add weapons, press <span class="uk-badge">/</span>, search for items and hit <span class="uk-badge">Enter</span> to accept the filter result.</li>
+            </ul>
+
+            <h3>Key bindings</h3>
+
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-1-5 uk-flex uk-flex-right"><span class="uk-badge">?</span></div>
+                <div class="uk-width-4-5">open this menu</div>
+
+                <div class="uk-width-1-5 uk-flex uk-flex-right"><span class="uk-badge">/</span></div>
+                <div class="uk-width-4-5">open Armament Selector</div>
+
+                <div class="uk-width-1-5 uk-flex uk-flex-right"><span class="uk-badge">Enter</span></div>
+                <div class="uk-width-4-5"><span class="uk-text-meta">(while filtering)</span> select filtered items and save</div>
+            </div>
+
         </div>
     </div>
 

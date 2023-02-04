@@ -767,6 +767,27 @@ class ArmamentSelector:
         else:
             [self.on_armament(element=a.wrapped) for a in self._choices if not a.is_selected and a.wrapped.is_visible]
 
+class HelpMenu:
+    _selector: ArmamentSelector
+    _button = ElementWrapper("open-help-menu")
+
+    def __init__(self, selector: ArmamentSelector) -> None:
+        self._selector = selector
+        add_event_listener(document, "keydown", self._on_key_down)
+
+    def _on_key_down(self, keyboard_event):
+        if keyboard_event.code == "Slash":
+            if keyboard_event.shiftKey:
+                self._button.click()
+
+            else:
+                keyboard_event.preventDefault()
+                selector.toggle()
+
+        elif keyboard_event.code == "Enter":
+            keyboard_event.preventDefault()
+            selector.select_and_save()
+
 factory = ArmamentEntryFactory()
 attribute_menu = AttributeMenu()
 container = ArmamentContainer(attribute_menu)
@@ -774,12 +795,4 @@ container = ArmamentContainer(attribute_menu)
 selector = ArmamentSelector(factory, container)
 selector.on_save()
 
-def on_key_down(keyboard_event):
-    if keyboard_event.code == "Slash":
-        keyboard_event.preventDefault()
-        selector.toggle()
-    elif keyboard_event.code == "Enter":
-        keyboard_event.preventDefault()
-        selector.select_and_save()
-
-add_event_listener(document, "keydown", on_key_down)
+HelpMenu(selector)
