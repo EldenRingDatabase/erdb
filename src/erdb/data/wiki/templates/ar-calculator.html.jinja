@@ -225,6 +225,9 @@
                             <div class="uk-width-expand">
                             </div>
                             <div>
+                                <a id="open-settings-menu" class="uk-button uk-button-default" href="#modal-settings-menu" uk-toggle><span uk-icon="settings"></span></a>
+                            </div>
+                            <div>
                                 <a id="open-help-menu" class="uk-button uk-button-default" uk-toggle="target:#offcanvas-help-and-tips"><span uk-icon="info"></span></a>
                             </div>
                         </div>
@@ -238,6 +241,65 @@
 
         </div>
     </section>
+
+    <div id="modal-settings-menu" class="uk-modal-container" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h6 class="uk-modal-title">Settings</h6>
+            </div>
+            <div class="uk-modal-body" uk-overflow-auto>
+                <ul uk-tab>
+                    <li><a href="#" disabled uk-tooltip="Work in progress">General</a></li>
+                    {#<li><a href="#" disabled uk-tooltip="Work in progress">Opponent</a></li>#}
+                    <li class="uk-active"><a href="#">Damage Tweaks<span id="settings-tweak-badge" class="uk-badge" uk-tooltip="" hidden></span></a></li>
+                </ul>
+                <ul class="uk-switcher uk-margin">
+                    <li> {# General #}
+                    </li>
+                    {#<li> Opponent
+                    </li>#}
+                    <li> {# Damage Tweaks #}
+                        <div uk-alert>
+                            Set the percentage for each damage type to tweak the AR calculator. Example uses:
+                            <ul>
+                                <li>prioritize specific damage as desired,</li>
+                                <li>lower elemental values to penalize split damage.</li>
+                            </ul>
+                        </div>
+                        <table class="uk-table uk-table-middle">
+                            <thead>
+                                <th class="uk-table-shrink"></th>
+                                <th class="uk-table-expand"></th>
+                                <th class="uk-width-1-6"></th>
+                                <th class="uk-table-shrink"></th>
+                                <th class="uk-table-shrink"></th>
+                            </thead>
+                            <tbody>
+                                {% for attack in attack_powers %}
+                                    <tr>
+                                        <td><label class="uk-flex uk-flex-right">{{ attack }}</label></td>
+                                        <td><input id="settings-tweak-value-{{attack | lower}}" class="uk-width-expand uk-flex uk-flex-middle" type="range" value="100" min="0" max="200"></td>
+                                        <td class="uk-text-center"><label id="settings-tweak-view-{{attack | lower}}">100%</label></td>
+                                        <td>
+                                            <a id="settings-tweak-lock-{{attack | lower}}" class="uk-icon-button {% if not loop.first %}uk-button-primary{% endif %}" uk-tooltip="Lock {{attack}} tweak to match other locked tweaks.">
+                                                <span id="settings-tweak-lock-icon-{{attack | lower}}" uk-icon="{% if loop.first %}unlock{% else %}lock{% endif %}"></span>
+                                            </a>
+                                        </td>
+                                        <td><a id="settings-tweak-reset-{{attack | lower}}" class="uk-icon-button uk-button-danger" uk-tooltip="Reset {{attack}} tweak back to 100%."><span uk-icon="refresh"></span></a></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+            <div class="uk-modal-footer uk-text-right">
+                <button id="save-settings" class="uk-button uk-button-primary uk-modal-close" type="button">Save</button>
+                <button id="cancel-settings" class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            </div>
+        </div>
+    </div>
 
     <div id="modal-armament-selector" class="uk-modal-container" uk-modal>
         <div class="uk-modal-dialog">

@@ -174,6 +174,120 @@ class ElementWrapper:
     def find_tag(self, tag: str) -> Generator["ElementWrapper", None, None]:
         return (ElementWrapper(e) for e in self._element.getElementsByTagName(tag))
 
+class Settings(NamedTuple):
+    class AttackTypeTweaks(NamedTuple):
+        physical: int
+        magic: int
+        fire: int
+        lightning: int
+        holy: int
+
+    attack_type_tweaks: AttackTypeTweaks
+
+    @classmethod
+    def attack_types(cls) -> list[str]:
+        return list(cls.AttackTypeTweaks._fields)
+
+class SettingsMenu:
+    _callback = None
+
+    _settings: Settings
+    _override: Settings
+
+    _ranges = {t: ElementWrapper(f"settings-tweak-value-{t}") for t in Settings.attack_types()}
+    _lock_icons = {t: ElementWrapper(f"settings-tweak-lock-icon-{t}") for t in Settings.attack_types()}
+    _lock_buttons = {t: ElementWrapper(f"settings-tweak-lock-{t}") for t in Settings.attack_types()}
+    _views = {t: ElementWrapper(f"settings-tweak-view-{t}") for t in Settings.attack_types()}
+
+    _tweak_badge = ElementWrapper("settings-tweak-badge")
+    _open_button = ElementWrapper("open-settings-menu")
+
+    _locked_types: set[str] = set(Settings.attack_types()[1:]) # elemental only
+
+    def __init__(self) -> None:
+        for t in Settings.attack_types():
+            self._ranges[t].add_listener("input", self._on_damage_tweak, attack_type=t)
+            self._ranges[t].add_listener("change", self._on_damage_change)
+            self._views[t].inner_text = f"{self._ranges[t].value}%"
+            self._lock_buttons[t].add_listener("click", self._on_damage_lock, attack_type=t)
+
+            ElementWrapper(f"settings-tweak-reset-{t}").add_listener("click", self._on_damage_reset, attack_type=t)
+
+        self._settings = Settings(self._get_current_tweaks())
+        self._override = copy(self._settings)
+
+        ElementWrapper("save-settings").add_listener("click", self._on_save)
+        ElementWrapper("cancel-settings").add_listener("click", self._on_cancel)
+
+        self._update_tweak_badge_notifs()
+
+    def register_callback(self, callback) -> Settings:
+        assert self._callback is None
+        self._callback = callback
+
+        return self._settings
+
+    def _on_save(self, element: ElementWrapper):
+        if self._override == self._settings:
+            return
+
+        self._settings = self._override
+        self._callback(self._settings) # type: ignore (optimization to not assert)
+
+    def _on_cancel(self, element: ElementWrapper):
+        self._override = copy(self._settings)
+
+        for t in Settings.attack_types():
+            value = getattr(self._settings.attack_type_tweaks, t)
+            self._ranges[t].value = value
+            self._views[t].inner_text = f"{value}%"
+
+    def _on_damage_tweak(self, element: ElementWrapper, attack_type: str):
+        self._views[attack_type].inner_text = f"{element.value}%"
+
+        if attack_type in self._locked_types:
+            for other in self._locked_types.difference({attack_type}):
+                self._ranges[other].value = element.value
+                self._views[other].inner_text = f"{element.value}%"
+
+        self._update_tweak_badge_notifs()
+
+    def _on_damage_lock(self, element: ElementWrapper, attack_type: str):
+        if self._is_locked(attack_type):
+            element.class_list.remove("uk-button-primary")
+            self._locked_types.remove(attack_type)
+            self._lock_icons[attack_type].attributes["uk-icon"] = "unlock"
+        else:
+            element.class_list.add("uk-button-primary")
+            self._locked_types.add(attack_type)
+            self._lock_icons[attack_type].attributes["uk-icon"] = "lock"
+
+    def _on_damage_reset(self, element: ElementWrapper, attack_type: str):
+        self._views[attack_type].inner_text = "100%"
+        self._ranges[attack_type].value = 100
+        self._update_tweak_badge_notifs()
+
+    def _on_damage_change(self, element: ElementWrapper):
+        self._override = Settings(self._get_current_tweaks())
+
+    def _get_current_tweaks(self) -> Settings.AttackTypeTweaks:
+        return Settings.AttackTypeTweaks(*(int(r.value) for r in self._ranges.values()))
+
+    def _is_locked(self, attack_type: str) -> bool:
+        return self._lock_icons[attack_type].attributes["uk-icon"] == "lock"
+
+    def _update_tweak_badge_notifs(self):
+        count = sum(1 for r in self._ranges.values() if r.value != "100")
+
+        if count > 0:
+            self._tweak_badge.is_visible = True
+            self._tweak_badge.attributes["uk-tooltip"] = f"{count} tweak(s) affect AR calculation"
+            self._tweak_badge.inner_text = str(count)
+            self._open_button.class_list.add("uk-button-primary")
+        else:
+            self._tweak_badge.is_visible = False
+            self._open_button.class_list.remove("uk-button-primary")
+
 class AttributeMenu:
     _callback = None
     _attribs: list[ElementWrapper] = [
@@ -431,6 +545,7 @@ class ArmamentContainer:
     _sort_selector = ElementWrapper("armament-sorting-method")
     _level_selector = ElementWrapper("armament-level-select")
     _affinity_selector = ElementWrapper("armament-affinity-select")
+    _settings: Settings | None = None
     _attribs: Attributes | None = None
     _levels = _SelectedLevels()
     _affinity = "Standard"
@@ -447,7 +562,8 @@ class ArmamentContainer:
         "Name (z → a)": {"key": lambda x: x.key, "reverse": True},
     }
 
-    def __init__(self, attribute_menu: AttributeMenu) -> None:
+    def __init__(self, settings_menu: SettingsMenu, attribute_menu: AttributeMenu) -> None:
+        self._settings = settings_menu.register_callback(self._on_settings)
         self._attribs = attribute_menu.register_callback(self._on_attributes)
 
         self._sort_selector.inner_html = wrap_list("<option>", self._sort_methods.keys(), "</option>")
@@ -467,6 +583,9 @@ class ArmamentContainer:
 
         ap = calc.attack_power(attribs)
 
+        if self._settings:
+            ap = ap.regulate(self._settings.attack_type_tweaks._asdict())
+
         et.set_attack_power("total", ap.total)
         et.set_guard("boost", floor(affinity["guard"].get("guard_boost", 0.) * reinforcement["guard"]["guard_boost"]))
 
@@ -483,6 +602,12 @@ class ArmamentContainer:
             et.set_requirement(attribute, armament["requirements"].get(attribute, 0), getattr(attribs, attribute))
 
         self._update_sorting(self._sort_selector)
+
+    def _on_settings(self, settings: Settings):
+        self._settings = settings
+
+        for et in self._elems.values():
+            self._update_values(et, self._calcs[et.key], self._attribs)
 
     def _on_attributes(self, attribs: Attributes):
         self._attribs = attribs
@@ -788,9 +913,11 @@ class HelpMenu:
             keyboard_event.preventDefault()
             selector.select_and_save()
 
-factory = ArmamentEntryFactory()
+settings_menu = SettingsMenu()
 attribute_menu = AttributeMenu()
-container = ArmamentContainer(attribute_menu)
+
+factory = ArmamentEntryFactory()
+container = ArmamentContainer(settings_menu, attribute_menu)
 
 selector = ArmamentSelector(factory, container)
 selector.on_save()

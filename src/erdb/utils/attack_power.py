@@ -10,13 +10,17 @@ and additional scaling from player attributes. Can be unpacked with:
 class ValueType(NamedTuple):
     base: float
     scaling: float
+    regulation: float = 1.
 
     @property
     def total(self) -> int:
-        return floor(self.base + self.scaling)
+        return floor((self.base + self.scaling) * self.regulation)
 
     def __iter__(self) -> Iterator[tuple[float, float]]:
         return iter((self.base, self.scaling)) # type: ignore
+
+    def regulate(self, regulation: int) -> "ValueType":
+        return ValueType(self.base, self.scaling, regulation / 100.)
 
 class AttackPower(NamedTuple):
     physical: ValueType
@@ -27,10 +31,13 @@ class AttackPower(NamedTuple):
 
     @property
     def total(self) -> int:
-        return floor(sum(f.base + f.scaling for f in self))
+        return floor(sum((f.base + f.scaling) * f.regulation for f in self))
 
     def items(self):
         return zip(self._fields, self)
+
+    def regulate(self, regulations: dict[str, int]) -> "AttackPower":
+        return AttackPower(**{f: v.regulate(regulations[f]) for f, v in self.items()})
 
 class StatusEffects(NamedTuple):
     bleed: ValueType
