@@ -691,7 +691,7 @@ class ArmamentContainer:
         armentry.level = self._levels[armentry]
         armentry.affinity = self._affinity
 
-        self._calcs[armentry.key] = ArmamentCalculator(calculator_data, armentry.key, "Standard", 0)
+        self._calcs[armentry.key] = ArmamentCalculator(calculator_data, armentry.key, armentry.affinity, armentry.level)
         self._elems[armentry.key] = armentry
 
         armentry.add_affinities_listener(self._on_affinity)
