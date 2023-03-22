@@ -266,6 +266,7 @@ class SettingsMenu:
         self._views[attack_type].inner_text = "100%"
         self._ranges[attack_type].value = 100
         self._update_tweak_badge_notifs()
+        self._override = Settings(self._get_current_tweaks())
 
     def _on_damage_change(self, element: ElementWrapper):
         self._override = Settings(self._get_current_tweaks())
