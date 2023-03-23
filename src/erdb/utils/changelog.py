@@ -27,6 +27,7 @@ class _ChangeType(Enum):
     @classmethod
     def get(cls, report_type: str) -> Self:
         if report_type == "values_changed": return _ChangeType.VALUE
+        if report_type == "type_changes": return _ChangeType.VALUE # None to scalar or vice versa
         if report_type.endswith("added"):   return _ChangeType.ADDED
         if report_type.endswith("removed"): return _ChangeType.REMOVED
         assert False, f"Unsupported report type: {report_type}"
