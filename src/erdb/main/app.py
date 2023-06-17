@@ -52,8 +52,14 @@ class App:
                 output_file = destination / f"{tb}.json"
                 print(f"Output file: {output_file}", flush=True)
 
+                output_schema_file = destination / f"{tb}.schema.json"
+                print(f"Schema file: {output_schema_file}", flush=True)
+
                 if output_file.exists():
                     print(f"Output file exists and will be overridden", flush=True)
+
+                if output_schema_file.exists():
+                    print(f"Schema file exists and will be overridden", flush=True)
 
                 data = gen.generate()
                 print(f"Generated {len(data)} elements", flush=True)
@@ -61,6 +67,13 @@ class App:
                 with open(output_file, mode="w", encoding="utf-8") as f:
                     kwargs = {"separators": (",", ":")} if minimize else {"indent": 4}
                     json.dump(data, f, ensure_ascii=False, default=pydantic_encoder_no_nulls, allow_nan=False, **kwargs)
+
+                with open(output_schema_file, mode="w", encoding="utf-8") as f:
+                    model = gen.spec.model[gen.spec.latest_api()]
+                    if not hasattr(model, '__pydantic_model__'):
+                        print(f'No model found for table {tb}')
+                    else:
+                        json.dump(model.__pydantic_model__.schema(), f, ensure_ascii=False, default=pydantic_encoder_no_nulls, allow_nan=False, indent=2)
 
         return 0
 
