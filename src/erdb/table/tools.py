@@ -29,7 +29,7 @@ class ToolTableSpec(TableSpecContext):
     main_param_retriever = ParamDictRetriever("EquipParamGoods", ItemIDFlag.GOODS)
 
     predicates: list[RowPredicate] = [
-        lambda row: 1 <= row["sortId"].as_int < 999999,
+        lambda row: 0 <= row["sortId"].as_int < 999999,
         lambda row: row["sortGroupId"].as_int != GoodsSortGroupID.GESTURES,
         lambda row: row["goodsType"] in [GoodsType.NORMAL_ITEM, GoodsType.REMEMBRANCE, GoodsType.WONDROUS_PHYSICK_TEAR, GoodsType.GREAT_RUNE],
         lambda row: not _is_note_item(row.name),

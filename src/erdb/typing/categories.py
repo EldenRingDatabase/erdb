@@ -224,6 +224,7 @@ class ToolCategory(_CategoryBase):
             G.GROUP_1: T.ESSENTIAL,
             G.GROUP_2: T.EDIBLE,
             G.GROUP_3: T.POT,
+            G.ANY: T.POT,
             G.GROUP_4: T.AROMATIC,
             G.GROUP_5: T.THROWABLE,
             G.GROUP_6: T.OFFENSIVE,
